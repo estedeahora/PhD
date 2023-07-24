@@ -1,0 +1,60 @@
+\ProvidesPackage{template/latex/TitleTESIS}
+\RequirePackage{graphicx}
+
+\newcommand*{\university}[1]{\gdef\@university{#1}%
+}
+\newcommand*{\division}[1]{\gdef\@division{#1}%
+}
+\newcommand*{\degree}[1]{\gdef\@degree{#1}%
+}
+\newcommand*{\@degree}{currently not set. Please fix this.}
+
+\newcommand*{\supervisor}[1]{\gdef\@supervisor{#1}%
+}
+\newcommand*{\@supervisor}{\texttt{\string\supervisor} currently
+not set. Please fix this.}
+
+% \newcommand*{\cosupervisor}[1]{\gdef\@cosupervisor{#1}%
+% }
+
+\renewcommand*{\maketitle}{%
+\begin{titlepage}
+\centering
+
+\includegraphics[width=7cm]{template/logo_UBA-Sociales2.jpg}\par
+
+{\scshape\Large\@university\unskip\strut\par}
+
+{\scshape\Large\@division\unskip\strut\par}
+
+\vspace{1.3cm}
+
+{\scshape\large\@degree\unskip\strut\par}
+\vspace{1.8cm}
+
+{\scshape\huge\bfseries\@title\unskip\strut\par}
+\vspace{1cm}
+
+\begin{flushright}
+{\scshape\Large\itshape\@author\unskip\strut\par}
+\end{flushright}
+
+\vfill
+% \vspace{1cm}
+
+\begin{flushleft}{
+{\scshape\Large\bfseries Directora\unskip\strut\par}
+{\Large\textup{\@supervisor}\unskip\strut\par}
+% {\scshape\Large\bfseries Co-Directora\unskip\strut\par}
+% {\Large\textup{\@cosupervisor}\unskip\strut\par}
+}
+\end{flushleft}
+
+\vfill
+
+\centering
+{\large \@date \strut\par}
+\newpage~
+\end{titlepage}
+}
+\endinput

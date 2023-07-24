@@ -1,0 +1,112 @@
+---
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+`r if(!knitr::pandoc_to("docx")) '# (PART) Resultados {.unnumbered}'`
+
+# Título del primer capítulo de analísis
+
+Medir conjuntamente la segregación en diferentes **dominios**.
+
+-   segregación residencial
+-   segregación parental
+-   segregación escolar (allocation model)
+-   segregación de actividades (mediante segregación granular y análisis
+    de infraestructura urbana disponible)
+
+Medir conjuntamente segregación en diferentes **dimensiones**.
+
+-   segregación socioeconómica
+-   segregación migratoria
+-   segregación racial¿?
+
+Medir conjuntamente segregación en diferentes niveles (?)
+
+Es posible incorporar una dimensión histórica(?) intra biográfica y
+generacional?
+
+## Segregación residencial
+
+-   Ejemplos de cascos conurbanizados: Lomas/Banfield o FFCC Sarmiento
+    Ramos, Morón.
+-   Ejemplos de zonas periféricas deterioradas: J.C. Paz / Matanza sur /
+    Fcio Varela. Visualizar el contraste entre dos segregaciones
+    opuestas de NSE Alto-Bajo. Un buen ejemplo puede ser el Partido de
+    Lomas. La elección se puede justificar en base a la alta
+    contribución a la segregación total (M\_{within_dpto} \* p). Cruzar
+    segregación local con CA para mostrar alta segregación con
+    significados opuestos.
+
+El patrón de segregación actual es resultado de la articulación de tres
+dinámicas históricas:
+
+a.  dinámica clásica que se remonta al sXIX (cono de las elites)
+b.  dinámica latinoamericana del sXX (exclusión de pobres informales);
+c.  dinámica de la ciudad neoliberal de fines de sXX y el sXXI (barrios
+    cerrados, suburbanización, gentrificación y marginalización urbana)
+
+Descripción de **cómo se articulan estos procesos históricos** en la
+conformación de patrones heterogéneos de segregación en el AMGBA:
+
+(1) La ciudad presenta, en sintonía con el modelo europeo, una
+    separación de las elites en un área de la ciudad que parte del
+    centro y se expande hacia la periferia. Esto surge como resultado de
+    un proceso que se arraiga en la consolidación de la ciudad como
+    capital (sXIX).
+(2) La creación de 'bolsones de pobreza' producto de las migraciones
+    rurales desde mediados del sXX, junto al crecimiento económico y la
+    movilidad social ascendente de los migrantes europeos dieron lugar a
+    un patrón de segregación en el que conviven una heterogeneidad
+    urbana de gran parte de la ciudad, basado en la exclusión de los
+    pobres informales.
+(3) La salida de grupos los altos a los suburbios a partir de fines del
+    sXX dio lugar a patchwork en estas zonas. Ver algún análisis de
+    autocorrelación;
+(4) La consolidación de los cascos conurbanizados (sobre todo de
+    aquellos más cercanos y mejor conectados con la CABA), permitió la
+    creación de espacios relativamente homogéneos y de
+    policentralidades, diferenciados de sus contextos locales
+    (municipales), lo cual reforzó el patrón de mosaico /patchwork.
+(5) La modernización de la economía (basada en una dualización de
+    enclave) dio lugar al surgimiento de sectores medios modernos y
+    globalizados, que fueron los principales actores de una expansión
+    del cono de elite y de los procesos de gentrificación en áreas
+    centrales antiguamente deterioradas.
+
+Resultado de estos procesos, el **patrón de segregación AMGBA** **se
+complejizó** respecto al propuesto por @Sabatini:
+
+1.   Mayor nivel de segregación con respecto a momentos anteriores.
+2.  Segregación de grupos altos es mayor (seguida por grupo bajo). Ver
+    aporte de cada grupo descomponiendo M;
+3.  Los entornos urbanos tienen un papel importante a la hora de
+    explicar la segregación, de manera que una parte importante de ésta
+    se explica por la distribución de la polbación en estos. Ver
+    contribución within-between.
+4.  Cono de segregación: El patrón principal de segregación sigue siendo
+    el de separación de los ricos y alejamiento de los pobres en un cono
+    principal, vinculado a las regiones tradicionales de expansión
+    urbana de las elite.
+5.  Mancha expansiva: Este cono vivió una expansión de sus fronteras
+    mediante la incorporación de zonas anteriormente medias y de la
+    gentrificación de zonas centrales antiguamente deterioradas pero
+    bien comunicadas. Esta expansión estuvo vinculada fundamentalmente a
+    la expansión y asenso social de sectores medios calificados
+    vinculados a la economía globalizada;
+6.  Este patrón convive con un patrón de mosaicos / patchwork, resultado
+    de la consolidación de los cascos conurbanuzados cercanos y la
+    suburbanización de las elites (asociada a los barrios cerrados).
+7.  el patrón de segregación se acompaña de un monopolio por parte de
+    los sectores altos de los recursos urbanos, podría relacionarse con
+    ppp y se puede mencionar algo de esto en relación a tesis MGAIE
+    citar a @Brickman.
+
+## Subsecciones de análisis
+
+Acá va más texto
+
+## Conclusión parcial
+
+Acá se resumen los hallazgos del capítulo.

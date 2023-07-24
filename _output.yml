@@ -1,0 +1,45 @@
+bookdown::gitbook:
+  css: template/HTML/style.css
+  # split_by: section
+  config:
+    toc:
+      before: |
+        <li><a href="./">Tesis PhD - Pablo S. Serrati</a></li>
+#      after: |
+#        <li><a href="https://bookdown.org" target="_blank">Published with bookdown</a></li>
+#    edit: https://github.com/estedeahora/REPO/edit/BRANCH/%s
+    download: [pdf, epub]
+    sharing:
+      facebook: no
+      twitter: no
+      github: no
+      # all: []
+
+bookdown::pdf_book:
+  includes:
+    in_header: template/latex/preamble.tex
+    before_body: template/latex/abstract.tex
+  template: template/latex/template.tex
+  latex_engine: lualatex
+  citation_package: default
+  keep_tex: yes
+  pandoc_args:
+    - --listings
+    - --top-level-division=chapter
+
+# officedown::rdocx_document:
+#     base_format: "bookdown::word_document2"
+bookdown::word_document2:
+    reference_docx: template/word/wordtemplate.docx
+    number_sections: false
+    toc: true
+    tables:
+      caption:
+        pre: 'Tabla '
+        sep: '. '
+    plots:
+      caption:
+        pre: 'Figura '
+        sep: '. '
+
+# bookdown::epub_book: default

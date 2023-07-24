@@ -1,0 +1,53 @@
+```{=tex}
+\cleardoublepage
+\pagenumbering{arabic}
+```
+# Introducción {#intro}
+
+<!--# Presentación del problema general -->
+
+El análisis de la segregación es un tema clásico dentro del campo de la sociología urbana. La conformación de espacios diferenciados de contacto entre los grupos sociales permite a algunos de estos evitar el contacto con otros generando aislamiento social (tanto "positivo" como "negativo"). A su vez, la concentración urbana de los grupos de población genera condiciones diferenciales para habitar y acceder a los recursos desigualmente distribuidos en la ciudad.
+
+Tradicionalmente la segregación urbana fue estudiada con eje en el lugar de residencia. Concentrado en las diferencias raciales/étnicas, su expansión a la realidad latinoamericanas implicó un giro hacia las desigualdades socioeconómicas. A su vez, el análisis de la segregación fue incorporado paulatinamente en otros ámbitos, como los estudios laborales, educativos y las movilidades. Como parte de este movimiento, recientemente se ha propuesto pensar la segregación urbana como un fenómeno que se desarrolla simultáneamente en múltiples dominios [multi-domain] de la vida social [@Boterman2016; @VanHam2018; @VanHam2016]. En este sentido, la segregación urbana se presenta como un fenómeno que trasciende el aspecto residencial @DiVirgilio2014d] y se configura articulando ámbitos como el escolar, el laboral, los espacios de ocio, el transporte e, incluso, internet y las redes sociales, entre otros.
+
+<!--# Presentación del problema particular -->
+
+El concepto de segregación multi-dominio propone estudiar cómo los dominios de la vida social interactúan articuladamente fortaleciendo (o debilitando) el contacto de los grupos. Este abordaje permite poner en juego las diferentes escalas espaciales en las que se desenvuelve este fenómeno (vivienda, barrial y urbana/metropolitana), así como la temporalidad mediante la que se configura. A su vez pone de manifiesto que, si bien resulta válido señalar a la residencia como eje articulador, esta es insuficiente para para entender cómo, en espacios heterogéneos (con baja segregación residencial), se genera un acceso desigual a estos recursos. En este sentido los conceptos de espacios de actividad [@Horton1971] o espacios de vida [@Courgeau1988], permiten una mejor comprensión sobre cómo se produce el acceso a los bienes (simbólicos y materiales) de la ciudad. A su vez, las diferencias entre los entornos urbanos [@Connolly2005; @Duhau2008; @Marcos2015] resultan fundamentales para entender las prácticas de segregación urbana. En resumen, el rol de otras formas de diferenciación en el uso y apropiación del territorio, así como las movilidades que permiten conectar el lugar de residencia con las positividades urbanas, son centrales para entender la complejidad de la segregación urbana y cómo esta se diferencia en función del entorno urbano.
+
+<!-- Continuidad con tesis MGAIE -->
+
+Este trabajo se enmarca como una continuidad de mi tesis de Maestría (MGAIE-UNTREF) titulada "El territorio en la escuela. Pensando la articulación entre desigualdades educativas y territoriales en la ciudad de Buenos Aires, Argentina". En relación con el tema del presente proyecto, en mi tesis de maestría utilicé el concepto de *Reproducción de la Segregación Multi-Dominio* [@Boterman2016] para indagar en qué medida la segregación residencial permitía explicar la segregación educativa en el ámbito de la Ciudad de Buenos Aires. Como parte de este trabajo afirmamos que, en un ámbito de baja segregación residencial como el que se observa en la ciudad, la escuela funciona como un mecanismo de separación entre los grupos sociales. En este sentido, la escuela constituye un ámbito privilegiado para entender cómo los sectores sociales evitan el contacto con otros sectores, a pesar de compartir un ámbito residencial diverso. En concreto, nuestros resultados avalan la idea de que la segregación urbana multidominio permite entender el proceso mediante el cuales las elecciones escolares (en conjunto con las prácticas de movilidad urbana) se configuran como prácticas de segregación que complementan la segregación residencial.
+
+Retomando estos hallazgos, el presente proyecto recupera el concepto de reproducción de la segregación multi-dominio, incorporando nuevos dominios de análisis. A su vez, al igual que en este trabajo utilizamos una combinación de fuentes secundarias (muchas provenientes de registros administrativos) y primaras, con el objeto de recuperar una mirada macro- y micro- espacial. Por su parte, el ámbito de indagación se extiende al conjunto del Aglomerado Metropolitano Gran Buenos Aires, entendiendo que este actúa como una unidad en términos urbanos.
+
+<!-- Presentación preguntas -->
+
+En este contexto, este proyecto doctoral propone indagar la segregación multi-dominio en el Aglomerado Metropolitano del Gran Buenos Aires. En concreto, nos concentraremos en el análisis articulado de tres dominios de la segregación urbana, a saber: la segregación residencial, la segregación en las prácticas de movilidad urbana y la segregación educativa. A su vez, nos interesa especialmente el rol de los *entornos o contextos urbanos* locales en la configuración de estas segregaciones, en tanto permite entender cómo opera la segregación a escala microterritorial, generando espacios de diferenciación incluso en situaciones de contigüidad espacial. Para ello nos preguntamos: ¿Cuál es el papel que juega la segregación residencial en la configuración de los patrones de segregación urbana? ¿Cómo interactúa la segregación residencial con otras formas de segregación urbana, como la segregación educativa o la de las movilidades cotidianas? ¿De qué modo la segregación urbana se manifiesta complementariamente en los diferentes dominios (residencial, educación y movilidades) de la vida de las ciudades? ¿Qué rol juegan los contextos locales en la conformación de la segregación urbana?
+
+<!-- Presentación objetivo general y objetivos particulares -->
+
+El objetivo general de este trabajo es *analizar el modo en el que se reproduce la segregación urbana en diferentes dominios de la vida social en el Aglomerado Metropolitano del Gran Buenos Aires y cómo esta se articula con los entornos urbanos*. Como se señaló anteriormente, partimos de entender la segregación en la ciudad como un fenómeno complejo en el que se articulan de modo superpuesto diferentes dominios y escalas.
+
+Con el objeto de dar cuenta de la segregación urbana, nuestro trabajo se concentra en el análisis de los patrones de segregación residencial, escolar y de las movilidades, a la vez que el modo en el que se produce la articulación entre estas dimensiones generando escenarios de diferenciación y exposición entre los grupos sociales. Por otra parte, el rol de los entornos urbanos en la conformación de estas diferencias aparece como una clave central para entender cómo actúan estos mecanismos a escala microterritorial.
+
+Esta propuesta propone analizar la segregación urbana en diferentes escalas del Aglomerado Metropolitano del Gran Buenos Aires. El recorte espacial elegido parte de entender que la segregación urbana es un fenómeno que se constituye de forma multiescalar. En este marco, la escala metropolitana puede ser central para entender la diferenciación entre los grupos [@Ward2012].
+
+A partir de este planteo general, se proponen los siguientes objetivos específicos:
+
+-   analizar los patrones de segregación urbana en los ámbitos residencial, educativo y de las movilidades en el Aglomerado Metropolitano del Gran Buenos Aires;
+
+-   caracterizar la segregación multi-dominio enfocando su comportamiento en las diferentes escalas metropolitanas;
+
+-   comprender cómo se articulan los patrones de segregación multi-dominio con las características de los entornos urbanos.
+
+<!-- Fundamentación y aportes -->
+
+Describir los aportes generales y fundamentos que justifican la tesis.
+
+## Descripción de las fuentes utilizadas
+
+En concreto, utilizaremos como fuente primaria la Encuesta de Movilidad Espacial, desarrollada por el Área de Estudios Urbanos (IIGG). Por su parte, como fuentes secundarias se utilizarán bases estadísticas (Censo, EPH y ENMODO), pero también información proveniente de registros estales (Relevamiento Anual o SUBE) y de registros de empresas privadas (antenas de celular).
+
+## Estructura de la tesis
+
+Teniendo en cuenta los objetivos planteados, el presente trabajo de tesis se estructura de la siguiente manera. En el capítulo siguiente se presenta un recorrido por la literatura... Luego... presentamos el análisis. Por último, esto.

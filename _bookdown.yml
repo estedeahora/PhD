@@ -1,0 +1,17 @@
+output_dir: "_PhD"
+book_filename: "Tesis-PhD-Serrati"
+delete_merged_file: true
+repo: https://github.com/estedeahora/
+
+language:
+  label:
+    fig: 'Figura '
+    tab: 'Tabla '
+    eq: 'Ecuación '
+    def: 'Definición '
+    exm: 'Ejemplo '
+  ui:
+    chapter_name: "Capítulo "
+    #part_name: "Parte "
+    appendix_name: 'Anexo '
+

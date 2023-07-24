@@ -1,0 +1,55 @@
+`r if(!knitr::pandoc_to("docx")) '# (PART) Aspectos generales {.unnumbered}'`
+
+<!-- # (PART) Aspectos generales {.unnumbered} -->
+
+# Segregación urbana como un problema multi-dominio {#lit}
+
+***Desde la segregación residencial a la segregación multi-dominio***
+
+El estudio de la segregación residencial ha sido un tópico recurrente y fundante de la sociología urbana desde la segunda postguerra [@Bell1954; @Duncan1955a; @Duncan1955b; @Simpson1949]. Estos trabajos estaban centralmente interesados en entender cómo los grupos étnicos/raciales compartían diferentes espacios residenciales. El éxito de estos trabajos, estimuló la recuperación del concepto de segregación para estudiar la diversidad en escuelas [@Allen2007], ámbitos laborales [@Hutchens2009], espacios de compras y recreación [@Wang2012], movilidades cotidianas [@Brikman2020] y el transporte [@Wilson2011], entre otros. Esta ampliación de los dominios de análisis fue acompañada por la comparación de otros aspectos que diferencian a los grupos, como el género y el nivel socio-económico.
+
+En este contexto, la segregación urbana emerge como un fenómeno complejo que se configura articuladamente en diferentes dominios de la vida social [@DiVirgilio2014d] en los que se desenvuelve el espacio de vida de los individuos [@Courgeau1988]. En base a esto, algunos autores proponen pensar la "reproducción multi-dominio de la segregación urbana", analizando la acción conjunta y superpuesta de los distintos dominios de la vida social [@Boterman2016; @VanHam2018; @VanHam2016]. En este sentido, estos trabajos llevan a entender que la segregación residencial es sólo un aspecto de la segregación urbana que es necesario captar [@Wang2012].
+
+## Segregación como forma de desigualdad social
+
+Copiar lo de Dalle.
+
+## El estudio de la segregación
+
+### La mirada en la segregación residencial
+
+El enfoque tradicional, centrado en el lugar de residencia
+
+### Los estudios de segregación en LA y Argentina
+
+***La segregación en Latinoamérica y Argentina***
+
+Los procesos de urbanización en América Latina dieron lugar a ciudades marcadas por la inequidad territorial [@Duhau2013a]. Esto se expresa a escala microterritorial en la existencia de contexto urbanos diferenciados por las características de su origen y las poblaciones que los habitan [@Connolly2005; @Duhau2008; @Marcos2015]. A su vez, se configura un *patrón de segregación de gran escala* [@Sabatini2006], caracterizado principalmente por diferenciaciones socioeconómicas, antes que raciales [@Duhau2013a; @Groisman2010; @Ward2012]. Ese patrón se caracteriza por niveles de segregación residencial moderados en las zonas de renta alta, que conviven con enclaves de exclusión vinculados a los mercados informales.
+
+En la región se destacan dos estrategias de abordaje de la segregación. Por un lado, trabajos centrados en análisis cuantitativos que buscan medir e identificar patrones de segregación, así como evaluar sus efectos [@Flores2008; @Groisman2005; @Groisman2006; @Kaztman1999a; @Kaztman2001; @Linares2013; @Portes2005; @Rodriguez2004; @Sabatini2001; @Torres2001; @Torres2001a; @Torres1999; @Zuccotti2008; entre otros]. Por otro lado, desde la perspectiva centrada en los actores que habitan entornos segregados (fundamentalmente de origen informal) indagan cualitativamente las formas de sociabilidad y las consecuencias subjetivas de la segregación [por ejemplo @Carman2013; @Cravino2002; @Merklen2005; @Segura2006; @Soldano2017). A su vez, desde abordajes mixtos, trabajos, como el de @Brikman2020, se destaca la importancia que tienen las prácticas de movilidad en la configuración de la segregación urbana, en tanto permiten habitar y conectar la localización residencial con los beneficios urbanos [@Cosacov2014; @DiVirgilio2007].
+
+Enmarcado en el campo los estudios urbanos, este proyecto recupera el concepto de segregación multi-dominio, entendiendo que para entender la segregación urbana es necesario abordarla como un fenómeno complejo en el cual se articulan distintos ámbitos de la vida social, entre los cuales la residencia es un aspecto. Para ello se busca cubrir una vacancia en el campo local, respecto al estudio de la segregación desde un enfoque cuantitativo y multiescalar, sin dejar de abordar la complejidad (articulación de dominios) del fenómeno.
+
+### La segregación urbana como marco para diferentes formas de segregación
+
+La incorporación de diferentes dominios, como trabajo, transporte, educación.
+
+### La perspectiva de la segregación multi-dominio y multidimensiones.
+
+La búsqueda de herramientas conceptuales para abordar la complejidad de la segregación urbana.
+
+La segregación urbana como marco para pensar segregación.
+
+### Definición propia de segregación
+
+## Espacios de actividad
+
+Desarrollo de diferentes enfoques sobre espacios de actividad.
+
+## Deprivation
+
+Concepto de deprivation.
+
+## Conclusión de la literature
+
+Conclusión del apartado. Descripción de marco teórcio.

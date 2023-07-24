@@ -1,0 +1,98 @@
+---
+title: "La segregación urbana multi-dominio."
+subtitle: "Estudio en el Aglomerado Metropolitano del Gran Buenos Aires (Argentina)"
+# cover-image: "template/logo_UBA-Sociales2.jpg" 
+#
+# description: |
+#     Este documento contiene la tesis de Doctorado.
+# url: your book url like https://bookdown.org/yihui/bookdown
+
+# Institucional
+university: 'Universidad Nacional de Buenos Aires'
+division: 'Facultad de Ciencias Sociales'
+# logo: "template/logo_UBA-Sociales.jpg"
+
+degree: 'Tesis para optar por el Doctorado en Ciencias Sociales'
+
+# Tesista
+author: "Pablo Santiago Serrati"
+
+# Directoras
+supervisor: 'Dra. María Mercedes Di Virgilio'
+# cosupervisor: ''
+
+date: "`r stringr::str_to_sentence(format(Sys.time(), '%B %Y') )`"
+
+# abstract: |
+#     Enmarcado en el campo de los Estudios Urbanos, este proyecto aborda el problema de la segregación urbana a partir del estudio del Aglomerado Metropolitano del Gran Buenos Aires (AMGBA). Para ello, propone una mirada con foco en los diferentes dominios de la segregación (multi-domain segregation) y en el modo en el que estos se articulan en y con los entornos urbanos. En particular, el proyecto indaga la vinculación entre la segregación residencial, la segregación educativa y la segregación en las movilidades cotidianas en diferentes entornos urbanos del AMGBA. Teniendo en cuenta las dificultades que suponen el trabajo conjunto de estas dimensiones de la segregación, el proyecto desarrolla herramientas metodológicas para abordar este problema desde un enfoque cuantitativo y multivariado, combinando fuentes primarias y secundarias.
+    
+# Definiciones de exportación
+documentclass: book
+
+site: bookdown::bookdown_site
+knit: bookdown::render_book
+
+always_allow_html: true
+papersize: a4
+
+# Indice de tablas/fig e idioma
+lot: true
+lof: true
+
+lang: es
+
+# Referencias bibliográficas
+bibliography: template/library.bib
+csl: template/apa7-spanish.csl
+link-citations: yes
+
+# Fuente del Codigo 
+# monofont: "Source Code Pro"
+# monofontoptions: "Scale=0.7"
+---
+
+```{=tex}
+\pagestyle{fancy}
+\renewcommand\chaptermark[1]{\markboth{\thechapter.\ #1}{}}
+\fancyhead[LE]{Pablo Serrati - Tesis de Doctorado}
+\fancyhead[RO]{\leftmark}
+```
+
+```{r setup, echo = F}
+# knitr::write_bib(c(.packages(),
+#                    "bookdown", 
+#                    "markdown",
+#                    "tinytex"), 
+#                  "packages.bib")
+
+options(OutDec= ",")
+
+knitr::opts_chunk$set(echo = FALSE,
+                      message = FALSE, 
+                      warning = FALSE)
+
+options(knitr.kable.NA = '')
+```
+
+```{r packages, appendix = TRUE}
+library(tidyverse)
+library(flextable)
+```
+
+```{r data}
+
+```
+
+```{r fx}
+source(here::here("script/00_fx.R"), encoding = "UTF-8")
+```
+
+# Algunas palabras iniciales {.unnumbered}
+
+## Título para el prefacio {.unnumbered}
+
+[] TODO Escribir texto (final)
+
+## Agradecimientos {.unnumbered}
+
+[] TODO Escribir texto (final)

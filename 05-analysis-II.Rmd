@@ -1,0 +1,31 @@
+# Análisis II
+
+Esto es una cita para probar @Boterman2019a [p. 23]. Pero de esto se refiere en la introducción (Sección \@ref(intro)). También hay una cita más [@Boterman2019a, p. 42].[^analysis-ii-1]
+
+[^analysis-ii-1]: Esta es una nota al pie de prueba.
+
+Imaginate este pedazo de texto que refiere a lo que se ve en la Figura \@ref(fig:mt-plot). Pero está este otro texto que refiere a la Tabla \@ref(tab:mt-tab).
+
+```{r mt-plot}
+#| fig.cap= "Título de la figura"
+
+
+mtcars |> 
+    ggplot(aes(x = mpg, y = hp, color = factor(cyl))) +
+    geom_point() +
+    theme_minimal()
+```
+
+Luego viene un pedazo de texto corto. Pero sigue la Tabla \@ref(tab:mt-tab)
+
+```{r mt-tab}
+
+mtcars |> 
+  as_tibble(rownames = "car") |> 
+  select(car:hp) |> 
+  head() |> 
+  flextable() |> 
+  set_caption("Este es el título de la tabla") |> 
+  add_header_row(values = c("", "Gr1", "Gr2"), colwidths = c(1, 2, 2))
+
+```

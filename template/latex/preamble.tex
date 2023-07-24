@@ -1,0 +1,49 @@
+% Paquetes
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{amsthm}
+\usepackage{fancyhdr}
+\usepackage{longtable}
+\usepackage{subfig}
+% nuevos
+\usepackage{float} % mejora la interfaz para objetos flotantes
+% \usepackage{lastpage] % referencia la páginas en su documento LaTex a través de la introducción de una nueva etiqueta
+
+% Notas sucesivas entre capítulos
+\counterwithout{footnote}{chapter}
+
+% Margenes de pagina e imagenes
+\setlength{\headheight}{12.7pt}
+\renewcommand{\topfraction}{.85}
+\renewcommand{\bottomfraction}{.7}
+\renewcommand{\textfraction}{.15}
+\renewcommand{\floatpagefraction}{.66}
+\setcounter{topnumber}{3}
+\setcounter{bottomnumber}{3}
+\setcounter{totalnumber}{4}
+
+% Numeración romana para pag preliminares
+% \pagenumbering{roman}
+\pagenumbering{gobble}
+
+% Quiebre de lineas en chunk
+\lstset{
+  breaklines=true
+}
+
+\makeatletter
+\def\thm@space@setup{%
+  \thm@preskip = 8pt plus 2pt minus 4pt
+  \thm@postskip = \thm@preskip
+}
+
+% Define forma de portada
+\usepackage{template/latex/TitleTESIS}
+
+% Definir encabezado de páginas
+\usepackage{fancyhdr}
+\pagestyle{plain}
+
+\fancyhead[LE, RE, LO, RO]{}
+% \fancyhead[LE]{Pablo Serrati - Tesis de Maestría}
+% \fancyhead[RO]{\leftmark}
