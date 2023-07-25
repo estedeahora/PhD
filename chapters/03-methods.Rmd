@@ -1,10 +1,40 @@
+---
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
 # Métodos {#method}
 
-La profusa expansión del concepto de segregación a diferentes ámbitos estuvo ligada, en parte, al desarrollo de indicadores para medir este fenómeno. Como señala @Elbers2021, cualquier análisis sobre la distribución de una variable categórica en diferentes unidades puede pensarse como un problema de segregación. Los índices de segregación permiten medir diferentes dimensiones del fenómeno [@Massey1988], a la vez que abordar problemas en los que se presenten más de dos grupos [@Tivadar2019] e incorporar un componente geográfico en la medida [@Wong2016]. Además de los índices globales, se han desarrollado *índices locales*, que caracterizan a cada una de las unidades como parte del conjunto [@Feitosa2007; @Wong2002a] e índices que permiten la *descomposición* para comparar tipos de unidades [@Elbers2021; @Mora2011].
+La profusa expansión del concepto de segregación a diferentes ámbitos
+estuvo ligada, en parte, al desarrollo de indicadores para medir este
+fenómeno. Como señala @Elbers2021, cualquier análisis sobre la
+distribución de una variable categórica en diferentes unidades puede
+pensarse como un problema de segregación. Los índices de segregación
+permiten medir diferentes dimensiones del fenómeno [@Massey1988], a la
+vez que abordar problemas en los que se presenten más de dos grupos
+[@Tivadar2019] e incorporar un componente geográfico en la medida
+[@Wong2016]. Además de los índices globales, se han desarrollado
+*índices locales*, que caracterizan a cada una de las unidades como
+parte del conjunto [@Feitosa2007; @Wong2002a] e índices que permiten la
+*descomposición* para comparar tipos de unidades [@Elbers2021;
+@Mora2011].
 
-Algunos autores señalan la necesidad de herramientas para pensar y medir el fenómeno de la segregación a nivel individual [@Fossett2017; @Wong2016; @Yao2019]. Este punto es central para estudiar la segregación multi-dominio, que se desarrolla a nivel de los individuos (más allá de las unidades de cada dominio). Ligado a esto, otro problema para analizar la segregación urbana multi-dominio es la diversidad y dispersión de las fuentes de datos. Para abordar ambas limitaciones, el proyecto propone la triangulación de fuentes primarias y secundarias, de manera que las fuentes secundarias permitan caracterizar globalmente los patrones de segregación en cada dominio, mientras que la fuente primaria permita entender cómo se articulan estos patrones.
+Algunos autores señalan la necesidad de herramientas para pensar y medir
+el fenómeno de la segregación a nivel individual [@Fossett2017;
+@Wong2016; @Yao2019]. Este punto es central para estudiar la segregación
+multi-dominio, que se desarrolla a nivel de los individuos (más allá de
+las unidades de cada dominio). Ligado a esto, otro problema para
+analizar la segregación urbana multi-dominio es la diversidad y
+dispersión de las fuentes de datos. Para abordar ambas limitaciones, el
+proyecto propone la triangulación de fuentes primarias y secundarias, de
+manera que las fuentes secundarias permitan caracterizar globalmente los
+patrones de segregación en cada dominio, mientras que la fuente primaria
+permita entender cómo se articulan estos patrones.
 
-Respecto a esto, la segregación representa en gran medida las condiciones de posibilidad (que brinda el entorno) en las cuales se desenvuelve la homogamia relacional (a nivel individual)
+Respecto a esto, la segregación representa en gran medida las
+condiciones de posibilidad (que brinda el entorno) en las cuales se
+desenvuelve la homogamia relacional (a nivel individual)
 
 ## La medición de la segregación
 
@@ -20,15 +50,18 @@ Años 80. Incorporar los aspectos geográficos
 
 ### La segregación a nivel local y multigrupo
 
-Años 90/00. Nuevos enfoques: segregación local (y diversidad social) e índices multigrupos
+Años 90/00. Nuevos enfoques: segregación local (y diversidad social) e
+índices multigrupos
 
 ### Los esfuerzos por incorporar diferentes dimensiones de la segregación
 
 Enfoques actuales.
 
--   Propuestas de medición con big data. Crecimiento de los datos disponibles. La búsqueda de medidas-basadas en personas.
+-   Propuestas de medición con big data. Crecimiento de los datos
+    disponibles. La búsqueda de medidas-basadas en personas.
 -   Búsqueda de incorporar diferentes dominios, dimensiones y niveles.
--   Uso de "medidas granulares" basadas en lugares y medida de accesibilidad[ver @Milias2022].
+-   Uso de "medidas granulares" basadas en lugares y medida de
+    accesibilidad[ver @Milias2022].
 -   Posibilidad de obtener comparación entre las medidas [@Elbers2021]
 
 ## Perspectiva geométrica de las medidas de segregación
@@ -41,28 +74,62 @@ Ver y comparar el comportamiento de los índices con un AC.
 
 ## La medición de la segregación multi-dominio
 
-### Niveles de la segregación: segregación dentro del hogar  y dentro del barrio 
+### Niveles de la segregación: segregación dentro del hogar y dentro del barrio
 
 Medir la segrgación dentro del hogar (homogamia).
 
 ### Segregación granular
 
-El acceso diferencial a las locaciones comunes e infraestructuras de una ciudad da cuenta de el grado de privación (*deprivation*). A su vez, en la medida en que los grupos de la población tienen una distribución no homogénea, esta privación puede pensarse como una medida de las posibilidades para que estos grupos se encuentren. En concreto, es posible pensar en medidas de segregación granular, teniendo en cuenta
+El acceso diferencial a las locaciones comunes e infraestructuras de una
+ciudad da cuenta de el grado de privación (*deprivation*). A su vez, en
+la medida en que los grupos de la población tienen una distribución no
+homogénea, esta privación puede pensarse como una medida de las
+posibilidades para que estos grupos se encuentren. En concreto, es
+posible pensar en medidas de segregación granular, teniendo en cuenta
 
-Un primer acercamiento es a partir la distancia entre esquinas/radios a espacios y luego medir proporción de población con acceso según grupo.
+Un primer acercamiento es a partir la distancia entre esquinas/radios a
+espacios y luego medir proporción de población con acceso según grupo.
 
-Sin embargo, esto supone que todos los grupos acceden de forma igual por la ciudad, es decir, que la ciudad no tiene viscosidades según el lugar de residencia y que sólo se accede a los lugares cercanos.
+Sin embargo, esto supone que todos los grupos acceden de forma igual por
+la ciudad, es decir, que la ciudad no tiene viscosidades según el lugar
+de residencia y que sólo se accede a los lugares cercanos.
 
-Una alternativa es suponer un movimiento diferencial de cada uno de los barrios. Para ello se pueden usar datos de la ENMODO, datos de conectividad de colectivos (esto supone que lo que se conecta es lo que se necesita conectar) o datos de SUBE. De esta manera, cada lugar de residencia se comunica diferencialmente con el propio barrio y con los otros barrios.
+Una alternativa es suponer un movimiento diferencial de cada uno de los
+barrios. Para ello se pueden usar datos de la ENMODO, datos de
+conectividad de colectivos (esto supone que lo que se conecta es lo que
+se necesita conectar) o datos de SUBE. De esta manera, cada lugar de
+residencia se comunica diferencialmente con el propio barrio y con los
+otros barrios.
 
 ### Allocation model
 
-El allocation model es un caso particular de medida de segregación granular que incorpora la restricción de ?
+El allocation model es un caso particular de medida de segregación
+granular que incorpora la restricción de ?
 
 Describir propuesta de Allocation model
 
 Describir posibilidades de uso con simulaciones
 
-## Conclusión de sección metodos
+## Conclusión de sección métodos
 
 Conclusiones del apartado.
+
+Medir conjuntamente la segregación en diferentes \*\*dominios\*\*.
+
+-   segregación residencial
+-   segregación parental
+-   segregación escolar (allocation model)
+-   segregación de actividades (mediante segregación granular y análisis
+    de infraestructura urbana disponible)
+
+Medir conjuntamente segregación en diferentes \*\*dimensiones\*\*.
+
+-   Segregación socioeconómica
+-   segregación migratoria
+-   segregación racial¿?
+
+Medir conjuntamente segregación en diferentes niveles (?)
+
+Es posible incorporar una dimensión histórica(?) intra biográfica y
+
+generacional?

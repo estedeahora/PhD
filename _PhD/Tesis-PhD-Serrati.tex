@@ -1,0 +1,1795 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+  \PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+    %
+\documentclass[
+          a4paper,
+          ]{book}
+    \usepackage{amsmath,amssymb}
+    \usepackage{lmodern}
+    \usepackage{iftex}
+\ifPDFTeX
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+    \usepackage{unicode-math}
+    \defaultfontfeatures{Scale=MatchLowercase}
+\defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+                  \fi
+        % Use upquote if available, for straight quotes in verbatim environments
+  \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+  \IfFileExists{microtype.sty}{% use microtype if available
+    \usepackage[]{microtype}
+    \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+  }{}
+      \makeatletter
+  \@ifundefined{KOMAClassName}{% if non-KOMA class
+    \IfFileExists{parskip.sty}{%
+      \usepackage{parskip}
+    }{% else
+      \setlength{\parindent}{0pt}
+      \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+  }{% if KOMA class
+    \KOMAoptions{parskip=half}}
+  \makeatother
+          \usepackage{fancyvrb}
+      \usepackage{xcolor}
+              \usepackage{listings}
+  \newcommand{\passthrough}[1]{#1}
+    \lstset{defaultdialect=[5.3]Lua}
+    \lstset{defaultdialect=[x86masm]Assembler}
+                            \usepackage{longtable,booktabs,array}
+          \usepackage{calc} % for calculating minipage widths
+          % Correct order of tables after \paragraph or \subparagraph
+    \usepackage{etoolbox}
+    \makeatletter
+    \patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+    \makeatother
+    % Allow footnotes in longtable head/foot
+    \IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+    \makesavenoteenv{longtable}
+                      \usepackage{graphicx}
+    \makeatletter
+    \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+    \def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+    \makeatother
+    % Scale images if necessary, so that they will not overflow the page
+    % margins by default, and it is still possible to overwrite the defaults
+    % using explicit options in \includegraphics[width, height, ...]{}
+    \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+    % Set default figure placement to htbp
+    \makeatletter
+    \def\fps@figure{htbp}
+    \makeatother
+                              \setlength{\emergencystretch}{3em} % prevent overfull lines
+        \providecommand{\tightlist}{%
+          \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+                  \setcounter{secnumdepth}{5}
+                                                                      \ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+\babelprovide[main,import]{spanish}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+% Paquetes
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{amsthm}
+\usepackage{fancyhdr}
+\usepackage{longtable}
+\usepackage{subfig}
+% nuevos
+\usepackage{float} % mejora la interfaz para objetos flotantes
+% \usepackage{lastpage] % referencia la páginas en su documento LaTex a través de la introducción de una nueva etiqueta
+
+% Notas sucesivas entre capítulos
+\counterwithout{footnote}{chapter}
+
+% Margenes de pagina e imagenes
+\setlength{\headheight}{12.7pt}
+\renewcommand{\topfraction}{.85}
+\renewcommand{\bottomfraction}{.7}
+\renewcommand{\textfraction}{.15}
+\renewcommand{\floatpagefraction}{.66}
+\setcounter{topnumber}{3}
+\setcounter{bottomnumber}{3}
+\setcounter{totalnumber}{4}
+
+% Numeración romana para pag preliminares
+% \pagenumbering{roman}
+\pagenumbering{gobble}
+
+% Quiebre de lineas en chunk
+\lstset{
+  breaklines=true
+}
+
+\makeatletter
+\def\thm@space@setup{%
+  \thm@preskip = 8pt plus 2pt minus 4pt
+  \thm@postskip = \thm@preskip
+}
+
+% Define forma de portada
+\usepackage{template/latex/TitleTESIS}
+
+% Definir encabezado de páginas
+\usepackage{fancyhdr}
+\pagestyle{plain}
+
+\fancyhead[LE, RE, LO, RO]{}
+% \fancyhead[LE]{Pablo Serrati - Tesis de Maestría}
+% \fancyhead[RO]{\leftmark}
+\usepackage{fontspec}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{colortbl}
+\usepackage{hhline}
+\newlength\Oldarrayrulewidth
+\newlength\Oldtabcolsep
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{wrapfig}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\VerbatimFootnotes % allow verbatim text in footnotes
+\hypersetup{
+  pdftitle={La segregación urbana multi-dominio},
+  pdfauthor={Pablo Santiago Serrati},
+  pdflang={es},
+  colorlinks=true,
+  linkcolor={Sepia},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Sepia},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{La segregación urbana multi-dominio}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Estudio en el Aglomerado Metropolitano del Gran Buenos Aires (Argentina)}
+\author{Pablo Santiago Serrati}
+\date{Julio 2023}
+
+\supervisor{Dra. María Mercedes Di Virgilio}
+
+% 
+% \logo{template/logo\_UBA-Sociales2.jpg}
+\university{Universidad Nacional de Buenos Aires}
+\division{Facultad de Ciencias Sociales}
+\degree{Tesis para optar por el Doctorado en Ciencias Sociales}
+
+\begin{document}
+\maketitle
+
+% \thispagestyle{empty}
+
+\section*{La segregación urbana multi-dominio. Estudio en el Aglomerado Metropolitano del Gran Buenos Aires (Argentina)}
+
+\textbf{Palabras claves:}
+
+Geografía de la educación; Diferencia entre escuelas; Desigualdades territoriales; Reproducción de la segregación multi-dominio; Elección de escuelas; Movilidades urbanas
+
+\textbf{Resumen:}
+
+Enmarcado en el campo de los Estudios Urbanos, este proyecto aborda el problema de la segregación urbana a partir del estudio del Aglomerado Metropolitano del Gran Buenos Aires (AMGBA). Para ello, propone una mirada con foco en los diferentes dominios de la segregación (multi-domain segregation) y en el modo en el que estos se articulan en y con los entornos urbanos. En particular, el proyecto indaga la vinculación entre la segregación residencial, la segregación educativa y la segregación en las movilidades cotidianas en diferentes entornos urbanos del AMGBA. Teniendo en cuenta las dificultades que suponen el trabajo conjunto de estas dimensiones de la segregación, el proyecto desarrolla herramientas metodológicas para abordar este problema desde un enfoque cuantitativo y multivariado, combinando fuentes primarias y secundarias.
+% Propuesta y objetivos
+% Preguntas de investigación
+% Enfoque metodológico
+% Resultados: (1)
+% Resultados: (2)
+% Resultados: (3)
+
+% \newpage\phantom{.}
+\newpage
+
+\section*{Multi-domain urban segregation. Study in the Metropolitan Agglomeration of Greater Buenos Aires (Argentina)}
+
+\textbf{Keywords:}
+
+School inequalities; Geography of education; Territorial inequalities; multi-domain reproduction of segregation; School choice; Urban mobilities.
+
+\textbf{Abstract:}
+
+The aim of this dissertation is to describe the role of territorial inequalities in the differentiation among schools of Buenos Aires city (Argentina). Grounded on the contributions of geography of education that proposes to articulate the field of urban studies with sociology of education. The specific goals of this work are: (a) to describe how territorial inequalities produce spatially the characteristics of educational demand; (b) analyze the territorial distribution of educational offer and identify the factors that explain the differences among schools; and (c) identify how school choices and mobility practices of household articulate territorial inequalities and differentiation between schools. Some questions about this subject might be:  How educational and territorial domains articulate in the configuration of differences between schools? Which part of the differences between them can be attributed to patterns of territorial inequalities? In what way the school choice practices and urban mobility ones articulate with the educational landscape to configurate the school inequalities? Departing from these questions, the analysis is based on a quantitative, multi-scale and multidimensional framework. Several descriptive and multivariate techniques are being used to fulfill this perspective and some specific tools from spatial analysis have been included. As a multi-scale approach, the work combines firstly, a structural vision of the development conditions of educational demand and offer; and secondly, a micro territorial point of view grounded in the role of family strategies as mediators between educational and territorial spaces and as generators of the social composition of schools. As part of the results, a first finding of this work is a critic revision of the appropriateness of commonly used concepts to characterize the difference between schools.  In order to expose the results, the concept of continuous educational space, inequal and hierarchized is being suggested, since the differences between schools are produced as part of a continuous reality hierarchically differentiated in which various dimensions participate at the same time. Considering the importance of social composition to understand the differences between schools, a second result of this dissertation is the concept of educational-territorial inequalities between schools, which aims to point out the relevance of the relationship between schools and territories in order to explain how differences between institutions grow. Based on our empirical analysis we proposed that between territories and schools there is a social distance which explains the fact that school choices made by families are due only partially to drawbacks of physical distance. From this frame, we argue that school dynamics of differentiation should also be approached attending to the micro territorial mechanisms where these households produce the choices in relation to its local conditionings (both territorial and educational). We affirmed that school choices that household make give place to a multi-domain reproduction of urban segregation. In this way, schools participate as part of complex differentiation and separation mechanisms of population that works together and simultaneously in several domains. From this concept, we could enrich the initial hypothesis which pointed that “the way in which school choice and urban mobility practices articulate in the educational landscapes define the hierarchical net of differentiation between schools, in other words, the educational-territorial inequalities between schools”.  Our results, sustain the idea that multi-domain urban segregation enables the comprehension of the process in which school choices and urban mobility practices produce a differentiated space of educational offer.
+
+\newpage
+
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\listoffigures
+\listoftables
+\pagestyle{fancy}
+\renewcommand\chaptermark[1]{\markboth{\thechapter.\ #1}{}}
+\fancyhead[LE]{Pablo Serrati - Tesis de Doctorado}
+\fancyhead[RO]{\leftmark}
+
+\hypertarget{algunas-palabras-iniciales}{%
+\chapter*{Algunas palabras iniciales}\label{algunas-palabras-iniciales}}
+\addcontentsline{toc}{chapter}{Algunas palabras iniciales}
+
+\hypertarget{tuxedtulo-para-el-prefacio}{%
+\section*{Título para el prefacio}\label{tuxedtulo-para-el-prefacio}}
+\addcontentsline{toc}{section}{Título para el prefacio}
+
+{[}{]} TODO Escribir texto (final)
+
+\hypertarget{agradecimientos}{%
+\section*{Agradecimientos}\label{agradecimientos}}
+\addcontentsline{toc}{section}{Agradecimientos}
+
+{[}{]} TODO Escribir texto (final)
+
+\cleardoublepage
+\pagenumbering{arabic}
+
+\hypertarget{intro}{%
+\chapter{Introducción}\label{intro}}
+
+El análisis de la segregación es un tema clásico dentro del campo de la
+sociología urbana. La conformación de espacios diferenciados de contacto
+entre los grupos sociales permite a algunos de estos evitar el contacto
+con otros generando aislamiento social (tanto ``positivo'' como
+``negativo''). A su vez, la concentración urbana de los grupos de
+población genera condiciones diferenciales para habitar y acceder a los
+recursos desigualmente distribuidos en la ciudad.
+
+Tradicionalmente la segregación urbana fue estudiada con eje en el lugar
+de residencia. Concentrado en las diferencias raciales/étnicas, su
+expansión a la realidad latinoamericanas implicó un giro hacia las
+desigualdades socioeconómicas. A su vez, el análisis de la segregación
+fue incorporado paulatinamente en otros ámbitos, como los estudios
+laborales, educativos y las movilidades. Como parte de este movimiento,
+recientemente se ha propuesto pensar la segregación urbana como un
+fenómeno que se desarrolla simultáneamente en múltiples dominios
+{[}multi-domain{]} de la vida social (\protect\hyperlink{ref-Boterman2016}{\textbf{Boterman2016?}}; \protect\hyperlink{ref-VanHam2018}{\textbf{VanHam2018?}}; \protect\hyperlink{ref-VanHam2016}{\textbf{VanHam2016?}}). En este sentido, la segregación urbana se presenta como un
+fenómeno que trasciende el aspecto residencial (\protect\hyperlink{ref-DiVirgilio2014d}{\textbf{DiVirgilio2014d?}}){]} y se
+configura articulando ámbitos como el escolar, el laboral, los espacios
+de ocio, el transporte e, incluso, internet y las redes sociales, entre
+otros.
+
+El concepto de segregación multi-dominio propone estudiar cómo los
+dominios de la vida social interactúan articuladamente fortaleciendo (o
+debilitando) el contacto de los grupos. Este abordaje permite poner en
+juego las diferentes escalas espaciales en las que se desenvuelve este
+fenómeno (vivienda, barrial y urbana/metropolitana), así como la
+temporalidad mediante la que se configura. A su vez pone de manifiesto
+que, si bien resulta válido señalar a la residencia como eje
+articulador, esta es insuficiente para para entender cómo, en espacios
+heterogéneos (con baja segregación residencial), se genera un acceso
+desigual a estos recursos. En este sentido los conceptos de espacios de
+actividad (\protect\hyperlink{ref-Horton1971}{\textbf{Horton1971?}}) o espacios de vida (\protect\hyperlink{ref-Courgeau1988}{\textbf{Courgeau1988?}}), permiten una
+mejor comprensión sobre cómo se produce el acceso a los bienes
+(simbólicos y materiales) de la ciudad. A su vez, las diferencias entre
+los entornos urbanos (\protect\hyperlink{ref-Connolly2005}{\textbf{Connolly2005?}}; \protect\hyperlink{ref-Duhau2008}{\textbf{Duhau2008?}}; \protect\hyperlink{ref-Marcos2015}{\textbf{Marcos2015?}}) resultan
+fundamentales para entender las prácticas de segregación urbana. En
+resumen, el rol de otras formas de diferenciación en el uso y
+apropiación del territorio, así como las movilidades que permiten
+conectar el lugar de residencia con las positividades urbanas, son
+centrales para entender la complejidad de la segregación urbana y cómo
+esta se diferencia en función del entorno urbano.
+
+Este trabajo se enmarca como una continuidad de mi tesis de Maestría
+(MGAIE-UNTREF) titulada ``El territorio en la escuela. Pensando la
+articulación entre desigualdades educativas y territoriales en la ciudad
+de Buenos Aires, Argentina''. En relación con el tema del presente
+proyecto, en mi tesis de maestría utilicé el concepto de \emph{Reproducción
+de la Segregación Multi-Dominio} (\protect\hyperlink{ref-Boterman2016}{\textbf{Boterman2016?}}) para indagar en qué
+medida la segregación residencial permitía explicar la segregación
+educativa en el ámbito de la Ciudad de Buenos Aires. Como parte de este
+trabajo afirmamos que, en un ámbito de baja segregación residencial como
+el que se observa en la ciudad, la escuela funciona como un mecanismo de
+separación entre los grupos sociales. En este sentido, la escuela
+constituye un ámbito privilegiado para entender cómo los sectores
+sociales evitan el contacto con otros sectores, a pesar de compartir un
+ámbito residencial diverso. En concreto, nuestros resultados avalan la
+idea de que la segregación urbana multidominio permite entender el
+proceso mediante el cuales las elecciones escolares (en conjunto con las
+prácticas de movilidad urbana) se configuran como prácticas de
+segregación que complementan la segregación residencial.
+
+Retomando estos hallazgos, el presente proyecto recupera el concepto de
+reproducción de la segregación multi-dominio, incorporando nuevos
+dominios de análisis. A su vez, al igual que en este trabajo utilizamos
+una combinación de fuentes secundarias (muchas provenientes de registros
+administrativos) y primaras, con el objeto de recuperar una mirada
+macro- y micro- espacial. Por su parte, el ámbito de indagación se
+extiende al conjunto del Aglomerado Metropolitano Gran Buenos Aires,
+entendiendo que este actúa como una unidad en términos urbanos.
+
+\hypertarget{objetivo-y-preguntas}{%
+\section{Objetivo y preguntas}\label{objetivo-y-preguntas}}
+
+En este contexto, este proyecto doctoral propone indagar la segregación
+multi-dominio en el Aglomerado Metropolitano del Gran Buenos Aires. En
+concreto, nos concentraremos en el análisis articulado de tres dominios
+de la segregación urbana, a saber: la segregación residencial, la
+segregación en las prácticas de movilidad urbana y la segregación
+educativa. A su vez, nos interesa especialmente el rol de los \emph{entornos
+o contextos urbanos} locales en la configuración de estas segregaciones,
+en tanto permite entender cómo opera la segregación a escala
+microterritorial, generando espacios de diferenciación incluso en
+situaciones de contigüidad espacial. Para ello nos preguntamos: ¿Cuál es
+el papel que juega la segregación residencial en la configuración de los
+patrones de segregación urbana? ¿Cómo interactúa la segregación
+residencial con otras formas de segregación urbana, como la segregación
+educativa o la de las movilidades cotidianas? ¿De qué modo la
+segregación urbana se manifiesta complementariamente en los diferentes
+dominios (residencial, educación y movilidades) de la vida de las
+ciudades? ¿Qué rol juegan los contextos locales en la conformación de la
+segregación urbana?
+
+El objetivo general de este trabajo es \emph{analizar el modo en el que se
+reproduce la segregación urbana en diferentes dominios de la vida social
+en el Aglomerado Metropolitano del Gran Buenos Aires y cómo esta se
+articula con los entornos urbanos}. Como se señaló anteriormente,
+partimos de entender la segregación en la ciudad como un fenómeno
+complejo en el que se articulan de modo superpuesto diferentes dominios
+y escalas.
+
+Con el objeto de dar cuenta de la segregación urbana, nuestro trabajo se
+concentra en el análisis de los patrones de segregación residencial,
+escolar y de las movilidades, a la vez que el modo en el que se produce
+la articulación entre estas dimensiones generando escenarios de
+diferenciación y exposición entre los grupos sociales. Por otra parte,
+el rol de los entornos urbanos en la conformación de estas diferencias
+aparece como una clave central para entender cómo actúan estos
+mecanismos a escala microterritorial.
+
+Esta propuesta propone analizar la segregación urbana en diferentes
+escalas del Aglomerado Metropolitano del Gran Buenos Aires. El recorte
+espacial elegido parte de entender que la segregación urbana es un
+fenómeno que se constituye de forma multiescalar. En este marco, la
+escala metropolitana puede ser central para entender la diferenciación
+entre los grupos (\protect\hyperlink{ref-Ward2012}{\textbf{Ward2012?}}).
+
+A partir de este planteo general, se proponen los siguientes objetivos
+específicos:
+
+\begin{itemize}
+\item
+  analizar los patrones de segregación urbana en los ámbitos
+  residencial, educativo y de las movilidades en el Aglomerado
+  Metropolitano del Gran Buenos Aires;
+\item
+  caracterizar la segregación multi-dominio enfocando su
+  comportamiento en las diferentes escalas metropolitanas;
+\item
+  comprender cómo se articulan los patrones de segregación
+  multi-dominio con las características de los entornos urbanos.
+\end{itemize}
+
+Desde un enfoque multi-dominio de la segregación, en este trabajo
+proponemos analizar la segregación social en relación a su impacto sobre
+la estratificación social y las oportunidades de vida.
+
+analizar la relación entre segregación residencial y homogamia (o
+segregación conyugal). Ambos aspectos de la segregación son centrales
+para el acceso a los recursos sociales y, por lo tanto, para entender la
+\emph{estratificación social} y la \emph{movilidad social}. Por un lado, la
+distribución de los diferentes grupos sociales en la ciudad
+(\emph{segregación residencial}) impacta en la distribución y acceso a
+recursos urbanos, a la vez que incide en la conformación de espacios de
+intercambio plurales (\protect\hyperlink{ref-DiVirgilio2014c}{\textbf{DiVirgilio2014c?}}). Por su parte, la conformación
+de vínculos conyugales homogéneos (\emph{homogamia}) limita integración
+social y las posibilidades de movilidad social (\protect\hyperlink{ref-Blossfeld2003}{\textbf{Blossfeld2003?}}). Por
+último, la manera en que estas formas de segregación (homogamia y la
+segregación residencial) se relacionan, puede tener implicancias en la
+formación de las identidades colectivas y la integración social de los
+grupos.
+
+El objetivo principal de este trabajo es analizar la relación entre la
+segregación residencial y la homogamia en el Área Metropolitana del Gran
+Buenos Aires (AMGBA). Para ello, nos preguntamos: ¿Cuál es la relación
+entre la segregación residencial y la homogamia? ¿Existen patrones
+comunes en la distribución espacial de la segregación residencial y la
+homogamia? ¿Estas formas de segregación se refuerzan mutuamente
+(generando un `círculo vicioso') o actúan sobre diferentes aspectos de
+la segregación social? ¿Qué rol juegan las diferentes divisiones
+territoriales (entornos urbanos, jurisdicciones, departamentos) en esta
+relación?
+
+Retomando un \emph{enfoque multi-dominio de la segregación}, el objetivo de
+este trabajo es analizar cómo se articula la segregación socio económica
+considerando los espacios de actividad de los residentes del Área
+Metropolitana del Gran Buenos Aires (AMGBA). Para ello
+nos preguntamos: ¿Cómo se relaciona la segregación en el dominio
+residencial con la que surge como resultado de la movilidad cotidiana
+dentro de los espacios de actividad? ¿Las movilidades funcionan
+reforzando o disminuyendo la `separación' (segregación) entre los grupos
+sociales? Dicho en otras palabras: ¿Existe un círculo vicioso
+(\protect\hyperlink{ref-VanHam2018}{\textbf{VanHam2018?}}) entre estos dominios de la segregación o, por el
+contrario, cada uno de estos dominios aporta elementos propios a la
+segregación urbana (\protect\hyperlink{ref-Serrati2023}{\textbf{Serrati2023?}})? ¿En qué medida las movilidades
+cotidianas son un `capital' que le permite a los agentes modificar la
+segregación que viven en el dominio residencial?
+Teniendo en cuenta estas preguntas, en
+el trabajo proponemos utilizar un enfoque metodológico que combina el
+análisis de segregación con el análisis redes sociales (\protect\hyperlink{ref-Borgatti2009}{\textbf{Borgatti2009?}}; \protect\hyperlink{ref-Borgatti2014}{\textbf{Borgatti2014?}}; \protect\hyperlink{ref-Miele2019}{\textbf{Miele2019?}}). En particular, sobre este último punto,
+adaptando la metodología planteada por (\protect\hyperlink{ref-Luke2015}{\textbf{Luke2015?}}), proponemos
+caracterizar las movilidades urbanas a partir de la construcción de una
+red bipartita dirigida y ponderada para representar los viajes de las
+personas a los diferentes lugares de la ciudad.
+
+Describir los aportes generales y fundamentos que justifican la tesis.
+
+El trabajo pretende ser un aporte novedoso en al menos cuatro aspectos.
+En primer lugar, hasta el momento existen pocos trabajos locales que
+hayan vinculado la segregación residencial y la homogamia (el único que
+encontramos es el trabajo reciente de \protect\hyperlink{ref-Carrascosa2023}{\textbf{Carrascosa2023?}}), por lo cual,
+nuestro trabajo puede ser un aporte para avanzar en el análisis de esta
+problemática localmente. En segundo lugar, a nivel teórico el análisis
+conjunto de la segregación residencial y la homogamia, puede aportar
+elementos para el conocimiento de los procesos de estratificación social
+y movilidad social. Asimismo, esto puede contribuir a la formulación de
+políticas públicas orientadas a promover el acceso igualitario a las
+oportunidades de vida, la integración social y reducir la segregación en
+la ciudad. En tercer lugar, el trabajo pretende contribuir teóricamente
+en el estudio de la segregación multi-dominio, aportando nuevos dominios
+y elementos para pensar la relación entre estos dominios. Por último, el
+trabajo propone indicadores novedosos para medir espacialmente la
+homogamia con datos censales, a la vez que una metodología no utilizada
+anteriormente para analizar la relación entre homogamia y segregación
+residencial basada en una prueba Montecarlo.
+
+El trabajo pretende ser un aporte novedoso en al menos dos aspectos. Por
+un lado, hasta donde hemos podido indagar, es el primer trabajo que
+analiza la interrelación entre segregación residencial y segregación de
+movilidad de forma cuantitativa para el conjunto del AMGBA. En segundo
+lugar, el trabajo propone un abordaje del problema de segregación
+utilizando datos de encuestas de movilidad origen destino basado en un
+enfoque de `redes sociales', una estrategia hasta ahora poco explorada
+en la región.
+
+\hypertarget{recorte-del-objeto}{%
+\section{Recorte del objeto}\label{recorte-del-objeto}}
+
+En este trabajo centramos nuestro análisis en el Área Metropolitana del
+Gran Buenos Aires,\footnote{Siguiendo el criterio oficial del INDEC propuesto por
+  (\protect\hyperlink{ref-Vapnarsky1998}{\textbf{Vapnarsky1998?}}; ver también \protect\hyperlink{ref-Vapnarsky2004}{\textbf{Vapnarsky2004?}}), el AMGBA es definido
+  como la `mancha urbana' que se recorta y diferencia del campo
+  abierto. Operacionalmente se construye a partir de identificar la
+  contigüidad de elementos físico-urbanos (como calles, edificios y
+  manzanas). En este trabajo tomamos la adaptación para los datos del
+  Censo 2010 hecha por (\protect\hyperlink{ref-Marcos2021}{\textbf{Marcos2021?}}).} el cual es el principal aglomerado
+urbano de Argentina. Dentro del AMGBA se destaca la Ciudad Autónoma de
+Buenos Aires (CABA), la cual funciona como núcleo y eje articulador del
+aglomerado. En gran medida, el AMGBA es producto de la expansión de la
+CABA y la paulatina incorporación de las localidades cercanas que se
+habían desarrollado en torno a las estaciones de ferrocarril. Resultado
+de su tamaño y desarrollo histórico, El AMGBA presenta una importante
+diversidad interna, que da lugar a diferentes contextos o `entornos
+urbanos'. Siguiendo la propuesta de Marcos (\protect\hyperlink{ref-Marcos2021}{\textbf{Marcos2021?}}; \protect\hyperlink{ref-Marcos2022}{\textbf{Marcos2022?}}),
+en este trabajo clasificamos los radios censales del AMGBA (unidad
+censal más pequeña disponible) en función de: (a) el momento histórico
+de su urbanización; y (b) el modo predominante de producción del espacio
+urbano. Esta clasificación de entornos urbanos, permite reincorporar el
+espacio como producto social, en el cual se establecen fronteras
+simbólicas que tienen un rol central para estudiar la segregación
+social. En el AMGBA, la clasificación propuesta (ver Figura
+\ref{fig:TH}) distingue los siguientes entornos urbanos: (1) Ciudad
+colonial, (2) Primera expansión de la ciudad colonial, (3) Centros
+conurbanizados vinculados a la expansión ferroviaria, (4) Complejos de
+vivienda social, (5) Urbanizaciones cerradas, (6) Urbanizaciones de
+origen informal, y los fraccionamientos por loteo formal de nivel
+socioeconómico (NSE) (7) Alto, (8) Medio y (9) Bajo.\footnote{La clasificación propuesta por Marcos recupera
+  modificando la clasificación desarrollada anteriormente para la CABA
+  (\protect\hyperlink{ref-Marcos2015}{\textbf{Marcos2015?}}) la cual, a su vez, está basada en las propuestas para
+  ciudades de México desarrollada en los trabajos de (\protect\hyperlink{ref-Connolly2005}{\textbf{Connolly2005?}}) y
+  (\protect\hyperlink{ref-Duhau2008}{\textbf{Duhau2008?}}) . Es importante tener en cuenta a la hora de utilizar
+  esta clasificación que, debido a la dificultad metodológica que
+  supone adaptar la cartografía censal disponible con los límites
+  `reales' de algunos de estos entornos sociales, algunos de estos
+  entornos representan en la práctica realidades mixtas. Esto se
+  observa, en particular, en los entornos de origen informal, de
+  vivienda social y de urbanizaciones cerradas, siendo este último el
+  entorno más afectado por este problema (ver el trabajo de \protect\hyperlink{ref-Marcos2021}{\textbf{Marcos2021?}}, para una descripción detallada). En este
+  sentido, es necesario tomar con cierta cautela los resultados sobre
+  estos entornos, teniendo en cuenta que muchas veces pueden esconder
+  situaciones mixtas.}
+
+\hypertarget{descripciuxf3n-de-las-fuentes-de-datos-utilizadas}{%
+\section{Descripción de las fuentes de datos utilizadas}\label{descripciuxf3n-de-las-fuentes-de-datos-utilizadas}}
+
+En concreto, utilizaremos como fuente primaria la Encuesta de Movilidad
+Espacial, desarrollada por el Área de Estudios Urbanos (IIGG). Por su
+parte, como fuentes secundarias se utilizarán bases estadísticas (Censo,
+EPH y ENMODO), pero también información proveniente de registros estales
+(Relevamiento Anual o SUBE) y de registros de empresas privadas (antenas
+de celular).
+
+En este trabajo utilizamos los datos de la \emph{Encuesta de Movilidad
+Domiciliaria} realizada en 2018 (ENMODO2018). Esta encuesta permite
+conocer los movilidades cotidianas urbanas de la población del AMGBA. Si
+bien los datos de movilidad están disponibles a nivel de radio censal
+(aproximadamente 300 viviendas), en este trabajo hemos utilizado las
+fracciones censales (aproximadamente 5.000 viviendas) como escala de
+análisis, con el fin de minimizar el efecto que pudiera tener la
+selección muestral. Más allá de esto, hemos conservado la clasificación
+de `entorno urbano' como variable asociada a los lugares urbano de
+residencia y de destino (que fue determinado a nivel de radio censal).
+En el análisis retuvimos la totalidad de los viajes origen-destino
+realizados por los encuestados (a) dentro del AMGBA (b) que no incluyen
+como destino la propia vivienda.\footnote{La ENMODO 2018 relevó las prácticas de movilidad urbana
+  en una muestra de 16.667 hogares y 42.971 personas residentes en el
+  AMGBA. Los datos y especificaciones técnicas están disponibles en BA
+  Data
+  (\url{https://data.buenosaires.gob.ar/dataset/encuesta-movilidad-domiciliaria}).
+  Recuperando
+  las definiciones de la ENMODO2018, un `viaje' es un desplazamiento
+  que tiene un motivo, un origen, un destino. A su vez, un viaje puede
+  componerse de diferentes `etapas', entendidas estas últimas como el
+  conjunto de trayectos realizados en una modalidad o medio de
+  transporte específico.} Como resultado en los
+análisis se utilizan un total de
+
+viajes (sobre un total de
+
+viajes relevados en la
+ENMODO2018).
+
+\hypertarget{estructura-de-la-tesis}{%
+\section{Estructura de la tesis}\label{estructura-de-la-tesis}}
+
+Teniendo en cuenta los objetivos planteados, el presente trabajo de
+tesis se estructura de la siguiente manera. En el capítulo siguiente se
+presenta un recorrido por la literatura\ldots{} Luego\ldots{} presentamos el
+análisis. Por último, esto.
+
+\hypertarget{part-aspectos-generales}{%
+\part{Aspectos generales}\label{part-aspectos-generales}}
+
+\hypertarget{lit}{%
+\chapter{La segregación urbana como un problema multi-dominio}\label{lit}}
+
+\hypertarget{segregaciuxf3n-como-forma-de-desigualdad-social}{%
+\section{Segregación como forma de desigualdad social}\label{segregaciuxf3n-como-forma-de-desigualdad-social}}
+
+La \emph{segregación social} es un fenómeno mediante el cual las personas
+tienden a compartir espacios (físicos y virtuales) de sociabilidad e
+intercambio con personas de grupos sociales similares. Los estudios
+sobre estratificación social han señalado desde temprano que las
+prácticas de segregación cumplen un rol central en la reproducción de
+las estructuras sociales
+(\protect\hyperlink{ref-Duncan1955a}{\textbf{Duncan1955a?}}).
+En este sentido, la segregación condiciona la interacción entre los
+grupos sociales, facilitando al \emph{cierre social} y, por lo tanto,
+actuando como un mecanismo de \emph{estratificación social} (\protect\hyperlink{ref-Dalle2016}{\textbf{Dalle2016?}}; \protect\hyperlink{ref-Breen2005}{\textbf{Breen2005?}}). Desde esta perspectiva, la segregación puede ser entendida
+como la \emph{dimensión espacial} de la desigualdad social, la polarización y
+la exclusión (\protect\hyperlink{ref-Musterd1998}{\textbf{Musterd1998?}}; \protect\hyperlink{ref-Wang2012}{\textbf{Wang2012?}}). Es por ello que el estudio de la
+segregación recupera el problema de la estratificación social poniendo
+el foco en los fenómenos espaciales, es decir, analizando cómo el
+espacio se configura como un factor específico e independiente de
+estratificación (junto a otros aspectos ``clásicos'' como la inserción en
+las relaciones laborales).
+
+La \emph{estratificación social} puede definirse como un complejo
+institucionalizado que genera y ordena la \emph{desigualdad} en una sociedad.
+Siguiendo a (\protect\hyperlink{ref-Grusky1994}{\textbf{Grusky1994?}}), el estudio de la estratificación social supone
+el análisis de tres grandes procesos sociales, los cuales (a) definen un
+conjunto de recursos como valiosos; (b) establecen reglas para su
+distribución y asignación a cada una de las posiciones dentro de la
+división del trabajo; y (c) permiten la movilidad entre estas
+posiciones, dando de este modo acceso a los recursos o bienes
+socialmente valorados. En el marco de las sociedades contemporáneas
+capitalistas, la inserción dentro del mercado laboral es un aspecto
+crucial para entender los mecanismos de ``asignación'' (\emph{allocation})
+dentro de la estructura de clase y, por lo tanto, el proceso de
+estratificación social.
+
+En línea con esto, las diferentes vertientes del enfoque marxista
+enfatizan que la desigualdad entre los grupos sociales (es decir, la
+`estructura de clase') es el resultado de cómo los grupos se ubican en
+las \emph{relaciones de producción}, dentro de las cuales ocupan un rol
+central las relaciones de \emph{explotación y dominación} (\protect\hyperlink{ref-Wright2005a}{\textbf{Wright2005a?}}; \protect\hyperlink{ref-Wright2010}{\textbf{Wright2010?}}; \protect\hyperlink{ref-Dalle2016}{\textbf{Dalle2016?}}).
+La corriente
+weberiana y neo-weberiana también destaca la centralidad de los aspectos
+económicos para entender la estratificación social, en tanto sostiene
+que las \emph{posiciones de clase} (dentro del mercado) generan distintas
+\emph{chances de vida} y, como consecuencia, distintos \emph{estilos de vida}. En
+este contexto, los grupos privilegiados promuevan y refuerzan un \emph{cierre
+social excluyente} con el objetivo de evitar que otros accedan a estas
+mismas oportunidades, dando como resultado la formación de las \emph{clases
+sociales}, entendidas como agrupamientos de posiciones de clases entre
+las cuales las interacciones son más probables.\footnote{`Clase social se llama a la totalidad de aquellas
+  situaciones de clase entre las cuales un intercambio \(\alpha\))
+  personal; \(\beta\)) en la sucesión de las generaciones; es fácil y
+  suele ocurrir de un modo típico' (\protect\hyperlink{ref-Weber1922}{\textbf{Weber1922?}}).} La
+perspectiva weberiana señala que, más allá de la inserción laboral, la
+clase social se configura como resultado de una probabilidad selectiva
+de intercambios entre los diferentes grupos económicos, basados en gran
+medida en el \emph{status} y los estilos de vida de estos grupos (\protect\hyperlink{ref-Dalle2016}{\textbf{Dalle2016?}}; \protect\hyperlink{ref-Breen2005}{\textbf{Breen2005?}}). La propuesta de Bourdieu recupera la importancia dada a los
+estilos de vida (manifiestas a través de prácticas y experiencias
+encarnadas en el \emph{habitus}), en tanto estos son un elemento crucial en
+la configuración de la estructura de clases, ya que instauran
+simbólicamente la \emph{distinción} y diferenciación entre clases sociales. A
+su vez, señala que el \emph{espacio social}, como estructura objetiva de
+posiciones sociales, se configura como el resultado de la interacción
+multidimensional entre diferentes formas de \emph{capitales}, cada una de las
+cuales tiene su importancia local en \emph{campos} específicos. En este
+sentido, Bourdieu recupera parcialmente la perspectiva weberiana,
+profundizando la importancia de los procesos simbólicos en la distinción
+entre clases y el rol de los `otros capitales' (distintos del
+económico/laboral) en los procesos de estratificación social
+(\protect\hyperlink{ref-Bourdieu1979}{\textbf{Bourdieu1979?}}; \protect\hyperlink{ref-Bourdieu2014a}{\textbf{Bourdieu2014a?}}; \protect\hyperlink{ref-Weininger2005}{\textbf{Weininger2005?}}; \protect\hyperlink{ref-Gutierrez2011}{\textbf{Gutierrez2011?}}; \protect\hyperlink{ref-Baranger2012}{\textbf{Baranger2012?}}).
+
+En sintonía con la propuesta de considerar nuevas dimensiones en el
+análisis de estratificación social, en las últimas décadas los estudios
+sobre el tema han resaltado el rol de la \emph{dimensión espaciales} en la
+conformación de las desigualdades (\protect\hyperlink{ref-Hout2006b}{\textbf{Hout2006b?}}; \protect\hyperlink{ref-Solis2010}{\textbf{Solis2010?}}), en cuyo
+contexto toma centralidad el concepto de segregación. La \emph{segregación}
+refiere al fenómeno por el cual los grupos sociales hacen un \emph{uso
+selectivo del espacio}, que permite a las personas de los diferentes
+grupos sociales maximizar la probabilidad de sociabilización con `otros
+similares'. El concepto de segregación permite analizar en qué medida
+las personas comparten espacios con otras personas similares, sean estos
+espacios barriales (segregación residencial) o de otro tipo (segregación
+escolar, segregación laboral, segregación de relaciones/homofilia,
+etc.). Desde esta perspectiva, el concepto de segregación dialoga con la
+concepción weberiana de clase social: por un lado la \emph{clase social}
+refiere a la conformación de grupos entre los que los intercambios son
+más probables; por otro lado, la \emph{segregación} analiza en qué medida el
+espacio es utilizado de forma selectiva por los grupos sociales y, por
+lo tanto, facilita (o no) los intercambios potenciales con personas de
+otros grupos. Retomando este enfoque, podemos definir la segregación
+como la \emph{dimensión espacial} de la desigualdad social, la polarización y
+la exclusión (\protect\hyperlink{ref-Musterd1998}{\textbf{Musterd1998?}}; \protect\hyperlink{ref-Wang2012}{\textbf{Wang2012?}}).\footnote{En relación con esta definición es interesante
+  señalar que esto no implica un ``reflejo'' de las estructuras sociales
+  en los fenómenos de la segregación. Por el contrario, consideramos
+  que los fenómenos espaciales (y la segregación en particular)
+  constituyen una dimensión activa, que actúa con una autonomía
+  relativa aportando su propia particularidad al proceso de
+  estratificación social. Como señala (\protect\hyperlink{ref-Reygadas2018}{\textbf{Reygadas2018?}}), los territorios
+  no son sólo escenarios en los que se `expresa' la desigualdad, sino
+  ``actores no humanos'' en la producción de estas desigualdades. En
+  relación con esto, las dinámicas de fragmentación urbana tienen un
+  rol activo en la generación de las desigualdades y en las
+  oportunidades de sus habitantes, configurando `contextos urbanos'
+  heterogéneos y desiguales que limitan el acceso a los bienes y
+  servicios de la ciudad, generando y potenciando otras desigualdades
+  (\protect\hyperlink{ref-DiVirgilio2023}{\textbf{DiVirgilio2023?}}).}
+
+La \emph{segregación} refiere al fenómeno por el cual los grupos sociales
+hacen un \emph{uso selectivo del espacio}, lo cual le permite a las personas
+de los diferentes grupos sociales maximizar la probabilidad de
+sociabilización con `otros similares' reforzando el aislamiento (tanto
+positivo como negativo). El análisis de la segregación busca entender en
+qué medida las personas comparten espacios con otras personas similares
+y, de esta manera, se ve facilitado (o no) el intercambio potencial con
+personas de otros grupos. Desde esta perspectiva, el concepto de
+segregación dialoga con la concepción weberiana de \emph{clase social},
+entendida como aquellos grupos sociales entre los que los intercambios
+son más probables (\protect\hyperlink{ref-Dalle2016}{\textbf{Dalle2016?}}; \protect\hyperlink{ref-Breen2005}{\textbf{Breen2005?}}).\footnote{Tomando la definición original de (\protect\hyperlink{ref-Weber1922}{\textbf{Weber1922?}}): `\emph{Clase social} se llama a la totalidad de aquellas
+  situaciones de clase entre las cuales un intercambio \(\alpha\))
+  personal; \(\beta\)) en la sucesión de las generaciones; es fácil y
+  suele ocurrir de un modo típico'.} En las
+sociedades desiguales, las personas tienden (o intentan) vincularse con
+personas que consideran similares y pertenecientes al mismo grupo
+social. En este sentido, la segregación emerge como una manifestación
+espacial de este fenómeno de vinculación selectiva que da lugar a la
+construcción de las clases sociales. Es por ello que podemos entender a
+la segregación como la \emph{dimensión espacial} de la desigualdad social, la
+polarización y la exclusión (\protect\hyperlink{ref-Musterd1998}{\textbf{Musterd1998?}}; \protect\hyperlink{ref-Wang2012}{\textbf{Wang2012?}}).\footnote{En relación con esta definición es interesante
+  señalar que esto no implica un `reflejo' de las estructuras sociales
+  en los fenómenos de la segregación. Por el contrario, consideramos
+  que los fenómenos espaciales (y la segregación en particular)
+  constituyen una dimensión activa, que actúa con una autonomía
+  relativa aportando su propia particularidad al proceso de
+  estratificación social. Como señala (\protect\hyperlink{ref-Reygadas2018}{\textbf{Reygadas2018?}}), los territorios
+  no son sólo escenarios en los que se `expresa' la desigualdad, sino
+  `actores no humanos' en la producción de estas desigualdades. En
+  relación con esto, las dinámicas de fragmentación urbana tienen un
+  rol activo en la generación de las desigualdades y en las
+  oportunidades de sus habitantes, configurando `contextos urbanos'
+  heterogéneos y desiguales que limitan el acceso a los bienes y
+  servicios de la ciudad, generando y potenciando otras desigualdades
+  (\protect\hyperlink{ref-DiVirgilio2023}{\textbf{DiVirgilio2023?}}).}
+
+\hypertarget{la-segregaciuxf3n-como-forma-de-deprivation}{%
+\subsection{La segregación como forma de `deprivation'}\label{la-segregaciuxf3n-como-forma-de-deprivation}}
+
+Concepto de deprivation.
+
+\hypertarget{el-estudio-de-la-segregaciuxf3n-desde-la-segregaciuxf3n-residencial-a-la-segregaciuxf3n-multi-dominio}{%
+\section{El estudio de la segregación: Desde la segregación residencial a la segregación multi-dominio}\label{el-estudio-de-la-segregaciuxf3n-desde-la-segregaciuxf3n-residencial-a-la-segregaciuxf3n-multi-dominio}}
+
+El estudio de la segregación residencial ha sido un tópico recurrente y
+fundante de la sociología urbana desde la segunda postguerra (\protect\hyperlink{ref-Bell1954}{\textbf{Bell1954?}}; \protect\hyperlink{ref-Duncan1955a}{\textbf{Duncan1955a?}}; \protect\hyperlink{ref-Duncan1955b}{\textbf{Duncan1955b?}}; \protect\hyperlink{ref-Simpson1949}{\textbf{Simpson1949?}}). Estos trabajos estaban
+centralmente interesados en entender cómo los grupos étnicos/raciales
+compartían diferentes espacios residenciales. El éxito de estos
+trabajos, estimuló la recuperación del concepto de segregación para
+estudiar la diversidad en escuelas (\protect\hyperlink{ref-Allen2007}{\textbf{Allen2007?}}), ámbitos laborales
+(\protect\hyperlink{ref-Hutchens2009}{\textbf{Hutchens2009?}}), espacios de compras y recreación (\protect\hyperlink{ref-Wang2012}{\textbf{Wang2012?}}),
+movilidades cotidianas (\protect\hyperlink{ref-Brikman2020}{\textbf{Brikman2020?}}) y el transporte (\protect\hyperlink{ref-Wilson2011}{\textbf{Wilson2011?}}),
+entre otros. Esta ampliación de los dominios de análisis fue acompañada
+por la comparación de otros aspectos que diferencian a los grupos, como
+el género y el nivel socio-económico.
+
+Si bien tradicionalmente el estudio de la segregación se focalizó en el
+ámbito residencial, el fenómeno por el cual los individuos tienden a
+juntarse con personas similares excede este dominio. En esta línea,
+desde hace varias décadas, algunos trabajos comenzaron a indagar el
+fenómeno de la segregación en otros dominios, como el laboral, el
+educativo, los espacios de actividad, los espacios de ocio o las redes
+sociales, entre otros. En particular, en la medida que se incorpora el
+efecto de las \emph{movilidades cotidianas} es posible identificar `espacios
+de actividad' (\protect\hyperlink{ref-Horton1971}{\textbf{Horton1971?}}) en los cuales las personas desarrollan su
+vida diaria. Estos espacios de actividad les permite a los hogares hacer
+un uso diferenciado del espacio y los recursos urbanos, controlando las
+posibilidades de encuentros con otros grupos sociales (\protect\hyperlink{ref-Wong2011}{\textbf{Wong2011?}}). Como
+resultado de estos desarrollos, recientemente se planteó la necesidad de
+abordar el problema de la segregación desde una perspectiva más amplia,
+que articule los diferentes dominios (\protect\hyperlink{ref-Musterd2020}{\textbf{Musterd2020?}}; \protect\hyperlink{ref-Boterman2016}{\textbf{Boterman2016?}}; \protect\hyperlink{ref-VanHam2016}{\textbf{VanHam2016?}}), niveles (\protect\hyperlink{ref-VanHam2018}{\textbf{VanHam2018?}}) y dimensiones (\protect\hyperlink{ref-Quillian2012}{\textbf{Quillian2012?}}; \protect\hyperlink{ref-Boterman2021}{\textbf{Boterman2021?}}) de la vida social.
+
+Aunque originalmente los trabajos sobre segregación se focalizaron en la
+segregación residencial (\protect\hyperlink{ref-Tammaru2021}{\textbf{Tammaru2021?}}; \protect\hyperlink{ref-Musterd2020}{\textbf{Musterd2020?}}; \protect\hyperlink{ref-Massey1988}{\textbf{Massey1988?}}; \protect\hyperlink{ref-Duncan1955b}{\textbf{Duncan1955b?}}), en las décadas siguientes el concepto de segregación fue
+incorporado para analizar otros \emph{dominios} de la vida social, como el
+laboral (\protect\hyperlink{ref-Karmel1988}{\textbf{Karmel1988?}}; \protect\hyperlink{ref-Ferguson2018a}{\textbf{Ferguson2018a?}}), el escolar (\protect\hyperlink{ref-Reardon2000a}{\textbf{Reardon2000a?}}; \protect\hyperlink{ref-Oosterbeek2021}{\textbf{Oosterbeek2021?}}; \protect\hyperlink{ref-Thrupp2002}{\textbf{Thrupp2002?}}), los espacios de actividad (\protect\hyperlink{ref-Schnell2001a}{\textbf{Schnell2001a?}}; \protect\hyperlink{ref-Candipan2021}{\textbf{Candipan2021?}}; \protect\hyperlink{ref-Silm2021}{\textbf{Silm2021?}}), el transporte (\protect\hyperlink{ref-Abbasi2021}{\textbf{Abbasi2021?}}; \protect\hyperlink{ref-Wilson2011}{\textbf{Wilson2011?}}), las
+relaciones matrimoniales (\protect\hyperlink{ref-Solis2007}{\textbf{Solis2007?}}; \protect\hyperlink{ref-Rodriguez2016e}{\textbf{Rodriguez2016e?}}; \protect\hyperlink{ref-Solis2010}{\textbf{Solis2010?}}; \protect\hyperlink{ref-Bouchet-Valat2018}{\textbf{Bouchet-Valat2018?}}), las relaciones interpersonales (\protect\hyperlink{ref-Bojanowski2014}{\textbf{Bojanowski2014?}}; \protect\hyperlink{ref-Huang2022}{\textbf{Huang2022?}}), las redes sociales virtuales (\protect\hyperlink{ref-Hofstra2017}{\textbf{Hofstra2017?}}; \protect\hyperlink{ref-Morales2019}{\textbf{Morales2019?}}; \protect\hyperlink{ref-Dorman2020}{\textbf{Dorman2020?}}), los lugares de esparcimiento (\protect\hyperlink{ref-Tomasiello2022}{\textbf{Tomasiello2022?}}), entre
+otros. En este contexto, durante la última década, algunos autores
+plantearon la necesidad de abordar esta diversidad desde un marco
+conceptual integrado, proponiendo un enfoque multi-dominio
+{[}\emph{multi-domain}{]} de la segregación (\protect\hyperlink{ref-Boterman2016}{\textbf{Boterman2016?}}; \protect\hyperlink{ref-VanHam2016}{\textbf{VanHam2016?}}). La
+interdependencia entre dominios (\protect\hyperlink{ref-Schnell2001a}{\textbf{Schnell2001a?}}; \protect\hyperlink{ref-Atkinson2004}{\textbf{Atkinson2004?}}; \protect\hyperlink{ref-Wang2012}{\textbf{Wang2012?}}) ha llevado a que algunos autores planteen la existencia de
+`círculos viciosos' (\protect\hyperlink{ref-VanHam2018}{\textbf{VanHam2018?}} ) y una `reproducción multi-dominio' de
+la segregación (\protect\hyperlink{ref-Boterman2016}{\textbf{Boterman2016?}}). Sin embargo, algunos estudios muestran
+que no necesariamente todos los dominios de la segregación actúan en la
+misma dirección, de manera que cada uno de estos dominios aporta
+diferentes elementos en el proceso de diferenciación espacial
+(\protect\hyperlink{ref-Boterman2016}{\textbf{Boterman2016?}} ; \protect\hyperlink{ref-Boterman2019a}{\textbf{Boterman2019a?}}; \protect\hyperlink{ref-Serrati2023}{\textbf{Serrati2023?}}). Hasta el momento es poco
+explorada la forma en que los diferentes dominios se articulan, dando
+lugar al fenómeno de la segregación urbana como un todo.
+
+En resumen, la segregación urbana es un fenómeno complejo en el que se
+articulan diferentes dominios.\footnote{Relacionado con este enfoque multi-dominio de la
+  segregación, algunos autores han resaltado que en el fenómeno de la
+  segregación confluyen diferentes \emph{dimensiones} -étnica, migratoria,
+  clase, etaria, género, etc.-, las cuales tienden a superponerse y
+  reforzarse (\protect\hyperlink{ref-Boterman2021}{\textbf{Boterman2021?}}; \protect\hyperlink{ref-Musterd2020}{\textbf{Musterd2020?}}; \protect\hyperlink{ref-Boterman2020a}{\textbf{Boterman2020a?}}). A su vez,
+  la segregación se desarrolla en diferentes \emph{niveles}, lo que ha
+  permitido incorporar al análisis individual y dentro de los hogares,
+  y consecuentemente la dimensión longitudinal de la segregación
+  dentro de los cursos de vida y de la transmisión intergeneracional
+  (\protect\hyperlink{ref-Tammaru2021}{\textbf{Tammaru2021?}}; \protect\hyperlink{ref-VanHam2018}{\textbf{VanHam2018?}}). En este sentido, una caracterización
+  más amplia de la segregación social nos permite caracterizarla como
+  un proceso complejo que se desarrolla articulando diferentes
+  \emph{dimensiones} (\protect\hyperlink{ref-Quillian2012}{\textbf{Quillian2012?}}; \protect\hyperlink{ref-Boterman2021}{\textbf{Boterman2021?}}), dominios
+  (\protect\hyperlink{ref-Boterman2016}{\textbf{Boterman2016?}}; \protect\hyperlink{ref-VanHam2016}{\textbf{VanHam2016?}}) y niveles (\protect\hyperlink{ref-VanHam2018}{\textbf{VanHam2018?}}).} Es por ello que un
+aspecto central de estos estudios es analizar cómo se articulan estos
+dominios entre sí, generando círculos viciosos o reforzando aspectos
+complementarios del fenómeno general. A su vez, el enfoque de la
+segregación multi-dominio es una perspectiva interesante para pensar la
+dimensión espacial de la estratificación social, fundamentalmente en
+relación con la concepción weberiana de ``clase social'' que describimos
+anteriormente.
+
+En este contexto, durante la última década, algunos autores plantearon
+la necesidad de abordar esta diversidad de dominios desde un marco
+conceptual integrado, proponiendo para ello un enfoque multi-dominio
+{[}\emph{multi-domain}{]} de la segregación (\protect\hyperlink{ref-Boterman2016}{\textbf{Boterman2016?}}; \protect\hyperlink{ref-VanHam2016}{\textbf{VanHam2016?}}).\footnote{Si bien no es posible hacer un desarrollo extensivo
+  en el presente trabajo, el enfoque multi-dominio de la segregación
+  encuentra una forma natural de expresión y representación en los
+  grafos multicapa (\protect\hyperlink{ref-Aleta2019}{\textbf{Aleta2019?}}). Las redes multicapa {[}multilayer{]} son
+  una generalización de las redes simples, donde además de un conjunto
+  de nodos y vínculos, se considera un conjunto de capas
+  (\(\alpha;\beta;...\)) , de manera que cada nodo \(u\) pertenece a (al
+  menos) una capa \(\alpha\). En las redes multicapa, un nodo \(u_i\)
+  puede tener un vínculo \(E\) con cualquier otro nodo \(u_j\), el cual
+  puede pertenecer a la misma capa (\(\alpha\)) o a otra capa (\(\beta\)).
+  En particular, un subtipo especial de redes multicapa son las redes
+  del tipo \emph{multiplex} (\protect\hyperlink{ref-Magnani2021}{\textbf{Magnani2021?}}; \protect\hyperlink{ref-Ostoic2020}{\textbf{Ostoic2020?}}), en donde para cada
+  capa existe el mismo conjunto de nodos y los vínculos entre los
+  nodos pueden ocurrir dentro de la misma capa o entre diferentes
+  capas.
+
+  Las redes multiplex resultan una herramienta poderosa y poco
+  explorada aún para representar la segregación multidominio. Mediante
+  estas redes multicapas cada dominio puede ser representado como una
+  capa. Dentro de cada capa las personas estarían representadas como
+  nodos y existiría un enlace intra-capa entre aquellos nodos
+  (personas) que compartan la pertenencia a un mismo `espacio'
+  (escolar, residencial, laboral, etc.). Esta forma de representar la
+  segregación multidominio permitiría abordar cómo se articulan y
+  replica la segregación en los diferentes dominios (capas). Más allá
+  de la potencialidad de este enfoque, es un desafío que no puede
+  omitirse la dificultad que implica obtener datos a nivel individual
+  que permitirían este tipo de análisis.} Hasta el momento es poco explorada la
+forma en que los diferentes dominios se articulan, dando lugar al
+fenómeno de la segregación urbana como un todo. La identificación de
+cierta interdependencia y realimentación entre los dominios
+(\protect\hyperlink{ref-Schnell2001a}{\textbf{Schnell2001a?}}; \protect\hyperlink{ref-Atkinson2004}{\textbf{Atkinson2004?}}; \protect\hyperlink{ref-Wang2012}{\textbf{Wang2012?}}) ha llevado a que algunos
+autores planteen la existencia de `círculos viciosos' (\protect\hyperlink{ref-VanHam2018}{\textbf{VanHam2018?}}) y a
+la existencia de una `reproducción multi-dominio' de la segregación
+(\protect\hyperlink{ref-Boterman2016}{\textbf{Boterman2016?}}). Sin embargo, otros estudios muestran que no
+necesariamente todos los dominios de la segregación actúan en la misma
+dirección, de manera que cada uno de estos dominios puede aportar
+diferentes elementos en el proceso de diferenciación espacial
+(\protect\hyperlink{ref-Boterman2016}{\textbf{Boterman2016?}} ; \protect\hyperlink{ref-Boterman2019a}{\textbf{Boterman2019a?}}; \protect\hyperlink{ref-Serrati2023}{\textbf{Serrati2023?}}).
+
+En este contexto, la segregación urbana emerge como un fenómeno complejo
+que se configura articuladamente en diferentes dominios de la vida
+social (\protect\hyperlink{ref-DiVirgilio2014d}{\textbf{DiVirgilio2014d?}}) en los que se desenvuelve el espacio de vida
+de los individuos (\protect\hyperlink{ref-Courgeau1988}{\textbf{Courgeau1988?}}). En base a esto, algunos autores
+proponen pensar la ``reproducción multi-dominio de la segregación
+urbana'', analizando la acción conjunta y superpuesta de los distintos
+dominios de la vida social (\protect\hyperlink{ref-Boterman2016}{\textbf{Boterman2016?}}; \protect\hyperlink{ref-VanHam2018}{\textbf{VanHam2018?}}; \protect\hyperlink{ref-VanHam2016}{\textbf{VanHam2016?}}). En
+este sentido, estos trabajos llevan a entender que la segregación
+residencial es sólo un aspecto de la segregación urbana que es necesario
+captar (\protect\hyperlink{ref-Wang2012}{\textbf{Wang2012?}}).
+
+\hypertarget{la-mirada-en-la-segregaciuxf3n-residencial}{%
+\subsection{La mirada en la segregación residencial}\label{la-mirada-en-la-segregaciuxf3n-residencial}}
+
+El enfoque tradicional, centrado en el lugar de residencia
+
+El espacio de residencia es un eje articulador de las dinámicas de
+actividad cotidianas. En este contexto, algunos autores identifican un
+capital `locacional' (\protect\hyperlink{ref-Abramo2003}{\textbf{Abramo2003?}}) o `residencial' (\protect\hyperlink{ref-Levy1994}{\textbf{Levy1994?}}; \protect\hyperlink{ref-Cailly2007}{\textbf{Cailly2007?}}), que facilita a los hogares el acceso a recursos externos e
+internos de los barrios. La localización residencial tiene efectos sobre
+las posibilidades de apropiación del espacio urbano (\protect\hyperlink{ref-DiVirgilio2007}{\textbf{DiVirgilio2007?}}; \protect\hyperlink{ref-Cosacov2018a}{\textbf{Cosacov2018a?}}; \protect\hyperlink{ref-DiVirgilio2017g}{\textbf{DiVirgilio2017g?}}), lo cual permite generar un beneficio
+indirecto (\protect\hyperlink{ref-Harvey1977}{\textbf{Harvey1977?}}) o una ganancia de localización (\protect\hyperlink{ref-Bourdieu2000}{\textbf{Bourdieu2000?}}).
+En contraste, algunas localizaciones residenciales no-favorecidas
+construyen estigmas o marcas negativas sobre sus habitantes, lo cual
+restringe las posibilidades de acceso efectivo a otros recursos urbanos
+(\protect\hyperlink{ref-PrevotSchapira2001}{\textbf{PrevotSchapira2001?}}; \protect\hyperlink{ref-Soldano2008a}{\textbf{Soldano2008a?}}). Como resultado, los trabajos sobre
+segregación se focalizaron en un principio dentro del ámbito residencial
+(\protect\hyperlink{ref-Tammaru2021}{\textbf{Tammaru2021?}}; \protect\hyperlink{ref-Musterd2020}{\textbf{Musterd2020?}}; \protect\hyperlink{ref-Massey1988}{\textbf{Massey1988?}}; \protect\hyperlink{ref-Duncan1955}{\textbf{Duncan1955?}}), analizando la
+diversidad en agregados geográficos administrativos predefinidos.
+
+\hypertarget{las-movilidades-cotidianas-los-espacios-de-vida-y-el-problema-de-la-segregaciuxf3n-urbana}{%
+\subsection{Las movilidades cotidianas, los espacios de vida y el problema de la segregación urbana}\label{las-movilidades-cotidianas-los-espacios-de-vida-y-el-problema-de-la-segregaciuxf3n-urbana}}
+
+Desarrollo de diferentes enfoques sobre espacios de actividad.
+
+Más allá de la ubicación residencial, el análisis de la segregación
+incorporó otros \emph{dominios} de la vida social como el laboral
+(\protect\hyperlink{ref-Karmel1988}{\textbf{Karmel1988?}}; \protect\hyperlink{ref-Ferguson2018a}{\textbf{Ferguson2018a?}}), el escolar (\protect\hyperlink{ref-Reardon2000a}{\textbf{Reardon2000a?}}; \protect\hyperlink{ref-Oosterbeek2021}{\textbf{Oosterbeek2021?}}; \protect\hyperlink{ref-Thrupp2002}{\textbf{Thrupp2002?}}), los espacios de actividad (\protect\hyperlink{ref-Schnell2001a}{\textbf{Schnell2001a?}}; \protect\hyperlink{ref-Candipan2021}{\textbf{Candipan2021?}}; \protect\hyperlink{ref-Silm2021}{\textbf{Silm2021?}}; \protect\hyperlink{ref-Lu2023}{\textbf{Lu2023?}}), el transporte (\protect\hyperlink{ref-Abbasi2021}{\textbf{Abbasi2021?}}; \protect\hyperlink{ref-Wilson2011}{\textbf{Wilson2011?}}), las relaciones matrimoniales (\protect\hyperlink{ref-Solis2007}{\textbf{Solis2007?}}; \protect\hyperlink{ref-Rodriguez2016e}{\textbf{Rodriguez2016e?}}; \protect\hyperlink{ref-Solis2010}{\textbf{Solis2010?}}; \protect\hyperlink{ref-Bouchet-Valat2018}{\textbf{Bouchet-Valat2018?}}), las relaciones interpersonales
+(\protect\hyperlink{ref-Bojanowski2014}{\textbf{Bojanowski2014?}}; \protect\hyperlink{ref-Huang2022}{\textbf{Huang2022?}}; \protect\hyperlink{ref-Otero2022}{\textbf{Otero2022?}}), las redes sociales virtuales
+(\protect\hyperlink{ref-Hofstra2017}{\textbf{Hofstra2017?}}; \protect\hyperlink{ref-Morales2019}{\textbf{Morales2019?}}; \protect\hyperlink{ref-Dorman2020}{\textbf{Dorman2020?}}), los lugares de esparcimiento
+(\protect\hyperlink{ref-Tomasiello2022}{\textbf{Tomasiello2022?}}), entre otros. Si bien la ubicación residencial tiene
+una importancia central en la dinámica cotidiana, los hogares son
+capaces de generar estrategias de movilidad cotidiana para conectar
+diferentes espacios urbanos, configurando así `espacios de vida'
+(\protect\hyperlink{ref-Courgeau1988}{\textbf{Courgeau1988?}}) o `espacios de actividad' (\protect\hyperlink{ref-Horton1971}{\textbf{Horton1971?}}). La capacidad
+para articular diferentes espacios a partir de las movilidades diarias,
+permite a los hogares `habitar' el espacio urbano, apropiándose del
+mismo material y simbólicamente (\protect\hyperlink{ref-Cosacov2014}{\textbf{Cosacov2014?}}; \protect\hyperlink{ref-Duhau2008}{\textbf{Duhau2008?}}; \protect\hyperlink{ref-DiVirgilio2007}{\textbf{DiVirgilio2007?}}; \protect\hyperlink{ref-Segura2019}{\textbf{Segura2019?}}; \protect\hyperlink{ref-Brikman2021}{\textbf{Brikman2021?}}). Por ello la articulación de
+estos espacios de vida mediante las movilidades constituye un capital
+`espacial' o de `movilidad',\footnote{En esta línea (\protect\hyperlink{ref-Levy1994}{\textbf{Levy1994?}}) señala que es posible
+  distinguir un `capital de posición', relacionado con la inscripción
+  a ciertos lugares como la residencia o el lugar de trabajo y un
+  `capital de situación', vinculado al espacio que el individuo
+  apropia mediante sus movilidades. En conjunto estos capitales
+  componen el \emph{capital espacial}, entendido como el `conjunto de
+  recursos acumulados por un actor que le permite beneficiarse, según
+  su estrategia, del uso de la dimensión espacial de la sociedad'
+  (\protect\hyperlink{ref-Levy2003}{\textbf{Levy2003?}}). Por su parte, Kaufmann (\protect\hyperlink{ref-Flamm2006}{\textbf{Flamm2006?}}; \protect\hyperlink{ref-Kaufmann2004}{\textbf{Kaufmann2004?}})
+  propone el concepto de `motilidad', el cual entiende como una forma
+  específica de capital que permite tomar posesión del campo de
+  posibilidades de la movilidad en beneficio de los proyectos
+  personales. Retomando este último concepto, (\protect\hyperlink{ref-Kellerman2012}{\textbf{Kellerman2012?}}) y
+  (\protect\hyperlink{ref-Delaunay2013}{\textbf{Delaunay2013?}}) distinguen la movilidad practicada de la movilidad
+  potencial, en tanto el capital de movilidad no necesariamente
+  implica `ser móvil', sino una eficacia y una capacidad para realizar
+  selectivamente esta movilidad. Por último, (\protect\hyperlink{ref-Centner2008}{\textbf{Centner2008?}}) señala que
+  el capital espacial también supone una dimensión simbólica, la cual
+  tanto permite `dar sentido' al espacio, a partir de \emph{tomar} y
+  \emph{configurar} los usos del mismo.} que actúa como elemento
+estratificante en la medida que permite una apropiación y uso
+diferencial del espacio (\protect\hyperlink{ref-Rerat2018}{\textbf{Rerat2018?}}).
+
+En resumen, la segregación urbana es un fenómeno complejo en el que se
+intervienen diferentes dominios\footnote{Relacionado con este enfoque multi-dominio de la
+  segregación, algunos autores han resaltado que en el fenómeno de la
+  segregación confluyen diferentes \emph{dimensiones} -étnica, migratoria,
+  clase, etaria, género, etc.-, las cuales tienden a superponerse y
+  reforzarse (\protect\hyperlink{ref-Boterman2021}{\textbf{Boterman2021?}}; \protect\hyperlink{ref-Musterd2020}{\textbf{Musterd2020?}}; \protect\hyperlink{ref-Boterman2020a}{\textbf{Boterman2020a?}}). A su vez,
+  la segregación se desarrolla en diferentes \emph{niveles}, lo que ha
+  permitido incorporar diferentes escalas, a la vez que el análisis
+  individual y dentro de los hogares, integrando la dimensión
+  longitudinal como parte de los cursos de vida y la transmisión
+  intergeneracional (\protect\hyperlink{ref-Tammaru2021}{\textbf{Tammaru2021?}}; \protect\hyperlink{ref-VanHam2018}{\textbf{VanHam2018?}}). En este sentido, una
+  caracterización más amplia de la segregación social nos permite
+  caracterizarla como un proceso complejo que se desarrolla
+  articulando diferentes \emph{dimensiones} (\protect\hyperlink{ref-Quillian2012}{\textbf{Quillian2012?}}; \protect\hyperlink{ref-Boterman2021}{\textbf{Boterman2021?}}),
+  dominios (\protect\hyperlink{ref-Boterman2016}{\textbf{Boterman2016?}}; \protect\hyperlink{ref-VanHam2016}{\textbf{VanHam2016?}}) y niveles (\protect\hyperlink{ref-VanHam2018}{\textbf{VanHam2018?}}).} y donde ocupa un rol
+central la reflexión sobre cómo se articulan estos dominios entre sí.
+Retomando esten enfoque, nos interesa analizar en qué medida las
+prácticas de movilidad y el modo en que se configuran los espacios de
+actividad pueden incidir sobre la segregación socioeconómica que
+experimentan los hogares en su espacio residencial. En particular, desde
+una perspectiva multi-dominio de la segregación, nos interesa indagar
+cómo la segregación experimentada en los espacios de actividad refuerza
+(o no) la segregación en el ámbito residencial, constituyendo un círculo
+vicioso o, por el contrario, aportando a diferentes aspectos de la
+segregación urbana.
+
+\hypertarget{la-escuela-como-espacio-de-separaciuxf3n}{%
+\subsection{La escuela como espacio de separación}\label{la-escuela-como-espacio-de-separaciuxf3n}}
+
+\hypertarget{homogamia-como-forma-de-segregaciuxf3n}{%
+\subsection{Homogamia como forma de segregación}\label{homogamia-como-forma-de-segregaciuxf3n}}
+
+Enmarcados en una perspectiva multi-dominio de la segregación, en este
+trabajo abordaremos dos dominios específicos, a saber: la segregación
+residencial y la segregación conyugal (homogamia).
+Como señalamos anteriormente, la
+segregación residencial ha sido uno de los temas centrales en la
+tradición de los estudios urbanos de la sociología. En esta línea, uno
+de los trabajos pioneros escrito por (\protect\hyperlink{ref-Duncan1955a}{\textbf{Duncan1955a?}}) señala la estrecha
+relación que existe entre la ``distancia social'' y la ``distancia
+espacial'', por lo cual el grado de segregación residencial de un grupo
+migrante está inversamente relacionado con el nivel de asimilación de
+este grupo en los valores de la sociedad receptora. Posteriormente,
+diversos trabajos han reforzado la importancia de la segregación
+residencial para entender el acceso a los recursos y oportunidades
+urbanas (una revisión de la actualidad de esta temática puede
+consultarse en \protect\hyperlink{ref-DiVirgilio2014c}{\textbf{DiVirgilio2014c?}}; \protect\hyperlink{ref-Musterd2020a}{\textbf{Musterd2020a?}}; \protect\hyperlink{ref-VanHam2021}{\textbf{VanHam2021?}}).
+
+A su vez, diversos trabajos han puesto de manifiesto el rol fundamental
+que cumplen las reglas de conformación de parejas (\emph{connubium}) como
+prácticas de movilidad y estratificación social (\protect\hyperlink{ref-Dalle2016}{\textbf{Dalle2016?}}; \protect\hyperlink{ref-Bourdieu2014a}{\textbf{Bourdieu2014a?}}). Los distintos estudios han identificado que la fluidez
+o apertura de la estructura social se relaciona con el modo en que se
+generan los `emparejamientos selectivos'. La homogamia refuerza la
+heterogeneidad social entre las familias, lo cual favorece la
+transmisión desigual de recursos entre las generaciones
+(\protect\hyperlink{ref-Rodriguez2016c}{\textbf{Rodriguez2016c?}}; \protect\hyperlink{ref-Solis2007}{\textbf{Solis2007?}}; \protect\hyperlink{ref-Blossfeld2003}{\textbf{Blossfeld2003?}}). En este sentido, el
+efecto de la segregación residencial se ve reforzada cuando existen
+altos niveles de homogamia en los hogares, en tanto la homogeneidad al
+nivel de los hogares, puede contrarrestar la heterogeneidad a nivel del
+vecindario (\protect\hyperlink{ref-Tammaru2021}{\textbf{Tammaru2021?}}). Que ambos miembros de la pareja compartan el
+mismo `estatus' puede reforzar las ventajas / desventajas asociadas a
+estos grupos sociales y, en paralelo, bloquear el contacto con otros
+hogares diferentes socialmente, pero cercanos residencialmente.
+Retomando esta perspectiva, nuestro trabajo entiende a la segregación
+residencial y la segregación conyugal (homogamia) como dos `dominios'
+articulados en diferentes `niveles' (hogar-vecindario) del fenómeno de
+la segregación urbana.
+
+Algunos estudios han analizado la segregación residencial y la homogamia
+de forma conjunta. En esta línea, el trabajo pionero de (\protect\hyperlink{ref-Duncan1959}{\textbf{Duncan1959?}})
+sostenía que en espacios residenciales donde existe una elevada
+segregación, el grupo segregado tendría pocas chances de contacto con
+otros grupos sociales y, por lo tanto, el número de matrimonios con
+otros grupos serían bajos. En continuidad con esta hipótesis, Peach
+(\protect\hyperlink{ref-Peach1980}{\textbf{Peach1980?}}; \protect\hyperlink{ref-Peach1974}{\textbf{Peach1974?}}) señala que los matrimonios mixtos se
+correlacionan inversamente con el grado de segregación residencial que
+los separa, mientras que (\protect\hyperlink{ref-Morgan1981}{\textbf{Morgan1981?}}) sugiere que la segregación
+residencial tiene un efecto en la sobreselección de cónyuges de grupos
+similares. En este sentido, estos trabajos parecen reforzar la hipótesis
+según la cual el nivel de homogamia está correlacionado con el nivel de
+segregación residencial entre dichos grupos. Esto se debe a que los
+`mercados matrimoniales' se constituyen a partir de la interacción que
+los `candidatos' tienen en otros espacios sociales (como la escuela, el
+trabajo o el barrio), por lo cual la presencia de segregación en estos
+espacios puede ser un limitante en la conformación de parejas
+heterogámica (\protect\hyperlink{ref-Rodriguez2016c}{\textbf{Rodriguez2016c?}}). En sintonía con estos resultados, la
+mayor parte de los trabajos actuales identifican que la mayor exposición
+con personas de grupos distintos al propio aumenta las probabilidades de
+conformación de parejas mixtas (\protect\hyperlink{ref-Puur2022}{\textbf{Puur2022?}}; \protect\hyperlink{ref-Kalmijn2010}{\textbf{Kalmijn2010?}}).
+
+Retomando estos trabajos, nos interesa analizar en qué medida la
+segregación residencial y la segregación conyugal puede reforzarse
+mutuamente en el AMGBA. En particular, y desde una perspectiva
+multi-dominio de la segregación, nos interesa indagar como ambas formas
+de la segregación constituyen un círculo vicioso o, por el contrario,
+refuerzan diferentes aspectos de la segregación urbana.
+
+\hypertarget{los-estudios-de-segregaciuxf3n-en-la-y-argentina}{%
+\section{Los estudios de segregación en LA y Argentina}\label{los-estudios-de-segregaciuxf3n-en-la-y-argentina}}
+
+\textbf{\emph{La segregación en Latinoamérica y Argentina}}
+
+Los procesos de urbanización en América Latina dieron lugar a ciudades
+marcadas por la inequidad territorial (\protect\hyperlink{ref-Duhau2013a}{\textbf{Duhau2013a?}}). Esto se expresa a
+escala microterritorial en la existencia de contexto urbanos
+diferenciados por las características de su origen y las poblaciones que
+los habitan (\protect\hyperlink{ref-Connolly2005}{\textbf{Connolly2005?}}; \protect\hyperlink{ref-Duhau2008}{\textbf{Duhau2008?}}; \protect\hyperlink{ref-Marcos2015}{\textbf{Marcos2015?}}). A su vez, se
+configura un \emph{patrón de segregación de gran escala} (\protect\hyperlink{ref-Sabatini2006}{\textbf{Sabatini2006?}}),
+caracterizado principalmente por diferenciaciones socioeconómicas, antes
+que raciales (\protect\hyperlink{ref-Duhau2013a}{\textbf{Duhau2013a?}}; \protect\hyperlink{ref-Groisman2010}{\textbf{Groisman2010?}}; \protect\hyperlink{ref-Ward2012}{\textbf{Ward2012?}}). Ese patrón se
+caracteriza por niveles de segregación residencial moderados en las
+zonas de renta alta, que conviven con enclaves de exclusión vinculados a
+los mercados informales.
+
+En la región se destacan dos estrategias de abordaje de la segregación.
+Por un lado, trabajos centrados en análisis cuantitativos que buscan
+medir e identificar patrones de segregación, así como evaluar sus
+efectos {[}(\protect\hyperlink{ref-Flores2008}{\textbf{Flores2008?}}); (\protect\hyperlink{ref-Groisman2005}{\textbf{Groisman2005?}}); (\protect\hyperlink{ref-Groisman2006}{\textbf{Groisman2006?}}); (\protect\hyperlink{ref-Kaztman1999a}{\textbf{Kaztman1999a?}});
+(\protect\hyperlink{ref-Kaztman2001}{\textbf{Kaztman2001?}}); (\protect\hyperlink{ref-Linares2013}{\textbf{Linares2013?}}); (\protect\hyperlink{ref-Portes2005}{\textbf{Portes2005?}}); (\protect\hyperlink{ref-Rodriguez2004}{\textbf{Rodriguez2004?}}); (\protect\hyperlink{ref-Sabatini2001}{\textbf{Sabatini2001?}});
+(\protect\hyperlink{ref-Torres2001}{\textbf{Torres2001?}}); (\protect\hyperlink{ref-Torres2001a}{\textbf{Torres2001a?}}); (\protect\hyperlink{ref-Torres1999}{\textbf{Torres1999?}}); (\protect\hyperlink{ref-Zuccotti2008}{\textbf{Zuccotti2008?}}); entre otros{]}. Por
+otro lado, desde la perspectiva centrada en los actores que habitan
+entornos segregados (fundamentalmente de origen informal) indagan
+cualitativamente las formas de sociabilidad y las consecuencias
+subjetivas de la segregación {[}por ejemplo (\protect\hyperlink{ref-Carman2013}{\textbf{Carman2013?}}); (\protect\hyperlink{ref-Cravino2002}{\textbf{Cravino2002?}});
+(\protect\hyperlink{ref-Merklen2005}{\textbf{Merklen2005?}}); (\protect\hyperlink{ref-Segura2006}{\textbf{Segura2006?}}); (\protect\hyperlink{ref-Soldano2017}{\textbf{Soldano2017?}})). A su vez, desde abordajes
+mixtos, trabajos, como el de (\protect\hyperlink{ref-Brikman2020}{\textbf{Brikman2020?}}), se destaca la importancia que
+tienen las prácticas de movilidad en la configuración de la segregación
+urbana, en tanto permiten habitar y conectar la localización residencial
+con los beneficios urbanos (\protect\hyperlink{ref-Cosacov2014}{\textbf{Cosacov2014?}}; \protect\hyperlink{ref-DiVirgilio2007}{\textbf{DiVirgilio2007?}}).
+
+Enmarcado en el campo los estudios urbanos, este proyecto recupera el
+concepto de segregación multi-dominio, entendiendo que para entender la
+segregación urbana es necesario abordarla como un fenómeno complejo en
+el cual se articulan distintos ámbitos de la vida social, entre los
+cuales la residencia es un aspecto. Para ello se busca cubrir una
+vacancia en el campo local, respecto al estudio de la segregación desde
+un enfoque cuantitativo y multiescalar, sin dejar de abordar la
+complejidad (articulación de dominios) del fenómeno.
+
+En América Latina existen aún pocos trabajos que aborden la relación
+entre diferentes dominios de la segregación de forma cuantitativa. En el
+ámbito local el principal avance en esta dirección viene dado por
+algunos trabajos que indagan cómo la segregación residencial se
+retroalimenta con la segmentación del mercado laboral y educativo,
+potenciando el aislamiento de los `pobres urbanos' (\protect\hyperlink{ref-Kaztman2001}{\textbf{Kaztman2001?}}). A su
+vez, desde un enfoque predominantemente cualitativo, se ha indagado cómo
+la segregación residencial se relaciona con el aislamiento urbano en
+otros dominios (\protect\hyperlink{ref-Soldano2008}{\textbf{Soldano2008?}}; \protect\hyperlink{ref-Soldano2017}{\textbf{Soldano2017?}}; \protect\hyperlink{ref-Carman2013}{\textbf{Carman2013?}}; \protect\hyperlink{ref-DiVirgilio2014c}{\textbf{DiVirgilio2014c?}}). Más allá de estos esfuerzos, solamente el reciente
+trabajo de (\protect\hyperlink{ref-Carrascosa2023}{\textbf{Carrascosa2023?}}) aborda conjuntamente la segregación
+residencial y la homogamia desde un enfoque cuantitativo. Sin embargo,
+este trabajo analiza la distribución territorial de la homogamia en
+relación con las condiciones de vida (principalmente caracterizado por
+el porcentaje de NBI), sin hacer eje en el concepto de segregación.
+
+Teniendo en cuenta el objetivo de nuestro trabajo, a continuación,
+analizamos de forma separada la estructura de segregación residencial y
+de la homogamia en el AMGBA, para luego proponer el análisis conjunto de
+ambos fenómenos.
+
+\hypertarget{la-segregaciuxf3n-urbana-como-marco}{%
+\section{La segregación urbana como marco}\label{la-segregaciuxf3n-urbana-como-marco}}
+
+La incorporación de diferentes dominios, como trabajo, transporte,
+educación.
+
+\hypertarget{la-perspectiva-de-la-segregaciuxf3n-multi-dominio-y-multidimensiones.}{%
+\subsection{La perspectiva de la segregación multi-dominio y multidimensiones.}\label{la-perspectiva-de-la-segregaciuxf3n-multi-dominio-y-multidimensiones.}}
+
+La búsqueda de herramientas conceptuales para abordar la complejidad de
+la segregación urbana.
+
+La segregación urbana como marco para pensar segregación.
+
+\hypertarget{definiciuxf3n-propia-de-segregaciuxf3n}{%
+\subsection{Definición propia de segregación}\label{definiciuxf3n-propia-de-segregaciuxf3n}}
+
+\hypertarget{conclusiuxf3n-de-la-literature}{%
+\section{Conclusión de la literature}\label{conclusiuxf3n-de-la-literature}}
+
+Conclusión del apartado. Descripción de marco teórcio.
+
+\hypertarget{method}{%
+\chapter{Métodos}\label{method}}
+
+La profusa expansión del concepto de segregación a diferentes ámbitos
+estuvo ligada, en parte, al desarrollo de indicadores para medir este
+fenómeno. Como señala (\protect\hyperlink{ref-Elbers2021}{\textbf{Elbers2021?}}), cualquier análisis sobre la
+distribución de una variable categórica en diferentes unidades puede
+pensarse como un problema de segregación. Los índices de segregación
+permiten medir diferentes dimensiones del fenómeno (\protect\hyperlink{ref-Massey1988}{\textbf{Massey1988?}}), a la
+vez que abordar problemas en los que se presenten más de dos grupos
+(\protect\hyperlink{ref-Tivadar2019}{\textbf{Tivadar2019?}}) e incorporar un componente geográfico en la medida
+(\protect\hyperlink{ref-Wong2016}{\textbf{Wong2016?}}). Además de los índices globales, se han desarrollado
+\emph{índices locales}, que caracterizan a cada una de las unidades como
+parte del conjunto (\protect\hyperlink{ref-Feitosa2007}{\textbf{Feitosa2007?}}; \protect\hyperlink{ref-Wong2002a}{\textbf{Wong2002a?}}) e índices que permiten la
+\emph{descomposición} para comparar tipos de unidades (\protect\hyperlink{ref-Elbers2021}{\textbf{Elbers2021?}}; \protect\hyperlink{ref-Mora2011}{\textbf{Mora2011?}}).
+
+Algunos autores señalan la necesidad de herramientas para pensar y medir
+el fenómeno de la segregación a nivel individual (\protect\hyperlink{ref-Fossett2017}{\textbf{Fossett2017?}}; \protect\hyperlink{ref-Wong2016}{\textbf{Wong2016?}}; \protect\hyperlink{ref-Yao2019}{\textbf{Yao2019?}}). Este punto es central para estudiar la segregación
+multi-dominio, que se desarrolla a nivel de los individuos (más allá de
+las unidades de cada dominio). Ligado a esto, otro problema para
+analizar la segregación urbana multi-dominio es la diversidad y
+dispersión de las fuentes de datos. Para abordar ambas limitaciones, el
+proyecto propone la triangulación de fuentes primarias y secundarias, de
+manera que las fuentes secundarias permitan caracterizar globalmente los
+patrones de segregación en cada dominio, mientras que la fuente primaria
+permita entender cómo se articulan estos patrones.
+
+Respecto a esto, la segregación representa en gran medida las
+condiciones de posibilidad (que brinda el entorno) en las cuales se
+desenvuelve la homogamia relacional (a nivel individual)
+
+\hypertarget{la-mediciuxf3n-de-la-segregaciuxf3n}{%
+\section{La medición de la segregación}\label{la-mediciuxf3n-de-la-segregaciuxf3n}}
+
+Describir diferentes olas.
+
+\hypertarget{las-propuestas-cluxe1sicas}{%
+\subsection{Las propuestas clásicas}\label{las-propuestas-cluxe1sicas}}
+
+Años 50. Tradición clásica. Medición general
+
+\hypertarget{incorporar-la-geografuxeda}{%
+\subsection{Incorporar la geografía}\label{incorporar-la-geografuxeda}}
+
+Años 80. Incorporar los aspectos geográficos
+
+\hypertarget{la-segregaciuxf3n-a-nivel-local-y-multigrupo}{%
+\subsection{La segregación a nivel local y multigrupo}\label{la-segregaciuxf3n-a-nivel-local-y-multigrupo}}
+
+Años 90/00. Nuevos enfoques: segregación local (y diversidad social) e
+índices multigrupos
+
+\hypertarget{los-esfuerzos-por-incorporar-diferentes-dimensiones-de-la-segregaciuxf3n}{%
+\subsection{Los esfuerzos por incorporar diferentes dimensiones de la segregación}\label{los-esfuerzos-por-incorporar-diferentes-dimensiones-de-la-segregaciuxf3n}}
+
+Enfoques actuales.
+
+\begin{itemize}
+\tightlist
+\item
+  Propuestas de medición con big data. Crecimiento de los datos
+  disponibles. La búsqueda de medidas-basadas en personas.
+\item
+  Búsqueda de incorporar diferentes dominios, dimensiones y niveles.
+\item
+  Uso de ``medidas granulares'' basadas en lugares y medida de
+  accesibilidad(ver \protect\hyperlink{ref-Milias2022}{\textbf{Milias2022?}}).
+\item
+  Posibilidad de obtener comparación entre las medidas (\protect\hyperlink{ref-Elbers2021}{\textbf{Elbers2021?}})
+\end{itemize}
+
+\hypertarget{perspectiva-geomuxe9trica-de-las-medidas-de-segregaciuxf3n}{%
+\section{Perspectiva geométrica de las medidas de segregación}\label{perspectiva-geomuxe9trica-de-las-medidas-de-segregaciuxf3n}}
+
+Proponer analizar los índices en relación a cómo se comportan en un AC.
+
+Ver y comparar el comportamiento de los índices con un AC.
+
+¿El eigenvalue tiene margin-dependence?
+
+\hypertarget{la-mediciuxf3n-de-la-segregaciuxf3n-multi-dominio}{%
+\section{La medición de la segregación multi-dominio}\label{la-mediciuxf3n-de-la-segregaciuxf3n-multi-dominio}}
+
+\hypertarget{niveles-de-la-segregaciuxf3n-segregaciuxf3n-dentro-del-hogar-y-dentro-del-barrio}{%
+\subsection{Niveles de la segregación: segregación dentro del hogar y dentro del barrio}\label{niveles-de-la-segregaciuxf3n-segregaciuxf3n-dentro-del-hogar-y-dentro-del-barrio}}
+
+Medir la segrgación dentro del hogar (homogamia).
+
+\hypertarget{segregaciuxf3n-granular}{%
+\subsection{Segregación granular}\label{segregaciuxf3n-granular}}
+
+El acceso diferencial a las locaciones comunes e infraestructuras de una
+ciudad da cuenta de el grado de privación (\emph{deprivation}). A su vez, en
+la medida en que los grupos de la población tienen una distribución no
+homogénea, esta privación puede pensarse como una medida de las
+posibilidades para que estos grupos se encuentren. En concreto, es
+posible pensar en medidas de segregación granular, teniendo en cuenta
+
+Un primer acercamiento es a partir la distancia entre esquinas/radios a
+espacios y luego medir proporción de población con acceso según grupo.
+
+Sin embargo, esto supone que todos los grupos acceden de forma igual por
+la ciudad, es decir, que la ciudad no tiene viscosidades según el lugar
+de residencia y que sólo se accede a los lugares cercanos.
+
+Una alternativa es suponer un movimiento diferencial de cada uno de los
+barrios. Para ello se pueden usar datos de la ENMODO, datos de
+conectividad de colectivos (esto supone que lo que se conecta es lo que
+se necesita conectar) o datos de SUBE. De esta manera, cada lugar de
+residencia se comunica diferencialmente con el propio barrio y con los
+otros barrios.
+
+\hypertarget{allocation-model}{%
+\subsection{Allocation model}\label{allocation-model}}
+
+El allocation model es un caso particular de medida de segregación
+granular que incorpora la restricción de ?
+
+Describir propuesta de Allocation model
+
+Describir posibilidades de uso con simulaciones
+
+\hypertarget{conclusiuxf3n-de-secciuxf3n-muxe9todos}{%
+\section{Conclusión de sección métodos}\label{conclusiuxf3n-de-secciuxf3n-muxe9todos}}
+
+Conclusiones del apartado.
+
+Medir conjuntamente la segregación en diferentes **dominios**.
+
+\begin{itemize}
+\tightlist
+\item
+  segregación residencial
+\item
+  segregación parental
+\item
+  segregación escolar (allocation model)
+\item
+  segregación de actividades (mediante segregación granular y análisis
+  de infraestructura urbana disponible)
+\end{itemize}
+
+Medir conjuntamente segregación en diferentes **dimensiones**.
+
+\begin{itemize}
+\tightlist
+\item
+  Segregación socioeconómica
+\item
+  segregación migratoria
+\item
+  segregación racial¿?
+\end{itemize}
+
+Medir conjuntamente segregación en diferentes niveles (?)
+
+Es posible incorporar una dimensión histórica(?) intra biográfica y
+
+generacional?
+
+\hypertarget{part-resultados}{%
+\part{Resultados}\label{part-resultados}}
+
+\hypertarget{la-segregaciuxf3n-residencial-en-el-amgba}{%
+\chapter{La segregación residencial en el AMGBA}\label{la-segregaciuxf3n-residencial-en-el-amgba}}
+
+Diferentes estudios señalan que el Área Metropolitana del Gran Buenos
+Aires (AMGBA) verifica parcialmente un `patrón de segregación
+residencial de gran escala' característico de las ciudades
+latinoamericanas\footnote{Según (\protect\hyperlink{ref-Sabatini2006}{\textbf{Sabatini2006?}}) que las ciudades
+  latinoamericanas se caracterizan por un patrón de segregación de
+  `gran escala'. En sintonía con las ciudades europeas, este patrón
+  está definido por: (a) una concentración de los grupos altos y
+  medios ascendentes en algunas áreas de la ciudad y algunos sectores
+  del centro; (b) la existencia de amplias zonas donde residen
+  mayoritariamente sectores de baja renta, habitualmente en la
+  periferia, pero también en las zonas deterioradas del centro. Dentro
+  de este patrón, se observan algunas particularidades propias de la
+  región. Por un lado, la presencia de enclaves de pobreza extrema
+  asociados al mercado informal de vivienda, ubicados mayoritariamente
+  en las zonas residenciales de los sectores de ingresos bajos. Por
+  otra parte, una gran diversidad social en los barrios de renta alta,
+  donde conviven, además de la casi totalidad de las clases
+  privilegiadas, sectores medios e, incluso, bajos. Esta diversidad en
+  las zonas de renta alta se sostiene sobre la base de la exclusión de
+  los pobres informales, excluidos del mercado formal de tierra y
+  trabajo. Resultado de estas particularidades, las áreas
+  residenciales donde residen los más pobres son más homogéneas que
+  aquellas donde residen los grupos altos. A su vez, esta diversidad
+  en los espacios residenciales donde habitan los sectores altos lleva
+  a, relativamente, bajos niveles globales de segregación residencial
+  cuando lo comparamos con otros países.} (\protect\hyperlink{ref-Suarez2011}{\textbf{Suarez2011?}}; \protect\hyperlink{ref-Groisman2009}{\textbf{Groisman2009?}}; \protect\hyperlink{ref-Rodriguez2016b}{\textbf{Rodriguez2016b?}}; \protect\hyperlink{ref-Serrati2023}{\textbf{Serrati2023?}}). En esta línea, el trabajo de
+(\protect\hyperlink{ref-Molinatti2021}{\textbf{Molinatti2021?}}) señala que en las últimas décadas los cambios en la
+dinámica urbana económica profundizaron la polarización residencial y
+modificaron el patrón de la segregación en el AMGBA. Esta mayor
+polarización estuvo basada en: (a) una apropiación de las áreas
+privilegiadas por parte del grupo de mayor nivel socioeconómico; (b) una
+suburbanización de las élite, acompañado por la emergencia de las
+urbanizaciones cerradas y el crecimiento de enclaves residenciales en la
+periferia urbana -`barrios cerrados'-; (c) un aumento de los
+asentamientos informales en las nuevas periferias urbanas; (d) un
+deterioro de algunos barrios tradicionales donde vivían las clases bajas
+y medias; (e) un sostenimiento de los niveles de segregación residencial
+que surgieron en los '90, los cuales no se revirtieron en la década de
+los 2000, a pesar de la mejora en las condiciones laborales y del
+crecimiento de los niveles educativos de la población. A su vez, como
+ocurrió en otros países, los procesos de gentrificación de algunas áreas
+centrales, generaron un desplazamiento progresivo de los sectores
+populares que vivían en ellos originalmente, en lugar de promover una
+mayor mixtura social (\protect\hyperlink{ref-DiVirgilio2014f}{\textbf{DiVirgilio2014f?}}). De manera similar, la
+emergencia de urbanizaciones cerradas en la periferia urbana ha
+cristalizado heterogeneidades espaciales con poca interrelaciones entre
+estas urbanizaciones y las existentes anteriormente (\protect\hyperlink{ref-Frisch2022}{\textbf{Frisch2022?}}).
+
+Tomando en cuenta estos aportes, encontramos que el AMGBA tiene una
+segregación residencial global intermedia, similar a la encontrada en
+algunas ciudades de Europa continental y muy por debajo de los
+encontrados en Estados Unidos.\footnote{Uno de los desafíos de los estudios de segregación
+  es el desarrollo de trabajos comparativos entre diferentes contextos
+  nacionales. Más allá de la diversidad de indicadores existentes para
+  medir la segregación, dado que en cada país las desigualdades
+  sociales asumen distintos clivajes, los estudios que analizan la
+  segregación social han enfatizado diferentes aspectos de esta
+  desigualdad (por ej. raza, clase, educación, migración, etnias,
+  etc.). Incluso en los estudios que utilizan un mismo aspecto de la
+  desigualdad, existen diferencias para construir las `clases' o
+  `grupos', dependiendo de particularidades internas a cada realidad
+  local y de cómo se estructuran las desigualdades entre estos grupos
+  (\protect\hyperlink{ref-Musterd2005}{\textbf{Musterd2005?}}). A su vez, la mayoría de los índices de segregación
+  se ven afectados por la escala y la morfología de los agrupamiento
+  espaciales en los cuales se accede a los datos (usualmente
+  predefinidas por los organismos estadísticos nacionales). Dado que
+  no existe un criterio internacional para definir el tamaño ni la
+  forma de estas unidades espaciales mínimas, la comparación entre
+  resultados de diferentes países puede ser poco conveniente
+  (\protect\hyperlink{ref-Reardon2008}{\textbf{Reardon2008?}}; \protect\hyperlink{ref-Haandrikman2023}{\textbf{Haandrikman2023?}}). Por último, no existen criterios
+  uniformes para definir los límites de las estructuras urbanas a
+  comparar, lo cual depende en muchos casos de cómo se interprete la
+  dinámica e interacción entre la ciudad y sus `bordes'. En este
+  sentido, si bien recientemente algunos trabajos han propuesto
+  abordar comparativamente diferentes ciudades del mundo
+  (\protect\hyperlink{ref-Musterd2005}{\textbf{Musterd2005?}}; \protect\hyperlink{ref-Marcinczak2016}{\textbf{Marcinczak2016?}}; \protect\hyperlink{ref-Tammaru2016a}{\textbf{Tammaru2016a?}}; \protect\hyperlink{ref-Haandrikman2023}{\textbf{Haandrikman2023?}}; \protect\hyperlink{ref-Pryce2021}{\textbf{Pryce2021?}}; \protect\hyperlink{ref-VanHam2021}{\textbf{VanHam2021?}}), los resultados no dejan de ser provisorios
+  en términos comparativos por los motivos señalados.} En su
+conjunto, el índice \(M\) tiene un valor de , la cual
+es un poco superior a la segregación que tienen en su interior por
+separado la CABA y los Partidos del Conurbano
+(,
+respectivamente).\footnote{Cuando enfocamos sólo en la CABA encontramos una
+  segregación interna sensible más baja (cerca de la mitad) que el
+  conjunto del AMGBA (Ver \protect\hyperlink{appendixA}{Anexo A}). Además, como
+  describimos en (\protect\hyperlink{ref-Serrati2023}{\textbf{Serrati2023?}}), en esta escala son los sectores bajos
+  (fundamentalmente asociado a los barrios de origen informal) los que
+  muestran los mayores niveles de segregación local, mientras el resto
+  de la ciudad presenta una heterogeneidad elevada. En gran medida,
+  esta diferencia se explica por la diferente composición social de la
+  CABA, lo cual refuerza la importancia de la `escala' de análisis
+  para entender el fenómeno de la segregación.} En relación a
+esto, la mayor parte de la segregación del AMGBA
+() se explica por diferencias
+`al interior' {[}\emph{within}{]} de cada una de las jurisdicciones, antes que
+por diferencias `entre' {[}\emph{between}{]} estas (ver \ref{tab:segres1}). Por
+su parte, cuando consideramos la diferencia entre departamentos (Comunas
+y Partidos), encontramos que estos explican un poco más de la mitad de
+la segregación, mientras que la diferencia de composición entre los
+entornos urbanos explica cerca del \% de la
+segregación. Una primera conclusión que surge de esto es que la
+composición poblacional de los entornos urbanos es un elemento central a
+la hora de entender la segregación total en el AMGBA (muy por encima de
+las jurisdicciones o, incluso, los departamentos).\footnote{En el \protect\hyperlink{appendixA}{Anexo A} están disponibles
+  distintos indicadores de segregación para el total del AMGBA y para
+  cada una de las jurisdicciones que lo componen. Además, en este
+  anexo se presenta la composición educativa de cada uno de los
+  entornos urbanos, así como la `segregación interna' de cada uno de
+  estos. Nótese que la mayor segregación de los entornos de vivienda
+  social y de barrios cerrados se debe (en gran medida) a la
+  diversidad que surge por problemas metodológicos a la hora de
+  conciliar estos entornos con la cartografía censal (ver nota
+  anterior).}
+
+Cuando descomponemos la segregación en función de los grupos educativos
+(\ref{tab:segres2}), observamos que las personas con nivel educativo
+superior son las más segregadas, seguidos por las personas con hasta
+primario terminado. Estos resultados están en sintonía con lo que sucede
+en otras ciudades latinoamericanas, donde las clases altas tienen
+`evitar' el contacto con los grupos más bajos (\protect\hyperlink{ref-Feitosa2021}{\textbf{Feitosa2021?}}; \protect\hyperlink{ref-LopezMartinez2021}{\textbf{LopezMartinez2021?}}; \protect\hyperlink{ref-Fernandez-de-Cordova2021}{\textbf{Fernandez-de-Cordova2021?}}; \protect\hyperlink{ref-Agostini2016}{\textbf{Agostini2016?}}). A su vez,
+los grupos más pobres muestran un aislamiento elevado teniendo el peso
+en la población total (en tanto \(M\) es una medida de cuánto se alejan de
+la distribución general, la mayor presencia de este grupo hace que el
+indicador local de grupos sea menor).
+
+A su vez, la Figura \ref{fig:SEGRE-RES} muestra el comportamiento local
+de la segregación en toda el AMGBA, donde es posible detectar algunos
+patrones específicos. En primer lugar, en sintonía con lo señalado por
+Sabatini (\protect\hyperlink{ref-Sabatini2001}{\textbf{Sabatini2001?}}; \protect\hyperlink{ref-Sabatini2006}{\textbf{Sabatini2006?}}), encontramos un `cono' de
+segregación asociado a los grupos altos (ver \emph{Detalle 1}), el cual parte
+del centro histórico y se expande hacia el norte costero (zona norte de
+CABA y la costa de los partidos de Vicente López y San Isidro). Un
+aspecto interesante es que en estas zonas la segregación sigue un
+desarrollo uniforme asociado a la expansión urbana de los sectores altos
+tradicionales y altos emergentes de la modernización. Esta expansión y
+el crecimiento, así como su consolidación como espacio de la `elite', se
+asocian a un largo proceso histórico, que encuentra sus orígenes en el
+siglo XIX y que permite explicar la continuidad espacial de los niveles
+altos de segregación. También se observa una rama secundaria de este
+cono que crece hacia la zona central (Caballito-Flores) y noroeste
+(Villa Devoto) de la CABA, aunque ambas presentan niveles de segregación
+no tan elevados como la zona norte (\protect\hyperlink{ref-Cosacov2017}{\textbf{Cosacov2017?}}). En segundo lugar, en
+la expansión reciente de la zona norte (ver \emph{Detalle 2}), se observan
+enclaves de segregación asociados a los barrios cerrados o a la
+suburbanización de los sectores altos. A diferencia de en el caso
+anterior, estos espacios urbanos presentan niveles de segregación
+contrastantes, en los que conviven contiguamente niveles elevados y
+bajos de segregación, dando como resultado un `mosaico' o '\emph{patchwork'}
+(\protect\hyperlink{ref-Florida2018}{\textbf{Florida2018?}}) . Este patrón responde, en gran medida, a la historia y
+concepción urbanística de estos enclaves periféricos, en los cuales la
+relación espacial es pocas veces acompañada de un relacionamiento entre
+las poblaciones que llegan y las originales (\protect\hyperlink{ref-Atkinson2004}{\textbf{Atkinson2004?}}; \protect\hyperlink{ref-Frisch2022}{\textbf{Frisch2022?}}).
+
+Un tercer aspecto a considerar es lo que se observa en los cascos
+urbanos en torno a las estaciones ferroviarias (ver \emph{Detalle 3}, ejemplo
+sobre FFCC Sarmiento). Estos cascos urbanos se constituyeron como
+pueblos diferentes a la ciudad de Buenos Aires a fines del s. XIX, pero
+fueron incorporados por la expansión metropolitana de esta. Constituyen
+espacios consolidados históricamente con una fuerte conexión con la
+ciudad central, lo cual les permitió generar una clase media ascendente
+que se refleja en indicadores elevados de educación y, colateralmente,
+segregación. A su vez, a partir de su conexión con la ciudad central,
+estos lugares medianamente segregados de ingresos medios-altos se
+configuran como policentralidades, fuertemente diferenciados de sus
+contextos locales (municipales), reforzando el patrón de mosaico antes
+señalado.
+Por último, en las áreas periféricas encontramos espacios con niveles de
+segregación local relativamente altos, pero asociados a una homogeneidad
+de niveles educativos bajos (ver \emph{Detalle 4}, ejemplo sobre Gobernador
+Costa, Francisco Solano y Rafael Calzada). Esta forma de segregación se
+observa en gran parte del tercer cordón (salvo en la zona norte),
+fundamentalmente en zonas alejadas de las estaciones
+ferroviarias.
+Este patrón de segregación se relaciona con espacios residenciales
+deteriorados, con grandes focos de informalidad residencial y malas vía
+de conexión con la CABA, lo que da como resultado un aislamiento de los
+pobres urbanos (\protect\hyperlink{ref-Soldano2008}{\textbf{Soldano2008?}}).
+
+En resumen, nuestro análisis nos muestra que, en sintonía con lo que
+sucede en otras ciudades latinoamericanas (\protect\hyperlink{ref-Feitosa2021}{\textbf{Feitosa2021?}}; \protect\hyperlink{ref-LopezMartinez2021}{\textbf{LopezMartinez2021?}}; \protect\hyperlink{ref-Agostini2016}{\textbf{Agostini2016?}}), el patrón de segregación propuesto
+por (\protect\hyperlink{ref-Sabatini2006}{\textbf{Sabatini2006?}}) parece haberse complejizado. En este sentido, la
+intersección entre las dinámicas de diferenciación del espacio de largo
+plazo (`dinámicas tradicionales') y las que surgieron como resultado del
+urbanismo neoliberal(\protect\hyperlink{ref-Theodore2009}{\textbf{Theodore2009?}}; \protect\hyperlink{ref-Peck2013}{\textbf{Peck2013?}}; \protect\hyperlink{ref-VanHam2021a}{\textbf{VanHam2021a?}}) dan como
+resultado una convivencia de patrones locales de segregación en el
+AMGBA. Junto al
+`cono residencial' en el que viven tradicionalmente los grupos altos,
+las dinámicas de suburbanización de las clases emergentes generaron un
+`patrón de mosaico' en espacios anteriormente periféricos. A su vez, los
+procesos de gentrificación liderados por los grupos de ingresos altos y
+la mejora progresiva de los sectores medios permitieron la expansión de
+este cono de ingresos altos hacia áreas centrales. Como resultado de
+estos movimientos, se genera un proceso de expansión progresiva del área
+residencial de altos ingresos tradicional que es acompañado por un
+patrón fragmentario que domina en las periferias lejanas. En conjunto
+estos procesos han llevado a una mayor separación de los grupos altos
+respecto al resto de los grupos sociales, a la vez que se consolida el
+alejamiento y aislamiento de los pobres en áreas deterioradas de la
+periferia.\footnote{Este patrón de segregación que consolida la
+  separación entre los sectores de altos y bajos ingresos, se acompaña
+  de una desigual distribución de los recursos urbanos, lo que lleva a
+  un monopolio por parte de los sectores altos (\protect\hyperlink{ref-Serrati2023}{\textbf{Serrati2023?}}; \protect\hyperlink{ref-DiVirgilio2022a}{\textbf{DiVirgilio2022a?}}).}
+
+\hypertarget{conclusiones}{%
+\section{Conclusiones}\label{conclusiones}}
+
+\begin{itemize}
+\tightlist
+\item
+  Ejemplos de cascos conurbanizados: Lomas/Banfield o FFCC Sarmiento
+  Ramos, Morón.
+\item
+  Ejemplos de zonas periféricas deterioradas: J.C. Paz / Matanza sur /
+  Fcio Varela. Visualizar el contraste entre dos segregaciones
+  opuestas de NSE Alto-Bajo. Un buen ejemplo puede ser el Partido de
+  Lomas. La elección se puede justificar en base a la alta
+  contribución a la segregación total (
+  ). Cruzar segregación local
+  con CA para mostrar alta segregación con significados opuestos.
+\end{itemize}
+
+El patrón de segregación actual es resultado de la articulación de tres
+dinámicas históricas:
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  dinámica clásica que se remonta al sXIX (cono de las elites)
+\item
+  dinámica latinoamericana del sXX (exclusión de pobres informales);
+\item
+  dinámica de la ciudad neoliberal de fines de sXX y el sXXI (barrios
+  cerrados, suburbanización, gentrificación y marginalización urbana)
+\end{enumerate}
+
+Descripción de \textbf{cómo se articulan estos procesos históricos} en la
+conformación de patrones heterogéneos de segregación en el AMGBA:
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\tightlist
+\item
+  La ciudad presenta, en sintonía con el modelo europeo, una
+  separación de las elites en un área de la ciudad que parte del
+  centro y se expande hacia la periferia. Esto surge como resultado de
+  un proceso que se arraiga en la consolidación de la ciudad como
+  capital (sXIX).
+\item
+  La creación de `bolsones de pobreza' producto de las migraciones
+  rurales desde mediados del sXX, junto al crecimiento económico y la
+  movilidad social ascendente de los migrantes europeos dieron lugar a
+  un patrón de segregación en el que conviven una heterogeneidad
+  urbana de gran parte de la ciudad, basado en la exclusión de los
+  pobres informales.
+\item
+  La salida de grupos los altos a los suburbios a partir de fines del
+  sXX dio lugar a patchwork en estas zonas. Ver algún análisis de
+  autocorrelación;
+\item
+  La consolidación de los cascos conurbanizados (sobre todo de
+  aquellos más cercanos y mejor conectados con la CABA), permitió la
+  creación de espacios relativamente homogéneos y de
+  policentralidades, diferenciados de sus contextos locales
+  (municipales), lo cual reforzó el patrón de mosaico /patchwork.
+\item
+  La modernización de la economía (basada en una dualización de
+  enclave) dio lugar al surgimiento de sectores medios modernos y
+  globalizados, que fueron los principales actores de una expansión
+  del cono de elite y de los procesos de gentrificación en áreas
+  centrales antiguamente deterioradas.
+\end{enumerate}
+
+Resultado de estos procesos, el \textbf{patrón de segregación AMGBA} \textbf{se
+complejizó} respecto al propuesto por (\protect\hyperlink{ref-Sabatini}{\textbf{Sabatini?}}):
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Mayor nivel de segregación con respecto a momentos anteriores.
+\item
+  Segregación de grupos altos es mayor (seguida por grupo bajo). Ver
+  aporte de cada grupo descomponiendo M;
+\item
+  Los entornos urbanos tienen un papel importante a la hora de
+  explicar la segregación, de manera que una parte importante de ésta
+  se explica por la distribución de la polbación en estos. Ver
+  contribución within-between.
+\item
+  Cono de segregación: El patrón principal de segregación sigue siendo
+  el de separación de los ricos y alejamiento de los pobres en un cono
+  principal, vinculado a las regiones tradicionales de expansión
+  urbana de las elite.
+\item
+  Mancha expansiva: Este cono vivió una expansión de sus fronteras
+  mediante la incorporación de zonas anteriormente medias y de la
+  gentrificación de zonas centrales antiguamente deterioradas pero
+  bien comunicadas. Esta expansión estuvo vinculada fundamentalmente a
+  la expansión y asenso social de sectores medios calificados
+  vinculados a la economía globalizada;
+\item
+  Este patrón convive con un patrón de mosaicos / patchwork, resultado
+  de la consolidación de los cascos conurbanuzados cercanos y la
+  suburbanización de las elites (asociada a los barrios cerrados).
+\item
+  el patrón de segregación se acompaña de un monopolio por parte de
+  los sectores altos de los recursos urbanos, podría relacionarse con
+  ppp y se puede mencionar algo de esto en relación a tesis MGAIE
+  citar a (\protect\hyperlink{ref-Brickman}{\textbf{Brickman?}}).
+\end{enumerate}
+
+\hypertarget{anuxe1lisis-ii-espacios-de-actividad}{%
+\chapter{Análisis II: Espacios de actividad}\label{anuxe1lisis-ii-espacios-de-actividad}}
+
+\hypertarget{la-movilidad-cotidiana-en-el-amgba}{%
+\section{La movilidad cotidiana en el AMGBA}\label{la-movilidad-cotidiana-en-el-amgba}}
+
+Antes de analziar el problema de las movilidades y su relación con la segregación, realicemos una breve descripción de las movilidades cotidianas dentro del AMGBA. En primer lugar, encontramos que la distribución de los viajes se concentran en algunas áreas específicas de la ciudad (ver Figura \ref{fig:DES-N}) y, en particular, en algunos entornos urbanos (Cuadro \ref{tab:DES-tabla}). Respecto a esto último, observamos que gran parte de los viajes tienen como destino la ciudad colonial y los cascos conurbanizados (asociados a los subcentros locales y las estaciones de tren), los cuales representan el y el , respectivamente. Estos porcentajes son especialmente significativos si consideramos que la superficie de ambos es de apenas el del total del AMGBA. En resumen, cuando analizamos la cantidad de minutos permanecidos en cada entorno urbano normalizando por la superficie, estos dos entornos se destacan sobre el resto por la cantidad de viajes recibidos. Por su parte, cuando diferenciamos los viajes a estos entornos en función de los motivos de la actividad en el lugar de destino, vemos que mientras la ciudad colonial destaca por un mayor porcentaje de viajes por motivos laborales (respecto a su promedio global), los cascos conurbanizados se caracterizan por una mayor recepción de viajes relacionados a motivos reproductivos (compras, trámites, motivos médicos o acompañar a familiares).
+
+En una situación opuesta a estos dos entornos, las urbanizaciones cerradas, las urbanizaciones de origen informal, los entornos de vivienda social y los entornos de nivel socioeconómico bajo, destacan por los bajos porcentajes de viajes recibidos en relación con su superficie. En particular es llamativa la situación del entorno de NSE bajo, ya que es uno de los entornos que mayor porcentaje de recepción de minutos de viajes tiene, pero cuando lo consideramos en realción a su superficie vemos que su importancia relativa es baja. Respecto a los motivos de viaje, sobresale la importancia de los motivos laborales dentro de las urbanizaciones cerradas, mientras que en los otros entornos no se observa una tendencia unívoca.En una situación intermedia respecto a la recepción de viales, podemos considerar a la expansión de la ciudad colonial, donde destacan los viajes vinculados a motivos laborales y de recreación.
+
+En relación con el objetivo de nuestro trabajo, la Figura \ref{fig:DES-EDU} presenta, del total de minutos que se destina a cada unidad espacial, el porcentaje de estos que corresponden a cada grupo educativo. De forma general, vemos que las zonas periféricas y alejadas del centro de la ciudad son las que reciben una sobrerepresentación de los hogares con nivel educativo primario y, en menor medida, secundario. Vale aclarar que si bien ambos grupos están sobrerepresentados en los lugares más alejados del centro de la CABA, esto no necesariamente implica que ambos están sobrerepresentados en los mismos lugares. De hecho, encontramos que los hogares con nivel secundario tienen una mayor representación en los `subcentros' locales de estas zonas alejadas, mientras que los hogares con hasta nivel primario predominan en las zonas periféricas. En este sentido, observamos una relativa de división del territorio periférico en cuanto a los destinos de viajes de estos dos grupos. Como contracara, los hogares con nivel educativo superior tienen una sobrerepresentación en las áreas centrales de la CABA y, en particular, en el corredor norte de la ciudad y su continuación en los partidos de Vicente López y San Isidro.
+
+\hypertarget{el-efecto-de-las-movilidades-en-la-segregaciuxf3n}{%
+\section{El efecto de las movilidades en la segregación}\label{el-efecto-de-las-movilidades-en-la-segregaciuxf3n}}
+
+En Argentina existen aún pocos trabajos que aborden la relación entre diferentes dominios de la segregación de forma cuantitativa. En el ámbito latinoamericano el principal avance en esta dirección viene dado por algunos trabajos que indagan cómo la segregación residencial se retroalimenta con la segmentación del mercado laboral y educativo, potenciando el aislamiento de los `pobres urbanos' (\protect\hyperlink{ref-Kaztman2001}{\textbf{Kaztman2001?}}). Desde un enfoque predominantemente cualitativo, se ha indagado cómo la segregación residencial se relaciona con el aislamiento urbano en otros dominios (\protect\hyperlink{ref-Soldano2008}{\textbf{Soldano2008?}}; \protect\hyperlink{ref-Soldano2017}{\textbf{Soldano2017?}}; \protect\hyperlink{ref-Carman2013}{\textbf{Carman2013?}}; \protect\hyperlink{ref-DiVirgilio2014c}{\textbf{DiVirgilio2014c?}}). En particular, respecto al efecto de las movilidades cotidianas sobre la segregación, es posible destacar el trabajo de (\protect\hyperlink{ref-DiVirgilio2022d}{\textbf{DiVirgilio2022d?}}) quienes analizando el caso de poblaciones empobrecidas de Villa Lugano (CABA) encuentran que las movilidades urbanas no logran compensar las desventajas locacionales y la situación segregada de estas poblaciones. En relación con esto, el trabajo de (\protect\hyperlink{ref-Brikman2021}{\textbf{Brikman2021?}}) compara los espacios de actividad y las movilidades de dos localizaciones segregadas concluyendo que, si bien los habitantes de espacios segregados tienden a mantener una estructura de movilidad que reproduce la segregación, la diferencia en la localización residencial puede dar lugar a diferencias en el acceso y las movilidades dentro de la ciudad.
+
+Teniendo en cuenta estos aportes y la descripción de las movilidades realizadas en el apartado anterior, en este apartado intentaremos describir en qué medida la segregación se ve afectada por las prácticas de movilidad y los espacios de vida. Un posible primer abordaje para entender cómo las movilidades afectan a la segregación urbana, es comparar la segregación en el ámbito residencial con la que se observa en los destinos de los viajes. Como hemos señalado en el apartado metodológico esto supone un desafío, en tanto la mayoría de los índices de segregación son dependientes de la cantidad de unidades consideradas, así como de la distribución marginal (la cantidad de personas en cada unidad y en cada grupo). Una solución a este problema es utilizar la técnica descripta por (\protect\hyperlink{ref-Elbers2023}{\textbf{Elbers2023?}}) para descomponer la diferencia entre dos índices en diferentes elementos, de manera que sea posible distinguir qué parte de esta diferencia entre los índices corresponde a variaciones en la `estructura de segregación', evitando considerar la parte de esta diferencia que surge por diferencias en los marginales o por la incorporación de nuevas unidades.
+
+El Cuadro \ref{tab:SEG-tabla} presenta la segregación residencial y la segregación de movilidades, así como la diferencia entre ambos y la descomposición de elementos descrita. En la tercera columna (\(\Delta \%\)) describimos qué porcentaje de la diferencia (\(M_2 - M_1\)) representa cada uno de estos elementos. Una primera aproximación nos muestra que la segregación residencial es un poco mayor que emerge en los espacios de destino. Sin embargo, cuando descomponemos esta diferencia encontramos que la casi totalidad de esta diferencia es producto del efecto de la diferencia en los marginales de las unidades. En concreto, esto supone que la diferencia entre ambos indicadores se debe en gran medida al hecho de que los destinos de las movilidades no se distribuyen homogéneamente. También observamos que una parte de la diferencia entre ambos indicadores se relaciona con el hecho de que algunas unidades espaciales no fueron elegidas como destino en los viajes y, por lo tanto, aparecen como `unidades removidas' (ya que no están presentes en el cálculo de uno de los indicadores). En contrapartida, si consideramos sólo la diferencia que resulta de cambios en la `estructura de la segregación' (lo que podemos denominar como cambios en la segregación `pura') vemos que la diferencia entre ambos indicadores es relativamente pequeña. Como resultado de esto podemos afirmar que la estructura de segregación parece ser similar en los espacios residenciales y en los espacios de destino de las actividades cotidianas.
+
+Tomando como base estos resultados, podemos indagar sobre los viajes para ver de qué manera las personas se relacionan con los diferentes lugares de destino. Como señalamos en la sección metodológica, podemos representar la estructura de los viajes utilizando una red bipartita dirigida y ponderada, en la cual consideramos dos tipos de nodos (personas y lugares de destino) de manera que existe una relación entre una persona y un lugar si esta persona visitó ese lugar como destino. Siguiendo la propuesta de (\protect\hyperlink{ref-Zhu2016}{\textbf{Zhu2016?}}), realizamos un Análisis de Correspondencias Múltiples que nos permite tener una representación de estos viajes de baja dimensionalidad, de manera que los viajes que tienen características similares se encuentran representados cerca entre sí. Esta `similaridad' está dada por el conjunto de variables activas que se consideran y que caracterizan a los nodos-personas, los nodos-destinos y los propios viajes (ver \ref{appendixA} para un listado completo de las variables utilizadas).
+
+La Figura \ref{fig:MCA-RES} presenta la ubicación de una selección de las variables activas en las dos primeras dimensiones del MCA, es decir, aquellas en las que se expresa la mayor parte de la variabilidad de los viajes.\footnote{El gráfico presenta sólo una selección para facilitar la lectura. A su vez, con fines de mejorar la vissualización hemos diferenciado con colores ocho `grupos de variables' (con sus respectivas categorías) que describen aspectos similares del fenómeno. El porcentaje de varianza explicada se calculó siguiendo el ajuste propuesto por (\protect\hyperlink{ref-Greenacre2008}{\textbf{Greenacre2008?}}), para eliminar el efecto de las submatrices diagonales de la matriz de Burt. En el Anexo \ref{appendixB} se encuentran disponible material complementario respecto al análisis. En relación a la nomenclatura usada en la Figura \ref{fig:MCA-RES}, utilizamos el prefijo `\passthrough{\lstinline!in!}' para referir a variables que caracterizan al lugar de destino, el prefijo `\passthrough{\lstinline!p!}' para variables que caracterizan a las personas o su entorno residencial y el prefijo `\passthrough{\lstinline!v!}' para las variables que caracterizan a los viajes en sí mismos. A su vez, utilizamos `\passthrough{\lstinline!PRI\%!}', `\passthrough{\lstinline!SEC\%!}' y `\passthrough{\lstinline!SUP\%'!}, para indicar el porcentaje de personas pertenecientes a hogares de nivel primario, secundario o superior respectivamente (tanto en los entornos residenciales como en los destinos). Por su parte,'\passthrough{\lstinline!TH!}' indica tipo de entorno o hábitat urbano, `\passthrough{\lstinline!SEG!}' señala segregación, `\passthrough{\lstinline!T!}' tiempo de permanencia y `\passthrough{\lstinline!N!}' cantidad de viajes. Por último, la letra `\passthrough{\lstinline!Q!}' seguida de un número indica quintil (siendo `\passthrough{\lstinline!Q1!}' el quintil que tiene el valor nominal más bajo). Los valores entre paréntesis o corchetes indican un rango de valores expresados en la unidad de la variable. Se remite al Anexo \ref{appendixA} para una descripción detallada de los nombres utilizados para las variables y categorías, así como de las unidades utilizadas en cada caso.} Como podemos ver, el \emph{primer eje} diferencia los viajes fundamentalmente en función de aspectos socioeconómicos, referidos tanto a los destinos como al lugar de residencia de las personas. En este sentido, encontramos que los entornos de origen informales y los entornos de NSE Bajo se ubican en el lado izquierdo del plano, mientras que los entornos de NSE Alto, la expansión de la ciudad colonial y la Ciudad Colonial en el lado derecho. De forma similar, del lado izquierdo encontramos los viajes que vinculan los entornos residenciales y los destinos con menor porcentaje de nivel universitario (y mayor porcentaje de nivel primario), mientras que sucede lo opuesto en el lado derecho. Si bien, esta tendencia es común el conjunto de variables que caracterizan a los entornos residenciales y a los destinos, en estos últimos la diferenciación en este eje es un poco menos pronunciada que en los primeros.
+
+En el \emph{segundo eje} vemos diferenciados, fundamentalmente, los viajes en función de la cantidad de visitas que recibe el lugar de destino y de la segregación de estos destinos. En este sentido, en la parte inferior se destacan los viajes que implican a los destinos más concurridos (\passthrough{\lstinline!inN (17.3, 168)!} y \passthrough{\lstinline!inT Q5!}), los cuales como señalamos anteriormente están vinculados a los cascos conurbanizados. Por el otro lado, en la parte superior encontramos los destinos menos concurridos (\passthrough{\lstinline!inN [0.2,4.5]!} y \passthrough{\lstinline!inT Q1!}), entre los que destaca parcialmente la ubicación de las urbanizaciones de origen informal y, en menor medida, los entornos de vivienda social, la expansión de la ciudad colonial y los entornos de NSE bajo y alto. A su vez, este eje diferencia los destinos en función del nivel de segregación de los destinos, de manera que encontramos los destinos menos segregados (\passthrough{\lstinline!inSEG Q1!}) en la parte inferior y los más segregados (\passthrough{\lstinline!inSEG Q5!}) en la parte superior. Esta relación entre menor segregación y mayor cantidad de visitas recibidas de los destinos es esperable, en tanto a medida que aumenta la cantidad de personas es previsible que aumente también la diversidad. A su vez, esto se corresponde con la presencia en la parte superior de los destinos que reciben un menor porcentaje de personas pertenecientes a hogares de nivel primario (\passthrough{\lstinline!inPRI \%[0,2]!}, arriba derecha) y superior (\passthrough{\lstinline!inSUP\%[0,2]!}, arriba izquierda). Si bien no se presenta en esta figura, el \emph{tercer eje} diferencia los viajes en función de la mayor diversidad o segregación de los espacios de residencia de las personas que realizan estos viajes.
+
+Es interesante destacar algunas variables no tienen un peso importante para definir la diferencia entre los viajes, a pesar de estar incluidas como variables activas. En particular, las variables referidas a las características de los viajes (tiempos de viaje -\passthrough{\lstinline!eTvia!}-, duración promedio de las actividades de destino -\passthrough{\lstinline!eTact!}- y los motivos de los viajes) no juegan un rol importante en esta diferenciación. Por su parte, el sexo (\passthrough{\lstinline!pSEXO!}) y la edad (\passthrough{\lstinline!pEDAD!}) de las personas que realizan los viajes tampoco inciden en la construcción de los primeros ejes de variación. En particular la edad está asociada a la propia composición etaria de los grupos sociales, pero no interviene significativamente en la definición de la varianza de estos ejes. De hecho, si se excluye estas variables el resultado es similar al obtenido, con una pequeña mejora en el porcentaje de inercia explicada. A pesar de esto, se eligió retenerlas como variables activas para explicitar esta `ausencia de efecto'. Por último, las variables que indican la cantidad de minutos en cada destino según tipo de actividad (\passthrough{\lstinline!in\_timeTRA!}, \passthrough{\lstinline!in\_timeREP!}, \passthrough{\lstinline!in\_timeREC!}, \passthrough{\lstinline!in\_timeEST!}) fueron incluidas como variables suplementarias, porque superponían en gran medida lo aportado por la variable tiempo de permanencia y cantidad de viajes, debido a que, como señalamos, los motivos de viaje no son un factor de diferenciación importante.
+
+Un aspecto interesante que se desprende de la figura anterior es que las variables de composición del lugar de destino y del lugar de residencia ocupan lugares similares en el plano (fundamentalmente en lo relativo al primer eje). En este sentido, los viajes representados en el lado izquierdo del plano asocian espacios residenciales con bajo porcentaje de personas con nivel superior y destino que reciben pocas personas con nivel superior. La situación opuesta se visualiza respecto al lado derecho del plano, donde se observan tanto destinos como espacios residenciales con altos porcentajes de personas con nivel superior. Es interesante destacar que esta correspondencia no se cumple para el nivel secundario, donde vemos que los espacios residenciales con porcentajes altos están del lado derecho, pero los destinos donde predomina este grupo están en el lado izquierdo.
+
+Para profundizar sobre estos hallazgos, analicemos la proyección de estos viajes en función del nivel educativo del hogar de estas personas. Como habíamos señalado en el apartado metodológico, con el objetivo de ver en que medida el nivel educativo puede explicar la distribución de los viajes en el subespacio resultante del análisis, hemos decidido mantener esta variable como suplementaria, por lo cual la misma no incide directamente sobre el resultado. En la Figura \ref{fig:MCA-EDU} proyectamos sobre los primeros dos ejes la ubicación de cada uno de los viajes diferenciando según el nivel educativo del hogar de la persona que realiza este viaje. Para facilitar la visualización generamos un mapa de densidades con ocho niveles de intensidad (\emph{bins}). Además, proyectamos como referencia la posición de algunas de las variables más significativas para definir estos ejes. De modo general, encontramos que los viajes de los hogares de nivel primario se ubican del lado izquierdo, mientras que los de los hogares de nivel superior del lado derecho. En ambos casos vemos poco contacto con el otro lado del plano, sobre todo en la parte superior, asociada a los destinos menos concurridos (\passthrough{\lstinline!inT\_Q1!}) y, a la vez, más segregados (\passthrough{\lstinline!inSEG\_Q5!}). En este sentido, en la parte inferior, donde se ubican los destinos menos segregados (\passthrough{\lstinline!inSEG\_Q1!}) y más concurridos (\passthrough{\lstinline!inT\_Q5!}), encontramos una mayor superposición de los destinos de viajes de los diferentes grupos educativos, con una tendencia a ocupar (ambos grupos) el la parte central-inferior del plano resultante. Respecto a los hogares de nivel secundario vemos una distribución de viajes similar a la de los hogares de nivel primario, aunque con una mayor permeabilidad hacia el lado derecho del plano. En particular, encontramos que a diferencia de los hogares de nivel primario, los viajes de los hogares de nivel secundario incluyen el cuadrante derecho superior, aunque con menor intensidad que los hogares de nivel superior. Esto refuerza lo que habíamos visto respecto a que este grupo tiene como destino de sus viajes aquellos lugares que se asocian con el lado izquierdo, antes que con el lado derecho (a pesar de que su presencia residencial se asocia con el lado derecho).
+
+\hypertarget{discusiuxf3n-de-los-resultados}{%
+\section{Discusión de los resultados}\label{discusiuxf3n-de-los-resultados}}
+
+En este trabajo hemos propuesto analizar el rol de las movilidades espaciales y los espacios de vida en la configuración de la segregación social en el AMGBA. En particular, indagamos sobre cómo estas movilidades y espacios de vida pueden compensar o reforzar la segregación vivida en el dominio residencial. Los resultados de nuestro análisis muestran una fuerte estratificación y diferenciación del espacio de los viajes en el interior del AMGBA, lo cual se manifiesta en tres grandes ejes de diferenciación. El primer y principal eje diferencia los viajes en función del nivel socioeconómico, tanto del lugar residencial de las personas como de los lugares de destino de los viajes. El segundo eje diferencia los viajes en función de si estos tienen un destino más o menos concurrido, así como de la segregación resultante en estos destinos. El tercer eje diferencia los viajes en función de la segregación residencial de los hogares que los realizan. A su vez, encontramos que el nivel educativo del hogar emerge en el análisis como un factor explicativo en la diferenciación de los viajes, de manera que los hogares con estudios superiores y los hogares con estudios primarios desarrollan estrategias de movilidad que les permiten mantener, en gran medida, separados sus espacios de actividad.
+
+Este análisis nos permitió encontrar que la mayor parte de los viajes vinculan lugares de residencia y de destino similares en cuanto a su segregación social. En sintonía con lo encontrado por (\protect\hyperlink{ref-DiVirgilio2022d}{\textbf{DiVirgilio2022d?}}), las movilidades urbanas en el AMGBA parecen reproducir y replicar las condiciones de segregación que se viven en el dominio residencial. En este sentido, el \emph{capital de movilidad} puesto en juego por los actores no permite contrarrestar las estructuras de exclusión urbana que se generan en el dominio residencial. Como resultado de esta situación, los destinos presentan una estructura de segregación equiparable a la que se observa en el dominio residencial, lo cual apoya la hipótesis de una retroalimentación de la segregación social entre ambos dominios en el AMGBA. En particular, estos resultados dan soporte a la idea de que una `reproducción multi-dominio de la segregación' (\protect\hyperlink{ref-Boterman2016}{\textbf{Boterman2016?}}) y de la existencia de un `círculo vicioso' entre los diferentes dominios de la segregación (\protect\hyperlink{ref-VanHam2018}{\textbf{VanHam2018?}}).
+
+Más allá de esta fuerte relación que observamos entre ambos dominios, no podemos considerar que ambos se superpongan completamente. En este sentido, nuestros resultados muestran que si por un lado la composición de los espacios residenciales se diferencia principalmente en el primer eje de análisis (y también en el tercero), la composición de los destinos se desenvuelve como una combinación del primero y segundo eje del análisis, presentando una menor asociación con el primer eje que los lugares de residencia. En relación con el segundo eje de variabilidad, algunos destinos son receptores de gran parte de los viajes, lo que da lugar a una mayor mixtura y diversidad social en ellos. Dentro de estos destinos, es interesante señalar que, si bien el corazón de la ciudad central colonial es un destino que concentra una parte importante de los viajes, es en los centros locales (cascos conurbanizados) donde se observa una menor segregación de destinos. Como contraposición, algunos entornos urbanos aparecen como destinos especialmente segregados, de manera que se convierten en lugares exclusivos de ciertos grupos sociales, fomentando un aislamiento que implica tanto a los grupos más privilegiados (\protect\hyperlink{ref-Frisch2022}{\textbf{Frisch2022?}}) como a los más desfavorecidos (\protect\hyperlink{ref-Soldano2008a}{\textbf{Soldano2008a?}}).
+
+Más allá los aportes, señalamos a continuación algunos límites y posibles continuidades de este trabajo. En primer lugar, es necesario estar precavido respecto a la interpretación de estos resultados en lo relativo a la similitud entre ambas estructuras de segregación. En este sentido, esta similitud a escala \emph{global} puede ser el resultado de un doble movimiento de compensación mediante el cual los residentes de lugares con más diversidad se muevan a lugares más segregados donde predominen las personas perteneciente a grupos similares al propio, mientras que los residentes de estos lugares segregados se muevan hacia lugares más diversos.\footnote{A su vez, una estructura de segregación equiparable, no implica una composición idéntica en los espacios residenciales y los destinos, ya que es posible que el porcentaje de cada grupo sea diferente en ambos dominios. Este aspecto también requiere un abordaje más detallado en futuros trabajos.} El análisis desarrollado en este trabajo no permitió acceder a una escala en el cual visualizar las estrategias de los hogares. Teniendo en cuenta estos elementos es necesario a futuro complementar este análisis para entender de qué manera es que se produce esta similitud entre ambas estructuras de segregación. En relación a esto, mediante un `enfoque en tándem' (\protect\hyperlink{ref-Becue-Bertaut2008}{\textbf{Becue-Bertaut2008?}}; \protect\hyperlink{ref-Lebart1994}{\textbf{Lebart1994?}}; \protect\hyperlink{ref-Markos2019}{\textbf{Markos2019?}}) es posible complementar el análisis de correspondencias múltiples con un análisis de agrupamientos (\emph{cluster}), que permita caracterizar a los viajes y, de esta forma, describir a los hogares en función de que `tipos' de viajes realizan.
+
+En segundo lugar, la falta de disponibilidad de datos con una mayor precisión o granularidad, así como la disponibilidad de muestras relativamente pequeñas, constituye un límite para avanzar en la descripción precisa de los movimientos urbanos. En particular, la existencia de muy pocas unidades de muestreo en algunos destinos poco visitados lleva a una composición de destino que puede estar artificialmente distorsionada. Una solución parcial a este problema (a la que recurrimos en este trabajo) es el agrupamiento de las unidades espaciales, lo cual tiene como contrapartida la pérdida de precisión del análisis, sin lograr solucionar el problema de aquellas unidades espaciales donde persiste la falta viajes como destino. Alternativamente, es posible pensar para futuros trabajos una solución que aborde este problema `difuminando' las características de la población que viaja a cada destino entre las unidades espaciales vecinas (que podría implementarse mediante un `kernel' o una estrategia iterativa de `random walk'). Siguiendo esta idea la cantidad de minutos que pasa cada persona de la muestra se podría distribuir según una función de densidad entre los espacios cercanos.
+
+\hypertarget{anuxe1lisis-iii-la-escuela-como-espacio-de-diferenciaciuxf3n}{%
+\chapter{Análisis III: La escuela como espacio de diferenciación}\label{anuxe1lisis-iii-la-escuela-como-espacio-de-diferenciaciuxf3n}}
+
+Imaginate este pedazo de texto que refiere a lo que se ve en la Figura \ref{fig:mt-plot}. Pero está este otro texto que refiere a la Tabla \ref{tab:mt-tab}.
+
+\begin{figure}
+\centering
+\includegraphics{Tesis-PhD-Serrati_files/figure-latex/mt-plot-1.pdf}
+\caption{\label{fig:mt-plot}Título de la figura}
+\end{figure}
+
+Luego viene un pedazo de texto corto. Pero sigue la Tabla \ref{tab:mt-tab}
+
+\global\setlength{\Oldarrayrulewidth}{\arrayrulewidth}
+
+\global\setlength{\Oldtabcolsep}{\tabcolsep}
+
+\setlength{\tabcolsep}{0pt}
+
+\renewcommand*{\arraystretch}{1.5}
+
+
+
+\providecommand{\ascline}[3]{\noalign{\global\arrayrulewidth #1}\arrayrulecolor[HTML]{#2}\cline{#3}}
+
+\begin{longtable}[c]{|p{0.75in}|p{0.75in}|p{0.75in}|p{0.75in}|p{0.75in}}
+
+\caption{Este\ es\ el\ título\ de\ la\ tabla}\label{tab:mt-tab}\\
+
+\ascline{1,5pt}{666666}{1-5}
+
+\multicolumn{1}{>{\raggedright}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{}}}} & \multicolumn{2}{>{\raggedleft}m{\dimexpr 1.5in+2\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Gr1}}}} & \multicolumn{2}{>{\raggedleft}m{\dimexpr 1.5in+2\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Gr2}}}} \\
+
+\ascline{1,5pt}{666666}{1-5}
+
+
+
+\multicolumn{1}{>{\raggedright}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{car}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{mpg}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{cyl}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{disp}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{hp}}}} \\
+
+\ascline{1,5pt}{666666}{1-5}\endfirsthead \caption[]{Este\ es\ el\ título\ de\ la\ tabla}\label{tab:mt-tab}\\
+
+\ascline{1,5pt}{666666}{1-5}
+
+\multicolumn{1}{>{\raggedright}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{}}}} & \multicolumn{2}{>{\raggedleft}m{\dimexpr 1.5in+2\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Gr1}}}} & \multicolumn{2}{>{\raggedleft}m{\dimexpr 1.5in+2\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Gr2}}}} \\
+
+\ascline{1,5pt}{666666}{1-5}
+
+
+
+\multicolumn{1}{>{\raggedright}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{car}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{mpg}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{cyl}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{disp}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{hp}}}} \\
+
+\ascline{1,5pt}{666666}{1-5}\endhead
+
+
+
+\multicolumn{1}{>{\raggedright}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Mazda\ RX4}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{21.0}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{6}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{160}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{110}}}} \\
+
+
+
+
+
+\multicolumn{1}{>{\raggedright}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Mazda\ RX4\ Wag}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{21.0}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{6}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{160}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{110}}}} \\
+
+
+
+
+
+\multicolumn{1}{>{\raggedright}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Datsun\ 710}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{22.8}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{4}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{108}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{93}}}} \\
+
+
+
+
+
+\multicolumn{1}{>{\raggedright}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Hornet\ 4\ Drive}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{21.4}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{6}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{258}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{110}}}} \\
+
+
+
+
+
+\multicolumn{1}{>{\raggedright}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Hornet\ Sportabout}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{18.7}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{8}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{360}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{175}}}} \\
+
+
+
+
+
+\multicolumn{1}{>{\raggedright}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Valiant}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{18.1}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{6}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{225}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{105}}}} \\
+
+\ascline{1,5pt}{666666}{1-5}
+
+
+
+\end{longtable}
+
+
+
+\arrayrulecolor[HTML]{000000}
+
+\global\setlength{\arrayrulewidth}{\Oldarrayrulewidth}
+
+\global\setlength{\tabcolsep}{\Oldtabcolsep}
+
+\renewcommand*{\arraystretch}{1}
+
+\hypertarget{homogamia-en-el-amgba}{%
+\chapter{Homogamia en el AMGBA}\label{homogamia-en-el-amgba}}
+
+\hypertarget{homogamia-en-el-amgba-1}{%
+\section{Homogamia en el AMGBA}\label{homogamia-en-el-amgba-1}}
+
+especto a la homogamia (o segregación conyugal) en el AMGBA, los trabajos de (\protect\hyperlink{ref-Mazzeo2012a}{\textbf{Mazzeo2012a?}}) sobre la CABA y de Santiago Rodríguez (\protect\hyperlink{ref-Rodriguez2012}{\textbf{Rodriguez2012?}}; \protect\hyperlink{ref-Rodriguez2012a}{\textbf{Rodriguez2012a?}}; \protect\hyperlink{ref-Rodriguez2016e}{\textbf{Rodriguez2016e?}}) y (\protect\hyperlink{ref-Carrascosa2023}{\textbf{Carrascosa2023?}}) sobre el AMGBA identifican una pauta selectiva de las uniones matrimoniales, que otorga preferencia a las uniones con homogamia educativa. A su vez, estos trabajos identifican que las pautas de homogamia son más fuertes en los extremos de la estructura educativa y que las uniones mixtas son menos probables entre los grupos más distantes en términos educativos.
+
+Retomando estos hallazgos, nuestros resultados indican que en el AMBA el \% de las hogares tienen un núcleo conyugal presente, de los cuales el \% tienen ambos miembros con el mismo nivel educativo, es decir, presentan \emph{homogamia educativa}. Cuando descomponemos el porcentaje de homogamia según el nivel educativo de los cónyuges, vemos que el \% de los hogares conyugales está conformado por parejas donde ambos tienen nivel primario, mientras que el \% y el \% corresponde a parejas donde ambos tienen nivel educativo secundario y superior, respectivamente. A su vez, una persona con nivel educativo primario tiene una probabilidad de de estar en un hogar conyugal homogámico, mientras que esa probabilidad está en torno al \% para los otros dos niveles educativos. En este sentido, para las personas con nivel educativo primario la probabilidad de homogamia es significativamente más alta que para el resto de los niveles educativos. Reforzando esta observación, el análisis de Chi Cuadrado (\(\chi^2\)) realizado con simulación de Montecarlo muestra que en todos los casos las parejas con igual nivel educativo tienen un valor observado significativamente mayor que el esperado (Ver \protect\hyperlink{appendixC}{Anexo C}). Por el contrario, las parejas mixtas se comportan en sentido contrario, con la excepción de las parejas entre personas con nivel secundario y nivel superior que tienen un valor observado un poco mayor que el esperado (sin alcanzar los niveles de las parejas homogámicas).
+
+Cuando analizamos la situación en función de las dos jurisdicciones principales que componen el AMGBA (\ref{tab:HOM-TAB1}), la primera observación es que la CABA presenta un \% de hogares conyugales, mientras que en los Partidos del GBA este porcentaje es sensiblemente mayor (\%). A su vez, en los Partidos del GBA también es mayor el porcentaje total de homogamia educativa, donde esta representa el \% de los hogares conyugales, mientras que este indicador es del \% en la CABA. A su vez, la composición de esta homogamia es muy diferente en cada una de las jurisdicciones: mientras en los Partidos del GBA se explica fundamentalmente por las parejas con nivel primario (las parejas con ambos miembros con nivel educativo superior son muy pocas), en CABA los tres tipos de pareja homogámica tienen porcentajes similares.
+
+Sin embargo, como señalamos en el apartado metodológico, la comparación del porcentaje de parejas homogámicos por tipo puede introducir un sesgo, en la medida que la cantidad de personas de cada nivel educativo puede ser muy diferente en cada distrito. Como respuesta a esto hemos propuesto utilizar un nuevo indicado: la probabilidad de que una persona tenga una pareja con su mismo nivel educativo. Utilizando este indicador encontramos que en los Partidos del GBA una persona con nivel primario tiene una probabilidad de estar en pareja con alguien de ese mismo nivel educativo, mientras que para los otros dos niveles, esta probabilidad ronda el . Por su parte, en la CABA, la probabilidad de homogamia para las personas con nivel primaria también es la más alta que para los otros niveles educativos (), pero sensiblemente menor que en los Partidos del GBA. A su vez, la probabilidad de homogamia para personas con nivel superior es relativamente cercana a la probabilidad de la de las personas con nivel primario (), siendo las personas con nivel secundario las que tienen una probabilidad menor.
+
+En resumen, encontramos que en ambas jurisdicciones las personas con nivel educativo primario son las que tienen mayor probabilidad de tener un vínculo conyugal homogámico. Sin embargo, esta probabilidad es sensiblemente mayor en los Partidos del GBA, sobre todo cuando se lo compara con la probabilidad para los otros niveles. A su vez, si bien en la CABA el porcentaje de hogares homogámicos es similar para los tres niveles educativos, en realidad las personas con un miembro con nivel primario o superior tienen mayor probabilidad de ser homogámicos.
+
+Cuando consideramos la probabilidad de homogamia según el entorno urbano (ver Figura \ref{fig:HOM-TH}), encontramos una variación considerable de la probabilidad de homogamia para cada uno de los niveles educativos. En los entornos de origen informal, los de NSE bajo, vivienda social y (en menor medida) los de NSE medio y los cascos conurbanizados, la probabilidad de homogamia para los hogares con integrantes con estudios primarios es en general mayor que para los hogares con integrantes con estudios secundarios y, fundamentalmente, superiores (por eso la curva de densidad roja toma valores `hacia la derecha' y la curva verde valores `hacia la izquierda'). Por su parte, con algunos matices, en el resto de los entornos (salvo las urbanizaciones cerradas), vemos que la probabilidad de homogamia es similar para los hogares con integrantes de los tres niveles educativos. Dentro de esta caracterización general podemos profundizar en algunos matices. En primer lugar, en los cascos conurbanizados la probabilidad de homogamia de nivel primario sigue siendo mayor al resto, lo que lo asemeja a los entornos de NSE Medio. Por el contrario, en los entornos de NSE Alto la probabilidad de homogamia de nivel superior es un poco mayor que las otras. A su vez, en la ciudad colonial y su expansión, así como en las urbanizaciones cerradas, la probabilidad de homogamia es alta tanto para los hogares con nivel primario como superior. Por último, las urbanizaciones cerradas presentan altas tasas de homogamia en los extremos educativos (primario y superior), pero muy bajas en los hogares con estudios secundarios, lo cual constituye una particularidad respecto al resto de los entornos.
+
+En continuidad con este análisis podemos, para cada uno de las categorías educativas, ver la distribución espacial de la probabilidad de homogamia (ver Figura \ref{fig:HOM-MAPA}). Este mapa nos muestra que la homogamia de nivel primaria es mucho más probable en las zonas periféricas y deterioradas del AMGBA. En estas áreas predominan los entornos de origen informal y de NSE bajo y también es mayor el porcentaje de personas con nivel educativo primario. Sin embargo, como habíamos previsto del análisis anterior, también encontramos probabilidades altas de homogamia de nivel primario en la zona norte (en las urbanizaciones cerradas). Respecto a la probabilidad de homogamia de nivel secundario, se observan valores medios en casi toda la CABA y el primer cordón del área metropolitana (con valores bajos en las zonas más alejadas). Por último, la probabilidad de homogamia de nivel superior es más alta en el corredor costero norte de la CABA, así como en su continuidad hacia el norte en los partidos lindantes (Vicente López y San Isidro) y el tercer cordón donde predominan las urbanizaciones cerradas. Aunque menor, también es relativamente alta la probabilidad de homogamia de nivel superior en torno a algunos corredores ferroviarios (asociados a los cascos conurbanizados). Además, a diferencia de la homogamia de nivel secundario que tiene un aspecto relativamente homogéneo, la probabilidad de homogamia de nivel superior tiene un comportamiento mucho más concentrado en ciertas áreas, decayendo su valor fuera de estos lugares. Otro aspecto a destacar es que, además de diferentes patrones de distribución de cada una de estas probabilidades, los diferentes tipos de homogamia tienen diferentes intensidades. En este sentido, la figura nos muestra que la homogamia de nivel primario es mucho más alta que las otras dos.
+
+Sin embargo, en tanto corroboramos que existe una correlación fuerte entre la probabilidad de homogamia educativa y la proporción de personas con ese nivel educativo en cada unida espacial, es poco conveniente observar sólo ``qué tan alto'' es el valor de la probabilidad de homogamia (ya que, típicamente, será más alto en los lugares donde haya mayor concentración de ese grupo). Como alternativa, utilizamos una simulación Montecarlo para obtener la significatividad de esta probabilidad. La significatividad de la probabilidad de homogamia de una determinada unidad espacial es un indicador de qué tan (poco) esperable es la probabilidad de homogamia obtenida en una unidad espacial dado que esta tiene determinadas características poblacionales (principalmente la cantidad de hogares, la composición de cada grupo educativo y el porcentaje de hogares conyugales). La \ref{tab:HOM-TAB2} presenta el porcentaje de radios que tienen una probabilidad de homogamia significativa, es decir, una probabilidad mayor/menor que la que cabría esperar de un emparejamiento completamente aleatorio (en lugar de selectivo).
+
+En primer lugar, el porcentaje de radios que tienen una probabilidad de homogamia aleatoria (es decir, no-significativa) es mucho mayor respecto al nivel superior que para el nivel secundario y el nivel primario. En este sentido, un \% de los radios tienen una probabilidad de homogamia de nivel superior que se corresponde con la que obtendríamos si los emparejamientos de este grupo fueran aleatorios, mientras que para el nivel secundario y el nivel primario el porcentaje es de \% y \%, respectivamente. Esto supone que en casi un cuarto de los radios las personas de nivel superior no tienen un emparejamiento que podamos definir como selectivo. Un segundo elemento a considerar es que, si nos concentramos en los casos en que la probabilidad de homogamia es significativa, la casi la totalidad de radios presenta valores por sobre el valor esperado. En este sentido, cuando es significativa la probabilidad de homogamia, esta supone que es casi exclusivamente mayor que la que esperaríamos por un comportamiento aleatorio.
+
+En resumen, como destacan estudios anteriores, la homogamia conyugal en AMGBA es más alta para los grupos extremos. Sin embargo, nuestros resultados señalan que esto es especialmente cierto para los hogares con menor nivel educativo. Para los hogares con nivel educativo superior esto es relativo y está fundamentalmente asociado a algunos contextos urbanos. Además, encontramos que en casi un cuarto de los radios la probabilidad de homogamia de las personas con nivel superior es similar a la que cabría esperar de un comportamiento aleatorio. Esto refuerza nuestra observación sobre el hecho de que la homogamia de nivel superior no puede ser considerada como una pauta general. Por otra parte, encontramos algunos indicios de que la probabilidad de homogamia está fuertemente correlacionada con el porcentaje de personas de ese nivel educativo: en aquellos lugares donde existen más personas de un determinado nivel educativo, la probabilidad de homogamia de ese nivel educativo suele ser también alta. También en este punto, es importante señalar que esto no es así en todos los casos, como vimos en el caso de las urbanizaciones cerradas donde se observan probabilidades altas de homogamia de nivel primario, pero baja participación de este grupo en este entorno urbano. Más allá de estos casos particulares, estos resultados nos remiten a la relación entre segregación residencial y segregación conyugal (homogamia) que desarrollamos en el siguiente apartado.
+
+\hypertarget{la-relaciuxf3n-entre-homogamia-y-segregaciuxf3n-residencial}{%
+\section{La relación entre homogamia y segregación residencial}\label{la-relaciuxf3n-entre-homogamia-y-segregaciuxf3n-residencial}}
+
+Retomando el objetivo original del trabajo, en este apartado proponemos analizar cómo se relacionan la segregación residencial con la segregación conyugal (homogamia). En el apartado anterior, pudimos corroborar que la probabilidad de homogamia educativa está relacionada con la proporción de personas de cada nivel educativo, lo cual a su vez se relaciona con el nivel de segregación residencial. En relación a esto, identificamos que en aquellos entornos y `zonas' con mayor proporción de personas de un determinado nivel educativo, también se corroboraba un aumento de la probabilidad de homogamia de ese grupo. Sin embargo, no podemos saber en qué medida la mayor probabilidad de homogamia no manifiesta simplemente esta mayor presencia de ese grupo y, por lo tanto, con su condición segregada. En relación a esto nos preguntamos: ¿Hay una relación entre mayor diversidad local (baja segregación) y menor homogamia? Dicho de otro modo: ¿La mayor concentración de un grupo genera una mayor homogamia? ¿Es esto cierto incluso cuando controlamos la cantidad de personas para cada grupo social? ¿Esta relación se corrobora de igual forma para las personas de todos los grupos educativos?
+
+Para abordar estas preguntas, la Figura \ref{fig:MD-NOEXP} presenta, para cada nivel educativo, la relación entre la proporción de personas de ese nivel educativo y su probabilidad de homogamia.\footnote{Las líneas verticales punteadas indican la participación de cada grupo educativo en la población total. Como señalamos en el apartado metodológico, el \emph{Índice de Información Mutua} es una media ponderada de cuánto `se aleja' cada unidad espacial respecto a la participación en el conjunto (en términos de cuánta `información' aportan). Las unidades espaciales con una participación más disímil de la del promedio aportan, en principio, mayor segregación al conjunto.} En la parte izquierda de la figura se agrega la regresión cuadrática entre ambas variables (\(y = a + b.x + c.x^2\)) y en los márgenes la densidad de cada una de las variables. Además, para facilitar la lectura de la relación entre estas variables, en el lado derecho de la figura incluimos el porcentaje de homogamia no explicada por la proporción de personas de ese grupo en cada unidad censal.\footnote{En color gris señalamos las unidades espaciales que no tienen una probabilidad de homogamia significativa (es decir, en los cuales \(H_0\) es comprobada). Dado que la probabilidad de homogamia y la proporción de personas de un grupo es aproximadamente igual cuando se cumple \(H_0\), podemos imputarles un porcentaje de homogamia explicada igual a 1. En la figura se muestran los valores observados de este ratio, pero se utiliza dicha imputación en el cálculo de la regresión. A su vez, es importante tener en cuenta que para grupos con muy pequeña representación en la unidad censal, la probabilidad de homogamia suele ser poco significativa y su valor es poco interpretable (ya que no es representativo del comportamiento de esa población). Tomando esto en cuenta, en los gráficos de la Figura \ref{fig:MD-NOEXP} incluimos sólo las unidades espaciales donde se cumple una de estas condiciones: (a) la probabilidad es significativa; o (b) el grupo analizado representa más del 5\% de la población de esa unidad. A su vez, para ayudar en la interpretación de este indicador, en la figura de la derecha se dibuja una regresión lineal simple con una transformación sobre la variable \(x\) (\(y = a + b. \sqrt x\)).} Como señalamos en el apartado metodológico, este indicador nos muestra en qué medida la homogamia actúa como un mecanismo de segregación independiente de la composición de los grupos. En este sentido, expresa qué porcentaje de la homogamia no puede ser explicada por la composición de los grupos dentro de las unidades espaciales y, por lo tanto, puede ser atribuido a mecanismos de emparejamiento conyugal homogámicos independientes a la dinámica residencial.
+
+Como habíamos anticipado, la Figura \ref{fig:MD-NOEXP} (lado izquierdo) muestra que ambas variables tienden a crecer de forma conjunta. Además, para los tres grupos educativo el porcentaje de homogamia no-explicada (lado derecho de la Figura \ref{fig:MD-NOEXP}) tiende a disminuir a medida que aumenta la proporción de personas del grupo en la unidad espacial. Este resultado puede resultar contra intuitivo en relación con lo que habíamos visto en el apartado anterior, donde encontrábamos que las mayores probabilidades de homogamia se encontraban en los lugares donde había una mayor proporción de personas de ese grupo. Sin embargo, esta observación no tenía en cuenta que la probabilidad de homogamia depende en gran medida de la cantidad de personas del mismo nivel educativo que existen en ese espacio. En resumen, como tendencia general encontramos que el porcentaje de segregación conyugal (homogamia) que no puede ser explicado por la composición residencial tiende a ser mayor cuando la concentración del grupo es menor. Por el contrario, a medida que seleccionamos una unidad espacial con una proporción de personas mayor de un determinado grupo, la homogamia no explicada tiende a disminuir.
+
+Más allá de este patrón común a todos los niveles educativos, encontramos algunas particularidades cuando analizamos la situación de cada uno de los grupos. Primero, en relación con los otros niveles educativos, las personas con nivel primario son las que presentan, en general, una probabilidad de homogamia no explicada más alta (comparando entre radios con una proporción similar de cada grupo). En contraste, la probabilidad no explicada tiene valores menores para las personas con nivel secundario. Más allá de esto, la curva de decrecimiento tiene una tendencia similar a la de primaria. Por su parte, las personas con nivel superior tienen un comportamiento mixto. Cuando la proporción de personas de nivel superior en un radio es baja (menor al 20\%), este grupo de personas tiene una probabilidad de homogamia no explicada similar a la de las personas de nivel secundario que residen en radios con proporciones de su grupo similares. Sin embargo, a medida que aumenta la proporción de personas de nivel superior que residen en un determinado radio (consolidándose cuando es mayor al 50\%), la curva de la homogamia no explicada tiende a asimilarse a la del grupo de nivel primario, es decir, a ser definidamente más alta. Esta tendencia hay que tomarla con cierta cautela, ya que los radios con porcentajes altos de población de nivel superior son relativamente pocos. De forma general, lo que podríamos decir respecto al grupo de nivel superior es que su curva de decrecimiento es un poco menos pronunciada que la de los otros dos grupos educativos.
+
+En resumen, nuestros resultados indican que los grupos que están menos representados en una unidad espacial presentan una homogamia mayor a que cuando (el mismo grupo) tiene una mayor representación residencial. Esta tendencia es más fuerte para el grupo con nivel primario, aunque las personas con nivel superior tienden a comportarse de modo similar a estos a medida que crece su participación residencial. En contraste, el grupo con niveles de estudios secundarios es el que presenta comparativamente la homogamia no explicada más baja de los tres grupos educativos.
+
+\hypertarget{analysis4-concl}{%
+\section{Discusión de los resultados y conclusiones}\label{analysis4-concl}}
+
+En este trabajo nos hemos propuesto analizar la relación entre segregación residencial y segregación conyugal (homogamia). En este contexto se propuso una descripción de los patrones espaciales de segregación residencial y de la homogamia. Si bien estos habían sido ya explorados en trabajos anteriores, hemos propuesto una complejización de los hallazgos anteriores. En particular, se identificaron diferentes patrones locales y se pudo visualizar cómo estos patrones conviven en una realidad marcada por la confluencia de diferentes dinámicas históricas. Respecto a la homogamia se pudo ver la predominancia de la homogamia en las personas con educación primaria. Además, si bien las clases con estudios superiores también tienen probabilidades altas de homogamia estas no llegan a los niveles del grupo con estudios primario.
+
+A su vez, nuestra objetivo principal era describir la relación entre la segregación residencial y conyugal (homogamia). En este sentido, enmarcados en un enfoque multi-dominio (\protect\hyperlink{ref-Boterman2016}{\textbf{Boterman2016?}}; \protect\hyperlink{ref-Musterd2020}{\textbf{Musterd2020?}}) buscamos identificar en qué medida estas diferentes formas de segregación se refuerzan mutuamente o actúan de forma independiente entre sí. Como resultado de nuestro trabajo se identificó una relación positiva entre la probabilidad de segregación conyugal y la participación de cada grupo en la unidad espacial. Sin embargo, si consideramos la importancia relativa, la segregación conyugal tiende a tener mayor peso a medida que es menor la participación de cada uno de los grupos educativos en la unidad espacial. En este sentido, la homogamia no explicada (por la segregación residencial) es mayor a medida que el grupo tiene una participación menor.
+
+Estos resultados sugieren que la homogamia actúa como un mecanismo que refuerza la cohesión y el contacto en los grupos minoritarios a nivel territorial. Este comportamiento es similar al que se ha observado en la elección de escuelas privadas en ciertos barrios estadounidenses con mayoría afrodescendiente. En dichos contextos, donde las familias blancas constituyen una minoría residencial, estas familias muestran una tendencia a la elección de escuelas privadas, que les garantiza una menor mixtura social en el ámbito escolar y que, en paralelo, aumenta la segregación de la población negra en las escuelas públicas, por el éxodo de las familias blancas a la educación privada. Estas familias compensan la mayor mixtura residencial a través de la elección de escuelas que les permite un menor contacto con la población mayoritaria en el dominio residencial (\protect\hyperlink{ref-Saporito2007}{\textbf{Saporito2007?}}; \protect\hyperlink{ref-Saporito2014}{\textbf{Saporito2014?}}; \protect\hyperlink{ref-Lankford2006}{\textbf{Lankford2006?}}). De manera similar, en el caso analizado en este trabajo la tendencia a la homogamia (la elección de parejas similares en términos educativos) puede funcionar como un `resguardo' a nivel del hogar de aquellas situaciones donde la composición residencial genera una posibilidad de contacto (real o imaginario) con personas de otros grupos. Para las familias que viven en un contexto residencial donde su nivel educativo es poco común, el hogar conyugal refuerza y asegura el contacto con los pocos que son similares, a la vez que garantiza la separación de los otros grupos de población. En este sentido, la elección selectiva de parejas `similares' funciona como un mecanismo con el que establecer una barrera con los `cercanos pero diferentes'. Por el contrario, en aquellas unidades espaciales donde la proporción de personas del mismo grupo educativo es alta, la segregación conyugal deja de ser una herramienta indispensable para garantizar el contacto y la relación con personas similares (que está garantizada por su elevada presencia en el área espacial).
+
+De manera general, nuestros hallazgos sugieren que ambos dominios de la segregación se complementan. En este sentido, la homogamia viene a tomar mayor importancia en aquellas situaciones donde el riesgo de contacto con otros grupos sociales es mayor. En relación a esto, si bien no parece adecuada la caracterización de un `círculo vicioso' entre ambos dominios de la segregación (\protect\hyperlink{ref-VanHam2018}{\textbf{VanHam2018?}}), ambas formas de segregación parecen actuar en una `misma dirección'. En este sentido, la homogamia refuerza el contacto y la segregación en aquellos contextos territoriales en los cuales el grupo propio se encuentra como minoría en el espacio residencial. Respecto a nuestra preocupación inicial sobre el rol de la segregación (residencial y conyugal) en la conformación de la \emph{estratificación social}, podemos ver que ambas formas de segregación refuerzan un contacto selectivo entre los grupos sociales (en nuestro caso aproximado por el nivel educativo).
+
+\hypertarget{part-conclusiones}{%
+\part{Conclusiones}\label{part-conclusiones}}
+
+\hypertarget{conclusion}{%
+\chapter{Título del capítulo de conclusión}\label{conclusion}}
+
+\chaptermark{Resultados y Conclusiones}
+
+Acá va la conclusión
+
+\hypertarget{part-anexos}{%
+\part{Anexos}\label{part-anexos}}
+
+\hypertarget{appendix-anexos}{%
+\appendix}
+
+
+\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{Anexo}\ \thechapter.\ #1}{}}
+
+\hypertarget{primer-anexo}{%
+\chapter{Primer Anexo}\label{primer-anexo}}
+
+Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo,
+
+\hypertarget{segundo-anexo}{%
+\chapter{Segundo Anexo}\label{segundo-anexo}}
+
+Otra cosa para el anexo 2
+
+\backmatter
+
+\hypertarget{referencias-bibliogruxe1ficas}{%
+\chapter*{Referencias bibliográficas}\label{referencias-bibliogruxe1ficas}}
+\addcontentsline{toc}{chapter}{Referencias bibliográficas}
+
+\markboth{Referencias}{Referencias}
+
+\noindent \setlength{\parindent}{-0.20in}
+
+\end{document}

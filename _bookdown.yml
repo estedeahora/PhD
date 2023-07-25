@@ -1,7 +1,9 @@
+rmd_subdir: ["chapters/"]
+
 output_dir: "_PhD"
 book_filename: "Tesis-PhD-Serrati"
 delete_merged_file: true
-repo: https://github.com/estedeahora/
+repo: https://github.com/estedeahora/PhD
 
 language:
   label:

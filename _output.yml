@@ -7,7 +7,6 @@ bookdown::gitbook:
         <li><a href="./">Tesis PhD - Pablo S. Serrati</a></li>
 #      after: |
 #        <li><a href="https://bookdown.org" target="_blank">Published with bookdown</a></li>
-#    edit: https://github.com/estedeahora/REPO/edit/BRANCH/%s
     download: [pdf, epub]
     sharing:
       facebook: no
