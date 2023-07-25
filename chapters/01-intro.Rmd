@@ -111,6 +111,11 @@ dominios (residencial, educación y movilidades) de la vida de las
 ciudades? ¿Qué rol juegan los contextos locales en la conformación de la
 segregación urbana?
 
+Para ello se busca cubrir una vacancia en el campo local, respecto al
+estudio de la segregación desde un enfoque cuantitativo y multiescalar,
+sin dejar de abordar la complejidad (articulación de dominios) del
+fenómeno.
+
 <!-- Presentación objetivo general y objetivos particulares -->
 
 El objetivo general de este trabajo es *analizar el modo en el que se
