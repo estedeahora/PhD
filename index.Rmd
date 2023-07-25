@@ -53,9 +53,7 @@ monofontoptions: "Scale=0.7"
 \fancyhead[LE]{Pablo Serrati - Tesis de Doctorado}
 \fancyhead[RO]{\leftmark}
 ```
-
 ```{r setup, echo = F}
-
 
 options(OutDec= ",")
 
@@ -89,7 +87,7 @@ source(here::here("script/00_fx.R"), encoding = "UTF-8")
 
 ## Título para el prefacio {.unnumbered}
 
-[] TODO Escribir texto (final)
+[] TODO Escribir texto (final).
 
 ## Agradecimientos {.unnumbered}
 

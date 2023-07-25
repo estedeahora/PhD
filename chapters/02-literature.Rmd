@@ -12,7 +12,7 @@ editor_options:
 
 <!-- TITULO: El estudio de la segregación social en el marco de los estudios sobre estratificación social /// Segregación como mecanismo de estratificación social -->
 
-## Segregación como dimensión espacial de la estratificación social 
+## Segregación como dimensión espacial de la estratificación social
 
 La *segregación* *social* refiere al fenómeno por el cual los grupos
 sociales hacen un *uso selectivo y diferenciado del espacio,* lo cual
@@ -93,277 +93,92 @@ social. Es por ello que la segregación emerge como una manifestación
 espacial de este fenómeno de vinculación selectiva aportando a la
 construcción de las clases sociales. Retomando este enfoque, podemos
 entender a la segregación como la *dimensión espacial* de la desigualdad
-social, la polarización y la exclusión [@Musterd1998;
-@Wang2012].[^02-literature-2]
+social, la polarización y la exclusión [@Musterd1998; @Wang2012].
 <!--# Es por ello que el estudio de la segregación recupera el problema de la estratificación social poniendo el foco en los fenómenos espaciales, es decir, analizando cómo el espacio se configura como un factor específico e independiente de estratificación. -->
 
-[^02-literature-2]: En relación con esta definición es interesante
-    señalar que esto no implica pensar al espacio como un 'reflejo' de
-    las estructuras sociales en los fenómenos de la segregación. Por el
-    contrario, consideramos que los fenómenos espaciales (y la
-    segregación en particular) constituyen una dimensión activa, que
-    actúa con una autonomía relativa aportando su propia particularidad
-    al proceso de estratificación social. Como señala @Reygadas2018, los
-    territorios no son sólo escenarios en los que se 'expresa' la
-    desigualdad, sino 'actores no humanos' en la producción de estas
-    desigualdades. En relación con esto, las dinámicas de fragmentación
-    urbana tienen un rol activo en la generación de las desigualdades y
-    en las oportunidades de sus habitantes, configurando 'contextos
-    urbanos' heterogéneos y desiguales que limitan el acceso a los
-    bienes y servicios de la ciudad, generando y potenciando otras
-    desigualdades [@DiVirgilio2023].
+<!-- Autonomía de la dimensión espacial en los procesos de estratificación -->
 
-<!-- Los estudios de segregación en LA y Argentina: La segregación en Latinoamérica y Argentina -->
-
-En América Latina los procesos de urbanización dependiente dieron lugar
-a ciudades marcadas por la inequidad territorial [@Duhau2013a]. Esto se
-expresa a escala microterritorial en la existencia de contexto urbanos
-diferenciados por el origen de dichas urbanizaciones y las
-características de las poblaciones que los habitan [@Connolly2005;
-@Duhau2008; @Marcos2015]. En este contexto, en la región se destacan dos
-estrategias de abordaje de la segregación. Por un lado, trabajos
-centrados en análisis cuantitativos que buscan medir e identificar
-patrones de segregación, así como evaluar sus efectos [@Flores2008;
-@Groisman2005; @Groisman2006; @Kaztman1999a; @Kaztman2001; @Linares2013;
-@Portes2005; @Rodriguez2004; @Sabatini2001; @Torres2001; @Torres2001a;
-@Torres1999; @Zuccotti2008; entre otros]. Por otro lado, desde la
-perspectiva centrada en los actores que habitan entornos segregados
-(fundamentalmente de origen informal) indagan cualitativamente las
-formas de sociabilidad y las consecuencias subjetivas de la segregación
-[por ejemplo @Carman2013; @Cravino2002; @Merklen2005; @Segura2006;
-@Soldano2017]. A su vez, desde abordajes mixtos, trabajos, como el de
-@Brikman2020, se destaca la importancia que tienen las prácticas de
-movilidad en la configuración de la segregación urbana, en tanto
-permiten habitar y conectar la localización residencial con los
-beneficios urbanos [@Cosacov2014; @DiVirgilio2007].
-
-Enmarcado en el campo los estudios urbanos, este proyecto recupera el
-concepto de segregación multi-dominio, entendiendo que para entender la
-segregación urbana es necesario abordarla como un fenómeno complejo en
-el cual se articulan distintos ámbitos de la vida social, entre los
-cuales la residencia es un aspecto.
-
-<!--# DALLE -->
-
-En América Latina existen aún pocos trabajos que aborden la relación
-entre diferentes dominios de la segregación de forma cuantitativa. En el
-ámbito local el principal avance en esta dirección viene dado por
-algunos trabajos que indagan cómo la segregación residencial se
-retroalimenta con la segmentación del mercado laboral y educativo,
-potenciando el aislamiento de los 'pobres urbanos' [@Kaztman2001]. A su
-vez, desde un enfoque predominantemente cualitativo, se ha indagado cómo
-la segregación residencial se relaciona con el aislamiento urbano en
-otros dominios [@Soldano2008; @Soldano2017; @Carman2013;
-@DiVirgilio2014c].
-
-<!--# FIN DALLE -->
+En relación con esta definición es importante señalar que lo anterior no
+implica pensar al espacio como un 'reflejo' de las estructuras sociales
+en los fenómenos de la segregación. Por el contrario, consideramos que
+los fenómenos espaciales (y la segregación en particular) constituyen
+una dimensión activa, que actúa con una autonomía relativa aportando su
+propia particularidad al proceso de estratificación social. Como señala
+@Reygadas2018, los territorios no son sólo escenarios en los que se
+'expresa' la desigualdad, sino 'actores no humanos' en la producción de
+estas desigualdades. En relación con esto, las dinámicas de
+fragmentación urbana tienen un rol activo en la generación de las
+desigualdades y en las oportunidades de sus habitantes, configurando
+'contextos urbanos' heterogéneos y desiguales que limitan el acceso a
+los bienes y servicios de la ciudad, generando y potenciando otras
+desigualdades [@DiVirgilio2023].
 
 ## El estudio de la segregación: Desde la segregación residencial a la segregación multi-dominio
 
-El estudio de la segregación residencial ha sido un tópico recurrente y
+<!-- Origen de los estudios sobre segregación -->
+
+Los estudios sobre la segregación han sido un tópico recurrente y
 fundante de la sociología urbana desde la segunda postguerra [@Bell1954;
-@Duncan1955a; @Duncan1955b; @Simpson1949]. Estos trabajos estaban
-centralmente interesados en entender cómo los grupos étnicos/raciales
-compartían diferentes espacios residenciales.
-
-Aunque originalmente los trabajos sobre segregación se focalizaron en la
-segregación residencial [@Tammaru2021; @Musterd2020; @Massey1988;
-@Duncan1955b],
-
-El éxito de estos trabajos, estimuló la recuperación del concepto de
-segregación para estudiar la diversidad en escuelas [@Allen2007],
-ámbitos laborales [@Hutchens2009], espacios de compras y recreación
-[@Wang2012], movilidades cotidianas [@Brikman2020] y el transporte
-[@Wilson2011], entre otros. Esta ampliación de los dominios de análisis
-fue acompañada por la comparación de otros aspectos que diferencian a
-los grupos, como el género y el nivel socio-económico.
-
-en las décadas siguientes el concepto de segregación fue incorporado
-para analizar otros *dominios* de la vida social, como el laboral
-[@Karmel1988; @Ferguson2018a], el escolar [@Reardon2000a;
-@Oosterbeek2021; @Thrupp2002], los espacios de actividad [@Schnell2001a;
-@Candipan2021; @Silm2021], el transporte [@Abbasi2021; @Wilson2011], las
-relaciones matrimoniales [@Solis2007; @Rodriguez2016e; @Solis2010;
-@Bouchet-Valat2018], las relaciones interpersonales [@Bojanowski2014;
-@Huang2022], las redes sociales virtuales [@Hofstra2017; @Morales2019;
-@Dorman2020], los lugares de esparcimiento [@Tomasiello2022], entre
-otros.
-
-<!--# Dalle + SNA Introducción -->
-
-Si bien tradicionalmente el estudio de la segregación se focalizó en el
-ámbito residencial, el fenómeno por el cual los individuos tienden a
-juntarse con personas similares excede este dominio. En esta línea,
-desde hace varias décadas, algunos trabajos comenzaron a indagar el
-fenómeno de la segregación en otros dominios, como el laboral, el
-educativo, los espacios de actividad, los espacios de ocio o las redes
-sociales, entre otros. En particular, en la medida que se incorpora el
-efecto de las *movilidades cotidianas* es posible identificar 'espacios
-de actividad' [@Horton1971] en los cuales las personas desarrollan su
-vida diaria. Estos espacios de actividad les permite a los hogares hacer
-un uso diferenciado del espacio y los recursos urbanos, controlando las
-posibilidades de encuentros con otros grupos sociales [@Wong2011]. Como
-resultado de estos desarrollos, recientemente se planteó la necesidad de
-abordar el problema de la segregación desde una perspectiva más amplia,
-que articule los diferentes dominios [@Musterd2020; @Boterman2016;
-@VanHam2016], niveles [@VanHam2018] y dimensiones [@Quillian2012;
-@Boterman2021] de la vida social.
-
-<!--# Dalle literature -->
-
-<!-- Segregación multi-dominio  -->
-
-En este contexto, durante la última década, algunos autores plantearon
-la necesidad de abordar esta diversidad desde un marco conceptual
-integrado, proponiendo un enfoque multi-dominio [*multi-domain*] de la
-segregación [@Boterman2016; @VanHam2016]. La interdependencia entre
-dominios [@Schnell2001a; @Atkinson2004; @Wang2012] ha llevado a que
-algunos autores planteen la existencia de 'círculos viciosos'
-[@VanHam2018 ] y una 'reproducción multi-dominio' de la segregación
-[@Boterman2016]. Sin embargo, algunos estudios muestran que no
-necesariamente todos los dominios de la segregación actúan en la misma
-dirección, de manera que cada uno de estos dominios aporta diferentes
-elementos en el proceso de diferenciación espacial [@Boterman2016 ;
-@Boterman2019a; @Serrati2023]. Hasta el momento es poco explorada la
-forma en que los diferentes dominios se articulan, dando lugar al
-fenómeno de la segregación urbana como un todo.
-
-En este contexto, durante la última década, algunos autores plantearon
-la necesidad de abordar esta diversidad de dominios desde un marco
-conceptual integrado, proponiendo para ello un enfoque multi-dominio
-[*multi-domain*] de la segregación [@Boterman2016;
-@VanHam2016].[^02-literature-3] Hasta el momento es poco explorada la
-forma en que los diferentes dominios se articulan, dando lugar al
-fenómeno de la segregación urbana como un todo. La identificación de
-cierta interdependencia y realimentación entre los dominios
-[@Schnell2001a; @Atkinson2004; @Wang2012] ha llevado a que algunos
-autores planteen la existencia de 'círculos viciosos' [@VanHam2018] y a
-la existencia de una 'reproducción multi-dominio' de la segregación
-[@Boterman2016]. Sin embargo, otros estudios muestran que no
-necesariamente todos los dominios de la segregación actúan en la misma
-dirección, de manera que cada uno de estos dominios puede aportar
-diferentes elementos en el proceso de diferenciación espacial
-[@Boterman2016 ; @Boterman2019a; @Serrati2023].
-
-[^02-literature-3]: Si bien no es posible hacer un desarrollo extensivo
-    en el presente trabajo, el enfoque multi-dominio de la segregación
-    encuentra una forma natural de expresión y representación en los
-    grafos multicapa [@Aleta2019]. Las redes multicapa [multilayer] son
-    una generalización de las redes simples, donde además de un conjunto
-    de nodos y vínculos, se considera un conjunto de capas
-    ($\alpha;\beta;...$) , de manera que cada nodo $u$ pertenece a (al
-    menos) una capa $\alpha$. En las redes multicapa, un nodo $u_i$
-    puede tener un vínculo $E$ con cualquier otro nodo $u_j$, el cual
-    puede pertenecer a la misma capa ($\alpha$) o a otra capa ($\beta$).
-    En particular, un subtipo especial de redes multicapa son las redes
-    del tipo *multiplex* [@Magnani2021; @Ostoic2020], en donde para cada
-    capa existe el mismo conjunto de nodos y los vínculos entre los
-    nodos pueden ocurrir dentro de la misma capa o entre diferentes
-    capas.
-
-    Las redes multiplex resultan una herramienta poderosa y poco
-    explorada aún para representar la segregación multidominio. Mediante
-    estas redes multicapas cada dominio puede ser representado como una
-    capa. Dentro de cada capa las personas estarían representadas como
-    nodos y existiría un enlace intra-capa entre aquellos nodos
-    (personas) que compartan la pertenencia a un mismo 'espacio'
-    (escolar, residencial, laboral, etc.). Esta forma de representar la
-    segregación multidominio permitiría abordar cómo se articulan y
-    replica la segregación en los diferentes dominios (capas). Más allá
-    de la potencialidad de este enfoque, es un desafío que no puede
-    omitirse la dificultad que implica obtener datos a nivel individual
-    que permitirían este tipo de análisis.
-
-En resumen, la segregación urbana es un fenómeno complejo en el que se
-articulan diferentes dominios.[^02-literature-4] Es por ello que un
-aspecto central de estos estudios es analizar cómo se articulan estos
-dominios entre sí, generando círculos viciosos o reforzando aspectos
-complementarios del fenómeno general. A su vez, el enfoque de la
-segregación multi-dominio es una perspectiva interesante para pensar la
-dimensión espacial de la estratificación social, fundamentalmente en
-relación con la concepción weberiana de "clase social" que describimos
-anteriormente.
-
-[^02-literature-4]: Relacionado con este enfoque multi-dominio de la
-    segregación, algunos autores han resaltado que en el fenómeno de la
-    segregación confluyen diferentes *dimensiones* -étnica, migratoria,
-    clase, etaria, género, etc.-, las cuales tienden a superponerse y
-    reforzarse [@Boterman2021; @Musterd2020; @Boterman2020a]. A su vez,
-    la segregación se desarrolla en diferentes *niveles*, lo que ha
-    permitido incorporar al análisis individual y dentro de los hogares,
-    y consecuentemente la dimensión longitudinal de la segregación
-    dentro de los cursos de vida y de la transmisión intergeneracional
-    [@Tammaru2021; @VanHam2018]. En este sentido, una caracterización
-    más amplia de la segregación social nos permite caracterizarla como
-    un proceso complejo que se desarrolla articulando diferentes
-    *dimensiones* [@Quillian2012; @Boterman2021], dominios
-    [@Boterman2016; @VanHam2016] y niveles [@VanHam2018].
-
-<!--# FIN Dalle -->
-
-En este contexto, la segregación urbana emerge como un fenómeno complejo
-que se configura articuladamente en diferentes dominios de la vida
-social [@DiVirgilio2014d] en los que se desenvuelve el espacio de vida
-de los individuos [@Courgeau1988]. En base a esto, algunos autores
-proponen pensar la "reproducción multi-dominio de la segregación
-urbana", analizando la acción conjunta y superpuesta de los distintos
-dominios de la vida social [@Boterman2016; @VanHam2018; @VanHam2016]. En
-este sentido, estos trabajos llevan a entender que la segregación
-residencial es sólo un aspecto de la segregación urbana que es necesario
-captar [@Wang2012].
-
-### El espacio residencial como eje de los espacios de actividad
-
-El enfoque tradicional, centrado en el lugar de residencia
-
-<!--# SNA -->
-
-<!-- La residencia como eje articulador segregación residencial -->
-
-El espacio de residencia es un eje articulador de las dinámicas de
-actividad cotidianas. En este contexto, algunos autores identifican un
-capital 'locacional' [@Abramo2003] o 'residencial' [@Levy1994;
-@Cailly2007], que facilita a los hogares el acceso a recursos externos e
-internos de los barrios. La localización residencial tiene efectos sobre
-las posibilidades de apropiación del espacio urbano [@DiVirgilio2007;
-@Cosacov2018a; @DiVirgilio2017g], lo cual permite generar un beneficio
-indirecto [@Harvey1977] o una ganancia de localización [@Bourdieu2000].
-En contraste, algunas localizaciones residenciales no-favorecidas
-construyen estigmas o marcas negativas sobre sus habitantes, lo cual
-restringe las posibilidades de acceso efectivo a otros recursos urbanos
-[@PrevotSchapira2001; @Soldano2008a]. Como resultado, los trabajos sobre
-segregación se focalizaron en un principio dentro del ámbito residencial
-[@Tammaru2021; @Musterd2020; @Massey1988; @Duncan1955], analizando la
-diversidad en agregados geográficos administrativos predefinidos.
-
-<!--# FIN SNA -->
-
-Como señalamos anteriormente, la segregación residencial ha sido uno de
-los temas centrales en la tradición de los estudios urbanos de la
-sociología. En esta línea, uno de los trabajos pioneros escrito por
-@Duncan1955a señala la estrecha relación que existe entre la "distancia
-social" y la "distancia espacial", por lo cual el grado de segregación
-residencial de un grupo migrante está inversamente relacionado con el
+@Duncan1955a; @Duncan1955b; @Simpson1949]. Como consecuencia de este
+origen, la mayoría de estos trabajos estaban centrados en entender la
+segregación residencial de los grupos étnicos y raciales en Estados
+Unidos. Aprovechando el rápido desarrollo de las medidas de segregación
+basados en datos censales, gran parte de los trabajos sobre segregación
+se focalizaron en lo sucesivo en la segregación dentro del dominio
+residencial [@Tammaru2021; @Musterd2020; @Massey1988; @Duncan1955b]. En
+esta línea, @Duncan1955a señala la estrecha relación que existe entre la
+'distancia social' y la 'distancia espacial', por lo cual el grado de
+segregación residencial de un grupo está inversamente relacionado con el
 nivel de asimilación de este grupo en los valores de la sociedad
-receptora. Posteriormente, diversos trabajos han reforzado la
-importancia de la segregación residencial para entender el acceso a los
-recursos y oportunidades urbanas [una revisión de la actualidad de esta
-temática puede consultarse en @DiVirgilio2014c; @Musterd2020a;
-@VanHam2021].
+receptora.
 
-<!--# La segregación como forma de 'deprivation' -->
+<!-- La residencia como articulador de la segregación residencial -->
 
-A su vez, la segregación
+A su vez, esta centralidad del espacio de residencia en los estudios de
+segregación se justifica por la importancia del mismo como eje
+articulador de las dinámicas de actividad cotidianas. En relación a
+esto, algunos autores han propuesto el concepto de capital 'locacional'
+[@Abramo2003] o 'residencial' [@Levy1994; @Cailly2007], el cual facilita
+a los hogares el acceso a recursos externos e internos de los barrios.
+La localización residencial tiene efectos sobre las posibilidades de
+apropiación del espacio urbano [@DiVirgilio2007; @Cosacov2018a;
+@DiVirgilio2023]. En este sentido, el 'capital residencial' permite
+obtener una ganancia de localización [@Bourdieu2000] dando un beneficio
+indirecto a las personas con mejores localizaciones residenciales
+[@Harvey1977]. En contraste, algunas localizaciones residenciales
+no-favorecidas construyen estigmas o marcas negativas sobre sus
+habitantes, lo cual restringe las posibilidades de acceso efectivo a
+otros recursos urbanos [@PrevotSchapira2001; @Soldano2008a].
 
-Concepto de deprivation + geografía del bienestar + acceso a servicios.
+<!-- La segregación como forma de 'deprivation' + geografía del bienestar + acceso a servicios -->
 
-### Las movilidades cotidianas, los espacios de vida y el problema de la segregación urbana
+La ubicación residencial es uno de los aspectos que más incide a la hora
+de analizar el acceso a los recursos y oportunidades urbanas
+[@DiVirgilio2014c; @Musterd2020a; @VanHam2021] y existen fuertes
+indicios de que desigualdad en el acceso se relaciona con las
+desigualdades sociales y la distribución de los diferentes grupos
+sociales [@Nicoletti2023]. A su vez, esta diferencia en la distribución
+espacial de los recursos urbanos debe sumarse la diferencia entre la
+'calidad' de estos servicios, por lo cual algunas localizaciones
+encuentran acceso a algunos servicios pero estos son de peor calidad [un
+ejemplo de esto puede verse en relación a los establecimientos
+educativos @Serrati2024]. En la medida que existe una desigual
+distribución (en calidad y cantidad) de los recursos urbanos, la
+concentración de los grupos en ciertas zonas supone indirectamente un
+acceso desigual a estos recursos. La existencia de una 'geografía del
+bienestar' [@DiVirgilio2023], da cuenta de estas diferencias y de cómo
+los procesos de segregación pueden reforzar diferencias en el acceso y
+la distribución de los recursos urbanos.
 
-Desarrollo de diferentes enfoques sobre espacios de actividad.
+### La segregación urbana más allá de la residencia: las movilidades cotidianas y los espacios de vida
 
-<!--# SNA -->
+<!-- Los otros dominios de la segregación -->
 
-<!-- El efecto de las movilidades y los espacios de actividad sobre la segregación social -->
+<!--# en las décadas siguientes el concepto de segregación fue incorporado para analizar [...] Esta ampliación de los dominios de análisis fue acompañada por la comparación de otros aspectos que diferencian a los grupos, como el género y el nivel socio-económico.-->
+
+<!--# Si bien tradicionalmente el estudio de la segregación se focalizó en el ámbito residencial, el fenómeno por el cual los individuos tienden a juntarse con personas similares excede este dominio. -->
+
+<!--# El éxito de estos trabajos, estimuló la recuperación del concepto de segregación para estudiar la diversidad en escuelas [@Allen2007], ámbitos laborales [@Hutchens2009], espacios de compras y recreación [@Wang2012], movilidades cotidianas [@Brikman2020] entre otros. -->
 
 Más allá de la ubicación residencial, el análisis de la segregación
 incorporó otros *dominios* de la vida social como el laboral
@@ -374,33 +189,44 @@ incorporó otros *dominios* de la vida social como el laboral
 @Solis2010; @Bouchet-Valat2018], las relaciones interpersonales
 [@Bojanowski2014; @Huang2022; @Otero2022], las redes sociales virtuales
 [@Hofstra2017; @Morales2019; @Dorman2020], los lugares de esparcimiento
-[@Tomasiello2022], entre otros. Si bien la ubicación residencial tiene
-una importancia central en la dinámica cotidiana, los hogares son
-capaces de generar estrategias de movilidad cotidiana para conectar
-diferentes espacios urbanos, configurando así 'espacios de vida'
-[@Courgeau1988] o 'espacios de actividad' [@Horton1971]. La capacidad
-para articular diferentes espacios a partir de las movilidades diarias,
-permite a los hogares 'habitar' el espacio urbano, apropiándose del
-mismo material y simbólicamente [@Cosacov2014; @Duhau2008;
-@DiVirgilio2007; @Segura2019; @Brikman2021]. Por ello la articulación de
-estos espacios de vida mediante las movilidades constituye un capital
-'espacial' o de 'movilidad',[^02-literature-5] que actúa como elemento
-estratificante en la medida que permite una apropiación y uso
-diferencial del espacio [@Rerat2018].
+[@Tomasiello2022], entre otros.
+
+<!-- El efecto de las movilidades y los espacios de actividad sobre la segregación social -->
+
+En particular, en la medida que se incorpora el efecto de las
+*movilidades cotidianas* es posible identificar 'espacios de actividad'
+[@Horton1971] en los cuales las personas desarrollan su vida diaria.
+Estos espacios de actividad les permite a los hogares hacer un uso
+diferenciado del espacio y los recursos urbanos, controlando las
+posibilidades de encuentros con otros grupos sociales [@Wong2011].
+
+Si bien la ubicación residencial tiene una importancia central en la
+dinámica cotidiana, los hogares son capaces de generar estrategias de
+movilidad cotidiana para conectar diferentes espacios urbanos,
+configurando así 'espacios de vida' [@Courgeau1988] o 'espacios de
+actividad' [@Horton1971]. La capacidad para articular diferentes
+espacios a partir de las movilidades diarias, permite a los hogares
+'habitar' el espacio urbano, apropiándose del mismo material y
+simbólicamente [@Cosacov2014; @Duhau2008; @DiVirgilio2007; @Segura2019;
+@Brikman2021]. Por ello la articulación de estos espacios de vida
+mediante las movilidades constituye un capital 'espacial' o de
+'movilidad',[^02-literature-2] que actúa como elemento estratificante en
+la medida que permite una apropiación y uso diferencial del espacio
+[@Rerat2018].
 <!-- En gran medida el problema de la movilidad supone analizar cómo se reproduce la segregación en los espacios de vida. Dentro de los estudios sobre segregación, algunos trabajos plantean estudiar la segregación en los espacios de actividad. El enfoque de la segregación clásico (basado en el modelo de la segregación residencial) fue abordado principalmente desde una perspectiva 'basada en el lugar' [place-based], es decir, en áreas residenciales para las cuales se conocía la composición de grupos. Sin embargo, el desarrollo reciente de la perspectiva multi-dominio, ha estimulado el desarrollo de un enfoque 'basado en las personas' [people-based]. -->
 
-[^02-literature-5]: En esta línea @Levy1994 señala que es posible
-    distinguir un 'capital de posición', relacionado con la inscripción
-    a ciertos lugares como la residencia o el lugar de trabajo y un
-    'capital de situación', vinculado al espacio que el individuo
-    apropia mediante sus movilidades. En conjunto estos capitales
-    componen el *capital espacial*, entendido como el 'conjunto de
-    recursos acumulados por un actor que le permite beneficiarse, según
-    su estrategia, del uso de la dimensión espacial de la sociedad'
-    [@Levy2003]. Por su parte, Kaufmann [@Flamm2006; @Kaufmann2004]
-    propone el concepto de 'motilidad', el cual entiende como una forma
-    específica de capital que permite tomar posesión del campo de
-    posibilidades de la movilidad en beneficio de los proyectos
+[^02-literature-2]: <!--# SACAR DE NOTA -->En esta línea @Levy1994
+    señala que es posible distinguir un 'capital de posición',
+    relacionado con la inscripción a ciertos lugares como la residencia
+    o el lugar de trabajo y un 'capital de situación', vinculado al
+    espacio que el individuo apropia mediante sus movilidades. En
+    conjunto estos capitales componen el *capital espacial*, entendido
+    como el 'conjunto de recursos acumulados por un actor que le permite
+    beneficiarse, según su estrategia, del uso de la dimensión espacial
+    de la sociedad' [@Levy2003]. Por su parte, Kaufmann [@Flamm2006;
+    @Kaufmann2004] propone el concepto de 'motilidad', el cual entiende
+    como una forma específica de capital que permite tomar posesión del
+    campo de posibilidades de la movilidad en beneficio de los proyectos
     personales. Retomando este último concepto, @Kellerman2012 y
     @Delaunay2013 distinguen la movilidad practicada de la movilidad
     potencial, en tanto el capital de movilidad no necesariamente
@@ -410,10 +236,12 @@ diferencial del espacio [@Rerat2018].
     tanto permite 'dar sentido' al espacio, a partir de *tomar* y
     *configurar* los usos del mismo.
 
+Desarrollo de diferentes enfoques sobre espacios de actividad.
+
 <!-- Reposición del objetivo en clave de la bibliografía -->
 
 En resumen, la segregación urbana es un fenómeno complejo en el que se
-intervienen diferentes dominios[^02-literature-6] y donde ocupa un rol
+intervienen diferentes dominios[^02-literature-3] y donde ocupa un rol
 central la reflexión sobre cómo se articulan estos dominios entre sí.
 Retomando esten enfoque, nos interesa analizar en qué medida las
 prácticas de movilidad y el modo en que se configuran los espacios de
@@ -425,7 +253,7 @@ cómo la segregación experimentada en los espacios de actividad refuerza
 vicioso o, por el contrario, aportando a diferentes aspectos de la
 segregación urbana.
 
-[^02-literature-6]: Relacionado con este enfoque multi-dominio de la
+[^02-literature-3]: Relacionado con este enfoque multi-dominio de la
     segregación, algunos autores han resaltado que en el fenómeno de la
     segregación confluyen diferentes *dimensiones* -étnica, migratoria,
     clase, etaria, género, etc.-, las cuales tienden a superponerse y
@@ -439,8 +267,6 @@ segregación urbana.
     caracterizarla como un proceso complejo que se desarrolla
     articulando diferentes *dimensiones* [@Quillian2012; @Boterman2021],
     dominios [@Boterman2016; @VanHam2016] y niveles [@VanHam2018].
-
-<!--# FIN SNA -->
 
 ### La escuela como espacio de separación
 
@@ -462,7 +288,7 @@ familias elaboran una estrategia unificada de elección de escuela y de
 En concreto, la escuela es un ámbito central en el que analizar el
 problema de la segregación...
 
-### *Connubium* y homofilia. La segregación en los vínculos sociales 
+### *Connubium* y homofilia. La segregación en los vínculos sociales
 
 <!--# Dalle -->
 
@@ -531,6 +357,143 @@ refuerzan diferentes aspectos de la segregación urbana.
 <!--# FIN Dalle -->
 
 ## La segregación urbana como marco
+
+<!-- Los estudios de segregación en LA y Argentina: La segregación en Latinoamérica y Argentina -->
+
+En América Latina los procesos de urbanización dependiente dieron lugar
+a ciudades marcadas por la inequidad territorial [@Duhau2013a]. Esto se
+expresa a escala microterritorial en la existencia de contexto urbanos
+diferenciados por el origen de dichas urbanizaciones y las
+características de las poblaciones que los habitan [@Connolly2005;
+@Duhau2008; @Marcos2015]. En este contexto, en la región se destacan dos
+estrategias de abordaje de la segregación. Por un lado, trabajos
+centrados en análisis cuantitativos que buscan medir e identificar
+patrones de segregación, así como evaluar sus efectos [@Flores2008;
+@Groisman2005; @Groisman2006; @Kaztman1999a; @Kaztman2001; @Linares2013;
+@Portes2005; @Rodriguez2004; @Sabatini2001; @Torres2001; @Torres2001a;
+@Torres1999; @Zuccotti2008; entre otros]. Por otro lado, desde la
+perspectiva centrada en los actores que habitan entornos segregados
+(fundamentalmente de origen informal) indagan cualitativamente las
+formas de sociabilidad y las consecuencias subjetivas de la segregación
+[por ejemplo @Carman2013; @Cravino2002; @Merklen2005; @Segura2006;
+@Soldano2017]. A su vez, desde abordajes mixtos, trabajos, como el de
+@Brikman2020, se destaca la importancia que tienen las prácticas de
+movilidad en la configuración de la segregación urbana, en tanto
+permiten habitar y conectar la localización residencial con los
+beneficios urbanos [@Cosacov2014; @DiVirgilio2007].
+
+Enmarcado en el campo los estudios urbanos, este proyecto recupera el
+concepto de segregación multi-dominio, entendiendo que para entender la
+segregación urbana es necesario abordarla como un fenómeno complejo en
+el cual se articulan distintos ámbitos de la vida social, entre los
+cuales la residencia es un aspecto.
+
+<!--# DALLE -->
+
+En América Latina existen aún pocos trabajos que aborden la relación
+entre diferentes dominios de la segregación de forma cuantitativa. En el
+ámbito local el principal avance en esta dirección viene dado por
+algunos trabajos que indagan cómo la segregación residencial se
+retroalimenta con la segmentación del mercado laboral y educativo,
+potenciando el aislamiento de los 'pobres urbanos' [@Kaztman2001]. A su
+vez, desde un enfoque predominantemente cualitativo, se ha indagado cómo
+la segregación residencial se relaciona con el aislamiento urbano en
+otros dominios [@Soldano2008; @Soldano2017; @Carman2013;
+@DiVirgilio2014c].
+
+### Segregación multi-dominio 
+
+<!-- Segregación multi-dominio  -->
+
+En este contexto, durante la última década, algunos autores plantearon
+la necesidad de abordar esta diversidad de dominios desde un marco
+conceptual integrado, proponiendo para ello un enfoque multi-dominio
+[*multi-domain*] de la segregación [@Boterman2016 ;
+@VanHam2016].[^02-literature-4] Hasta el momento es poco explorada la
+forma en que los diferentes dominios se articulan, dando lugar al
+fenómeno de la segregación urbana como un todo. La identificación de
+cierta interdependencia y realimentación entre los dominios
+[@Schnell2001a; @Atkinson2004; @Wang2012] ha llevado a que algunos
+autores planteen la existencia de 'círculos viciosos' [@VanHam2018] y a
+la existencia de una 'reproducción multi-dominio' de la segregación
+[@Boterman2016]. Sin embargo, otros estudios muestran que no
+necesariamente todos los dominios de la segregación actúan en la misma
+dirección, de manera que cada uno de estos dominios puede aportar
+diferentes elementos en el proceso de diferenciación espacial
+[@Boterman2016 ; @Boterman2019a; @Serrati2023].
+
+[^02-literature-4]: Si bien no es posible hacer un desarrollo extensivo
+    en el presente trabajo, el enfoque multi-dominio de la segregación
+    encuentra una forma natural de expresión y representación en los
+    grafos multicapa [@Aleta2019]. Las redes multicapa [multilayer] son
+    una generalización de las redes simples, donde además de un conjunto
+    de nodos y vínculos, se considera un conjunto de capas
+    ($\alpha;\beta;...$) , de manera que cada nodo $u$ pertenece a (al
+    menos) una capa $\alpha$. En las redes multicapa, un nodo $u_i$
+    puede tener un vínculo $E$ con cualquier otro nodo $u_j$, el cual
+    puede pertenecer a la misma capa ($\alpha$) o a otra capa ($\beta$).
+    En particular, un subtipo especial de redes multicapa son las redes
+    del tipo *multiplex* [@Magnani2021; @Ostoic2020], en donde para cada
+    capa existe el mismo conjunto de nodos y los vínculos entre los
+    nodos pueden ocurrir dentro de la misma capa o entre diferentes
+    capas.
+
+    Las redes multiplex resultan una herramienta poderosa y poco
+    explorada aún para representar la segregación multidominio. Mediante
+    estas redes multicapas cada dominio puede ser representado como una
+    capa. Dentro de cada capa las personas estarían representadas como
+    nodos y existiría un enlace intra-capa entre aquellos nodos
+    (personas) que compartan la pertenencia a un mismo 'espacio'
+    (escolar, residencial, laboral, etc.). Esta forma de representar la
+    segregación multidominio permitiría abordar cómo se articulan y
+    replica la segregación en los diferentes dominios (capas). Más allá
+    de la potencialidad de este enfoque, es un desafío que no puede
+    omitirse la dificultad que implica obtener datos a nivel individual
+    que permitirían este tipo de análisis.
+
+Como resultado de estos desarrollos, recientemente se planteó la
+necesidad de abordar el problema de la segregación desde una perspectiva
+más amplia, que articule los diferentes dominios [@Musterd2020;
+@Boterman2016; @VanHam2016], niveles [@VanHam2018] y dimensiones
+[@Quillian2012; @Boterman2021] de la vida social.
+
+En resumen, la segregación urbana es un fenómeno complejo en el que se
+articulan diferentes dominios.[^02-literature-5] Es por ello que un
+aspecto central de estos estudios es analizar cómo se articulan estos
+dominios entre sí, generando círculos viciosos o reforzando aspectos
+complementarios del fenómeno general. A su vez, el enfoque de la
+segregación multi-dominio es una perspectiva interesante para pensar la
+dimensión espacial de la estratificación social, fundamentalmente en
+relación con la concepción weberiana de "clase social" que describimos
+anteriormente.
+
+[^02-literature-5]: Relacionado con este enfoque multi-dominio de la
+    segregación, algunos autores han resaltado que en el fenómeno de la
+    segregación confluyen diferentes *dimensiones* -étnica, migratoria,
+    clase, etaria, género, etc.-, las cuales tienden a superponerse y
+    reforzarse [@Boterman2021; @Musterd2020; @Boterman2020a]. A su vez,
+    la segregación se desarrolla en diferentes *niveles*, lo que ha
+    permitido incorporar al análisis individual y dentro de los hogares,
+    y consecuentemente la dimensión longitudinal de la segregación
+    dentro de los cursos de vida y de la transmisión intergeneracional
+    [@Tammaru2021; @VanHam2018]. En este sentido, una caracterización
+    más amplia de la segregación social nos permite caracterizarla como
+    un proceso complejo que se desarrolla articulando diferentes
+    *dimensiones* [@Quillian2012; @Boterman2021], dominios
+    [@Boterman2016; @VanHam2016] y niveles [@VanHam2018].
+
+<!--# FIN Dalle -->
+
+En este contexto, la segregación urbana emerge como un fenómeno complejo
+que se configura articuladamente en diferentes dominios de la vida
+social [@DiVirgilio2014d] en los que se desenvuelve el espacio de vida
+de los individuos [@Courgeau1988]. En base a esto, algunos autores
+proponen pensar la "reproducción multi-dominio de la segregación
+urbana", analizando la acción conjunta y superpuesta de los distintos
+dominios de la vida social [@Boterman2016; @VanHam2018; @VanHam2016]. En
+este sentido, estos trabajos llevan a entender que la segregación
+residencial es sólo un aspecto de la segregación urbana que es necesario
+captar [@Wang2012].
 
 Conclusión del apartado. Descripción de marco teórcio.
 
