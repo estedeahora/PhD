@@ -3,6 +3,8 @@
 
 \newcommand*{\university}[1]{\gdef\@university{#1}%
 }
+\newcommand*{\logo}[1]{\gdef\@logo{#1}%
+}
 \newcommand*{\division}[1]{\gdef\@division{#1}%
 }
 \newcommand*{\degree}[1]{\gdef\@degree{#1}%
@@ -21,7 +23,7 @@ not set. Please fix this.}
 \begin{titlepage}
 \centering
 
-\includegraphics[width=7cm]{template/logo_UBA-Sociales2.jpg}\par
+\includegraphics[width=7cm]{\@logo}\par
 
 {\scshape\Large\@university\unskip\strut\par}
 
