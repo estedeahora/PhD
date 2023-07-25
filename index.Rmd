@@ -56,7 +56,6 @@ monofontoptions: "Scale=0.7"
 
 ```{r setup, echo = F}
 
-
 options(OutDec= ",")
 
 knitr::opts_chunk$set(echo = FALSE,

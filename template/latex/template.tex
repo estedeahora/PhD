@@ -444,11 +444,8 @@ $if(has-frontmatter)$
 \frontmatter
 $endif$
 $if(title)$
-$if(beamer)$
-\frame{\titlepage}
-$else$
 \maketitle
-$endif$
+\pagenumbering{roman}
 $if(abstract)$
 \begin{abstract}
 $abstract$
@@ -458,8 +455,8 @@ $endif$
 
 $for(include-before)$
 $include-before$
-
 $endfor$
+
 $if(toc)$
 $if(toc-title)$
 \renewcommand*\contentsname{$toc-title$}
