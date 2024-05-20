@@ -4,16 +4,33 @@ editor_options:
     wrap: 72
 ---
 
-`r if(!knitr::pandoc_to("docx")) '# (PART) Resultados {.unnumbered}'`
+`r if(!knitr::pandoc_to("docx")) '# (PART) Análisis{.unnumbered}'`
 
-# La segregación residencial en el AMGBA
+# La segregación en el dominio residencial {#residential}
+
+## Los estudios sobre segregación residencial en el AMBA
+
+<!--# Se presentan los antecedentes respecto a la estructura de la segregación en el dominio residencial en el AMBA y otras ciudades latinoamericanas. Como parte de esta presentación se presentan diferentes abordajes que permiten conceptualizar los patrones y tendencias de la segregación en las ciudades latinoamericanas. En particular, se presenta el concepto de 'patrón de segregación residencial de gran escala' (Sabatini, 2006; Sabatini et al., 2001) y la propuesta de patrón 'mosaico' o 'patchwork' (Florida & Adler, 2018).  -->
+
+<!-- SACADO: El crecimiento del AMGBA. Dinámica clásica: cono de las elites (sXIX); Dinámica latinoamericana: el mercado formal, loteos populares y primera exclusión de los pobres informales (sXX); Dinámica de la ciudad neoliberal: proliferación de barrios cerrados, suburbanización de las elites, gentrificación y marginalización urbana (desde fines de sXX y hasta la actualidad) -->
+
+## La estructura y patrones de la segregación en el dominio residencial en el AMBA
+
+<!--# Se presentan los resultados del análisis de segregación en el dominio residencial, enfatizando la convivencia entre diferentes patrones, localizados en diferentes zonas del AMBA. -->
+
+<!-- Estructura de la desigualdad en el AMGBA -->
+
+**[ ] TODO** Sumar análisis sobre la estructura de la desigualdad en el
+AMGBA. Recuperar trabajos de Torres (y sucesores) y Marcos.
+
+<!-- Estructura de la segregación en el AMGBA -->
 
 Diferentes estudios señalan que el Área Metropolitana del Gran Buenos
 Aires (AMGBA) verifica parcialmente un 'patrón de segregación
-residencial de gran escala' característico de las ciudades
-latinoamericanas[^04-analysis-i-1] [@Suarez2011; @Groisman2009;
-@Rodriguez2016b; @Serrati2023]. En esta línea, el trabajo de
-@Molinatti2021 señala que en las últimas décadas los cambios en la
+residencial de gran escala', característico de las ciudades
+latinoamericanas[^04-analysis-i-residential-1] [@Suarez2011;
+@Groisman2009; @Rodriguez2016b; @Serrati2023]. En esta línea, el trabajo
+de @Molinatti2021 señala que en las últimas décadas los cambios en la
 dinámica urbana económica profundizaron la polarización residencial y
 modificaron el patrón de la segregación en el AMGBA. Esta mayor
 polarización estuvo basada en: (a) una apropiación de las áreas
@@ -26,16 +43,9 @@ deterioro de algunos barrios tradicionales donde vivían las clases bajas
 y medias; (e) un sostenimiento de los niveles de segregación residencial
 que surgieron en los '90, los cuales no se revirtieron en la década de
 los 2000, a pesar de la mejora en las condiciones laborales y del
-crecimiento de los niveles educativos de la población. A su vez, como
-ocurrió en otros países, los procesos de gentrificación de algunas áreas
-centrales, generaron un desplazamiento progresivo de los sectores
-populares que vivían en ellos originalmente, en lugar de promover una
-mayor mixtura social [@DiVirgilio2014f]. De manera similar, la
-emergencia de urbanizaciones cerradas en la periferia urbana ha
-cristalizado heterogeneidades espaciales con poca interrelaciones entre
-estas urbanizaciones y las existentes anteriormente [@Frisch2022].
+crecimiento de los niveles educativos de la población.
 
-[^04-analysis-i-1]: Según @Sabatini2006 que las ciudades
+[^04-analysis-i-residential-1]: Según @Sabatini2006 que las ciudades
     latinoamericanas se caracterizan por un patrón de segregación de
     'gran escala'. En sintonía con las ciudades europeas, este patrón
     está definido por: (a) una concentración de los grupos altos y
@@ -59,16 +69,28 @@ estas urbanizaciones y las existentes anteriormente [@Frisch2022].
     a, relativamente, bajos niveles globales de segregación residencial
     cuando lo comparamos con otros países.
 
+<!-- Procesos de gentrificación y barrios cerrados -->
+
+A su vez, como ocurrió en otros países, los procesos de gentrificación
+de algunas áreas centrales, generaron un desplazamiento progresivo de
+los sectores populares que vivían en ellos originalmente, en lugar de
+promover una mayor mixtura social [@DiVirgilio2014f]. De manera similar,
+la emergencia de urbanizaciones cerradas en la periferia urbana ha
+cristalizado heterogeneidades espaciales con poca interrelaciones entre
+estas urbanizaciones y las existentes anteriormente [@Frisch2022].
+
+<!-- Análisis propio -->
+
 Tomando en cuenta estos aportes, encontramos que el AMGBA tiene una
 segregación residencial global intermedia, similar a la encontrada en
 algunas ciudades de Europa continental y muy por debajo de los
-encontrados en Estados Unidos.[^04-analysis-i-2] <!-- global -->En su
-conjunto, el índice $M$ tiene un valor de `r # RES$SEG1[3, 2]` , la cual
-es un poco superior a la segregación que tienen en su interior por
-separado la CABA y los Partidos del Conurbano
+encontrados en Estados Unidos.[^04-analysis-i-residential-2]
+<!-- global -->En su conjunto, el índice $M$ tiene un valor de
+`r # RES$SEG1[3, 2]` , la cual es un poco superior a la segregación que
+tienen en su interior por separado la CABA y los Partidos del Conurbano
 (`r # combine_words(RES$SEG1[3, 3:4], and = " y ")`,
-respectivamente).[^04-analysis-i-3] <!-- entre-inter -->En relación a
-esto, la mayor parte de la segregación del AMGBA
+respectivamente).[^04-analysis-i-residential-3] <!-- entre-inter -->En
+relación a esto, la mayor parte de la segregación del AMGBA
 (`r # paste0(RES$SEG2[1, "WITHIN"], "%")`) se explica por diferencias
 'al interior' [*within*] de cada una de las jurisdicciones, antes que
 por diferencias 'entre' [*between*] estas (ver \@ref(tab:segres1)). Por
@@ -79,54 +101,56 @@ entornos urbanos explica cerca del `r # RES$SEG2[3, "BETWEEN"]`% de la
 segregación. Una primera conclusión que surge de esto es que la
 composición poblacional de los entornos urbanos es un elemento central a
 la hora de entender la segregación total en el AMGBA (muy por encima de
-las jurisdicciones o, incluso, los departamentos).[^04-analysis-i-4]
+las jurisdicciones o, incluso, los
+departamentos).[^04-analysis-i-residential-4]
 
-[^04-analysis-i-2]: Uno de los desafíos de los estudios de segregación
-    es el desarrollo de trabajos comparativos entre diferentes contextos
-    nacionales. Más allá de la diversidad de indicadores existentes para
-    medir la segregación, dado que en cada país las desigualdades
-    sociales asumen distintos clivajes, los estudios que analizan la
-    segregación social han enfatizado diferentes aspectos de esta
-    desigualdad (por ej. raza, clase, educación, migración, etnias,
-    etc.). Incluso en los estudios que utilizan un mismo aspecto de la
-    desigualdad, existen diferencias para construir las 'clases' o
-    'grupos', dependiendo de particularidades internas a cada realidad
-    local y de cómo se estructuran las desigualdades entre estos grupos
-    [@Musterd2005]. A su vez, la mayoría de los índices de segregación
-    se ven afectados por la escala y la morfología de los agrupamiento
-    espaciales en los cuales se accede a los datos (usualmente
-    predefinidas por los organismos estadísticos nacionales). Dado que
-    no existe un criterio internacional para definir el tamaño ni la
-    forma de estas unidades espaciales mínimas, la comparación entre
-    resultados de diferentes países puede ser poco conveniente
-    [@Reardon2008; @Haandrikman2023]. Por último, no existen criterios
-    uniformes para definir los límites de las estructuras urbanas a
-    comparar, lo cual depende en muchos casos de cómo se interprete la
-    dinámica e interacción entre la ciudad y sus 'bordes'. En este
-    sentido, si bien recientemente algunos trabajos han propuesto
-    abordar comparativamente diferentes ciudades del mundo
-    [@Musterd2005; @Marcinczak2016; @Tammaru2016a; @Haandrikman2023;
-    @Pryce2021; @VanHam2021], los resultados no dejan de ser provisorios
-    en términos comparativos por los motivos señalados.
+[^04-analysis-i-residential-2]: Uno de los desafíos de los estudios de
+    segregación es el desarrollo de trabajos comparativos entre
+    diferentes contextos nacionales. Más allá de la diversidad de
+    indicadores existentes para medir la segregación, dado que en cada
+    país las desigualdades sociales asumen distintos clivajes, los
+    estudios que analizan la segregación social han enfatizado
+    diferentes aspectos de esta desigualdad (por ej. raza, clase,
+    educación, migración, etnias, etc.). Incluso en los estudios que
+    utilizan un mismo aspecto de la desigualdad, existen diferencias
+    para construir las 'clases' o 'grupos', dependiendo de
+    particularidades internas a cada realidad local y de cómo se
+    estructuran las desigualdades entre estos grupos [@Musterd2005]. A
+    su vez, la mayoría de los índices de segregación se ven afectados
+    por la escala y la morfología de los agrupamiento espaciales en los
+    cuales se accede a los datos (usualmente predefinidas por los
+    organismos estadísticos nacionales). Dado que no existe un criterio
+    internacional para definir el tamaño ni la forma de estas unidades
+    espaciales mínimas, la comparación entre resultados de diferentes
+    países puede ser poco conveniente [@Reardon2008; @Haandrikman2023].
+    Por último, no existen criterios uniformes para definir los límites
+    de las estructuras urbanas a comparar, lo cual depende en muchos
+    casos de cómo se interprete la dinámica e interacción entre la
+    ciudad y sus 'bordes'. En este sentido, si bien recientemente
+    algunos trabajos han propuesto abordar comparativamente diferentes
+    ciudades del mundo [@Musterd2005; @Marcinczak2016; @Tammaru2016a;
+    @Haandrikman2023; @Pryce2021; @VanHam2021], los resultados no dejan
+    de ser provisorios en términos comparativos por los motivos
+    señalados.
 
-[^04-analysis-i-3]: Cuando enfocamos sólo en la CABA encontramos una
-    segregación interna sensible más baja (cerca de la mitad) que el
-    conjunto del AMGBA (Ver [Anexo A](#appendixA)). Además, como
-    describimos en @Serrati2023, en esta escala son los sectores bajos
-    (fundamentalmente asociado a los barrios de origen informal) los que
-    muestran los mayores niveles de segregación local, mientras el resto
-    de la ciudad presenta una heterogeneidad elevada. En gran medida,
-    esta diferencia se explica por la diferente composición social de la
-    CABA, lo cual refuerza la importancia de la 'escala' de análisis
-    para entender el fenómeno de la segregación.
+[^04-analysis-i-residential-3]: Cuando enfocamos sólo en la CABA
+    encontramos una segregación interna sensible más baja (cerca de la
+    mitad) que el conjunto del AMGBA (Ver [Anexo A](#appendixA)).
+    Además, como describimos en @Serrati2023, en esta escala son los
+    sectores bajos (fundamentalmente asociado a los barrios de origen
+    informal) los que muestran los mayores niveles de segregación local,
+    mientras el resto de la ciudad presenta una heterogeneidad elevada.
+    En gran medida, esta diferencia se explica por la diferente
+    composición social de la CABA, lo cual refuerza la importancia de la
+    'escala' de análisis para entender el fenómeno de la segregación.
 
-[^04-analysis-i-4]: En el [Anexo A](#appendixA) están disponibles
-    distintos indicadores de segregación para el total del AMGBA y para
-    cada una de las jurisdicciones que lo componen. Además, en este
-    anexo se presenta la composición educativa de cada uno de los
-    entornos urbanos, así como la 'segregación interna' de cada uno de
-    estos. Nótese que la mayor segregación de los entornos de vivienda
-    social y de barrios cerrados se debe (en gran medida) a la
+[^04-analysis-i-residential-4]: En el [Anexo A](#appendixA) están
+    disponibles distintos indicadores de segregación para el total del
+    AMGBA y para cada una de las jurisdicciones que lo componen. Además,
+    en este anexo se presenta la composición educativa de cada uno de
+    los entornos urbanos, así como la 'segregación interna' de cada uno
+    de estos. Nótese que la mayor segregación de los entornos de
+    vivienda social y de barrios cerrados se debe (en gran medida) a la
     diversidad que surge por problemas metodológicos a la hora de
     conciliar estos entornos con la cartografía censal (ver nota
     anterior).
@@ -246,11 +270,15 @@ de conexión con la CABA, lo que da como resultado un aislamiento de los
 pobres urbanos [@Soldano2008].
 
 ```{r SEGRE-RES}
-#| fig.cap: "Segregación local (M) en el AMGBA"
-#| fig.asp: 1.72
+#| fig.cap: "Segregación local en el AMGBA (Índice de Información Mutua). Se destacan con recuadros y los detalles las zonas profundizadas en el análisis."
 
-# include_graphics("figures/Segregacion_AMGBA-manual2.png")
+
+include_graphics(here("figures/SEG-RES_AMGBA-con-detalle.png"))
+#    #| fig.asp: 1.72
 ```
+
+**[ ] TODO** Agregar análisis de CA para mostrar alta segregación con
+significados opuestos.
 
 En resumen, nuestro análisis nos muestra que, en sintonía con lo que
 sucede en otras ciudades latinoamericanas [@Feitosa2021;
@@ -273,19 +301,19 @@ patrón fragmentario que domina en las periferias lejanas. En conjunto
 estos procesos han llevado a una mayor separación de los grupos altos
 respecto al resto de los grupos sociales, a la vez que se consolida el
 alejamiento y aislamiento de los pobres en áreas deterioradas de la
-periferia.[^04-analysis-i-5]
+periferia.[^04-analysis-i-residential-5]
 
-[^04-analysis-i-5]: Este patrón de segregación que consolida la
-    separación entre los sectores de altos y bajos ingresos, se acompaña
-    de una desigual distribución de los recursos urbanos, lo que lleva a
-    un monopolio por parte de los sectores altos [@Serrati2023;
-    @DiVirgilio2022a].
+[^04-analysis-i-residential-5]: Este patrón de segregación que consolida
+    la separación entre los sectores de altos y bajos ingresos, se
+    acompaña de una desigual distribución de los recursos urbanos, lo
+    que lleva a un monopolio por parte de los sectores altos
+    [@Serrati2023; @DiVirgilio2022a].
 
-```{r}
-# TODO SUMAR ANALISIS DE DEPRIVACIÓN ASOCIADO A CONDICIÓN DE SEGREGACIÓN
-```
+<!--# SACADO: Segregación residencial y acceso a recursos [ ] TODO Sumar análisis de acceso a recursos en relación con las características de la segregación residencial  -->
 
 ## Conclusiones
+
+<!--# En los resultados se identifica la presencia de diferentes patrones locales que conviven. Se analizan los resultados obtenidos en relación con los antecedentes locales e internacionales, destacando la relación entre estos patrones con las dinámicas históricas que le dieron origen.  -->
 
 -   Ejemplos de cascos conurbanizados: Lomas/Banfield o FFCC Sarmiento
     Ramos, Morón.
@@ -294,8 +322,7 @@ periferia.[^04-analysis-i-5]
     opuestas de NSE Alto-Bajo. Un buen ejemplo puede ser el Partido de
     Lomas. La elección se puede justificar en base a la alta
     contribución a la segregación total (
-    <!-- $M_{\text{within_dpto} } * p$ --> ). Cruzar segregación local
-    con CA para mostrar alta segregación con significados opuestos.
+    <!-- $M_{\text{within_dpto} } * p$ --> ).
 
 El patrón de segregación actual es resultado de la articulación de tres
 dinámicas históricas:
@@ -311,8 +338,8 @@ conformación de patrones heterogéneos de segregación en el AMGBA:
 (1) La ciudad presenta, en sintonía con el modelo europeo, una
     separación de las elites en un área de la ciudad que parte del
     centro y se expande hacia la periferia. Esto surge como resultado de
-    un proceso que se arraiga en la consolidación de la ciudad como
-    capital (sXIX).
+    un proceso que se arraiga en la consolidación de la ciudad central
+    como capital nacional (sXIX).
 (2) La creación de 'bolsones de pobreza' producto de las migraciones
     rurales desde mediados del sXX, junto al crecimiento económico y la
     movilidad social ascendente de los migrantes europeos dieron lugar a
@@ -334,7 +361,7 @@ conformación de patrones heterogéneos de segregación en el AMGBA:
     centrales antiguamente deterioradas.
 
 Resultado de estos procesos, el **patrón de segregación AMGBA** **se
-complejizó** respecto al propuesto por @Sabatini:
+complejizó** respecto al propuesto por @Sabatini :
 
 1.  Mayor nivel de segregación con respecto a momentos anteriores.
 2.  Segregación de grupos altos es mayor (seguida por grupo bajo). Ver

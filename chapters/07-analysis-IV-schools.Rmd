@@ -1,0 +1,23 @@
+---
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+# La escuela como espacio de diferenciación
+
+## Introducción al capítulo
+
+<!--# Se hace una breve presentación de los antecedentes sobre la relación entre segregación en los dominios residencial y educativo. En relación a esto, se recupera la importancia de la segregación educativa en la construcción del capital social y el logro educativo, enfatizando su rol como mecanismo de enclasamiento.  -->
+
+## Presentación de la metodología de análisis
+
+<!--# Se presenta la propuesta metodológica basada en un modelo de asignación ('allocation model') de estudiantes en escuelas (Serrati, 2023b). De modo breve, este modelo genera una asignación "óptima" minimizando la distancia total recorrida por total de los estudiantes, de manera que funciona como un "tipo ideal" sobre cómo sería la asignación de estudiantes si sólo se tuviera en cuenta la distancia. La estrategia metodológica consiste en comparar la composición escolar que resulta de esta asignación con la composición realmente observada. Para ello se utiliza el método propuesto por Elbers (2023), que fue anteriormente utilizado de este modo (Serrati, 2023b).  -->
+
+## Comparación de la segregación en el ámbito residencial y escolar
+
+<!--# Siguiendo la estrategia descripta, se hace una comparación entre la segregación escolar y la residencial. -->
+
+## Conclusiones del capítulo
+
+<!--# En la conclusión del capítulo se encuentra que la segregación en el dominio escolar supera ampliamente la que podría esperarse si consideramos sólo el efecto residencial. Por lo tanto, se afirma que el dominio escolar es un mecanismo de diferenciación y estratificación (en términos de segregación) que actúa con cierta independencia de las condiciones impuestas por los condicionantes territoriales. -->

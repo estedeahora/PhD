@@ -1,7 +1,9 @@
 `r if(!knitr::pandoc_to("docx")) '# (PART) Conclusiones {.unnumbered}'`
 
-# Título del capítulo de conclusión {#conclusion}
+# ¿La segregación como un todo? {#conclusion}
 
 \chaptermark{Resultados y Conclusiones}
 
-Acá va la conclusión
+<!--# Se recuperan los principales resultados y conclusiones alcanzados en los capítulos de análisis. En base a estos resultados se destacan los resultados generales, los cuales respaldan la idea de que la segregación se articula como un fenómeno en el que no todos los dominios de la vida social actúan en la misma dirección (ver ampliación en el Resumen). En este sentido se debate con la idea de 'círculo vicioso' de la segregación. Se señala que un enfoque multi-dominio de la segregación tiene un potencial como herramienta analítica, en la medida que ayuda a comprender cómo los dominios funcionan de forma articulada e identificar la contribución de cada uno de los dominios a la separación entre los grupos. En particular se enfatiza que la potencia conceptual de este concepto está dada por la capacidad de entender la articulación entre los dominios, siendo  -->
+
+<!--# En este sentido, si los diferentes dominios repitiesen la misma tendencia de segregación, el estudio multi-dominio de la segregación resultaría redundante, ya que cada dominio aportaría la misma información sobre el fenómeno global. Desde esta perspectiva, la segregación es un fenómeno que supera sus manifestaciones particulares en los distintos dominios de la vida social.  -->

@@ -10,62 +10,160 @@ editor_options:
 ```
 # Introducción {#intro}
 
-<!--# Presentación del problema general -->
+<!-- Presentación del problema general: El problema de la segregación en los estudios urbanos -->
+
+## El problema de la segregación urbana en los estudios urbanos
 
 El análisis de la segregación es un tema clásico dentro del campo de la
-sociología urbana. La conformación de espacios diferenciados de contacto
-entre los grupos sociales permite a algunos de estos evitar el contacto
-con otros generando aislamiento social (tanto "positivo" como
-"negativo"). A su vez, la concentración urbana de los grupos de
-población genera condiciones diferenciales para habitar y acceder a los
-recursos desigualmente distribuidos en la ciudad.
+sociología urbana y los estudios de estratificación.
+<!--#  La segregación refiere al fenómeno por el cual los grupos sociales hacen un uso selectivo y diferenciado del espacio.  -->
+A nivel individual la conformación de espacios diferenciados de contacto
+entre los grupos sociales maximiza las probabilidades de sociabilización
+e intercambio con los 'otros similares', a la par que limita las
+posibilidades de exposición entre personas de diferentes grupos
+sociales. Como consecuencia la segregación refuerza el aislamiento
+(tanto 'positivo' como 'negativo') de los grupos sociales. Pensado desde
+una mirada global, el fenómeno de la segregación genera condiciones
+diferenciales para el acceso a los recursos y promueve el 'cierre
+social'.
 
-Tradicionalmente la segregación urbana fue estudiada con eje en el lugar
-de residencia. Concentrado en las diferencias raciales/étnicas, su
-expansión a la realidad latinoamericanas implicó un giro hacia las
-desigualdades socioeconómicas. A su vez, el análisis de la segregación
-fue incorporado paulatinamente en otros ámbitos, como los estudios
-laborales, educativos y las movilidades. Como parte de este movimiento,
-recientemente se ha propuesto pensar la segregación urbana como un
-fenómeno que se desarrolla simultáneamente en múltiples dominios
-[multi-domain] de la vida social [@Boterman2016; @VanHam2018;
-@VanHam2016]. En este sentido, la segregación urbana se presenta como un
-fenómeno que trasciende el aspecto residencial @DiVirgilio2014d] y se
-configura articulando ámbitos como el escolar, el laboral, los espacios
-de ocio, el transporte e, incluso, internet y las redes sociales, entre
-otros.
+Los estudios sobre la segregación han sido un tópico fundante de la
+*sociología urbana* [@Bell1954; @Duncan1955a; @Duncan1955b]. En su
+origen, estos trabajos se focalizaron en el estudio del fenómeno en el
+dominio residencial / barrial [@Massey1988; @Musterd2020; @Tammaru2021].
+La centralidad del espacio de residencia en los estudios de segregación
+se justifica por la importancia que la residencia tiene como eje
+articulador en las actividades cotidianas. A su vez, en la medida que
+existe una desigual distribución (en calidad y cantidad) de los recursos
+urbanos, la segregación residencial supone, indirectamente, un acceso
+desigual a estos recursos para los grupos segregados, configurando una
+'geografía de las oportunidades' [*geographies of opportunities*]
+[@Kaztman1999a; @Wilson1987] y define una 'geografía del bienestar'
+[@DiVirgilio2023].
 
-<!--# Presentación del problema particular -->
+Con el tiempo el análisis de la segregación fue incorporado otros
+dominios de la vida social, como el laboral, el escolar, los espacios de
+actividad, las redes sociales virtuales, entre otros. En relación a
+esto, diferentes trabajos señalaron las limitaciones de un enfoque de
+segregación que sólo considere el dominio residencial, dando lugar a un
+estudio de la segregación en los *espacios de actividad* [@Horton1971] o
+espacios de vida [@Courgeau1988]. En la medida que esta capacidad para
+conectar espacios es desigual entre los grupos y personas, el concepto
+de 'capital de movilidad' [@Centner2008; @Delaunay2013; @Kaufmann2004;
+@Kellerman2012; @Levy1994] permite entender la apropiación del espacio
+como un elemento estratificante [@Rerat2018], que genera diferentes
+posibilidades de encuentros con personas de otros grupos y, por lo
+tanto, refuerza la segregación entre estos grupos [@Wong2011].
 
-El concepto de segregación multi-dominio propone estudiar cómo los
-dominios de la vida social interactúan articuladamente fortaleciendo (o
-debilitando) el contacto de los grupos. Este abordaje permite poner en
-juego las diferentes escalas espaciales en las que se desenvuelve este
-fenómeno (vivienda, barrial y urbana/metropolitana), así como la
+<!-- Contexto y antecedentes latinoamericanos -->
+
+En paralelo, la adopción del concepto de segregación en el contexto
+latinoamericano, supuso un giro en la mirada en las diferencias
+raciales/étnicas (predominante en los países europeos y en Estados
+Unidos) hacia las desigualdades socioeconómicas [@Duhau2013a;
+@Groisman2010; @Ward2012]. La presencia y extensión de los 'bolsones de
+pobreza', llevó a indagar cómo la segregación residencial se
+retroalimenta con la segmentación del mercado laboral y educativo,
+potenciando el aislamiento de los ‘pobres urbanos’ [@Kaztman2001]. En
+este contexto, desde un enfoque predominantemente cualitativo, algunos
+trabajos indagaron cómo la segregación residencial de los habitantes de
+barrios 'marginales' se vincula al aislamiento en otros dominios y, en
+particular, con las prácticas de movilidad de estos habitantes [ver, por
+ejemplo @Carman2013; @DiVirgilio2014c; @Mera2014a; @Segura2006;
+@Soldano2017]
+
+<!-- Presentación del problema particular: el concepto de segregación multi-dominio destacando su lugar en los estudios de segregación. -->
+
+Retomando estos antecedentes, en tanto el interés principal de los
+estudios de segregación viene dado por la integración y la interacción
+entre los grupos sociales, es necesario considerar el problema de la
+segregación desde una perspectiva que supere el análisis acotado al
+dominio residencial. Siguiendo la propuesta de Schnell y Yoav
+[-@Schnell2001a], trabajos recientes han señalado que la *segregación
+urbana* debe incorporar al análisis las “actividades cotidianas, las
+redes interpresonales y la movilidad en el contexto de procesos sociales
+y político-económicos más amplios” [@Wissink2016, p. 126]. En
+continuidad con estas propuestas, recientemente se propuso pensar la
+segregación urbana como un fenómeno que se desarrolla simultáneamente en
+múltiples dominios [*multi-domain*] de la vida social [@Boterman2016;
+@VanHam2016], conjugando componentes fijos ligados a la residencia y
+móviles [@DiVirgilio2014c].
+
+El concepto de *segregación multi-dominio* permite pensar de forma
+integrada cómo los dominios de la vida social interactúan
+articuladamente, fortaleciendo (o debilitando) el contacto de los
+grupos. Una de las potencialidades de este abordaje es que permite poner
+en juego las diferentes escalas espaciales en las que se desenvuelve
+este fenómeno (vivienda, barrial y urbana/metropolitana), así como la
 temporalidad mediante la que se configura. A su vez pone de manifiesto
-que, si bien resulta válido señalar a la residencia como eje
-articulador, esta es insuficiente para para entender cómo, en espacios
-heterogéneos (con baja segregación residencial), se genera un acceso
-desigual a estos recursos. En este sentido los conceptos de espacios de
-actividad [@Horton1971] o espacios de vida [@Courgeau1988], permiten una
-mejor comprensión sobre cómo se produce el acceso a los bienes
-(simbólicos y materiales) de la ciudad. A su vez, las diferencias entre
-los entornos urbanos [@Connolly2005; @Duhau2008; @Marcos2015] resultan
-fundamentales para entender las prácticas de segregación urbana. En
-resumen, el rol de otras formas de diferenciación en el uso y
-apropiación del territorio, así como las movilidades que permiten
-conectar el lugar de residencia con las positividades urbanas, son
-centrales para entender la complejidad de la segregación urbana y cómo
-esta se diferencia en función del entorno urbano.
+que, si bien resulta válido señalar a la residencia como eje articulador
+de la segregación, puede ser insuficiente para entender cómo se genera
+la segregación urbana.
+
+Por otra parte, el modo en que estos dominios se articulan es poco
+explorada hasta el momento -especialmente, desde un enfoque
+cuantitativo. La identificación de cierta interdependencia y
+retroalimentación entre dominios [@Atkinson2004; @Schnell2001a;
+@Wang2012] ha llevado a que algunos autores planteen la existencia de
+'círculos viciosos' [@VanHam2018] y de una 'reproducción multi-dominio'
+de la segregación [@Boterman2016]. Otros estudios muestran que no
+necesariamente en todos los dominios la segregación actúa en la misma
+dirección, de manera que cada uno de estos dominios aporta diferentes
+elementos al fenómeno global [@Boterman2019a; @Boterman2016;
+@Serrati2023].
+
+<!-- A su vez, las diferencias entre los entornos urbanos [@Connolly2005; @Duhau2008; @Marcos2015] resultan fundamentales para entender las prácticas de segregación urbana. En resumen, el rol de otras formas de diferenciación en el uso y apropiación del territorio, así como las movilidades que permiten conectar el lugar de residencia con las positividades urbanas, son centrales para entender la complejidad de la segregación urbana y cómo esta se diferencia en función del entorno urbano. -->
+
+## Objetivos, preguntas e hipótesis
+
+<!-- Presentación objetivo general y preguntas de investigación -->
+
+En este marco, el objetivo de la tesis es *indagar el modo en el que se
+articula la segregación en diferentes dominios de la vida social en el
+Aglomerado Metropolitano del Gran Buenos Aires (AMBA)*. En concreto, nos
+interesa indagar cómo la segregación se articula en el dominio
+residencial, el espacio escolar y los espacios de actividad. Para ello
+nos preguntamos: ¿Cuál es el papel que juega el dominio residencial en
+la configuración de los patrones de segregación urbana? ¿De qué modo la
+segregación urbana se manifiesta en los diferentes dominios
+(residencial, educación y movilidades)? ¿Estos dominios funcionan
+reforzando o disminuyendo la ‘separación’ (segregación) entre los grupos
+sociales? En otras palabras: ¿Existe un ‘círculo vicioso’ entre estos
+dominios de la segregación o, por el contrario, cada uno de estos
+dominios aporta elementos propios a la segregación
+urbana?<!-- ENTORNOS URBANOS: A su vez, nos interesa especialmente el rol de los entornos o contextos urbanos locales en la configuración de estas segregaciones, en tanto permite entender cómo opera la segregación a escala microterritorial, generando espacios de diferenciación incluso en situaciones de contigüidad espacial. ¿Qué rol juegan los contextos locales en la conformación de la segregación urbana? HOMOGAMIA: ¿Cuál es la relación entre la segregación residencial y la homogamia? ¿Existen patrones comunes en la distribución espacial de la segregación residencial y la homogamia? -->
+
+<!--# REVISAR -->
+
+**[REVISAR]** A partir de este planteo general, se proponen los
+siguientes objetivos específicos:
+
+-   analizar los patrones de segregación urbana en los ámbitos
+    residencial, educativo y de las movilidades en el Aglomerado
+    Metropolitano del Gran Buenos
+    Aires;<!-- comprender cómo se articulan los patrones de segregación multi-dominio con las características de los entornos urbanos. -->
+
+<!-- Hipótesis -->
+
+Enmarcado en este objetivos y preguntas de investigación, nuestra
+hipótesis es que no necesariamente todos los dominios actúan en la misma
+‘dirección’, por lo cual no es posible reducir este problema al concepto
+de ‘círculo vicioso’ de la segregación. Por el contrario, el *estudio
+multi-dominio de la segregación* debe enfocarse en entender y estudiar
+el aporte de cada dominio a la configuración de la segregación como un
+todo. De esta manera, la *segregación urbana* es el resultado de las
+formas en que se articulan la diferenciación generada en cada uno de los
+dominios de la vida social, las cuales se articulan de modo superpuesto
+en los diferentes dominios y escalas de la vida urbana.
 
 <!-- Continuidad con tesis MGAIE -->
 
-Este trabajo se enmarca como una continuidad de mi tesis de Maestría
-(MGAIE-UNTREF) titulada "El territorio en la escuela. Pensando la
-articulación entre desigualdades educativas y territoriales en la ciudad
-de Buenos Aires, Argentina". En relación con el tema del presente
-proyecto, en mi tesis de maestría utilicé el concepto de *Reproducción
-de la Segregación Multi-Dominio* [@Boterman2016] para indagar en qué
+Este trabajo de tesis se enmarca como una continuidad de la tesis de
+Maestría (MGAIE-UNTREF) titulada 'El territorio en la escuela. Pensando
+la articulación entre desigualdades educativas y territoriales en la
+ciudad de Buenos Aires, Argentina'.[^01-intro-1] En relación con el tema
+del presente proyecto, en la tesis de maestría utilicé el concepto de
+*Reproducción de la Segregación Multi-Dominio* para indagar en qué
 medida la segregación residencial permitía explicar la segregación
 educativa en el ámbito de la Ciudad de Buenos Aires. Como parte de este
 trabajo afirmamos que, en un ámbito de baja segregación residencial como
@@ -74,294 +172,63 @@ separación entre los grupos sociales. En este sentido, la escuela
 constituye un ámbito privilegiado para entender cómo los sectores
 sociales evitan el contacto con otros sectores, a pesar de compartir un
 ámbito residencial diverso. En concreto, nuestros resultados avalan la
-idea de que la segregación urbana multidominio permite entender el
-proceso mediante el cuales las elecciones escolares (en conjunto con las
-prácticas de movilidad urbana) se configuran como prácticas de
-segregación que complementan la segregación residencial.
+idea de que la segregación urbana multi-dominio permite entender el
+proceso mediante el cuales las elecciones escolares se configuran como
+prácticas de segregación que complementan la segregación residencial.
 
-Retomando estos hallazgos, el presente proyecto recupera el concepto de
+[^01-intro-1]: La tesis está disponible en
+    <https://github.com/estedeahora/MGAIE_Territorio-en-la-escuela>
+
+Retomando estos hallazgos, el presente trabajo recupera el concepto de
 reproducción de la segregación multi-dominio, incorporando nuevos
 dominios de análisis. A su vez, al igual que en este trabajo utilizamos
 una combinación de fuentes secundarias (muchas provenientes de registros
 administrativos) y primaras, con el objeto de recuperar una mirada
 macro- y micro- espacial. Por su parte, el ámbito de indagación se
 extiende al conjunto del Aglomerado Metropolitano Gran Buenos Aires,
-entendiendo que este actúa como una unidad en términos urbanos.
+entendiendo que este actúa como una unidad en términos urbanos y
+sociológicos.
 
-## Objetivo y preguntas
+<!-- Vacancia y aportes:Describir los aportes generales y fundamentos que justifican la tesis -->
 
-<!-- Presentación preguntas -->
+El presente trabajo tesis propone ser un *aporte* en al menos tres
+aspectos. En primer lugar, busca cubrir una vacancia respecto a la falta
+de trabajos que aborden desde un enfoque cuantitativo el problema de la
+segregación en múltiples dominios de la vida social en el conjunto del
+AMBA. Si bien existen trabajos que abordan esta articulación desde un
+enfoque cualitativo, no existen trabajos que analicen este problema
+desde una perspectiva cuantitativa y considerando el conjunto del AMBA.
+En segundo lugar, a partir del análisis del caso del AMBA, el trabajo
+propone debatir sobre las potencialidades de un enfoque multi-dominio de
+la segregación. Específicamente, discutimos sobre la pertinencia de
+entender la relación entre dominios como un ‘círculo vicioso’
+[@Tammaru2021; @VanHam2018], proponiendo alternativamente un enfoque que
+enfatiza la complejidad de esta interacción. En tercer lugar, el trabajo
+hace un uso novedoso de diferentes técnicas de análisis cuantitativas
+con el fin de proponer una articulación de fuentes de datos y el
+análisis simultaneo de múltiples dominios de la vida social.
 
-En este contexto, este proyecto doctoral propone indagar la segregación
-multi-dominio en el Aglomerado Metropolitano del Gran Buenos Aires. En
-concreto, nos concentraremos en el análisis articulado de tres dominios
-de la segregación urbana, a saber: la segregación residencial, la
-segregación en las prácticas de movilidad urbana y la segregación
-educativa. A su vez, nos interesa especialmente el rol de los *entornos
-o contextos urbanos* locales en la configuración de estas segregaciones,
-en tanto permite entender cómo opera la segregación a escala
-microterritorial, generando espacios de diferenciación incluso en
-situaciones de contigüidad espacial. Para ello nos preguntamos: ¿Cuál es
-el papel que juega la segregación residencial en la configuración de los
-patrones de segregación urbana? ¿Cómo interactúa la segregación
-residencial con otras formas de segregación urbana, como la segregación
-educativa o la de las movilidades cotidianas? ¿De qué modo la
-segregación urbana se manifiesta complementariamente en los diferentes
-dominios (residencial, educación y movilidades) de la vida de las
-ciudades? ¿Qué rol juegan los contextos locales en la conformación de la
-segregación urbana?
-
-Para ello se busca cubrir una vacancia en el campo local, respecto al
-estudio de la segregación desde un enfoque cuantitativo y multiescalar,
-sin dejar de abordar la complejidad (articulación de dominios) del
-fenómeno.
-
-<!-- Presentación objetivo general y objetivos particulares -->
-
-El objetivo general de este trabajo es *analizar el modo en el que se
-reproduce la segregación urbana en diferentes dominios de la vida social
-en el Aglomerado Metropolitano del Gran Buenos Aires y cómo esta se
-articula con los entornos urbanos*. Como se señaló anteriormente,
-partimos de entender la segregación en la ciudad como un fenómeno
-complejo en el que se articulan de modo superpuesto diferentes dominios
-y escalas.
-
-Con el objeto de dar cuenta de la segregación urbana, nuestro trabajo se
-concentra en el análisis de los patrones de segregación residencial,
-escolar y de las movilidades, a la vez que el modo en el que se produce
-la articulación entre estas dimensiones generando escenarios de
-diferenciación y exposición entre los grupos sociales. Por otra parte,
-el rol de los entornos urbanos en la conformación de estas diferencias
-aparece como una clave central para entender cómo actúan estos
-mecanismos a escala microterritorial.
-
-Esta propuesta propone analizar la segregación urbana en diferentes
-escalas del Aglomerado Metropolitano del Gran Buenos Aires. El recorte
-espacial elegido parte de entender que la segregación urbana es un
-fenómeno que se constituye de forma multiescalar. En este marco, la
-escala metropolitana puede ser central para entender la diferenciación
-entre los grupos [@Ward2012].
-
-A partir de este planteo general, se proponen los siguientes objetivos
-específicos:
-
--   analizar los patrones de segregación urbana en los ámbitos
-    residencial, educativo y de las movilidades en el Aglomerado
-    Metropolitano del Gran Buenos Aires;
-
--   caracterizar la segregación multi-dominio enfocando su
-    comportamiento en las diferentes escalas metropolitanas;
-
--   comprender cómo se articulan los patrones de segregación
-    multi-dominio con las características de los entornos urbanos.
-
-<!--# Dalle -->
-
-Desde un enfoque multi-dominio de la segregación, en este trabajo
-proponemos analizar la segregación social en relación a su impacto sobre
-la estratificación social y las oportunidades de vida.
-
-analizar la relación entre segregación residencial y homogamia (o
-segregación conyugal). Ambos aspectos de la segregación son centrales
-para el acceso a los recursos sociales y, por lo tanto, para entender la
-*estratificación social* y la *movilidad social*. Por un lado, la
-distribución de los diferentes grupos sociales en la ciudad
-(*segregación residencial*) impacta en la distribución y acceso a
-recursos urbanos, a la vez que incide en la conformación de espacios de
-intercambio plurales [@DiVirgilio2014c]. Por su parte, la conformación
-de vínculos conyugales homogéneos (*homogamia*) limita integración
-social y las posibilidades de movilidad social [@Blossfeld2003]. Por
-último, la manera en que estas formas de segregación (homogamia y la
-segregación residencial) se relacionan, puede tener implicancias en la
-formación de las identidades colectivas y la integración social de los
-grupos.
-
-El objetivo principal de este trabajo es analizar la relación entre la
-segregación residencial y la homogamia en el Área Metropolitana del Gran
-Buenos Aires (AMGBA). Para ello, nos preguntamos: ¿Cuál es la relación
-entre la segregación residencial y la homogamia? ¿Existen patrones
-comunes en la distribución espacial de la segregación residencial y la
-homogamia? ¿Estas formas de segregación se refuerzan mutuamente
-(generando un 'círculo vicioso') o actúan sobre diferentes aspectos de
-la segregación social? ¿Qué rol juegan las diferentes divisiones
-territoriales (entornos urbanos, jurisdicciones, departamentos) en esta
-relación?
-
-<!--# FIN Dalle -->
-
-<!--# SNA -->
-
-Retomando un *enfoque multi-dominio de la segregación*, el objetivo de
-este trabajo es analizar cómo se articula la segregación socio económica
-considerando los espacios de actividad de los residentes del Área
-Metropolitana del Gran Buenos Aires (AMGBA). <!-- Preguntas -->Para ello
-nos preguntamos: ¿Cómo se relaciona la segregación en el dominio
-residencial con la que surge como resultado de la movilidad cotidiana
-dentro de los espacios de actividad? ¿Las movilidades funcionan
-reforzando o disminuyendo la 'separación' (segregación) entre los grupos
-sociales? Dicho en otras palabras: ¿Existe un círculo vicioso
-[@VanHam2018] entre estos dominios de la segregación o, por el
-contrario, cada uno de estos dominios aporta elementos propios a la
-segregación urbana [@Serrati2023]? ¿En qué medida las movilidades
-cotidianas son un 'capital' que le permite a los agentes modificar la
-segregación que viven en el dominio residencial?
-<!-- Enfoque metodológico: SNA -->Teniendo en cuenta estas preguntas, en
-el trabajo proponemos utilizar un enfoque metodológico que combina el
-análisis de segregación con el análisis redes sociales [@Borgatti2009;
-@Borgatti2014; @Miele2019]. En particular, sobre este último punto,
-adaptando la metodología planteada por @Luke2015, proponemos
-caracterizar las movilidades urbanas a partir de la construcción de una
-red bipartita dirigida y ponderada para representar los viajes de las
-personas a los diferentes lugares de la ciudad.
-
-<!--# FIN SNA -->
-
-<!-- Fundamentación y aportes -->
-
-Describir los aportes generales y fundamentos que justifican la tesis.
-
-<!--# Dalle -->
-
-El trabajo pretende ser un aporte novedoso en al menos cuatro aspectos.
-En primer lugar, hasta el momento existen pocos trabajos locales que
-hayan vinculado la segregación residencial y la homogamia [el único que
-encontramos es el trabajo reciente de @Carrascosa2023], por lo cual,
-nuestro trabajo puede ser un aporte para avanzar en el análisis de esta
-problemática localmente. En segundo lugar, a nivel teórico el análisis
-conjunto de la segregación residencial y la homogamia, puede aportar
-elementos para el conocimiento de los procesos de estratificación social
-y movilidad social. Asimismo, esto puede contribuir a la formulación de
-políticas públicas orientadas a promover el acceso igualitario a las
-oportunidades de vida, la integración social y reducir la segregación en
-la ciudad. En tercer lugar, el trabajo pretende contribuir teóricamente
-en el estudio de la segregación multi-dominio, aportando nuevos dominios
-y elementos para pensar la relación entre estos dominios. Por último, el
-trabajo propone indicadores novedosos para medir espacialmente la
-homogamia con datos censales, a la vez que una metodología no utilizada
-anteriormente para analizar la relación entre homogamia y segregación
-residencial basada en una prueba Montecarlo.
-
-<!--# FIN Dalle -->
-
-<!--# SNA -->
-
-El trabajo pretende ser un aporte novedoso en al menos dos aspectos. Por
-un lado, hasta donde hemos podido indagar, es el primer trabajo que
-analiza la interrelación entre segregación residencial y segregación de
-movilidad de forma cuantitativa para el conjunto del AMGBA. En segundo
-lugar, el trabajo propone un abordaje del problema de segregación
-utilizando datos de encuestas de movilidad origen destino basado en un
-enfoque de 'redes sociales', una estrategia hasta ahora poco explorada
-en la región.
-
-<!--# FIN SNA -->
-
-## Recorte del objeto
-
-<!-- Recorte del objeto, presentación del caso y contextualización. -->
-
-En este trabajo centramos nuestro análisis en el Área Metropolitana del
-Gran Buenos Aires,[^01-intro-1] el cual es el principal aglomerado
-urbano de Argentina. Dentro del AMGBA se destaca la Ciudad Autónoma de
-Buenos Aires (CABA), la cual funciona como núcleo y eje articulador del
-aglomerado. En gran medida, el AMGBA es producto de la expansión de la
-CABA y la paulatina incorporación de las localidades cercanas que se
-habían desarrollado en torno a las estaciones de ferrocarril. Resultado
-de su tamaño y desarrollo histórico, El AMGBA presenta una importante
-diversidad interna, que da lugar a diferentes contextos o 'entornos
-urbanos'. Siguiendo la propuesta de Marcos [-@Marcos2021; -@Marcos2022],
-en este trabajo clasificamos los radios censales del AMGBA (unidad
-censal más pequeña disponible) en función de: (a) el momento histórico
-de su urbanización; y (b) el modo predominante de producción del espacio
-urbano. Esta clasificación de entornos urbanos, permite reincorporar el
-espacio como producto social, en el cual se establecen fronteras
-simbólicas que tienen un rol central para estudiar la segregación
-social. En el AMGBA, la clasificación propuesta (ver Figura
-\@ref(fig:TH)) distingue los siguientes entornos urbanos: (1) Ciudad
-colonial, (2) Primera expansión de la ciudad colonial, (3) Centros
-conurbanizados vinculados a la expansión ferroviaria, (4) Complejos de
-vivienda social, (5) Urbanizaciones cerradas, (6) Urbanizaciones de
-origen informal, y los fraccionamientos por loteo formal de nivel
-socioeconómico (NSE) (7) Alto, (8) Medio y (9) Bajo.[^01-intro-2]
-
-[^01-intro-1]: Siguiendo el criterio oficial del INDEC propuesto por
-    [@Vapnarsky1998; ver también @Vapnarsky2004], el AMGBA es definido
-    como la 'mancha urbana' que se recorta y diferencia del campo
-    abierto. Operacionalmente se construye a partir de identificar la
-    contigüidad de elementos físico-urbanos (como calles, edificios y
-    manzanas). En este trabajo tomamos la adaptación para los datos del
-    Censo 2010 hecha por @Marcos2021.
-
-[^01-intro-2]: La clasificación propuesta por Marcos recupera
-    modificando la clasificación desarrollada anteriormente para la CABA
-    [@Marcos2015] la cual, a su vez, está basada en las propuestas para
-    ciudades de México desarrollada en los trabajos de @Connolly2005 y
-    @Duhau2008 . Es importante tener en cuenta a la hora de utilizar
-    esta clasificación que, debido a la dificultad metodológica que
-    supone adaptar la cartografía censal disponible con los límites
-    'reales' de algunos de estos entornos sociales, algunos de estos
-    entornos representan en la práctica realidades mixtas. Esto se
-    observa, en particular, en los entornos de origen informal, de
-    vivienda social y de urbanizaciones cerradas, siendo este último el
-    entorno más afectado por este problema [ver el trabajo de
-    @Marcos2021, pp. 105-111, para una descripción detallada]. En este
-    sentido, es necesario tomar con cierta cautela los resultados sobre
-    estos entornos, teniendo en cuenta que muchas veces pueden esconder
-    situaciones mixtas.
-
-```{r TH}
-#| fig.cap: "Entornos urbanos en el AMGBA. Elaboración propia en base a Marcos (2021; 2022)." 
-#| fig.asp: 0.78  
-
-# include_graphics(here::here("figures/TH.png") )
-```
-
-## Descripción de las fuentes de datos utilizadas
-
-En concreto, utilizaremos como fuente primaria la Encuesta de Movilidad
-Espacial, desarrollada por el Área de Estudios Urbanos (IIGG). Por su
-parte, como fuentes secundarias se utilizarán bases estadísticas (Censo,
-EPH y ENMODO), pero también información proveniente de registros estales
-(Relevamiento Anual o SUBE) y de registros de empresas privadas (antenas
-de celular).
-
-<!-- Datos: ENMODO -->
-
-En este trabajo utilizamos los datos de la *Encuesta de Movilidad
-Domiciliaria* realizada en 2018 (ENMODO2018). Esta encuesta permite
-conocer los movilidades cotidianas urbanas de la población del AMGBA. Si
-bien los datos de movilidad están disponibles a nivel de radio censal
-(aproximadamente 300 viviendas), en este trabajo hemos utilizado las
-fracciones censales (aproximadamente 5.000 viviendas) como escala de
-análisis, con el fin de minimizar el efecto que pudiera tener la
-selección muestral. Más allá de esto, hemos conservado la clasificación
-de 'entorno urbano' como variable asociada a los lugares urbano de
-residencia y de destino (que fue determinado a nivel de radio censal).
-En el análisis retuvimos la totalidad de los viajes origen-destino
-realizados por los encuestados (a) dentro del AMGBA (b) que no incluyen
-como destino la propia vivienda.[^01-intro-3] Como resultado en los
-análisis se utilizan un total de
-`r # format(nrow(db_mim), big.mark = ".", scientific = F, decimal.mark = ",")`
-viajes (sobre un total de
-`r # format(nrow(ENMODO$VIA), big.mark = ".", scientific = F, decimal.mark = ",")`
-viajes relevados en la
-ENMODO2018).<!--# uso de encuestas de origen destino [@Heroy2023] -->
-
-[^01-intro-3]: La ENMODO 2018 relevó las prácticas de movilidad urbana
-    en una muestra de 16.667 hogares y 42.971 personas residentes en el
-    AMGBA. Los datos y especificaciones técnicas están disponibles en BA
-    Data
-    (<https://data.buenosaires.gob.ar/dataset/encuesta-movilidad-domiciliaria>).
-    <!--# Los datos utilizados en este trabajo fueron descargados de dicho portal en noviembre de 2022. Un respaldo de los datos descargados está disponible en el repositorio de GitHub del autor. -->Recuperando
-    las definiciones de la ENMODO2018, un 'viaje' es un desplazamiento
-    que tiene un motivo, un origen, un destino. A su vez, un viaje puede
-    componerse de diferentes 'etapas', entendidas estas últimas como el
-    conjunto de trayectos realizados en una modalidad o medio de
-    transporte específico.
+<!-- ES NECESARIO ACÁ? Recorte del objeto, presentación del caso y contextualización. -->
 
 ## Estructura de la tesis
 
 Teniendo en cuenta los objetivos planteados, el presente trabajo de
-tesis se estructura de la siguiente manera. En el capítulo siguiente se
-presenta un recorrido por la literatura... Luego... presentamos el
-análisis. Por último, esto.
+tesis se estructura de la siguiente manera. Luego, de este capítulo
+introductorio, en el [Capítulo 2](#lit) presentamos un recorrido por la
+literatura sobre la segregación urbana, destacando los aportes de los
+estudios multi-dominio. En el [Capítulo 3](#method) recorremos la
+literatura dedicada a las diferentes formas de medir la segregación,
+proponiendo algunos aportes metodológicos, así como describiendo el
+esquema de análisis y los datos utilizados en la tesis. En el [Capítulo
+4](#residential) analizamos la segregación residencial en el AMBA, que
+nos permitirá una primera aproximación al problema de la segregación
+urbana. En el [Capítulo 5](#homogamy) complementamos este análisis con
+el estudio de la homogamia residencial, indagando en qué medida la
+segregación residencial se ve reforzada por la homogamia. En el
+[Capítulo 6](#mobilities) analizamos la segregación en los espacios de
+actividad y las movilidades, prestando atención a cómo las movilidades
+contribuyen a la segregación urbana. En el [Capítulo 7](#school)
+estudiamos la segregación en el ámbito educativo, analizando en qué
+medida esta permite entender la segregación urbana. Por último, en el
+[Capítulo 8](#conclusion) presentamos las conclusiones y reflexiones
+finales.

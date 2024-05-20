@@ -1,0 +1,526 @@
+---
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+# Las movilidades y los espacios de actividad {#mobilities}
+
+## Presentación de antecedentes
+
+<!--# Se introduce el problema sobre cómo las movilidades urbanas cotidianas tienen un efecto sobre las interacciones con personas de otros grupos sociales. En particular, se repasan los antecedentes que analizan el rol de las movilidades en los intercambios en el AMBA. -->
+
+<!-- Aportes: SNA -->El capítulo pretende ser un aporte novedoso en al menos dos aspectos. Por un lado, hasta donde hemos podido indagar, es el primer trabajo que analiza la interrelación entre segregación residencial y segregación de movilidad de forma cuantitativa para el conjunto del AMGBA. En segundo lugar, el trabajo propone un abordaje del problema de segregación utilizando datos de encuestas de movilidad origen destino basado en un enfoque de 'redes sociales', una estrategia hasta ahora poco explorada en la región.
+
+<!-- Objetivo y preguntas: SNA --> Retomando un enfoque multi-dominio de la segregación, el objetivo de este capítulo es analizar cómo se articula la segregación socio económica considerando los espacios de actividad de los residentes del Área Metropolitana del Gran Buenos Aires (AMGBA). <!-- Preguntas -->Para ello nos preguntamos: ¿Cómo se relaciona la segregación en el dominio residencial con la que surge como resultado de la movilidad cotidiana dentro de los espacios de actividad? ¿Las movilidades funcionan reforzando o disminuyendo la 'separación' (segregación) entre los grupos sociales? Dicho en otras palabras: ¿Existe un círculo vicioso [@VanHam2018] entre estos dominios de la segregación o, por el contrario, cada uno de estos dominios aporta elementos propios a la segregación urbana [@Serrati2023]? ¿En qué medida las movilidades cotidianas son un 'capital' que le permite a los agentes modificar la segregación que viven en el dominio residencial? <!-- Enfoque metodológico: SNA -->Teniendo en cuenta estas preguntas, en el trabajo proponemos utilizar un enfoque metodológico que combina el análisis de segregación con el análisis redes sociales [@Borgatti2009; @Borgatti2014; @Miele2019]. En particular, sobre este último punto, adaptando la metodología planteada por @Luke2015, proponemos caracterizar las movilidades urbanas a partir de la construcción de una red bipartita dirigida y ponderada para representar los viajes de las personas a los diferentes lugares de la ciudad.
+
+## Presentación de la metodología de análisis
+
+<!--# Se presenta la metodología basada en caracterizar las movilidades urbanas como una red bipartita dirigida y ponderada que represente los viajes de las personas en el AMBA (Borgatti et al., 2009; Luke, 2015). A partir de esta red se genera una "Matriz de Indicadores Múltiples" (Wasserman et al., 1990; Zhu et al., 2016) que es analizada luego mediante un análisis de correspondencias múltiples que permite reducir la dimensionalidad de la matriz original, permitiendo agrupar los viajes en función de la similitud de sus características. A su vez, mediante la "proyección" del nivel de estudio como variable suplementaria, es posible utilizar esta técnica de modo explicativo (Baranger, 2012; similar a lo hecho en Bourdieu, 1979). -->
+
+## La movilidad cotidiana en el AMBA y sus efectos en la segregación
+
+<!--# Se realiza una descripción general de las pautas de movilidad en el AMBA. Se comparan y analizan estas pautas en función de la composición resultante en los espacios urbanos. -->
+
+### Descripción de los viajes del AMGBA
+
+Antes de analziar el problema de las movilidades y su relación con la
+segregación, realicemos una breve descripción de las movilidades
+cotidianas dentro del AMGBA. En primer lugar, encontramos que la
+distribución de los viajes se concentran en algunas áreas específicas de
+la ciudad (ver Figura \@ref(fig:DES-N)) y, en particular, en algunos
+entornos urbanos (Cuadro \@ref(tab:DES-tabla)). Respecto a esto último,
+observamos que gran parte de los viajes tienen como destino la ciudad
+colonial y los cascos conurbanizados (asociados a los subcentros locales
+y las estaciones de tren), los cuales representan el
+`r # paste0(RES$VIA$N[RES$VIA$TH == "Ciudad colonial"], "%")` y el
+`r # paste0(RES$VIA$N[RES$VIA$TH == "Cascos conurbanizados"], "%")`,
+respectivamente. Estos porcentajes son especialmente significativos si
+consideramos que la superficie de ambos es de apenas el
+`r #paste0(sum(RES$VIA$sup_p[RES$VIA$TH %in% c("Ciudad colonial", "Cascos conurbanizados")]), "%")`
+del total del AMGBA. En resumen, cuando analizamos la cantidad de
+minutos permanecidos en cada entorno urbano normalizando por la
+superficie, estos dos entornos se destacan sobre el resto por la
+cantidad de viajes recibidos. Por su parte, cuando diferenciamos los
+viajes a estos entornos en función de los motivos de la actividad en el
+lugar de destino, vemos que mientras la ciudad colonial destaca por un
+mayor porcentaje de viajes por motivos laborales (respecto a su promedio
+global), los cascos conurbanizados se caracterizan por una mayor
+recepción de viajes relacionados a motivos reproductivos (compras,
+trámites, motivos médicos o acompañar a familiares).
+
+En una situación opuesta a estos dos entornos, las urbanizaciones
+cerradas, las urbanizaciones de origen informal, los entornos de
+vivienda social y los entornos de nivel socioeconómico bajo, destacan
+por los bajos porcentajes de viajes recibidos en relación con su
+superficie. En particular es llamativa la situación del entorno de NSE
+bajo, ya que es uno de los entornos que mayor porcentaje de recepción de
+minutos de viajes tiene, pero cuando lo consideramos en realción a su
+superficie vemos que su importancia relativa es baja. Respecto a los
+motivos de viaje, sobresale la importancia de los motivos laborales
+dentro de las urbanizaciones cerradas, mientras que en los otros
+entornos no se observa una tendencia unívoca.En una situación intermedia
+respecto a la recepción de viales, podemos considerar a la expansión de
+la ciudad colonial, donde destacan los viajes vinculados a motivos
+laborales y de recreación.
+
+```{r}
+
+# RES$VIA |> 
+#   select(-sup, -Ratio) |> 
+#   relocate(N, .after = last_col() ) |> 
+#   rename("Entorno urbano de destino" = TH,
+#          "Superfice (%)" = sup_p, "Total" = N ) |> 
+#   flextable() |> 
+#   set_caption(caption = paste("Porcentaje de destino de los viajes",
+#                               "en función del tipo de entorno urbano",
+#                               "del destino y el motivo de la actividad",
+#                               "de destino (ponderado por minutos totales",
+#                               "permanecidos)"),
+#               autonum = run_autonum(seq_id = "tab", bkm = "DES-tabla", 
+#                                     bkm_all = T))  |> 
+#   add_header_row(values = c("Entorno urbano de destino",
+#                             "Superfice (%)", 
+#                             "Entorno urbano de destino según motivo de viaje (%)"), 
+#                  colwidths = c(1, 1, 5)) |> 
+#   merge_v(j = c(1:3, 8), part = "header") |> 
+#   align(align ='center', part = 'all') |> 
+#   align(j = 1, align ='left', part = 'all')  |>  
+#   color(j = 2, color = "grey50") |> 
+#   bg(i = nrow(RES$VIA), bg = "grey80") |> 
+#   hline(i = nrow(RES$VIA) - 1) |> 
+#   bold(j = 7, part = "all") |> 
+#   italic(j = 7, part = "all") |> 
+#   autofit() |> 
+#   fit_to_width(max_width = 6) 
+```
+
+```{r DES-N}
+#| fig.cap: "Tiempo total en el destino. Escala logarítmica."
+#| fig.asp: 0,882
+
+# include_graphics(here::here("figures/Destino-tiempo-total.png") )
+```
+
+En relación con el objetivo de nuestro trabajo, la Figura
+\@ref(fig:DES-EDU) presenta, del total de minutos que se destina a cada
+unidad espacial, el porcentaje de estos que corresponden a cada grupo
+educativo. De forma general, vemos que las zonas periféricas y alejadas
+del centro de la ciudad son las que reciben una sobrerepresentación de
+los hogares con nivel educativo primario y, en menor medida, secundario.
+Vale aclarar que si bien ambos grupos están sobrerepresentados en los
+lugares más alejados del centro de la CABA, esto no necesariamente
+implica que ambos están sobrerepresentados en los mismos lugares. De
+hecho, encontramos que los hogares con nivel secundario tienen una mayor
+representación en los 'subcentros' locales de estas zonas alejadas,
+mientras que los hogares con hasta nivel primario predominan en las
+zonas periféricas. En este sentido, observamos una relativa de división
+del territorio periférico en cuanto a los destinos de viajes de estos
+dos grupos. Como contracara, los hogares con nivel educativo superior
+tienen una sobrerepresentación en las áreas centrales de la CABA y, en
+particular, en el corredor norte de la ciudad y su continuación en los
+partidos de Vicente López y San Isidro.
+
+```{r DES-EDU}
+#| fig.cap: "Porcentaje de minutos en el lugar de destino según nivel educativo del hogar. Para cada uno de los grupos educativos se utiliza como valor intermedio de la escala divergente el promedio de personas en el AMGBA. Se muestran sólo unidades espaciales en las cuales hay al menos 4 viajes de personas de la muestra."
+#| fig.asp: 0,4286
+
+# include_graphics(here::here("figures/Destino-Nivel-educativo.png") )
+```
+
+### El efecto de las movilidades en la segregación
+
+<!-- Introducción al problema de la movilidad cotidiana en Argentina -->
+
+En Argentina existen aún pocos trabajos que aborden la relación entre
+diferentes dominios de la segregación de forma cuantitativa. En el
+ámbito latinoamericano el principal avance en esta dirección viene dado
+por algunos trabajos que indagan cómo la segregación residencial se
+retroalimenta con la segmentación del mercado laboral y educativo,
+potenciando el aislamiento de los 'pobres urbanos' [@Kaztman2001]. Desde
+un enfoque predominantemente cualitativo, se ha indagado cómo la
+segregación residencial se relaciona con el aislamiento urbano en otros
+dominios [@Soldano2008; @Soldano2017; @Carman2013; @DiVirgilio2014c]. En
+particular, respecto al efecto de las movilidades cotidianas sobre la
+segregación, es posible destacar el trabajo de @DiVirgilio2022d quienes
+analizando el caso de poblaciones empobrecidas de Villa Lugano (CABA)
+encuentran que las movilidades urbanas no logran compensar las
+desventajas locacionales y la situación segregada de estas poblaciones.
+En relación con esto, el trabajo de @Brikman2021 compara los espacios de
+actividad y las movilidades de dos localizaciones segregadas concluyendo
+que, si bien los habitantes de espacios segregados tienden a mantener
+una estructura de movilidad que reproduce la segregación, la diferencia
+en la localización residencial puede dar lugar a diferencias en el
+acceso y las movilidades dentro de la ciudad.
+
+<!-- Análisis de segregación Hogar vs Destino -->
+
+Teniendo en cuenta estos aportes y la descripción de las movilidades
+realizadas en el apartado anterior, en este apartado intentaremos
+describir en qué medida la segregación se ve afectada por las prácticas
+de movilidad y los espacios de vida. Un posible primer abordaje para
+entender cómo las movilidades afectan a la segregación urbana, es
+comparar la segregación en el ámbito residencial con la que se observa
+en los destinos de los viajes. Como hemos señalado en el apartado
+metodológico esto supone un desafío, en tanto la mayoría de los índices
+de segregación son dependientes de la cantidad de unidades consideradas,
+así como de la distribución marginal (la cantidad de personas en cada
+unidad y en cada grupo). Una solución a este problema es utilizar la
+técnica descripta por @Elbers2023 para descomponer la diferencia entre
+dos índices en diferentes elementos, de manera que sea posible
+distinguir qué parte de esta diferencia entre los índices corresponde a
+variaciones en la 'estructura de segregación', evitando considerar la
+parte de esta diferencia que surge por diferencias en los marginales o
+por la incorporación de nuevas unidades.
+
+El Cuadro \@ref(tab:SEG-tabla) presenta la segregación residencial y la
+segregación de movilidades, así como la diferencia entre ambos y la
+descomposición de elementos descrita. En la tercera columna
+($\Delta \%$) describimos qué porcentaje de la diferencia ($M_2 - M_1$)
+representa cada uno de estos elementos. Una primera aproximación nos
+muestra que la segregación residencial es un poco mayor que emerge en
+los espacios de destino. Sin embargo, cuando descomponemos esta
+diferencia encontramos que la casi totalidad de esta diferencia es
+producto del efecto de la diferencia en los marginales de las unidades.
+En concreto, esto supone que la diferencia entre ambos indicadores se
+debe en gran medida al hecho de que los destinos de las movilidades no
+se distribuyen homogéneamente. También observamos que una parte de la
+diferencia entre ambos indicadores se relaciona con el hecho de que
+algunas unidades espaciales no fueron elegidas como destino en los
+viajes y, por lo tanto, aparecen como 'unidades removidas' (ya que no
+están presentes en el cálculo de uno de los indicadores). En
+contrapartida, si consideramos sólo la diferencia que resulta de cambios
+en la 'estructura de la segregación' (lo que podemos denominar como
+cambios en la segregación 'pura') vemos que la diferencia entre ambos
+indicadores es relativamente pequeña. Como resultado de esto podemos
+afirmar que la estructura de segregación parece ser similar en los
+espacios residenciales y en los espacios de destino de las actividades
+cotidianas.
+
+```{r}
+
+# d <- RES$SEG$est[RES$SEG$stat == "diff"]
+# f <- paste("Los valores tienen una corrección de sesgo a partir del cálculo de",
+#             AUX$replic, "iteraciones con Bootstrap. Todos los valores tienen", 
+#            "una significancia estadística superior al ", AUX$conf, "%.") |> 
+#   str_wrap(60)
+# 
+# lab <- data.frame(stat = RES$SEG$stat, 
+#            st = c("Segregación de destino (M1)", "Segregación residencial (M2)", 
+#                   "Diferencia (M2-M1)", "Unidades agregadas", 
+#                   "Unidades removidas", "Marginal de grupos", 
+#                   "Marginal de unidades", "Estructural"))
+# RES$SEG |> 
+#   left_join(lab, by = "stat") |> 
+#   mutate(p = ifelse(stat %in% c("M1", "M2"), NA, est / d * 100) ) |> 
+#   select(st, est, p) |> 
+#   flextable() |> 
+#   set_caption(caption = paste("Descomposición de la diferencia entre la",
+#                               "segregación residencial y la segregación de",
+#                               "destinos"),
+#               autonum = run_autonum(seq_id = "tab", bkm = "SEG-tabla", 
+#                                     bkm_all = T)) |> 
+#   set_header_labels(st = " ", est = "Segregación (M)", p = "Δ%") |> 
+#   add_footer_lines(values = "Método de esimación: Shapley.") |> 
+#   flextable::footnote(i = 1, j = 2, part = "header", ref_symbols = "a",
+#                       value = as_paragraph(f) ) |> 
+#   colformat_double(j = 3 , digits = 1) |> 
+#   align(i = 1:2, j = 2, align = "center") |> 
+#   align(i = 3:8, j = 2, align = "right") |>
+#   align(i = 4:8, j = 1, align = "right") |> 
+#   hline(i = 2:3) |> 
+#   italic(4:8) |> 
+#   color(4:8, color = "grey60") |> 
+#   autofit()
+#   
+# rm(d, f, lab)
+```
+
+<!-- Análisis con MCA -->
+
+Tomando como base estos resultados, podemos indagar sobre los viajes
+para ver de qué manera las personas se relacionan con los diferentes
+lugares de destino. Como señalamos en la sección metodológica, podemos
+representar la estructura de los viajes utilizando una red bipartita
+dirigida y ponderada, en la cual consideramos dos tipos de nodos
+(personas y lugares de destino) de manera que existe una relación entre
+una persona y un lugar si esta persona visitó ese lugar como destino.
+Siguiendo la propuesta de @Zhu2016, realizamos un Análisis de
+Correspondencias Múltiples que nos permite tener una representación de
+estos viajes de baja dimensionalidad, de manera que los viajes que
+tienen características similares se encuentran representados cerca entre
+sí. Esta 'similaridad' está dada por el conjunto de variables activas
+que se consideran y que caracterizan a los nodos-personas, los
+nodos-destinos y los propios viajes (ver \@ref(appendixA) para un
+listado completo de las variables utilizadas).
+
+La Figura \@ref(fig:MCA-RES) presenta la ubicación de una selección de
+las variables activas en las dos primeras dimensiones del MCA, es decir,
+aquellas en las que se expresa la mayor parte de la variabilidad de los
+viajes.[^06-analysis-iii-mobilities-1] Como podemos ver, el *primer eje*
+diferencia los viajes fundamentalmente en función de aspectos
+socioeconómicos, referidos tanto a los destinos como al lugar de
+residencia de las personas. En este sentido, encontramos que los
+entornos de origen informales y los entornos de NSE Bajo se ubican en el
+lado izquierdo del plano, mientras que los entornos de NSE Alto, la
+expansión de la ciudad colonial y la Ciudad Colonial en el lado derecho.
+De forma similar, del lado izquierdo encontramos los viajes que vinculan
+los entornos residenciales y los destinos con menor porcentaje de nivel
+universitario (y mayor porcentaje de nivel primario), mientras que
+sucede lo opuesto en el lado derecho. Si bien, esta tendencia es común
+el conjunto de variables que caracterizan a los entornos residenciales y
+a los destinos, en estos últimos la diferenciación en este eje es un
+poco menos pronunciada que en los primeros.
+
+[^06-analysis-iii-mobilities-1]: El gráfico presenta sólo una selección
+    para facilitar la lectura. A su vez, con fines de mejorar la
+    vissualización hemos diferenciado con colores ocho 'grupos de
+    variables' (con sus respectivas categorías) que describen aspectos
+    similares del fenómeno. El porcentaje de varianza explicada se
+    calculó siguiendo el ajuste propuesto por @Greenacre2008, para
+    eliminar el efecto de las submatrices diagonales de la matriz de
+    Burt. En el Anexo \@ref(appendixB) se encuentran disponible material
+    complementario respecto al análisis. En relación a la nomenclatura
+    usada en la Figura \@ref(fig:MCA-RES), utilizamos el prefijo '`in`'
+    para referir a variables que caracterizan al lugar de destino, el
+    prefijo '`p`' para variables que caracterizan a las personas o su
+    entorno residencial y el prefijo '`v`' para las variables que
+    caracterizan a los viajes en sí mismos. A su vez, utilizamos
+    '`PRI%`', '`SEC%`' y '`SUP%'`, para indicar el porcentaje de
+    personas pertenecientes a hogares de nivel primario, secundario o
+    superior respectivamente (tanto en los entornos residenciales como
+    en los destinos). Por su parte,'`TH`' indica tipo de entorno o
+    hábitat urbano, '`SEG`' señala segregación, '`T`' tiempo de
+    permanencia y '`N`' cantidad de viajes. Por último, la letra '`Q`'
+    seguida de un número indica quintil (siendo '`Q1`' el quintil que
+    tiene el valor nominal más bajo). Los valores entre paréntesis o
+    corchetes indican un rango de valores expresados en la unidad de la
+    variable. Se remite al Anexo \@ref(appendixA) para una descripción
+    detallada de los nombres utilizados para las variables y categorías,
+    así como de las unidades utilizadas en cada caso.
+
+En el *segundo eje* vemos diferenciados, fundamentalmente, los viajes en
+función de la cantidad de visitas que recibe el lugar de destino y de la
+segregación de estos destinos. En este sentido, en la parte inferior se
+destacan los viajes que implican a los destinos más concurridos
+(`inN (17.3, 168)` y `inT Q5`), los cuales como señalamos anteriormente
+están vinculados a los cascos conurbanizados. Por el otro lado, en la
+parte superior encontramos los destinos menos concurridos
+(`inN [0.2,4.5]` y `inT Q1`), entre los que destaca parcialmente la
+ubicación de las urbanizaciones de origen informal y, en menor medida,
+los entornos de vivienda social, la expansión de la ciudad colonial y
+los entornos de NSE bajo y alto. A su vez, este eje diferencia los
+destinos en función del nivel de segregación de los destinos, de manera
+que encontramos los destinos menos segregados (`inSEG Q1`) en la parte
+inferior y los más segregados (`inSEG Q5`) en la parte superior. Esta
+relación entre menor segregación y mayor cantidad de visitas recibidas
+de los destinos es esperable, en tanto a medida que aumenta la cantidad
+de personas es previsible que aumente también la diversidad. A su vez,
+esto se corresponde con la presencia en la parte superior de los
+destinos que reciben un menor porcentaje de personas pertenecientes a
+hogares de nivel primario (`inPRI %[0,2]`, arriba derecha) y superior
+(`inSUP%[0,2]`, arriba izquierda). Si bien no se presenta en esta
+figura, el *tercer eje* diferencia los viajes en función de la mayor
+diversidad o segregación de los espacios de residencia de las personas
+que realizan estos viajes.
+
+```{r MCA-RES}
+#| fig.cap: "Primeras dos dimensiones del Análisis de Correspondencias Múltiples sobre la matriz de indicadores múltiples construida con los viajes de la ENMODO2018. Los porcentajes de varianza explicada fueron corregidos a partir del método propuesto por Greenacre (2008)."
+#| fig.asp: 0,5
+
+# include_graphics(here::here("figures/MCA-Variables-Categ.png") )
+```
+
+Es interesante destacar algunas variables no tienen un peso importante
+para definir la diferencia entre los viajes, a pesar de estar incluidas
+como variables activas. En particular, las variables referidas a las
+características de los viajes (tiempos de viaje -`eTvia`-, duración
+promedio de las actividades de destino -`eTact`- y los motivos de los
+viajes) no juegan un rol importante en esta diferenciación. Por su
+parte, el sexo (`pSEXO`) y la edad (`pEDAD`) de las personas que
+realizan los viajes tampoco inciden en la construcción de los primeros
+ejes de variación. En particular la edad está asociada a la propia
+composición etaria de los grupos sociales, pero no interviene
+significativamente en la definición de la varianza de estos ejes. De
+hecho, si se excluye estas variables el resultado es similar al
+obtenido, con una pequeña mejora en el porcentaje de inercia explicada.
+A pesar de esto, se eligió retenerlas como variables activas para
+explicitar esta 'ausencia de efecto'. Por último, las variables que
+indican la cantidad de minutos en cada destino según tipo de actividad
+(`in_timeTRA`, `in_timeREP`, `in_timeREC`, `in_timeEST`) fueron
+incluidas como variables suplementarias, porque superponían en gran
+medida lo aportado por la variable tiempo de permanencia y cantidad de
+viajes, debido a que, como señalamos, los motivos de viaje no son un
+factor de diferenciación importante.
+
+Un aspecto interesante que se desprende de la figura anterior es que las
+variables de composición del lugar de destino y del lugar de residencia
+ocupan lugares similares en el plano (fundamentalmente en lo relativo al
+primer eje). En este sentido, los viajes representados en el lado
+izquierdo del plano asocian espacios residenciales con bajo porcentaje
+de personas con nivel superior y destino que reciben pocas personas con
+nivel superior. La situación opuesta se visualiza respecto al lado
+derecho del plano, donde se observan tanto destinos como espacios
+residenciales con altos porcentajes de personas con nivel superior. Es
+interesante destacar que esta correspondencia no se cumple para el nivel
+secundario, donde vemos que los espacios residenciales con porcentajes
+altos están del lado derecho, pero los destinos donde predomina este
+grupo están en el lado izquierdo.
+
+Para profundizar sobre estos hallazgos, analicemos la proyección de
+estos viajes en función del nivel educativo del hogar de estas personas.
+Como habíamos señalado en el apartado metodológico, con el objetivo de
+ver en que medida el nivel educativo puede explicar la distribución de
+los viajes en el subespacio resultante del análisis, hemos decidido
+mantener esta variable como suplementaria, por lo cual la misma no
+incide directamente sobre el resultado. En la Figura \@ref(fig:MCA-EDU)
+proyectamos sobre los primeros dos ejes la ubicación de cada uno de los
+viajes diferenciando según el nivel educativo del hogar de la persona
+que realiza este viaje. Para facilitar la visualización generamos un
+mapa de densidades con ocho niveles de intensidad (*bins*). Además,
+proyectamos como referencia la posición de algunas de las variables más
+significativas para definir estos ejes. De modo general, encontramos que
+los viajes de los hogares de nivel primario se ubican del lado
+izquierdo, mientras que los de los hogares de nivel superior del lado
+derecho. En ambos casos vemos poco contacto con el otro lado del plano,
+sobre todo en la parte superior, asociada a los destinos menos
+concurridos (`inT_Q1`) y, a la vez, más segregados (`inSEG_Q5`). En este
+sentido, en la parte inferior, donde se ubican los destinos menos
+segregados (`inSEG_Q1`) y más concurridos (`inT_Q5`), encontramos una
+mayor superposición de los destinos de viajes de los diferentes grupos
+educativos, con una tendencia a ocupar (ambos grupos) el la parte
+central-inferior del plano resultante. Respecto a los hogares de nivel
+secundario vemos una distribución de viajes similar a la de los hogares
+de nivel primario, aunque con una mayor permeabilidad hacia el lado
+derecho del plano. En particular, encontramos que a diferencia de los
+hogares de nivel primario, los viajes de los hogares de nivel secundario
+incluyen el cuadrante derecho superior, aunque con menor intensidad que
+los hogares de nivel superior. Esto refuerza lo que habíamos visto
+respecto a que este grupo tiene como destino de sus viajes aquellos
+lugares que se asocian con el lado izquierdo, antes que con el lado
+derecho (a pesar de que su presencia residencial se asocia con el lado
+derecho).
+
+```{r MCA-EDU}
+#| fig.cap: "Densidad de viajes según nivel educativo del hogar proyectado sobre las primeras dos dimensiones del resultado del Análisis de Correspondencias Múltiples."
+#| fig.asp: 0,5
+
+# include_graphics(here::here("figures/MCA-Nivel-educativo.png") )
+```
+
+## Discusión de los resultados
+
+<!--# los resultados señalan que los espacios de actividad y las movilidades de los hogares reproducen y replican las condiciones de segregación que se observen el dominio residencial (similar a lo encontrado en Di Virgilio et al., 2022). En este sentido, el capital de movilidad puesto en juego por los actores mantiene las estructuras de exclusión urbana que se generan en el dominio residencial. Más allá de esta caracterización global encontramos, por un lado, que algunos lugares concentran la mayoría de los viajes y, como consecuencia, la segregación es baja; y por otro, entornos urbanos muy segregados que fomentan un aislamiento de los grupos privilegiados (Atkinson & Flint, 2004; Frisch, 2022) y de los menos favorecidos (Soldano, 2008). -->
+
+<!-- Resumen de resultados -->
+
+En este trabajo hemos propuesto analizar el rol de las movilidades
+espaciales y los espacios de vida en la configuración de la segregación
+social en el AMGBA. En particular, indagamos sobre cómo estas
+movilidades y espacios de vida pueden compensar o reforzar la
+segregación vivida en el dominio residencial. Los resultados de nuestro
+análisis muestran una fuerte estratificación y diferenciación del
+espacio de los viajes en el interior del AMGBA, lo cual se manifiesta en
+tres grandes ejes de diferenciación. El primer y principal eje
+diferencia los viajes en función del nivel socioeconómico, tanto del
+lugar residencial de las personas como de los lugares de destino de los
+viajes. El segundo eje diferencia los viajes en función de si estos
+tienen un destino más o menos concurrido, así como de la segregación
+resultante en estos destinos. El tercer eje diferencia los viajes en
+función de la segregación residencial de los hogares que los realizan. A
+su vez, encontramos que el nivel educativo del hogar emerge en el
+análisis como un factor explicativo en la diferenciación de los viajes,
+de manera que los hogares con estudios superiores y los hogares con
+estudios primarios desarrollan estrategias de movilidad que les permiten
+mantener, en gran medida, separados sus espacios de actividad.
+
+<!-- Interpretación teórica: Segregación multidominio y capital espacial -->
+
+Este análisis nos permitió encontrar que la mayor parte de los viajes
+vinculan lugares de residencia y de destino similares en cuanto a su
+segregación social. En sintonía con lo encontrado por @DiVirgilio2022d,
+las movilidades urbanas en el AMGBA parecen reproducir y replicar las
+condiciones de segregación que se viven en el dominio residencial. En
+este sentido, el *capital de movilidad* puesto en juego por los actores
+no permite contrarrestar las estructuras de exclusión urbana que se
+generan en el dominio residencial. Como resultado de esta situación, los
+destinos presentan una estructura de segregación equiparable a la que se
+observa en el dominio residencial, lo cual apoya la hipótesis de una
+retroalimentación de la segregación social entre ambos dominios en el
+AMGBA. En particular, estos resultados dan soporte a la idea de que una
+'reproducción multi-dominio de la segregación' [@Boterman2016] y de la
+existencia de un 'círculo vicioso' entre los diferentes dominios de la
+segregación [@VanHam2018].
+
+Más allá de esta fuerte relación que observamos entre ambos dominios, no
+podemos considerar que ambos se superpongan completamente. En este
+sentido, nuestros resultados muestran que si por un lado la composición
+de los espacios residenciales se diferencia principalmente en el primer
+eje de análisis (y también en el tercero), la composición de los
+destinos se desenvuelve como una combinación del primero y segundo eje
+del análisis, presentando una menor asociación con el primer eje que los
+lugares de residencia. En relación con el segundo eje de variabilidad,
+algunos destinos son receptores de gran parte de los viajes, lo que da
+lugar a una mayor mixtura y diversidad social en ellos. Dentro de estos
+destinos, es interesante señalar que, si bien el corazón de la ciudad
+central colonial es un destino que concentra una parte importante de los
+viajes, es en los centros locales (cascos conurbanizados) donde se
+observa una menor segregación de destinos. Como contraposición, algunos
+entornos urbanos aparecen como destinos especialmente segregados, de
+manera que se convierten en lugares exclusivos de ciertos grupos
+sociales, fomentando un aislamiento que implica tanto a los grupos más
+privilegiados [@Frisch2022] como a los más desfavorecidos
+[@Soldano2008a].
+<!--# En concreto, este doble movimiento debe permitirnos  -->
+
+<!-- Limitaciones y líneas de trabajo futuras -->
+
+Más allá los aportes, señalamos a continuación algunos límites y
+posibles continuidades de este trabajo. En primer lugar, es necesario
+estar precavido respecto a la interpretación de estos resultados en lo
+relativo a la similitud entre ambas estructuras de segregación. En este
+sentido, esta similitud a escala *global* puede ser el resultado de un
+doble movimiento de compensación mediante el cual los residentes de
+lugares con más diversidad se muevan a lugares más segregados donde
+predominen las personas perteneciente a grupos similares al propio,
+mientras que los residentes de estos lugares segregados se muevan hacia
+lugares más diversos.[^06-analysis-iii-mobilities-2] El análisis
+desarrollado en este trabajo no permitió acceder a una escala en el cual
+visualizar las estrategias de los hogares. Teniendo en cuenta estos
+elementos es necesario a futuro complementar este análisis para entender
+de qué manera es que se produce esta similitud entre ambas estructuras
+de segregación. En relación a esto, mediante un 'enfoque en tándem'
+[@Becue-Bertaut2008; @Lebart1994; @Markos2019] es posible complementar
+el análisis de correspondencias múltiples con un análisis de
+agrupamientos (*cluster*), que permita caracterizar a los viajes y, de
+esta forma, describir a los hogares en función de que 'tipos' de viajes
+realizan.
+
+[^06-analysis-iii-mobilities-2]: A su vez, una estructura de segregación
+    equiparable, no implica una composición idéntica en los espacios
+    residenciales y los destinos, ya que es posible que el porcentaje de
+    cada grupo sea diferente en ambos dominios. Este aspecto también
+    requiere un abordaje más detallado en futuros trabajos.
+    <!--# En relación a este problema, un abordaje posible sería vincular la la composición de residencia con la composición en los destinos, buscando generar un campo vectorial... -->
+
+En segundo lugar, la falta de disponibilidad de datos con una mayor
+precisión o granularidad, así como la disponibilidad de muestras
+relativamente pequeñas, constituye un límite para avanzar en la
+descripción precisa de los movimientos urbanos. En particular, la
+existencia de muy pocas unidades de muestreo en algunos destinos poco
+visitados lleva a una composición de destino que puede estar
+artificialmente distorsionada. Una solución parcial a este problema (a
+la que recurrimos en este trabajo) es el agrupamiento de las unidades
+espaciales, lo cual tiene como contrapartida la pérdida de precisión del
+análisis, sin lograr solucionar el problema de aquellas unidades
+espaciales donde persiste la falta viajes como destino.
+Alternativamente, es posible pensar para futuros trabajos una solución
+que aborde este problema 'difuminando' las características de la
+población que viaja a cada destino entre las unidades espaciales vecinas
+(que podría implementarse mediante un 'kernel' o una estrategia
+iterativa de 'random walk'). Siguiendo esta idea la cantidad de minutos
+que pasa cada persona de la muestra se podría distribuir según una
+función de densidad entre los espacios
+cercanos.<!--# Esta propuesta sería una especie de "kernel" que disminuye desde las esquinas pertenecientes al área declarada hacia las vecinas. Como resultado, el total de minutos de cada persona en un área se distribuye según esta función de densidad en todas estas esquinas logrando "difuminar" la respuesta de la encuesta. Esta idea me surgió mirando un trabajo que salió hace poco y que usa random walk para medir segregación residencial (DOI: 10.1038/s41467-022-33344-3). Luego de ello, encontré otro trabajo (DOI: 10.1016/j.compenvurbsys.2023.101990) que utiliza la red de calles para "difuminar" las medidas de segregación residencial, de donde tomé algunas ideas. Por último, con una búsqueda teórica diferente, pero con una implementación parecida a lo que pensé yo, encontré este artículo sobre el paquete de Python cityseer (DOI: 10.1177/23998083221133827). En este sentido, si una persona de la muestra ($i$) declara que irá a la unidad espacial "A", es posible suponer (por falta de información) que es equiprobable encontrarlo en cada porción de ese lugar de destino. Si sólo pienso como "lugares" posibles dentro de A a todas las esquinas de esa unidad espacial ($E_A$), entonces puedo suponer que estará con una probabilidad igual en cada una de estas esquinas. Asumiendo que esta persona $i$ pasa un total de minutos en la unidad A ($t_{iA}$), en promedio en cada esquina estará un total de $\frac{t_{iA}}{\#E}$(donde $\#E$ es el número de esquinas). Desarrollando un poco más esta idea, puedo suponer que en las esquinas "cercanas" (por la red vial), también existe una probabilidad de que esta persona esté (algo como $\frac{1}{d^2}$ para ser clásicos). Obviamente esta probabilidad será menor y se reducirá a casi 0 si me alejo mucho (si $d$ crece). -->
+
+<!--# Otro aspecto es la mejora o ampliación de algunos indicadores. En particular, consideramos que sería posible considerar la distancia por la red vial al centro de la ciudad (en lugar de usar la zonificación que no fue útil -->

@@ -1,6 +1,6 @@
 ---
-title: 'La segregación urbana multi-dominio'
-subtitle: 'Estudio en el Aglomerado Metropolitano del Gran Buenos Aires (Argentina)'
+title: 'Segregación urbana multi-dominio en el Aglomerado Metropolitano del Gran Buenos Aires (Argentina)'
+# subtitle: 'Estudio en el Aglomerado Metropolitano del Gran Buenos Aires (Argentina)'
 
 # Institucional
 logo: 'template/logo_UBA-Sociales2.jpg'
@@ -18,7 +18,9 @@ date: "`r stringr::str_to_sentence(format(Sys.time(), '%B %Y') )`"
 # abstract: 
 
 # Definiciones de exportación
-documentclass: book
+documentclass: book # scrbook Requiere chapterprefix=true como opción
+classoption: 
+  - chapterprefix=true
 
 site: bookdown::bookdown_site
 knit: bookdown::render_book
@@ -35,8 +37,14 @@ lang: es
 bibliography: template/library.bib
 csl: template/apa7-spanish.csl
 link-citations: true
-linkcolor: Sepia
 urlcolor: Sepia
+linkcolor: Sepia
+filecolor: Sepia
+citecolor: Sepia
+
+# Opciones de estilo
+fontfamily: Alegreya
+sansfont: Alegreya Sans
 
 # Fuente del Codigo 
 # monofont: "Source Code Pro"
@@ -55,7 +63,7 @@ monofontoptions: "Scale=0.7"
 ```
 ```{r setup, echo = F}
 
-options(OutDec= ",")
+# options(OutDec= ",")
 
 knitr::opts_chunk$set(echo = FALSE,
                       message = FALSE, 
@@ -72,7 +80,9 @@ options(knitr.kable.NA = '')
 
 ```{r packages, appendix = TRUE}
 library(tidyverse)
+library(knitr)
 library(flextable)
+library(here)
 ```
 
 ```{r data}
