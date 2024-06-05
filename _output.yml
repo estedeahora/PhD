@@ -21,6 +21,7 @@ bookdown::pdf_book:
   template: template/latex/template.tex
   latex_engine: lualatex
   citation_package: default
+  # number_sections: false
   keep_tex: yes
   pandoc_args:
     - --listings
