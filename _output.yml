@@ -23,6 +23,7 @@ bookdown::pdf_book:
   citation_package: default
   # number_sections: false
   keep_tex: yes
+  keep_md: true
   pandoc_args:
     - --listings
     - --top-level-division=chapter
@@ -30,16 +31,16 @@ bookdown::pdf_book:
 # officedown::rdocx_document:
 #     base_format: "bookdown::word_document2"
 bookdown::word_document2:
-    reference_docx: template/word/wordtemplate.docx
-    number_sections: false
-    toc: true
-    tables:
-      caption:
-        pre: 'Tabla '
-        sep: '. '
-    plots:
-      caption:
-        pre: 'Figura '
-        sep: '. '
+  reference_docx: template/word/wordtemplate.docx
+  number_sections: false
+  toc: true
+  tables:
+    caption:
+      pre: 'Tabla '
+      sep: '. '
+  plots:
+    caption:
+      pre: 'Figura '
+      sep: '. '
 
 # bookdown::epub_book: default

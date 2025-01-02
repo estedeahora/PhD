@@ -1,0 +1,9 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+
+^\.github$
+^_rawdata$
+^_draft$
+^_PhD$
+^template$
+^chapters$
