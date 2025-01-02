@@ -10,9 +10,60 @@ editor_options:
 
 <!--# Se hace una breve presentación de los antecedentes sobre la relación entre segregación en los dominios residencial y educativo. En relación a esto, se recupera la importancia de la segregación educativa en la construcción del capital social y el logro educativo, enfatizando su rol como mecanismo de enclasamiento.  -->
 
+ver: 10.1080/02673037.2020.1857707
+
+<!--# La escuela como espacio de separación -->
+
+En la medida que las sociedades tienden a generar sistemas donde la
+profesionalización cumple un rol mayor en la allocation de las personas
+en el mercado laboral, la educación se transforma en un elemento cada
+vez más importante en las estrategias de reproducción social. Sin
+embargo, diferentes autores han señalado la existencia de diferentes
+realidades escolares, que generan...
+
+Como hemos señalado en trabajos anteriores sobre el sistema educativo de
+la CABA [@SerratiXXX] esta diferencia entre escuelas ...
+
+En este sentido, algunos autores señalan la existencia que muchas
+familias elaboran una estrategia unificada de elección de escuela y de
+
+En concreto, la escuela es un ámbito central en el que analizar el
+problema de la segregación...
+
 ## Presentación de la metodología de análisis
 
 <!--# Se presenta la propuesta metodológica basada en un modelo de asignación ('allocation model') de estudiantes en escuelas (Serrati, 2023b). De modo breve, este modelo genera una asignación "óptima" minimizando la distancia total recorrida por total de los estudiantes, de manera que funciona como un "tipo ideal" sobre cómo sería la asignación de estudiantes si sólo se tuviera en cuenta la distancia. La estrategia metodológica consiste en comparar la composición escolar que resulta de esta asignación con la composición realmente observada. Para ello se utiliza el método propuesto por Elbers (2023), que fue anteriormente utilizado de este modo (Serrati, 2023b).  -->
+
+**Allocation model**
+
+El allocation model es un caso particular de medida de segregación
+granular que incorpora la restricción de ?
+
+Describir propuesta de Allocation model
+
+Describir posibilidades de uso con simulaciones
+
+Conclusiones del apartado.
+
+Medir conjuntamente la segregación en diferentes \*\*dominios\*\*.
+
+-   segregación residencial
+-   segregación parental
+-   segregación escolar (allocation model)
+-   segregación de actividades (mediante segregación granular y análisis
+    de infraestructura urbana disponible)
+
+Medir conjuntamente segregación en diferentes \*\*dimensiones\*\*.
+
+-   Segregación socioeconómica
+-   segregación migratoria
+-   segregación racial¿?
+
+Medir conjuntamente segregación en diferentes niveles (?)
+
+Es posible incorporar una dimensión histórica(?) intra biográfica y
+
+generacional?
 
 ## Comparación de la segregación en el ámbito residencial y escolar
 

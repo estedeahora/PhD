@@ -10,13 +10,68 @@ editor_options:
 
 <!--# Se introduce el problema sobre cómo las movilidades urbanas cotidianas tienen un efecto sobre las interacciones con personas de otros grupos sociales. En particular, se repasan los antecedentes que analizan el rol de las movilidades en los intercambios en el AMBA. -->
 
-<!-- Aportes: SNA -->El capítulo pretende ser un aporte novedoso en al menos dos aspectos. Por un lado, hasta donde hemos podido indagar, es el primer trabajo que analiza la interrelación entre segregación residencial y segregación de movilidad de forma cuantitativa para el conjunto del AMGBA. En segundo lugar, el trabajo propone un abordaje del problema de segregación utilizando datos de encuestas de movilidad origen destino basado en un enfoque de 'redes sociales', una estrategia hasta ahora poco explorada en la región.
+<!-- Aportes: SNA -->
 
-<!-- Objetivo y preguntas: SNA --> Retomando un enfoque multi-dominio de la segregación, el objetivo de este capítulo es analizar cómo se articula la segregación socio económica considerando los espacios de actividad de los residentes del Área Metropolitana del Gran Buenos Aires (AMGBA). <!-- Preguntas -->Para ello nos preguntamos: ¿Cómo se relaciona la segregación en el dominio residencial con la que surge como resultado de la movilidad cotidiana dentro de los espacios de actividad? ¿Las movilidades funcionan reforzando o disminuyendo la 'separación' (segregación) entre los grupos sociales? Dicho en otras palabras: ¿Existe un círculo vicioso [@VanHam2018] entre estos dominios de la segregación o, por el contrario, cada uno de estos dominios aporta elementos propios a la segregación urbana [@Serrati2023]? ¿En qué medida las movilidades cotidianas son un 'capital' que le permite a los agentes modificar la segregación que viven en el dominio residencial? <!-- Enfoque metodológico: SNA -->Teniendo en cuenta estas preguntas, en el trabajo proponemos utilizar un enfoque metodológico que combina el análisis de segregación con el análisis redes sociales [@Borgatti2009; @Borgatti2014; @Miele2019]. En particular, sobre este último punto, adaptando la metodología planteada por @Luke2015, proponemos caracterizar las movilidades urbanas a partir de la construcción de una red bipartita dirigida y ponderada para representar los viajes de las personas a los diferentes lugares de la ciudad.
+El capítulo pretende ser un aporte novedoso en al menos dos aspectos.
+Por un lado, hasta donde hemos podido indagar, es el primer trabajo que
+analiza la interrelación entre segregación residencial y segregación de
+movilidad de forma cuantitativa para el conjunto del AMGBA. En segundo
+lugar, el trabajo propone un abordaje del problema de segregación
+utilizando datos de encuestas de movilidad origen destino basado en un
+enfoque de 'redes sociales', una estrategia hasta ahora poco explorada
+en la región.
+
+<!-- Objetivo y preguntas: SNA -->
+
+Retomando un enfoque multi-dominio de la segregación, el objetivo de
+este capítulo es analizar cómo se articula la segregación socio
+económica considerando los espacios de actividad de los residentes del
+Área Metropolitana del Gran Buenos Aires (AMGBA). <!-- Preguntas -->Para
+ello nos preguntamos: ¿Cómo se relaciona la segregación en el dominio
+residencial con la que surge como resultado de la movilidad cotidiana
+dentro de los espacios de actividad? ¿Las movilidades funcionan
+reforzando o disminuyendo la 'separación' (segregación) entre los grupos
+sociales? Dicho en otras palabras: ¿Existe un círculo vicioso
+[@VanHam2018] entre estos dominios de la segregación o, por el
+contrario, cada uno de estos dominios aporta elementos propios a la
+segregación urbana [@Serrati2023]? ¿En qué medida las movilidades
+cotidianas son un 'capital' que le permite a los agentes modificar la
+segregación que viven en el dominio residencial?
+<!-- Enfoque metodológico: SNA -->Teniendo en cuenta estas preguntas, en
+el trabajo proponemos utilizar un enfoque metodológico que combina el
+análisis de segregación con el análisis redes sociales [@Borgatti2009;
+@Borgatti2014; @Miele2019]. En particular, sobre este último punto,
+adaptando la metodología planteada por @Luke2015, proponemos
+caracterizar las movilidades urbanas a partir de la construcción de una
+red bipartita dirigida y ponderada para representar los viajes de las
+personas a los diferentes lugares de la ciudad.
 
 ## Presentación de la metodología de análisis
 
 <!--# Se presenta la metodología basada en caracterizar las movilidades urbanas como una red bipartita dirigida y ponderada que represente los viajes de las personas en el AMBA (Borgatti et al., 2009; Luke, 2015). A partir de esta red se genera una "Matriz de Indicadores Múltiples" (Wasserman et al., 1990; Zhu et al., 2016) que es analizada luego mediante un análisis de correspondencias múltiples que permite reducir la dimensionalidad de la matriz original, permitiendo agrupar los viajes en función de la similitud de sus características. A su vez, mediante la "proyección" del nivel de estudio como variable suplementaria, es posible utilizar esta técnica de modo explicativo (Baranger, 2012; similar a lo hecho en Bourdieu, 1979). -->
+
+**Segregación granular**
+
+El acceso diferencial a las locaciones comunes e infraestructuras de una
+ciudad da cuenta de el grado de privación (*deprivation*). A su vez, en
+la medida en que los grupos de la población tienen una distribución no
+homogénea, esta privación puede pensarse como una medida de las
+posibilidades para que estos grupos se encuentren. En concreto, es
+posible pensar en medidas de segregación granular, teniendo en cuenta
+
+Un primer acercamiento es a partir la distancia entre esquinas/radios a
+espacios y luego medir proporción de población con acceso según grupo.
+
+Sin embargo, esto supone que todos los grupos acceden de forma igual por
+la ciudad, es decir, que la ciudad no tiene viscosidades según el lugar
+de residencia y que sólo se accede a los lugares cercanos.
+
+Una alternativa es suponer un movimiento diferencial de cada uno de los
+barrios. Para ello se pueden usar datos de la ENMODO, datos de
+conectividad de colectivos (esto supone que lo que se conecta es lo que
+se necesita conectar) o datos de SUBE. De esta manera, cada lugar de
+residencia se comunica diferencialmente con el propio barrio y con los
+otros barrios.
 
 ## La movilidad cotidiana en el AMBA y sus efectos en la segregación
 
@@ -325,8 +380,8 @@ diversidad o segregación de los espacios de residencia de las personas
 que realizan estos viajes.
 
 ```{r MCA-RES}
-#| fig.cap: "Primeras dos dimensiones del Análisis de Correspondencias Múltiples sobre la matriz de indicadores múltiples construida con los viajes de la ENMODO2018. Los porcentajes de varianza explicada fueron corregidos a partir del método propuesto por Greenacre (2008)."
-#| fig.asp: 0,5
+# #| fig.cap: "Primeras dos dimensiones del Análisis de Correspondencias Múltiples sobre la matriz de indicadores múltiples construida con los viajes de la ENMODO2018. Los porcentajes de varianza explicada fueron corregidos a partir del método propuesto por Greenacre (2008)."
+# #| fig.asp: 0,5
 
 # include_graphics(here::here("figures/MCA-Variables-Categ.png") )
 ```
@@ -402,8 +457,8 @@ derecho (a pesar de que su presencia residencial se asocia con el lado
 derecho).
 
 ```{r MCA-EDU}
-#| fig.cap: "Densidad de viajes según nivel educativo del hogar proyectado sobre las primeras dos dimensiones del resultado del Análisis de Correspondencias Múltiples."
-#| fig.asp: 0,5
+# #| fig.cap: "Densidad de viajes según nivel educativo del hogar proyectado sobre las primeras dos dimensiones del resultado del Análisis de Correspondencias Múltiples."
+# #| fig.asp: 0,5
 
 # include_graphics(here::here("figures/MCA-Nivel-educativo.png") )
 ```

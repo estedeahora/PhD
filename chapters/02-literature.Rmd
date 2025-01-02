@@ -6,270 +6,1313 @@ editor_options:
 
 `r if(!knitr::pandoc_to("docx")) '# (PART) Aspectos generales {.unnumbered}'`
 
-<!-- # (PART) Aspectos generales {.unnumbered} -->
-
 # La segregación urbana como un problema multi-dominio {#lit}
 
-<!-- TITULO: El estudio de la segregación social en el marco de los estudios sobre estratificación social /// Segregación como mecanismo de estratificación social -->
+<!-- TITULO ALTERNATIVO: El estudio de la segregación social en el marco de los estudios sobre estratificación social /// Segregación como mecanismo de estratificación social -->
 
-## Diversidad, mixtura y estratificación social: Segregación como dimensión espacial de la estratificación social
+En este capítulo proponemos un recorrido por los elementos teóricos que
+sostienen la propuesta de la tesis. En el primer apartado analizamos el
+concepto de segregación espacial a la luz del lugar de confluencia entre
+los *estudios urbanos* y los *estudios de estratificación social*. Luego
+de un repaso por el concepto de mixtura social y división social del
+espacio, proponemos una lectura del concepto de segregación, integrando
+las concepciones weberianas y neoweberianas de la estratificación
+social, así como la perspectiva bourdiana de espacio social. Por último,
+sostenemos que la segregación puede entenderse como la dimensión
+espacial de la estratificación social. En el segundo apartado realizamos
+un repaso del origen del concepto de segregación en el ámbito de los
+estudios urbanos, recuperando los textos clásicos, así como su
+desarrollo posterior de la sociología urbana. A partir de esta lectura,
+en el tercer apartado proponemos una discusión sobre la importancia de
+extender el análisis de la segregación más allá del ámbito residencial.
+Aquí se destaca la importancia de incorporar otros dominios de la vida
+social, discutiendo los límites de una perspectiva de que se centre
+únicamente en el dominio residencial. Por último, en el cuarto apartado,
+se presentan los aportes teóricos que dan sustento al *enfoque
+multi-dominio de la segregación* utilizado en esta tesis. En particular,
+se examina el modo de entender la interrelación entre los diferentes
+dominios de la segregación y cómo esta interrelación puede dar lugar a
+un 'círculo vicioso' o a la 'reproducción multi-dominio' de la
+segregación.
 
-<!-- Se comienza desarrollando el problema de la ‘segregación’ enmarcada dentro del problema de la ‘exposición a la diversidad’ y la ‘mixtura/mezcla social’, destacando la importancia de este problema en la literatura internacional (Ruiz-Tagle, 2019; Ruiz-Tagle & Romano, 2019). A continuación, se enfatiza el vínculo de la segregación con los problemas de estratificación social (Di Virgilio & Heredia, 2011). A partir de esto, y recuperando los estudios de estratificación social, se repone una lectura de este fenómeno desde las perspectivas (neo)weberiana y bourdiana. En particular, de la primera se recupera la concepción de clase social entendida como el resultado de una probabilidad selectiva de intercambios entre los grupos económicos, basados en gran medida en el status y los estilos de vida de estos grupos (Breen, 2005; Dalle, 2016). Por su parte, de la concepción bourdiana se retoma la importancia de los procesos simbólicos en la distinción de clases, así como el rol dado a los ‘otros capitales’ en los procesos de estratificación social (Baranger, 2012; Bourdieu, 1979, 2014; Gutierrez et al., 2011; Weininger, 2005).  -->
+## Diversidad, mixtura y división social del espacio: la segregación como dimensión espacial de la estratificación social {#lit-estratif}
 
-<!--# Se comienza desarrollando el problema de la ‘segregación’ enmarcada dentro del problema de la ‘exposición a la diversidad’ y la ‘mixtura/mezcla social’, destacando la importancia de este problema en la literatura internacional (Ruiz-Tagle, 2019; Ruiz-Tagle & Romano, 2019). -->
+La *segregación social* refiere al fenómeno por el cual los grupos
+sociales hacen un *uso selectivo y una apropiación diferenciada del
+espacio.* Desde los precursores trabajos de @Engels1969, diferentes
+autores han puesto de manifiesto cómo el espacio de las ciudades es
+ocupado desigualmente por las clases/grupos sociales, poniendo de
+manifiesto que el espacio constituye una dimensión de la diferencia
+entre estos grupos. Como resultado, la segregación da lugar a una
+*división social del espacio* [@Duhau2013a], que ha sido ampliamente
+estudiada en la tradición sociológica, constituyendo uno de los puntos
+centrales de la confluencia entre la tradición de la *sociología de las
+clases sociales* y los *estudios urbanos* [@DiVirgilio2011e].
 
-La *segregación* *social* refiere al fenómeno por el cual los grupos
-sociales hacen un *uso selectivo y diferenciado del espacio,* por lo
-cual tienden a no compartir espacios de socialización con los otros
-grupos sociales
-<!--# lo cual lleva a estos grupos a compartir espacios de encuentro sólo con otras personas similares -->.
-A nivel individual, este fenómeno maximiza las probabilidades de
-sociabilización e intercambio con 'otros similares', a la par que limita
-las posibilidades para que personas de diferentes grupos sociales
-compartan espacios (físicos y virtuales). Como consecuencia la
-segregación refuerza el aislamiento de los grupos sociales a partir de
-una fragmentación del uso del espacio urbano.
-<!--# quizas desarrollar un poco para extender la presentación. Faltan referencias. -->
+<!-- Se comienza desarrollando el problema de la ‘segregación’ enmarcada dentro del problema de la ‘exposición a la diversidad’ y la ‘mixtura/mezcla social’, destacando la importancia de este problema en la literatura internacional (Ruiz-Tagle, 2019; Ruiz-Tagle & Romano, 2019).-->
 
-Los estudios sobre estratificación social han señalado desde temprano
-que las prácticas de segregación cumplen un rol central en la
-reproducción de las estructuras sociales [@Duncan1955a].
-<!--# se puede desarrollar esto con algo de escuela de chicago -->En
-relación a esto el concepto de segregación puede ser leído en relación
-con la concepción weberiana y neo-weberiana sobre la estratificación
-social, así como en relación con aportes de Bourdieu a este campo. El
-enfoque weberiano y neoweberiano
-<!--# BORRAR: destaca la centralidad de los aspectos económicos para entender la estratificación social, en tanto -->sostiene
-que las *posiciones de clase* (dentro del mercado) generan distintas
-*chances de vida* y, como consecuencia, distintos *estilos de vida*. En
-este contexto, los grupos privilegiados utilizan los estilos de vida
-para promover y reforzar un *cierre social excluyente,* con el objetivo
-de evitar que otros accedan a estas mismas oportunidades. Esto tiene
-como resultado la formación de las *clases sociales*, entendidas como
-agrupamientos de posiciones de clases entre las cuales las interacciones
-e intercambios son más probables.[^02-literature-1] En resumen, la
-corriente weberiana y neo-weberiana señala que, más allá de la inserción
-laboral, la clase social se configura como resultado de una probabilidad
-selectiva de intercambios entre los diferentes grupos económicos,
-basados en gran medida en el *status* y los estilos de vida de estos
-grupos <!--# [@Dalle20] -->
+Si bien algunos estudios destacan aspectos positivos de la
+segregación,[^02-literature-1] la mayoría de los trabajos toman una
+perspectiva crítica sobre este fenómeno. Uno de los problemas centrales
+destacados por la literatura es el de la 'integración social'. En
+particular, la integración étnica y la integración migratoria (en
+algunos casos, también, asociada a la religiosa), es considerada un
+problema y un desafío para la consolidación de las democracias
+occidentales del norte global. En este contexto, a partir de la década
+de 1990 proliferó un creciente interés de los estudios académicos
+respecto a los procesos de ‘mixtura' o 'mezcla'
+social.[^02-literature-2] Complementario a este interés y enmarcado en
+una mirada neoliberal del desarrollo urbano, ha habido un auge de
+políticas habitacionales que promueven la *mixtura social*. Sin embargo,
+como señala Ruiz-Tagle [@Ruiz-Tagle2019c; @Ruiz-Tagle2019a], estas
+políticas han logrado sólo parcialmente cumplir con los objetivos que se
+habían planteado, siendo por lo general ineficientes para lograr una
+verdadera integración de estos grupos sociales. En efecto, más allá de
+la reducción de los indicadores de segregación residencial, estas
+políticas se mostraron insuficientes para lograr una integración real y
+un mayor intercambio entre los grupos sociales.
 
-[^02-literature-1]: Tomando la definición original de @Weber1922 [p.
+[^02-literature-1]: Entre los aspectos positivos se destaca la
+    posibilidad de generar políticas públicas focalizadas y de que las
+    minorías generen lazos comunitarios para organizarse y preservar sus
+    prácticas culturales [@Sabatini2006].
+
+[^02-literature-2]: Esto se traduce en el desarrollo de diferentes
+    'números especiales' en las revistas académicas más destacadas):
+    *Urban Studies* (2008, volumen 45, número 7); *Housing Studies*
+    (2010, volumen 25, número 2); *Cities* (2013, volumen 35);
+    *Cityscape* (2013, volumen 15, número 2); *International Journal of
+    Urban and Regional Research* (2014, volumen 38, número 4).
+
+Como muestran las limitaciones que tuvieron las políticas de mixtura
+residencial, la *división social del espacio* no deben ser analizadas
+desde una mirada mecánica y reduccionista. Para ello es necesario evitar
+un 'pensamiento sustancialista de los lugares' [@Bourdieu2007, p. 119] y
+entender que el espacio urbano, está mediado por las prácticas sociales
+de apropiación y uso que los agentes hacen de dicho espacio. Como señala
+@Ruiz-Tagle2019c, contrario a los supuestos (muchas veces subyacentes e
+implícitos) de las políticas habitacionales de 'mixtura social', el
+hecho de que dos personas 'vivan cerca' no supone *mecánicamente* que
+estas personas establezcan vínculos, pudiendo incluso reforzar
+prejuicios y estigmatizaciones. La *mixtura residencial* puede ser un
+aspecto positivo para la integración entre los grupos sociales (e
+incluso una condición favorable), pero la misma no puede pensarse de
+modo aislado, en particular, dejando fuera las prácticas de apropiación
+y movilidad que hacen los propios agentes.[^02-literature-3]
+
+[^02-literature-3]: Los agentes marcan de manera diferencial el espacio
+    y le dan sentido, estableciendo límites y barreras simbólicas. El
+    uso común del espacio no debe entenderse de forma mecánica,
+    suponiendo que el mero compartir un espacio común genera las
+    condiciones para la integración.
+
+Abordar el problema de la *división social del espacio* supone, por lo
+tanto, entender que existe una fragmentación del espacio; pero
+remarcando que dicha fragmentación está mediada por el uso y la
+apropiación que hacen los agentes de este espacio, lo cual trasciende (e
+incluye) el aspecto residencial. Este enfoque habilita a pensar la
+*segregación* de un modo más amplio, incluyendo al análisis las 'formas'
+en que los actores comparten estos espacios (marcados y apropiados
+socialmente), permitiendo, potencialmente, las interacciones entre
+ellos. Como contraparte supone considerar algunos aspectos que
+complejizan el propio concepto.
+<!-- Implicancias de la definición del concepto de segregación--><!--(a) interacciones potenciales-->En
+primer lugar, el encuentro y la interacción entre las personas de
+diferentes grupos sociales no es un hecho dado, sino sólo una
+posibilidad que puede (o no) ocurrir en este compartir espacios físicos
+[@Chamboredon1970; @Yao2019]. El concepto de segregación se enfoca, de
+este modo, en una interacción *potencial*, entendiendo también que esta
+*copresencia* es una condición necesaria para que la interacción *real*
+ocurra.[^02-literature-4] En este sentido, aunque el espacio no
+garantiza la interacción, la existencia de espacios de 'co-vivencia' es
+una precondición necesaria para que las interacciones ocurran.
+<!--(b) interacciones no necesariamente positivas-->En segundo lugar,
+también es necesario entender que cuando estas interacciones ocurren no
+necesariamente son positivas, pudiendo dar lugar a estigmatizaciones o
+prejuicios [@Raynor2020]. <!--(c) interacciones jerarquizadas-->Por
+último, por fuera de estas situaciones de oposición, muchas veces las
+interacciones entre clases sociales están marcadas por relaciones de
+jerarquía, lo cual no debe perderse de vista a la hora de analizar la
+promoción de espacios des-segregados [@Elguezabal2018].
+<!--(d) múltiples dominios--><!-- Por último, en tanto el concepto de segregación se ocupa de las probabilidades potenciales de sociabilización e intercambio con 'otros similares' en los diferentes usos del espacio que hacen los agentes, este fenómeno no se reduce solamente el aspecto residencial. Por el contrario, la segregación es un fenómeno que ocurre en diferentes 'dominios' de apropiación del espacio. --><!-- Recapitulación -->En
+términos resumidos, queremos señalar que el fenómeno de la segregación
+no trata sobre las interacciones efectivas en sí mismas y, por lo tanto,
+es independiente de las características de estas interacciones. Sin
+embargo, como contraparte, la segregación aborda una de las condiciones
+necesarias y fundamentales para que estas interacciones existan, por lo
+cual el fenómeno discurre en un nivel que podemos llamar 'ecológico'
+respecto a las interacciones.
+
+[^02-literature-4]: Vale aclarar que la 'copresencia' se entiende en un
+    sentido amplio, pudiendo incluir 'espacios virtuales' (como, por
+    ejemplo, las 'redes sociales'). En el mismo sentido, cuando
+    diferenciamos interacción *potencial* y *real*, incluimos en la
+    última a las interacciones virtuales.
+
+<!-- Vínculo de los problemas espaciales y, en particular, la segregación con los estudios de estratificación social (Di Virgilio & Heredia, 2011). -->
+
+Teniendo en cuenta las salvedades anteriores, entendemos la segregación
+como el *fenómeno por el cual las personas evitan compartir espacios de
+socialización (físicos o virtuales) con otros grupos sociales y, como
+consecuencia, refuerzan el aislamiento social*. Desde esta perspectiva,
+en el corazón del fenómeno de la segregación está la relación entre los
+grupos sociales, que es central para entender el problema de la
+estratificación social. En consonancia con esto, desde temprano, los
+*estudios sobre estratificación social* señalaron que las prácticas de
+segregación cumplen un rol central en la reproducción de las estructuras
+sociales. En relación a esto, @Duncan1955a señala la estrecha relación
+que existe entre la 'distancia social' y la 'distancia espacial', según
+lo cual el grado de segregación residencial de un grupo está
+inversamente relacionado con el nivel de asimilación de este grupo en
+los valores de la sociedad receptora.
+
+Sin embargo, como señala @RubialesPerez2017 [p. 8], luego de un primer
+interés por la relación entre estratificación y segregación en la
+primera mitad del siglo XX, a partir de mediados del este siglo los
+trabajos sobre estratificación social prestaron poca atención a la
+dimensión espacial, dando lugar a un 'pensamiento aespacial' sobre la
+desigualdad social. A partir del cambio de siglo, estos estudios
+comienzan a recuperar la dimensión espacial [@Hout2006b; @Galster2017;
+@Solis2011] aunque, como señala @EstevezLeston2022, esta perspectiva es
+todavía incipiente en el ámbito local. Además, la mayor parte de las
+veces, los trabajos de estratificación incorporan el territorio como un
+'escenario' en el que se producen los procesos de estratificación o, en
+el mejor de los casos, como una posible 'causa externa', pero casi nunca
+como un elemento co-determinante. Más allá de estas limitaciones, la
+reincorporación de la dimensión espacial en los estudios de
+estratificación viene dada por el reconocimiento de que los grupos
+sociales se organizan siguiendo patrones espaciales ('contextuales'), y
+no sólo a partir de un patrón familiar o individual [@Sharkey2008], lo
+cual en última instancia es el problema de la segregación.
+
+En paralelo, en los trabajos provenientes del campo de la geografía y de
+la sociología urbana, este vínculo se ve reflejado en la expansión de la
+*hipótesis del espejo en la* *división social del espacio*, que sostiene
+la idea de una homología entre la posición en el espacio social y en el
+espacio físico. Más allá de su extensión, es necesario matizar el
+alcance de esta hipótesis entendiendo que 'no es posible plantear una
+equivalencia mecánica entre posición de los agentes en el espacio social
+y en el espacio físico' [@DiVirgilio2011e, p. 7]. Como señala
+@Sabatini2006, la distribución territorial de los grupos de clase no es
+un reflejo de las disparidades sociales. Por el contrario, @Bourdieu2007
+[p. 120] sostiene que el 'espacio social se retraduce en el espacio
+físico, pero siempre de una manera más o menos turbia', en tanto las
+formas de capital dan control sobre los *lugares*. Por otra parte, 'la
+capacidad (o no) de apropiarse del espacio físico profundiza las
+divisiones que derivan de la posición que ocupan los hogares (y sus
+miembros) en el mercado de trabajo' [@DiVirgilio2011e, p. 9]. Es por
+ello que la inscripción de las estructuras sociales en el espacio físico
+es uno de los elementos que otorga a las estructuras del espacio social
+una 'inercia' y, en última instancia, refuerza su permanencia y
+reproducción [@Bourdieu2007, p. 120].
+
+En conjunto, estos trabajos plantean la necesidad de profundizar la
+relación entre los problemas urbanos y la estratificación social, para
+lo cual consideramos que el *concepto de segregación* (tal como fue
+definido) puede ser un elemento valioso. Para abordar esta relación
+proponemos integrar el concepto de segregación con conceptos y
+perspectivas provenientes del campo de la estratificación social. En
+concreto, retomaremos el *enfoque weberiano* y *neoweberiano* sobre
+clase social, a la vez que la *concepción bourdiana* sobre el espacio
+social, con el objetivo de articular estos enfoques en una lectura más
+compleja de la segregación espacial.
+
+<!-- Se repone una lectura de la segregación desde las *perspectivas (neo)weberiana*, recuperando la concepción de clase social entendida como el resultado de una probabilidad selectiva de intercambios entre los grupos económicos, basados en el status y los estilos de vida de estos grupos (Breen, 2005; Dalle, 2016). -->
+
+El *enfoque weberiano y neoweberiano* sostiene que las *posiciones de
+clase* (dentro del mercado) generan distintas *chances de vida* y, como
+consecuencia, distintos *estilos de vida*. En este contexto, los grupos
+privilegiados utilizan los estilos de vida para promover y reforzar un
+*cierre social excluyente,* con el objetivo de evitar que otros accedan
+a estas mismas oportunidades. Esto tiene como resultado la formación de
+las *clases sociales*, entendidas como agrupamientos de posiciones de
+clases entre las cuales las interacciones e intercambios son más
+probables.[^02-literature-5] En resumen, la corriente weberiana y
+neo-weberiana señala que, más allá de la inserción laboral, la clase
+social se configura como resultado de una probabilidad selectiva de
+intercambios entre los diferentes grupos económicos, basados en gran
+medida en el *status* y los estilos de vida de estos grupos [@Dalle2016;
+@Breen2005]. En relación a esto, la segregación espacial limita la
+posibilidad de estos intercambios entre grupos económicos, constituyendo
+un elemento que permite entender cómo opera el cierre social y,
+consecuentemente, la diferenciación entre clases sociales.
+
+[^02-literature-5]: Tomando la definición original de @Weber1922 [p.
     242]: '*Clase social* se llama a la totalidad de aquellas
     situaciones de clase entre las cuales un intercambio $\alpha$)
     personal; $\beta$) en la sucesión de las generaciones; es fácil y
     suele ocurrir de un modo típico'.
 
-Por su parte, el planteo de Bourdieu recupera la importancia de los
-estilos de vida, los cuales se manifiestan en prácticas y experiencias
-encarnadas en el *habitus*. Este enfoque destaca la importancia de los
-estilos de vida en la configuración de la estructura de clases, poniendo
-de relieve que son estos los encargados de instaurar simbólicamente la
-*distinción* y diferenciación entre las clases sociales. A su vez,
-señala que el *espacio social*, como estructura objetiva de posiciones
-sociales, se configura como resultado de la interacción multidimensional
-entre diferentes formas de *capitales*, cada una de las cuales tiene su
-importancia local en *campos* específicos. En este sentido, la propuesta
-de Bourdieu recupera parcialmente la perspectiva weberiana y
-neo-wevberiana, profundizando la importancia de los procesos simbólicos
-en la distinción entre clases e incorporando el rol de 'otros capitales'
-(distintos del económico/laboral) en los procesos de estratificación
-social [@Bourdieu1979; @Bourdieu2014a; @Weininger2005; @Gutierrez2011;
-@Baranger2012].
+<!-- Se repone una lectura de la segregación desde la *concepción bourdiana* retomando la importancia de los procesos simbólicos en la distinción de clases, así como el rol dado a los ‘otros capitales’ en los procesos de estratificación social (Baranger, 2012; Bourdieu, 1979, 2014; Gutierrez et al., 2011; Weininger, 2005; Waquant). -->
+
+Por su parte, el planteo de Bourdieu recupera también la importancia de
+los estilos de vida, los cuales se manifiestan en prácticas y
+experiencias encarnadas en el *habitus*. Los estilos de vida configuran
+la estructura de clases, a partir de su rol en la instauración
+simbólicamente de la *distinción* y diferenciación entre las clases
+sociales [algo que es enfatizado en el trabajo de @Wacquant2013, ver pp.
+276-278]. A su vez, el *espacio social* como estructura objetiva de
+posiciones sociales, se configura como resultado de la interacción
+multidimensional entre diferentes formas de *capitales*, cada una de las
+cuales tiene su importancia local en *campos* específicos
+[@Bourdieu1979; @Bourdieu2014a; @Weininger2005; @Gutierrez2011;
+@Baranger2012; @Wacquant2013]. Este planteo bourdiano abre la
+posibilidad de considerar el espacio físico como elemento de
+estratificación, que opera más allá de las relaciones laborales. Si bien
+Bourdieu no aborda en profundidad la problemática espacial, sus trabajos
+sobre esta temática destacan la estrecha relación entre *espacio social*
+y *espacio físico*, señalando que 'el espacio habitado (o apropiado)
+funciona como una especie de simbolización espontánea del espacio
+social' [@Bourdieu2007, 120], a la vez que permite darle perdurabilidad
+y permanencia.[^02-literature-6] Reconstruyendo el 'pensamiento
+espacial' de Bourdieu, @Wacquant2017 [p. 289] señala que para este
+'todas las estructuras sociales y mentales tienen correlatos
+espaciales', de manera que 'la distancia social y las relaciones de
+poder están expresadas y reforzadas por la distancia espacial'. A partir
+de estas ideas, @Wacquant2023 plantea la existencia de una 'triálectica'
+del pensamiento espacial bourdiano en el que interactúan *espacio
+social*, *espacio simbólico* y *espacio físico*. @Marom2014 [p. 1348]
+propone utilizar el concepto de 'distinción espacial' [*spatial
+distintion*] para 'capturar de forma resumida la relacionalidad que
+existen entre el espacio social y el espacio urbano, incorporando la
+lógica social de *distinción* que motiva y organiza las elecciones
+residenciales (y otras estrategias espaciales) con los patrones
+espaciales de segregación resultantes'. En resumen, la propuesta de
+Bourdieu y sus 'actualizaciones' en el campo urbano recuperan
+parcialmente la perspectiva weberiana y neo-weberiana, reforzando la
+importancia de las prácticas sociales y los procesos simbólicos de
+distinción entre las clases sociales. En este contexto, como parte de
+estos procesos simbólicos de distinción, la segregación (o 'distinción
+espacial') emerge como un mecanismo central para entender los procesos
+de estratificación social.
+
+[^02-literature-6]: El principal texto en el que Bourdieu aborda
+    directamente el problema del espacio es el ensayo *Efecto de lugar*,
+    publicado dentro de *La Miseria del Mundo*. En este trabajo señala
+    que para evitar el 'pensamiento sustancialista de los lugares', es
+    necesario enfocarse en 'las relaciones entre las estructuras del
+    espacio social y las del espacio físico' [@Bourdieu2007, p. 119]. En
+    este sentido, plantea que 'el poder sobre el espacio que da la
+    posesión del capital en sus diversas especies se manifiesta, en el
+    espacio físico apropiado, bajo la forma de determinada relación
+    entre la estructura espacial de distribución de los agentes y la
+    estructura espacial de distribución de los bienes o servicios,
+    privados o públicos' [@Bourdieu2007, 120]. Por otra parte, el
+    espacio también condiciona la estructura social, de manera que 'una
+    parte de la inercia de las estructuras del espacio social se deriva
+    del hecho de que están inscritas en el espacio físico, y de que sólo
+    pueden modificarse a costa de un trabajo de trasplante'
+    [@Bourdieu2007, 120].
 
 <!-- Segregación como dimensión espacial de la estratificación social -->
 
-En sintonía con la propuesta de considerar otras dimensiones en el
-análisis de la estructura de clases, en las últimas décadas los estudios
-sobre la *estratificación social* han resaltado el rol de la dimensión
-espacial en la conformación de las desigualdades[@Hout2006b; @Solis2011;
-@Galster2017]. En este contexto toma centralidad el concepto de
-segregación que, como señalamos anteriormente, permite analizar en qué
-medida las personas comparten espacios con otras personas similares.
-Desde esta perspectiva, el concepto de segregación dialoga con un
-enfoque weberiano y bourdiano de la clase social: por un lado la *clase
-social* refiere a la conformación de grupos entre los que los
-intercambios son más probables; por otro lado, la *segregación* analiza
-en qué medida el espacio es utilizado de forma selectiva por los grupos
-sociales y, por lo tanto, facilita (o no) los intercambios potenciales
-con personas de otros grupos. En este sentido, la segregación condiciona
+Como señalamos, en las últimas décadas los estudios sobre la
+*estratificación social* han recuperado el rol de la dimensión espacial
+en la conformación de las desigualdades [@Hout2006b; @Solis2011;
+@Galster2017; @Sharkey2008; entre otros]. En este contexto entendemos
+que toma centralidad el concepto de segregación, el cual permite
+analizar en qué medida las personas comparten los espacios urbanos con
+otras personas similares. Desde esta perspectiva, el concepto de
+segregación dialoga con un enfoque weberiano y bourdiano de la clase
+social: por un lado la *clase social* refiere a la conformación de
+grupos entre los que los intercambios son más probables y entre los que
+median diferencias simbólicas de distinción; por otro lado, la
+*segregación* analiza en qué medida el espacio es utilizado de forma
+selectiva por los grupos sociales y, por lo tanto, facilita (o no) los
+intercambios potenciales con personas de otros grupos. En este sentido,
+la segregación como dinámica social de división del espacio, condiciona
 la interacción entre los grupos sociales, facilitando al *cierre social*
 y, por lo tanto, actuando como un mecanismo de *estratificación social*.
 En sociedades desiguales, las personas tienden (o intentan) vincularse
 con personas que consideran similares y pertenecientes al mismo grupo
 social. Es por ello que la segregación emerge como una manifestación
 espacial de este fenómeno de vinculación selectiva aportando a la
-construcción de las clases sociales. Retomando este enfoque, podemos
-entender a la segregación como la *dimensión espacial* de la desigualdad
-social, la polarización y la exclusión [@Musterd1998; @Wang2012].
-<!--# Es por ello que el estudio de la segregación recupera el problema de la estratificación social poniendo el foco en los fenómenos espaciales, es decir, analizando cómo el espacio se configura como un factor específico e independiente de estratificación. -->
+construcción de las clases sociales. Como señala @Bourdieu2007 [p. 120],
+'en una sociedad jerarquizada no hay espacio que no esté jerarquizado y
+no exprese las jerarquías y las distancias sociales, de un modo (más o
+menos) deformado y sobre todo enmascarado por el efecto de
+naturalización que entraña la inscripción duradera de las realidades
+sociales en el mundo natural'. Es por ello que, extendiendo la propuesta
+de @Musterd1998 y @Wang2012, entendemos a la segregación como la
+*dimensión espacial* de la
+<!--# desigualdad social, la polarización y la exclusión  -->estratificación
+social. El estudio de la segregación permite analizar cómo el espacio se
+configura como un factor específico e independiente de estratificación,
+que se suma a los otros factores considerados tradicionalmente en este
+campo.
 
-<!-- Autonomía de la dimensión espacial en los procesos de estratificación -->
+<!-- Autonomía de la dimensión espacial en los procesos de estratificación. -->
 
-En relación con esta definición es importante señalar que lo anterior no
-implica pensar al espacio como un 'reflejo' de las estructuras sociales
-en los fenómenos de la segregación. Por el contrario, consideramos que
-los fenómenos espaciales (y la segregación en particular) constituyen
-una dimensión activa, que actúa con una autonomía relativa aportando su
-propia particularidad al proceso de estratificación social
-[@Galster2017]. Como señala @Reygadas2018, los territorios no son sólo
-escenarios en los que se 'expresa' la desigualdad, sino 'actores no
-humanos' en la producción de estas desigualdades. En relación con esto,
-las dinámicas de fragmentación urbana tienen un rol activo en la
-generación de las desigualdades y en las oportunidades de sus
-habitantes, configurando 'contextos urbanos' heterogéneos y desiguales
-que limitan el acceso a los bienes y servicios de la ciudad, generando y
-potenciando otras desigualdades [@DiVirgilio2023].
+Antes de concluir este apartado, vale la pena enfatizar que esta manera
+de entender el fenómeno de la segregación implica romper con la idea del
+espacio como 'reflejo' de las estructuras sociales.[^02-literature-7] En
+particular, la división social del espacio asociada a la segregación
+debe ser entendida como una realidad que imprime su propia dinámica al
+proceso de estratificación. En relación con esto, las dinámicas de
+fragmentación urbana tienen un rol activo en la generación de las
+desigualdades y en las oportunidades de sus habitantes, configurando
+'contextos urbanos' heterogéneos y desiguales que limitan el acceso a
+los bienes y servicios de la ciudad, generando y potenciando otras
+desigualdades [@DiVirgilio2023]. En resonancia con este planteo, para
+@Bourdieu2007 las estructuras sociales están materializadas e
+'inscriptas' en el espacio físico, por lo cual la modificación de las
+estructuras sociales supone a su vez un 'trabajo de transplate' de estas
+infraestructuras difícil de lograr, siendo este uno de los factores que
+otorga 'inercia' y una 'naturalización' a las propias estructuras
+sociales. En particular, en el caso de la segregación en el dominio
+residencial, la ubicación desigual de las poblaciones implica una
+influencia directa en la perpetuación y profundización de las jerarquías
+sociales existentes. Esto refuerza la idea de que la segregación no es
+solo una consecuencia de la estratificación social, sino un componente
+que activamente contribuye a su configuración y reproducción. Esta
+interpretación lleva a la ilusión (figurada parcialmente por algunas
+interpretaciones simplistas del índice de disimilitud) de que es posible
+modificar el lugar de vivienda de una parte de la población sin
+considerar las complejas dinámicas sociales que subyacen y perpetúan la
+segregación.
 
-<!--# PASE EFECTO BARRIO A ADELANTE -->
+[^02-literature-7]: La relación entre 'espacio' y 'estructura social' ha
+    sido ampliamente debatido en la sociología y los estudios urbanos.
+    En este sentido, la crítica de @Castells1972 sobre el rol
+    subsidiario del 'espacio', ha sido sucedida por la idea de una
+    'dialéctica socio-espacial', propuesta por @Lefebvre1974 y ampliada
+    por @Soja2008, en la que se destaca la mutua interacción del espacio
+    y la estructura social. Como señala @Reygadas2018, los territorios
+    no son sólo escenarios en los que se 'expresa' la desigualdad, sino
+    'actores no humanos' en la producción de estas desigualdades. Por
+    ello, los fenómenos espaciales (y la segregación en particular)
+    constituyen una dimensión activa, que actúa con una autonomía
+    relativa aportando su propia particularidad al proceso de
+    estratificación social [@Galster2017]. @DiVirgilio2011e enfatizan
+    que la localización en el espacio físico no es un 'mero contorno' de
+    la acción (como puede sostener Giddens), sino una dimensión
+    constitutiva de la misma. Por ello, las 'estrategias de localización
+    de las familias en el espacio urbano contribuyen a configurar los
+    procesos de diferenciación social y espacial' [@DiVirgilio2011e, p.
+    9]
 
-## Las corrientes teóricas en el estudio de la segregación
+## Aportes teóricos en el estudio de la segregación urbana: una breve historia {#lit-history}
 
-<!-- Origen de los estudios sobre segregación -->
+En el apartado anterior, abordamos el concepto de segregación espacial y
+su conexión con los problemas de estratificación social. A través de las
+perspectivas weberiana y bourdiana, vimos cómo la segregación actúa como
+una dimensión espacial de la estratificación social, influyendo en la
+configuración de las desigualdades sociales. Sin embargo, el concepto de
+segregación tiene su propio desarrollo y recorrido en la historia de los
+*estudios urbanos*. Este recorrido es fundamental para comprender y
+situar adecuadamente las discusiones contemporáneas y las perspectivas
+analíticas actuales en un contexto más amplio y profundo.
 
-<!--# Se recorre al origen del concepto de segregación en el ámbito de los estudios urbanos. Para ello, se rastrea la presencia de este concepto en los textos clásicos (Marx-Engels, Weber y Simmel), así como sus primeros abordajes en la tradición de la sociología urbana (Escuela de Chicago), las críticas de los enfoques neomarxistas de la Nueva Sociología Urbana (Lefebvre, Castells y Harvey) y la lectura de la tradición bourdiana (Bourdieu y Waquant). Luego se presentan los aportes de las perspectivas ‘postestructuralistas’ y contemporáneos que recuperan elementos de las corrientes anteriores. Por último, se repasan algunas de las perspectivas teóricas que abordaron el problema de la segregación para América Latina (Duhau, 2013; Kaztman, 2001; Sabatini, 2006; Ward, 2012).  -->
+En este apartado examinaremos los diferentes enfoques y autores que han
+utilizado el concepto de segregación.
+<!--# Antes de ello, conviene resaltar que su incorporación como concepto sociológico viene de las políticas racializantes. En este sentido, como veremos, si bien existe un tratamiento del problema en otros autores, el concepto toma centralidad en la sociología norteamericana de principio de siglo, donde la 'racialización' del espacio era parte de un debate abierto y que suponía políticas explícitas de segregación. Como todo concepto que es tomado del ámbito político, el concepto de segregación requiere una especial vigilancia epistemológica [@Bourdieu1973]. En este sentido, es necesario un trabajo de análisis del concepto...  [@Bourdieu2019] . tomando en cuenta estos aspectos, en este apartado...-->Para
+ello, analizaremos primeras aproximaciones al problema en los textos
+clásicos y el abordaje hecho por la segunda generación de la 'Escuela de
+Chicago' y la sociología norteamericana de postguerra. Luego
+exploraremos los aportes y críticas provenientes de la 'Sociología
+Urbana Británica', la 'Nueva Sociología Urbana', la 'Escuela de Los
+Angeles' y la tradición bourdiana. Por último, analizaremos las
+particularidades de las perspectivas teóricas que han abordado este
+problema en el contexto de América Latina, aportando una visión integral
+y contextualizada de la segregación urbana a la realidad regional y
+local.
 
-Los estudios sobre la segregación han sido un tópico recurrente y
-fundante de la sociología urbana desde la segunda postguerra [@Bell1954;
-@Duncan1955a; @Duncan1955b]. Como consecuencia de este origen, la
-mayoría de estos trabajos estaban centrados en entender la segregación
-residencial de los grupos étnicos y raciales en Estados Unidos.
-Aprovechando el rápido desarrollo de las medidas de segregación basados
-en datos censales, gran parte de los trabajos sobre segregación se
-focalizaron en lo sucesivo en la segregación dentro del dominio
-residencial [@Tammaru2021; @Musterd2020; @Massey1988]. En esta línea,
-@Duncan1955a señala la estrecha relación que existe entre la 'distancia
-social' y la 'distancia espacial', por lo cual el grado de segregación
-residencial de un grupo está inversamente relacionado con el nivel de
-asimilación de este grupo en los valores de la sociedad receptora.
+<!-- Presencia del concepto de segregación en los textos clásicos -->
 
-<!-- La residencia como articulador de la segregación residencial -->
+El problema de la segregación no fue tratado directamente por los
+autores clásicos de la sociología. Esto se debe en parte a que, como
+sostiene @UllanDeLaRosa2014 [p. 19], para los autores clásicos 'lo
+urbano' quedó subsumido como un elemento subsidiario dentro del análisis
+más amplio del proceso de modernización e industrialización. En relación
+a esto @Saunders1989 [p. 2] señala que los tres padres fundadores de la
+sociología (Marx, Durkheim y Weber) consideraban que 'lo que se requería
+no era una teoría de la ciudad, sino una teoría de las bases cambiantes
+de las relaciones sociales provocadas por el desarrollo del capitalismo,
+y fue a esta última tarea a la que se dirigieron'. Es por ello que el
+problema urbano fue abordado de forma tangencial, como 'contexto' de
+estos cambios, considerando en casi todos los casos como una 'variable
+dependiente'.
 
-Esta centralidad del espacio de residencia en los estudios de
-segregación se justifica por la importancia del mismo como eje
-articulador de las dinámicas de actividad cotidianas. En relación a
-esto, algunos autores han propuesto el concepto de capital 'locacional'
-[@Abramo2003] o 'residencial' [@Levy1994; @Cailly2007], el cual facilita
-a los hogares el acceso a recursos externos e internos de los barrios.
-La localización residencial tiene efectos sobre las posibilidades de
-apropiación del espacio urbano [@Cosacov2018a; @DiVirgilio2023].
+<!-- Engels -->
 
-En la medida que existe una desigual distribución (en calidad y
-cantidad) de los recursos urbanos, la concentración de los grupos en
-ciertas zonas supone indirectamente un acceso desigual a estos recursos
-y configura una 'geografía de las oportunidades'.
+Entre los autores 'clásicos' , destaca Friedrich Engels, quien aborda
+los problemas de la ciudad industrial de su época, brindando algunos
+elementos que permiten reconstruir las raíces del concepto de
+segregación. Como afirma @UllanDeLaRosa2014 [p. 27], 'Engels fue el
+primer marxista en ligar explícitamente las lógicas del modo de
+producción capitalista con los procesos de desarrollo urbano'. en su
+trabajo *La situación de la clase obrera en Inglaterra* [1845] relata
+las precarias condiciones de vida de los trabajadores de Manchester
+(Inglaterra). Basado en sus observaciones en los barrios obreros de la
+ciudad de Manchester, este autor destaca cómo estas condiciones de vida
+caracterizan al ambiente urbano en el que residen los trabajadores, las
+cuales contrastan con las zonas en las que viven los sectores pudientes
+de la ciudad. De esta manera, su trabajo pone en evidencia una división
+del espacio asociada a las clases sociales, siendo así un precursor en
+la descripción de la segregación espacial. Como señala
+@RubialesPerez2017, el contraste entre los barrios sirve a Engels para
+reforzar su hipótesis sobre la división de la sociedad en dos grandes
+sujetos colectivos (burguesía y proletariado).[^02-literature-8]
 
-<!-- La segregación como forma de 'deprivation' + geografía del bienestar + acceso a servicios -->
+[^02-literature-8]: <!-- Charles Booth -->Una descripción similar puede
+    desprenderse de los estudios llevados a adelante por el empresario y
+    político Charles Booth, quien en base a un censo generó mapas de la
+    pobreza en Londres. Sus estudios llevados a adelante a fines del
+    siglo XIX y publicados en *Life and Labour of the People in London*,
+    permitieron tener una descripción espacial de la distribución de la
+    pobreza y revelaron patrones muy evidentes de segregación
+    residencial. Si bien el trabajo de Booth no tiene un contenido
+    teórico que permita ser asimilable dentro de la tradición de las
+    ciencias sociales, su uso novedoso de técnicas cuantitativas y el
+    mapeo de la distribución espacial de la pobreza y la riqueza
+    contribuyó al análisis de la segregación en Inglaterra [ver
+    @RubialesPerez2017].
+
+<!-- Segunda generación de la Escuela de Chicago -->
+
+Acompañando el nacimiento de la 'ciudad' como objeto de estudio
+sociológico, será a partir de los trabajos de la segunda generación de
+la *Escuela de Chicago* que el problema de la segregación tomará
+relevancia y centralidad [@UllanDeLaRosa2014].[^02-literature-9] El
+aporte de la Escuela de Chicago al concepto de segregación será doble:
+por un lado, el enfoque de la *Ecología Humana* encontrará en la ciudad
+una diferencia funcional de espacios que llevará a entender la
+segregación como un fenómeno 'natural'; por otro lado, sus trabajos
+serán los primeros en abordar el estudio de las minorías étnicas y su
+concentración en *ghetos* y *slums*, constituyendo el primer abordaje
+sistemático para para entender la forma de vida de los grupos
+segregados.
+
+[^02-literature-9]: Como señala @Trovero2021, es necesario tener ciertas
+    precauciones a la hora de referirse a la 'Escuela de Chicago' como
+    un cuerpo de pensamiento homogéneo. En la práctica este término fue
+    generado a posteriori (a mediados del siglo XX) para agrupar a un
+    conjunto de autores que trabajaron, en diferentes momentos, en el
+    'Departamento de Sociología y Antropología' de la Universidad de
+    Chicago. En este sentido, los autores que habitualmente se agrupan
+    bajo esta denominación, compartieron sólo parcialmente intereses,
+    preocupaciones y problemáticas. La confluencia y acuerdo entre estos
+    autores se debe más al contexto social y el ambiente intelectual en
+    el que desarrollaron su propuesta, pero nunca actuaron de forma
+    unificada ni compartieron un corpus teórico homogéneo. Teniendo
+    presente esta advertencia, nuestras observaciones sobre la 'Escuela
+    de Chicago', se basan primariamente en los aportes de Robert Ezra
+    Park (1864-1944), Ernest Burgess (1886-1966) y Robert Duncan
+    McKenzie (1885-1940), pertenecientes a la 'segunda generación' de la
+    Escuela de Chicago. Además todos ellos son coautores de la versión
+    final y ampliada de 'The City' (la versión original es de Park), que
+    constituye un texto nodal para el pensamiento social sobre lo urbano
+    y, en particular, para su interpretación desde la ecología humana.
+    Un desarrollo de estas ideas puede encontrarse en la compilación de
+    trabajos de la *American Sociological Society*, editada por
+    @Burgess1926, en la cual se ve también la influencia de estas ideas
+    fuera de la Universidad de Chicago. A su vez, el trabajo de
+    @Park1952 permite tener una mirada integral de la 'Ecología humana'.
+    Además de estos trabajos, en esta reconstrucción recuperaremos los
+    aportes de Franklin Frazier (1894-1962) y Louis Wirth (1897-1952),
+    centrales para el estudio de los 'ghettos'.
+
+<!-- Ecología humana -->
+
+El planteo de *Ecología Humana* propone 'explicar todos los fenómenos
+humanos como producto, en última instancia, de los procesos de
+adaptación de las poblaciones al entorno ecológico', obteniendo un
+equilibrio de una forma espontánea y no regulada. Según este enfoque,
+los ecosistemas funcionan mediante una 'coexistencia en tensión' entre
+procesos de 'competencia', 'cooperación' y 'competencia cooperativa'
+(cooperar para competir con otros grupos), mediante los cuales los
+individuos 'luchan' para conseguir una mejor posición en el ecosistema.
+En este contexto, la ciudad se presenta como un objeto de estudio ideal,
+en tanto representa un 'ecosistema' autónomo que puede ser estudiado
+según sus propias reglas internas. Aplicando las premisas de la ecología
+humana a la realidad urbana, para estos autores los procesos de
+diferenciación de funciones se traducen en la ciudad en una
+'diferenciación funcional de espacios', de manera que 'la competición
+cooperativa entre grupos no estimula solamente la división del trabajo,
+sino que distribuye a los diferentes grupos en diferentes hábitats en el
+seno del ecosistema urbano' [@UllanDeLaRosa2014, p. 67]. Mientras que en
+el conjunto del sistema social la diferencia funcional opera mediante
+mecanismos económicos y la división social del trabajo, en la ciudad la
+división del espacio opera mediante el precio del suelo. Este mecanismo
+permite a los grupos 'dominantes' ocupar los espacios con mejores
+recursos, lo cual se realiza mediante los mecanismos ecológicos de la
+'invasión' y la 'sucesión'.[^02-literature-10]
+
+[^02-literature-10]: En relación a esto Park señala: 'Dentro de los
+    límites de cada área natural, la distribución de la población tiende
+    a asumir patrones definidos y típicos' [@Park1926, p. 3]. 'La
+    ecología humana, tal como la conciben los sociólogos, busca
+    enfatizar no tanto la geografía como el *espacio*. En sociedad no
+    sólo vivimos juntos, sino que al mismo tiempo vivimos separados, y
+    las relaciones humanas siempre pueden contarse, con mayor o menor
+    precisión, en términos de distancia. [...] Las comunidades locales
+    pueden compararse con referencia a las áreas que ocupan y con
+    referencia a la densidad relativa de distribución de la población
+    dentro de esas áreas [@Park1926, p. 4]. 'La organización física o
+    ecológica de la comunidad, a la larga, responde y refleja lo
+    ocupacional y lo cultural. La selección y segregación social, que
+    crean los grupos naturales, determinan al mismo tiempo los espacios
+    naturales de la ciudad' [@Park1926, p. 9]. 'Esto se debe a que las
+    relaciones sociales están tan frecuente e inevitablemente
+    correlacionadas con las relaciones espaciales' [@Park1926, p. 18].
+
+<!-- Modelo concéntrico (Burgess) -->
+
+Es en base a estos principios de la ecología humana Burgess
+[-@Burgess1925; -@Burgess1928] desarrolló su *modelo 'concéntrico' de
+expansión urbana*.[^02-literature-11] Según Burgess el crecimiento de
+las ciudades se produce mediante procesos de 'invasión' y 'expansión'
+entre los sucesivos grupos sociales que van llegando y ocupando los
+espacios de la ciudad. Este proceso da como resultado la consolidación
+de cinco zonas concéntricas, en el que residen diferentes poblaciones.
+Al interior de cada una de estas zonas, las diferentes comunidades
+étnicas conforman lazos morales y de cooperación, dando lugar a 'áreas
+naturales' caracterizadas por una homogeneidad étnica, cultural y moral.
+De esta manera, la ciudad queda dividida en un conjunto de 'áreas
+naturales'. Como señala @UllanDeLaRosa2014 [p. 75], estas zonas son el
+resultado de 'procesos de selección natural entre grupos humanos creadas
+por la división funcional del trabajo vía cooperación intragrupal/
+competición intergrupal pero caracterizadas por un «consenso moral»
+(homogeneidad cultural) y un código interno de comunicación'. El
+resultado de este proceso es la conformación de una segregación étnica y
+social entre los diferentes grupos que habitan cada una de estas
+zonas.[^02-literature-12] De esta manera, constituye una primera
+aproximación teórica sobre cómo opera la segregación espacial en el
+espacio urbano, relacionando esta segregación con las divisiones
+sociales y económicas existentes en la sociedad. Sin embargo, como
+señalan autores críticos a esta corriente [@Ruiz-Tagle2016;
+@UllanDeLaRosa2014; entre otros], la Ecología Humana omite por completo
+el problema de las clases sociales y el conflicto de clases, para
+concentrarse exclusivamente en la 'raza', proponiendo una
+'naturalización' (ecológica) de la estratificación social. Además, en el
+análisis de procesos 'atorregulados' se omite el rol del estado en la
+conformación de las desigualdades sociales y espaciales, un rol que fue
+central en la conformación de la segregación étnica
+norteamericana.[^02-literature-13]
+
+[^02-literature-11]: Este modelo de 'ciudad concéntrica' fue retomado y
+    profundizado sobre la misma concepción por dos discipulos de
+    Burgess, dando lugar a otros dos clásicos modelos: la 'ciudad
+    sectorial' de Homer Hoyt [1939] y la 'ciudad multicéntrica' de
+    Harris y Ullman [1945]. Más allá de diferencias importantes de estos
+    modelos respecto al de Burgess, ambas propuestas tenían como base la
+    misma concepción vinculada a la ecología humana que la de su mentor.
+
+[^02-literature-12]: 'En la expansión de la ciudad se produce un proceso
+    de distribución que tamiza, clasifica y reubica a individuos y
+    grupos por residencia y ocupación. [...] Esta diferenciación en
+    agrupaciones económicas y culturales naturales da forma y carácter a
+    la ciudad. Porque la segregación ofrece al grupo, y por tanto a los
+    individuos que lo componen, un lugar y un papel en la organización
+    total de la vida de la ciudad. La segregación limita el desarrollo
+    en ciertas direcciones, pero lo libera en otras. Estas áreas tienden
+    a acentuar ciertos rasgos, a atraer y desarrollar su tipo de
+    individuos y así a diferenciarse aún más' [@Burgess1925, p. 75].
+
+[^02-literature-13]: El rol del estado en la conformación de la
+    segregación étnica se manifiesta en las *redlining* de la
+    *Residential Security Maps* que validaron los *Restricted
+    Covenants*. Junto a estas intervenciones directas, las políticas
+    racialmente difenciadas de créditos hipotecarios y la desinversión
+    en la *inner city*,dieron como resultado la expansión del Black Belt
+    y, en última instancia la creación de los 'hiperguettos étnicos'
+    [@Wacquant2011].
+
+    En relación a estos procesos @UllanDeLaRosa2014 [p. 102] señala:
+
+    > la Ecología Humana ignoraba completamente la dimensión de las
+    > clases sociales y del conflicto entre ellas, sustituyéndola por la
+    > obsesión, idiosincráticamente estadounidense, por la raza y la
+    > etnia y la «naturalización» ecológica de la estratificación social
+    > (Zukin, 1980; Merrifield, 2002). Tampoco está presente apenas en
+    > sus análisis el papel que juega la maquinaria de un Estado al
+    > servicio de la burguesía capitalista y de la supremacía de la raza
+    > blanca en la estructuración del espacio construido (lo que habría
+    > llevado a ver al Estado como claro cómplice cuando no factor de la
+    > degradación de la Zona de Transición, por la dejación de su
+    > responsabilidad de invertir en adecuadas infraestructuras, en la
+    > construcción de un Estado de Bienestar, o en mecanismos de
+    > desarrollo comunitario). Para la ecología funcionalista el sistema
+    > funciona de acuerdo a unas leyes que se presentan como
+    > independientes de la acción humana: la ley del mercado y la de
+    > competencia cooperativa entre grupos. No existe apenas ninguna
+    > crítica al Estado ni a su papel premeditado e institucional en
+    > fomentar la segregación racial urbana.
+
+<!-- Community Studies -->
+
+El modelo de Burgess, tenía especial consideración sobre lo que llamaba
+la 'zona de transición' (o 'Zona 2'). Por su ubicación esta zona tiene
+las viviendas más deterioradas y menos codiciadas, por lo que es el
+lugar que ocupan 'naturalmente' las minorías étnicas migrantes recién
+llegadas. En esta zona estaban ubicados tambén los *ghettos*, que fueron
+un tema de investigación central para los *Community Studies* comenzados
+por los autores de la Escuela de Chicago. Como parte de su visión
+'asimilacionista', estos trabajos intentaron conocer mediante
+etnografías las prácticas culturales de los grupos étnicos que eran
+percibidas como 'disfuncionales', cuyas prácticas veían vinculadas a la
+marginalidad y el delito. Como consecuencia, se centraron sus estudios
+en los *ghettos* y *slums* donde estos grupos estaban mayormente
+representados.[^02-literature-14] Al enfocarse de forma detallada sobre
+estos barrios segregados, estos trabajos fueron permitieron una
+comprensión inicial de las formas de vida de los barrios segregados,
+identificando en estas formas de vida factores socioeconómicos y
+culturales, a la vez que ofreciendo un marco para analizar la relación
+entre espacio, cultura y estructura social en el contexto urbano.
+
+[^02-literature-14]: Algunos de los trabajos que destacan en esta línea
+    son: 'The Ghet­to' [1927] de Wirth; 'The Gold Coast and the Slum'
+    [1929], de Harvey Zorbaugh; *The Negro Family in Chicago* [1932] de
+    Franklin Frazier.
+
+<!-- Sociología norteamericana y funcionalismo de post guerra. -->
+
+Los trabajos e ideas de la segunda generación de la Escuela de Chicago
+tuvieron una gran influencia en el estudio de la segregación de los años
+posteriores.
+<!-- Tercera generación de la Escuela de Chicago: Nueva Ecología Humanay Ecología Factorial -->En
+gran medida, esta difusión estuvo marcada por el rol de lo que podemos
+denominar como la 'tercera generación' de la *Escuela de Chicago* que
+agrupa a autores que no necesariamente pertenecieron a la Universidad de
+Chicago, pero que continuaron el legado de la Ecología
+Humana.[^02-literature-15] El principal aporte de estos autores al
+desarrollo del concepto de segregación no fue tanto teórico (en donde
+destacan los trabajos Amos Hawley), sino sobre todo metodológico. El uso
+de herramientas matemáticas llevado a adelante por los autores de la
+'Nueva Ecología Humana' y la 'Ecología Factorial', permitieron el
+desarrollo de un conjunto de técnicas estadísticas basados en datos
+censales para 'medir la segregación' (ver el siguiente capítulo para una
+descripción detallada de las 'medidas de segregación'). La posibilidad
+de obtener para cualquier ciudad un índice de segregación
+(potencialmente comparable con el de otras ciudades), generó en estas
+técnicas un gran atractivo y promovió su difusión. Como consecuenca de
+la importancia que tuvo el funcionalismo norteamericano en la sociología
+del período de postguerra[^02-literature-16] y la facilidad para
+extender las técnicas estadísticas a otras ciudades, los estudios
+posteriores sobre segregación tomaron estas técnicas como 'La Forma' de
+abordar el problema, lo cual supuso en algunos casos el trasvasamiento
+de aspectos conceptuales implícitos en estos indicadores. Un ejemplo de
+esto es el hecho de que el concepto de 'segregación urbana' pasó a ser,
+de hecho, sinónimo de 'segregación residencial', es decir, segregación
+en el dominio residencial [@Tammaru2021; @Musterd2020; @Massey1988].
+
+[^02-literature-15]: Siguiendo a @UllanDeLaRosa2014, podemos nombrar
+    como parte de esta tercera generación a Amos `Hawley (1910-2009)`,
+    Eshref Shevky (1893-1969), Marilyn Williams, Josephine J. Williams,
+    James Alfred Quinn (1881-1945), Daniel Bell (1919-2011) y Otis
+    Dudley Duncan (1921-2004).
+
+[^02-literature-16]: Las ideas de esta tercera generación de *Ecología
+    Humana* tienen un fuerte vínculo con las ideas del funcionalismo
+    norteamericano que dominó la sociología en los años de la segunda
+    postguerra. En este sentido, @UllanDeLaRosa2014 [p. 190] afirma que
+    'la Ecología Humana no es más que una variante del más general
+    funcionalismo'. Los trabajos de Parsons propusieron una división
+    disciplinar que diluyó parcialmente el lugar de la sociología urbana
+    y con ello el de la propuesta urbana de la Escuela de Chicago. Más
+    allá del lugar otorgado por Parsons a la sociología urbana, las
+    propuesta de la Ecología Humana y, fundamentalmente, sus propuestas
+    metodológicas de investigación, se difundió en conjunto con el
+    *funcionalismo norteamericano*, lo que permitió a estas ideas
+    influenciar en la sociología de todo el mundo.
+
+Por fuera del aporte directo de la Escuela de Chicago, pero dentro de la
+tradición norteamericana de sociolgía, <!-- Suburbs en EEUU -->un
+elemento novedoso para el estudio de la segregación en esos años será el
+crecimiento de los trabajos dedicados a analizar los *suburbs*
+[suburbios] [@UllanDeLaRosa2014, pp. 174-180].[^02-literature-17] El
+interés por los *subrbios* va de la mano con la importancia del *White
+Flight* ['fuga blanca'], por el cual muchos sectores medios
+'abandonaron' la zonas centrales de la ciudades para residir en lugares
+barrios ubicados en las afueras de las mismas. Por lo general, estos
+trabajos analizan este fenómeno retomando el modelo teórico de expansión
+urbana propuesto por la Escuela de Chicago, incorporando los suburbios
+como un nuevo 'nicho ecológico' de este crecimiento urbano. Los
+suburbios estadounidenses se caracterizarán por anclarse sobre un nuevo
+'estilo vida américano', asociado a la moral de la población de clase
+media y media alta, blanca, religiosa y descendiente de europeos. Como
+parte del aislamiento de estos grupos, los suburbios supondrán la
+exclusión de hecho de los otros grupos étnicos y sociales (cuyos grupos
+más estigmatizados y marginales quedarían confinados en la *inner
+city*), reforzando la segregación racial y socioeconómica del conjunto
+social. Esta segregación se ve reforzada por las propias características
+de los suburbios: con una red vial jerarquizada que aislaba estos
+barrios, escasa (o nula) comunicación mediante transporte público con el
+resto de la ciudad y una zonificación extrema que diferenciaba los
+núcleos residenciales las zonas de servicios y trabajos, la vida de las
+familias blancas de clase media en los suburbios tenía muy poco contacto
+con la de otros grupos sociales y étnicos. En este sentido, un aporte
+importante de estos estudios es que, hasta ese momento, los estudios
+sobre los 'grupos segregados' se habían centrado en aquellos que eran
+considerados 'disfuncionales', pero evitando considerar el rol de los
+grupos 'privilegiados'.
+
+[^02-literature-17]: Si bien son muchos los trabajos que abordaron los
+    subsidios, algunos trabajos destacados de este período son: 'The
+    Functions of Metropolitan Suburbs' [1956] y 'The Growth of
+    Metropolitan Suburbs' [1957], ambos de L. F. Schnore; 'Suburbanism
+    as a Way of Life' [1956] de Fava; y 'People and Plans' [1968] de
+    Gans.
+
+Desde un enfoque proveniente de la economía neoclásica,
+<!-- Economía urbana: Alonso (bid-rent) -->la 'Economía Urbana' se
+propuso explicar la segregación y la división de los grupos en el
+espacio como resultado de un proceso de maximización de costo/beneficio
+hecho por las familias. En este sentido, el trabajo de William Alonso
+[-@Alonso1960; -@Alonso1964] sostiene que la elección residencial de las
+familias evalúa el precio de la vivienda y el costo de transporte
+(distancia) al centro de la ciudad. En base a este modelo, construye un
+conjunto de 'curvas de oferta-demanda', con las cuales puede explicarse
+la ubicación de los grupos de ingresos en la ciudad y, en particular, la
+ubicación de las familias de menores ingresos en la zona cercana al
+centro de la ciudad (visualizándose la influencia del modelo de
+Burgess). <!-- Modelo basado en agentes: Schelling -->Un abordaje
+alternativo, también proveniente de la economía, es el modelo basado en
+agentes [*agent-based modelling*] propuesto por @Schelling1971. Según
+este modelo, incluso con una tolerancia alta a la convivencia con grupos
+diferentes al propio, las elecciones residenciales individuales de los
+hogares resultarían en niveles de segregación altos. Un aspecto
+interesante de estos enfoques provenientes de la economía es la
+incorporación del rol de las familias y poner de relieve que la
+segregación, como hecho social, puede surgir incluso en contextos donde
+no existe una preferencia individual a separarse de los otros grupos
+sociales. Sin embargo, como contraparte se genera un abordaje
+excesivamente 'individualista', que sólo reconoce como causa de la
+segregación a las preferencias individuales de los agentes, sin
+considerar las restricciones del contexto y las intervenciones
+estatales. Además, al igual que la Escuela de Chicago, al omitir el rol
+activo de las políticas estatales y concentrarse en los 'mecanismos de
+mercado' o las elecciones individuales descontextualizadas, estos
+planteos 'naturalizan' la segregación.
+
+Por fuera de los Estados Unidos,
+<!-- Sociología urbana francesa I: Maurice Halbwachs -->el trabajo de
+Maurice Halbwachs (1877-1945) aparece como uno de los precursores de la
+sociología urbana francesa. Discípulo de Emile Durkheim y de Henri
+Bergson, e influenciado por su estancia en la Universidad de Chicago,
+donde entró en contacto con las ideas de la *Escuela de Chicago* y la
+*Ecología Humana*, en su trabajo *Morphologie du sociale* [1935],
+Halbwachs estudia cómo 'el precio del suelo repercute sobre el de las
+viviendas y los alquileres y este a su vez sobre la distribución de las
+clases sociales en el espacio pero también cómo esta se produce por
+medio de mecanismos que no siguen las simples leyes de la economía
+clásica (la oferta y la demanda) puesto que en ella influyen así mismo
+otros muchos factores, a saber: políticos (entre otros la intervención
+del Estado y la acción de las colectividades locales) y culturales (la
+representación que los autores tienen del espacio como, por ejemplo, las
+expectativas futuras de transformación de tal o cual distrito urbano)'
+[@UllanDeLaRosa2014, p. 47]. Si bien aún fuertemente influenciado por
+las ideas de la Ecología Humana, el trabajo de Halbwachs destaca la
+complejidad de los factores que influyen en la distribución espacial de
+las clases sociales, subrayando la interrelación entre aspectos
+económicos, políticos y culturales. La incorporación del análisis de
+cómo las políticas estatales y las representaciones culturales del
+espacio afectan la distribución urbana proporciona una perspectiva
+novedosa sobre la segregación, anticipando debates y análisis que se
+desarrollarán en estudios posteriores sobre segregación urbana.
+<!-- Sociología urbana francesa II: Chombart de Lauwe -->Recuperando
+estas línea de trabajo, Paul Henri Chombart de Lauwe (1913-1998) también
+recupera los aportes de la Escuela de Chicago, contrastando el modelo
+urbano de Burgess en una ciudad europea como París [@UllanDeLaRosa2014,
+pp. 180-186]. En este sentido, corrobora una ciudad diferenciada
+espacialmente, pero a diferencia de los autores norteamericanos, su
+mirada estará puesta en diferencias de clase, cuyos bordes son, a su
+vez, menos marcados que en el caso de los distritos racializados de
+Estados Unidos. Chombart de Lauwe analiza 'los nuevos procesos de
+segregación que se están produciendo en las *banlieues*'
+[@UllanDeLaRosa2014, pp. 183], debido a que las clases medias sólo los
+veían como una etapa transitorio de su trayectoria residencial, lo que
+podía llevar en el futuro a la conformación de 'guetos', similares a los
+que se veía en Estados Unidos con los grupos raciales.
+
+<!-- Renovación de la sociología urbana -->
+
+La Escuela de Chicago tuvo un lugar central en el nacimiento de la
+sociología urbana y en el desarrollo del concepto de segregación. Sin
+embargo, a medida que las ciudades y sus dinámicas se volvieron más
+complejas y, sobre todo, los conflictos sociales y étnicos tomaron mayor
+relevancia, emergieron nuevas perspectivas críticas que buscaban
+profundizar y expandir la comprensión de los fenómenos urbanos. A partir
+de la década de 1960, dos corrientes se destacaron en esta renovación de
+la sociología urbana: por un lado, la corriente neoweberiana (o
+*Sociología Urbana Británica*) y, por otro, la *Nueva Sociología Urbana*
+de orientación neomarxista. Más allá de las diferencias, ambas
+corrientes tienen en común una renovación de la sociología urbana y el
+cuestionamiento de las interpretaciones funcionalistas y
+asimilacionistas de la segregación propuestas por la Escuela de Chicago.
+Recuperando ideas de la 'economía política', estos enfoques cuestionaron
+la idea de que la segregación es un proceso natural e inevitable,
+resaltando el rol de las estructuras de poder y relaciones de clase en
+el origen de la segregación, entendiendo que las desigualdades
+espaciales son generadas y reforzadas por la propia dinámica capitalista
+y las políticas
+urbanas.<!-- Como señala @UllanDeLaRosa2014 [p. 202], a diferencia de la Escuela de Chicago, para estos nuevos enfoques los 'problemas urbanos' de las ciudades modernas 'no son disfunciones sino formas de dominación que no existen «a pesar del sistema» sino porque son creados por el sistema'. -->
+
+<!-- Escuela Neoweberiana (o sociología urbana británica) -->
+
+La corriente neoweberiana (o *sociología urbana británica*), que incluye
+a autores como John Rex, Robert Moore, Ray Pahl, Chris Pickvance y Peter
+Saunders, ofreció un enfoque renovado del estudio de la segregación, al
+integrar al pensamiento de la ciudad las ideas de Max Weber sobre clase,
+estatus y poder. Estos planteos anaizan 'las formas de asignación y
+distribución de los recursos espaciales', entendiendo que 'el espacio es
+intrínsecamente desigual pues [...] dos personas o grupos no pueden
+nunca ocupar el mismo espacio al mismo tiempo' [@UllanDeLaRosa2014, p.
+204]. A partir de estas ideas, analizaron cómo los mecanismos estatales
+y de intermediación inmobiliaria se relacionan con las posiciones de
+clase, generando un acceso diferenciado a los recursos espaciales y, en
+última instancia, configuran la segregación espacial. Un aspecto
+interesante que plantean estos autores es el modo en que la lucha por el
+espacio se sucede no sólo de una forma polar (al estilo marxista), sino
+incorporando diferentes 'sectores de clase'. De esta manera, dado que el
+espacio no puede ser ocupado simultaneamente por dos personas, existen
+disputas entre actores que pueden pertenecer a la misma clase (ejemplo:
+la zona valorizada del centro urbano es un espacio codiciado que sólo
+algunos grupos de la clase alta podrán ocupar, dejando fuera a otros de
+este mismo grupo social).
+
+<!-- Escuela crítica marxista  -->
+
+Incorporando un marco teórico marxista, la 'Nueva Sociología Urbana'
+también criticó las nociones promovidas por la Escuela de
+Chicago.[^02-literature-18] Para ellos, estos autores enfatizaron la
+relación entre la segregación espacial y las dinámicas del modo de
+proucción capitalista y la lucha de clases. Por ello, una parte central
+de la propuesta de estos autores será debatir el rol de la ciudad (o más
+precisamente el 'espacio') en la estructuración del capitalismo. En esta
+perspectiva, la segregación es vista como una manifestación de las
+contradicciones del sistema capitalista que perpetúa y exacerba las
+desigualdades tanto sociales como espaciales. Además, esta corriente
+pone en el centro de su análisis la manera en que el Estado, en tanto
+'estado de clase', interviene en el espacio urbano en beneficio de las
+clases dominantes reproduciendo la estructura de poder existente y
+beneficiando los intereses del capital. Como contraparte, destacarán el
+rol de los 'movimientos sociales urbanos' de características
+policlasistas, los cuales serán vistos como una manifestación de la
+lucha de clases en la disputa por el espacio urbano.
+
+[^02-literature-18]: Esta corriente emerge originalmente en Francia, en
+    torno a los trabajos de Henri Lefebvre y Manuel Castells, pero
+    tendrá una rápida expansión al mundo anglosajón de la mano de David
+    Harvey. Es a partir de los trabajos de este último y de la
+    radicación de Castells en Estados Unidos, que esta corriente será
+    retomada por autores como Sharon Zukin, Patrick Dunleavy, Saskia
+    Sassen, entre otros. Además, las colaboraciones de Manuel Castells y
+    su equipo con autores de América Latina permitirán la rápida
+    expansión de estas ideas en esta región.
+
+Un autor central de esta corriente es <!-- Lefebvre -->Henri Lefebvre,
+quien remarcará que existe una 'producción social del espacio urbano'
+que es fundamental para la reproducción del sistema
+capitalista.[^02-literature-19] El espacio es controlado, y
+mercantilizado por las clases hegemónicas, que lo utilizan como una
+forma de reproducir su dominación. Desde este enfoque, la segregación
+aparece como el resultado de esta producción del espacio que permite
+dividir a las poblaciones y el control sobre la vida urbana en beneficio
+del capital. En tanto, el espacio es entendido como una 'fuerza
+productiva', las relaciones espaciales deben ser consideradas como un
+elemento independiente en el que puede desarrollarse el conflicto
+social, implicando de forma transversal a las clases sociales.
+<!-- Castells -->Influido por el estructuralismo althusseriano, en *La
+cuestión urbana* Manuel Castells [-@Castells1972] va a retomar
+críticamente el pensamiento de Lefebvre, cuestionando la especificidad y
+autonomía que le otorga a 'lo espacial' (que quedará subordinado al
+lugar de 'superestructura' que queda 'condicionada en última
+instancia'). En este marco general, Castells define la segregación como
+'la tendencia a la organización del espacio en zonas de fuerte
+homogeneidad social interna y de fuerte disparidad social entre ellas,
+entendiéndose esta disparidad no solo en términos de diferencia, sino de
+jerarquía' [@Castells1972, p. 204]. El aporte de esta definición es
+hacer explícita la diferencia 'jerárquica' entre los grupos sociales
+segregados. Desde este planteo, la organización desigual de los grupos
+sociales en el espacio cumple un rol en la 'reproducción' de la fuerza
+de trabajo (que en última instancia es un momento de la 'producción') y
+en el 'consumo colectivo' de bienes y servicios. <!-- Harvey-->David
+Harvey, dirá que el espacio no sólo ayuda en la reproducción de la
+fuerza de trabajo, sino que, como decía Lefebvre, es un instrumento de
+acumulación de capital. Como analiza en la conformación de los guetos
+norteamericanos, las políticas de planificación urbana y las dinámicas
+del mercado inmobiliario perpetúan las desigualdades espaciales y la
+segregación.
+
+[^02-literature-19]: '*El espacio (social) es un producto (social)*
+    [...] que constituye un medio de producción, un medio de control y,
+    en consecuencia, de dominación y de poder' [@Lefebvre1974, p. 85].
+
+<!-- Soja y La Escuela de Los Angles -->
+
+Recuperando ideas del marxismo e incorporando elementos de la
+perspectiva postmoderna, la 'Escuela de Los Ángeles' se propuso
+incorporar al análisis urbano las particularidades de las ciudades
+contemporáneas, marcadas por la desindustrialización y la globalización.
+Partiendo de entender la existencia de un mutuo condicionamiento entre
+espacio y estructura social, estos autores analizan la fragmentación,
+polarización y desigualdad de la vida urbana actual. Para ello,
+enfatizan el lugar de la 'diferencia', que da como resultado una
+'heterópolis', en la cual la mayoría de la población es parte de 'los
+otros' y las 'minorías'. Esto lleva a una 'ciudad fragmentada' en un
+conjunto de pluralidades, que se desconocen mutuamente. Como resultado
+de este planteo, estos autores abordan 'la segregación no sólo de raza,
+clase y etnia, sino también de categorías ocupacionales, composición del
+hogar y atributos individuales' [@Ruiz-Tagle2016, p. 28].
+
+<!-- Tradición bourdiana (Bourdieu y Waquant + Marom2014 + Pincon2018) -->
+
+Otro aporte significativo en este recorrido teórico del concepto de
+segregación, puede encontrarse en la tradición que retoma el pensamiento
+de Pierre Bourdieu. Como señalamos en el apartado anterior, Bourdieu
+trabajó marginalmente los problemas espaciales, sin embargo a partir de
+estos textos y del aporte de autores que continuaron su trabajo es
+posible destacar algunos aportes para pensar la segregación. Como vimos,
+para @Bourdieu2007 el espacio físico actúa como una 'simbolización
+espontanea' del espacio social, que expresa de forma deformada las
+jerarquías y distancias sociales. Retomando este enfoque, los trabajos
+de Wacquant [-@Wacquant2011; -@Wacquant2013a; -@Wacquant2015;
+-@Wacquant2023] analizan la historia de los 'parias urbanos',
+describiendo la conformación de los 'ghettos' (y su desarrollo en los
+'hiperghettos') norteamericanos y los barrios marginales europeos. A
+partir de estos trabajos, @Wacquant2011 propone el concepto de
+*seclusión* *socioespacial*[^02-literature-20] para abordar de manera
+unificada fenómenos que, en principio, parecen inconexos (como los
+ghettos, las agrupaciones étnicas, los barrios cerrados, los distritos
+de elite o las cárceles). Para ello reconoce dos dimensiones que
+permiten diferenciar la seclusión: la *jerarquía* (a qué grupos del
+espacio social son los separados) y la *elección* (en qué medida es una
+elección del propio grupo o una imposición exterior a este). Si bien
+esta diferencia no es del todo novedosa, es interesante que mantiene un
+enfoque conjunto del problema, pero incorpora explícitamente la
+identificación de cuáles son los grupos sociales separados, algo que los
+índices de segregación no logran abordar claramente.[^02-literature-21]
+Otro aporte interesante dentro de esta corriente es la propuesta de
+Marom, para quien la *segregación* debe entenderse en relación directa
+al concepto de 'distinción', en tanto que '[a] medida que las
+distinciones y jerarquías en el espacio social se graban con el tiempo
+en el mapa de la ciudad, las divisiones sociales entre grupos se
+solidifican en fronteras espaciales y llegan a leerse como
+segregaciones' [@Marom2014, p. 1347]. El lugar de residencia y el modo
+en que los agentes utilizan los diferentes espacios urbanos a través de
+sus movilidades, constituyen práctica de diferenciación, en tanto estos
+lugares están marcados simbólicamente, marca que está fuertemente
+vinculado a las clases sociales que los habitan.
+
+[^02-literature-20]: @Wacquant2011 [p. 2] define la seclusión
+    socioespacial como el 'proceso por el que se acorralan, se cercan y
+    se aíslan determinadas categorías y actividades sociales en un
+    cuadrante reservado y restringido de espacio físico y social'.
+
+[^02-literature-21]: La mayoría de los 'índices locales' de segregación
+    dicen cuánto se separa una unidad espacial determinada de la
+    'distribución media' y calculan alguna medida de dispersión sobre
+    esta separación. Este enfoque tiene la ventaja de permitir una única
+    medida sintética para describir el fenómeno. Sin embargo, esta
+    ventaja se consigue a costa de perder la 'dirección' en la que esta
+    dispersión se produce. Profundizaremos sobre este aspecto de las
+    medidas de segregación en el capítulo siguiente, cuando propongamos
+    alternativas metodológicas para abordar este problema.
+
+<!-- Los estudios de segregación en LA y Argentina  -->
+
+Antes de concluir este recorrido teórico por el concepto de segregación,
+conviene destacar algunos aportes de la literatura
+latinoamericana.[^02-literature-22] Para ello conviene tener presente
+que en América Latina los procesos de urbanización dependiente y tardíos
+dieron lugar a ciudades marcadas por la inequidad territorial
+[@Duhau2013a]. Esto se expresa a escala microterritorial en la
+existencia de contextos urbanos diferenciados por el origen de dichas
+urbanizaciones y las características de las poblaciones que los habitan
+[@Connolly2005; @Duhau2008; @Marcos2015],
+<!-- El estudio de la 'marginalidad urbana' -->siendo uno de los
+aspectos característicos la presencia de los llamados 'barrios
+marginales'. Estos entornos urbanos llamaron tempranamente la atención
+de los investigadores locales, generando un desarrollo teórico propio y
+original en torno a la 'marginalidad' [@Ziccardi2020].
+<!--# NOTA? El tema de la marginalidad en la región se remonta al inicio de la sociología urbana, donde desde una perspectiva funcionalista influenciado por la ecología humana destacan los trabajos de Germani o el DESAL en Chile [@Ziccardi2020]. -->@Sigal1981a
+refuerza esta idea con el concepto de 'marginalidad espacial',
+destacando el rol de las 'distancias institucionales' en el el acceso
+efectivo a los derechos. Más allá de las diferencias y tensiones
+respecto al concepto de marginalidad, en conjunto estos trabajos
+llamaban la atención sobre la existencia de espacios urbanos segregados
+y poco conectados socialmente con el resto de la ciudad, remarcando que
+los mismos son el resultado de la incorporación dependiente de las
+economías de la región.
+
+[^02-literature-22]: En este apartado no consideraremos los aportes
+    empíricos, que serán retomados en los capítulos siguientes. En este
+    sentido, nos concentramos en destacar aquellos aportes teóricos que
+    han surgido como resultado del análisis de las realidades locales y
+    regionales.
+
+Hacia <!-- Años 1990/2000 --> fines del siglo XX, a partir del estudio
+de la 'nueva pobreza urbana', autores como @Kaztman2001 resaltarán la
+fuerte retroalimentación que existe entre la segregación residencial, la
+segmentación laboral y la segmentación educativa, lo cual lleva al
+paulatino aislamiento de los pobres urbanos. Retomando la distinción de
+@White1983a, el trabajo de @RodriguezVignoli2001 diferencia la
+segregación en términos *sociológicos* (referida a las interacciones
+entre grupos sociales) y *geográficos* (referida a la distribución de
+los grupos en el espacio), que suelen estar relacionadas, pero pudiendo
+no estarlo. Por su parte, Sabatini [@Sabatini2001; @Sabatini2006]
+identifica tres 'dimensiones' de la segregación, a saber, (a) la
+concentración espacial de un grupo, (b) la conformación de zonas
+socialmente homogéneas y (c) las percepciones subjetivas (referida al
+prestigio de estas zonas) que genera en las personas la conciencia de
+estas divisiones anteriores. Otros dos aspectos interesantes de la
+propuesta de Sabatini es la incorporación de la escala de análisis, un
+problema que será retomado y profundizado por @Duhau2013a y @Ward2012.
+Por su parte, analizando los cambios asociados al neoliberalismo durante
+la década de 1990, @PrevotSchapira2001 señala que la expansión de la
+pobreza por fuera de los enclaves de las 'villas miseria', lleva a la
+conformación de una 'fragmentación' del espacio urbano, basado en en
+'identidades restringidas' y diferenciaciones simbólicas (antes que
+económicas) del territorio. En conjunto estos aportes proponen
+incorporar las particularidades del pensamiento latinoamericano para
+pensar la segregación.
+
+Otro <!-- segregación socio-económica -->aspecto característico del
+pensamiento latinoamericano sobre la segregación es que la misma ha sido
+estudiada fundamentalmente en relación a diferencias socio-económicas
+[@RodriguezVignoli2001; @Duhau2013a; @Groisman2010; @Ward2012]. En este
+sentido, a diferencia de lo que sucede en Estados Unidos o en los países
+de Europa (quizás con excepción de Francia) donde el estudio de la
+segregación está vinculado a las diferencias raciales, étnicas o
+migratorias, en los países latinoamericanos el componente de clase o
+socio-económico es el principal clivaje para explicar la desigual
+distribución de la población. Sobre este punto @Ruiz-Tagle2014 señala
+los límites de utilizar categorías que son adquiridas y cambiantes a lo
+largo del ciclo de vida (como la clase social). Los atributos
+socioeconómicos y de clase 'se producen' a lo largo de un proceso de
+acumulación y una 'trayectoria de clase', lo cual los diferencia de
+aspectos como la 'raza' que es una construcción social que está presente
+de forma relativamente estable (aunque puede haber modificaciones sobre
+la valoración de esta diferencia).
+
+En <!-- Estrategias de abordaje de la segregación en LA -->este
+contexto, en la región se destacan dos estrategias de abordaje de la
+segregación. Por un lado, trabajos centrados en análisis cuantitativos
+que buscan medir e identificar patrones de segregación y evaluar sus
+efectos [@Flores2008; @Groisman2005; @Groisman2006; @Kaztman1999a;
+@Linares2013; @Portes2005; @Rodriguez2004; @Sabatini2001; @Torres2001;
+@Torres2001a; @Torres1999; @Zuccotti2008 entre otros]. En la casi
+totalidad de los casos estos trabajos abordan el problema de la
+segregación centrándose exclusivamente en el dominio residencial, en
+base al uso de técnicas estadísticas y datos censales, mostrando un
+fuerte vínculo implícito con los presupuestos de la 'ecología humana'.
+Por otro lado, desde la perspectiva centrada en los actores que habitan
+entornos segregados (fundamentalmente de origen informal) existen un
+conjunto de trabajos que indagan cualitativamente las formas de
+sociabilidad y las consecuencias subjetivas de la segregación [por
+ejemplo @Carman2013; @Cravino2002; @Merklen2005; @Segura2006;
+@Soldano2017]. En particular, estos trabajos se han concentrado en
+barrios donde residen los sectores populares, aunque recientemente
+algunos autores han analizado estas relaciones en barrios
+carcaterísticos de sectores medios [@Cosacov2015] y altos [ver, por
+ejemplo, @Elguezabal2018; @Frisch2022]. Estos trabajos resultan
+interesantes, en la medida que logran integrar otros dominios en los que
+discurre la segregación y enfatizan cómo se vincula con las
+interrelaciones efectivas entre los grupos sociales. Sin embargo, por su
+abordaje cualitativo y dedicado a casos específicos, no pueden analizar
+el fenómeno a escala metropolitana, perdiendo de vista la integridad del
+fenómeno. Además, al estar mayormente centrados en los 'extremos'
+sociales, pierden de vista las particularidades de este fenómeno en los
+sectores medios. Desde abordajes mixtos algunos trabajos [como por
+ejemplo @Brikman2021; @Mera2014a] destacan la importancia de las
+prácticas de movilidad en la configuración de la segregación urbana, en
+tanto permiten *habitar* y conectar la localización residencial con los
+beneficios urbanos [@Cosacov2014; @DiVirgilio2007].
+
+ <!-- Resumen del apartado -->
+
+Hasta aquí hemos explorado diferentes enfoques teóricos sobre el
+concepto de segregación. En este análisis pudimos ver cómo el problema
+de la segregación y, de forma más general, la *división social del
+espacio urbano*, ha sido un tópico estructurante y recurrente en los
+*estudios urbanos*. A partir de este recorrido, un primer aspecto a
+considerar es el contexto particular en el cual los estudios urbanos
+incorporaron el concepto de segregación, contexto vinculado
+principalmente a la segregación racial en Estados Unidos. Como señala
+@Bourdieu2019, la incorporación dentro del pensamiento científico social
+de categorías y clasificaciones proveniente de la sociedad (y sus
+disputas políticas), exige una delicada tarea de 'vigilancia
+epistemológica'. Esto es más importante cuando este concepto toma
+relativa autonomía del momento y las condiciones históricas en que
+surgió, naturalizándose como parte del 'sentido común científico',
+pudiendo transformarse en un doble 'obstáculo epistemológico' que lleve
+a ocultar la naturaleza de lo que se pretende conocer. En este sentido,
+este breve recorrido teórico sobre el concepto de segregación pretendió
+poner de manifiesto la construcción histórica de este concepto en el
+pensamiento social, mostrando de este modo sus condicionamientos
+históricos, sus límites y sus potencialidades teóricas.
+
+Estrechamente relacionado a lo anterior, un segundo aspecto a considerar
+son los sesgos que tomó el concepto de segregación en el ámbito
+académico. Como señalamos, los trabajos pioneros de la *ecología humana*
+estuvieron centrados en entender la segregación residencial de los
+grupos raciales de Estados Unidos. Esto condujo a una visión parcial,
+limitando el análisis de la segregación al dominio residencial, un
+enfoque que como analizaremos en el próximo apartado resulta
+insuficiente para comprender la complejidad del problema. Por su parte,
+si bien la diferenciación de raza sigue teniendo un lugar central en el
+análisis de la segregación, otras dimensiones de la vida social han sido
+incorporadas en función de la importancia que tienen en la estructura de
+cada una de las sociedades o de la propuesta teórica utilizada para
+pensar la diferencia en las sociedades.
+
+Un tercer elemento, en parte asociado a la difusión de los 'índices de
+segregación', es que muchas veces el estudio de la segregación ha estado
+centrado en un aspecto netamente descriptivo, con el objeto de señalar
+el fenómeno por el cual los individuos de características similares se
+agrupan en el espacio residencial. Sin embargo, este enfoque expresa un
+'metodologismo', que desliga las técnicas de análisis de los contextos
+en los que estas técnicas fueron desarrolladas y su asociación con los
+conceptos que le dan soporte. En este sentido, incluso en la visión
+'naturalista' propuesta por la *ecología humana* hay una concepción
+teórica que explica el fenómeno como resultado de un proceso societal
+más amplio. Además, retomando los aportes hechos durante la segunda
+mitad del siglo XX por los *enfoques críticos*, es posible señalar el
+vínculo de la segregación y la división del espacio con las dinámicas
+del capitalismo y la reproducción de las desigualdades sociales. Limitar
+el concepto de segregación al rol de una 'regularidad empírica' de
+carácter descriptivo, lleva a ocultar el carácter *relacional* del
+concepto, así como su vínculo estructural y sistémico, lo cual permiten
+abordar las dinámicas subyacentes que generan este fenómeno.
+
+La segregación debe ser analizada no solo en términos de la intención (o
+no) de aislamiento de ciertos grupos sociales. Como hecho social inserto
+en una estructura social particular, es necesario entender la
+segregación de forma relacional, considerando la interdependencia entre
+los diferentes espacios urbanos: la segregación es una relación que
+excede a los 'barrios segregados'. Aunque los polos visibles de la
+segregación (como *ghettos*, *suburbs*, *banlieues*, *villas* o
+*countries*) concentran muchas veces la atención social (y sobre todo la
+opinión pública), no debemos perder de vista la globalidad del fenómeno
+y la interrelación que existe entre los diferentes entornos urbanos.
+Esto supone recuperar, como vimos en el apartado anterior, la relación
+que existen entre la segregación y las desigualdades en el espacio
+social, de manera que la división social del espacio actúa como
+'distinción espacial' [@Marom2014].
+
+<!--# Por último, resulta esencial analizar la segregación en relación con el desarrollo urbano y la intervención estatal, pues ambos elementos juegan un papel fundamental en la configuración y perpetuación de las desigualdades espaciales.-->
+
+## Desde el dominio residencial a la incorporación de las movilidades y los espacios de actividad {#lit-mobility}
+
+En el apartado anterior hemos hecho un recorrido por diferentes
+abordajes del concepto de segregación, notando la importancia que tuvo
+el análisis de la segregación en el dominio residencial.
+<!-- La residencia como articulador de la segregación residencial -->Esta
+centralidad del espacio de residencia en los estudios de segregación se
+justifica por la importancia del mismo como eje articulador de las
+dinámicas de actividad cotidianas. Como señala @Winship1977 [p. 1059],
+este interés se basa en que la 'segregación residencial es la base de
+gran parte de la discriminación, tanto en la educación como en el
+empleo'. En relación a esto, algunos autores han propuesto el concepto
+de capital 'locacional' [@Abramo2003] o 'residencial' [@Levy1994;
+@Cailly2007], enfatizando la importancia que tiene para los hogares la
+ubicación de su vivienda. El ‘capital residencial’ da una ganancia de
+localización [@Bourdieu2007] y un beneficio indirecto a las personas con
+mejores localizaciones residenciales [@Harvey1977]. En contraste, las
+localizaciones no-favorecidas construyen estigmas sobre sus habitantes,
+restringiendo el acceso efectivo a los recursos urbanos
+[@PrevotSchapira2001; @Soldano2008a].
+
+<!-- Acceso a servicios  + geografía del bienestar -->
 
 La ubicación residencial es uno de los aspectos que más incide a la hora
 de analizar el acceso a los recursos y oportunidades urbanas
-[@DiVirgilio2014c; @Musterd2020a; @VanHam2021] y existen fuertes
-indicios de que desigualdad en el acceso se relaciona con las
-desigualdades sociales y la distribución de los diferentes grupos
-sociales [@Nicoletti2023]. A su vez, esta diferencia en la distribución
-espacial de los recursos urbanos debe sumarse la diferencia entre la
-'calidad' de estos servicios, por lo cual algunas localizaciones
-encuentran acceso a algunos servicios pero estos son de peor calidad [un
-ejemplo de esto puede verse en relación a los establecimientos
-educativos @Serrati2023a]. En la medida que existe una desigual
-distribución (en calidad y cantidad) de los recursos urbanos, la
-concentración de los grupos en ciertas zonas supone indirectamente un
-acceso desigual a estos recursos. La existencia de una 'geografía del
-bienestar' [@DiVirgilio2023], da cuenta de estas diferencias y de cómo
+[@DiVirgilio2014c; @Musterd2020a; @VanHam2021]. Además, existen fuertes
+indicios de que desigualdad en el acceso a estos servicios se relaciona
+con las desigualdades sociales y la distribución de los diferentes
+grupos sociales en el espacio urbano [@Nicoletti2023]. A su vez, esta
+diferencia en la distribución espacial de los recursos urbanos debe
+sumarse la diferencia entre la 'calidad' de estos servicios, por lo cual
+algunas localizaciones encuentran acceso a algunos servicios pero estos
+son de 'peor calidad' [un ejemplo de esto puede verse en relación a los
+establecimientos educativos @Serrati2021]. En la medida que existe una
+desigual distribución (en calidad y cantidad) de los recursos urbanos,
+la concentración de los grupos en ciertas zonas supone indirectamente un
+acceso desigual a estos recursos. Esto configura una 'geografía del
+bienestar' [@DiVirgilio2023], por la cual estas diferencias y de cómo
 los procesos de segregación pueden reforzar diferencias en el acceso y
-la distribución de los recursos urbanos.
+la distribución de los recursos urbanos, lo cual media en el 'derecho a
+la ciudad' y a las posibilidades de apropiación del espacio urbano, sus
+recursos y oportunidades.
 
-<!-- Efecto barrio -->
+<!-- Efecto barrio + estructura de oportunidades espaciales-->
 
-**[ ] TODO** Desarrollar **efecto barrio** y 'estructura de
-oportunidades espaciales' [@Galster2017; @DiVirgilio2021a] + Najman (ver
-TESIS y artículos). Efecto barrio como cristalización de procesos de
-segregación que actúan en diferentes dominios (trabajo, estudio,
-relaciones sociales, vivienda e institucionalmente). El efecto barrio
-permite pensar qué diferencia y qué aglutina a las personas de un
-territorio.
+Relacionado a esto, la literatura sobre ‘efecto barrio’ [*neighbourhood
+effect*] estudia como los barrios configuran una ‘geografía de
+oportunidades’ que condiciona las chances de vida de sus residentes
+[@Wilson1987; @DiVirgilio2021a; @VanHam2012; @Sampson2019]. En este
+alínea, el esquema conceptual propuesto por @Galster2017 destaca el rol
+de la 'estructura de oportunidades espaciales' como mediador entre los
+atributos individuales y el logro de estatus socioeconómico. En este
+esquema, la segregación es uno de los elementos que componen esa
+estructura de oportunidades espaciales, puediendo constituir un
+obstáculo para la adquisición de logros socioeconómicos como el
+mejoramiento de los propios atributos individuales. Si bien por lo
+general este enfoque suele usarse para analizar los las desventajas que
+suponen algunos barrios, como sugiere [@Wacquant2017; en relación al
+trabajo de @Pincon-Charlot2018], el efecto de barrio puede ser incluso
+mayor en las clases altas. El aislamiento espacial en barrios
+residenciales exclusivos refuerza, junto a espacios de sociabilización
+asociados a ellos como bailes o clubes, el *habitus* de la clase
+dominante por los cuales se constituyen los mecanismos de cierre social.
+En definitiva, los trabajos sobre *efecto barrio* ponen de manifiesta la
+importancia que puede tener el lugar de residencia y su espacio próximo
+para configurar las oportunidades de vida de sus
+residentes.<!--# En efecto, el efecto barrio es la cristalización procesos de segregación que actúan en diferentes dominios (trabajo, estudio, relaciones sociales, vivienda e institucionalmente). El efecto barrio permite pensar qué diferencia y qué aglutina a las personas de un territorio. --><!--# Najman (ver TESIS y artículos). -->
 
-En este sentido, el 'capital residencial' permite obtener una ganancia
-de localización [@Bourdieu2000] dando un beneficio indirecto a las
-personas con mejores localizaciones residenciales [@Harvey1977]. En
-contraste, algunas localizaciones residenciales no-favorecidas
-construyen estigmas o marcas negativas sobre sus habitantes, lo cual
-restringe las posibilidades de acceso efectivo a otros recursos urbanos
-[@PrevotSchapira2001; @Soldano2008a].
+<!-- Los 'espacios de actividad' sobre la segregación social -->
 
-<!-- Los estudios de segregación en LA y Argentina: La segregación en Latinoamérica y Argentina.  -->
-
-En América Latina los procesos de urbanización dependiente dieron lugar
-a ciudades marcadas por la inequidad territorial [@Duhau2013a]. Esto se
-expresa a escala microterritorial en la existencia de contexto urbanos
-diferenciados por el origen de dichas urbanizaciones y las
-características de las poblaciones que los habitan [@Connolly2005;
-@Duhau2008; @Marcos2015]. En este contexto, en la región se destacan dos
-estrategias de abordaje de la segregación. Por un lado, trabajos
-centrados en análisis cuantitativos que buscan medir e identificar
-patrones de segregación, así como evaluar sus efectos [@Flores2008;
-@Groisman2005; @Groisman2006; @Kaztman1999a; @Kaztman2001; @Linares2013;
-@Portes2005; @Rodriguez2004; @Sabatini2001; @Torres2001; @Torres2001a;
-@Torres1999; @Zuccotti2008; entre otros]. Por otro lado, desde la
-perspectiva centrada en los actores que habitan entornos segregados
-(fundamentalmente de origen informal) indagan cualitativamente las
-formas de sociabilidad y las consecuencias subjetivas de la segregación
-[por ejemplo @Carman2013; @Cravino2002; @Merklen2005; @Segura2006;
-@Soldano2017]. A su vez, desde abordajes mixtos, trabajos, como el de
-@Brikman2020, se destaca la importancia que tienen las prácticas de
-movilidad en la configuración de la segregación urbana, en tanto
-permiten habitar y conectar la localización residencial con los
-beneficios urbanos [@Cosacov2014; @DiVirgilio2007].
-
-## Desde el dominio residencial a la incorporación de los espacios de actividad
-
-<!--# A partir de la presentación histórica anterior, se destaca la importancia que tiene en la tradición del análisis de segregación el dominio residencial. Esto se debe a la importancia de la residencia como eje estructurador de las dinámicas cotidianas de los hogares y ‘estructura de oportunidades espaciales’ para sus residentes (Di Virgilio, 2021; Galster & Sharkey, 2017; Sampson, 2019; Van Ham et al., 2012). Luego se señalan los límites que presenta una perspectiva de la segregación centrada únicamente en el dominio residencial. En consecuencia, se señala la presencia de trabajos que abordan la segregación en otros dominios (como el laboral, el escolar, los espacios de actividad, las redes sociales virtuales, entre otros). En particular, se analiza cómo las movilidades espaciales (y el capital espacial de los hogares) afecta la segregación en los espacios de actividad (Horton & Reynolds, 1971). -->
-
-### La segregación urbana más allá de la residencia: las movilidades cotidianas y los espacios de vida
-
-<!-- Los otros dominios de la segregación -->
-
-<!--# en las décadas siguientes el concepto de segregación fue incorporado para analizar [...] Esta ampliación de los dominios de análisis fue acompañada por la comparación de otros aspectos que diferencian a los grupos, como el género y el nivel socio-económico.-->
-
-<!--# El éxito de estos trabajos, estimuló la recuperación del concepto de segregación para estudiar la diversidad en escuelas [@Allen2007], ámbitos laborales [@Hutchens2009], espacios de compras y recreación [@Wang2012], movilidades cotidianas [@Brikman2020] entre otros. -->
-
-<!--# Si bien tradicionalmente el estudio de la segregación se focalizó en el ámbito residencial, el fenómeno por el cual los individuos tienden a juntarse con personas similares excede este dominio. -->
-
-Más allá de la ubicación residencial, el análisis de la segregación
-incorporó otros *dominios* de la vida social como el laboral
-[@Karmel1988; @Ferguson2018a], el escolar [@Reardon2000a;
-@Oosterbeek2021; @Thrupp2002], los espacios de actividad [@Schnell2001a;
-@Candipan2021; @Silm2021; @Lu2023], el transporte [@Abbasi2021;
-@Wilson2011], las relaciones matrimoniales [@Solis2007; @Rodriguez2016e;
-@Solis2010; @Bouchet-Valat2018], las relaciones interpersonales
-[@Bojanowski2014; @Huang2022; @Otero2022], las redes sociales virtuales
-[@Hofstra2017; @Morales2019; @Dorman2020], los lugares de esparcimiento
-[@Tomasiello2022], entre otros.
-
-<!-- El efecto de las movilidades y los espacios de actividad sobre la segregación social -->
-
-En particular, en la medida que se incorpora el efecto de las
-*movilidades cotidianas* es posible identificar 'espacios de actividad'
-[@Horton1971] en los cuales las personas desarrollan su vida diaria.
-Estos espacios de actividad les permite a los hogares hacer un uso
-diferenciado del espacio y los recursos urbanos, controlando las
-posibilidades de encuentros con otros grupos sociales [@Wong2011].
-
-Si bien la ubicación residencial tiene una importancia central en la
-dinámica cotidiana, los hogares son capaces de generar estrategias de
+Más allá de la importancia que tiene la residencia como articulador de
+las dinámicas cotidianas de los hogares, una perspectiva de la
+segregación que sólo considere el dominio residencial puede ser
+insuficiente para entender el fenómeno.
+<!--# En particular, en la medida que se incorpora el efecto de las movilidades cotidianas es posible identificar 'espacios de actividad' [@Horton1971] en los cuales las personas desarrollan su vida diaria.  -->En
+este sentido, los hogares son capaces de generar estrategias de
 movilidad cotidiana para conectar diferentes espacios urbanos,
 configurando así 'espacios de vida' [@Courgeau1988] o 'espacios de
-actividad' [@Horton1971]. La capacidad para articular diferentes
+actividad' [@Horton1971]. Los espacios de actividad son el conjunto de
+espacios en los cuales los individuos desenvuelven su vida cotidiana,
+más allá del propio espacio residencial, como por ejemplo, el lugar de
+trabajo, estudio u ocio. Los espacios de actividad permiten a los
+hogares hacer un uso diferenciado del espacio y los recursos urbanos,
+controlando las posibilidades de encuentros con otros grupos sociales
+[@Wong2011]. Gracias a los espacios de actividad, los individuos que
+comparten un mismo ámbito residencial pueden experimentar diferentes
+niveles de segregación a partir de cóm oconfiguran sus espacios de
+actividad. De esta manera, la capacidad para articular diferentes
 espacios a partir de las movilidades diarias, permite a los hogares
 'habitar' el espacio urbano, apropiándose del mismo material y
-simbólicamente [@Cosacov2014; @Duhau2008; @DiVirgilio2007; @Segura2019;
-@Brikman2021]. Por ello la articulación de estos espacios de vida
-mediante las movilidades constituye un capital 'espacial' o de
-'movilidad', que actúa como elemento estratificante en la medida que
-permite una apropiación y uso diferencial del espacio [@Rerat2018].
-[@VanKempen2014]
+simbólicamente [@Cosacov2014; @Duhau2008; @DiVirgilio2007].
 
-En esta línea @Levy1994 señala que es posible distinguir un 'capital de
+<!-- El giro de las 'movilidades' y la movilidad cotidiana -->
+
+Analizar cómo se interrelacionan los lugares que conforman el espacio de
+actividad de los hogares supone tomar en cuenta las estrategias de
+*movilidad cotidiana* como una dimensión constitutiva de la segregación.
+En sintonía con el *giro de las movilidades* [@Urry2000; @Urry2007a;
+@Cresswell2006], se trata no sólo de incorporar las movilidades al
+análisis, sino de entender el rol de las mismas en la conformación del
+espacio urbano y sus desigualdades. La posibilidad de encuentro (o no)
+con otros grupos sociales es un fenómeno que puede ocurrir no solo en el
+espacio residencial, sino en los diferentes espacios que las personas
+utilizan y en los propios movimientos hacia esos lugares
+[@VanKempen2014]. Por ello, la capacidad de 'ser móviles' emerge como
+una forma de diferenciación del espacio crucial para entender las
+dinámicas de segregación [@Cosacov2018]. En este sentido, los actores
+pueden habitar 'territorios segregados', pero compensar (o reforzar)
+esta segregación mediante su capacidad para movilizarse a otros espacios
+[@Segura2019; @Brikman2021].
+
+<!--# El enfoque de la segregación clásico (basado en el modelo de la segregación residencial) fue abordado principalmente desde una perspectiva 'basada en el lugar' [place-based], es decir, en áreas residenciales para las cuales se conocía la composición de grupos. Sin embargo, el desarrollo reciente de la perspectiva multi-dominio, ha estimulado el desarrollo de un enfoque 'basado en las personas' [people-based]. -->
+
+<!-- Capital de movilidad -->
+
+Es por todo esto que la posibilidad de articulación de los espacios de
+vida mediante las movilidades constituye un capital 'espacial' o de
+'movilidad', que actúa como elemento estratificante en la medida que
+permite una apropiación y uso diferencial del espacio [@Rerat2018]. En
+esta línea @Levy1994 señala que es posible distinguir un 'capital de
 posición', relacionado con la inscripción a ciertos lugares como la
 residencia o el lugar de trabajo y un 'capital de situación', vinculado
 al espacio que el individuo apropia mediante sus movilidades. En
@@ -285,114 +1328,143 @@ distinguen la movilidad practicada de la movilidad potencial, en tanto
 el capital de movilidad no necesariamente implica 'ser móvil', sino una
 eficacia y una capacidad para realizar selectivamente esta movilidad.
 Por último, @Centner2008 señala que el capital espacial también supone
-una dimensión simbólica, la cual tanto permite 'dar sentido' al espacio,
-a partir de *tomar* y *configurar* los usos del mismo.
+una dimensión simbólica, la cual permite 'dar sentido' al espacio, a
+partir de *tomar* y *configurar* los usos del mismo.
 
-<!-- En gran medida el problema de la movilidad supone analizar cómo se reproduce la segregación en los espacios de vida. Dentro de los estudios sobre segregación, algunos trabajos plantean estudiar la segregación en los espacios de actividad. El enfoque de la segregación clásico (basado en el modelo de la segregación residencial) fue abordado principalmente desde una perspectiva 'basada en el lugar' [place-based], es decir, en áreas residenciales para las cuales se conocía la composición de grupos. Sin embargo, el desarrollo reciente de la perspectiva multi-dominio, ha estimulado el desarrollo de un enfoque 'basado en las personas' [people-based]. -->
+<!-- Resumen del apartado  -->
 
-Desarrollo de diferentes enfoques sobre espacios de actividad.
+En síntesis, si bien tradicionalmente el estudio de la segregación se
+focalizó en el ámbito residencial, el tendencia de los individuos a
+compartir espacio con otras similares excede este dominio. Sin
+desconocer el lugar de la residencia como eje articulador de las
+prácticas cotidianas de los hogares, la misma es insuficiente para
+entender cómo se configura la segregación. En tanto las *movilidades*
+cotidianas (y el *capital espacial* de los hogares) permiten a las
+personas conectar y habitar diferentes lugares como parte de sus
+*espacios de actividad*, incorporar estos 'otros lugares' al análisis es
+crucial para entender la segregación, como abordaremos en el siguiente
+apartado.
 
-### La escuela como espacio de separación
+## El enfoque multi-dominio de la segregación {#lit-multidomain}
 
-En particular, la educación es
+Como hemos señalamos, el abordaje de la segregación en los estudios
+urbanos estuvo centrado en el dominio residencial.
+<!-- Los otros dominios de la segregación -->Con el paso del tiempo
+otros campos de conocimiento incorporaron el concepto de segregación
+para analizar otras esferas sociales. A su vez, recientemente desde el
+propio campo de los estudios urbanos surgieron trabajos que analizan la
+segregación en relación con las movilidades cotidianas y los espacios de
+actividad. Como resultado en las últimas décadas los estudios sobre
+segregación proliferaron expandiéndose e incorporando otros *dominios*
+de la vida social, entre los cuales se puede mencionar el laboral
+[@Karmel1988; @Ferguson2018a], el escolar [@Reardon2000a;
+@Oosterbeek2021; @Thrupp2002], los espacios de actividad [@Schnell2001a;
+@Candipan2021; @Silm2021; @Lu2023], el transporte [@Abbasi2021;
+@Wilson2011], las relaciones matrimoniales [@Bouchet-Valat2018], las
+relaciones interpersonales [@Bojanowski2014; @Huang2022; @Otero2022],
+las redes sociales virtuales [@Hofstra2017; @Morales2019; @Dorman2020],
+los lugares de esparcimiento [@Tomasiello2022], entre otros.
 
-En la medida que las sociedades tienden a generar sistemas donde la
-profesionalización cumple un rol mayor en la allocation de las personas
-en el mercado laboral, la educación se transforma en un elemento cada
-vez más importante en las estrategias de reproducción social. Sin
-embargo, diferentes autores han señalado la existencia de diferentes
-realidades escolares, que generan...
+<!-- La segregación urbana como marco para pensar segregación. -->
 
-Como hemos señalado en trabajos anteriores sobre el sistema educativo de
-la CABA [@SerratiXXX] esta diferencia entre escuelas ...
+Más allá del aporte que realizan estos trabajos analizando la
+segregación en 'nuevos dominios', al igual que sucede con los estudios
+sobre el dominio residencial, tienen en común con estos una mirada
+parcial, centrada en analizar la segregación en un dominio de forma
+aislada. Por lo general, estos trabajos no fueron acompañados por una
+mirada que contemple el efecto la segregación en los otros dominios de
+la vida social, lo cual puede llevar a un sesgo sobre el efecto real de
+la segregación (subestimando o sobrestimando su incidencia real). Esta
+mirada resulta insuficiente, en tanto se adopta una concepción, como la
+que hemos propuesto, que considera a la segregación como dimensión de la
+estratificación social, centrada en analizar los lugares donde es
+posible que se generen intercambios entre las personas de los diferentes
+grupos sociales (*ver apartado* \@ref(lit-estratif)). Por ello es
+necesario abordar la *segregación urbana* como un fenómeno complejo en
+el cual se articulan distintos dominios de la vida social, entre los
+cuales la residencia es sólo un aspecto [@DiVirgilio2014d].
 
-En este sentido, algunos autores señalan la existencia que muchas
-familias elaboran una estrategia unificada de elección de escuela y de
+<!-- La perspectiva de la segregación multi-dominio. -->
 
-En concreto, la escuela es un ámbito central en el que analizar el
-problema de la segregación...
+En este camino, algunos trabajos han propuesto vincular los dominios de
+la segregación, mayoritariamente comparando la segregación en el dominio
+residencial con otros espacios. Entre estros esfuerzos, destacan los
+trabajos que analizan el vínculo entre segregación residencial y escolar
+[ver @Boterman2019a para un recorrido sobre este aspecto], pero también
+trabajos que analizan conjuntamente el dominio residencial y el laboral
+[@Ellis2004]. En esta línea, diferentes trabajos integran diferentes
+dominos de la segregación a partir de analizar los espacios de actividad
+[@Kwan2013; @Silm2014; @Wang2012; @Wong2011]. Como resultado de esta
+búsqueda de herramientas conceptuales para abordar la complejidad del
+fenómeno de la segregación urbana, la última década algunos autores han
+propuesto un enfoque 'multi-dominio' [*multi-domain*] de la segregación
+[@Boterman2016; @VanHam2018; @VanHam2016], con el objeto de aborcar
+simultáneamente la segregación en los distintos dominios de la vida
+social desde un marco conceptual integrado. Estos trabajos permiten
+entender la segregación residencial como *uno* de los aspectos de la
+segregación urbana, el cual es necesario considerar en conjunto con
+otros dominios de la vida social.[^02-literature-23]
 
-### *Connubium* y homofilia. La segregación en los vínculos sociales
+[^02-literature-23]: Además de considerar la incidencia de los
+    diferentes *dominios* de la vida social, otros trabajos han
+    planteado la necesidad de ampliar la mirada sobre la segregación
+    para incorporar múltiples *dimensiones* y *niveles*. Por un lado,
+    han destacado que en el fenómeno de la segregación confluyen
+    diferentes *dimensiones* -étnica, migratoria, clase, etaria, género,
+    etc.-, las cuales tienden a superponerse y reforzarse
+    [@Boterman2021; @Musterd2020; @Boterman2020a]. Por otro lado, la
+    segregación se desarrolla en diferentes *niveles*, lo que ha
+    permitido incorporar diferentes escalas, a la vez que el análisis
+    individual y dentro de los hogares, integrando la dimensión
+    longitudinal como parte de los cursos de vida y la transmisión
+    intergeneracional [@Tammaru2021; @VanHam2018]. Por ello, un abordaje
+    más amplio de la segregación debería articular los diferentes
+    *dominios* [@Boterman2016; @VanHam2016], *dimensiones*
+    [@Quillian2012; @Boterman2021] y *niveles* [@VanHam2018] de la vida
+    social.
 
-<!--# Dalle -->
+<!-- ¿Círculo vicioso entre dominios? -->
 
-<!-- Homogamia y estratificación social -->
+En el marco de este enfoque multi-dominio, sigue siendo un tema de
+debate académico la forma en que estos diferentes dominios se articulan,
+dando lugar al fenómeno de la segregación urbana como un todo. La
+identificación de cierta interdependencia y retroalimentación entre los
+dominios [@Schnell2001a; @Atkinson2004; @Wang2012] ha llevado a que
+algunos autores planteen la existencia de 'círculos viciosos'
+[@VanHam2018] o a la existencia de una 'reproducción multi-dominio' de
+la segregación [@Boterman2016]. Sin embargo, otros estudios muestran que
+no necesariamente todos los dominios de la segregación actúan en la
+misma dirección, de manera que cada uno de estos dominios puede aportar
+diferentes elementos en el proceso de diferenciación espacial
+[@Boterman2016; @Boterman2019a; @Serrati2023].
 
-Un tema central del análisis de la segregación en el dominio residencial
-es que este enfoque tiene como supuesto el intercambio y la interacción
-entre personas que residen en lugares cercanos. Sin embargo, ese
-intercambio puede no suceder. En este sentido, la red de relaciones
-sociales permite que ... en particular, el matrimonio es una forma
+<!-- Conclusión del apartado. Reposición del objetivo en clave de la bibliografía -->
 
-Diversos trabajos han puesto de manifiesto el rol fundamental que
-cumplen las reglas de conformación de parejas (*connubium*) como
-prácticas de movilidad y estratificación social [@Dalle2016;
-@Bourdieu2014a]. Los distintos estudios han identificado que la fluidez
-o apertura de la estructura social se relaciona con el modo en que se
-generan los 'emparejamientos selectivos'. La homogamia refuerza la
-heterogeneidad social entre las familias, lo cual favorece la
-transmisión desigual de recursos entre las generaciones
-[@Rodriguez2016c; @Solis2007; @Blossfeld2003]. En este sentido, el
-efecto de la segregación residencial se ve reforzada cuando existen
-altos niveles de homogamia en los hogares, en tanto la homogeneidad al
-nivel de los hogares, puede contrarrestar la heterogeneidad a nivel del
-vecindario [@Tammaru2021]. Que ambos miembros de la pareja compartan el
-mismo 'estatus' puede reforzar las ventajas / desventajas asociadas a
-estos grupos sociales y, en paralelo, bloquear el contacto con otros
-hogares diferentes socialmente, pero cercanos residencialmente.
-Retomando esta perspectiva, nuestro trabajo entiende a la segregación
-residencial y la segregación conyugal (homogamia) como dos 'dominios'
-articulados en diferentes 'niveles' (hogar-vecindario) del fenómeno de
-la segregación urbana.
+En resumen, la segregación urbana es un fenómeno complejo en el que se
+articulan diferentes dominios. En la medida que concebimos a la
+segregación urbana como dimensión espacial de la estratificación, el
+análisis de la segregación en los diferentes dominios de la vida social
+-residencial, educativo, laboral, de movilidades- permite entender cómo
+el espacio produce y reproduce desigualdades sociales. El enfoque
+multi-dominio de la segregación facilita explorar el modo en que estos
+espacios de interacción social contribuyen a reforzar o, por el
+contrario, a contrarrestar las desigualdades sociales. En este marco, un
+aspecto central de estos estudios es analizar cómo se articulan estos
+dominios entre sí, generando círculos viciosos o reforzando aspectos
+complementarios del fenómeno general. Retomando este enfoque, en este
+trabajo buscamos analizar en qué medida los diferentes dominios de la
+vida social pueden incidir sobre la segregación socioeconómica que
+experimentan los hogares en su espacio residencial, centrándonos en el
+contexto específico del Aglomerado Metropolitano del Gran Buenos Aires.
+En particular, desde una perspectiva multi-dominio de la segregación,
+nos interesa indagar cómo la segregación experimentada en los diferentes
+dominios de la vida social refuerza (o no) la segregación en el ámbito
+residencial, constituyendo un círculo vicioso o, por el contrario,
+aportando a diferentes aspectos de la segregación urbana.
 
-<!-- Relación entre segregación residencial y homogamia -->
-
-Algunos estudios han analizado la segregación residencial y la homogamia
-de forma conjunta. En esta línea, el trabajo pionero de @Duncan1959
-sostenía que en espacios residenciales donde existe una elevada
-segregación, el grupo segregado tendría pocas chances de contacto con
-otros grupos sociales y, por lo tanto, el número de matrimonios con
-otros grupos serían bajos. En continuidad con esta hipótesis, Peach
-[-@Peach1980; -@Peach1974] señala que los matrimonios mixtos se
-correlacionan inversamente con el grado de segregación residencial que
-los separa, mientras que @Morgan1981 sugiere que la segregación
-residencial tiene un efecto en la sobreselección de cónyuges de grupos
-similares. En este sentido, estos trabajos parecen reforzar la hipótesis
-según la cual el nivel de homogamia está correlacionado con el nivel de
-segregación residencial entre dichos grupos. Esto se debe a que los
-'mercados matrimoniales' se constituyen a partir de la interacción que
-los 'candidatos' tienen en otros espacios sociales (como la escuela, el
-trabajo o el barrio), por lo cual la presencia de segregación en estos
-espacios puede ser un limitante en la conformación de parejas
-heterogámica [@Rodriguez2016c]. En sintonía con estos resultados, la
-mayor parte de los trabajos actuales identifican que la mayor exposición
-con personas de grupos distintos al propio aumenta las probabilidades de
-conformación de parejas mixtas [@Puur2022; @Kalmijn2010].
-
-<!--  Reposición del objetivo en clave de la bibliografía -->
-
-Retomando estos trabajos, nos interesa analizar en qué medida la
-segregación residencial y la segregación conyugal puede reforzarse
-mutuamente en el AMGBA. En particular, y desde una perspectiva
-multi-dominio de la segregación, nos interesa indagar como ambas formas
-de la segregación constituyen un círculo vicioso o, por el contrario,
-refuerzan diferentes aspectos de la segregación urbana.
-
-<!--# FIN Dalle -->
-
-## El enfoque multi-dominio de la segregación
-
-<!-- La segregación urbana como marco -->
-
-<!--# Retomando los aportes anteriores, se presentan las perspectivas analíticas que integran diferentes dominios, dimensiones y niveles en el análisis de la segregación. En particular, se enfatiza el enfoque multi-dominio de la segregación adoptado en este trabajo. Se hace una reconstrucción del concepto rastreando sus antecedentes directos (Ellis et al., 2004; Kwan, 2013; Schnell & Yoav, 2001; Silm & Ahas, 2014; Wang et al., 2012, 2012; Wong & Shaw, 2011) y los trabajos pioneros que propusieron dicho concepto (Boterman & Musterd, 2016; Van Ham et al., 2018; Van Ham & Tammaru, 2016; Wissink et al., 2016), así como los desarrollos recientes en esta línea de trabajo. Como parte de esta reconstrucción se presentan los debates actuales en esta línea, destacando el problema sobre cómo se articulan los dominios entre sí, vinculada a las ideas de ‘círculo vicioso’ (Van Ham et al., 2018) y ‘reproducción multi-dominio’ (Boterman & Musterd, 2016) de la segregación .  -->
-
-Enmarcado en el campo los estudios urbanos, este proyecto recupera el
-concepto de segregación multi-dominio, entendiendo que para entender la
-segregación urbana es necesario abordarla como un fenómeno complejo en
-el cual se articulan distintos ámbitos de la vida social, entre los
-cuales la residencia es un aspecto.
-
-<!--# DALLE -->
+```{=html}
+<!-- 
+Segregación multi-dominio en trabajos de LA  
 
 En América Latina existen aún pocos trabajos que aborden la relación
 entre diferentes dominios de la segregación de forma cuantitativa. En el
@@ -403,144 +1475,14 @@ potenciando el aislamiento de los 'pobres urbanos' [@Kaztman2001]. A su
 vez, desde un enfoque predominantemente cualitativo, se ha indagado cómo
 la segregación residencial se relaciona con el aislamiento urbano en
 otros dominios [@Soldano2008; @Soldano2017; @Carman2013;
-@DiVirgilio2014c].
+@DiVirgilio2014c].-->
+```
 
-<!-- Segregación multi-dominio  -->
+```{=html}
+<!-- 
+REDES Y SEGREGACIÓN MULTIDOMINI. CREO QUE NO VIENE AL CASO. 
 
-En este contexto, durante la última década, algunos autores plantearon
-la necesidad de abordar esta diversidad de dominios desde un marco
-conceptual integrado, proponiendo para ello un enfoque multi-dominio
-[*multi-domain*] de la segregación [@Boterman2016 ;
-@VanHam2016].[^02-literature-2] Hasta el momento es poco explorada la
-forma en que los diferentes dominios se articulan, dando lugar al
-fenómeno de la segregación urbana como un todo. La identificación de
-cierta interdependencia y realimentación entre los dominios
-[@Schnell2001a; @Atkinson2004; @Wang2012] ha llevado a que algunos
-autores planteen la existencia de 'círculos viciosos' [@VanHam2018] y a
-la existencia de una 'reproducción multi-dominio' de la segregación
-[@Boterman2016]. Sin embargo, otros estudios muestran que no
-necesariamente todos los dominios de la segregación actúan en la misma
-dirección, de manera que cada uno de estos dominios puede aportar
-diferentes elementos en el proceso de diferenciación espacial
-[@Boterman2016 ; @Boterman2019a; @Serrati2023].
+Si bien no es posible hacer un desarrollo extensivo  en el presente trabajo, el enfoque multi-dominio de la segregación encuentra una forma natural de expresión y representación en los grafos multicapa [@Aleta2019]. Las redes multicapa [multilayer] son una generalización de las redes simples, donde además de un conjunto de nodos y vínculos, se considera un conjunto de capas ($\alpha;\beta;...$) , de manera que cada nodo $u$ pertenece a (al menos) una capa $\alpha$. En las redes multicapa, un nodo $u_i$ puede tener un vínculo $E$ con cualquier otro nodo $u_j$, el cual puede pertenecer a la misma capa ($\alpha$) o a otra capa ($\beta$). En particular, un subtipo especial de redes multicapa son las redes del tipo *multiplex* [@Magnani2021; @Ostoic2020], en donde para cada capa existe el mismo conjunto de nodos y los vínculos entre los nodos pueden ocurrir dentro de la misma capa o entre diferentes capas.
 
-[^02-literature-2]: Si bien no es posible hacer un desarrollo extensivo
-    en el presente trabajo, el enfoque multi-dominio de la segregación
-    encuentra una forma natural de expresión y representación en los
-    grafos multicapa [@Aleta2019]. Las redes multicapa [multilayer] son
-    una generalización de las redes simples, donde además de un conjunto
-    de nodos y vínculos, se considera un conjunto de capas
-    ($\alpha;\beta;...$) , de manera que cada nodo $u$ pertenece a (al
-    menos) una capa $\alpha$. En las redes multicapa, un nodo $u_i$
-    puede tener un vínculo $E$ con cualquier otro nodo $u_j$, el cual
-    puede pertenecer a la misma capa ($\alpha$) o a otra capa ($\beta$).
-    En particular, un subtipo especial de redes multicapa son las redes
-    del tipo *multiplex* [@Magnani2021; @Ostoic2020], en donde para cada
-    capa existe el mismo conjunto de nodos y los vínculos entre los
-    nodos pueden ocurrir dentro de la misma capa o entre diferentes
-    capas.
-
-    Las redes multiplex resultan una herramienta poderosa y poco
-    explorada aún para representar la segregación multidominio. Mediante
-    estas redes multicapas cada dominio puede ser representado como una
-    capa. Dentro de cada capa las personas estarían representadas como
-    nodos y existiría un enlace intra-capa entre aquellos nodos
-    (personas) que compartan la pertenencia a un mismo 'espacio'
-    (escolar, residencial, laboral, etc.). Esta forma de representar la
-    segregación multidominio permitiría abordar cómo se articulan y
-    replica la segregación en los diferentes dominios (capas). Más allá
-    de la potencialidad de este enfoque, es un desafío que no puede
-    omitirse la dificultad que implica obtener datos a nivel individual
-    que permitirían este tipo de análisis.
-
-Como resultado de estos desarrollos, recientemente se planteó la
-necesidad de abordar el problema de la segregación desde una perspectiva
-más amplia, que articule los diferentes dominios [@Musterd2020;
-@Boterman2016; @VanHam2016], niveles [@VanHam2018] y dimensiones
-[@Quillian2012; @Boterman2021] de la vida social.
-
-En resumen, la segregación urbana es un fenómeno complejo en el que se
-articulan diferentes dominios.[^02-literature-3] Es por ello que un
-aspecto central de estos estudios es analizar cómo se articulan estos
-dominios entre sí, generando círculos viciosos o reforzando aspectos
-complementarios del fenómeno general. A su vez, el enfoque de la
-segregación multi-dominio es una perspectiva interesante para pensar la
-dimensión espacial de la estratificación social, fundamentalmente en
-relación con la concepción weberiana de "clase social" que describimos
-anteriormente.
-
-[^02-literature-3]: Relacionado con este enfoque multi-dominio de la
-    segregación, algunos autores han resaltado que en el fenómeno de la
-    segregación confluyen diferentes *dimensiones* -étnica, migratoria,
-    clase, etaria, género, etc.-, las cuales tienden a superponerse y
-    reforzarse [@Boterman2021; @Musterd2020; @Boterman2020a]. A su vez,
-    la segregación se desarrolla en diferentes *niveles*, lo que ha
-    permitido incorporar al análisis individual y dentro de los hogares,
-    y consecuentemente la dimensión longitudinal de la segregación
-    dentro de los cursos de vida y de la transmisión intergeneracional
-    [@Tammaru2021; @VanHam2018]. En este sentido, una caracterización
-    más amplia de la segregación social nos permite caracterizarla como
-    un proceso complejo que se desarrolla articulando diferentes
-    *dimensiones* [@Quillian2012; @Boterman2021], dominios
-    [@Boterman2016; @VanHam2016] y niveles [@VanHam2018].
-
-<!--# FIN Dalle -->
-
-<!-- Reposición del objetivo en clave de la bibliografía -->
-
-En resumen, la segregación urbana es un fenómeno complejo en el que se
-intervienen diferentes dominios[^02-literature-4] y donde ocupa un rol
-central la reflexión sobre cómo se articulan estos dominios entre sí.
-Retomando esten enfoque, nos interesa analizar en qué medida las
-prácticas de movilidad y el modo en que se configuran los espacios de
-actividad pueden incidir sobre la segregación socioeconómica que
-experimentan los hogares en su espacio residencial. En particular, desde
-una perspectiva multi-dominio de la segregación, nos interesa indagar
-cómo la segregación experimentada en los espacios de actividad refuerza
-(o no) la segregación en el ámbito residencial, constituyendo un círculo
-vicioso o, por el contrario, aportando a diferentes aspectos de la
-segregación urbana.
-
-[^02-literature-4]: Relacionado con este enfoque multi-dominio de la
-    segregación, algunos autores han resaltado que en el fenómeno de la
-    segregación confluyen diferentes *dimensiones* -étnica, migratoria,
-    clase, etaria, género, etc.-, las cuales tienden a superponerse y
-    reforzarse [@Boterman2021; @Musterd2020; @Boterman2020a]. A su vez,
-    la segregación se desarrolla en diferentes *niveles*, lo que ha
-    permitido incorporar diferentes escalas, a la vez que el análisis
-    individual y dentro de los hogares, integrando la dimensión
-    longitudinal como parte de los cursos de vida y la transmisión
-    intergeneracional [@Tammaru2021; @VanHam2018]. En este sentido, una
-    caracterización más amplia de la segregación social nos permite
-    caracterizarla como un proceso complejo que se desarrolla
-    articulando diferentes *dimensiones* [@Quillian2012; @Boterman2021],
-    dominios [@Boterman2016; @VanHam2016] y niveles [@VanHam2018].
-
-En este contexto, la segregación urbana emerge como un fenómeno complejo
-que se configura articuladamente en diferentes dominios de la vida
-social [@DiVirgilio2014d] en los que se desenvuelve el espacio de vida
-de los individuos [@Courgeau1988]. En base a esto, algunos autores
-proponen pensar la "reproducción multi-dominio de la segregación
-urbana", analizando la acción conjunta y superpuesta de los distintos
-dominios de la vida social [@Boterman2016; @VanHam2018; @VanHam2016]. En
-este sentido, estos trabajos llevan a entender que la segregación
-residencial es sólo un aspecto de la segregación urbana que es necesario
-captar [@Wang2012].
-
-Conclusión del apartado. Descripción de marco teórcio.
-
-Nuesto trabajo propone recuperar
-
-La incorporación de diferentes dominios, como trabajo, transporte,
-educación.
-
-Reposición del objetivo en clave de la bibliografía
-
-La perspectiva de la segregación multi-dominio.
-
-La búsqueda de herramientas conceptuales para abordar la complejidad de
-la segregación urbana.
-
-La segregación urbana como marco para pensar segregación.
-
-Definición propia de segregación
+Las redes multiplex resultan una herramienta poderosa y poco explorada aún para representar la segregación multidominio. Mediante estas redes multicapas cada dominio puede ser representado como una capa. Dentro de cada capa las personas estarían representadas como nodos y existiría un enlace intra-capa entre aquellos nodos (personas) que compartan la pertenencia a un mismo 'espacio' (escolar, residencial, laboral, etc.). Esta forma de representar la segregación multidominio permitiría abordar cómo se articulan y replica la segregación en los diferentes dominios (capas). Más allá de la potencialidad de este enfoque, es un desafío que no puede omitirse la dificultad que implica obtener datos a nivel individual que permitirían este tipo de análisis.-->
+```

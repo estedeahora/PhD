@@ -6,211 +6,451 @@ editor_options:
 
 # Los métodos de medición de la segregación y esquema de análisis {#method}
 
-## El desafío de 'medir' la segregación
+<!-- Introducción al capítulo -->
+
+La comprensión del fenómeno de la segregación requiere avanzar también
+en una mirada detallada y crítica sobre cómo se mide y qué aspectos del
+problema se privilegian en estas mediciones. Las técnicas para medir la
+segregación evolucionaron considerablemente a lo largo de las décadas,
+incorporando enfoques y herramientas metodológicas para capturar la
+complejidad del fenómeno. Como sucede en otros casos similares donde las
+técnicas de medición se utilizaron desde diferentes enfoques teóricos y
+a lo largo de un amplio período de tiempo, hacer una lectura crítica de
+los detalles metodológicos es una tarea teórica central para evitar caer
+en afirmaciones equivocadas.
+<!--# creo que acá debe haber algo de Bourdieu para sumar. -->
+
+Teniendo esto en cuenta, <!-- Estructura del capítulo -->en este
+capítulo comenzaremos proponiendo una perspectiva histórica, para
+explorar los enfoques utilizados para medir la segregación, así como los
+debates que se desarrollaron en torno a estas técnicas
+(\@ref(method-history)). Además, intentaremos poner de manifiesto las
+conexiones (y desconcexiones) de estas formas de medir la segregación
+con los enfoques teóricos que les dieron sustento en su momento.
+Cerraremos este recorrido destacando las propuestas y desafíos actuales,
+en particular en relación con la posibilidad de construir técnicas que
+permitan el abodaje *multi-dominio de la segregación*. A partir de esta
+relectura se hace una nueva propuesta para medir la segregación que será
+utilizada en la tesis (\@ref(method-geometric)). Utilizando el análisis
+de correspondencia, esta propuesta se basa en un abordaje geométrico y
+busca captar la 'dirección' de la segregación. En el último apartado, se
+detalla el esquema de análisis usado en la tesis (\@ref(method-scheme)).
+Para ello, se presentan las principales decisiones metodológicas
+adoptadas en los capítulos de análisis y se realiza una breve
+presentación del caso de estudio (AMBA) y las fuentes de datos
+utilizadas.
+
+## El desafío de 'medir' la segregación {#method-history}
+
+<!-- Introducción: recorrido histórico de los indicadores de segregación  -->
 
 La profusa expansión del concepto de segregación estuvo, en parte,
-ligada al desarrollo de indicadores que permitieron cuantificar este
-fenómeno. En efecto, motivado por el impulso de la Escuela de Chicago y
-la posterior hegemonía de la sociología norteamericana de mediados de
-siglo, se promovió tempranamente una expansión de técnicas para
-cuantificar la 'segregación ecológica'. Sin embargo, establecer una
-definición adecuada sobre cómo medir la segregación no es un hecho
-trivial, por lo cual supuso importantes desafíos, tanto en lo
-metodológico como en lo conceptual. Como resultado desde mediados del
-siglo XX hasta la fecha se desarrollaron un gran número de medidas de
+ligada al temprano desarrollo de indicadores que permitieron cuantificar
+este fenómeno. En efecto, motivado por las ideas teórica de la 'Escuela
+de Chicago', los desarrollos de la 'ecología factorial' y al calor de la
+hegemonía de la sociología funcionalista norteamericana de mediados de
+siglo, se dio una rápida expansión de las técnicas propuestas para
+cuantificar la segregación residencial. Esta expansión llevo al uso de
+estos indicadores en contexto diferentes al propuesto y, en muchos
+casos, desde matrices teóricas muy distantes a las que le dieron origen.
+Establecer una definición adecuada sobre cómo medir la segregación no es
+un hecho trivial y, de hecho, supune importantes desafíos, tanto
+metodológicos como conceptuales. Como resultado desde mediados del siglo
+XX hasta la fecha se desarrollaron un gran número de medidas de
 segregación, las cuales priorizaron diferentes aspectos o dimensiones
-del fenómeno y, en muchos casos, exploran fenómenos conceputalmente
+del fenómeno y, en muchos casos, exploran fenómenos conceptualmente
 diferentes. Antes de hacer un análisis comparativo entre estas medidas,
 repasemos brevemente cómo fue este proceso.
 
-<!--  Las propuestas clásicas de medición global -->
+<!--  Las propuestas clásicas de medición global (años '40/'50) -->
 
 El debate en torno a la creación de una medida de la segregación tuvo su
 inicio en la sociología a fines de la Segunda Guerra Mundial, a partir
 de un conjunto de artículos publicados mayoritariamente en la *American
-Sociological Review*, los cuales propusieron y debatieron la viabilidad
-de diferentes medidas de segregación y un conjunto de criterios
-'deseables' para estos indicadores [ver @Jahn1947; @Hornseth1947;
-@Jahn1948; @Williams1948; @Jahn1950; @Cowgill1951; @Bell1954]. El
-trabajo de @Duncan1955b sistematizó este debate, mostrando las
-relaciones matemáticas entre estos índices, favoreciendo un consenso a
-partir del cual estos indicadores, en particular el *Índice de
-Disimilitud*, se expandieron en la investigación empírica. Más allá de
-las diferencias entre ellos, estos trabajos buscaban comparar la
-segregación entre ciudades, por lo cual se enfocaban en conseguir un
+Sociological
+Review*<!--# en parte opuesta a la AJS de la Univ. de Chicago -->, los
+cuales propusieron y debatieron la viabilidad de diferentes medidas de
+segregación y un conjunto de criterios 'deseables' para estos
+indicadores [ver @Jahn1947; @Hornseth1947; @Jahn1948; @Williams1948;
+@Jahn1950; @Cowgill1951; @Bell1954]. El trabajo de @Duncan1955b
+sistematizó este debate, mostrando las relaciones matemáticas entre los
+índices y, en particular, el vínculo geométrico de estos con la 'curva
+de segregación'. Esta sistematización permitió un consenso a partir del
+cual estos indicadores, en particular el *Índice de Disimilitud*, se
+expandieron en la investigación empírica. Más allá de las diferencias,
+estos trabajos buscaban dar cuenta del 'concepto ecológico de
+segregación', que era operacionalizado como la 'distribución no
+aleatoria' de los grupos en las unidades censales [@Jahn1947, p. 293] lo
+cual, como señaló @Duncan1955b [p. 217], solo captaba algunos aspectos
+de dicho concepto. En este sentido, más allá de la intención teórica y
+operativa subyacente, estos índices generaban un valor numérico resumen
+que cuantificaba el desvío de la composición (de los grupos) en las
+unidades en relación a la distribución global de la ciudad. Para ello,
+estos indicadores no consideraban los problema relativos a la
+distribución espacial de las unidades espaciales, de manera que las
+unidades censales eran tratadas en forma 'aespacial'. En tanto buscaban
+comparar la segregación entre ciudades, se enfocaban en conseguir un
 'indicador global', es decir, un indicador que se exprese con un único
-valor y que el mismo tenga sentido independiéntemente de las
-características particulares de las ciudades. Otra característica de
-estas propuestas, es que se basaron en datos agrupados provenientes de
-censos de población y se centraban en analizar comparativamente dos
-grupos de población (comúnmente "blancos" y "no-blancos"/"negros").
+valor y que tenga sentido independientemente de las características
+particulares de las ciudades. Otra característica de estas propuestas,
+es que se basaron en datos agrupados provenientes de censos de población
+y se centraban en analizar comparativamente dos grupos de población
+(comúnmente "blancos" y "no-blancos"/"negros").
+<!--# influenciado por estos trabajos, en Argentina Gino Germani propuso una modificación para que el Censo de 1947 pueda captar la segregación. Ver Trovero -->
 
-<!-- Nuevos debates y sistematización -->
+<!-- Nuevos debates y sistematización de los primeros trabajos -->
 
 Durante los años posteriores hubo un crecimiento de los trabajos
-empíricos que midieron la segregación. La mayoría de estos trabajos
-utilizaron el Índice de Disimilitud, volviéndose este de facto el índice
-más extendido. Esta elección estuvo basada en la recomendación de
-@Duncan1955b respecto a la mayor utilidad de este índice, pero sin
-considerar los señalamientos hechos por estos autores respecto a los
-límites de los mismos y sus supuestos. Recién a fines de la década de
-1970, un conjunto de trabajos recuperaron estos problemas abriendo un
-nuevo debate que se extendió hasta mediados de la década de 1980
-[@Cortese1976; @Taeuber1976; @Cohen1976; @Winship1977; @Falk1978;
-@Winship1978; @Kestenbaum1980; @Morgan1981 @Coleman1982; @Lieberson1982;
-@Morgan1983]. El eje de este debate estuvo en torno a la pertinencia del
-uso de los índices de segregación existentes en la comparación entre
-ciudades, dada la dependencia de estos indicadores respecto a los
-marginales (la proporción total de cada uno de los grupos en la ciudad y
-el tamaño de las unidades censales). En particular, estos trabajos
-destacaban los límites del *Índice de Disimilitud* para comparar
-ciudades con estructuras diferentes, una práctica extendida en esa época
-(como en el presente). En este contexto, algunos de estos autores
-criticaron el uso del Índice de Disimilitud, proponiendo recuperar otros
-índices desarrollados en los años previos o desarrollando sus propios
-índices.
+empíricos que midieron la segregación en diferentes ciudades. La mayoría
+de los trabajos utilizaron el Índice de Disimilitud, volviéndose este el
+índice más extendido y convirtiéndose, de facto, en 'el índice de
+segregación'. La importancia de este estuvo basada en la recomendación
+de @Duncan1955b respecto a la mayor utilidad de este índice, pero su
+incorporación se hizo sin considerar también los señalamientos hechos
+por estos autores respecto a los límites que tenía dicho índice y sus
+supuestos. Recién a fines de la década de 1970, un conjunto de trabajos
+recuperaron estos problemas abriendo un nuevo debate que se extendió
+hasta mediados de la década de 1980 [@Cortese1976; @Taeuber1976;
+@Cohen1976; @Winship1977; @Falk1978; @Winship1978; @Kestenbaum1980]. El
+eje de este debate estuvo en torno a la pertinencia del uso de los
+índices de segregación existentes en la comparación entre ciudades, dada
+la dependencia de estos indicadores respecto a los marginales (la
+proporción total de cada uno de los grupos en la ciudad y el tamaño de
+las unidades censales). En particular, estos trabajos señalaban los
+límites del *Índice de Disimilitud* para comparar ciudades con
+estructuras diferentes, una práctica extendida en esa época (y que sigue
+hasta el presente). En sintonía con esto, @Morgan1983 analiza los
+límites de este índice para hacer comparaciones temporales en una misma
+ciudad.<!--# Además, en este debate se planteó la necesidad de entender la 'no segregación' más allá de la idea de 'uniformidad' [evenness], para pensar en su lugar en distribuciones 'aleatorias', que como muestra el trabajo de @Cortese1976 es un criterio central cuando la población minoritaria representa una proporción pequeña de la población total. -->
 
-Es resultado de estos
+<!-- Multiplicación de índices de segregación: el desorden teórico y metodológico de los '80 -->
 
-Retomando todo este debate, el trabajos de @James1985 hace un resumen de
-estos aportes y genera una comparación sistemática de las
+Con el objeto de superar los límites identificados en el *Índice de
+Disimilitud*, muchos autores recuperaron otros indicadores desarrollados
+en años anteriores [@Theil1971a; @Duncan1955b; @Bell1954; @Jahn1947,
+entre otros], y propusieron nuevos indicadores [ver, por ejemplo,
+@Cortese1976; @Winship1977]. Esta revitalización se vio influida por los
+desarrollos provenientes de la economía para medir la desigualdad, un
+problema que desde temprano se había identificado con muchas similitudes
+al de la segregación. Además, movidos por la complejización racial de
+los Estados Unidos, algunos trabajos como el de @Sakoda1981 propusieron
+una generalización del índice de disimilitud, para permitir la
+comparación de más de dos grupos. En paralelo, otro conjunto de trabajos
+provenientes de la geografía [@Jakubs1981; @Morgan1983a; @Morgan1983b;
+@White1983a] cuestionaron el carácter 'a-espacial' del índice de
+disimilitud, un problema que había sido identificado desde la década de
+1940 pero que la limitación en los recursos computacionales habían
+llevado a que sea dejado de lado. Aprovechando las mejoras en las
+capacidades de procesamiento, estos trabajos promovieron nuevos
+indicadores (algunos como variaciones de índices anteriores) que
+incorporan la estructura de las unidades espaciales. Sin embargo, más
+allá de estos desarrollos, se mantenía en paralelo un 'uso inercial' del
+índice de disimilitud en los estudios empíricos, lo cual sucedía sin
+considerar los cuestionamientos realizados al mismo. Por último, este
+debate sobre los límites del índice de disimilitud y la pertinencia de
+otros indicadores disponibles se tradujo, a su vez, en un debate sobre
+el propio concepto operativo de segregación. Como resultado de estos
+problemas, hacia mediado de la década de 1980 el campo estaba en un
+estado de 'desorden teórico y metodológico' [@Massey1988, p. 282].
 
--   [x] Cortese, Falk, and Cohen 1976; Further Considerations on the
-    Methodological Analysis of Segregation Indices
--   [x] Taeuber and Taeuber 1976; A Practitioner's Perspective on the
-    Index of Dissimilarity
--   [ ] Cohen, Falk, and Cortese 1976; Reply to Taeuber and Taeuber
--   [ ] Winship 1977; A Revaluation of Indexes of Residential
-    Segregation
--   [ ] Falk, Cortese, and Cohen 1978; Utilizing Standardized Indices of
-    Residential Segregation: Comment on Winship
--   [ ] Winship 1978; The Desirability of Using the Index of
-    Dissimilarity or Any Adjustment of It for Measuring Segregation:
-    Reply to Falk, Cortese, and Cohen
--   [ ] Kestenbaum 1980; Notes on the Index of Dissimilarity: A Research
-    Note.
--   [ ] Coleman, Hoffer and Kilgore 1982; Achievement and Segregation in
-    Secondary Schools: A Further Look at Public and Private School
-    Differences
--   [ ] Lieberson and Carter 1982; Temporal Changes and Urban
-    Differences in Residential Segregation: A Reconsideration
--   [ ] Morgan 1983; A Temporal Perspective on the Properties of the
-    Index of Dissimilarity
+<!-- Massey (1988): Las dimensiones de la segregación -->
 
-Los índices de segregación permiten medir diferentes dimensiones del
-fenómeno [@Massey1988]. El trabajo de... Intentando sistematizar estos
-desarrollos, @Massey1988 identifica cinco 'dimensiones de la
-segregación', a saber: (a) la uniformidad (*evenness*), referido a la
+Frente a esta situación, algunos trabajos [@James1985; @White1986;
+@Stearns1986] intentaron una comparación entre indicadores, basados en
+un conjunto de criterios deseables. Como resultado intentaron una
+sistematización de los indicadores más usados, aunque estos proyectos lo
+hicieron de un modo limitado. Recuperando los esfuerzos anteriores, el
+trabajos de @Massey1988 logró realizar una comparación sistemática de
+los índices, proponiendo a su vez una conceptialización de sus
+diferencias. Como parte de esta sistematización, @Massey1988 identificó
+que los índices de segregación abordan en realidad cinco 'dimensiones de
+la segregación', a saber: (a) la uniformidad [*evenness*], referido a la
 distribución de la población en unidades espaciales; (b) la exposición
-(*exposure*), entendida como las posibilidades de contacto entre
+[*exposure*], entendida como las posibilidades de contacto entre
 individuos que genera el agrupamiento en unidades espaciales; (c)
-concentración (concentration), es decir el espacio ocupado por los
-grupos; (d) agrupación (clustering), que refiere a la concentración de
+concentración [*concentration*], es decir el espacio ocupado por los
+grupos; (d) agrupación [*clustering*], que refiere a la concentración de
 población en unidades espaciales contiguas; y (e) centralización
-(centralization), que describe la distribución de los grupos en relación
-con un centro geográfico de referencia.
+[*centralization*], que describe la distribución de los grupos en
+relación con un centro geográfico de referencia.
+<!-- Los desarrollos durante las décadas de 1990 y 2000 -->Si bien luego
+del trabajo de @Massey1988 esta propuesta fue objeto de debate, dando
+lugar a nuevas propuestas para clasificar las dimensiones de la
+segregación [@Brown2006; @Reardon2004; @Johnston2007; @Wong2016], las
+cinco dimensiones sugeridas por Massey y Denton permitieron ordenar el
+campo, estableciendo un nuevo consenso que perduró en los años
+siguientes. Como consecuencia, durante las décadas de 1990 y los 2000,
+se inició una etapa en la cual cual los trabajos estuvieron orientados a
+profundizar líneas desarrolladas en los años anteriores (algo que,
+siguiendo a Kuhn, podríamos pensar como una etapa de 'ciencia normal').
+De modo general, estos desarrollos pueden agruparse en: ampliaciones
+espaciales, inclusión de múltiples grupos y desarrollo de índices
+locales.
 
-<!-- Incorporar la geografía -->
+<!-- Décadas de 1990/2000: Incorporar la espacialidad -->
 
-A su vez, a fines de la década de 1980 y, fundamentalmente, a inicios de
-la década de 1990, diferentes autores, mayoritariamente provenientes de
-la geografía, señalaron la necesidad de incorporar un componente
-geográfico en las medidas de segregación [@Wong2016].
+Los primeros trabajos sobre medidas de segregación eran conscientes de
+la limitación que suponía no incorporar a estas medidas los 'patrones
+espaciales' [@Duncan1955b, pp. 215-216], pero la 'a-espacialidad' se
+justificaba, en gran medida, por una limitación computacional y de
+procesamiento. En particular, la aespacialidad impedía captar el
+problema de la estructura urbana, fundamental para el *modelo
+concéntrico* (o los desarrollos posteriores). Más allá de este aspecto
+teórico, como señala @Wong2016 [p. 80], las medidas tradicionales de
+segregación presentan dos problemas interrelacionados: (a) tratan los
+límites de las unidades espaciales como 'barreras absolutas', imposibles
+de atravesar para las personas; y (b) no incorporan información espacial
+para describir las relaciones entre unidades espaciales. Estos problemas
+pueden ser ilustrados mediante el esquema ficticio del 'tablero de
+ajedrez'. En este modelo se evidencia la insensibilidad de estos
+indicadores tradicionales a los patrones y a la distribución de las
+unidades espaciales, en tanto el cambio de lugar de las celdas
+'blancas'/'negras' no modifica en ningún caso el valor de los mismos
+[@Jakubs1981; @White1983a; @Morrill1991; @Wong1993]. Además, este
+planteo hipotético permite visualizar el problema del efecto de la
+escala [*scaling problem*] en los índices tradicionales: mientras que
+para el tablero original estos indicadores darían una segregación total,
+con una agrupación de 2x2 de las celdas se daría una falta total de
+segregación [@Jakubs1981]. Un problema relacionado al anterior, que
+también afecta a las medias tradicionales, es el problema de
+zonificación [*zoning problem*], por el cual según cómo se hayan
+construido las unidades espaciales variará el resultado.
 
-Por último, los trabajos de @Shannon1948 y @Simpson1949 . Durante las
-décadas siguientes, trabajos propusieron mejoras parciales sobre los
-índices existentes y se desarrollaron algunos nuevos índices
-[@Theil1971a]. Sin embargo, la mayoría de los trabajos
+Buscando abordar estos problemas, a partir de la década de 1980 y,
+fundamentalmente, desde la década de 1990, autores provenientes
+mayoritariamente del campo de la geografía, propusieron incorporar el
+componente espacial y geográfico en las medidas de segregación. Una
+primer estrategia fue la 'espacialización' de las medidas existentes,
+modificando algún aspecto de las mismas para que incorporen la dimensión
+espacial. Según @Wong2016 [pp. 82-83], esta espacialización fue
+realizada desde dos enfoques: (a) incorporando en la fórmula términos
+adicionales que retengan la posible interacción entre las unidades
+espaciales [por ejemplo: @Morrill1991; @Wong1993]; (b) modificando los
+conteos dentro de las propias unidades espaciales (mediante 'recuento
+compuesto de población' o 'funciones de proximidad'), de manera que
+estos nuevos conteos incluyan de algún modo a las poblaciones de las
+unidades cercanas [por ejemplo: @Feitosa2007; @Wong1998; @Wong2005;
+@Reardon2004]. En lugar de modificar las medidas tradicionales 'para
+incorporar el espacio', una segunda estrategia fue la creación de
+medidas que se construyen 'en base al espacio' [@Jakubs1981;
+@Morgan1983a; @Morgan1983b; @White1983a; @Wong2011].[^03-methods-1] Un
+lugar particular ocupa el planteo de @Johnston2009, quien propone
+'incorporar más geografía' en la medición de segregación, para lo cual
+sostiene la conveniencia del uso de mapas de concentración de perfiles
+[*concentration profile*] [@Poulsen2002], en lugar de indicadores
+resúmenes.
 
-<!--# Se hace un recorrido histórico de los indicadores de segregación -->
+[^03-methods-1]: Un resumen detallado de estos desarrollos puede
+    encontrarse en @Wong2016 y @Yao2019.
 
-<!-- La segregación a nivel local y multigrupo -->
+<!-- Décadas de 1990/2000: Segregación multigrupo -->
 
-Años 90/00. Nuevos enfoques: segregación local (y diversidad social) e
-índices multigrupos.
+Un segundo grupo de trabajos propusieron ampliar las medidas de
+segregación para abordar la existencia de múltiples grupos.
+Originalmente, los índices de segregación fueron desarrollados para dar
+cuenta de la realidad de los guetos afroamericanos estadounidenses y,
+por lo tanto, buscaban medir la segregación de forma dicotómica entre
+los 'negros' y a los 'no-negros'. Sin embargo, a medida que la
+estructura étnico-racial de Estados Unidos se complejizó y que el
+estudio de la segregación se extendió por fuera del contexto original
+(fundamentalmente en Europa donde la segregación migratoria y de clase
+era importante), fue evidente la limitación del abordaje dicotómico que
+proponían los indicadores tradicionales. Una primera estrategia fue
+medir la segregación de cada grupo 'contra' el resto. Sin embargo, esto
+suponía que para cada análisis debería considerarse varias medidas (una
+para cada par de grupos). Como alternativa a este enfoque, se
+propusieron medidas que consideraban simultaneamnte más de dos grupos
+sociales [@Theil1971a; @Sakoda1981]. En esta línea, el trabajo de
+@Reardon2002 propuso una expansión de algunas de las medidas de
+segregación existentes para generar una versión 'multi-grupo' de las
+mismas.
 
-Abordar problemas en los que se presenten más de dos grupos
-[@Tivadar2019].
-
-Si bien existieron algunos desarrollos tempranos, [@Theil1971a;
-@Sakoda1981]
-
-Además de los índices globales, se han desarrollado *índices locales*,
-que caracterizan a cada una de las unidades como parte del conjunto
-[@Feitosa2007; @Wong2002a; @Reardon2002]
-
-### Los desafíos actuales para medir la segregación
-
-En este sentido, en su forma más abstracta un problema de segregación
-intenta medir la distribución de una variable categórica (el número de
-personas de un determinado grupo social) en diferentes unidades
-[@Elbers2021; @Williams1948]
-
-A su vez, @Tivadar2019 diferencia entre: (a) índices de un grupo
-(one-group indices) que indican la situación de un grupo en relación al
-resto de la población; (b) índices de comparación entre grupos (between
-group indices) que caracterizan la relación entre pares de grupos; e (c)
-índices multigrupos (multi-group indices) que analizan la relación entre
+Siguiendo a @Tivadar2019 [p. 4], en términos esquemáticos podemos
+clasificar los índices en función de cómo abordan el problema de los
+grupos diferenciando entre: (a) índices de un grupo [*one-group
+indices*], que refieren a la situación de un grupo en relación al resto
+de la población; (b) índices entre grupos [*between group indices*] que
+caracterizan la relación entre pares de grupos; e (c) índices
+multigrupos [*multi-group indices*] que analizan la distribución de
 varios grupos de población simultáneamente y devuelve un valor que
 sintetiza la relación conjunta entre ellos.
 
-Por último, es posible diferenciar entre índices globales, que
-caracterizan la segregación de todo un conjunto de población, e índices
-locales, que refieren a cada una de las unidades individualmente (Wong,
-2002; Feitosa et al., 2007; Poulsen et al., 2011).
+<!-- Décadas de 2000: índices ordinales -->
 
-Para una revisión actualizado de los indicadores de segregación y de la
-relación con las diferentes dimensiones o aspectos descriptos, es
-posible remitirse a los trabajos de Yao et al. (2019), Tivadar (2019),
-Fossett (2017) y Wong (2016)
+Como una extensión de este enfoque, @Reardon2009 propuso variaciones
+sobre los índices multi-grupo para considerar categorías de grupos
+sociales 'ordenados' (por ejemplo, nivel educativo o grupos
+ocupacionales). Además, siguiendo los aportes sobre desigualdad del
+ingreso mediante la curva de Lorenz, algunos trabajos abordaron el
+problema de la segregación sobre variables continuas, fundamentalmente
+ingresos [@Jargowsky1997; @Dawkins2007; @Feitosa2007; @Kim2009;
+@Reardon2011].
 
-Respecto a esto, la segregación representa en gran medida las
-condiciones de posibilidad (que brinda el entorno) en las cuales se
-desenvuelve la homogamia relacional (a nivel individual)
+<!-- Décadas de 1990/2000: Segregación local (y diversidad social) -->
 
-Enfoques actuales. Sobre este recorrido se presentan los nuevos enfoques
-y los desafíos actuales de la medición de la segregación:
+Como hemos señalado, los índices de segregación brindan una medida
+global con el que se pretende resumir la segregación del conjunto del
+ámbito de estudio. Como alternativa a este enfoque, un tercer grupo de
+trabajos han propuesto considerar *índices locales*, los cuales
+caracterizan a cada una de las unidades en relación al conjunto [ver,
+por ejemplo, @Feitosa2007; @Reardon2002; @Wong2002a]. El valor de las
+medidas locales varía en función de la distribución global de los grupos
+o, lo que es lo mismo, es dependiente de los marginales globales. En
+este sentido, un mismo perfil (o distribución de porcentajes de los
+grupos sociales) en una unidad, puede suponer diferentes valores de
+segregación local, dependiendo de cómo es la distribución de los grupos
+en el conjunto de la ciudad. Es por esto que los indicadores locales son
+una medida de "cuánto" se aleja la distribución local de la
+global.[^03-methods-2]
 
--   Crecimiento de datos disponibles y del uso de datos de movilidad
-    [@Li2022a].
--   Medidas-basadas en personas [@kwan2009].
--   Uso de "medidas granulares" basadas en lugares y medida de
-    accesibilidad [ver @Milias2022].
--   Los esfuerzos por incorporar diferentes dimensiones y dominios de la
-    segregación.
--   Si bien la comparación entre diferentes ciudades o entre diferentes
-    momentos en una misma ciudad es un problema que surge desde el
-    origen del interés por los índices de segregación, esto no ha sido
-    una tarea fácil debido a la dependencia de estos índices con
-    respecto a sus valores marginales. En este sentido, @Cortese1976 y
-    @Winship1977 propusieron la construcción de un modelo basado en
-    distribuciones de probabilidad... Por su parte, índices que permiten
-    la *descomposición* para comparar tipos de unidades [@Elbers2023;
-    @Mora2011]
+[^03-methods-2]: <!-- Indicadores diversidad social -->A diferencia de
+    los índices locales, los *indicadores de diversidad social* son
+    independientes de la distribución global de los grupos.
 
-Algunos autores señalan la necesidad de herramientas para pensar y medir
-el fenómeno de la segregación a nivel individual [@Fossett2017;
-@Wong2016; @Yao2019]. Este punto es central para estudiar la segregación
-multi-dominio, que se desarrolla a nivel de los individuos (más allá de
-las unidades de cada dominio). Ligado a esto, otro problema para
-analizar la segregación urbana multi-dominio es la diversidad y
-dispersión de las fuentes de datos. Para abordar ambas limitaciones, el
-proyecto propone la triangulación de fuentes primarias y secundarias, de
-manera que las fuentes secundarias permitan caracterizar globalmente los
-patrones de segregación en cada dominio, mientras que la fuente primaria
-permita entender cómo se articulan estos patrones.
+Una <!-- Descomposicón  -->propiedad habitualmente deseable de los
+indicadores locales es la posibilidad de 'composición', de manera que la
+combinación de índices locales genere un valor global que también tengan
+sentido como indicador de segregación global. Como contraparte, la
+'descomposición' supone la posibilidad de analizar la segregación global
+como resultado de analizar la segregación en subgrupos de unidades. En
+relación a esto, durante la década del 2000 algunos autores revivieron
+el debate sobre las 'propiedades deseables' de los indicadores de
+segregación, entre las cuaes se resaltaba la composición/descomposición
+[@Frankel2011; @Hutchens2001; @Hutchens2004; @Allen2007; @Mora2011].
+Como resultado de este debate tomaron relevancia el *Índice de Raíz
+Cuadrada* [@Hutchens2001; @Hutchens2004] y los indicadores basados en la
+teoría de la información propuestos por Theil [-@Theil1967;
+-@Theil1971a], como el *Índice de Información Mutua* y el *Ínidice de
+Entropía* [ver @Frankel2011; @Mora2003; @Mora2009; @Mora2011].
 
-Explicitar las diferencias y los límites de los enfoques actuales.
+<!-- Años 2010/2020: Los desafíos actuales para medir la segregación -->
 
-## Propuesta de perspectiva geométrica para la medición de la segregación
+En los años recientes, han surgido nuevos desafíos y desarrollos
+metodológicos que buscan captar la creciente complejidad del fenómeno.
+Una parte importante de los desarrollos contemporáneos han sido
+impulsados por el crecimiento exponencial en la disponibilidad de datos,
+especialmente con la incorporación de datos de movilidad y
+geolocalizados. Esto ha permitido ampliar el análisis más allá de los
+tradicionales censos de población, integrando nuevas fuentes que
+capturan de forma más precisa las dinámicas espaciales cotidianas de las
+personas [@Li2022a; @Wong2016; @Yao2019]. Un problema asociado con esto
+es la necesidad de hacer dialogar y compatibilizar estas fuentes de
+datos. En este contexto, resulta fundamental la incorporación de
+técnicas y enfoques de la 'ciencia de datos' y la 'geocomputación'. En
+particular, esto ha sido acompañado del desarrollo de herramientas de
+software robustas que faciliten la manipulación, integración y análisis
+de estas múltiples capas de información y su uso para analizar el
+problema de la segregación [@Tivadar2019; @Yao2019; @Wong1998a].
+
+En relación con el crecimiento de la cantidad de datos disponibles y las
+características de estos datos, diferentes autores han planteado la
+necesidad de desarrollar medidas 'basadas en personas' [*people-based*],
+en vez de 'basada en lugares' [*place-based*] como hacen las medidas
+tradicionales al considerar unidades territoriales como barrios o
+distritos [@Kwan2009]. Esta perspectiva busca capturar las experiencias
+diferenciadas de los individuos, incluyendo no sólo el domunio
+residencial sino también sus espacios de actividad, integrando de esta
+manera la movilidad espacial como un factor esencial en la generación de
+desigualdades espaciales [@Schnell2001a; @Farber2012; @Farber2015;
+@Fossett2017; @Wong2011; @Wong2016]. En particular este enfoque *basado
+en personas* es especialmente interesante para estudiar la segregación
+multi-dominio, aunque como contrapartida está limitado a la, por ahora,
+baja disponibilidad de datos en el ámbito local. Más allá de estas
+limitaciones, diferentes trabajos han propuesto analizar conjuntamente
+diferentes dominios [@Serrati2023] y la segregación en los espacios de
+actividad [@Lu2023; @Li2022a; @Tomasiello2022; @Athey2021; @Ta2023;
+@Farber2015; @LeRoux2017]. Alternativamente, algunos trabajos han
+propuesto utilizar 'medidas granulares' basadas en lugares y medidas de
+accesibilidad [@Milias2022].
+
+Algunos desarrollos recientes son, en realidad, una continuidad de
+problemas que vienen de las décadas anteriores. Si bien en las últimas
+décadas las medidas de segregación incorporaron el efecto del espacio,
+esta incorporación se hizo suponiendo la ciudad como un 'espacio plano',
+es decir, como un espacio sin accidentes geográficos que facilitan o
+dificultan la conexión entre sus áreas. Por el contrario, la conexión
+entre los espacios de la ciudad viene mediado por la posibilidad de
+acceso que se soporta sobre el sistema vial y de transporte. Aunque dos
+barrios sean 'linderos' la existencia de una autopista entre ambos o la
+inexistencia de calles que los conecten (como ocurre en los barrios
+cerrados) hará que estos estén 'más lejos'. Para resolver esto, algunos
+trabajos han propuesto incorporar las redes viales en el cálculo de las
+distancias y vecindades [ver, por ejemplo, @Roberto2018], siendo este
+campo aún poco explorado. Por otra parte, uno de los problemas
+fundamentales para medir la segregación es la comparación entre ciudades
+o momentos históricos [ver, por ejemplo, el debate de @Cortese1976;
+@Winship1977]. En este sentido, la mayor parte de las medidas de
+segregación tienen dependencia de los valores marginales, lo que
+dificulta la comparación directa en la medida que se modifica la
+composición de los grupos en la ciudad o las unidades. Una excepción es
+el índice log-lineal $A$ propuesto por Charles and Grusky
+[-@Charles1995; -@Charles1992], basado en la razón de probabilidad [*odd
+ratios*] de las celdas de la tabla. Este índice resulta problemático
+cuando el tamaño de las unidades varía, dado que les otorga un peso
+igual, y no respeta el criterio de 'equivalencia organizacional'. Para
+abordar el problema de comparación entre ciudades con diferentes
+estructuras de los grupos @Elbers2023 ha propuesto un método que
+utilizan el Índice de Información Mutua [@Theil1971a], mediante
+descomposición de las diferencias y el uso de un 'ajuste proporcional
+iterativo' [*iterative proportional fitting*] entre las tablas.
+
+Por úlitmo, otra línea de trabajos han propuesto métodos para permitir
+la inferencia estadística de los resultados. Ante la falta de
+procedimientos robustos para determinar si las diferencias observadas en
+los índices de segregación son estadísticamente significativas, se han
+implementado técnicas como los bootstrap tests, las simulaciones de
+Monte Carlo y la inferencia bayesiana [@Boisso1994; @Feitosa2007;
+@Lee2015; @Tivadar2014; @Tivadar2019; @Yao2019]. Estos métodos permiten
+establecer criterios más rigurosos en el análisis de los patrones de
+segregación y evaluar la validez de las conclusiones extraídas a partir
+de los datos disponibles.
+
+<!-- Explicitar las diferencias y los límites de los enfoques actuales. -->
+
+A pesar de los importantes avances metodológicos, la medición de la
+segregación sigue enfrentando desafíos clave. Si bien el aumento en la
+disponibilidad de datos y las nuevas fuentes han permitido análisis más
+detallados, la dispersión de estas fuentes y la baja disponibilidad de
+datos locales, especialmente en el sur global, limitan su aplicación
+práctica. Además, los enfoques basados en personas y en espacios de
+actividad han ampliado nuestra visión del fenómeno, pero su
+implementación sigue siendo fragmentaria. Del mismo modo, aunque los
+esfuerzos por integrar redes viales y por facilitar comparaciones entre
+ciudades o momentos históricos han mostrado avances, todavía no alcanzan
+a capturar completamente la complejidad de la segregación. Por último,
+como señala Wong [@Wong2016, p. 92], resulta necesario 'pensar fuera de
+la caja provista por Massey y Denton', cuya influencia sigue marcando el
+campo. En este sentido, los desarrollos futuros deberán no solo resolver
+los desafíos técnicos, sino también generar marcos conceptuales más
+flexibles que permitan captar la creciente heterogeneidad de los
+entornos urbanos y los múltiples dominios de segregación.
+
+## Propuesta de perspectiva geométrica para la medición de la segregación {#method-geometric}
+
+**CONTENIDO:** Se propone una forma alternativa de pensar los índices de
+segregación, basado en un enfoque geométrico que utilice el concepto
+matemático de simplex a partir del uso de Análisis de Correspondencias
+Múltiples (M. Greenacre & Hastie, 1987; M. J. Greenacre, 2008, 2010). Se
+desarrolla una comparación y visualización de diferentes índices
+(locales y globales) de segregación (en anexo). Se desarrollan las
+propiedades de este enfoque, destacando sus ventajas y las posibilidades
+de uso, enfatizando su uso combinado con los otros indicadores.
+
+Como hemos podido describir en la sección anterior, los métodos para
+medir la segregación tienen una larga historia y su
+
+Uno de los problemas de los índices de segregación es la
 
 La mayoría de los índices de segregación clásicos ($D$, $M$, $Eta$)
 puede reescribirse para ser interpretados como una media ponderada de la
 distancia entre la composición promedio
 
-El trabajo de @Williams1948 destaca la estrecha relación que existe
-entre el índice de disimilitud y el estadístico *chi cuadrado*
-($\chi^2$), así como su y la $\phi^2$.
+En este sentido, en su forma más abstracta un problema de segregación
+intenta medir la distribución de una variable categórica (el número de
+personas de un determinado grupo social) en diferentes unidades
+[@Elbers2023; @Williams1948]. El trabajo de @Williams1948 destaca la
+estrecha relación que existe entre el índice de disimilitud y el
+estadístico *chi cuadrado* ($\chi^2$), así como su y la $\phi^2$.
 
 La inercia expresa una distancia $\chi^2$ [@Greenacre2008]
 
@@ -227,7 +467,9 @@ y las posibilidades de uso.
 
 <!--# ¿El eigenvalue tiene margin-dependence? -->
 
-## Esquema de análisis: La medición de la segregación multi-dominio
+## Esquema de análisis {#method-scheme}
+
+### La medición de la segregación multi-dominio
 
 <!--# Se presenta brevemente el esquema de análisis y las principales decisiones metodológicas. En particular, se justifica la decisión de utilizar el nivel de estudio del hogar como proxy del nivel socioeconómico y la forma en que esta variable es categorizada. A su vez, se presentan los dominios que se abordan en la tesis (residencial, escolar y el espacio de las movilidades) y se anticipan brevemente los métodos de análisis (que son desarrollados luego en los capítulos). -->
 
@@ -258,7 +500,7 @@ bloquear el contacto con otros hogares diferentes socialmente, pero
 cercanos residencialmente. Retomando esta perspectiva, nuestro trabajo
 entiende a la segregación residencial y la homogamia actúan articulando
 en diferentes ‘niveles’ (hogar-barrio) el fenómeno de la segregación
-urbana.[^03-methods-1] En segundo lugar, el dominio de los espacios de
+urbana.[^03-methods-3] En segundo lugar, el dominio de los espacios de
 actividad supone incorporar el problema sobre cómo las movilidades
 urbanas cotidianas tienen un efecto sobre las interacciones con personas
 de otros grupos sociales. Por último, el dominio escolar es un aspecto
@@ -266,7 +508,7 @@ central de la interacción y diferenciación social, que tiene un rol
 central para la configuración de las futuras redes de relaciones
 sociales.
 
-[^03-methods-1]: En este trabajo analizamos la homogamia como un factor
+[^03-methods-3]: En este trabajo analizamos la homogamia como un factor
     que refuerza las condiciones de segregación en el ámbito
     residencial. En este sentido, podemos entender esto como parte de un
     análisis multi-nivel de la segregación (Van Ham et al., 2018).
@@ -316,68 +558,12 @@ herramientas propias del análisis espacial, la geoestadística y la
 geocomputación (Baddeley et al., 2016; Cheng et al., 2012; Lovelace
 et al., 2019; Pebesma & Bivand, 2020).
 
-### Niveles de la segregación: segregación dentro del hogar y dentro del barrio
+### Presentación del caso y las fuentes de análisis
 
-Medir la segrgación dentro del hogar (homogamia).
-
-### Segregación granular
-
-El acceso diferencial a las locaciones comunes e infraestructuras de una
-ciudad da cuenta de el grado de privación (*deprivation*). A su vez, en
-la medida en que los grupos de la población tienen una distribución no
-homogénea, esta privación puede pensarse como una medida de las
-posibilidades para que estos grupos se encuentren. En concreto, es
-posible pensar en medidas de segregación granular, teniendo en cuenta
-
-Un primer acercamiento es a partir la distancia entre esquinas/radios a
-espacios y luego medir proporción de población con acceso según grupo.
-
-Sin embargo, esto supone que todos los grupos acceden de forma igual por
-la ciudad, es decir, que la ciudad no tiene viscosidades según el lugar
-de residencia y que sólo se accede a los lugares cercanos.
-
-Una alternativa es suponer un movimiento diferencial de cada uno de los
-barrios. Para ello se pueden usar datos de la ENMODO, datos de
-conectividad de colectivos (esto supone que lo que se conecta es lo que
-se necesita conectar) o datos de SUBE. De esta manera, cada lugar de
-residencia se comunica diferencialmente con el propio barrio y con los
-otros barrios.
-
-### Allocation model
-
-El allocation model es un caso particular de medida de segregación
-granular que incorpora la restricción de ?
-
-Describir propuesta de Allocation model
-
-Describir posibilidades de uso con simulaciones
-
-Conclusiones del apartado.
-
-Medir conjuntamente la segregación en diferentes \*\*dominios\*\*.
-
--   segregación residencial
--   segregación parental
--   segregación escolar (allocation model)
--   segregación de actividades (mediante segregación granular y análisis
-    de infraestructura urbana disponible)
-
-Medir conjuntamente segregación en diferentes \*\*dimensiones\*\*.
-
--   Segregación socioeconómica
--   segregación migratoria
--   segregación racial¿?
-
-Medir conjuntamente segregación en diferentes niveles (?)
-
-Es posible incorporar una dimensión histórica(?) intra biográfica y
-
-generacional?
-
-## Presentación del caso y las fuentes de análisis
+<!--# Se hace una presentación y justificación del recorte geográfico elegido (AMBA), destacando la necesidad de que los recortes de análisis sean “sociológicamente significativos”. Se presenta la clasificación de entornos urbanos pada el AMBA propuesta por Marcos y otros (Marcos, 2021; Marcos et al., 2015; Marcos & Del Río, 2022).Por último, se describen las fuentes de datos utilizadas en el trabajo. -->
 
 En este trabajo centramos nuestro análisis en el Área Metropolitana del
-Gran Buenos Aires,[^03-methods-2] el cual es el principal aglomerado
+Gran Buenos Aires,[^03-methods-4] el cual es el principal aglomerado
 urbano de Argentina. Dentro del AMGBA se destaca la Ciudad Autónoma de
 Buenos Aires (CABA), la cual funciona como núcleo y eje articulador del
 aglomerado. En gran medida, el AMGBA es producto de la expansión de la
@@ -398,9 +584,9 @@ colonial, (2) Primera expansión de la ciudad colonial, (3) Centros
 conurbanizados vinculados a la expansión ferroviaria, (4) Complejos de
 vivienda social, (5) Urbanizaciones cerradas, (6) Urbanizaciones de
 origen informal, y los fraccionamientos por loteo formal de nivel
-socioeconómico (NSE) (7) Alto, (8) Medio y (9) Bajo.[^03-methods-3]
+socioeconómico (NSE) (7) Alto, (8) Medio y (9) Bajo.[^03-methods-5]
 
-[^03-methods-2]: Siguiendo el criterio oficial del INDEC propuesto por
+[^03-methods-4]: Siguiendo el criterio oficial del INDEC propuesto por
     [@Vapnarsky1998; ver también @Vapnarsky2004], el AMGBA es definido
     como la 'mancha urbana' que se recorta y diferencia del campo
     abierto. Operacionalmente se construye a partir de identificar la
@@ -408,7 +594,7 @@ socioeconómico (NSE) (7) Alto, (8) Medio y (9) Bajo.[^03-methods-3]
     manzanas). En este trabajo tomamos la adaptación para los datos del
     Censo 2010 hecha por @Marcos2021.
 
-[^03-methods-3]: La clasificación propuesta por Marcos recupera
+[^03-methods-5]: La clasificación propuesta por Marcos recupera
     modificando la clasificación desarrollada anteriormente para la CABA
     [@Marcos2015] la cual, a su vez, está basada en las propuestas para
     ciudades de México desarrollada en los trabajos de @Connolly2005 y
@@ -431,14 +617,13 @@ socioeconómico (NSE) (7) Alto, (8) Medio y (9) Bajo.[^03-methods-3]
 include_graphics(here("figures/INTRO_TH.png") ) #21331 fig.asp: 0.78  
 ```
 
-## Descripción de las fuentes de datos utilizadas
+Descripción de las fuentes de datos utilizadas
 
-En concreto, utilizaremos como fuente primaria la Encuesta de Movilidad
-Espacial, desarrollada por el Área de Estudios Urbanos (IIGG). Por su
-parte, como fuentes secundarias se utilizarán bases estadísticas (Censo,
-EPH y ENMODO), pero también información proveniente de registros estales
-(Relevamiento Anual o SUBE) y de registros de empresas privadas (antenas
-de celular).
+<!--# En concreto, utilizaremos como fuente primaria la Encuesta de Movilidad Espacial, desarrollada por el Área de Estudios Urbanos (IIGG).  -->
+
+Por su parte, como fuentes secundarias se utilizarán bases estadísticas
+(Censo, EPH y ENMODO),
+<!--# pero también información proveniente de registros estales (Relevamiento Anual o SUBE) y de registros de empresas privadas (antenas de celular) -->.
 
 <!-- Datos: ENMODO -->
 
@@ -454,7 +639,7 @@ de 'entorno urbano' como variable asociada a los lugares urbano de
 residencia y de destino (que fue determinado a nivel de radio censal).
 En el análisis retuvimos la totalidad de los viajes origen-destino
 realizados por los encuestados (a) dentro del AMGBA (b) que no incluyen
-como destino la propia vivienda.[^03-methods-4] Como resultado en los
+como destino la propia vivienda.[^03-methods-6] Como resultado en los
 análisis se utilizan un total de
 `r # format(nrow(db_mim), big.mark = ".", scientific = F, decimal.mark = ",")`
 viajes (sobre un total de
@@ -462,7 +647,7 @@ viajes (sobre un total de
 viajes relevados en la
 ENMODO2018).<!--# uso de encuestas de origen destino [@Heroy2023] -->
 
-[^03-methods-4]: La ENMODO 2018 relevó las prácticas de movilidad urbana
+[^03-methods-6]: La ENMODO 2018 relevó las prácticas de movilidad urbana
     en una muestra de 16.667 hogares y 42.971 personas residentes en el
     AMGBA. Los datos y especificaciones técnicas están disponibles en BA
     Data

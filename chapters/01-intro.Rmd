@@ -4,10 +4,9 @@ editor_options:
     wrap: 72
 ---
 
-```{=tex}
 \cleardoublepage
 \pagenumbering{arabic}
-```
+
 # Introducción {#intro}
 
 <!-- Presentación del problema general: El problema de la segregación en los estudios urbanos -->
