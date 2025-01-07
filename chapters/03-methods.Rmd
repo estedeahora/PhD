@@ -231,14 +231,14 @@ compuesto de población' o 'funciones de proximidad'), de manera que
 estos nuevos conteos incluyan de algún modo a las poblaciones de las
 unidades cercanas [por ejemplo: @Feitosa2007; @Wong1998; @Wong2005;
 @Reardon2004]. En lugar de modificar las medidas tradicionales 'para
-incorporar el espacio', una segunda estrategia fue la creación de
-medidas que se construyen 'en base al espacio' [@Jakubs1981;
-@Morgan1983a; @Morgan1983b; @White1983a; @Wong2011].[^03-methods-1] Un
-lugar particular ocupa el planteo de @Johnston2009, quien propone
-'incorporar más geografía' en la medición de segregación, para lo cual
-sostiene la conveniencia del uso de mapas de concentración de perfiles
-[*concentration profile*] [@Poulsen2002], en lugar de indicadores
-resúmenes.
+incorporar el espacio', una segunda estrategia diferente a las dos
+anteriores fue la creación de medidas que se construyen 'en base al
+espacio' [@Jakubs1981; @Morgan1983a; @Morgan1983b; @White1983a;
+@Wong2011a; @Osullivan2007].[^03-methods-1] Un lugar particular ocupa el
+planteo de @Johnston2009, quien propone 'incorporar más geografía' en la
+medición de segregación, para lo cual sostiene la conveniencia del uso
+de mapas de concentración de perfiles [*concentration profile*]
+[@Poulsen2002], en lugar de indicadores resúmenes.
 
 [^03-methods-1]: Un resumen detallado de estos desarrollos puede
     encontrarse en @Wong2016 y @Yao2019.
@@ -427,43 +427,135 @@ entornos urbanos y los múltiples dominios de segregación.
 
 ## Propuesta de perspectiva geométrica para la medición de la segregación {#method-geometric}
 
-**CONTENIDO:** Se propone una forma alternativa de pensar los índices de
-segregación, basado en un enfoque geométrico que utilice el concepto
-matemático de simplex a partir del uso de Análisis de Correspondencias
-Múltiples (M. Greenacre & Hastie, 1987; M. J. Greenacre, 2008, 2010). Se
-desarrolla una comparación y visualización de diferentes índices
-(locales y globales) de segregación (en anexo). Se desarrollan las
-propiedades de este enfoque, destacando sus ventajas y las posibilidades
-de uso, enfatizando su uso combinado con los otros indicadores.
+<!--# Como hemos podido describir en la sección anterior, los métodos para medir la segregación tienen una larga historia y su -->
 
-Como hemos podido describir en la sección anterior, los métodos para
-medir la segregación tienen una larga historia y su
+Tomando en cuenta esta historia de desarrollo de las formas de medir la
+segregación, en esta tesis proponemos incorporar un nuevo enfoque,
+basado en la técnica del análisis de correspondencias.
 
-Uno de los problemas de los índices de segregación es la
+Como han señalado diferentes autores, las matrices de segregación (sobre
+las que se construye la gran mayoría de los indicadores, no son más que
+una matriz ($m = n \times c$) con $n$ unidades/filas por $c$
+categorías/columnas, en las que cada celda individual ($v_{ij}$)
+corresponde a la cantidad de alumnos de la categoría/columna $j$ que hay
+en la unidad/fila $i$. En su forma más abstracta, esta tabla no es más
+que una tabla bivariada de doble entrada que muestra la distribución de
+una variable categórica (el número de personas de un determinado grupo
+social) en diferentes unidades [@Elbers2023; @Williams1948]. Desde este
+enfoque, el problema de construir medidas de segregación se puede
+reducir a generar una función que devuelva un valor numérico único a
+partir de dicha matriz ($f(m)$) . Observando la equivalencia de este
+problema con otros similares en el campo de los estudios sociales,
+@Williams1948 destaca la estrecha relación que existe entre el índice de
+disimilitud y el estadístico *chi cuadrado* ($\chi^2$), así como su y la
+$\phi^2$.
 
-La mayoría de los índices de segregación clásicos ($D$, $M$, $Eta$)
-puede reescribirse para ser interpretados como una media ponderada de la
-distancia entre la composición promedio
+En este sentido, la mayoría de los índices de segregación clásicos ($D$,
+$M$, $Eta$) puede reescribirse para ser interpretados como una media
+ponderada de la 'distancia' entre la composición promedio de una unidad
+y la distribución
 
-En este sentido, en su forma más abstracta un problema de segregación
-intenta medir la distribución de una variable categórica (el número de
-personas de un determinado grupo social) en diferentes unidades
-[@Elbers2023; @Williams1948]. El trabajo de @Williams1948 destaca la
-estrecha relación que existe entre el índice de disimilitud y el
-estadístico *chi cuadrado* ($\chi^2$), así como su y la $\phi^2$.
+El uso de análisis de correspondencias permite
 
-La inercia expresa una distancia $\chi^2$ [@Greenacre2008]
+<!-- Se propone una forma alternativa de pensar los índices de segregación, basado en un enfoque geométrico que utilice el concepto matemático de simplex a partir del uso de Análisis de Correspondencias Múltiples (M. Greenacre & Hastie, 1987; M. J. Greenacre, 2008, 2010). -->
 
-Se propone una forma alternativa de pensar los índices de segregación,
-basado en un enfoque geométrico que utilice el concepto matemático de
-simplex a partir del uso de Análisis de Correspondencias Múltiples *(M.
-Greenacre & Hastie, 1987; M. J. Greenacre, 2008, 2010)*.
+La inercia <!--# REVISAR BIEN TODO ESTO -->expresa una distancia
+$\chi^2$ [@Greenacre2008], y la inercia no es más que el promedio
+geométrico de dicha distancia.[^03-methods-3] En este sentido, de la
+misma forma que la inercia puede ser un indicador válido de la
+dipspersión
 
-Se desarrolla una comparación y visualización de diferentes índices
-(locales y globales) de segregación.
+[^03-methods-3]: En el anexo <!--#  --> se presenta una comparación
+    sistemática entre la inercia y las distancias individuales $\chi^2$
+    de cada unidad, frente a otros índices habitualmente utilizados.
 
-Se desarrollan las propiedades de este enfoque, destacando sus ventajas
-y las posibilidades de uso.
+Si bien este enfoque no muestra
+
+<!-- Propiedades, ventajas y posibilidades -->
+
+Se podría argumentar que ya existen demasiadas medidas de segregación y
+que, dado que esta es similar a las anteriores, no tiene sentido sumar
+una nueva medida. Sin embargo, existe algunas ventajas en este nuevo
+enfoque que me gustaría destacar.
+
+<!-- 1. Visualización bidimensional -->
+
+En primer lugar, este enfoque permite una visualización de la
+distribución de las unidades en función de las categorías. Esta
+representación es bidimensional sin perdidas de información cuando la
+cantidad de categorías es igual a 3 (como en esta tesis) y, dado que se
+trata de una técnica de reducción de dimensionalidad, suele tener una
+pérdida baja de información cuando el número de categorías es mayor.
+Cuando existen dos categorías, la representación es unidimensional
+(lineal). <!-- 2. Multigrupo-->
+
+<!-- 3. Índice local  -->
+
+Una tercera característica, derivada de la anterior, es que esta
+representación gráfica permite tener una visualización gráfica de la
+segregación local de cada unidad, en tanto esta está expresada como la
+distancia ($\chi^2$) de cada unidad con respecto al eje de coordenadas
+del plano.
+
+<!-- 4. dirección -->
+
+Además, una característica adicional, quizás la más interesante, es la
+posibilidad de definir la 'dirección' de la segregación local. Las
+medidas de segregación locales utilziadas habitualmente se definen como
+la dispersión de cada unidad respecto a la distribución global, pero no
+indican el sentido en que estas unidades se diferencian. A modo
+ilustrativo, para una ciudad con una composición equitativa de dos
+grupos (50% cada uno), si una unidad tiene 25% del Grupo A tendrá el
+mismo valor que otra unidad que tenga 25% del Grupo B, ya que ambas
+aportan la misma dispersión. En la práctica del análisis social esto es
+poco conveniente ya que habitualmente no es lo mismo una unidad
+segregada en la que predominan los grupos privilegiados que una donde
+predominan los desfavorecidos. Además, esto permite
+
+<!-- 5. Composición /descomposición -->
+
+Una quinta característica se vincula con las característica <!--#  -->
+puede componerse (y descomponerce), de manera que el valor local de
+segregación de agrupar dos (o más) unidades es el promedio geométrico
+(centroide) ponderado por el tamaño de estas unidades.
+
+<!-- 6. Posibilidades de espacialización  -->
+
+En sexto lugar, dado que trabaja sobre la distribución de la matriz de
+segregación, es posible generar correcciones geográficas a partir de la
+modificación de los conteos en las unidades espaciales (usando 'recuento
+compuesto de población' o 'funciones de proximidad', como señalamos
+anteriormente), consiguiendo que los conteos modificados incluyan
+información sobre las poblaciones de las unidades vecinas [ver:
+@Feitosa2007; @Wong1998; @Wong2005; @Reardon2004].
+
+<!-- 7. Posibilidades expansiones -->
+
+Por último, el análisis de correspondencias es una técnica ampliamente
+utilizada en las ciencias sociales, lo que permite utilizar los
+conocimientos acumulados para expandirlo como indicador de segregación.
+En este sentido, el uso de columnas/filas suplementarias (no utilizadas
+en el cálculo pero que pueden ser proyectadas en la solución final)
+permitiría relacionar los indicadores de segregación con otras
+variables. Además, la posibilidad de utilizar esta técnica de reducción
+de dimensionalidad en conjunto con técnicas de agrupamiento (*cluster*),
+vuelve posible tener un agrupamiento de las unidades en función de su
+'lugar' dentro del plano de segregación, obteniendo una tipología de los
+perfiles que es fácilmente representable en el plano bidimensional y,
+obviamente, 'mapeable' en el espacio para ser utilizable junto a
+técnicas de análisis espacial.
+
+<!-- Síntesis de propiedades -->
+
+En resumen, este enfoque permite tener una medida de segregación
+multigrupo y que se relaciona con una medida de segregación local que
+puede ser componible y permite entender la dirección en la que cada
+unidad contribuye a la segregación. Además, esta medida se asocia con
+una visualización intuitiva que puede ser utilizada para un número alto
+de categorías. En este sentido, este enfoque recupera el reclamo hecho
+por @Poulsen2002 cuando proponía utilizar los *perfiles de
+concentración,* pero sumando a esto la posibilidad de mantener las
+características que brindan otros índices de segregación.
 
 <!--# ¿El eigenvalue tiene margin-dependence? -->
 
@@ -471,92 +563,126 @@ y las posibilidades de uso.
 
 ### La medición de la segregación multi-dominio
 
-<!--# Se presenta brevemente el esquema de análisis y las principales decisiones metodológicas. En particular, se justifica la decisión de utilizar el nivel de estudio del hogar como proxy del nivel socioeconómico y la forma en que esta variable es categorizada. A su vez, se presentan los dominios que se abordan en la tesis (residencial, escolar y el espacio de las movilidades) y se anticipan brevemente los métodos de análisis (que son desarrollados luego en los capítulos). -->
+<!-- Segregación socioeconómica -->
 
-A diferencia de lo que sucede en Estados Unidos o la mayoría de los
-países europeos donde el estudio de la segregación está vinculado a las
-diferencias raciales o migratorias, en los países latinoamericanos la
-segregación ha sido estudiada fundamentalmente vinculada a las
-diferencias socioeconómicas (Duhau, 2013; Groisman, 2010; Ward, 2012).
-En este trabajo utilizamos el nivel de estudio del hogar como proxy del
-nivel socioeconómico, lo cual es una práctica utilizada en estudios de
-este tipo, tanto a nivel internacional (He et al., 2022; Marcińczak
-et al., 2013; Monkkonen et al., 2021) como nacional (Groisman & Suárez,
-2009; Molinatti, 2021). En concreto se definen tres niveles para los
-grupos educativos en base al criterio de ‘ciclos completos’ (Hasta
-primario completo; Secundario completo; Superior completo).
+Siguiendo la tradición de estudios sobre segregación de los países
+latinoamericanos [@Duhau2013a; @Groisman2010; @Ward2012], en este
+trabajo analizaremos la segregación 'socio-económica', es decir, aquella
+vinculada a diferencias de clase entre los grupos sociales.
+Habitualmente en los estudios de la segregación hechos en Estados Unidos
+y Europa, las diferencias entre grupso consideradas son fundamentalmente
+étnico-religiosas, raciales o migratorias. Sin embargo, en Latinoamérica
+y, particularmente, en Argentina el principal *clivaje* de los estudios
+de segregación ha sido la clase social y las diferencias
+socio-económicas, estando las otras diferencias contenidas en esta
+última.
 
-En cuanto a los dominios elegidos, el trabajo considera el dominio
-residencial, escolar y el espacio de las movilidades. En primer lugar,
-como señalamos anteriormente, el dominio residencial y barrial es
-ampliamente reconocido como un espacio central para el análisis de las
-interacciones. En particular, el efecto de la segregación residencial se
-ve reforzada cuando existen altos niveles de homogamia en los hogares,
-en tanto la homogeneidad dentro de los hogares, puede contrarrestar la
-heterogeneidad a nivel del vecindario (Tammaru et al., 2021). Que ambos
-miembros de la pareja compartan el mismo ‘estatus’ puede reforzar las
-ventajas / desventajas asociadas a estos grupos sociales y, en paralelo,
-bloquear el contacto con otros hogares diferentes socialmente, pero
-cercanos residencialmente. Retomando esta perspectiva, nuestro trabajo
-entiende a la segregación residencial y la homogamia actúan articulando
-en diferentes ‘niveles’ (hogar-barrio) el fenómeno de la segregación
-urbana.[^03-methods-3] En segundo lugar, el dominio de los espacios de
-actividad supone incorporar el problema sobre cómo las movilidades
-urbanas cotidianas tienen un efecto sobre las interacciones con personas
-de otros grupos sociales. Por último, el dominio escolar es un aspecto
-central de la interacción y diferenciación social, que tiene un rol
-central para la configuración de las futuras redes de relaciones
-sociales.
+<!-- Educación como proxy y niveles utilizados -->
 
-[^03-methods-3]: En este trabajo analizamos la homogamia como un factor
-    que refuerza las condiciones de segregación en el ámbito
-    residencial. En este sentido, podemos entender esto como parte de un
-    análisis multi-nivel de la segregación (Van Ham et al., 2018).
-    Respecto a la relación entre estos aspectos, podemos destacar que
-    existen diversos trabajos que analizan la segregación residencial y
-    la homogamia de forma conjunta (Duncan & Lieberson, 1959; Morgan,
-    1981; Peach, 1974, 1980), dando cuenta de cómo ambos aspectos están
-    fuertemente asociados. En sintonía con estos resultados, los
-    trabajos actuales identifican que una mayor exposición con personas
-    de grupos distintos aumenta las probabilidades de conformación de
-    parejas mixtas (Kalmijn & Van Tubergen, 2010; Puur et al., 2022),
-    aunque existen menos trabajos que indaguen sobre cómo se da esta
-    relación. A nivel local, los trabajos sobre estratificación han
-    profundizado poco la relación con los aspectos residenciales (una
-    excepción es el trabajo de Carrascosa & Estévez Leston, 2023). Más
-    allá de esta relación, estos estudios señalan un crecimiento durante
-    las últimas décadas de la homogamia conyugal, siendo más
-    significativa este cambio para los grupos sociales extremos (Gómez
-    Rojas, 2007; Mazzeo, 2012; Rodríguez, 2011, 2012, 2016).
+Siguiendo esta perspectiva, en este trabajo utilizamos el nivel de
+estudio del hogar como variable *proxy* del nivel socioeconómico, lo
+cual es una práctica utilizada en estudios de este tipo, tanto a nivel
+internacional [@He2022a; @Marcinczak2013; @Monkkonen2021] como regional
+[@Groisman2010; @Molinatti2021]. El uso del nivel de estudio (en lugar
+de variables relacionadas a la inserción dentro del mercado de trabajo)
+se fundamenta en limitaciones en los datos disponibles, siendo la
+variable nivel de estudio una variable presente en la mayoría de las
+fuentes disponibles y que tiene una fuerte correlación con el nivel
+socioeconómico. En concreto, se definen tres niveles para los grupos
+educativos en base al criterio de ‘ciclos completos’, es decir que se
+haya finalizado el nivel educativo, a saber: (a) Hasta primario
+completo; (b) Secundario completo; (c) Superior completo. La elección de
+ciclos completos se debe a que la finalización de los ciclos educativos
+es la que otorga las credenciales que permiten su uso en el mercado
+laboral. Además, hemos unificado el nivel superior, incluyendo en esta
+categoría el nivel superior universitario y el nivel superior
+no-universitario (que incluye, mayormente, la formación
+técnico-profesional y docente). Esto se debe a que en nuestra práctica
+hemos encontrado muchos errores de captación respecto a la diferencia
+entre ambos niveles, lo cual es fundamentalmente cierto para los
+cuestionarios aplicados a estudiantes (en las pruebas educativas
+utilizadas).
 
-El trabajo utiliza datos censales del Censo Nacional de Población,
-Hogares y Viviendas 2010 (INDEC) y de las Pruebas Aprender (ME), así
-como datos muestrales de la Encuesta de Movilidad Domiciliaria 2018
-(ENMODO2018-GCBA). Uno de los grandes desafíos del presente trabajo está
-relacionado con la dificultad de medir simultáneamente los diferentes
-dominios de la segregación. A diferencia de lo que sucede en algunos
-países con sistemas de registros administrativos consolidados y
-fuertemente articulados con los sistemas estadísticos, en Argentina no
-existen fuentes de datos que permitan acceder a información individual
-que permita medir la segregación en diferentes dominios de la vida
-social. Por ello uno de los desafíos que aborda esta tesis es el uso
-articulado de las fuentes disponibles y la propuesta de técnicas
-estadísticas que permitan su uso combinado.
+<!-- Dominios de análisis -->
+
+En cuanto a los dominios elegidos, el trabajo considera tres dominios:
+el residencial, el escolar y el espacio de las movilidades. En primer
+lugar, como señalamos anteriormente, el *dominio residencial / barrial*
+es ampliamente reconocido por la literatura como un eje articulador de
+los espacios de vida. Por este motivo, en este trabajo de tesis es uno
+de los dominios que mayor importancia tiene dentro del análisis. En la
+práctica, este trabajo se centra en analizar la interacción entre el
+dominio residencial y los otros dominios. En segundo lugar, el dominio
+de los *espacios de actividad* incorpora el problema sobre cómo las
+movilidades urbanas cotidianas tienen un efecto sobre las interacciones
+con personas de otros grupos sociales, en tanto nos ponen en contacto
+con otros en lugares diferentes de la propia residencia. Por último, si
+bien el *dominio escolar* puede ser consdierado como un 'subdominio'
+dentro del espacio de actividad, tiene un rol central en los esquemas de
+diferenciación y estratificación social, es un espacio nodal en la
+configura las futuras redes de relaciones sociales y en la consolidación
+del marco de relaciones de los hogares. Por estos motivos consideramos
+que su tratamiento separado puede ser interesante para analizar la
+segregación multi-dominio.
+
+<!-- Hogar como unidad de análisis -->
+
+Un aspecto relevante respecto a la estrategia metodológica se refiere a
+la unidad de análisis y a cómo esta se considera para compatibilizar las
+diferentes fuentes de datos y análisis de segregación que componen este
+trabajo. Habitualmente los trabajos que sólo consideran la segregación
+residencial utilizan al conjunto de personas mayores de cierta edad, lo
+cual tiene sentido, en tanto estas comparten un territorio de
+intercambio. Sin embargo, este enfoque 'individualista' oculta que más
+allá de que el nivel de estudio puede ser un atributo individual, la
+clase social (que el nivel de estudio pretende representar en estos
+análisis) es una condición que se describe mejor al nivel del hogar. En
+este sentido, en este trabajo consdieramos al hogar como eje de nuestro
+análisis. Como ventaja adicional, la elección del hogar como unidad de
+análisis nos permite coordinar los análisis en todos los dominios
+propuestos. En concreto, asignamos el nivel educativo del hogar (como
+dijimos, *proxy* de la clase social) considerando el mayor nivel
+educativo entre las personas que son identificadas como el jefe de hogar
+o su pareja (cónyuge). En el caso de las evaluaciones educativas se
+considera el mayor nivel educativo entre los madres/padres declarados.
+<!--# Como alternativa, algunos trabajos toman la condición educativa del 'principal sostén' o del 'jefe del hogar', lo cual es correcto, pero puede llevar a sesgos de género.  -->
+
+Como contrapartida, la elección del hogar como unidad de análisis tiene
+el riesgo de 'esconder' la diversidad que puede existir dentro de los
+hogares. En particular, el efecto de la segregación residencial se ve
+reforzada cuando existen altos niveles de homogamia en los hogares, en
+tanto la homogeneidad dentro de los hogares, puede contrarrestar la
+heterogeneidad a nivel del vecindario [@Tammaru2021]. Que ambos miembros
+de la pareja compartan el mismo ‘estatus’ puede reforzar las ventajas /
+desventajas asociadas a estos grupos sociales y, en paralelo, bloquear
+el contacto con otros hogares diferentes socialmente, pero cercanos
+residencialmente. Retomando esta perspectiva, nuestro trabajo entiende a
+la segregación residencial y la homogamia actúan articulando en
+diferentes ‘niveles’ (hogar-barrio) el fenómeno de la segregación
+urbana. En este trabajo analizamos la homogamia como un factor que
+refuerza las condiciones de segregación en el ámbito residencial, pero
+no como un dominio de la segregación en sí mismo. Esto se debe a que la
+segregación es definida en este trabajo como <!--# DESARROLLAR -->el
+análisis de los espacios que puedan la posibilidad de gene. En este
+sentido, podemos entender esto como parte de un análisis multi-nivel de
+la segregación [@VanHam2018]. Sin embargo, consideramos que no debe
+entenderse
+
+<!--# Se anticipan brevemente los métodos de análisis (que son desarrollados luego en los capítulos).  -->
 
 Respecto al análisis se propone un diseño metodológico cuantitativo, en
 el que se combinan diferentes técnicas estadísticas como: análisis de
-redes sociales (Borgatti et al., 2014), modelos de regresión lineal
-generalizados (Roback & Legler, 2021), técnicas para la reducción de
-dimensiones (M. J. Greenacre, 2008; Husson et al., 2017) y el
-agrupamiento de clústeres (Wierzchoń & Kłopotek, 2018). A su vez, se
-propone la utilización de modelos basados en programación lineal entera
-(Berkelaar et al., 2004) para comparar los resultados empíricos con
-situaciones hipotéticas. Además, haremos uso de indicadores clásicas de
-segregación, utilizadas habitualmente en los estudios de este tipo
-(Tivadar, 2019). Por último, todas estas técnicas se combinan con
-herramientas propias del análisis espacial, la geoestadística y la
-geocomputación (Baddeley et al., 2016; Cheng et al., 2012; Lovelace
-et al., 2019; Pebesma & Bivand, 2020).
+redes sociales [@Borgatti2014], modelos de regresión lineal
+generalizados [@Roback2021], técnicas para la reducción de dimensiones
+[@Greenacre2008; @Husson2017] y el agrupamiento de clústeres
+[@Wierzchon2018]. A su vez, se propone la utilización de modelos basados
+en programación lineal entera [@Berkelaar2004] para comparar los
+resultados empíricos con situaciones hipotéticas. Además, haremos uso de
+indicadores clásicas de segregación, utilizadas habitualmente en los
+estudios de este tipo [@Tivadar2019; @Elbers2023]. Por último, todas
+estas técnicas se combinan con herramientas propias del análisis
+espacial, la geoestadística y la geocomputación [@Baddeley2015;
+@Cheng2012; @Lovelace2019a; @Pebesma2020].
 
 ### Presentación del caso y las fuentes de análisis
 
@@ -611,26 +737,36 @@ socioeconómico (NSE) (7) Alto, (8) Medio y (9) Bajo.[^03-methods-5]
     estos entornos, teniendo en cuenta que muchas veces pueden esconder
     situaciones mixtas.
 
-```{r TH}
+```{r TH, out.width="100%", fig.asp=0.96}
 #| fig.cap: "Entornos urbanos en el AMGBA. Elaboración propia en base a Marcos (2021; 2022)."   
 
-include_graphics(here("figures/INTRO_TH.png") ) #21331 fig.asp: 0.78  
+knitr::include_graphics(here::here("figures", "INTRO_TH.png") ) #21331 fig.asp: 0.78  
 ```
 
-Descripción de las fuentes de datos utilizadas
+<!-- Descripción de las fuentes de datos utilizadas -->
 
-<!--# En concreto, utilizaremos como fuente primaria la Encuesta de Movilidad Espacial, desarrollada por el Área de Estudios Urbanos (IIGG).  -->
+El trabajo utiliza una variedad de fuentes de datos.
 
-Por su parte, como fuentes secundarias se utilizarán bases estadísticas
-(Censo, EPH y ENMODO),
-<!--# pero también información proveniente de registros estales (Relevamiento Anual o SUBE) y de registros de empresas privadas (antenas de celular) -->.
+Uno de los grandes desafíos del presente trabajo está relacionado con la
+dificultad de medir simultáneamente los diferentes dominios de la
+segregación. A diferencia de lo que sucede en algunos países con
+sistemas de registros administrativos consolidados y fuertemente
+articulados con los sistemas estadísticos, en Argentina no existen
+fuentes de datos que permitan acceder a información individual que
+permita medir la segregación en diferentes dominios de la vida social.
+Por ello uno de los desafíos que aborda esta tesis es el uso articulado
+de las fuentes disponibles y la propuesta de técnicas estadísticas que
+permitan su uso combinado.
 
-<!-- Datos: ENMODO -->
+Por un lado se utilizan los datos de población del Censo Nacional de
+Población, Hogares y Viviendas 2010 (INDEC)
 
-En este trabajo utilizamos los datos de la *Encuesta de Movilidad
-Domiciliaria* realizada en 2018 (ENMODO2018). Esta encuesta permite
-conocer los movilidades cotidianas urbanas de la población del AMGBA. Si
-bien los datos de movilidad están disponibles a nivel de radio censal
+Los datos educativos son tomados de las Pruebas Aprender (ME).
+
+Por último, se utilizan datos de la *Encuesta de Movilidad Domiciliaria*
+realizada en 2018 (ENMODO2018). Esta encuesta permite conocer los
+movilidades cotidianas urbanas de la población del AMGBA. Si bien los
+datos de movilidad están disponibles a nivel de radio censal
 (aproximadamente 300 viviendas), en este trabajo hemos utilizado las
 fracciones censales (aproximadamente 5.000 viviendas) como escala de
 análisis, con el fin de minimizar el efecto que pudiera tener la

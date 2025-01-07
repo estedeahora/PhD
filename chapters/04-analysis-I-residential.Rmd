@@ -269,12 +269,10 @@ deteriorados, con grandes focos de informalidad residencial y malas vía
 de conexión con la CABA, lo que da como resultado un aislamiento de los
 pobres urbanos [@Soldano2008].
 
-```{r SEGRE-RES}
+```{r SEGRE-RES, out.width="100%", fig.asp=0.606}
 #| fig.cap: "Segregación local en el AMGBA (Índice de Información Mutua). Se destacan con recuadros y los detalles las zonas profundizadas en el análisis."
 
-
 include_graphics(here("figures/SEG-RES_AMGBA-con-detalle.png"))
-#    #| fig.asp: 1.72
 ```
 
 **[ ] TODO** Agregar análisis de CA para mostrar alta segregación con

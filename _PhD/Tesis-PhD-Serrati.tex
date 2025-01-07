@@ -169,7 +169,7 @@
 
 \title{Segregación urbana multi-dominio en el Aglomerado Metropolitano del Gran Buenos Aires (Argentina)}
 \author{Pablo Santiago Serrati}
-\date{Octubre 2024}
+\date{Enero 2025}
 \supervisor{Dra. María Mercedes Di Virgilio}
 \logo{template/logo\_UBA-Sociales2.jpg}
 \university{Universidad Nacional de Buenos Aires}
@@ -1977,14 +1977,14 @@ conteos dentro de las propias unidades espaciales (mediante `recuento
 compuesto de población' o `funciones de proximidad'), de manera que
 estos nuevos conteos incluyan de algún modo a las poblaciones de las
 unidades cercanas (por ejemplo: \citeproc{ref-Feitosa2007}{Feitosa et~al., 2007}; \citeproc{ref-Reardon2004}{Reardon y O'Sullivan, 2004}; \citeproc{ref-Wong1998}{Wong, 1998}, \citeproc{ref-Wong2005}{2005}). En lugar de modificar las medidas tradicionales `para
-incorporar el espacio', una segunda estrategia fue la creación de
-medidas que se construyen `en base al espacio' (\citeproc{ref-Jakubs1981}{Jakubs, 1981}; \citeproc{ref-Morgan1983a}{Barrie S. Morgan, 1983a}, \citeproc{ref-Morgan1983b}{1983b}; \citeproc{ref-White1983a}{White, 1983}; \citeproc{ref-Wong2011}{Wong y Shaw, 2011}).\footnote{Un resumen detallado de estos desarrollos puede
-  encontrarse en Wong (\citeproc{ref-Wong2016}{2016}) y Yao et~al. (\citeproc{ref-Yao2019}{2019}).} Un
-lugar particular ocupa el planteo de Johnston et~al. (\citeproc{ref-Johnston2009}{2009}), quien propone
-`incorporar más geografía' en la medición de segregación, para lo cual
-sostiene la conveniencia del uso de mapas de concentración de perfiles
-{[}\emph{concentration profile}{]} (\citeproc{ref-Poulsen2002}{Poulsen et~al., 2002}), en lugar de indicadores
-resúmenes.
+incorporar el espacio', una segunda estrategia diferente a las dos
+anteriores fue la creación de medidas que se construyen `en base al
+espacio' (\citeproc{ref-Jakubs1981}{Jakubs, 1981}; \citeproc{ref-Morgan1983a}{Barrie S. Morgan, 1983a}, \citeproc{ref-Morgan1983b}{1983b}; \citeproc{ref-White1983a}{White, 1983}; \citeproc{ref-Wong2011}{Wong y Shaw, 2011}).\footnote{Un resumen detallado de estos desarrollos puede
+  encontrarse en Wong (\citeproc{ref-Wong2016}{2016}) y Yao et~al. (\citeproc{ref-Yao2019}{2019}).} Un lugar particular ocupa el planteo de
+Johnston et~al. (\citeproc{ref-Johnston2009}{2009}), quien propone `incorporar más geografía' en la medición
+de segregación, para lo cual sostiene la conveniencia del uso de mapas
+de concentración de perfiles {[}\emph{concentration profile}{]} (\citeproc{ref-Poulsen2002}{Poulsen et~al., 2002}),
+en lugar de indicadores resúmenes.
 
 Un segundo grupo de trabajos propusieron ampliar las medidas de
 segregación para abordar la existencia de múltiples grupos.
@@ -2152,115 +2152,209 @@ entornos urbanos y los múltiples dominios de segregación.
 
 \section{Propuesta de perspectiva geométrica para la medición de la segregación}\label{method-geometric}
 
-\textbf{CONTENIDO:} Se propone una forma alternativa de pensar los índices de
-segregación, basado en un enfoque geométrico que utilice el concepto
-matemático de simplex a partir del uso de Análisis de Correspondencias
-Múltiples (M. Greenacre \& Hastie, 1987; M. J. Greenacre, 2008, 2010). Se
-desarrolla una comparación y visualización de diferentes índices
-(locales y globales) de segregación (en anexo). Se desarrollan las
-propiedades de este enfoque, destacando sus ventajas y las posibilidades
-de uso, enfatizando su uso combinado con los otros indicadores.
+Tomando en cuenta esta historia de desarrollo de las formas de medir la
+segregación, en esta tesis proponemos incorporar un nuevo enfoque,
+basado en la técnica del análisis de correspondencias.
 
-Como hemos podido describir en la sección anterior, los métodos para
-medir la segregación tienen una larga historia y su
+Como han señalado diferentes autores, las matrices de segregación (sobre
+las que se construye la gran mayoría de los indicadores, no son más que
+una matriz (\(m = n \times c\)) con \(n\) unidades/filas por \(c\)
+categorías/columnas, en las que cada celda individual (\(v_{ij}\))
+corresponde a la cantidad de alumnos de la categoría/columna \(j\) que hay
+en la unidad/fila \(i\). En su forma más abstracta, esta tabla no es más
+que una tabla bivariada de doble entrada que muestra la distribución de
+una variable categórica (el número de personas de un determinado grupo
+social) en diferentes unidades (\citeproc{ref-Elbers2023}{Elbers, 2023}; \citeproc{ref-Williams1948}{Williams, 1948}). Desde este
+enfoque, el problema de construir medidas de segregación se puede
+reducir a generar una función que devuelva un valor numérico único a
+partir de dicha matriz (\(f(m)\)) . Observando la equivalencia de este
+problema con otros similares en el campo de los estudios sociales,
+Williams (\citeproc{ref-Williams1948}{1948}) destaca la estrecha relación que existe entre el índice de
+disimilitud y el estadístico \emph{chi cuadrado} (\(\chi^2\)), así como su y la
+\(\phi^2\).
 
-Uno de los problemas de los índices de segregación es la
+En este sentido, la mayoría de los índices de segregación clásicos (\(D\),
+\(M\), \(Eta\)) puede reescribirse para ser interpretados como una media
+ponderada de la `distancia' entre la composición promedio de una unidad
+y la distribución
 
-La mayoría de los índices de segregación clásicos (\(D\), \(M\), \(Eta\))
-puede reescribirse para ser interpretados como una media ponderada de la
-distancia entre la composición promedio
+El uso de análisis de correspondencias permite
 
-En este sentido, en su forma más abstracta un problema de segregación
-intenta medir la distribución de una variable categórica (el número de
-personas de un determinado grupo social) en diferentes unidades
-(\citeproc{ref-Elbers2023}{Elbers, 2023}; \citeproc{ref-Williams1948}{Williams, 1948}). El trabajo de Williams (\citeproc{ref-Williams1948}{1948}) destaca la
-estrecha relación que existe entre el índice de disimilitud y el
-estadístico \emph{chi cuadrado} (\(\chi^2\)), así como su y la \(\phi^2\).
+La inercia expresa una distancia
+\(\chi^2\) (\citeproc{ref-Greenacre2008}{Greenacre, 2008}), y la inercia no es más que el promedio
+geométrico de dicha distancia.\footnote{En el anexo se presenta una comparación
+  sistemática entre la inercia y las distancias individuales \(\chi^2\)
+  de cada unidad, frente a otros índices habitualmente utilizados.} En este sentido, de la
+misma forma que la inercia puede ser un indicador válido de la
+dipspersión
 
-La inercia expresa una distancia \(\chi^2\) (\citeproc{ref-Greenacre2008}{Greenacre, 2008})
+Si bien este enfoque no muestra
 
-Se propone una forma alternativa de pensar los índices de segregación,
-basado en un enfoque geométrico que utilice el concepto matemático de
-simplex a partir del uso de Análisis de Correspondencias Múltiples \emph{(M.
-Greenacre \& Hastie, 1987; M. J. Greenacre, 2008, 2010)}.
+Se podría argumentar que ya existen demasiadas medidas de segregación y
+que, dado que esta es similar a las anteriores, no tiene sentido sumar
+una nueva medida. Sin embargo, existe algunas ventajas en este nuevo
+enfoque que me gustaría destacar.
 
-Se desarrolla una comparación y visualización de diferentes índices
-(locales y globales) de segregación.
+En primer lugar, este enfoque permite una visualización de la
+distribución de las unidades en función de las categorías. Esta
+representación es bidimensional sin perdidas de información cuando la
+cantidad de categorías es igual a 3 (como en esta tesis) y, dado que se
+trata de una técnica de reducción de dimensionalidad, suele tener una
+pérdida baja de información cuando el número de categorías es mayor.
+Cuando existen dos categorías, la representación es unidimensional
+(lineal).
 
-Se desarrollan las propiedades de este enfoque, destacando sus ventajas
-y las posibilidades de uso.
+Una tercera característica, derivada de la anterior, es que esta
+representación gráfica permite tener una visualización gráfica de la
+segregación local de cada unidad, en tanto esta está expresada como la
+distancia (\(\chi^2\)) de cada unidad con respecto al eje de coordenadas
+del plano.
+
+Además, una característica adicional, quizás la más interesante, es la
+posibilidad de definir la `dirección' de la segregación local. Las
+medidas de segregación locales utilziadas habitualmente se definen como
+la dispersión de cada unidad respecto a la distribución global, pero no
+indican el sentido en que estas unidades se diferencian. A modo
+ilustrativo, para una ciudad con una composición equitativa de dos
+grupos (50\% cada uno), si una unidad tiene 25\% del Grupo A tendrá el
+mismo valor que otra unidad que tenga 25\% del Grupo B, ya que ambas
+aportan la misma dispersión. En la práctica del análisis social esto es
+poco conveniente ya que habitualmente no es lo mismo una unidad
+segregada en la que predominan los grupos privilegiados que una donde
+predominan los desfavorecidos. Además, esto permite
+
+Una quinta característica se vincula con las característica
+puede componerse (y descomponerce), de manera que el valor local de
+segregación de agrupar dos (o más) unidades es el promedio geométrico
+(centroide) ponderado por el tamaño de estas unidades.
+
+En sexto lugar, dado que trabaja sobre la distribución de la matriz de
+segregación, es posible generar correcciones geográficas a partir de la
+modificación de los conteos en las unidades espaciales (usando `recuento
+compuesto de población' o `funciones de proximidad', como señalamos
+anteriormente), consiguiendo que los conteos modificados incluyan
+información sobre las poblaciones de las unidades vecinas (ver: \citeproc{ref-Feitosa2007}{Feitosa et~al., 2007}; \citeproc{ref-Reardon2004}{Reardon y O'Sullivan, 2004}; \citeproc{ref-Wong1998}{Wong, 1998}, \citeproc{ref-Wong2005}{2005}).
+
+Por último, el análisis de correspondencias es una técnica ampliamente
+utilizada en las ciencias sociales, lo que permite utilizar los
+conocimientos acumulados para expandirlo como indicador de segregación.
+En este sentido, el uso de columnas/filas suplementarias (no utilizadas
+en el cálculo pero que pueden ser proyectadas en la solución final)
+permitiría relacionar los indicadores de segregación con otras
+variables. Además, la posibilidad de utilizar esta técnica de reducción
+de dimensionalidad en conjunto con técnicas de agrupamiento (\emph{cluster}),
+vuelve posible tener un agrupamiento de las unidades en función de su
+`lugar' dentro del plano de segregación, obteniendo una tipología de los
+perfiles que es fácilmente representable en el plano bidimensional y,
+obviamente, `mapeable' en el espacio para ser utilizable junto a
+técnicas de análisis espacial.
+
+En resumen, este enfoque permite tener una medida de segregación
+multigrupo y que se relaciona con una medida de segregación local que
+puede ser componible y permite entender la dirección en la que cada
+unidad contribuye a la segregación. Además, esta medida se asocia con
+una visualización intuitiva que puede ser utilizada para un número alto
+de categorías. En este sentido, este enfoque recupera el reclamo hecho
+por Poulsen et~al. (\citeproc{ref-Poulsen2002}{2002}) cuando proponía utilizar los \emph{perfiles de
+concentración,} pero sumando a esto la posibilidad de mantener las
+características que brindan otros índices de segregación.
 
 \section{Esquema de análisis}\label{method-scheme}
 
 \subsection{La medición de la segregación multi-dominio}\label{la-mediciuxf3n-de-la-segregaciuxf3n-multi-dominio}
 
-A diferencia de lo que sucede en Estados Unidos o la mayoría de los
-países europeos donde el estudio de la segregación está vinculado a las
-diferencias raciales o migratorias, en los países latinoamericanos la
-segregación ha sido estudiada fundamentalmente vinculada a las
-diferencias socioeconómicas (Duhau, 2013; Groisman, 2010; Ward, 2012).
-En este trabajo utilizamos el nivel de estudio del hogar como proxy del
-nivel socioeconómico, lo cual es una práctica utilizada en estudios de
-este tipo, tanto a nivel internacional (He et~al., 2022; Marcińczak
-et~al., 2013; Monkkonen et~al., 2021) como nacional (Groisman \& Suárez,
-2009; Molinatti, 2021). En concreto se definen tres niveles para los
-grupos educativos en base al criterio de `ciclos completos' (Hasta
-primario completo; Secundario completo; Superior completo).
+Siguiendo la tradición de estudios sobre segregación de los países
+latinoamericanos (\citeproc{ref-Duhau2013a}{Duhau, 2013}; \citeproc{ref-Groisman2010}{Groisman, 2010}; \citeproc{ref-Ward2012}{Ward, 2012}), en este
+trabajo analizaremos la segregación `socio-económica', es decir, aquella
+vinculada a diferencias de clase entre los grupos sociales.
+Habitualmente en los estudios de la segregación hechos en Estados Unidos
+y Europa, las diferencias entre grupso consideradas son fundamentalmente
+étnico-religiosas, raciales o migratorias. Sin embargo, en Latinoamérica
+y, particularmente, en Argentina el principal \emph{clivaje} de los estudios
+de segregación ha sido la clase social y las diferencias
+socio-económicas, estando las otras diferencias contenidas en esta
+última.
 
-En cuanto a los dominios elegidos, el trabajo considera el dominio
-residencial, escolar y el espacio de las movilidades. En primer lugar,
-como señalamos anteriormente, el dominio residencial y barrial es
-ampliamente reconocido como un espacio central para el análisis de las
-interacciones. En particular, el efecto de la segregación residencial se
-ve reforzada cuando existen altos niveles de homogamia en los hogares,
-en tanto la homogeneidad dentro de los hogares, puede contrarrestar la
-heterogeneidad a nivel del vecindario (Tammaru et~al., 2021). Que ambos
-miembros de la pareja compartan el mismo `estatus' puede reforzar las
-ventajas / desventajas asociadas a estos grupos sociales y, en paralelo,
-bloquear el contacto con otros hogares diferentes socialmente, pero
-cercanos residencialmente. Retomando esta perspectiva, nuestro trabajo
-entiende a la segregación residencial y la homogamia actúan articulando
-en diferentes `niveles' (hogar-barrio) el fenómeno de la segregación
-urbana.\footnote{En este trabajo analizamos la homogamia como un factor
-  que refuerza las condiciones de segregación en el ámbito
-  residencial. En este sentido, podemos entender esto como parte de un
-  análisis multi-nivel de la segregación (Van Ham et~al., 2018).
-  Respecto a la relación entre estos aspectos, podemos destacar que
-  existen diversos trabajos que analizan la segregación residencial y
-  la homogamia de forma conjunta (Duncan \& Lieberson, 1959; Morgan,
-  1981; Peach, 1974, 1980), dando cuenta de cómo ambos aspectos están
-  fuertemente asociados. En sintonía con estos resultados, los
-  trabajos actuales identifican que una mayor exposición con personas
-  de grupos distintos aumenta las probabilidades de conformación de
-  parejas mixtas (Kalmijn \& Van Tubergen, 2010; Puur et~al., 2022),
-  aunque existen menos trabajos que indaguen sobre cómo se da esta
-  relación. A nivel local, los trabajos sobre estratificación han
-  profundizado poco la relación con los aspectos residenciales (una
-  excepción es el trabajo de Carrascosa \& Estévez Leston, 2023). Más
-  allá de esta relación, estos estudios señalan un crecimiento durante
-  las últimas décadas de la homogamia conyugal, siendo más
-  significativa este cambio para los grupos sociales extremos (Gómez
-  Rojas, 2007; Mazzeo, 2012; Rodríguez, 2011, 2012, 2016).} En segundo lugar, el dominio de los espacios de
-actividad supone incorporar el problema sobre cómo las movilidades
-urbanas cotidianas tienen un efecto sobre las interacciones con personas
-de otros grupos sociales. Por último, el dominio escolar es un aspecto
-central de la interacción y diferenciación social, que tiene un rol
-central para la configuración de las futuras redes de relaciones
-sociales.
+Siguiendo esta perspectiva, en este trabajo utilizamos el nivel de
+estudio del hogar como variable \emph{proxy} del nivel socioeconómico, lo
+cual es una práctica utilizada en estudios de este tipo, tanto a nivel
+internacional (\citeproc{ref-He2022a}{He et~al., 2022}; \citeproc{ref-Marcinczak2013}{Marcińczak et~al., 2013}; \citeproc{ref-Monkkonen2021}{Monkkonen et~al., 2021}) como regional
+(\citeproc{ref-Groisman2010}{Groisman, 2010}; \citeproc{ref-Molinatti2021}{Molinatti, 2021}). El uso del nivel de estudio (en lugar
+de variables relacionadas a la inserción dentro del mercado de trabajo)
+se fundamenta en limitaciones en los datos disponibles, siendo la
+variable nivel de estudio una variable presente en la mayoría de las
+fuentes disponibles y que tiene una fuerte correlación con el nivel
+socioeconómico. En concreto, se definen tres niveles para los grupos
+educativos en base al criterio de `ciclos completos', es decir que se
+haya finalizado el nivel educativo, a saber: (a) Hasta primario
+completo; (b) Secundario completo; (c) Superior completo. La elección de
+ciclos completos se debe a que la finalización de los ciclos educativos
+es la que otorga las credenciales que permiten su uso en el mercado
+laboral. Además, hemos unificado el nivel superior, incluyendo en esta
+categoría el nivel superior universitario y el nivel superior
+no-universitario (que incluye, mayormente, la formación
+técnico-profesional y docente). Esto se debe a que en nuestra práctica
+hemos encontrado muchos errores de captación respecto a la diferencia
+entre ambos niveles, lo cual es fundamentalmente cierto para los
+cuestionarios aplicados a estudiantes (en las pruebas educativas
+utilizadas).
 
-El trabajo utiliza datos censales del Censo Nacional de Población,
-Hogares y Viviendas 2010 (INDEC) y de las Pruebas Aprender (ME), así
-como datos muestrales de la Encuesta de Movilidad Domiciliaria 2018
-(ENMODO2018-GCBA). Uno de los grandes desafíos del presente trabajo está
-relacionado con la dificultad de medir simultáneamente los diferentes
-dominios de la segregación. A diferencia de lo que sucede en algunos
-países con sistemas de registros administrativos consolidados y
-fuertemente articulados con los sistemas estadísticos, en Argentina no
-existen fuentes de datos que permitan acceder a información individual
-que permita medir la segregación en diferentes dominios de la vida
-social. Por ello uno de los desafíos que aborda esta tesis es el uso
-articulado de las fuentes disponibles y la propuesta de técnicas
-estadísticas que permitan su uso combinado.
+En cuanto a los dominios elegidos, el trabajo considera tres dominios:
+el residencial, el escolar y el espacio de las movilidades. En primer
+lugar, como señalamos anteriormente, el \emph{dominio residencial / barrial}
+es ampliamente reconocido por la literatura como un eje articulador de
+los espacios de vida. Por este motivo, en este trabajo de tesis es uno
+de los dominios que mayor importancia tiene dentro del análisis. En la
+práctica, este trabajo se centra en analizar la interacción entre el
+dominio residencial y los otros dominios. En segundo lugar, el dominio
+de los \emph{espacios de actividad} incorpora el problema sobre cómo las
+movilidades urbanas cotidianas tienen un efecto sobre las interacciones
+con personas de otros grupos sociales, en tanto nos ponen en contacto
+con otros en lugares diferentes de la propia residencia. Por último, si
+bien el \emph{dominio escolar} puede ser consdierado como un `subdominio'
+dentro del espacio de actividad, tiene un rol central en los esquemas de
+diferenciación y estratificación social, es un espacio nodal en la
+configura las futuras redes de relaciones sociales y en la consolidación
+del marco de relaciones de los hogares. Por estos motivos consideramos
+que su tratamiento separado puede ser interesante para analizar la
+segregación multi-dominio.
+
+Un aspecto relevante se refiere a la unidad de análisis y a cómo esta se
+considera para compatibilizar los diferentes análisis de segregación que
+componen este trabajo. Habitualmente los trabajos que sólo consideran la
+segregación residencial utilizan al conjunto de personas mayores de
+cierta edad, lo cual tiene sentido, en tanto estas comparten un
+territorio de intercambio. Sin embargo, este enfoque `individualista'
+oculta que más allá de que el nivel de estudio puede ser un atributo
+individual, la clase social (que el nivel de estudio pretende
+representar) es una condición que se describe mejor al nivel del hogar.
+En este sentido, en este trabajo consdieramos al hogar como eje de
+nuestro análisis, lo que nos permite coordinar los análisis en todos los
+dominios. Para ello, asignamos el nivel educativo del hogar (como
+dijimos, \emph{proxy} de la clase social) considerando el mayor nivel
+educativo entre las dos personas
+
+Como alternativa, algunos trabajos toman la condición educativa del
+`principal sostén' o del `jefe del hogar', lo cual es correcto, pero
+puede llevar a sesgos de género. Como alternativa, en este trabajo
+utilizamos el mayor nivel educativo de
+
+Para profundizar el efecto que tiene la se
+
+En particular, el efecto de la segregación residencial se ve reforzada
+cuando existen altos niveles de homogamia en los hogares, en tanto la
+homogeneidad dentro de los hogares, puede contrarrestar la
+heterogeneidad a nivel del vecindario (\citeproc{ref-Tammaru2021}{Tammaru et~al., 2021}). Que ambos miembros
+de la pareja compartan el mismo `estatus' puede reforzar las ventajas /
+desventajas asociadas a estos grupos sociales y, en paralelo, bloquear
+el contacto con otros hogares diferentes socialmente, pero cercanos
+residencialmente. Retomando esta perspectiva, nuestro trabajo entiende a
+la segregación residencial y la homogamia actúan articulando en
+diferentes `niveles' (hogar-barrio) el fenómeno de la segregación
+urbana. En este trabajo analizamos la homogamia como un factor que
+refuerza las condiciones de segregación en el ámbito residencial. En
+este sentido, podemos entender esto como parte de un análisis
+multi-nivel de la segregación (\citeproc{ref-VanHam2018}{Van Ham et~al., 2018}).
 
 Respecto al análisis se propone un diseño metodológico cuantitativo, en
 el que se combinan diferentes técnicas estadísticas como: análisis de
@@ -2281,12 +2375,12 @@ et~al., 2019; Pebesma \& Bivand, 2020).
 
 En este trabajo centramos nuestro análisis en el Área Metropolitana del
 Gran Buenos Aires,\footnote{Siguiendo el criterio oficial del INDEC propuesto por
-  (\citeproc{ref-Vapnarsky1998}{\textbf{Vapnarsky1998?}}; ver también \citeproc{ref-Vapnarsky2004}{\textbf{Vapnarsky2004?}}), el AMGBA es definido
+  (\citeproc{ref-Vapnarsky1998}{Vapñarsky, 1998}; ver también \citeproc{ref-Vapnarsky2004}{Vapñarsky, 2004}), el AMGBA es definido
   como la `mancha urbana' que se recorta y diferencia del campo
   abierto. Operacionalmente se construye a partir de identificar la
   contigüidad de elementos físico-urbanos (como calles, edificios y
   manzanas). En este trabajo tomamos la adaptación para los datos del
-  Censo 2010 hecha por (\citeproc{ref-Marcos2021}{\textbf{Marcos2021?}}).} el cual es el principal aglomerado
+  Censo 2010 hecha por Marcos (\citeproc{ref-Marcos2021}{2021}).} el cual es el principal aglomerado
 urbano de Argentina. Dentro del AMGBA se destaca la Ciudad Autónoma de
 Buenos Aires (CABA), la cual funciona como núcleo y eje articulador del
 aglomerado. En gran medida, el AMGBA es producto de la expansión de la
@@ -2294,7 +2388,7 @@ CABA y la paulatina incorporación de las localidades cercanas que se
 habían desarrollado en torno a las estaciones de ferrocarril. Resultado
 de su tamaño y desarrollo histórico, El AMGBA presenta una importante
 diversidad interna, que da lugar a diferentes contextos o `entornos
-urbanos'. Siguiendo la propuesta de Marcos (\citeproc{ref-Marcos2021}{\textbf{Marcos2021?}}; \citeproc{ref-Marcos2022}{\textbf{Marcos2022?}}),
+urbanos'. Siguiendo la propuesta de Marcos (\citeproc{ref-Marcos2021}{2021}; \citeproc{ref-Marcos2022}{2022}),
 en este trabajo clasificamos los radios censales del AMGBA (unidad
 censal más pequeña disponible) en función de: (a) el momento histórico
 de su urbanización; y (b) el modo predominante de producción del espacio
@@ -2318,25 +2412,37 @@ socioeconómico (NSE) (7) Alto, (8) Medio y (9) Bajo.\footnote{La clasificación
   entornos representan en la práctica realidades mixtas. Esto se
   observa, en particular, en los entornos de origen informal, de
   vivienda social y de urbanizaciones cerradas, siendo este último el
-  entorno más afectado por este problema (ver el trabajo de \citeproc{ref-Marcos2021}{\textbf{Marcos2021?}}, para una descripción detallada). En este
+  entorno más afectado por este problema (ver el trabajo de \citeproc{ref-Marcos2021}{Marcos, 2021, pp. 105-111}, para una descripción detallada). En este
   sentido, es necesario tomar con cierta cautela los resultados sobre
   estos entornos, teniendo en cuenta que muchas veces pueden esconder
   situaciones mixtas.}
 
 \begin{figure}
-\includegraphics[width=30.58in]{figures/INTRO_TH} \caption{Entornos urbanos en el AMGBA. Elaboración propia en base a Marcos (2021; 2022).}\label{fig:TH}
+\includegraphics[width=1\linewidth]{figures/INTRO_TH} \caption{Entornos urbanos en el AMGBA. Elaboración propia en base a Marcos [-@Marcos2021; -@Marcos2022].}\label{fig:TH}
 \end{figure}
 
-Descripción de las fuentes de datos utilizadas
+El trabajo utiliza una variedad de fuentes de datos.
 
-Por su parte, como fuentes secundarias se utilizarán bases estadísticas
-(Censo, EPH y ENMODO),
-.
+Uno de los grandes desafíos del presente trabajo está relacionado con la
+dificultad de medir simultáneamente los diferentes dominios de la
+segregación. A diferencia de lo que sucede en algunos países con
+sistemas de registros administrativos consolidados y fuertemente
+articulados con los sistemas estadísticos, en Argentina no existen
+fuentes de datos que permitan acceder a información individual que
+permita medir la segregación en diferentes dominios de la vida social.
+Por ello uno de los desafíos que aborda esta tesis es el uso articulado
+de las fuentes disponibles y la propuesta de técnicas estadísticas que
+permitan su uso combinado.
 
-En este trabajo utilizamos los datos de la \emph{Encuesta de Movilidad
-Domiciliaria} realizada en 2018 (ENMODO2018). Esta encuesta permite
-conocer los movilidades cotidianas urbanas de la población del AMGBA. Si
-bien los datos de movilidad están disponibles a nivel de radio censal
+Por un lado se utilizan los datos de población del Censo Nacional de
+Población, Hogares y Viviendas 2010 (INDEC)
+
+Los datos educativos son tomados de las Pruebas Aprender (ME).
+
+Por último, se utilizan datos de la \emph{Encuesta de Movilidad Domiciliaria}
+realizada en 2018 (ENMODO2018). Esta encuesta permite conocer los
+movilidades cotidianas urbanas de la población del AMGBA. Si bien los
+datos de movilidad están disponibles a nivel de radio censal
 (aproximadamente 300 viviendas), en este trabajo hemos utilizado las
 fracciones censales (aproximadamente 5.000 viviendas) como escala de
 análisis, con el fin de minimizar el efecto que pudiera tener la
@@ -2555,7 +2661,7 @@ de conexión con la CABA, lo que da como resultado un aislamiento de los
 pobres urbanos (\citeproc{ref-Soldano2008}{\textbf{Soldano2008?}}).
 
 \begin{figure}
-\includegraphics[width=46.97in]{figures/SEG-RES_AMGBA-con-detalle} \caption{Segregación local en el AMGBA (Índice de Información Mutua). Se destacan con recuadros y los detalles las zonas profundizadas en el análisis.}\label{fig:SEGRE-RES}
+\includegraphics[width=1\linewidth]{figures/SEG-RES_AMGBA-con-detalle} \caption{Segregación local en el AMGBA (Índice de Información Mutua). Se destacan con recuadros y los detalles las zonas profundizadas en el análisis.}\label{fig:SEGRE-RES}
 \end{figure}
 
 \textbf{{[} {]} TODO} Agregar análisis de CA para mostrar alta segregación con
@@ -2701,6 +2807,25 @@ complejizó} respecto al propuesto por (\citeproc{ref-Sabatini}{\textbf{Sabatini
 Niveles de la segregación: segregación dentro del hogar y dentro del
 barrio
 
+En este trabajo analizamos la homogamia como un
+factor que refuerza las condiciones de segregación en el ámbito
+residencial. En este sentido, podemos entender esto como parte de un
+análisis multi-nivel de la segregación (\citeproc{ref-VanHam2018}{Van Ham et~al., 2018}).
+
+Respecto a la relación entre estos aspectos, podemos destacar que
+existen diversos trabajos que analizan la segregación residencial y la
+homogamia de forma conjunta (\citeproc{ref-Duncan1959}{Duncan y Lieberson, 1959}; \citeproc{ref-Morgan1981}{Barrie S. Morgan, 1981}; \citeproc{ref-Peach1974}{Peach, 1974}, \citeproc{ref-Peach1980}{1980}), dando cuenta de cómo ambos aspectos están fuertemente
+asociados. En sintonía con estos resultados, los trabajos actuales
+identifican que una mayor exposición con personas de grupos distintos
+aumenta las probabilidades de conformación de parejas mixtas
+(\citeproc{ref-Kalmijn2010}{Kalmijn y Van Tubergen, 2010}; \citeproc{ref-Puur2022}{Puur et~al., 2022}), aunque existen menos trabajos que indaguen
+sobre cómo se da esta relación. A nivel local, los trabajos sobre
+estratificación han profundizado poco la relación con los aspectos
+residenciales (una excepción es el trabajo de \citeproc{ref-carrascosa2023}{Carrascosa y Estévez Leston, 2023}). Más allá
+de esta relación, estos estudios señalan un crecimiento durante las
+últimas décadas de la homogamia conyugal, siendo más significativa este
+cambio para los grupos sociales extremos (\citeproc{ref-GomezRojas2007}{Gómez Rojas, 2007}; \citeproc{ref-Mazzeo2012}{Mazzeo et~al., 2012}; \citeproc{ref-Rodriguez2011b}{S. A. Rodríguez, 2011}, \citeproc{ref-Rodriguez2012a}{2012}, \citeproc{ref-Rodriguez2016e}{2016}).
+
 Medir la segrgación dentro del hogar (homogamia).
 
 El capítulo pretende ser un aporte novedoso en al menos cuatro aspectos.
@@ -2738,7 +2863,7 @@ colectivas y la integración social de los grupos.
 
 Respecto a la homogamia (o segregación conyugal) en el AMGBA, los
 trabajos de (\citeproc{ref-Mazzeo2012a}{\textbf{Mazzeo2012a?}}) sobre la CABA y de Santiago Rodríguez
-(\citeproc{ref-Rodriguez2016e}{2016}; \citeproc{ref-Rodriguez2012}{\textbf{Rodriguez2012?}}; \citeproc{ref-Rodriguez2012a}{\textbf{Rodriguez2012a?}}) y (\citeproc{ref-Carrascosa2023}{\textbf{Carrascosa2023?}})
+(\citeproc{ref-Rodriguez2012a}{2012}, \citeproc{ref-Rodriguez2016e}{2016}; \citeproc{ref-Rodriguez2012}{\textbf{Rodriguez2012?}}) y (\citeproc{ref-Carrascosa2023}{\textbf{Carrascosa2023?}})
 sobre el AMGBA identifican una pauta selectiva de las uniones
 matrimoniales, que otorga preferencia a las uniones con homogamia
 educativa. A su vez, estos trabajos identifican que las pautas de
@@ -2773,12 +2898,12 @@ articulados en diferentes `niveles' (hogar-vecindario) del fenómeno de
 la segregación urbana.
 
 Algunos estudios han analizado la segregación residencial y la homogamia
-de forma conjunta. En esta línea, el trabajo pionero de (\citeproc{ref-Duncan1959}{\textbf{Duncan1959?}})
+de forma conjunta. En esta línea, el trabajo pionero de Duncan y Lieberson (\citeproc{ref-Duncan1959}{1959})
 sostenía que en espacios residenciales donde existe una elevada
 segregación, el grupo segregado tendría pocas chances de contacto con
 otros grupos sociales y, por lo tanto, el número de matrimonios con
 otros grupos serían bajos. En continuidad con esta hipótesis, Peach
-(\citeproc{ref-Peach1980}{\textbf{Peach1980?}}; \citeproc{ref-Peach1974}{\textbf{Peach1974?}}) señala que los matrimonios mixtos se
+(\citeproc{ref-Peach1974}{1974}, \citeproc{ref-Peach1980}{1980}) señala que los matrimonios mixtos se
 correlacionan inversamente con el grado de segregación residencial que
 los separa, mientras que Barrie S. Morgan (\citeproc{ref-Morgan1981}{1981}) sugiere que la segregación
 residencial tiene un efecto en la sobreselección de cónyuges de grupos
@@ -2792,7 +2917,7 @@ espacios puede ser un limitante en la conformación de parejas
 heterogámica (\citeproc{ref-Rodriguez2016c}{\textbf{Rodriguez2016c?}}). En sintonía con estos resultados, la
 mayor parte de los trabajos actuales identifican que la mayor exposición
 con personas de grupos distintos al propio aumenta las probabilidades de
-conformación de parejas mixtas (\citeproc{ref-Puur2022}{\textbf{Puur2022?}}; \citeproc{ref-Kalmijn2010}{\textbf{Kalmijn2010?}}).
+conformación de parejas mixtas (\citeproc{ref-Kalmijn2010}{Kalmijn y Van Tubergen, 2010}; \citeproc{ref-Puur2022}{Puur et~al., 2022}).
 
 \section{Presentación de la metodología de análisis}\label{presentaciuxf3n-de-la-metodologuxeda-de-anuxe1lisis}
 
@@ -3630,6 +3755,8 @@ cercanos.
 
 \section{Introducción al capítulo}\label{introducciuxf3n-al-capuxedtulo}
 
+ver: 10.1080/02673037.2020.1857707
+
 En la medida que las sociedades tienden a generar sistemas donde la
 profesionalización cumple un rol mayor en la allocation de las personas
 en el mercado laboral, la educación se transforma en un elemento cada
@@ -3812,6 +3939,9 @@ Candipan, J., Phillips, N. E., Sampson, R. J. y Small, M. L. (2021). From reside
 \bibitem[\citeproctext]{ref-Carman2013}
 Carman, M., Viera da Cunha, N., \& Segura, R. (Eds.). (2013). \emph{Segregación y diferencia en la ciudad}. FLACSO Ecuador / CLACSO / Ministerio de Desarrollo Urbano y Vivienda.
 
+\bibitem[\citeproctext]{ref-carrascosa2023}
+Carrascosa, J. y Estévez Leston, B. (2023). El mapa de las parejas: homogamia educativa en el Área Metropolitana de Buenos Aires. \emph{Cuestiones de Sociología}, \emph{27}, e144. \url{https://doi.org/10.24215/23468904e144}
+
 \bibitem[\citeproctext]{ref-Castells1972}
 Castells, M. (1972). \emph{La cuestión urbana}. Siglo XXI Editores.
 
@@ -3905,6 +4035,9 @@ Duncan, O. D. y Duncan, B. (1955a). Residential Distribution and Occupational St
 \bibitem[\citeproctext]{ref-Duncan1955b}
 Duncan, O. D. y Duncan, B. (1955b). A Methodological Analysis of Segregation Indexes. \emph{American Sociological Review}, \emph{20}(2), 210. \url{https://doi.org/10.2307/2088328}
 
+\bibitem[\citeproctext]{ref-Duncan1959}
+Duncan, O. D. y Lieberson, S. (1959). Ethnic Segregation and Assimilation. \emph{American Journal of Sociology}, \emph{64}(4), 364-374. \url{http://www.jstor.org/stable/2773949}
+
 \bibitem[\citeproctext]{ref-Elbers2023}
 Elbers, B. (2023). A Method for Studying Differences in Segregation Across Time and Space. \emph{Sociological Methods \& Research}, \emph{52}(1), 542. \url{https://doi.org/10.1177/0049124121986204}
 
@@ -3953,6 +4086,9 @@ Frisch, M. A. (2022). Formas desiguales de habitar la ciudad de Pilar: interacci
 \bibitem[\citeproctext]{ref-Galster2017}
 Galster, G. y Sharkey, P. (2017). Spatial Foundations of Inequality: A Conceptual Model and Empirical Overview. \emph{RSF: The Russell Sage Foundation Journal of the Social Sciences}, \emph{3}(2), 1. \url{https://doi.org/10.7758/rsf.2017.3.2.01}
 
+\bibitem[\citeproctext]{ref-GomezRojas2007}
+Gómez Rojas, G. V. (2007). ¿Cómo se constituyen las parejas?: Entre las diversas formas del amor y los límites de la clase social. \emph{Revista Científica de UCES}, \emph{11}(2), 68-75. \url{http://dspace.uces.edu.ar:8180/xmlui/handle/123456789/150}
+
 \bibitem[\citeproctext]{ref-Greenacre2008}
 Greenacre, M. J. (2008). \emph{La práctica del análisis de correspondencias}. Fundación BBVA.
 
@@ -3973,6 +4109,9 @@ Gutierrez, A., Mansilla, H., Jimènez, C. I., Capdevielle, J., Freyre, M. L., Gi
 
 \bibitem[\citeproctext]{ref-Harvey1977}
 Harvey, D. (1977). \emph{Urbanismo y desigualdad social}. Siglo XXI Editores.
+
+\bibitem[\citeproctext]{ref-He2022a}
+He, Q., Musterd, S. y Boterman, W. (2022). Understanding different levels of segregation in urban China: a comparative study among 21 cities in Guangdong province. \emph{Urban Geography}, \emph{43}(7), 1036-1061. \url{https://doi.org/10.1080/02723638.2021.1893049}
 
 \bibitem[\citeproctext]{ref-Hofstra2017}
 Hofstra, B., Corten, R., Tubergen, F. van y Ellison, N. B. (2017). Sources of Segregation in Social Networks: A Novel Approach Using Facebook. \emph{American Sociological Review}, \emph{82}(3), 625-656. \url{https://doi.org/10.1177/0003122417705656}
@@ -4018,6 +4157,9 @@ Johnston, R., Poulsen, M. y Forrest, J. (2007). Ethnic and racial segregation in
 
 \bibitem[\citeproctext]{ref-Johnston2009}
 Johnston, R., Poulsen, M. y Forrest, J. (2009). Research Note{\textemdash}Measuring Ethnic Residential Segregation: Putting Some More Geography In. \emph{Urban Geography}, \emph{30}(1), 91-109. \url{https://doi.org/10.2747/0272-3638.30.1.91}
+
+\bibitem[\citeproctext]{ref-Kalmijn2010}
+Kalmijn, M. y Van Tubergen, F. (2010). A comparative perspective on intermarriage: Explaining differences among national-origin groups in the United States. \emph{Demography}, \emph{47}(2), 459-479. \url{https://doi.org/10.1353/dem.0.0103}
 
 \bibitem[\citeproctext]{ref-Karmel1988}
 Karmel, T. y Maclachlan, M. (1988). Occupational Sex Segregation {\textemdash}Increasing or Decreasing? \emph{Economic Record}, \emph{64}(3), 187-195. \url{https://doi.org/10.1111/j.1475-4932.1988.tb02057.x}
@@ -4070,6 +4212,15 @@ Linares, S. (2013). Las consecuencias de la segregación socioespecial: un anál
 \bibitem[\citeproctext]{ref-Lu2023}
 Lu, Y. y Giuliano, G. (2023). Where do people meet? Time-series clustering for social interaction levels in daily-life spaces during the COVID-19 pandemic. \emph{Cities}, \emph{137}, 104298. \url{https://doi.org/10.1016/j.cities.2023.104298}
 
+\bibitem[\citeproctext]{ref-Marcinczak2013}
+Marcińczak, S., Gentile, M. y Stępniak, M. (2013). Paradoxes of (Post)Socialist Segregation: Metropolitan Sociospatial Divisions Under Socialism and After In Poland. \emph{Urban Geography}, \emph{34}(3), 327-352. \url{https://doi.org/10.1080/02723638.2013.778667}
+
+\bibitem[\citeproctext]{ref-Marcos2021}
+Marcos, M. (2021). Tipos de hábitat: definiciones y desafíos para su medición a partir del caso de la aglomeración Gran Buenos Aires. \emph{Papeles de Población}, \emph{27}(108), 75-118. \url{https://doi.org/10.22185/24487147.2021.108.13}
+
+\bibitem[\citeproctext]{ref-Marcos2022}
+Marcos, M. y Del Río, J. P. (2022). Los tipos de hábitat en Buenos Aires: poblamiento, estructura demográfica y condiciones residenciales. \emph{Estudios Demográficos y Urbanos}, \emph{37}(3), 889-933. \url{https://doi.org/10.24201/edu.v37i3.2045}
+
 \bibitem[\citeproctext]{ref-Marcos2015}
 Marcos, M., Mera, G. y Di Virgilio, M. M. (2015). Contextos urbanos de la Ciudad de Buenos Aires: una propuesta de clasificación de la ciudad según tipos de hábitat. \emph{Papeles de población}, \emph{84}, 161-196.
 
@@ -4078,6 +4229,9 @@ Marom, N. (2014). Relating a City's History and Geography with Bourdieu: One Hun
 
 \bibitem[\citeproctext]{ref-Massey1988}
 Massey, D. S. y Denton, N. A. (1988). The dimensions of residential segregation. \emph{Social Forces}, \emph{67}(2), 281-315. \url{https://doi.org/10.1093/sf/67.2.281}
+
+\bibitem[\citeproctext]{ref-Mazzeo2012}
+Mazzeo, V., Lago, M. E., Rivero, M. y Zino, N. (2012). ¿Existe relación entre las características socioeconómicas y demográficas de la población y el lugar donde fija su residencia? Una propuesta de zonificación de la Ciudad de Buenos Aires. \emph{Población de Buenos Aires}, \emph{9}(15), 55-70.
 
 \bibitem[\citeproctext]{ref-Mera2014a}
 Mera, G. (2014). De la localización a la movilidad: propuestas teórico-metodológicas para abordar la segregación espacial urbana. \emph{Cuaderno Urbano}, \emph{17}(17), 25. \url{https://doi.org/10.30972/crn.1717184}
@@ -4090,6 +4244,9 @@ Milias, V. y Psyllidis, A. (2022). Measuring spatial age segregation through the
 
 \bibitem[\citeproctext]{ref-Molinatti2021}
 Molinatti, F. (2021). \emph{Socio-Economic Residential Segregation in Greater Buenos Aires: Evidence of Persistent Territorial Fragmentation Processes} (M. Van Ham, T. Tammaru, R. Ubarevičienė, \& H. Janssen, Eds.; pp. 451-470). Springer. \url{https://doi.org/10.1007/978-3-030-64569-4_23}
+
+\bibitem[\citeproctext]{ref-Monkkonen2021}
+Monkkonen, P., Paloma Giottonini, M. y Comandon, A. (2021). \emph{Socioeconomic Segregation in Mexico City: Scale, Social Classes, and the Primate City} (M. Van Ham, T. Tammaru, R. Ubarevičienė, \& H. Janssen, Eds.; pp. 389-406). Springer. \url{https://doi.org/10.1007/978-3-030-64569-4_20}
 
 \bibitem[\citeproctext]{ref-Mora2003}
 Mora, R. y Ruiz-Castillo, J. (2003). Additively Decomposable Segregation Indexes. The Case of Gender Segregation by Occupations and Human Capital Levels in Spain. \emph{The Journal of Economic Inequality}, \emph{1}(2), 147-179. \url{https://doi.org/10.1023/A:1026198429377}
@@ -4142,6 +4299,12 @@ Park, Robert E. (1926). \emph{The urban community as a spatial pattern and moral
 \bibitem[\citeproctext]{ref-Park1952}
 Park, Robert Ezra. (1952). \emph{Human communities: the city and human ecology}. The Free Press.
 
+\bibitem[\citeproctext]{ref-Peach1974}
+Peach, C. (1974). Homogamy, Propinquity and Segregation: A Re-Evaluation. \emph{American Sociological Review}, \emph{39}(5), 636. \url{https://doi.org/10.2307/2094310}
+
+\bibitem[\citeproctext]{ref-Peach1980}
+Peach, C. (1980). Ethnic Segregation and Intermarriage. \emph{Annals of the Association of American Geographers}, \emph{70}(3), 371-381. \url{https://doi.org/10.1111/j.1467-8306.1980.tb01320.x}
+
 \bibitem[\citeproctext]{ref-Pincon-Charlot2018}
 Pinçon-Charlot, M. y Pinçon, M. (2018). Social Power and Power Over Space: How the Bourgeoisie Reproduces itself in the City. \emph{International Journal of Urban and Regional Research}, \emph{42}(1), 115-125. \url{https://doi.org/10.1111/1468-2427.12533}
 
@@ -4153,6 +4316,9 @@ Poulsen, M., Johnson, R. y Forrest, J. (2002). Plural Cities and Ethnic Enclaves
 
 \bibitem[\citeproctext]{ref-PrevotSchapira2001}
 Prévot Schapira, M.-F. (2001). Fragmentación espacial y social: conceptos y realidades. \emph{Revista Perfiles Latinoamericanos}, \emph{19}, 33-56.
+
+\bibitem[\citeproctext]{ref-Puur2022}
+Puur, A., Rahnu, L. y Tammaru, T. (2022). What is the association between the ethnic composition of neighbourhoods, workplaces and schools and the formation of mixed-ethnic unions? \emph{Population, Space and Place}, 1-25. \url{https://doi.org/10.1002/psp.2504}
 
 \bibitem[\citeproctext]{ref-Quillian2012}
 Quillian, L. (2012). Segregation and Poverty Concentration: The Role of Three Segregations. \emph{American Sociological Review}, \emph{77}(3), 354-379. \url{https://doi.org/10.1177/0003122412447793}
@@ -4189,6 +4355,12 @@ Rodriguez, G. M. (2016). Desigualdades socioeconómicas y segregación residenci
 
 \bibitem[\citeproctext]{ref-Rodriguez2004}
 Rodríguez, J. y Arriagada Luco, C. (2004). Segregación Residencial en la Ciudad Latinoamericana. \emph{Revista eure}, \emph{30}, 5-24.
+
+\bibitem[\citeproctext]{ref-Rodriguez2011b}
+Rodríguez, S. A. (2011). Afinidades electivas en Argentina: Un análisis de homogamia y heterogamia educativa. \emph{Lavboratorio: revista de estudio sobre cambio social}, \emph{24}, 154-169.
+
+\bibitem[\citeproctext]{ref-Rodriguez2012a}
+Rodríguez, S. A. (2012). Pautas y tendencias de homogamia educacional relativa en Argentina a comienzos del siglo XXI. \emph{Entramados y Perspectivas}, \emph{2}(2), 99-126.
 
 \bibitem[\citeproctext]{ref-Rodriguez2016e}
 Rodríguez, S. A. (2016). \emph{Conformación de parejas y desigualdad social: un análisis comparativo del Área Metropolitana de Buenos Aires y la Ciudad de México} {[}Tesis doctoral{]}. \url{https://hdl.handle.net/20.500.11986/COLMEX/10004538}
@@ -4342,6 +4514,12 @@ Van Ham, M., Tammaru, T., Ubarevičienė, R., \& Janssen, H. (Eds.). (2021). \em
 
 \bibitem[\citeproctext]{ref-VanKempen2014}
 Van Kempen, R. y Wissink, B. (2014). Between places and flows: towards a new agenda for neighbourhood research in an age of mobility. \emph{Geografiska Annaler: Series B, Human Geography}, \emph{96}(2), 95-108. \url{https://doi.org/10.1111/geob.12039}
+
+\bibitem[\citeproctext]{ref-Vapnarsky1998}
+Vapñarsky, C. A. (1998). \emph{El concepto de localidad: definición, estudios de caso y fundamentos teórico-metodológicos}.
+
+\bibitem[\citeproctext]{ref-Vapnarsky2004}
+Vapñarsky, C. A. (2004). Cuando el caos caracteriza la división oficial del territorio del Estado. A propósito de los municipios argentinos. \emph{Scripta Nova}, \emph{8}(162).
 
 \bibitem[\citeproctext]{ref-Wacquant2011}
 Wacquant, L. J. D. (2011). El diseño de la seclusion urbana en el siglo XXI. \emph{Herramienta}.

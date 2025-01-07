@@ -13,6 +13,29 @@ editor_options:
 Niveles de la segregación: segregación dentro del hogar y dentro del
 barrio
 
+<!--# USADO EN CAP 3 -->
+
+En este trabajo analizamos la homogamia como un factor que refuerza las
+condiciones de segregación en el ámbito residencial. En este sentido,
+podemos entender esto como parte de un análisis multi-nivel de la
+segregación [@VanHam2018].
+
+Respecto a la relación entre estos aspectos, podemos destacar que
+existen diversos trabajos que analizan la segregación residencial y la
+homogamia de forma conjunta [@Duncan1959; @Morgan1981; @Peach1974;
+@Peach1980], dando cuenta de cómo ambos aspectos están fuertemente
+asociados. En sintonía con estos resultados, los trabajos actuales
+identifican que una mayor exposición con personas de grupos distintos
+aumenta las probabilidades de conformación de parejas mixtas
+[@Kalmijn2010; @Puur2022], aunque existen menos trabajos que indaguen
+sobre cómo se da esta relación. A nivel local, los trabajos sobre
+estratificación han profundizado poco la relación con los aspectos
+residenciales [una excepción es el trabajo de @carrascosa2023]. Más allá
+de esta relación, estos estudios señalan un crecimiento durante las
+últimas décadas de la homogamia conyugal, siendo más significativa este
+cambio para los grupos sociales extremos [@GomezRojas2007; @Mazzeo2012;
+@Rodriguez2011b; @Rodriguez2012a; @Rodriguez2016e].
+
 Medir la segrgación dentro del hogar (homogamia).
 
 <!-- Aporte del capítulo (original: DALLE) -->
