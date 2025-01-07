@@ -90,7 +90,7 @@ library(here)
 ```
 
 ```{r fx}
-source(here::here("script/00_fx.R"), encoding = "UTF-8")
+# source(here::here("script/00_fx.R"), encoding = "UTF-8")
 ```
 
 # Algunas palabras iniciales {.unnumbered}
