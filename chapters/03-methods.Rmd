@@ -559,168 +559,447 @@ características que brindan otros índices de segregación.
 
 <!--# ¿El eigenvalue tiene margin-dependence? -->
 
-## Esquema de análisis {#method-scheme}
-
-### La medición de la segregación multi-dominio
-
-<!-- Segregación socioeconómica -->
-
-Siguiendo la tradición de estudios sobre segregación de los países
-latinoamericanos [@Duhau2013a; @Groisman2010; @Ward2012], en este
-trabajo analizaremos la segregación 'socio-económica', es decir, aquella
-vinculada a diferencias de clase entre los grupos sociales.
-Habitualmente en los estudios de la segregación hechos en Estados Unidos
-y Europa, las diferencias entre grupso consideradas son fundamentalmente
-étnico-religiosas, raciales o migratorias. Sin embargo, en Latinoamérica
-y, particularmente, en Argentina el principal *clivaje* de los estudios
-de segregación ha sido la clase social y las diferencias
-socio-económicas, estando las otras diferencias contenidas en esta
-última.
-
-<!-- Educación como proxy y niveles utilizados -->
-
-Siguiendo esta perspectiva, en este trabajo utilizamos el nivel de
-estudio del hogar como variable *proxy* del nivel socioeconómico, lo
-cual es una práctica utilizada en estudios de este tipo, tanto a nivel
-internacional [@He2022a; @Marcinczak2013; @Monkkonen2021] como regional
-[@Groisman2010; @Molinatti2021]. El uso del nivel de estudio (en lugar
-de variables relacionadas a la inserción dentro del mercado de trabajo)
-se fundamenta en limitaciones en los datos disponibles, siendo la
-variable nivel de estudio una variable presente en la mayoría de las
-fuentes disponibles y que tiene una fuerte correlación con el nivel
-socioeconómico. En concreto, se definen tres niveles para los grupos
-educativos en base al criterio de ‘ciclos completos’, es decir que se
-haya finalizado el nivel educativo, a saber: (a) Hasta primario
-completo; (b) Secundario completo; (c) Superior completo. La elección de
-ciclos completos se debe a que la finalización de los ciclos educativos
-es la que otorga las credenciales que permiten su uso en el mercado
-laboral. Además, hemos unificado el nivel superior, incluyendo en esta
-categoría el nivel superior universitario y el nivel superior
-no-universitario (que incluye, mayormente, la formación
-técnico-profesional y docente). Esto se debe a que en nuestra práctica
-hemos encontrado muchos errores de captación respecto a la diferencia
-entre ambos niveles, lo cual es fundamentalmente cierto para los
-cuestionarios aplicados a estudiantes (en las pruebas educativas
-utilizadas).
+## Esquema de análisis: La medición de la segregación multi-dominio {#method-scheme}
 
 <!-- Dominios de análisis -->
 
-En cuanto a los dominios elegidos, el trabajo considera tres dominios:
-el residencial, el escolar y el espacio de las movilidades. En primer
-lugar, como señalamos anteriormente, el *dominio residencial / barrial*
-es ampliamente reconocido por la literatura como un eje articulador de
-los espacios de vida. Por este motivo, en este trabajo de tesis es uno
-de los dominios que mayor importancia tiene dentro del análisis. En la
-práctica, este trabajo se centra en analizar la interacción entre el
-dominio residencial y los otros dominios. En segundo lugar, el dominio
-de los *espacios de actividad* incorpora el problema sobre cómo las
-movilidades urbanas cotidianas tienen un efecto sobre las interacciones
-con personas de otros grupos sociales, en tanto nos ponen en contacto
-con otros en lugares diferentes de la propia residencia. Por último, si
-bien el *dominio escolar* puede ser consdierado como un 'subdominio'
-dentro del espacio de actividad, tiene un rol central en los esquemas de
+Como señalamos en la introducción, el objetivo de este trabajo es
+"indagar el modo en el que se articula la segregación en diferentes
+dominios de la vida social en el *AMBA*". Por ello, como primer aspecto
+del esquema de análisis, señalamos que en este trabajo se considerarán
+tres dominios sociales , a saber: el residencial, el escolar y el
+espacio de las movilidades. En primer lugar, como señalamos
+anteriormente, el *dominio residencial / barrial* es ampliamente
+reconocido por la literatura como un eje articulador de los espacios de
+vida. Por este motivo, en este trabajo de tesis es uno de los dominios
+que mayor importancia tiene dentro del análisis. En la práctica, este
+trabajo se centra en analizar la interacción entre el dominio
+residencial y los otros dominios. En segundo lugar, el dominio de los
+*espacios de actividad* incorpora el problema sobre cómo las movilidades
+urbanas cotidianas tienen un efecto sobre las interacciones con personas
+de otros grupos sociales, en tanto nos ponen en contacto con otros en
+lugares diferentes de la propia residencia. Por último, si bien el
+*dominio escolar* puede ser considerado como un 'subdominio' dentro del
+espacio de actividad, tiene un rol central en los esquemas de
 diferenciación y estratificación social, es un espacio nodal en la
 configura las futuras redes de relaciones sociales y en la consolidación
 del marco de relaciones de los hogares. Por estos motivos consideramos
 que su tratamiento separado puede ser interesante para analizar la
-segregación multi-dominio.
+*segregación multi-dominio*.
+
+<!-- Combinación de fuentes de datos -->
+
+Uno de los desafíos del presente trabajo es la dificultad de medir
+simultáneamente los diferentes dominios de la segregación. A diferencia
+de lo que sucede en algunos países con sistemas de registros
+administrativos consolidados y fuertemente articulados con los sistemas
+estadísticos, en Argentina no existen fuentes de datos que permitan
+acceder a información individual para medir la segregación en diferentes
+dominios de la vida social. En particular, la no disponibilidad de datos
+masivos individuales de movilidad (a través de, por ejemplo, el uso
+teléfonos móviles) o de datos referidos a la elección y asignación de
+escuela son un límite importante para la construcción de indicadores de
+segregación multidominio. Por ello uno de los desafíos que aborda esta
+tesis es el uso articulado de las fuentes disponibles y la propuesta de
+técnicas estadísticas que permitan su uso combinado. Como contrapartida,
+el análisis no podrá integrar todos los dominios simultaneamente, sino
+que los dominios analizados serán comparados con el dominio residencial.
+Nuevamente se señala que esto es producto de una limitación de las
+fuentes de datos, antes que una decisión teórico-metodológica.
+
+<!-- Fuentes de datos utilizadas -->
+
+En concreto, en este trabajo utilizamos tres fuentes de
+datos.[^03-methods-4] En primer lugar, los datos de población del *Censo
+Nacional de Población, Hogares y Viviendas 2010* (INDEC). Estos datos
+brindan información sobre a nivel de radio censal de la distribución
+espacial de la población y las características sociodemográficas de los
+hogares, por lo cual es la más adecuada para analizar los patrones de
+segregación. Los datos fueron usados a nivel de microdatos usando la
+metodología propuesta por Pablo De Grande [-@DeGrande2016] y el programa
+*Redatam Converter* para la aplicación de la misma. En segundo lugar,
+utilizamos datos educativos tomados de las evaluaciones *Aprender*
+(Ministerio de Educación de la Nación) del año 2018. Estas evaluaciones
+aportan información sobre el desempeño académico de los estudiantes, así
+como sobre las características socioeconómicas de las comunidades
+escolares, lo que permite permite analizar la segregación escolar.
+Además, a partir de la metodología propuesta por Pablo De Grande
+[-@DeGrande2025] fue posible georeferenciar los datos a cada una de las
+escuelas.[^03-methods-5] Por último, se utilizan datos de la *Encuesta
+de Movilidad Domiciliaria* realizada en 2018 (ENMODO2018). Esta encuesta
+permite conocer los movilidades cotidianas urbanas de la población del
+AMBA.
+
+[^03-methods-4]: Tanto los datos utilizados, así como el código fuente R
+    usado para el procesamiento y la escritura de la tesis está
+    disponible a través del repositorio Github del autor
+    ([https://github.com/estedeahora/](https://github.com/estedeahora/phd){.uri}[PhD](https://github.com/estedeahora/PhD)).
+
+[^03-methods-5]: Se pone a disposición en el repositorio una adaptación
+    para usar en R del código propuesta por Pablo De Grande en el
+    artículo mencionado.
+
+<!-- Año de referencia -->
+
+Si bien lo ideal sería trabajar con los datos del Censo de 2022,
+lamentablemente al momento de escribir esta tesis y realizar los
+análisis estos datos están disponibles sólo en forma agregada y a través
+del aplicativo web del INDEC (no de escritorio). Esto impide el uso de
+microdatos, necesario para algunos de los análisis. Se resalta que dado
+que el código de procesamiento está disponible, la adaptación de este
+trabajo a los nuevos datos sería una tarea relativamente sencilla. Más
+allá de esto, consideramos que dado que en este trabajo hacemos un uso
+de variables estructurales y con una variabilidad baja, los datos
+utilizados pueden ser representativos de la situación real. Por lo
+demás, para minimizar este 'alejamiento' y considerando la publicación
+de las otras fuentes de datos hemos tomado el año 2018 como año de
+referencia para el resto de las fuentes de datos
+
+<!-- Segregación socioeconómica -->
+
+Un segundo aspecto del esquema de análisis es definir qué aspecto (o
+dimensión) será considerado como diferenciadora de los grupos sociales
+para analizar la segregación. Siguiendo la tradición de estudios sobre
+segregación de los países latinoamericanos [@Duhau2013a; @Groisman2010;
+@Ward2012], en este trabajo analizaremos la segregación
+'socio-económica', es decir, aquella vinculada a diferencias de clase
+entre los grupos sociales. Esto contrasta con la tradición de los
+estudios de segregación hechos en Estados Unidos y Europa, donde las
+diferencias entre grupso consideradas son fundamentalmente
+étnico-religiosas, raciales o migratorias. Sin embargo, en
+Latinoamérica, particularmente en Argentina, el principal *clivaje* de
+los estudios de segregación ha sido la clase social y las diferencias
+socio-económicas, estando las otras diferencias sociales contenidas o
+subsumidas en esta última [un ejemplo de estudios que analizan la
+segregación racial en Argentina son los trabajos de @Mera2014a]. Esto no
+supone que las otras diferencias no sean relevantes, sino que supone
+enteder que la diferencia socio-económica y de clase es estructuradora
+de las dinámicas sociales.
+
+<!-- Educación como proxy y niveles utilizados -->
+
+Siguiendo esta perspectiva, en este trabajo utilizamos el nivel de
+estudio del hogar como variable *proxy* de la clase social (y el nivel
+socioeconómico), lo cual es una práctica utilizada en estudios de este
+tipo, tanto a nivel internacional [@He2022a; @Marcinczak2013;
+@Monkkonen2021] como regional [@Groisman2010; @Molinatti2021]. El uso
+del 'nivel de estudio' (en lugar de variables relacionadas a la
+inserción dentro del mercado de trabajo) se fundamenta en limitaciones
+en los datos disponibles, siendo la variable nivel de estudio una
+variable presente en todas las fuentes disponibles y que tiene una
+fuerte correlación con el nivel socioeconómico (según puede comprobarse
+con datos de EPH-INDEC). En concreto, se definen tres niveles para los
+grupos educativos en base al criterio de ‘ciclos completos’, es decir
+que se haya finalizado el nivel educativo, a saber: (a) Hasta primario
+completo; (b) Secundario completo; (c) Superior completo. La elección de
+ciclos completos se debe a que la finalización de los ciclos educativos
+es la que otorga las credenciales que permiten su uso en el mercado
+laboral y resulta un indicador más preciso y homogéneo que otros
+indicadores (como la cantidad de años de estudio). Además, hemos
+unificado las modalidades del nivel superior, incluyendo en esta
+categoría el 'nivel superior universitario' y el 'nivel superior
+no-universitario' (que incluye, mayormente, la formación
+técnico-profesional y docente). Esto se debe a que en nuestra práctica
+como investigadores hemos encontrado muchos errores de captación
+respecto a la diferencia entre ambos niveles, lo cual es
+fundamentalmente cierto para los cuestionarios aplicados a estudiantes
+(en las pruebas educativas utilizadas).
 
 <!-- Hogar como unidad de análisis -->
 
-Un aspecto relevante respecto a la estrategia metodológica se refiere a
-la unidad de análisis y a cómo esta se considera para compatibilizar las
-diferentes fuentes de datos y análisis de segregación que componen este
-trabajo. Habitualmente los trabajos que sólo consideran la segregación
-residencial utilizan al conjunto de personas mayores de cierta edad, lo
-cual tiene sentido, en tanto estas comparten un territorio de
-intercambio. Sin embargo, este enfoque 'individualista' oculta que más
-allá de que el nivel de estudio puede ser un atributo individual, la
-clase social (que el nivel de estudio pretende representar en estos
-análisis) es una condición que se describe mejor al nivel del hogar. En
-este sentido, en este trabajo consdieramos al hogar como eje de nuestro
-análisis. Como ventaja adicional, la elección del hogar como unidad de
-análisis nos permite coordinar los análisis en todos los dominios
-propuestos. En concreto, asignamos el nivel educativo del hogar (como
-dijimos, *proxy* de la clase social) considerando el mayor nivel
-educativo entre las personas que son identificadas como el jefe de hogar
-o su pareja (cónyuge). En el caso de las evaluaciones educativas se
-considera el mayor nivel educativo entre los madres/padres declarados.
+Un aspecto relacionado al anterior es que en este trabajo consideramos
+el nivel de estudios como una propiedad para carcaterizar al 'hogar',
+antes que a los individuos. Algunos trabajos que sólo se enfocan en el
+problema de la segregación residencial (y no consideran otros dominios)
+utilizan para el análisis y el cálculo de medidas al conjunto de
+personas mayores de cierta edad, lo cual tiene sentido en tanto estas
+comparten un territorio de intercambio. Sin embargo, este enfoque
+'individualista' oculta que más allá de que el nivel de estudio puede
+ser un atributo individual, la clase social (que el nivel de estudio
+pretende representar como proxy en nuestro análisis) es una condición
+que se describe mejor al nivel del hogar. Además, la elección del hogar
+como unidad de análisis nos permite coordinar los diferentes análisis en
+los diferentes dominios propuestos, en particular cuando este se refiere
+a los niños en edad escolar que sólo adquieren 'su' nivel educativo a
+partir del nivel educativo de los padres. En términos operativos,
+asignamos el nivel educativo del hogar (como dijimos, *proxy* de clase
+social) considerando el mayor nivel educativo entre las personas que son
+identificadas como el 'jefe de hogar' o su 'cónyuge' (si hubiera). En el
+caso de las evaluaciones educativas se considera el mayor nivel
+educativo entre los madres/padres/responsables declarados.
 <!--# Como alternativa, algunos trabajos toman la condición educativa del 'principal sostén' o del 'jefe del hogar', lo cual es correcto, pero puede llevar a sesgos de género.  -->
+
+<!-- Dominio residencial y homogamia -->
 
 Como contrapartida, la elección del hogar como unidad de análisis tiene
 el riesgo de 'esconder' la diversidad que puede existir dentro de los
-hogares. En particular, el efecto de la segregación residencial se ve
-reforzada cuando existen altos niveles de homogamia en los hogares, en
-tanto la homogeneidad dentro de los hogares, puede contrarrestar la
-heterogeneidad a nivel del vecindario [@Tammaru2021]. Que ambos miembros
-de la pareja compartan el mismo ‘estatus’ puede reforzar las ventajas /
-desventajas asociadas a estos grupos sociales y, en paralelo, bloquear
-el contacto con otros hogares diferentes socialmente, pero cercanos
-residencialmente. Retomando esta perspectiva, nuestro trabajo entiende a
-la segregación residencial y la homogamia actúan articulando en
-diferentes ‘niveles’ (hogar-barrio) el fenómeno de la segregación
-urbana. En este trabajo analizamos la homogamia como un factor que
+hogares. En particular, consideramos que el efecto de la segregación
+residencial se ve reforzada cuando existen altos niveles de homogamia en
+los hogares, en tanto la homogeneidad dentro de los hogares, puede
+contrarrestar la heterogeneidad a nivel del vecindario [@Tammaru2021].
+Que ambos miembros de la pareja compartan el mismo ‘estatus’ (nivel
+educativo) puede reforzar las ventajas / desventajas asociadas a estos
+grupos sociales y, en paralelo, bloquear el contacto con otros hogares
+diferentes socialmente, pero cercanos residencialmente. Retomando esta
+perspectiva, nuestro trabajo entiende a la segregación residencial y la
+homogamia actúan articulando diferentes ‘niveles’ (hogar-barrio) del
+fenómeno de la segregación urbana [@VanHam2018]. Para tomar esto en
+cuenta, en este trabajo analizamos la homogamia como un factor que
 refuerza las condiciones de segregación en el ámbito residencial, pero
 no como un dominio de la segregación en sí mismo. Esto se debe a que la
-segregación es definida en este trabajo como <!--# DESARROLLAR -->el
-análisis de los espacios que puedan la posibilidad de gene. En este
-sentido, podemos entender esto como parte de un análisis multi-nivel de
-la segregación [@VanHam2018]. Sin embargo, consideramos que no debe
-entenderse
+segregación es definida en el marco de este trabajo como un intercambio
+*potencial* (no como una interacción efectiva) basada en la co-presencia
+en un espacio físico y simbólico (ver apartado \@ref(lit-estratif)).
+Como señalamos, y resulta evidente, la co-presencia espacial es una
+condición para que una interacción pueda volverse efectiva, pero su
+eficacia social no se reduce a generar interacciones, ya que la
+co-presencia también implica una forma de 'consumo simbólico' del
+espacio, una forma de *distinción* [@Marom2014]. En este sentido, el
+análisis de la segregación no es homologable al análisis de capital
+social, en tanto este último refiere a las relaciones efectivas de las
+personas y grupos sociales. En este sentido, podemos entender esto como
+parte de un análisis multi-nivel de la segregación . En términos
+prácticos, en este trabajo dedicaremos un capítulo a analizar cómo la
+homogamia puede ser un elemento que refuerza la segregación residencial
+(ver capítulo @ref(homogamy)), pero remarcando que no debe entenderse a
+la homogamia como un dominio específico, sino como un aspecto dentro del
+análisis de la segregación en el dominio residencial y su análisis
+separado en esta tesis se debe entender como parte de una estrategia
+expositiva antes que teórica.
 
-<!--# Se anticipan brevemente los métodos de análisis (que son desarrollados luego en los capítulos).  -->
+<!-- Métodos de análisis (desarrollados en los capítulos).  -->
 
-Respecto al análisis se propone un diseño metodológico cuantitativo, en
-el que se combinan diferentes técnicas estadísticas como: análisis de
-redes sociales [@Borgatti2014], modelos de regresión lineal
-generalizados [@Roback2021], técnicas para la reducción de dimensiones
-[@Greenacre2008; @Husson2017] y el agrupamiento de clústeres
-[@Wierzchon2018]. A su vez, se propone la utilización de modelos basados
-en programación lineal entera [@Berkelaar2004] para comparar los
-resultados empíricos con situaciones hipotéticas. Además, haremos uso de
-indicadores clásicas de segregación, utilizadas habitualmente en los
-estudios de este tipo [@Tivadar2019; @Elbers2023]. Por último, todas
-estas técnicas se combinan con herramientas propias del análisis
-espacial, la geoestadística y la geocomputación [@Baddeley2015;
-@Cheng2012; @Lovelace2019a; @Pebesma2020].
+El análisis propuesto tiene un diseño metodológico cuantitativo, en el
+que se combinan diferentes técnicas estadísticas. En este sentido, cada
+capítulo contiene un apartado dedicado a explicar las técnicas y
+decisiones metodológicas utilizadas, pero anticipamos brevemente estas
+estrategias de análisis. En el Capítulo \@ref(residential),
+[DESARROLLAR]<!--#  -->. Por su parte, en el Capítulo \@ref(homogamy)
+[DESARROLLAR]<!--#  -->. En el Capítulo \@ref(mobilities) <!--#  -->.
+Por último el Capítulo \@ref(education) [DESARROLLAR]<!--#  -->
+modelamos una distribución ideal de alumnos en escuelas utilizando
+programación lineal entera [@Berkelaar2004].
+<!--# para comparar los resultados empíricos con situaciones hipotéticas -->De
+forma general, en todos los capítulos estas técnicas se combinan con
+herramientas del análisis espacial, la geoestadística y la
+geocomputación [@Baddeley2015; @Cheng2012; @Lovelace2019a;
+@Pebesma2020].
 
-### Presentación del caso y las fuentes de análisis
+<!-- análisis de redes sociales [@Borgatti2014], modelos de regresión lineal generalizados [@Roback2021], técnicas para la reducción de dimensiones [@Greenacre2008; @Husson2017] y el agrupamiento de clústeres [@Wierzchon2018]. A su vez, se propone la utilización de modelos basados en programación lineal entera [@Berkelaar2004] para comparar los resultados empíricos con situaciones hipotéticas -->
 
-<!--# Se hace una presentación y justificación del recorte geográfico elegido (AMBA), destacando la necesidad de que los recortes de análisis sean “sociológicamente significativos”. Se presenta la clasificación de entornos urbanos pada el AMBA propuesta por Marcos y otros (Marcos, 2021; Marcos et al., 2015; Marcos & Del Río, 2022).Por último, se describen las fuentes de datos utilizadas en el trabajo. -->
+<!-- Índices de segregación -->
 
-En este trabajo centramos nuestro análisis en el Área Metropolitana del
-Gran Buenos Aires,[^03-methods-4] el cual es el principal aglomerado
-urbano de Argentina. Dentro del AMGBA se destaca la Ciudad Autónoma de
-Buenos Aires (CABA), la cual funciona como núcleo y eje articulador del
-aglomerado. En gran medida, el AMGBA es producto de la expansión de la
-CABA y la paulatina incorporación de las localidades cercanas que se
-habían desarrollado en torno a las estaciones de ferrocarril. Resultado
-de su tamaño y desarrollo histórico, El AMGBA presenta una importante
-diversidad interna, que da lugar a diferentes contextos o 'entornos
-urbanos'. Siguiendo la propuesta de Marcos [-@Marcos2021; -@Marcos2022],
-en este trabajo clasificamos los radios censales del AMGBA (unidad
-censal más pequeña disponible) en función de: (a) el momento histórico
-de su urbanización; y (b) el modo predominante de producción del espacio
-urbano. Esta clasificación de entornos urbanos, permite reincorporar el
-espacio como producto social, en el cual se establecen fronteras
-simbólicas que tienen un rol central para estudiar la segregación
-social. En el AMGBA, la clasificación propuesta (ver Figura
-\@ref(fig:TH)) distingue los siguientes entornos urbanos: (1) Ciudad
-colonial, (2) Primera expansión de la ciudad colonial, (3) Centros
-conurbanizados vinculados a la expansión ferroviaria, (4) Complejos de
-vivienda social, (5) Urbanizaciones cerradas, (6) Urbanizaciones de
-origen informal, y los fraccionamientos por loteo formal de nivel
-socioeconómico (NSE) (7) Alto, (8) Medio y (9) Bajo.[^03-methods-5]
+En todos los capítulos se utiliza para medir la segregación el Índice de
+Información Mutua ($M$), en combinación con el método geométrico
+presentado en el apartado anterior (ver apartado
+\@ref(method-geometric)). La elección del *Índice de Información Mutua*
+se basa en su amplia difusión en los trabajos recientes y su
+versatilidad, la cual permite la descomposición en indicadores locales,
+así como su uso en la comparación de diferentes situaciones,
+identificando la parte que corresponde a una diferencia estructural
+[@Elbers2023]. El 'método geométrico' propuesto en el apartado anterior
+se utiliza fundamentalmente para visualizar situaciones de segregación
+local, que pudiendo tener similares valores de segregación local refiere
+a situaciones "opuestas" en cuanto al tipo de población. Como señalamos
+anteriormente, ambos métodos pueden ser utilizados con la técnica de
+'corrección de conteos', para que su cálculo considere las composiciones
+de las unidades espaciales vecinas.
 
-[^03-methods-4]: Siguiendo el criterio oficial del INDEC propuesto por
-    [@Vapnarsky1998; ver también @Vapnarsky2004], el AMGBA es definido
-    como la 'mancha urbana' que se recorta y diferencia del campo
-    abierto. Operacionalmente se construye a partir de identificar la
-    contigüidad de elementos físico-urbanos (como calles, edificios y
-    manzanas). En este trabajo tomamos la adaptación para los datos del
-    Censo 2010 hecha por @Marcos2021.
+## Presentación del caso: la estructura de la desigualdad en el AMBA
 
-[^03-methods-5]: La clasificación propuesta por Marcos recupera
+<!-- Recorte geográfico: AMBA como entidad “sociológicamente significativa” -->
+
+En este trabajo centramos nuestro análisis en el Área Metropolitana
+Buenos Aires, el principal aglomerado urbano de Argentina. Siguiendo el
+criterio propuesto por Vapnarsky [-@Vapnarsky1998; ver también
+@Vapnarsky2004], el AMBA es definido como la 'mancha urbana' que se
+recorta y diferencia del 'campo abierto'. Operacionalmente se construye
+a partir de identificar la contigüidad de elementos físico-urbanos (como
+calles, edificios y manzanas). Destacamos la importancia de trabajar con
+el aglomerado como realidad urbana con un significado sociológico. En
+este sentido, nuestra propuesta busca trabajar con 'la ciudad producto
+social' [@Lefebvre1974] que tiene su propia significatividad en la
+práctica de quienes viven en ella. En términos operativos, en tanto los
+radios no se corresponden exactamente con la mancha urbana, para
+identificar los radios pertenecientes al AMBA utilizaremos los radios
+seleccionados en el trabajo de @Marcos2021, el cual no proporciona
+adicionalmente una adaptación de la cartografía de radios originales que
+retiene sólo las zonas pobladas.
+
+<!-- Diferencias político administrativas -->
+
+Más allá de esto, es indudable que las diferencias administrativas
+también tienen un efecto sobre la realidad de quienes la habitan. En
+este sentido, el AMBA engloba dos jurisdicciones políticas de segundo
+nivel, a saber, la Ciudad Autónoma de Buenos Aires (CABA) y el 'área
+conurbana' perteneciente a la Provincia de Buenos Aires. A su vez,
+dentro del conurbano bonaerense, encontramos la presencia de entidades
+político-administrativas de tercer nivel (Municipios-Partidos). Por el
+lado de la CABA, los departamentos censales se corresponden con las
+Comunas, que constituyen unidades administrativas y de gestión pero que
+están subsumidas políticamente al gobierno de la ciudad. Todo esto
+genera una importante diferenciación jurídico-administrativa dentro del
+aglomerado que impone reglas prácticas para quienes viven en el
+aglomerado<!--#  (ver Figura @ref fig -->.
+
+```{r AMBA, out.width="100%"}
+#| fig.cap: "Área Metropolitana de Buenos Aires, con divisiones administrativas de segundo y tercer nivel y red de ferrocarriles."  
+
+knitr::include_graphics(here::here("figures", "AMBA.png") )
+
+# ggplot() +
+#     geom_sf(data = CARTO$RADIO |> filter(tipo == "U") |> summarise(),
+#             color = "steelblue", fill = "steelblue", alpha = 0.2) +
+#     geom_sf(data = TH2 |> summarise(),
+#             color = "violet", fill = "violet", alpha = 0.2) +
+#     geom_sf(data = CARTO$DPTO |> filter(ID_PCIA == "06"),
+#             color = "darkgreen", fill = NA) +
+#     geom_sf(data = CARTO$PCIA |> filter(ID_PCIA == "02"),
+#             color = "tomato4", linewidth = 0.8) +
+#     geom_sf(data = CARTO$FFCC1, color = "grey20") + 
+#     geom_sf(data = CARTO$FFCC1, color = "grey20", size = 1) +
+#     theme_void()
+```
+
+<!-- Etapas de poblamiento del AMBA -->
+
+Más allá de estas diferencias jurisdiccionales, en el AMBA conviven
+continuidades sociales, que hacen del aglomerado una entidad sociológica
+y demográfica específica, con su propia dinámica. En este contexto, la
+CABA actúa como núcleo y eje articulador del aglomerado, siendo el
+centro de las vías de comunicación y reteniendo muchos de los recursos
+económicos y culturales. La centralidad de la CABA se remonta, en gran
+medida, al propio proceso de poblamiento y crecimiento del AMBA, en
+tanto este es el producto de la expansión de la originaria ciudad
+colonial y de la paulatina incorporación de localidades cercanas que, en
+muchos casos, se habían desarrollado en torno a las estaciones de
+ferrocarril que confluían hacia 'la capital'. De todas formas, esta
+'expansión y anexión' no se dio de forma homogénea en todo el proceso
+histórico, pudiendo identificarse de modo esquemático tres grades etapas
+en el crecimiento de la ciudad colonial, que se corresponden
+parcialmente con la estructura y el modelo económico predominante. Es
+importante señalar que esta periodización busca formalizar el proceso
+para entender luego, en los capítulos posteriores, la forma que toma la
+segregación multi-dominio en la ciudad, por lo cual supone una
+simplificación este proceso.
+
+<!-- sXIX: Cono de elites -->
+
+El primer vector de expansión de la ciudad ocurrió durante el s. XIX, a
+partir del avance de la ciudad colonial sobre la zona rural circundante.
+En este crecimiento se produjo la incorporación de los centros urbanos
+cercanos (en particular, Caballito, Flores y Belgrano). Si bien
+actualmente esta zona de la ciudad tiene una estructura urbana
+consolidada, producto de la diversidad con la que se desarrollo esta
+expanción no es un área que tenga un perfil homogéneo en lo que respecta
+al uso del suelo o su perfil socioeconómico [@Marcos2021]. En
+particular, como ocurrió en muchas de las ciudades latinoamericanas,
+esta expansión permitió la temprana constitución de un 'cono de las
+elites', que comenzaba en el casco histórico de la ciudad y se expandía
+hacia la zona ribereña norte. Como contraparte, la zona sur de la ciudad
+comenzó a consolidarse como una zona de hábitat popular presentando un
+mayor deterioro que el resto.
+
+<!-- sXX: Expansión industrial y exclusión de los pobres informales -->
+
+Un segundo momento de crecimiento ocurrió desde principios del s. XX, en
+el contexto de una migración (externa e interna) hacia la ciudad, que
+generó un importante crecimiento poblacional, fundamentalmente vinculado
+al desarrollo de una economía industrial y manufacturera. Este
+crecimiento estuvo marcado por un doble movimiento. Por un lado, se
+genera la paulatina anexión de los cascos conurbanos cercanos,
+vinculados fundamentalmente a las estaciones de ferrocarril. Estos
+espacios se fueron onstituyendo, a posteriori, como subcentralidades
+dentro del aglomerado. Por otro lado, este crecimiento por anexión se
+superpuso con el avance e incorporación de las 'antiguas periferias' de
+la ciudad (en muchos casos antiguas zonas anegables recuperadas a partir
+del encauzamiento de los arroyos). La forma predominante de este
+crecimiento se dio de la mano de un conjunto de iniciativas que incluían
+el mercado formal y los loteos populares, estando sostenido y acompañado
+por el proceso de constitución de la clase obrera y la clase media. Es
+importante señalar que ambos procesos fueron sucediendo de forma
+simultanea, de manera que el crecimiento sobre zonas vacantes ocurrió
+junto a la anexión de estos cascos conurbanos una vez que estas zonas se
+'acercaban', lo que a su vez permitió el crecimiento sobre nuevas zonas
+vacantes (a veces cercanas a las zonas anexionadas). En paralelo con
+este proceso de expansión, emerge el fenómeno de exclusión de los pobres
+informales urbanos, quienes generan los primeros barrios informales
+('villas'). Estos barrios informales surgen de la ocupación mediante
+mecanismos informales de espacios de tierra vacante cercanas a los
+centros urbanos e industriales pero poco atractiva comercialmente por
+sus condiciones de acceso o salubridad. Estos primeros barrios
+informales irían creciendo y profundizando su presencia durante todo el
+período, emergiendo como una característica alarmante del paisaje urbano
+y espacio de organización social [@Ziccardi1977].
+
+<!-- sXXI: ciudad neoliberal -->
+
+Un tercer momento de crecimiento se corresponde con la emergencia a
+fines del s XX del paradigma de la 'ciudad neoliberal'. Al igual que en
+los casos anteriores, este momento de crecimiento tiene una forma
+heterogénea y aglutina diferentes iniciativas. Un primer proceso es la
+proliferación de barrios cerrados y la suburbanización de las elites y
+las clases medias acomodadas. Aprovechando la existencia de tierras
+económicas en las perisferias (y el agotamiento de tierras vacantes en
+las zonas centrales del aglomerado), emergieron iniciativas privadas que
+desarrollaron enclaves inmobiliarios y comerciales, a partir de la
+construcción de barrios cerrados, espacios comerciales y de servicios y
+conexiones viales. Inicialmente estos barrios eran usados como quintas
+de descanso de sectores altos, pero paulatinamente fueron
+transformándose en vivienda permanentes de estos sectores
+[@Janoschka2002a]. Además, el crecimiento y masificación de este tipo de
+iniciativas permitió que estos entornos urbanos sean accesible a
+sectores medios y medios-altos, promoviendo una suburbanización de estos
+sectores que acompañó la mayor flexibilización y virtualización de los
+horarios laborales [@Frisch2022; @Ciccolella2021a; @Ciccolella2021]. En
+segundo lugar, la acumulación de recursos urbanos en la ciudad central
+impulsó una demanda inmobiliaria de viviendas deterioradas y bien
+ubicadas, generando la gentrificación de estas áreas. Como parte de este
+proceso se generó una presión centrífuga que fue expulsando a algunos de
+los sectores bajos y medios-bajos que residían en estas zonas (aunque
+muchos permanecieron en ellas). A su vez, este proceso fue acompañados
+en los últimos años por una *turristificación* de zonas centrales,
+vinculada a la expansión de los alquileres temporarios mediante
+plataformas digitales [@LerenaRongvaux2022]. Por último, un tercer
+movimiento fue la expansión y consolidación de la marginalización
+urbana. La crisis del mercado de empleo formal, paralelo a la expansión
+de la economía informal, llevo a una consolidación de los barrios
+informales existentes y a la emergencia de nuevos barrios en las tierras
+vacantes. La poca provisión de servicios urbanos y una intervención
+estatal vinculada al asistencialismo social antes que a la integración
+sociourbana de estos territorios, hizo que los barrios populares de
+origen informal tendieron a permanecer como espacios urbanos
+desarticulado de la trama de la ciudad formal, en lugar de constituirse
+como 'momentos' en la consolidación de espacios urbanos. Además, la
+'implantación' de los barrios cerrados en zonas de bajo valor, llevó a
+una convivencia muda entre ambos entornos urbanos.
+
+<!-- Estructura de la desigualdad en el AMBA -->
+
+Como resultado de todo el proceso anterior, se constituyó una estructura
+de desigualdades que abarca todo el AMBA. Como señala @Marcos2021 [p.
+85] la estructura actual de la AMBA "cristaliza así, como capas
+superpuestas de su historia, las huellas de diferentes procesos". Esta
+estructura fue analizada en Argentina por una larga tradición de
+cosntrucción de 'mapas sociales' con información censal, iniciada con
+los trabajos de Torres [-@Torres1993; -@Torres1999] y continuada en los
+trabajos de @Buzai2003, @Marcos2015a, @Buzai2015, Abba [-@Abba2011;
+-@Abba2015] y @Goicoechea2014.<!-- Entornos urbanos -->Un enfoque
+complementario propuesto por Marcos y sus colegas [@Marcos2021;
+@Marcos2022], busca generar una tipología de 'entornos
+urbanos',[^03-methods-6] en función de: (a) el momento histórico de su
+urbanización; y (b) el modo predominante de producción del espacio
+urbano. Esta clasificación de entornos urbanos, permite entender el
+espacio como producto social en donde se establecen fronteras simbólicas
+entre los territorios. Como resultado de esta metodología aplicada al
+AMBA se distinguen los siguientes entornos urbanos: (1) Ciudad colonial,
+(2) Primera expansión de la ciudad colonial, (3) Centros conurbanizados
+vinculados a la expansión ferroviaria, (4) Complejos de vivienda social,
+(5) Urbanizaciones cerradas, (6) Urbanizaciones de origen informal, y
+los fraccionamientos por loteo formal de nivel socioeconómico (NSE) (7)
+Alto, (8) Medio y (9) Bajo (ver Figura \@ref(fig:TH)).
+
+[^03-methods-6]: La clasificación propuesta por Marcos recupera
     modificando la clasificación desarrollada anteriormente para la CABA
     [@Marcos2015] la cual, a su vez, está basada en las propuestas para
     ciudades de México desarrollada en los trabajos de @Connolly2005 y
@@ -743,54 +1022,7 @@ socioeconómico (NSE) (7) Alto, (8) Medio y (9) Bajo.[^03-methods-5]
 knitr::include_graphics(here::here("figures", "INTRO_TH.png") ) #21331 fig.asp: 0.78  
 ```
 
-<!-- Descripción de las fuentes de datos utilizadas -->
-
-El trabajo utiliza una variedad de fuentes de datos.
-
-Uno de los grandes desafíos del presente trabajo está relacionado con la
-dificultad de medir simultáneamente los diferentes dominios de la
-segregación. A diferencia de lo que sucede en algunos países con
-sistemas de registros administrativos consolidados y fuertemente
-articulados con los sistemas estadísticos, en Argentina no existen
-fuentes de datos que permitan acceder a información individual que
-permita medir la segregación en diferentes dominios de la vida social.
-Por ello uno de los desafíos que aborda esta tesis es el uso articulado
-de las fuentes disponibles y la propuesta de técnicas estadísticas que
-permitan su uso combinado.
-
-Por un lado se utilizan los datos de población del Censo Nacional de
-Población, Hogares y Viviendas 2010 (INDEC)
-
-Los datos educativos son tomados de las Pruebas Aprender (ME).
-
-Por último, se utilizan datos de la *Encuesta de Movilidad Domiciliaria*
-realizada en 2018 (ENMODO2018). Esta encuesta permite conocer los
-movilidades cotidianas urbanas de la población del AMGBA. Si bien los
-datos de movilidad están disponibles a nivel de radio censal
-(aproximadamente 300 viviendas), en este trabajo hemos utilizado las
-fracciones censales (aproximadamente 5.000 viviendas) como escala de
-análisis, con el fin de minimizar el efecto que pudiera tener la
-selección muestral. Más allá de esto, hemos conservado la clasificación
-de 'entorno urbano' como variable asociada a los lugares urbano de
-residencia y de destino (que fue determinado a nivel de radio censal).
-En el análisis retuvimos la totalidad de los viajes origen-destino
-realizados por los encuestados (a) dentro del AMGBA (b) que no incluyen
-como destino la propia vivienda.[^03-methods-6] Como resultado en los
-análisis se utilizan un total de
-`r # format(nrow(db_mim), big.mark = ".", scientific = F, decimal.mark = ",")`
-viajes (sobre un total de
-`r # format(nrow(ENMODO$VIA), big.mark = ".", scientific = F, decimal.mark = ",")`
-viajes relevados en la
-ENMODO2018).<!--# uso de encuestas de origen destino [@Heroy2023] -->
-
-[^03-methods-6]: La ENMODO 2018 relevó las prácticas de movilidad urbana
-    en una muestra de 16.667 hogares y 42.971 personas residentes en el
-    AMGBA. Los datos y especificaciones técnicas están disponibles en BA
-    Data
-    (<https://data.buenosaires.gob.ar/dataset/encuesta-movilidad-domiciliaria>).
-    <!--# Los datos utilizados en este trabajo fueron descargados de dicho portal en noviembre de 2022. Un respaldo de los datos descargados está disponible en el repositorio de GitHub del autor. -->Recuperando
-    las definiciones de la ENMODO2018, un 'viaje' es un desplazamiento
-    que tiene un motivo, un origen, un destino. A su vez, un viaje puede
-    componerse de diferentes 'etapas', entendidas estas últimas como el
-    conjunto de trayectos realizados en una modalidad o medio de
-    transporte específico.
+Tomando en cuenta el esquema de análisis presentado anteriormente y los
+aportes sobre la estructura de la desigualdad espacial del AMBA, en lo
+que queda de este trabajo analizamos la estructura de segregación del
+AMBA en los diferentes dominios sociales.
