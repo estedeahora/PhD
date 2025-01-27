@@ -1059,14 +1059,22 @@ prestigio de estas zonas) que genera en las personas la conciencia de
 estas divisiones anteriores. Otros dos aspectos interesantes de la
 propuesta de Sabatini es la incorporación de la escala de análisis, un
 problema que será retomado y profundizado por @Duhau2013a y @Ward2012.
-Por su parte, analizando los cambios asociados al neoliberalismo durante
-la década de 1990, @PrevotSchapira2001 señala que la expansión de la
-pobreza por fuera de los enclaves de las 'villas miseria', lleva a la
-conformación de una 'fragmentación' del espacio urbano, basado en en
-'identidades restringidas' y diferenciaciones simbólicas (antes que
-económicas) del territorio. En conjunto estos aportes proponen
-incorporar las particularidades del pensamiento latinoamericano para
-pensar la segregación.
+Sin embargo, más allá de la escala, el significado y los efectos de la
+segregación vienen dado por otros factores, como las 'condiciones de
+relegación y exclusión que son experimentadas por los habitantes'
+[@Duhau2013a, p. 90]. Además, el trabajo de @Duhau2013a [p. 91] enfatiza
+la importancia del mercado inmobiliario y la planificación urbana en
+tanto 'vehículo urbano' por la que se produce la 'división social del
+espacio residencial', señalando que esta división no es producida de
+forma directa y concientemente por las clases sociales. Por su parte,
+analizando los cambios asociados al neoliberalismo durante la década de
+1990, @PrevotSchapira2001 señala que la expansión de la pobreza por
+fuera de los enclaves de las 'villas miseria', lleva a la conformación
+de una 'fragmentación' del espacio urbano, basado en en 'identidades
+restringidas' y diferenciaciones simbólicas (antes que económicas) del
+territorio. En conjunto estos aportes proponen incorporar las
+particularidades del pensamiento latinoamericano para pensar la
+segregación.
 
 Otro <!-- segregación socio-económica -->aspecto característico del
 pensamiento latinoamericano sobre la segregación es que la misma ha sido
@@ -1461,22 +1469,6 @@ nos interesa indagar cómo la segregación experimentada en los diferentes
 dominios de la vida social refuerza (o no) la segregación en el ámbito
 residencial, constituyendo un círculo vicioso o, por el contrario,
 aportando a diferentes aspectos de la segregación urbana.
-
-```{=html}
-<!-- 
-Segregación multi-dominio en trabajos de LA  
-
-En América Latina existen aún pocos trabajos que aborden la relación
-entre diferentes dominios de la segregación de forma cuantitativa. En el
-ámbito local el principal avance en esta dirección viene dado por
-algunos trabajos que indagan cómo la segregación residencial se
-retroalimenta con la segmentación del mercado laboral y educativo,
-potenciando el aislamiento de los 'pobres urbanos' [@Kaztman2001]. A su
-vez, desde un enfoque predominantemente cualitativo, se ha indagado cómo
-la segregación residencial se relaciona con el aislamiento urbano en
-otros dominios [@Soldano2008; @Soldano2017; @Carman2013;
-@DiVirgilio2014c].-->
-```
 
 ```{=html}
 <!-- 
