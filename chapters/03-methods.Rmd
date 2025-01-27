@@ -805,7 +805,7 @@ anteriormente, ambos métodos pueden ser utilizados con la técnica de
 'corrección de conteos', para que su cálculo considere las composiciones
 de las unidades espaciales vecinas.
 
-## Presentación del caso: la estructura de la desigualdad en el AMBA
+## Presentación del caso: la estructura de la desigualdad en el AMBA {#method-AMBA}
 
 <!-- Recorte geográfico: AMBA como entidad “sociológicamente significativa” -->
 
@@ -972,7 +972,7 @@ origen informal tendieron a permanecer como espacios urbanos
 desarticulado de la trama de la ciudad formal, en lugar de constituirse
 como 'momentos' en la consolidación de espacios urbanos. Además, la
 'implantación' de los barrios cerrados en zonas de bajo valor, llevó a
-una convivencia muda entre ambos entornos urbanos.
+una convivencia entre estos entornos urbanos extremos.
 
 <!-- Estructura de la desigualdad en el AMBA -->
 
