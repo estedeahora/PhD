@@ -617,25 +617,28 @@ espacial de la población y las características sociodemográficas de los
 hogares, por lo cual es la más adecuada para analizar los patrones de
 segregación. Los datos fueron usados a nivel de microdatos usando la
 metodología propuesta por Pablo De Grande [-@DeGrande2016] y el programa
-*Redatam Converter* para la aplicación de la misma. En segundo lugar,
-utilizamos datos educativos tomados de las evaluaciones *Aprender*
-(Ministerio de Educación de la Nación) del año 2018. Estas evaluaciones
-aportan información sobre el desempeño académico de los estudiantes, así
-como sobre las características socioeconómicas de las comunidades
-escolares, lo que permite permite analizar la segregación escolar.
-Además, a partir de la metodología propuesta por Pablo De Grande
-[-@DeGrande2025] fue posible georeferenciar los datos a cada una de las
-escuelas.[^03-methods-5] Por último, se utilizan datos de la *Encuesta
-de Movilidad Domiciliaria* realizada en 2018 (ENMODO2018). Esta encuesta
-permite conocer los movilidades cotidianas urbanas de la población del
-AMBA.
+*Redatam Converter* para la aplicación de la misma.[^03-methods-5] En
+segundo lugar, utilizamos datos educativos tomados de las evaluaciones
+*Aprender* (Ministerio de Educación de la Nación) del año 2018. Estas
+evaluaciones aportan información sobre el desempeño académico de los
+estudiantes, así como sobre las características socioeconómicas de las
+comunidades escolares, lo que permite permite analizar la segregación
+escolar. Además, a partir de la metodología propuesta por Pablo De
+Grande [-@DeGrande2025] fue posible georeferenciar los datos a cada una
+de las escuelas.[^03-methods-6] Por último, se utilizan datos de la
+*Encuesta de Movilidad Domiciliaria* realizada en 2018 (ENMODO2018).
+Esta encuesta permite conocer los movilidades cotidianas urbanas de la
+población del AMBA.
 
 [^03-methods-4]: Tanto los datos utilizados, así como el código fuente R
     usado para el procesamiento y la escritura de la tesis está
     disponible a través del repositorio Github del autor
     ([https://github.com/estedeahora/](https://github.com/estedeahora/phd){.uri}[PhD](https://github.com/estedeahora/PhD)).
 
-[^03-methods-5]: Se pone a disposición en el repositorio una adaptación
+[^03-methods-5]: Ver el trabajo de @Rodriguez2013b para una evaluación
+    de los radios censales para medir la segregación en Argentina.
+
+[^03-methods-6]: Se pone a disposición en el repositorio una adaptación
     para usar en R del código propuesta por Pablo De Grande en el
     artículo mencionado.
 
@@ -682,15 +685,16 @@ Siguiendo esta perspectiva, en este trabajo utilizamos el nivel de
 estudio del hogar como variable *proxy* de la clase social (y el nivel
 socioeconómico), lo cual es una práctica utilizada en estudios de este
 tipo, tanto a nivel internacional [@He2022a; @Marcinczak2013;
-@Monkkonen2021] como regional [@Groisman2010; @Molinatti2021]. El uso
-del 'nivel de estudio' (en lugar de variables relacionadas a la
-inserción dentro del mercado de trabajo) se fundamenta en limitaciones
-en los datos disponibles, siendo la variable nivel de estudio una
-variable presente en todas las fuentes disponibles y que tiene una
-fuerte correlación con el nivel socioeconómico (según puede comprobarse
-con datos de EPH-INDEC). En concreto, se definen tres niveles para los
-grupos educativos en base al criterio de ‘ciclos completos’, es decir
-que se haya finalizado el nivel educativo, a saber: (a) Hasta primario
+@Monkkonen2021] como regional [@Groisman2010; @Molinatti2021;
+@Rodriguez2013b; @Rodriguez2020b; @VergaraParra2018]. El uso del 'nivel
+de estudio' (en lugar de variables relacionadas a la inserción dentro
+del mercado de trabajo) se fundamenta en limitaciones en los datos
+disponibles, siendo la variable nivel de estudio una variable presente
+en todas las fuentes disponibles y que tiene una fuerte correlación con
+el nivel socioeconómico (según puede comprobarse con datos de
+EPH-INDEC). En concreto, se definen tres niveles para los grupos
+educativos en base al criterio de ‘ciclos completos’, es decir que se
+haya finalizado el nivel educativo, a saber: (a) Hasta primario
 completo; (b) Secundario completo; (c) Superior completo. La elección de
 ciclos completos se debe a que la finalización de los ciclos educativos
 es la que otorga las credenciales que permiten su uso en el mercado
@@ -727,7 +731,7 @@ social) considerando el mayor nivel educativo entre las personas que son
 identificadas como el 'jefe de hogar' o su 'cónyuge' (si hubiera). En el
 caso de las evaluaciones educativas se considera el mayor nivel
 educativo entre los madres/padres/responsables declarados.
-<!--# Como alternativa, algunos trabajos toman la condición educativa del 'principal sostén' o del 'jefe del hogar', lo cual es correcto, pero puede llevar a sesgos de género.  -->
+<!--# Como alternativa, algunos trabajos toman la condición educativa del 'principal sostén' o del 'jefe del hogar' [@Rodriguez2013b] , lo cual es correcto, pero puede llevar a sesgos de género.  -->
 
 <!-- Dominio residencial y homogamia -->
 
@@ -982,12 +986,12 @@ de desigualdades que abarca todo el AMBA. Como señala @Marcos2021 [p.
 superpuestas de su historia, las huellas de diferentes procesos". Esta
 estructura fue analizada en Argentina por una larga tradición de
 cosntrucción de 'mapas sociales' con información censal, iniciada con
-los trabajos de Torres [-@Torres1993; -@Torres1999] y continuada en los
-trabajos de @Buzai2003, @Marcos2015a, @Buzai2015, Abba [-@Abba2011;
--@Abba2015] y @Goicoechea2014.<!-- Entornos urbanos -->Un enfoque
-complementario propuesto por Marcos y sus colegas [@Marcos2021;
+los trabajos de Torres [-@Torres1993; -@Torres1999; -@Torres2001] y
+continuada en los trabajos de @Buzai2003, @Marcos2015a, @Buzai2015, Abba
+[-@Abba2011; -@Abba2015] y @Goicoechea2014.<!-- Entornos urbanos -->Un
+enfoque complementario propuesto por Marcos y sus colegas [@Marcos2021;
 @Marcos2022], busca generar una tipología de 'entornos
-urbanos',[^03-methods-6] en función de: (a) el momento histórico de su
+urbanos',[^03-methods-7] en función de: (a) el momento histórico de su
 urbanización; y (b) el modo predominante de producción del espacio
 urbano. Esta clasificación de entornos urbanos, permite entender el
 espacio como producto social en donde se establecen fronteras simbólicas
@@ -999,7 +1003,7 @@ vinculados a la expansión ferroviaria, (4) Complejos de vivienda social,
 los fraccionamientos por loteo formal de nivel socioeconómico (NSE) (7)
 Alto, (8) Medio y (9) Bajo (ver Figura \@ref(fig:TH)).
 
-[^03-methods-6]: La clasificación propuesta por Marcos recupera
+[^03-methods-7]: La clasificación propuesta por Marcos recupera
     modificando la clasificación desarrollada anteriormente para la CABA
     [@Marcos2015] la cual, a su vez, está basada en las propuestas para
     ciudades de México desarrollada en los trabajos de @Connolly2005 y

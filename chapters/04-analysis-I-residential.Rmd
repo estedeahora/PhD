@@ -12,15 +12,16 @@ editor_options:
 
 <!-- Introducción y presentación de objetivo del capítulo -->
 
-El AMBA presenta una estructura de desigualdades espaciales marcada por
-las diferentes etapas de su desarrollo urbano (ver Apartado
-\@ref(method-AMBA)). Como parte de esta estructura de desigualdades
-espaciales, la segregación en el dominio residencial es una dimensión
-central, que permite explicar el modo en que esta estructura se
-reproduce. A partir de esta caracterización, en este primer capítulo del
+El AMBA presenta una estructura de desigualdades espaciales
+caracterizada por las diferentes etapas de su desarrollo urbano (ver
+Apartado \@ref(method-AMBA)). Como parte de esta estructura de
+desigualdades espaciales, la segregación en el dominio residencial es
+una dimensión central para comprender los mecanismos de reproducción de
+dicha estructura. A partir de esta caracterización, en este capítulo del
 análisis nos proponemos identificar y describir la estructura de la
 segregación residencial en el AMBA<!--# (objetivo específico 1) -->.
-<!--# Para ello, comenzaremos describiendo los antecedentes sobre... DESARROLLAR -->
+\<!--# Para ello, comenzaremos describiendo los antecedentes sobre...
+DESARRO
 
 <!-- Estructura de segregación residencial en Latinoamérica -->
 
@@ -28,28 +29,29 @@ En América Latina el análisis de la segregación en el dominio
 residencial está vinculado a la emergencia del problema de la
 marginalidad urbana y, en particular, de los barrios populares de origen
 informal (que en Argentina se denominan históricamente como 'villas').
-La aparición y visibilización de este tipo de entorno urbano hizo que
-muchos teóricos y trabajos propusieran el foco en la explicación de la
-marginalidad urbana, asociada a la informalidad laboral y residencial.
+La aparición y creciente visibilización de este tipo de entorno urbano
+impulsó a diversos estudiosos a centrar su atención en la explicación de
+la marginalidad urbana, asociada a la informalidad laboral y
+residencial.
 <!-- Sabatini: Patrón de segregación residencial de gran escala -->Como
 parte de los intentos por conceptualizar los patrones de segregación,
 @Sabatini2006 señala que las ciudades latinoamericanas se caracterizan
 por un 'patrón de segregación a gran escala'. Dentro de este patrón, y
-en sintonía con lo que se observa en las ciudades europeas, puede
-observarse: (a) una concentración de los grupos altos y medios
-ascendentes en algunas áreas de la ciudad y algunos sectores del centro
-(conformando el 'cono de las elites'); (b) la existencia de amplias
-zonas donde residen mayoritariamente sectores de baja renta,
-habitualmente ubicadas en la periferia, pero también en las zonas
-deterioradas del centro. Dentro de este patrón, se observan algunas
-particularidades propias de la región. Por un lado, la presencia de
-enclaves de pobreza extrema asociados al mercado informal de vivienda,
-ubicados mayoritariamente en las zonas residenciales de los sectores de
-ingresos bajos. Por otra parte, una diversidad social elevada en los
-barrios de renta alta, donde conviven, además de la casi totalidad de
-las clases privilegiadas, algunos sectores medios e, incluso, bajos.
-Esta diversidad en las zonas de renta alta se sostiene sobre la base de
-la exclusión de los pobres informales, excluidos del mercado formal de
+en sintonía con lo que se observa en las ciudades europeas, se observa:
+(a) una concentración de los grupos altos y medios ascendentes en
+algunas áreas de la ciudad y algunos sectores del centro (conformando el
+'cono de las elites'); (b) la existencia de amplias zonas donde residen
+mayoritariamente sectores de baja renta, habitualmente ubicadas en la
+periferia, pero también en las zonas deterioradas del centro. Dentro de
+este patrón, se observan algunas particularidades que caracterizan a las
+ciudades latinoamericanas. Por un lado, la presencia de enclaves de
+pobreza extrema asociados al mercado informal de vivienda, ubicados
+mayoritariamente en las zonas residenciales de los sectores de ingresos
+bajos. Por otra parte, una diversidad social elevada en los barrios de
+renta alta, donde conviven, además de la casi totalidad de las clases
+privilegiadas, algunos sectores medios e, incluso, bajos. Esta
+diversidad en las zonas de renta alta se sostiene sobre la base de la
+exclusión de los pobres informales, excluidos del mercado formal de
 tierra y trabajo. Resultado de estas particularidades, las áreas
 residenciales donde residen los más pobres son más homogéneas que
 aquellas donde residen los grupos altos. A su vez, esta diversidad en
@@ -119,33 +121,50 @@ residenciales de sectores altos y bajos.
 
 <!-- Estructura / Patrones de segregación residencial en AMBA -->
 
-Retomando estos aportes generales sobre las ciudades latinoamericanas,
-descibimos a continuación los trabajos que analizaron la segregación en
-AMBA.
+Más allá de estos aportes conceptuales para describir los patrones de
+segregación de las ciudades latinoamericanas, no hay hasta el momento
+demasiados trabajos que analicen los patrones de segregación residencial
+desde una perspectiva cuantitativa en el AMBA. En este sentido, más allá
+de la tradición de 'mapas sociales' que mencionamos anteriormente, la
+cual aporta una mirada sobre las estructuras de las desigualdades
+espaciales del aglomerado [@Torres1993; @Torres1999; @Torres2001;
+@Buzai2003; @Marcos2015a; @Buzai2015; @Abba2011; @Abba2015;
+@Goicoechea2014], son pocos los trabajos locales que han profundizado en
+el problema de la segregación. A su vez, la mayoría de estos trabajos se
+concentran en identificar cambios en la segregación entre diferentes
+períodos censales, indagando sobre la relación que existen entre el
+crecimiento de la segregación y los ciclos económicos, en particular,
+con la distribución del ingreso [ver: @Groisman2009; @Groisman2010;
+@Rodriguez2016b; @Rodriguez2017b; @Suarez2011; @VergaraParra2018]. En
+esta línea, @Groisman2009 señala que pese al deterioro de las
+condiciones de vida, durante la década de 1990 no hubo un aumento
+significativo de la segregación residencial. Estos hallazgos son
+reforzados por @Rodriguez2016b, quien confirma la estabilidad de la
+segregación en la década de 1990 y señala una reducción de la misma
+durante la década de los 2000, asociando esta tendencia a mejoras en la
+estructura distributiva. Debatiendo con este último trabajo,
+@VergaraParra2018 observa que durante la primera década de este siglo la
+segregación se mantuvo e, incluso, se intensificó en algunos aspectos,
+poniendo en duda la hipótesis de una correspondencia entre la mejoras en
+la distribución del ingreso y la segregación residencial. Además,
+@Groisman2010 y @Suarez2011 observan que durante estos años también se
+produjo un incremento de la desigualdad en el acceso a servicios y la
+conectividad, lo cual aumenta las consecuencias de la segregación.
 
-A pesar de la importancia que tiene ... por ejemplo respecto a las
-características de las villas... en la literatura la segregación ha sido
-hasta el momento poco estudiada desde un enfoque cuantitativo. En este
-sentido, los trabajos que abordan...
+<!-- Patrones de segregación residencial -->
 
-Diferentes estudios señalan que el AMBA verifica parcialmente un 'patrón
-de segregación residencial de gran escala' característico de las
-ciudades latinoamericanas
-
-El trabajo de @Groisman2009 identifica una elevada segregación en el
-AMBA, pero no reconoce un crecimiento de la misma durante la década de
-1990. Profundizando sobre estos datos, el trabajo de @Suarez2011 señala
-cómo los cambios ocurridos a partir de la década de 1990, han generado
-una mayor fragmentación del AMBA, sobre todo cuando se considera el
-acceso a servicios y la concetividad.
-
-@Groisman2005; @Groisman2006; @Linares2013; @Torres2001; @Torres2001a;
-@Torres1999; @Zuccotti2008; @Rodriguez2016b
-
-En esta línea, el trabajo de @Molinatti2021 señala que en las últimas
-décadas los cambios en la dinámica urbana económica profundizaron la
-polarización residencial y modificaron el patrón de la segregación en el
-AMBA. Según esta autora, la mayor polarización estuvo basada en: (a) una
+Buscando comprender los patrones de segregación residencial,
+@VergaraParra2018 identifica una fuerte segmentación del AMBA que da
+como resultado una concentración espacial persistente de los grupos
+vulnerables en las áreas periféricas y zonas específicas de la ciudad
+central. En este sentido, los grupos vulnerables se localizaron
+predominantemente en la zona sur y algunos municipios del conurbano
+(como La Matanza, Moreno y Florencio Varela), consolidando enclaves
+homogéneos con acceso limitado a recursos urbanos. Por su parte,
+@Molinatti2021 señala que en las últimas décadas los cambios en la
+dinámica urbana económica profundizaron la polarización residencial y
+modificaron el patrón de la segregación en el AMBA. Como parte de estos
+cambios señala que esta polarización estuvo basada en: (a) una
 apropiación de las áreas privilegiadas por parte del grupo de mayor
 nivel socioeconómico; (b) una suburbanización de las élite, acompañado
 por la emergencia de las urbanizaciones cerradas y el crecimiento de
@@ -156,19 +175,24 @@ las clases bajas y medias; (e) un sostenimiento de los niveles de
 segregación residencial que surgieron en los '90, los cuales no se
 revirtieron en la década de los 2000, a pesar de la mejora en las
 condiciones laborales y del crecimiento de los niveles educativos de la
-población.
+población. <!-- Fragmentación -->En relación a esto, @Rodriguez2017b
+señala que un aspecto clave para entender estos cambios es el concepto
+de 'fragmentación urbana' según el cual 'las barreras físicas sustituyen
+a la distancia como mecanismo de separación' [@Rodriguez2017b, p. 8].
+<!-- Barrios cerrados -->En este sentido, la emergencia de
+urbanizaciones cerradas en la periferia urbana ha cristalizado
+heterogeneidades espaciales con poca interrelaciones entre estas
+urbanizaciones y las existentes anteriormente [@Frisch2022].
+<!-- Gentrificación -->A su vez, del mismo modo que ocurrió en otros
+países, los procesos de gentrificación de algunas áreas centrales,
+generaron un desplazamiento progresivo de los sectores populares que
+vivían en ellos originalmente, en lugar de promover una mayor mixtura
+social [@DiVirgilio2014f; @Rodriguez2017a].
 
-<!-- Procesos de gentrificación y barrios cerrados -->
-
-A su vez, como ocurrió en otros países, los procesos de gentrificación
-de algunas áreas centrales, generaron un desplazamiento progresivo de
-los sectores populares que vivían en ellos originalmente, en lugar de
-promover una mayor mixtura social [@DiVirgilio2014f]. De manera similar,
-la emergencia de urbanizaciones cerradas en la periferia urbana ha
-cristalizado heterogeneidades espaciales con poca interrelaciones entre
-estas urbanizaciones y las existentes anteriormente [@Frisch2022].
-
-<!-- Segregación multi-dominio en trabajos de LA. En América Latina existen aún pocos trabajos que aborden la relación entre diferentes dominios de la segregación de forma cuantitativa. En el ámbito local el principal avance en esta dirección viene dado por algunos trabajos que indagan cómo la segregación residencial se retroalimenta con la segmentación del mercado laboral y educativo, potenciando el aislamiento de los 'pobres urbanos' [@Kaztman2001]. A su vez, desde un enfoque predominantemente cualitativo, se ha indagado cómo la segregación residencial se relaciona con el aislamiento urbano en otros dominios [@Soldano2008; @Soldano2017; @Carman2013; @DiVirgilio2014c].-->
+Tomando en cuenta estos antecedentes, en lo que resta del capítulo
+proponemos analizar la estructura de la segregación residencial en el
+AMBA, buscando identificar los patrones caracteristico y discutiendo su
+relación con procesos los históricos que les dieron forma.
 
 ## La estructura y patrones de la segregación en el dominio residencial en el AMBA {#residential-analysis}
 
@@ -180,10 +204,10 @@ algunas ciudades de Europa continental y muy por debajo de los
 encontrados en Estados Unidos.[^04-analysis-i-residential-1]
 <!-- global -->En su conjunto, el índice $M$ tiene un valor de
 `r # RES$SEG1[3, 2]` , la cual es un poco superior a la segregación que
-tienen en su interior por separado la CABA y los Partidos del Conurbano
+tienen por separado la CABA y los Partidos del Conurbano
 (`r # combine_words(RES$SEG1[3, 3:4], and = " y ")`,
 respectivamente).[^04-analysis-i-residential-2] <!-- entre-inter -->En
-relación a esto, la mayor parte de la segregación del AMGBA
+relación a esto, la mayor parte de la segregación del AMBA
 (`r # paste0(RES$SEG2[1, "WITHIN"], "%")`) se explica por diferencias
 'al interior' [*within*] de cada una de las jurisdicciones, antes que
 por diferencias 'entre' [*between*] estas (ver \@ref(tab:segres1)). Por
@@ -365,7 +389,7 @@ pobres urbanos [@Soldano2008].
 ```{r SEGRE-RES, out.width="100%", fig.asp=0.606}
 #| fig.cap: "Segregación local en el AMGBA (Índice de Información Mutua). Se destacan con recuadros y los detalles las zonas profundizadas en el análisis."
 
-include_graphics(here("figures/SEG-RES_AMGBA-con-detalle.png"))
+include_graphics(here::here("figures/SEG-RES_AMGBA-con-detalle.png"))
 ```
 
 **[ ] TODO** Agregar análisis de CA para mostrar alta segregación con
