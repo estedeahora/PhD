@@ -51,7 +51,7 @@ options(cli.progress_show_after = 0)
 # -> CARTO = list(AMGBA, RADIO, DPTO, PCIA, FFCC1, FFCC2)
 # -> CALLE [sfnetwork]
 
-source("_rawdata/PhD_01_data-carto.R", encoding = "UTF-8")
+source(here::here("raw-data", "PhD_data_01-carto.R"), encoding = "UTF-8")
 
 # Población
 # --------*
@@ -61,19 +61,20 @@ source("_rawdata/PhD_01_data-carto.R", encoding = "UTF-8")
 # [-] Distribución de población facebook
 # ->
 
-source("_rawdata/PhD_02_data-population.R", encoding = "UTF-8")
+source(here::here("raw-data", "PhD_data_02-population.R"), encoding = "UTF-8")
 
 # Educación
 # --------*
-# [x] Base de escuelas AMBA (comun primaria y secundaria) con composición de MNI padres
+# [x] Base de escuelas AMBA (comun primaria y secundaria) con composición
+#       de MNI padres
 # [x] Base de alumnos por escuelas con composición de MNI de padres
 # [x] Base de matrícula de alumnos por escuelas (total de 1ero a 6to grado)
 # -> CARTO = c(CARTO, ESCUELAS)
 
-source("_rawdata/PhD_03_data-education.R", encoding = "UTF-8")
+source(here::here("raw-data", "PhD_data_03-education.R"), encoding = "UTF-8")
 
 # Movilidad
 # --------*
 # [ ] ENMODO
 
-source("_rawdata/PhD_04_data-mobility.R", encoding = "UTF-8")
+source(here::here("raw-data", "PhD_data_04-mobility.R"), encoding = "UTF-8")
