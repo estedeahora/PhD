@@ -890,19 +890,19 @@ simplificación este proceso.
 <!-- sXIX: Cono de elites -->
 
 El primer vector de expansión de la ciudad ocurrió durante el s. XIX, a
-partir del avance de la ciudad colonial sobre la zona rural circundante.
-En este crecimiento se produjo la incorporación de los centros urbanos
-cercanos (en particular, Caballito, Flores y Belgrano). Si bien
-actualmente esta zona de la ciudad tiene una estructura urbana
-consolidada, producto de la diversidad con la que se desarrollo esta
-expanción no es un área que tenga un perfil homogéneo en lo que respecta
-al uso del suelo o su perfil socioeconómico [@Marcos2021]. En
-particular, como ocurrió en muchas de las ciudades latinoamericanas,
-esta expansión permitió la temprana constitución de un 'cono de las
-elites', que comenzaba en el casco histórico de la ciudad y se expandía
-hacia la zona ribereña norte. Como contraparte, la zona sur de la ciudad
-comenzó a consolidarse como una zona de hábitat popular presentando un
-mayor deterioro que el resto.
+partir del avance de la ciudad colonial sobre la zona rural circundante
+[@Rodriguez2014c]. En este crecimiento se produjo la incorporación de
+los centros urbanos cercanos (en particular, Caballito, Flores y
+Belgrano). Si bien actualmente esta zona de la ciudad tiene una
+estructura urbana consolidada, producto de la diversidad con la que se
+desarrollo esta expanción no es un área que tenga un perfil homogéneo en
+lo que respecta al uso del suelo o su perfil socioeconómico
+[@Marcos2021]. En particular, como ocurrió en muchas de las ciudades
+latinoamericanas, esta expansión permitió la temprana constitución de un
+'cono de las elites', que comenzaba en el casco histórico de la ciudad y
+se expandía hacia la zona ribereña norte. Como contraparte, la zona sur
+de la ciudad comenzó a consolidarse como una zona de hábitat popular
+presentando un mayor deterioro que el resto.
 
 <!-- sXX: Expansión industrial y exclusión de los pobres informales -->
 

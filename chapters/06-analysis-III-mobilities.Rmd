@@ -50,6 +50,37 @@ personas a los diferentes lugares de la ciudad.
 
 <!--# Se presenta la metodología basada en caracterizar las movilidades urbanas como una red bipartita dirigida y ponderada que represente los viajes de las personas en el AMBA (Borgatti et al., 2009; Luke, 2015). A partir de esta red se genera una "Matriz de Indicadores Múltiples" (Wasserman et al., 1990; Zhu et al., 2016) que es analizada luego mediante un análisis de correspondencias múltiples que permite reducir la dimensionalidad de la matriz original, permitiendo agrupar los viajes en función de la similitud de sus características. A su vez, mediante la "proyección" del nivel de estudio como variable suplementaria, es posible utilizar esta técnica de modo explicativo (Baranger, 2012; similar a lo hecho en Bourdieu, 1979). -->
 
+<!-- Datos ENMODO -->
+
+Si bien los datos de movilidad están disponibles a nivel de radio censal
+(aproximadamente 300 viviendas), en este trabajo hemos utilizado las
+fracciones censales (aproximadamente 5.000 viviendas) como escala de
+análisis, con el fin de minimizar el efecto que pudiera tener la
+selección muestral. Más allá de esto, hemos conservado la clasificación
+de 'entorno urbano' como variable asociada a los lugares urbano de
+residencia y de destino (que fue determinado a nivel de radio censal).
+En el análisis retuvimos la totalidad de los viajes origen-destino
+realizados por los encuestados (a) dentro del AMGBA (b) que no incluyen
+como destino la propia vivienda.[^06-analysis-iii-mobilities-1] Como
+resultado en los análisis se utilizan un total de
+`r # format(nrow(db_mim), big.mark = ".", scientific = F, decimal.mark = ",")`
+viajes (sobre un total de
+`r # format(nrow(ENMODO$VIA), big.mark = ".", scientific = F, decimal.mark = ",")`
+viajes relevados en la
+ENMODO2018).<!--# uso de encuestas de origen destino [@Heroy2023] -->
+
+[^06-analysis-iii-mobilities-1]: La ENMODO 2018 relevó las prácticas de
+    movilidad urbana en una muestra de 16.667 hogares y 42.971 personas
+    residentes en el AMGBA. Los datos y especificaciones técnicas están
+    disponibles en BA Data
+    (<https://data.buenosaires.gob.ar/dataset/encuesta-movilidad-domiciliaria>).
+    <!--# Los datos utilizados en este trabajo fueron descargados de dicho portal en noviembre de 2022. Un respaldo de los datos descargados está disponible en el repositorio de GitHub del autor. -->Recuperando
+    las definiciones de la ENMODO2018, un 'viaje' es un desplazamiento
+    que tiene un motivo, un origen, un destino. A su vez, un viaje puede
+    componerse de diferentes 'etapas', entendidas estas últimas como el
+    conjunto de trayectos realizados en una modalidad o medio de
+    transporte específico.
+
 **Segregación granular**
 
 El acceso diferencial a las locaciones comunes e infraestructuras de una
@@ -312,7 +343,7 @@ listado completo de las variables utilizadas).
 La Figura \@ref(fig:MCA-RES) presenta la ubicación de una selección de
 las variables activas en las dos primeras dimensiones del MCA, es decir,
 aquellas en las que se expresa la mayor parte de la variabilidad de los
-viajes.[^06-analysis-iii-mobilities-1] Como podemos ver, el *primer eje*
+viajes.[^06-analysis-iii-mobilities-2] Como podemos ver, el *primer eje*
 diferencia los viajes fundamentalmente en función de aspectos
 socioeconómicos, referidos tanto a los destinos como al lugar de
 residencia de las personas. En este sentido, encontramos que los
@@ -327,7 +358,7 @@ el conjunto de variables que caracterizan a los entornos residenciales y
 a los destinos, en estos últimos la diferenciación en este eje es un
 poco menos pronunciada que en los primeros.
 
-[^06-analysis-iii-mobilities-1]: El gráfico presenta sólo una selección
+[^06-analysis-iii-mobilities-2]: El gráfico presenta sólo una selección
     para facilitar la lectura. A su vez, con fines de mejorar la
     vissualización hemos diferenciado con colores ocho 'grupos de
     variables' (con sus respectivas categorías) que describen aspectos
@@ -539,7 +570,7 @@ doble movimiento de compensación mediante el cual los residentes de
 lugares con más diversidad se muevan a lugares más segregados donde
 predominen las personas perteneciente a grupos similares al propio,
 mientras que los residentes de estos lugares segregados se muevan hacia
-lugares más diversos.[^06-analysis-iii-mobilities-2] El análisis
+lugares más diversos.[^06-analysis-iii-mobilities-3] El análisis
 desarrollado en este trabajo no permitió acceder a una escala en el cual
 visualizar las estrategias de los hogares. Teniendo en cuenta estos
 elementos es necesario a futuro complementar este análisis para entender
@@ -551,7 +582,7 @@ agrupamientos (*cluster*), que permita caracterizar a los viajes y, de
 esta forma, describir a los hogares en función de que 'tipos' de viajes
 realizan.
 
-[^06-analysis-iii-mobilities-2]: A su vez, una estructura de segregación
+[^06-analysis-iii-mobilities-3]: A su vez, una estructura de segregación
     equiparable, no implica una composición idéntica en los espacios
     residenciales y los destinos, ya que es posible que el porcentaje de
     cada grupo sea diferente en ambos dominios. Este aspecto también

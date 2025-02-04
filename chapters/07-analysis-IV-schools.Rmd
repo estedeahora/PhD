@@ -4,7 +4,7 @@ editor_options:
     wrap: 72
 ---
 
-# La escuela como espacio de diferenciación
+# La escuela como espacio de diferenciación {#education}
 
 ## Introducción al capítulo
 
