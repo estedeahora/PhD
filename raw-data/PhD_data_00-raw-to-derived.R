@@ -29,8 +29,14 @@ library(sfnetworks)
 library(dbscan)        # Clúster
 library(segregation)   # segregation
 
+library(devtools)
+load_all()
+
 # Option settings
 options(cli.progress_show_after = 0)
+
+# Intermediate data folder
+fs::dir_create(here::here("raw-data", "intermediate-data"))
 
 # BASES NECESARIAS:
 

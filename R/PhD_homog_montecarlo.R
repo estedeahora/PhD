@@ -1,4 +1,5 @@
-
+#' @title PhD_homog_montecarlo
+#' @description Genera dataframe con probabilidad de homogamia por grupo educativo
 
 PhD_homog_montecarlo <- function(seed = 123, db, replace = F){
 

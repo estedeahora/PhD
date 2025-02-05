@@ -1,123 +1,111 @@
 # Cargar población
 # ---------------*
 
-# load("D:/Escritorio/PhD_data/PhD_02_urban-net.RData")
-
 cli_h2(col_blue("Cargando datos de población (CENSO)"))
 cli_alert_info(col_silver("Basado en script TP Dalle: {.path script/ES_01_data.R}.") )
 
-# ╠ Cargar datos CENSO ------------------------------------------------------
-# ver código para generar datos en:
-#   ./_rawdata/CENSO_raw-to-derived-data
-# Versión en disco
-#   C:/Users/este.de.ahora/Documents/00_DATA/CENSO AMGBA/CENSO_raw-to-derived-data
-# Versión en drive
-#   https://drive.google.com/drive/folders/1Ca-jhFQfCO954bclRiTLX404S1kZ3g-z?usp=drive_link
+if(!exists("CARTO", inherits = F) | !exists("CALLE", inherits = F)){
+  cli_alert_info(
+    col_silver(
+      paste0("Cargando cartografía",
+             ": {.path raw-data/intermediate-data/PhD_02_carto.RData}.")
+      )
+    )
 
-cli_li(col_yellow("Cargando datos del CENSO."))
-cli_alert_info(col_silver("Código para generar los datos: {.path rawdata/CENSO_raw-to-derived-data.R}.)") )
-
-if(Sys.info()[["nodename"]] == "DESKTOP-VP1IN9U"){
-  # PC de Escritorio
-  cli_alert_info(col_silver("Datos tomados de PC Escritorio."))
-  load("D:/Escritorio/PhD_data/AMGBA.RData")
-}else{
-  # Laptop
-  cli_alert_info(col_silver("Datos tomados de Laptop."))
-  load("C:/Users/este.de.ahora/Documents/00_DATA/CENSO AMGBA/derived_data/AMGBA.RData")
+  load(here::here("raw-data", "intermediate-data",
+                  "PhD_02_carto.RData"))
 }
+# ╠ Cargar datos CENSO ------------------------------------------------------
+
+  cli_li(col_yellow("Cargando datos del CENSO."))
+  cli_alert_info(col_silver("Código para generar los datos: {.path raw-data/CENSO_raw-to-derived-data.R}.") )
+
+  load("C:/Users/este.de.ahora/Documents/00_DATA/CENSO AMGBA/derived_data/AMGBA.RData")
+
+  # Quitar casos fuera del AMBA (Gran La Plata)
+  CENSO <- CENSO |>
+    filter(ID_RADIO %in% CARTO$RADIO$ID_RADIO)
 
 # ╠ Base cónyuges (CENSO_CON) ----------------------------------------------
-# Retiene sólo cónyuges (P01 %in% 1:2)
+# * Se retiene sólo cónyuges (P01 %in% 1:2)
+# * Se construyen niveles educativos MNI2 y MNI3
 
-cli_li(col_yellow("Armado de base de cónyuges (CENSO_CON)."))
+  cli_li(col_yellow("Armado de base de cónyuges (CENSO_CON)."))
 
-CENSO_CON <- CENSO |>
-  # Filtrado de PSH y cónyuge
-  filter(P01 %in% 1:2) |>
-  #Construir niveles MNI
-  mutate(REL = factor(P01, levels = 1:2, labels = c("PSH", "CON")),
-         # MNI2: PRI/SEC/SNU/UNI - Ciclo cumplidos
-         MNI2 = case_when(MNI %in% c(0:3, 5) ~ 1,
-                          MNI %in% c(4, 7, 9) ~ 2,
-                          MNI %in% c(6) ~ 3,
-                          MNI %in% c(8) ~ 4),
-         # MNI3: PRI/SEC/SUP (SNU + UNI) - Ciclo cumplidos
-         MNI3 = ifelse(MNI == 8, 3, MNI2)
-  ) |>
-  left_join(st_drop_geometry(CARTO$RADIO[c("ID_RADIO")]),
-            by = "ID_RADIO") |>
-  select(ID_RADIO, VIVIENDA_REF_ID, HOGAR_REF_ID,
-         REL, MNI3)
+  CENSO_CON <- CENSO |>
+    # Filtrado de PSH y cónyuge
+    filter(P01 %in% 1:2) |>
+    #Construir niveles MNI
+    mutate(REL = factor(P01, levels = 1:2, labels = c("PSH", "CON")),
+           # MNI2: PRI/SEC/SNU/UNI - Ciclo cumplidos
+           MNI2 = case_when(MNI %in% c(0:3, 5) ~ 1,
+                            MNI %in% c(4, 7, 9) ~ 2,
+                            MNI %in% c(6) ~ 3,
+                            MNI %in% c(8) ~ 4),
+           # MNI3: PRI/SEC/SUP (SNU + UNI) - Ciclo cumplidos
+           MNI3 = ifelse(MNI == 8, 3, MNI2)
+    ) |>
+    left_join(st_drop_geometry(CARTO$RADIO[c("ID_RADIO")]),
+              by = "ID_RADIO") |>
+    select(ID_RADIO, VIVIENDA_REF_ID, HOGAR_REF_ID,
+           REL, MNI3)
 
 # ╠ Base por Hogares (HOG) ----------------------------------------------
-# Base de hogares x cónyuges con educación categórica
+# * Existen hogares donde no se declara relación de parentesco (por lo cual
+#     pueden tener niños en edad escolar, pero no PSH o cónyuge). Dado que
+#     se trata de un número relativamente bajo de hogares (3597) y con poca
+#     concentración espacial, son ignorados en el análisis.
 
+# Base de hogares con educación categórica de cónyuges
 # Cada fila es un hogar con:
-#   - ID:         ID del radio.
+#   - ID_RADIO:   ID del radio
+#   - PROV:       Provincia (CABA o PBA)
 #   - EDU:        Máximo nivel educativo entre PSH y CONYUGE (incluye hogares no-conyugales).
-#   - SEG1:       Indica si P1 == P2  (homogamia para MNI discreto).
+#   - HOM:        Indica si P1 == P2  (homogamia para hogares conyugales).
 #   - P1 / P2:    Los cónyuges ordenados de nivel educativo mayor a menor en base a
 #                     MNI categórico. NA para hogares no-conyugales.
 #   - ***_p:      Indica cantidad de cónyuges con nivel educativo *** (si type = "P"),
 #                     o bien, existencia de cónyuge con nivel educativo *** (si type = "H").
 #                     NA para hogares no-conyugales).
-#   - EST_PRI
+#   - EST_PRI:    Cantidad
 
-cli_li(col_yellow("Armado de base de hogares (HOG)."))
+  cli_li(col_yellow("Armado de base de hogares (HOG)."))
 
-# pivot_edu(): Genera dataframe con personas por nivel educativo en cada hogar conyugal
-pivot_edu <-  function(db, type = "P"){
+  # Cantidad de niños/as x hogar en edad primaria (P03 %in% 6:11)
+  #   y en edad secundara (P03 %in% 13:17)
+  ESTUD <- CENSO |>
+    group_by(ID_RADIO, VIVIENDA_REF_ID, HOGAR_REF_ID) |>
+    summarise(EST_PRI = sum(P03 %in% 6:11),
+              EST_SEC = sum(P03 %in% 13:17),
+              .groups = "drop")
 
-  niveles <- 1:3
-  names(niveles) <- paste0(c("PRI", "SEC", "SUP"), "_p")
+  HOG <- CENSO_CON |>
+    pivot_wider(id_cols = c("ID_RADIO", "VIVIENDA_REF_ID", "HOGAR_REF_ID"),
+                names_from = "REL", values_from = MNI3) |>
+    mutate(PROV = str_sub(ID_RADIO, 1, 2),
+           PROV = factor(PROV, levels = c("02", "06"),
+                         labels = c("CABA", "PBA")),
+           # HOM: (Si) MNI-PSH == MNI-CON → T
+           HOM = ifelse(CON == PSH, TRUE, FALSE),
+           # P1 y P2: mayor (P1) y menor (P2) MNI de los cónyuges (solo si hay grupo conyugal)
+           P1 = pmin(PSH, CON),
+           P2 = pmax(PSH, CON),
+           # EDU: MNI del hogar (sea conyugal o no)
+           EDU = pmax(PSH, CON, na.rm = T) )
 
-  if(type == "H"){
-    # Probabilidad del hogar
-    # P(x) DE QUE DADO QUE EN UN HOGAR HAYA UNA PERSONA DE MNI_X, HAYA 2 PERSONAS DE MNI_X
-    res <- map(niveles, \(x) ifelse(db$P1 == x | db$P2 == x, T, F)) |>
-      as.data.frame()
+  # a1 <- ESTUD |> dplyr::transmute(ID = paste(ID_RADIO, VIVIENDA_REF_ID, HOGAR_REF_ID, sep = "_"))
+  # a2 <- HOG |> dplyr::transmute(ID = paste(ID_RADIO, VIVIENDA_REF_ID, HOGAR_REF_ID, sep = "_"))
+  # a3 <- full_join(a1, a2)
+  # a3 |> filter(is.na(hog))
 
-  }else if(type == "P") {
-    # Probabilidad individual
-    # P(x) DE QUE DADA UNA PERSONA DE MNI_X, TENGA UNA PAREJA DE IGUAL MNI
-    res <- map(niveles, \(x) (db$P1 == x) + (db$P2 == x) ) |>
-      as.data.frame()
-  }else{
-    stop("'type' inválido. Debe ser 'H' o 'P'.")
-  }
-  return(res)
-}
+  HOG <- HOG |>
+    cbind(PhD_pivot_edu(HOG, type = "P")) |>
+    left_join(ESTUD, by = c("ID_RADIO", "VIVIENDA_REF_ID", "HOGAR_REF_ID")) |>
+    select(ID_RADIO, PROV, EDU,
+           P1, P2, SEG1, ends_with("_p"),
+           EST_PRI, EST_SEC)
 
-HOG <- CENSO_CON |>
-  pivot_wider(id_cols = c("ID_RADIO", "VIVIENDA_REF_ID", "HOGAR_REF_ID"),
-              names_from = "REL", values_from = MNI3) |>
-  mutate(PROV = str_sub(ID_RADIO, 1, 2),
-         PROV = factor(PROV, levels = c("02", "06"),
-                       labels = c("CABA", "PBA")),
-         # Si MNI-PSH == MNI-CON → T
-         SEG1 = ifelse(CON == PSH, T, F),
-         # P1 y P2 indican menor y maypr MNI para parejas
-         P1 = pmin(PSH, CON),
-         P2 = pmax(PSH, CON),
-         # EDU indica MNI del hogar (sea conyugal o no)
-         EDU = pmax(PSH, CON, na.rm = T) )
-
-# Cantidad de niños/as x hogar en edad primaria (P03 %in% 6:11) / secundara (P03 %in% 13:17)
-ESTUD <- CENSO |>
-  group_by(ID_RADIO, VIVIENDA_REF_ID, HOGAR_REF_ID) |>
-  summarise(EST_PRI = sum(P03 %in% 6:11),
-            EST_SEC = sum(P03 %in% 13:17),
-            .groups = "drop")
-
-HOG <- HOG |>
-  cbind(pivot_edu(HOG, type = "P")) |>
-  left_join(ESTUD, by = c("ID_RADIO", "VIVIENDA_REF_ID", "HOGAR_REF_ID")) |>
-  select(ID_RADIO, PROV, EDU,
-         P1, P2, SEG1, ends_with("_p"),
-         EST_PRI, EST_SEC)
-
-rm(pivot_edu, ESTUD)
+  rm(ESTUD)
 
 # ╠ Base por RADIO (RAD) ----------------------------------------
 # Para sacar cantidad de un grupo

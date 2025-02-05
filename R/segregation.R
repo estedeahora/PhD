@@ -69,36 +69,6 @@ SEG_tab <- function(b = db_aux, filtro = "."){
     SEG_summary(se = T)
 }
 
-# pivot_edu(): Genera dataframe con cantidad de personas/hogares  -------------------------------
-
-pivot_edu <-  function(db, type = "P"){
-
-  # a <- unique(db$EDU) |> sort()
-  a <- 1:3
-
-  # if(length(a) == 3){
-  names(a) <- paste0(c("PRI", "SEC", "SUP"), "_p")
-  # }else{
-  # names(a) <- paste0(c("PRI", "SEC", "SNU", "UNI"), "_p")
-  # }
-
-  if(type == "H"){
-    # Probabilidad del hogar
-    # P(x) DE QUE DADO QUE EN UN HOGAR HAYA UNA PERSONA DE MNI_X, HAYA 2 PERSONAS DE MNI_X
-    res <- map(a, \(x) ifelse(db$P1 == x | db$P2 == x, T, F)) |>
-      as.data.frame()
-
-  }else if(type == "P") {
-    # Probabilidad individual
-    # P(x) DE QUE DADA UNA PERSONA DE MNI_X, TENGA UNA PAREJA DE IGUAL MNI
-    res <- map(a, \(x) (db$P1 == x) + (db$P2 == x) ) |>
-      as.data.frame()
-  }else{
-    stop("'type' inválido. Debe ser 'H' o 'P'.")
-  }
-  return(res)
-}
-
 # conv_phom(): Transforma entre P1(x) y P2(x) ----------------------------------
 
 conv_phom <- function(P1){
@@ -108,51 +78,6 @@ conv_phom <- function(P1){
 
   # Inversa:
   # P1 <- 2 * P2/ (P2 + 1)
-}
-
-# gg_zoom: mapeo con zoom ------------------------------------------------------
-
-gg_zoom <- function(gdb, tit, cbox = NULL, dpt = NULL){
-
-  if(is.null(dpt)){
-    dpt <- gdb |> count(coddpto)
-  }
-
-  p <- gdb |>
-    filter(!is.na(TH)) |>
-    ggplot() +
-    geom_sf(data = CARTO$AMGBA, alpha = 0.7) +
-    geom_sf(aes(fill = ls), alpha = 0.9, color = NA) +
-    geom_sf(data = dpt, fill = NA, color = "grey50") +
-    scale_fill_viridis_c(option = "B", limits = c(0, 1.01)) +
-    labs(title = tit) +
-    theme_void()
-
-  if(!is.null(cbox)){
-    p <- p +
-      coord_sf(xlim = cbox[c(1,3)],
-               ylim = cbox[c(2,4)])
-  }
-
-  return(p)
-}
-
-# geom_detail: recuadro/texto de recuadro con detalle --------------------------
-
-geom_detail <- function(bb, color_cuad = "darkolivegreen2"){
-
-  geom_sf(data = bb |> st_as_sfc(),
-          color = color_cuad, fill = NA)
-
-}
-
-geom_detail_text <- function(bb,
-                             lab_x = 1, lab_y = 4, vjust = -.3, hjust = 0,
-                             label, color_lab = "cornsilk4" ){
-
-  geom_text(x = bb[lab_x], y =  bb[lab_y], label = label,
-            vjust = vjust, hjust = hjust, color = color_lab)
-
 }
 
 # HOM_summarise: Summarise para homogamia --------------------------------------
@@ -177,7 +102,6 @@ HOM_summarise <- function(.data, group_var){
     ) |>
     select(-HOG_MAT)
 }
-
 
 # HOM_montecarlo: --------------------------------------------------------------
 

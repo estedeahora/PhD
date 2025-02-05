@@ -31,16 +31,14 @@ CARTO <- list()
 
   # Radios PBA + CABA
   # * No se puede usar wfs por errores en la fuente ('eph:radios_eph_4326')
-  # * Se descarga directamente desde portal INDEC
+  # * No se puede usar fuente wfs original ('geocenso2010:radios_codigo')
+  #     porque fue dada de baja del servicio wfs de INDEC
+  # * Se descargan los polígonos manualmente desde portal INDEC
+  #     (https://www.indec.gob.ar/indec/web/Institucional-Indec-Codgeo)
+  #     y se genera un preprocesamiento para unir las capas de CABA y PBA.
+  #     ver procesamiento en 'raw-data/PhD_prepare-carto-radios2010.R'
 
-  # CARTO$RADIO <- client$getLayer(layer = "eph:radios_eph_4326", quiet = TRUE) |>
-  #   filter(eph_codagl %in% c("32", "33")) |>
-  #   st_transform(crs = st_crs(CARTO$AMGBA)) |>
-  #   mutate(ID_RADIO = paste0(codprov, coddepto, frac2010, radio2010)) |>
-  #   select(ID_RADIO, codprov, nomprov, tiporad) |>
-  #   st_intersection(CARTO$AMGBA)
-
-  CARTO$RADIO <- read_sf(here::here("_rawdata", "raw-data",
+  CARTO$RADIO <- read_sf(here::here("raw-data", "raw-db",
                                     "radios2010_AMBA.geojson")) |>
     st_transform(crs = st_crs(CARTO$AMGBA))
 
@@ -84,29 +82,35 @@ CARTO <- list()
   rm(client, request, wfs, fileName)
 
 # Entornos urbanos (Mariana Marcos) ------------------------------------------
+# * Se utilizan los datos descargados de: http://hdl.handle.net/11336/190015
+# * Se corrige radio "067780303", no disponible en la cartografía de INDEC.
+#     Se considera posible error de tipeo y se reemplaza por radio "067780301"
+#     (no clasificado y disponible en cartografía).
+# * Alternativamente podrían usarse los radios 'recortados' en formato geojson,
+#     pero falta información sobre el modo de procesamiento de los datos.
 
-  # read_sf(here::here("_rawdata/raw-data/Entornos Urbanos.geojson")) |>
-  #   filter(!is.na(RADIOS_AGBA_2010_TIPOS_HABITAT_TIPO_HAB) ) |>
-  #   write_sf(here::here("_rawdata/raw-data/entornos-urbanos.geojson"))
+  cli_li(col_yellow("Agregar Entornos Urbanos (Mariana Marcos) a radios censales."))
 
-  cli_li(col_yellow("Cargando Entornos Urbanos (Mariana Marcos)."))
-
-  TH <- read.csv2(here::here("_rawdata", "raw-data",
+  TH <- read.csv2(here::here("raw-data", "raw-db",
                              "entornos-urbanos.csv"),
                   colClasses = c(ID_RADIO = "character") ) |>
-    # read_sf(here::here("_rawdata", "raw-data",
-    #                    "entornos-urbanos.geojson")) |>
-    # rename(TH = RADIOS_AGBA_2010_TIPOS_HABITAT_TIPO_HAB) |>
-    mutate(TH = factor(TIPO_HAB, levels = 1:9,
-                       labels = c("Ciudad colonial", "Expansión de la ciudad colonial",
-                                  "Cascos conurbanizados", "Vivienda social",
-                                  "Urbanización cerrada", "Urbanización de origen informal",
-                                  paste("NSE", c("Alto", "Medio", "Bajo"))))) |>
+    mutate(ID_RADIO = str_pad(ID_RADIO, 9, pad = "0"),
+           ID_RADIO = ifelse(ID_RADIO == "067780303", "067780301", ID_RADIO),
+           TH = factor(TIPO_HAB, levels = 1:9,
+                       labels = c("Ciudad colonial",
+                                  "Expansión de la ciudad colonial",
+                                  "Cascos conurbanizados",
+                                  "Vivienda social",
+                                  "Urbanización cerrada",
+                                  "Urbanización de origen informal",
+                                  paste("NSE", c("Alto", "Medio", "Bajo"))
+                                  )
+                       )
+           ) |>
     select(-TIPO_HAB)
 
   CARTO$RADIO <- CARTO$RADIO |>
     left_join(TH, by = "ID_RADIO")
-
 
   rm(TH)
 
@@ -127,10 +131,12 @@ CARTO$FFCC2 <- read_sf("https://cdn.buenosaires.gob.ar/datosabiertos/datasets/tr
 # ╚ CALLEJERO (OSM) ---------------------------------------------------------------------
 
   # Descargar información de OSM --------------------------------------------
+  ### Tarda aproximadamente 20 minutos
 
-  # Tarda aproximadamente 20 minutos
+  cli_li(col_yellow("Descargando datos callejero de OSM."))
 
-  cli_li(col_yellow("Descargando datos de OSM."))
+  # Crear buffer de 1000m alrededor de AMGBA y generar envolvente cóncava
+  AMBA_bf <- CARTO$AMGBA |> st_buffer(dist = 1000) |> st_concave_hull(ratio = 0.2)
 
   CALLE <- CARTO$AMGBA |>
     st_transform(4326) |>
@@ -158,17 +164,23 @@ CARTO$FFCC2 <- read_sf("https://cdn.buenosaires.gob.ar/datosabiertos/datasets/tr
     bind_rows() |>
     # Seleccionar variables necesarias
     select(osm_id, name, highway, lanes, maxspeed, surface) |>
-    # Recortar datos a AMGBA
-    st_transform(st_crs(CARTO$AMGBA)) |>
-    st_intersection(CARTO$AMGBA) |>
+    # Recortar datos a AMBA (buffer)
+    st_transform(st_crs(AMBA_bf)) |>
+    st_intersection(AMBA_bf) |>
     # Castear a LINESTRING
+    st_cast("MULTILINESTRING") |>
     st_cast("LINESTRING")
 
-  cli_alert_info(col_silver("Guradando {.path PhD_01_OSM-download.RData}."))
-  save.image("C:/Users/este.de.ahora/Desktop/PhD_data/PhD_01_OSM-download.RData")
+  rm(AMBA_bf)
+
+  cli_alert_info(col_silver("Guardando {.path PhD_01_OSM-download.RData}."))
+  save(CALLE,
+       file = here::here("raw-data", "intermediate-data",
+                         "PhD_01_OSM-download.RData"))
 
   # Armado red urbana -------------------------------------------
-  # load("C:/Users/este.de.ahora/Desktop/PhD_data/PhD_01_OSM-download.RData")
+  # load(here::here("raw-data", "intermediate-data",
+  #                 "PhD_01_OSM-download.RData"))
 
   cli_li(col_yellow("Armando red urbana (callejero)."))
 
@@ -259,5 +271,8 @@ CARTO$FFCC2 <- read_sf("https://cdn.buenosaires.gob.ar/datosabiertos/datasets/tr
 
 # Guardar bases -------------------------------------------
 
-cli_alert_info(col_silver("Guradando {.path PhD_02_urban-net.RData}."))
-save.image("C:/Users/este.de.ahora/Desktop/PhD_data/PhD_02_urban-net.RData")
+  cli_alert_info(col_silver("Guradando {.path PhD_02_carto.RData}."))
+
+  save(CALLE, CARTO,
+       file = here::here("raw-data", "intermediate-data",
+                         "PhD_02_carto.RData"))
