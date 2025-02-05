@@ -36,9 +36,9 @@ CARTO <- list()
   # * Se descargan los polígonos manualmente desde portal INDEC
   #     (https://www.indec.gob.ar/indec/web/Institucional-Indec-Codgeo)
   #     y se genera un preprocesamiento para unir las capas de CABA y PBA.
-  #     ver procesamiento en 'raw-data/PhD_prepare-carto-radios2010.R'
+  #     ver procesamiento en 'data-raw/PhD_prepare-carto-radios2010.R'
 
-  CARTO$RADIO <- read_sf(here::here("raw-data", "raw-db",
+  CARTO$RADIO <- read_sf(here::here("data-raw", "raw-db",
                                     "radios2010_AMBA.geojson")) |>
     st_transform(crs = st_crs(CARTO$AMGBA))
 
@@ -91,7 +91,7 @@ CARTO <- list()
 
   cli_li(col_yellow("Agregar Entornos Urbanos (Mariana Marcos) a radios censales."))
 
-  TH <- read.csv2(here::here("raw-data", "raw-db",
+  TH <- read.csv2(here::here("data-raw", "raw-db",
                              "entornos-urbanos.csv"),
                   colClasses = c(ID_RADIO = "character") ) |>
     mutate(ID_RADIO = str_pad(ID_RADIO, 9, pad = "0"),
@@ -175,11 +175,11 @@ CARTO$FFCC2 <- read_sf("https://cdn.buenosaires.gob.ar/datosabiertos/datasets/tr
 
   cli_alert_info(col_silver("Guardando {.path PhD_01_OSM-download.RData}."))
   save(CALLE,
-       file = here::here("raw-data", "intermediate-data",
+       file = here::here("data-raw", "intermediate-data",
                          "PhD_01_OSM-download.RData"))
 
   # Armado red urbana -------------------------------------------
-  # load(here::here("raw-data", "intermediate-data",
+  # load(here::here("data-raw", "intermediate-data",
   #                 "PhD_01_OSM-download.RData"))
 
   cli_li(col_yellow("Armando red urbana (callejero)."))
@@ -274,5 +274,5 @@ CARTO$FFCC2 <- read_sf("https://cdn.buenosaires.gob.ar/datosabiertos/datasets/tr
   cli_alert_info(col_silver("Guradando {.path PhD_02_carto.RData}."))
 
   save(CALLE, CARTO,
-       file = here::here("raw-data", "intermediate-data",
+       file = here::here("data-raw", "intermediate-data",
                          "PhD_02_carto.RData"))

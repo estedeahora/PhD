@@ -2,7 +2,7 @@
 ^\.Rproj\.user$
 
 ^\.github$
-^raw-data$
+^data-raw$
 ^_draft$
 ^_PhD$
 ^template$

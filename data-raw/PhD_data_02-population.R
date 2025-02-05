@@ -8,17 +8,17 @@ if(!exists("CARTO", inherits = F) | !exists("CALLE", inherits = F)){
   cli_alert_info(
     col_silver(
       paste0("Cargando cartografía",
-             ": {.path raw-data/intermediate-data/PhD_02_carto.RData}.")
+             ": {.path data-raw/intermediate-data/PhD_02_carto.RData}.")
       )
     )
 
-  load(here::here("raw-data", "intermediate-data",
+  load(here::here("data-raw", "intermediate-data",
                   "PhD_02_carto.RData"))
 }
 # ╠ Cargar datos CENSO ------------------------------------------------------
 
   cli_li(col_yellow("Cargando datos del CENSO."))
-  cli_alert_info(col_silver("Código para generar los datos: {.path raw-data/CENSO_raw-to-derived-data.R}.") )
+  cli_alert_info(col_silver("Código para generar los datos: {.path data-raw/CENSO_raw-to-derived-data.R}.") )
 
   load("C:/Users/este.de.ahora/Documents/00_DATA/CENSO AMGBA/derived_data/AMGBA.RData")
 

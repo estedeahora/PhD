@@ -36,7 +36,7 @@ load_all()
 options(cli.progress_show_after = 0)
 
 # Intermediate data folder
-fs::dir_create(here::here("raw-data", "intermediate-data"))
+fs::dir_create(here::here("data-raw", "intermediate-data"))
 
 # BASES NECESARIAS:
 
@@ -57,7 +57,7 @@ fs::dir_create(here::here("raw-data", "intermediate-data"))
 # -> CARTO = list(AMGBA, RADIO, DPTO, PCIA, FFCC1, FFCC2)
 # -> CALLE [sfnetwork]
 
-source(here::here("raw-data", "PhD_data_01-carto.R"), encoding = "UTF-8")
+source(here::here("data-raw", "PhD_data_01-carto.R"), encoding = "UTF-8")
 
 # Población
 # --------*
@@ -67,7 +67,7 @@ source(here::here("raw-data", "PhD_data_01-carto.R"), encoding = "UTF-8")
 # [-] Distribución de población facebook
 # ->
 
-source(here::here("raw-data", "PhD_data_02-population.R"), encoding = "UTF-8")
+source(here::here("data-raw", "PhD_data_02-population.R"), encoding = "UTF-8")
 
 # Educación
 # --------*
@@ -77,10 +77,10 @@ source(here::here("raw-data", "PhD_data_02-population.R"), encoding = "UTF-8")
 # [x] Base de matrícula de alumnos por escuelas (total de 1ero a 6to grado)
 # -> CARTO = c(CARTO, ESCUELAS)
 
-source(here::here("raw-data", "PhD_data_03-education.R"), encoding = "UTF-8")
+source(here::here("data-raw", "PhD_data_03-education.R"), encoding = "UTF-8")
 
 # Movilidad
 # --------*
 # [ ] ENMODO
 
-source(here::here("raw-data", "PhD_data_04-mobility.R"), encoding = "UTF-8")
+source(here::here("data-raw", "PhD_data_04-mobility.R"), encoding = "UTF-8")
