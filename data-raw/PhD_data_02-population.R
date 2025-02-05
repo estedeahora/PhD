@@ -99,10 +99,10 @@ if(!exists("CARTO", inherits = F) | !exists("CALLE", inherits = F)){
   # a3 |> filter(is.na(hog))
 
   HOG <- HOG |>
-    cbind(PhD_pivot_edu(HOG, type = "P")) |>
+    PhD_pivot_edu("P") |>
     left_join(ESTUD, by = c("ID_RADIO", "VIVIENDA_REF_ID", "HOGAR_REF_ID")) |>
     select(ID_RADIO, PROV, EDU,
-           P1, P2, SEG1, ends_with("_p"),
+           P1, P2, HOM, ends_with("_p"),
            EST_PRI, EST_SEC)
 
   rm(ESTUD)

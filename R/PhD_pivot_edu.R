@@ -1,5 +1,5 @@
-#' @title
-#' @description Genera dataframe con cantidad de hogares
+#' @description Modifica dataframe para agregar columnas de recuento necesarias
+#'    para el cálculo de la homogamia educativa del hogar.
 #'
 #' @param db data frame que incluya las variables `EDU`, `P1` y `P2`, con
 #'            el nivel educativo del hogar y el nivel educativo de la(s) personas
@@ -12,18 +12,16 @@
 #'              individual o "H" para hogar (ver `details`).
 #'
 #' @details
-#' Si se selecciona `tipe= "H"`, se devuelve  devuelve un viene dado como la probabilidad
-#' $P(x)$ de que dado en en un hogar haya una persona de nivel educativo $x$,
-#' haya entonces otra persona con el mismo nivel educativo. La probabilidad
-#' individual ("P") es la probabilidad $P(X)$ de que dado un hogar con una persona de
+#' Si se selecciona `tipe= "H"` se devuelve, para cada nivel educativo de los
+#' hogares conyugales, un valor TRUE si hay al menos una persona en el hogar
+#' con ese nivel educativo. Si se selecciona `type = "P"` se devuelve, para cada
+#' nivel educativo de los hogares conyugales, un valor numérico que indica la
+#' cantidad de personas en el hogar con ese nivel educativo. Los hogares
+#' no-conyugales tendrán `NA` en estas columnas. Estas probabilidades se utilizan
+#' luego para calcular la probabilidad de homogamia educativa.
 #'
-#'        # Probabilidad individual:
-#   P(x) DE QUE DADA UNA PERSONA DE MNI_X, TENGA UNA PAREJA
-#   DE IGUAL MNI
-
-#'
-#' @return el dataframe original con las nuevas columnas agregada
-#'
+#' @return el dataframe original con las nuevas columnas agregadas (los nombres
+#' de las columnas serán el `nivel_educativo` + `_p`).
 #'
 #' @export
 
@@ -31,7 +29,7 @@ PhD_pivot_edu <-  function(db, type = "P"){
 
   db_vars <- names(db)
 
-  if(class(db) != "data.frame"){
+  if(!"data.frame" %in% class(db)){
     cli::cli_abort("`db` debe ser un dataframe.")
   }
 
