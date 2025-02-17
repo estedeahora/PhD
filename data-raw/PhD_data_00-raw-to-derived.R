@@ -50,11 +50,11 @@ fs::dir_create(here::here("data-raw", "intermediate-data"))
 # ----------*
 # [x] Envolvente AMBA
 # [x] Radios AMBA
-# [x] Departamentos AMBA
-# [x] Jurisdicciones AMBA
+# [x] Departamentos AMBA (completos y recortados a AMBA)
+# [x] Jurisdicciones AMBA (provincias recortados a AMBA)
 # [x] FFCC (estaciones y líneas)
 # [x] Red vial urbana (OSM)
-# -> CARTO = list(AMGBA, RADIO, DPTO, PCIA, FFCC1, FFCC2)
+# -> CARTO = list(AMGBA, RADIO, DPTO, DPTO_AMBA, PCIA, FFCC1, FFCC2)
 # -> CALLE [sfnetwork]
 
 source(here::here("data-raw", "PhD_data_01-carto.R"), encoding = "UTF-8")
@@ -65,7 +65,14 @@ source(here::here("data-raw", "PhD_data_01-carto.R"), encoding = "UTF-8")
 # [x] Base de hogares con nivel educativo de los cónyuges
 # [x] Base de hogares con cantidad de personas en edad escolar
 # [-] Distribución de población facebook
-# ->
+# -> CENSO_CON: datos censales de cónyuges (P01 %in% 1:2)
+# -> HOG: datos del hogar con información de educación de cónyuges y
+#           educación y homogamia del hogar.
+# -> Modifica CARTO["RADIO"]: Se agrega información de cantidad de hogares,
+#           cantidad de hogares conyugales, cantidad de hogares con homogamia,
+#           cantidad de hogares por nivel educativo (máximo cónyuge), cantidad
+#           de niños en edad educativa primaria, probabilidad de homogamia
+#           por nivel educativo y ls (segregación local)
 
 source(here::here("data-raw", "PhD_data_02-population.R"), encoding = "UTF-8")
 

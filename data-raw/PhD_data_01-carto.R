@@ -271,8 +271,13 @@ CARTO$FFCC2 <- read_sf("https://cdn.buenosaires.gob.ar/datosabiertos/datasets/tr
 
 # Guardar bases -------------------------------------------
 
-  cli_alert_info(col_silver("Guradando {.path PhD_02_carto.RData}."))
+  cli_alert_info(col_silver("Guradando {.path intermediate-data/PhD_02_carto.RData}."))
 
-  save(CALLE, CARTO,
+  save(CARTO,
        file = here::here("data-raw", "intermediate-data",
                          "PhD_02_carto.RData"))
+
+  cli_alert_info(col_silver("Guradando datos finales {.path data/CALLE.rda}."))
+
+  usethis::use_data(CALLE, overwrite = TRUE, internal = FALSE)
+  rm(CALLE)
