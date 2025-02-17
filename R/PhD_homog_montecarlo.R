@@ -5,34 +5,32 @@ PhD_homog_montecarlo <- function(seed = 123, db, replace = F){
 
   set.seed(seed)
 
+  # Se distribuyen aleatoriamente los valores de MNI3 dentro de cada radio
   db <- db |>
     dplyr::group_by(ID_RADIO) |>
     dplyr::mutate(s = sample(MNI3, size = dplyr::n(), replace = replace) )
 
-  db_MAT <-  db |>
+  # Se calcula la homogamia por hogar
+  db_HOG <-  db |>
     tidyr::pivot_wider(id_cols = c("ID_RADIO", "VIVIENDA_REF_ID", "HOGAR_REF_ID"),
                        names_from = "REL", values_from = "s" ) |>
-    dplyr::mutate(SEG1 = ifelse(CON == PSH, T, F),
+    dplyr::mutate(HOM = ifelse(CON == PSH, T, F),
                   P1 = pmin(PSH, CON),
-                  P2 = pmax(PSH, CON))
+                  P2 = pmax(PSH, CON)) |>
+    PhD::PhD_homog_hog(db_MAT, type = "P") |>
+    dplyr::select(ID_RADIO, HOM, PRI_hogcount, SEC_hogcount, SUP_hogcount)
 
-  db_MAT <- cbind(db_MAT, pivot_edu(db_MAT, type = "P")) |>
-    dplyr::select(ID_RADIO, SEG1, PRI_p, SEC_p, SUP_p)
-
-  db_RAD <- db_MAT |>
+  db_RAD <- db_HOG |>
     group_by(ID_RADIO) |>
     summarise(
       # Porcentaje de hogares con homogamia, n_homog / n_conyg (sobre total de hogares conyugales)
-      # phom = sum(SEG1, na.rm = T) / sum(!is.na(SEG1)),
+      # phom = sum(HOM, na.rm = T) / sum(!is.na(HOM)),
       # Probabilidad de homogamia (por grupo educativo)
-      across(.cols = etidyselectnds_with("_p"),
-             .fns  = ~sum(.x * SEG1, na.rm = T) / sum(.x, na.rm = T)),
-      across(.cols  = tidyselect::ends_with("_p"),
-             .fns   = ~conv_phom(.x))
+      across(.cols = tidyselect::ends_with("_hogcount"),
+             .fns  = ~sum(.x * HOM, na.rm = T) / sum(.x, na.rm = T)),
+      across(.cols  = tidyselect::ends_with("_hogcount"),
+             .fns   = ~PhD_conv_phom(.x, conversion = "to_P2"))
     )
 
   return(db_RAD)
 }
-
-# definir
-# conv_phom()
