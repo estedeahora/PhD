@@ -17,10 +17,15 @@ if(!exists("CARTO", inherits = F) || is.null(CARTO$RADIO[["ls"]])){
 
 ### ╠ Mapa Educativo Nacional -----------------------------
   # http://mapa.educacion.gob.ar/geoservicios
+  #
   # Listado de modalidades:
-  # a <- CARTO$ESCUELAS
-  # a$nen[!is.na(a$nen)] |> unique() |> paste(collapse = "") |> str_split("; ", simplify = T) |> sort() |> unique()
-  # rm(a)
+  # esc_aux <- CARTO$ESCUELAS
+  # esc_aux$nen[!is.na(esc_aux$nen)] |>
+  #     unique() |>
+  #     paste(collapse = "") |>
+  #     str_split("; ", simplify = T) |>
+  #     sort() |> unique()
+  # rm(esc_aux)
 
   cli_li(col_yellow("Descargando Mapa Educativo Nacional (ME)"))
 
@@ -57,22 +62,53 @@ if(!exists("CARTO", inherits = F) || is.null(CARTO$RADIO[["ls"]])){
   rm(request, client, fileName, wfs)
 
 ### ╠ APRENDER --------------------------------------------
-# Se usar promedio de años 2017/2018 para disminuir sesgos del operativo.
+  # Respaldo de datos disponible en: https://doi.org/10.5281/zenodo.14888047
+  # Se usar promedio de años 2017 y 2019 para disminuir sesgos del operativo.
 
   cli_li(col_yellow("Cargando datos APRENDER (ME)"))
 
-  #Secundario
-  # APRENDER <- paste0("D:/Documentos/Fuentes de datos/ME Aprender/AP", c(2017,2019),
-  #                    "/APRENDER", c(2017,2019),
-  #                    "_BU_Estudiantes-secundaria-5-6-año_censo-L+M.csv") |>
-  #   map(\(.x) read.csv2(.x, colClasses = c("ID1" = "character")) ) |>
-  #   set_names(c("AP2017", "AP2019")) |>
-  #   # Seleccionar escuelas en base (por ID1) y variables de trabajo
-  #   map(\(x) filter(x, ID1 %in% CARTO$ESCUELAS$ID1)) |>
-  #   map2(list(c("ap10", "ap11"),    # Variables EDU_MAD/EDU_PAD 2017
-  #             c("ap16", "ap17")),    # Variables EDU_MAD/EDU_PAD 2019
-  #        \(x, y) select(x, ID1:idalumno, ponder,
-  #                       EDU_MAD = all_of(y[[1]]), EDU_PAD = all_of(y[[2]]))) |>
+  if(!fs::file_exists("data-raw/datafolder.txt")){
+
+    # Descargar datos de Zenodo
+    folder_temp <- tempdir()
+    inborutils::download_zenodo(doi = "10.5281/zenodo.14888047",
+                                folder_temp)
+    zip_temp <- fs::path(folder_temp, "ME_data", ext = "zip")
+
+    unzip(zipfile = zip_temp, exdir = folder_temp, unzip = "unzip")
+    ME_files <- fs::path_ext_remove(zip_temp)
+    AP_files <- fs::dir_ls(ME_files, regexp = "APRENDER.*\\.csv$")
+
+    unlink(zip_temp)
+    rm(folder_temp, zip_temp)
+
+  }else{
+    AP_files <- fs::path(readLines("data-raw/datafolder.txt")[1],
+                         "ME_Aprender", paste0("AP", c(2017,2019)),
+                         paste0("APRENDER", c(2017,2019),
+                                "_BU_Estudiantes-secundaria-5-6-año_censo-L+M"),
+                         ext = "csv")
+  }
+
+  APRENDER <- AP_files |>
+    map(\(.x) read.csv2(.x, colClasses = c("ID1" = "character")) ) |>
+    set_names(c("AP2017", "AP2019")) |>
+    # Seleccionar escuelas en base (por ID1) y variables de trabajo
+    map(\(x) filter(x, ID1 %in% CARTO$ESCUELAS$ID1)) |>
+    map2(list(c("ap10", "ap11"),    # Variables EDU_MAD/EDU_PAD 2017
+              c("ap16", "ap17")),    # Variables EDU_MAD/EDU_PAD 2019
+         \(x, y) select(x, ID1:idalumno, ponder,
+                        EDU_MAD = all_of(y[[1]]), EDU_PAD = all_of(y[[2]]))) |>
+    # Unificar bases
+    bind_rows(.id = "APRENDER") |>
+    # Generar variable EDU
+    mutate(across(.cols = EDU_MAD:EDU_PAD,
+                  .fns = ~case_when(.x < 0 | .x == 8 ~ 0,
+                                    .x %in% 1:4 ~ 1,
+                                    .x %in% 5:6 ~ 2,
+                                    .x %in% 7 ~ 3) ),
+           EDU = ifelse(EDU_MAD >= EDU_PAD, EDU_MAD, EDU_PAD),
+           EDU = factor(EDU, levels = 1:3, labels = c("PRI", "SEC", "SUP") ))
 
   ESC_APR <- APRENDER |>
     # Calcular totales de alumno por escuela
@@ -94,9 +130,26 @@ if(!exists("CARTO", inherits = F) || is.null(CARTO$RADIO[["ls"]])){
     pivot_wider(id_cols = c(ID1, N_AP, n_sinNA),
                 names_from = EDU, values_from = p)
 
+  rm(AP_files)
+
 ### ╚ Relevamiento Anual (RA) -------------------------------------------------
+  # Respaldo de datos disponible en: https://doi.org/10.5281/zenodo.14888047
 
   cli_li(col_yellow("Cargando datos Relevamiento Anual (ME)"))
+
+  if(!fs::file_exists("data-raw/datafolder.txt")){
+
+    RA_files <- fs::dir_ls(ME_files, regexp = "RA.*\\.csv$")
+
+    rm(ME_files)
+
+  }else{
+    RA_files <- fs::path(readLines("data-raw/datafolder.txt")[1],
+                         "ME_RA", paste0("RA", 2017:2019),
+                         paste0("RA", 2017:2019,
+                                "_BU2_Matricula"),
+                         ext = "csv")
+  }
 
   # Secundario
   # ESC_RA <- paste0("D:/Documentos/Fuentes de datos/ME RA/v2/RA", c(2017,2019),
@@ -107,11 +160,11 @@ if(!exists("CARTO", inherits = F) || is.null(CARTO$RADIO[["ls"]])){
   #   map(\(x) filter(x, ID1 %in% CARTO$ESCUELAS$ID1)) |>
   #   map(\(x) select(x, ID1, all_of(paste0("X_", 8:12)), multi_sec)) |>
 
-  # Primario
-  ESC_RA <- paste0("D:/Documentos/Fuentes de datos/ME RA/v2/RA", 2017:2018,
-                   "/RA", 2017:2018, "_BU2_Matricula.csv") |>
+  ESC_RA <- RA_files |>
+    # paste0("D:/Documentos/Fuentes de datos/ME RA/v2/RA", 2017:2018,
+    #                "/RA", 2017:2018, "_BU2_Matricula.csv") |>
     map(\(.x) read.csv2(.x, colClasses = c("ID1" = "character"))) |>
-    set_names(c("RA2017", "RA2018")) |>
+    set_names(c("RA2017", "RA2018", "RA2019")) |>
     # Seleccionar escuelas en base (por ID1) y variables de trabajo
     map(\(x) filter(x, ID1 %in% CARTO$ESCUELAS$ID1)) |>
     map(\(x) select(x, ID1, all_of(paste0("X_", 1:6)), multi_pri)) |>
@@ -123,6 +176,8 @@ if(!exists("CARTO", inherits = F) || is.null(CARTO$RADIO[["ls"]])){
     group_by(ID1, .drop = F ) |>
     summarise(N_MATRIC = mean(N_MATRIC, na.rm = T),
               N_MATRIC = round(N_MATRIC) )
+
+  rm(RA_files)
 
 # Bases finales ---------------------------------------------------
 
@@ -137,5 +192,5 @@ rm(ESC_RA, ESC_APR)
 # cli_end(ulid)
 # rm(ulid)
 
-cli_alert_info("Guradando {.path PhD_04_escuela-con-datos.RData}.")
-save.image("D:/Escritorio/PhD_data/PhD_04_escuela-con-datos.RData")
+# cli_alert_info("Guradando {.path PhD_04_escuela-con-datos.RData}.")
+# save.image("D:/Escritorio/PhD_data/PhD_04_escuela-con-datos.RData")

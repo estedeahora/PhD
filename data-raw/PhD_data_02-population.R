@@ -22,15 +22,24 @@ if(!exists("CARTO", inherits = F)){
   cli_li(col_yellow("Cargando datos del CENSO."))
   cli_alert_info(col_silver("Código para generar los datos: {.path data-raw/CENSO_raw-to-derived-data.R}.") )
 
-  # if(!file.exists){
-  # https://ict.ipbes.net/ipbes-ict-guide/data-and-knowledge-management/technical-guidelines/zenodo#b.-programmatically-using-r
-  #   # Descargar datos de Zenodo:
-  #   fileName <- tempfile(fileext = ".RData")
-  #   download.file("https://zenodo.org/records/14876596/files/AMGBA.RData?download=1", destfile = fileName)
-  #   load(fileName)
-  # }else{
-    load("C:/Users/este.de.ahora/Documents/00_DATA/CENSO AMGBA/derived_data/AMGBA.RData")
-  # }
+  if(!fs::file_exists("data-raw/datafolder.txt")){
+
+    # Descargar datos de Zenodo
+    folder_temp <- tempdir()
+    inborutils::download_zenodo(doi = "10.5281/zenodo.14876596",
+                                folder_temp)
+
+    CENSO_file <- fs::path(folder_temp, "AMGBA", ext = "RData")
+    rm(folder_temp)
+
+  }else{
+    CENSO_file <- fs::path(readLines("data-raw/datafolder.txt")[1],
+                            readLines("data-raw/datafolder.txt")[2],
+                            "AMGBA.RData")
+  }
+
+  load(CENSO_file)
+  rm(CENSO_file)
 
   # Quitar casos fuera del AMBA (Gran La Plata)
   CENSO <- CENSO |>
