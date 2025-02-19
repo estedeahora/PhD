@@ -230,6 +230,6 @@ if(!exists("CARTO", inherits = F)){
        file = here::here("data-raw", "intermediate-data",
                          "PhD_03_carto-censo.RData"))
 
-  cli_alert_info(col_silver("Guradando datos finales {.path data/HOG.rda} y  {.path data/CENSO_CON.rda} ."))
+  cli_alert_info(col_silver("Guradando datos finales {.path data/HOG.rda} y {.path data/CENSO_CON.rda}."))
   usethis::use_data(HOG, CENSO_CON, overwrite = TRUE, internal = FALSE)
   rm(HOG, CENSO_CON)

@@ -44,8 +44,8 @@ fs::dir_create(here::here("data-raw", "intermediate-data"))
 # BASES NECESARIAS:
 
 # Nombre                    Año       Fuente
-# APRENDER (Estudiantes) 2017/2018    ME      https://www.argentina.gob.ar/educacion/evaluacion-e-informacion-educativa/base-de-datos?tca=biGs15DqyLzvPLuIOhNm6_5G8xLVFWSaNRGR7mHJFtY
-# RA BU2 (Matrícula)     2017/2018    ME      https://www.argentina.gob.ar/educacion/evaluacion-e-informacion-educativa/base-de-datos?tca=biGs15DqyLzvPLuIOhNm6_5G8xLVFWSaNRGR7mHJFtY
+# APRENDER (Estudiantes) 2017/2019    ME      https://www.argentina.gob.ar/educacion/evaluacion-e-informacion-educativa/base-de-datos?tca=biGs15DqyLzvPLuIOhNm6_5G8xLVFWSaNRGR7mHJFtY
+# RA BU2 (Matrícula)     2017/2019    ME      https://www.argentina.gob.ar/educacion/evaluacion-e-informacion-educativa/base-de-datos?tca=biGs15DqyLzvPLuIOhNm6_5G8xLVFWSaNRGR7mHJFtY
 # CENSO                    2010       INDEC
 # ENMODO                   2018       GCBA    https://data.buenosaires.gob.ar/dataset/encuesta-movilidad-domiciliaria
 
@@ -75,7 +75,7 @@ source(here::here("data-raw", "PhD_data_01-carto.R"), encoding = "UTF-8")
 #           cantidad de hogares conyugales, cantidad de hogares con homogamia,
 #           cantidad de hogares por nivel educativo (máximo cónyuge), cantidad
 #           de niños en edad educativa primaria, probabilidad de homogamia
-#           por nivel educativo y ls (segregación local)
+#           por nivel educativo y ls (segregación local).
 
 source(here::here("data-raw", "PhD_data_02-population.R"), encoding = "UTF-8")
 
@@ -85,12 +85,14 @@ source(here::here("data-raw", "PhD_data_02-population.R"), encoding = "UTF-8")
 #       de MNI padres
 # [x] Base de alumnos por escuelas con composición de MNI de padres
 # [x] Base de matrícula de alumnos por escuelas (total de 1ero a 6to grado)
-# -> CARTO = c(CARTO, ESCUELAS)
+# -> Modifica CARTO, agregando "ESCUELAS" con datos sobre matrícula y composición
+#          de MNI de padres por escuela.
 
 source(here::here("data-raw", "PhD_data_03-education.R"), encoding = "UTF-8")
 
 # Movilidad
 # --------*
-# [ ] ENMODO
+# [x] ENMODO: Base de datos de movilidad domiciliaria de GCBA.
+# -> ENMODO = list(HOG, PER, VIA, ETA)
 
 source(here::here("data-raw", "PhD_data_04-mobility.R"), encoding = "UTF-8")
