@@ -93,28 +93,35 @@ if(!exists("CARTO", inherits = F) || is.null(CARTO$RADIO[["ls"]])){
   APRENDER <- AP_files |>
     map(\(.x) read.csv2(.x, colClasses = c("ID1" = "character")) ) |>
     set_names(c("AP2017", "AP2019")) |>
-    # Seleccionar escuelas en base (por ID1) y variables de trabajo
-    map(\(x) filter(x, ID1 %in% CARTO$ESCUELAS$ID1)) |>
+    # Seleccionar escuelas en base (por ID1 y nivel) y variables de trabajo
+    map(\(x) filter(x, ID1 %in% CARTO$ESCUELAS$ID1[CARTO$ESCUELAS$NIV_SEC])) |>
     map2(list(c("ap10", "ap11"),    # Variables EDU_MAD/EDU_PAD 2017
               c("ap16", "ap17")),    # Variables EDU_MAD/EDU_PAD 2019
          \(x, y) select(x, ID1:idalumno, ponder,
-                        EDU_MAD = all_of(y[[1]]), EDU_PAD = all_of(y[[2]]))) |>
+                        EDU_MAD = all_of(y[[1]]),
+                        EDU_PAD = all_of(y[[2]]))) |>
     # Unificar bases
     bind_rows(.id = "APRENDER") |>
     # Generar variable EDU
     mutate(across(.cols = EDU_MAD:EDU_PAD,
-                  .fns = ~case_when(.x < 0 | .x == 8 ~ 0,
-                                    .x %in% 1:4 ~ 1,
-                                    .x %in% 5:6 ~ 2,
-                                    .x %in% 7 ~ 3) ),
+                  .fns =
+                    ~case_when(is.na(.x) | .x < 0 | .x == 8 ~ 0,
+                               # Categorías AP2017
+                               APRENDER == "AP2017" & .x %in% 1:4 ~ 1,
+                               APRENDER == "AP2017" & .x %in% 5:6 ~ 2,
+                               APRENDER == "AP2017" & .x %in% 7   ~ 3,
+                               # Categorías AP2019
+                               APRENDER == "AP2019" & .x %in% 1:3 ~ 1,
+                               APRENDER == "AP2019" & .x %in% 4   ~ 2,
+                               APRENDER == "AP2019" & .x %in% 5:7 ~ 3) ),
            EDU = ifelse(EDU_MAD >= EDU_PAD, EDU_MAD, EDU_PAD),
            EDU = factor(EDU, levels = 1:3, labels = c("PRI", "SEC", "SUP") ))
 
   ESC_APR <- APRENDER |>
     # Calcular totales de alumno por escuela
-    # N = total ponderado; n = encuetados; n_sinNA = con respuestas en EDU
+    # N_op = total ponderado; n = encuestados; n_sinNA = con respuestas en EDU
     group_by(ID1, APRENDER) |>
-    mutate(N_op = round(sum(ponder, na.rm = T),1),
+    mutate(N_op = round(sum(ponder, na.rm = T), 1),
            n = n(),
            n_sinNA = sum(!is.na(EDU)),
            .groups = "drop") |>
@@ -125,12 +132,13 @@ if(!exists("CARTO", inherits = F) || is.null(CARTO$RADIO[["ls"]])){
     # Promedio de porcentaje educativo por escuela
     group_by(ID1, EDU, .drop = F ) |>
     summarise(p = weighted.mean(x = p_op, w = N_op, na.rm = T),
-              N_AP = mean(N_op, na.rm = T),
-              n_sinNA = sum(n_sinNA, na.rm = T)) |>
+              N_AP = sum(N_op, na.rm = T),
+              n_sinNA = sum(n_sinNA, na.rm = T),
+              .groups = "drop") |>
     pivot_wider(id_cols = c(ID1, N_AP, n_sinNA),
                 names_from = EDU, values_from = p)
 
-  rm(AP_files)
+  rm(AP_files, APRENDER)
 
 ### ╚ Relevamiento Anual (RA) -------------------------------------------------
   # Respaldo de datos disponible en: https://doi.org/10.5281/zenodo.14888047
@@ -151,26 +159,15 @@ if(!exists("CARTO", inherits = F) || is.null(CARTO$RADIO[["ls"]])){
                          ext = "csv")
   }
 
-  # Secundario
-  # ESC_RA <- paste0("D:/Documentos/Fuentes de datos/ME RA/v2/RA", c(2017,2019),
-  #                  "/RA", c(2017,2019), "_BU2_Matricula.csv") |>
-  #   map(\(.x) read.csv2(.x, colClasses = c("ID1" = "character"))) |>
-  #   set_names(c("RA2017", "RA2018")) |>
-  #   # Seleccionar escuelas en base (por ID1) y variables de trabajo
-  #   map(\(x) filter(x, ID1 %in% CARTO$ESCUELAS$ID1)) |>
-  #   map(\(x) select(x, ID1, all_of(paste0("X_", 8:12)), multi_sec)) |>
-
   ESC_RA <- RA_files |>
-    # paste0("D:/Documentos/Fuentes de datos/ME RA/v2/RA", 2017:2018,
-    #                "/RA", 2017:2018, "_BU2_Matricula.csv") |>
     map(\(.x) read.csv2(.x, colClasses = c("ID1" = "character"))) |>
     set_names(c("RA2017", "RA2018", "RA2019")) |>
-    # Seleccionar escuelas en base (por ID1) y variables de trabajo
-    map(\(x) filter(x, ID1 %in% CARTO$ESCUELAS$ID1)) |>
-    map(\(x) select(x, ID1, all_of(paste0("X_", 1:6)), multi_pri)) |>
+    # Seleccionar escuelas en base (por ID1 y nivel) y variables de trabajo
+    map(\(x) filter(x, ID1 %in% CARTO$ESCUELAS$ID1[CARTO$ESCUELAS$NIV_SEC])) |>
+    map(\(x) select(x, ID1, all_of(paste0("X_", 8:12)), multi_sec)) |>
     bind_rows(.id = "RA") |>
     rowwise()  |>
-    mutate(N_MATRIC = sum(across(c(starts_with("X_"), multi_pri)),
+    mutate(N_MATRIC = sum(across(c(starts_with("X_"), multi_sec)),
                           na.rm = T)) |>
     filter(N_MATRIC > 0) |>
     group_by(ID1, .drop = F ) |>
@@ -181,16 +178,14 @@ if(!exists("CARTO", inherits = F) || is.null(CARTO$RADIO[["ls"]])){
 
 # Bases finales ---------------------------------------------------
 
-cli_li(col_yellow("Armado de bases finales (educación)"))
+  cli_li(col_yellow("Sumar datos educativos a base `CARTO$ESCUELAS`"))
 
-CARTO$ESCUELAS <- CARTO$ESCUELAS |>
-  inner_join(ESC_RA, by = join_by(ID1)) |>
-  inner_join(ESC_APR, by = join_by(ID1))
+  CARTO$ESCUELAS <- CARTO$ESCUELAS |>
+    left_join(ESC_RA, by = join_by(ID1)) |>
+    left_join(ESC_APR, by = join_by(ID1))
 
-rm(ESC_RA, ESC_APR)
+  rm(ESC_RA, ESC_APR)
 
-# cli_end(ulid)
-# rm(ulid)
-
-# cli_alert_info("Guradando {.path PhD_04_escuela-con-datos.RData}.")
-# save.image("D:/Escritorio/PhD_data/PhD_04_escuela-con-datos.RData")
+  cli_alert_info(col_silver("Guradando datos finales {.path data/CARTO.rda}."))
+  usethis::use_data(CARTO, overwrite = TRUE, internal = FALSE)
+  rm(CARTO)
