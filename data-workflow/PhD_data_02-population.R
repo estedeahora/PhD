@@ -2,17 +2,17 @@
 # ---------------*
 
 cli_h2(col_blue("Cargando datos de población (CENSO)"))
-cli_alert_info(col_silver("Basado en script TP Dalle: {.path script/ES_01_data.R}.") )
+cli_alert_info(col_silver("Basado en script TP Dalle.") )
 
 if(!exists("CARTO", inherits = F)){
   cli_alert_info(
     col_silver(
       paste0("Cargando cartografía",
-             ": {.path data-raw/intermediate-data/PhD_02_carto.RData}.")
+             ": {.path data-workflow/intermediate-data/PhD_02_carto.RData}.")
       )
     )
 
-  load(here::here("data-raw", "intermediate-data",
+  load(here::here("data-workflow", "intermediate-data",
                   "PhD_02_carto.RData"))
 }
 
@@ -20,9 +20,9 @@ if(!exists("CARTO", inherits = F)){
 # Respaldo de datos disponible en: https://doi.org/10.5281/zenodo.14876596
 
   cli_li(col_yellow("Cargando datos del CENSO."))
-  cli_alert_info(col_silver("Código para generar los datos: {.path data-raw/CENSO_raw-to-derived-data.R}.") )
+  cli_alert_info(col_silver("Código para generar los datos: {.path data-workflow/CENSO_raw-to-derived-data.R}.") )
 
-  if(!fs::file_exists("data-raw/datafolder.txt")){
+  if(!fs::file_exists(here::here("data-workflow", "datafolder.txt"))){
 
     # Descargar datos de Zenodo
     folder_temp <- tempdir()
@@ -33,8 +33,8 @@ if(!exists("CARTO", inherits = F)){
     rm(folder_temp)
 
   }else{
-    CENSO_file <- fs::path(readLines("data-raw/datafolder.txt")[1],
-                            readLines("data-raw/datafolder.txt")[2],
+    CENSO_file <- fs::path(readLines("data-workflow/datafolder.txt")[1],
+                            readLines("data-workflow/datafolder.txt")[2],
                             "AMGBA.RData")
   }
 
@@ -225,11 +225,13 @@ if(!exists("CARTO", inherits = F)){
   rm(RAD, local_seg)
   rm(CENSO)
 
-  cli_alert_info(col_silver("Guradando {.path intermediate-data/PhD_03_carto-censo.RData}."))
+  cli_alert_info(col_silver("Guradando {.path data-workflow/intermediate-data/PhD_03_carto-censo.RData}."))
   save(CARTO,
-       file = here::here("data-raw", "intermediate-data",
+       file = here::here("data-workflow", "intermediate-data",
                          "PhD_03_carto-censo.RData"))
 
-  cli_alert_info(col_silver("Guradando datos finales {.path data/HOG.rda} y {.path data/CENSO_CON.rda}."))
-  usethis::use_data(HOG, CENSO_CON, overwrite = TRUE, internal = FALSE)
+  cli_alert_info(col_silver("Guradando datos finales {.path HOG.rda} y {.path CENSO_CON.rda}."))
+  # usethis::use_data(HOG, CENSO_CON, overwrite = TRUE, internal = FALSE)
+  save(HOG, file = here::here("data-workflow", "final-data", "HOG.rda"))
+  save(CENSO_CON, file = here::here("data-workflow", "final-data", "CENSO_CON.rda"))
   rm(HOG, CENSO_CON)

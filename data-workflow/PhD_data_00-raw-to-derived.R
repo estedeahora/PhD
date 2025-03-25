@@ -39,7 +39,8 @@ load_all()
 options(cli.progress_show_after = 0)
 
 # Intermediate data folder
-fs::dir_create(here::here("data-raw", "intermediate-data"))
+fs::dir_create(here::here("data-workflow", "intermediate-data"))
+fs::dir_create(here::here("data-workflow", "final-data"))
 
 # BASES NECESARIAS:
 
@@ -60,7 +61,7 @@ fs::dir_create(here::here("data-raw", "intermediate-data"))
 # -> CARTO = list(AMGBA, RADIO, DPTO, DPTO_AMBA, PCIA, FFCC1, FFCC2)
 # -> CALLE [sfnetwork]
 
-source(here::here("data-raw", "PhD_data_01-carto.R"), encoding = "UTF-8")
+source(here::here("data-workflow", "PhD_data_01-carto.R"), encoding = "UTF-8")
 
 # Población
 # --------*
@@ -77,7 +78,7 @@ source(here::here("data-raw", "PhD_data_01-carto.R"), encoding = "UTF-8")
 #           de niños en edad educativa primaria, probabilidad de homogamia
 #           por nivel educativo y ls (segregación local).
 
-source(here::here("data-raw", "PhD_data_02-population.R"), encoding = "UTF-8")
+source(here::here("data-workflow", "PhD_data_02-population.R"), encoding = "UTF-8")
 
 # Educación
 # --------*
@@ -88,11 +89,11 @@ source(here::here("data-raw", "PhD_data_02-population.R"), encoding = "UTF-8")
 # -> Modifica CARTO, agregando "ESCUELAS" con datos sobre matrícula y composición
 #          de MNI de padres por escuela.
 
-source(here::here("data-raw", "PhD_data_03-education.R"), encoding = "UTF-8")
+source(here::here("data-workflow", "PhD_data_03-education.R"), encoding = "UTF-8")
 
 # Movilidad
 # --------*
 # [x] ENMODO: Base de datos de movilidad domiciliaria de GCBA.
 # -> ENMODO = list(HOG, PER, VIA, ETA)
 
-source(here::here("data-raw", "PhD_data_04-mobility.R"), encoding = "UTF-8")
+source(here::here("data-workflow", "PhD_data_04-mobility.R"), encoding = "UTF-8")

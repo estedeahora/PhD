@@ -2,7 +2,7 @@
 # ---------------*
 
 cli_h2(col_blue("Cargando datos de movilidad (ENMODO2018)"))
-cli_alert_warning("Basado en script TP Goinheix: 'script/SNA_01_data.R'.")
+cli_alert_warning("Basado en script TP Goinheix")
 
 # Cargar datos ENMODO2018 -------------------------------------------------
 
@@ -10,14 +10,14 @@ cli_alert_warning("Basado en script TP Goinheix: 'script/SNA_01_data.R'.")
 
   cli_ul(col_silver("ENMODO2018 HOGAR") )
 
-  HOGAR <- read_excel(here::here("data-raw", "raw-db", "ENMODO18_Hogar.xlsx") ) |>
+  HOGAR <- read_excel(here::here("data-workflow", "raw-data", "ENMODO18_Hogar.xlsx") ) |>
     rename(ID_RADIO = RADIO_CENSAL_hogar) |>
     # Correcciones manuales
     mutate(ID_RADIO = ifelse(ID_RADIO == "60281222", "060281202", ID_RADIO ))
 
   cli_ul(col_silver("ENMODO2018 PERSONA") )
 
-  PERSONA <- read_excel(here::here("data-raw", "raw-db", "ENMODO18_Personas.xlsx") ) |>
+  PERSONA <- read_excel(here::here("data-workflow", "raw-data", "ENMODO18_Personas.xlsx") ) |>
     mutate(MNI = case_when(IV_2_edad < 15 ~ 1,
                            IV_12_nivel_aprobado %in% c(7, 22) ~ 1,
                            T ~ IV_12_nivel_aprobado),
@@ -29,7 +29,7 @@ cli_alert_warning("Basado en script TP Goinheix: 'script/SNA_01_data.R'.")
 
   cli_ul(col_silver("ENMODO2018 VIAJE") )
 
-  VIAJE <- read_excel(here::here("data-raw", "raw-db", "ENMODO18_Viajes.xlsx") ) |>
+  VIAJE <- read_excel(here::here("data-workflow", "raw-data", "ENMODO18_Viajes.xlsx") ) |>
     rename(ORI = radio_origen, DES = radio_destino,
            ORI_ACT = VII_2_activida_en_el_origen,
            DES_ACT = VII_3_activida_en_el_destino,
@@ -52,7 +52,7 @@ cli_alert_warning("Basado en script TP Goinheix: 'script/SNA_01_data.R'.")
 
   cli_ul(col_silver("ENMODO2018 ETAPA") )
 
-  ETAPA <- read_excel(here::here("data-raw", "raw-db", "ENMODO18_Etapas.xlsx") )
+  ETAPA <- read_excel(here::here("data-workflow", "raw-data", "ENMODO18_Etapas.xlsx") )
 
 # Crear variables -----------------------------------
   # Base HOGAR:
@@ -95,7 +95,8 @@ cli_alert_warning("Basado en script TP Goinheix: 'script/SNA_01_data.R'.")
 
   rm(HOGAR, PERSONA, VIAJE, ETAPA)
 
-  cli_alert_info(col_silver("Guradando datos finales {.path data/ENMODO.rda}."))
-  usethis::use_data(ENMODO, overwrite = TRUE, internal = FALSE)
+  cli_alert_info(col_silver("Guradando datos finales {.path ENMODO.rda}."))
+  # usethis::use_data(ENMODO, overwrite = TRUE, internal = FALSE)
+  save(ENMODO, file = here::here("data-workflow", "final-data", "ENMODO.rda"))
 
   rm(ENMODO)

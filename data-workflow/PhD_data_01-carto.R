@@ -36,9 +36,9 @@ CARTO <- list()
   # * Se descargan los polígonos manualmente desde portal INDEC
   #     (https://www.indec.gob.ar/indec/web/Institucional-Indec-Codgeo)
   #     y se genera un preprocesamiento para unir las capas de CABA y PBA.
-  #     ver procesamiento en 'data-raw/PhD_prepare-carto-radios2010.R'
+  #     ver procesamiento en 'data-workflow/PhD_prepare-carto-radios2010.R'
 
-  CARTO$RADIO <- read_sf(here::here("data-raw", "raw-db",
+  CARTO$RADIO <- read_sf(here::here("data-workflow", "raw-data",
                                     "radios2010_AMBA.geojson")) |>
     st_transform(crs = st_crs(CARTO$AMGBA))
 
@@ -91,7 +91,7 @@ CARTO <- list()
 
   cli_li(col_yellow("Agregar Entornos Urbanos (Mariana Marcos) a radios censales."))
 
-  TH <- read.csv2(here::here("data-raw", "raw-db",
+  TH <- read.csv2(here::here("data-workflow", "raw-data",
                              "entornos-urbanos.csv"),
                   colClasses = c(ID_RADIO = "character") ) |>
     mutate(ID_RADIO = str_pad(ID_RADIO, 9, pad = "0"),
@@ -175,11 +175,11 @@ CARTO$FFCC2 <- read_sf("https://cdn.buenosaires.gob.ar/datosabiertos/datasets/tr
 
   cli_alert_info(col_silver("Guardando {.path PhD_01_OSM-download.RData}."))
   save(CALLE,
-       file = here::here("data-raw", "intermediate-data",
+       file = here::here("data-workflow", "intermediate-data",
                          "PhD_01_OSM-download.RData"))
 
   # Armado red urbana -------------------------------------------
-  # load(here::here("data-raw", "intermediate-data",
+  # load(here::here("data-workflow", "intermediate-data",
   #                 "PhD_01_OSM-download.RData"))
 
   cli_li(col_yellow("Armando red urbana (callejero)."))
@@ -271,13 +271,14 @@ CARTO$FFCC2 <- read_sf("https://cdn.buenosaires.gob.ar/datosabiertos/datasets/tr
 
 # Guardar bases -------------------------------------------
 
-  cli_alert_info(col_silver("Guradando {.path intermediate-data/PhD_02_carto.RData}."))
+  cli_alert_info(col_silver("Guradando {.path data-workflow/intermediate-data/PhD_02_carto.RData}."))
 
   save(CARTO,
-       file = here::here("data-raw", "intermediate-data",
+       file = here::here("data-workflow", "intermediate-data",
                          "PhD_02_carto.RData"))
 
-  cli_alert_info(col_silver("Guradando datos finales {.path data/CALLE.rda}."))
+  cli_alert_info(col_silver("Guradando datos finales {.path CALLE.rda}."))
 
-  usethis::use_data(CALLE, overwrite = TRUE, internal = FALSE)
+  # usethis::use_data(CALLE, overwrite = TRUE, internal = FALSE)
+  save(CALLE, file = here::here("data-workflow", "final-data", "CALLE.rda"))
   rm(CALLE)
