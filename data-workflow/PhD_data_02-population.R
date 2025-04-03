@@ -1,8 +1,8 @@
 # Cargar población
 # ---------------*
+# Basado en script TP Dalle.
 
 cli_h2(col_blue("Cargando datos de población (CENSO)"))
-cli_alert_info(col_silver("Basado en script TP Dalle.") )
 
 if(!exists("CARTO", inherits = F)){
   cli_alert_info(
@@ -152,6 +152,7 @@ if(!exists("CARTO", inherits = F)){
   cli_li(col_yellow("Armado de base por radio (`RAD`)."))
 
   RAD <- HOG |>
+    filter(!is.na(TH)) |>
     group_by(ID_RADIO, TH) |>
     summarise(
       # Total de hogares
@@ -163,6 +164,8 @@ if(!exists("CARTO", inherits = F)){
       HOG_PRI = sum(EDU == 1, na.rm = T),
       HOG_SEC = sum(EDU == 2, na.rm = T),
       HOG_SUP = sum(EDU == 3, na.rm = T),
+      # Código `rgb` para nivel educativo
+      HOG_color = rgb(red = HOG_PRI/HOG, green = HOG_SEC/HOG, blue = HOG_SUP/HOG),
       # Cantidad de 'hogares conyugales' (= contienen PSH y cónyuge).
       HOG_CON = sum(!is.na(HOM)),
       # Proporción de hogares conyugales (sobre total de hogares).
@@ -185,16 +188,7 @@ if(!exists("CARTO", inherits = F)){
       .groups = "drop") |>
     rename_with(.fn = ~paste0(., "1"), .cols = ends_with("_hogcount")) |>
     rename_with(.fn = ~str_replace(., "_hogcount", "_p"), .cols = matches("_hogcount[0-9]")) |>
-    relocate(HOG, HOG_CON, HOG_HOM, HOG_PRI:HOG_SUP, .after = TH)
-
-  # RAD2 <- CENSO_CON |>
-  #   group_by(ID_RADIO) |>
-  #   summarise(head_PRI = sum(MNI3 == 1),
-  #             head_SEC = sum(MNI3 == 2),
-  #             head_SUP = sum(MNI3 == 3)) |>
-  #   mutate(n_head = head_PRI + head_SEC + head_SUP) |>
-  #   ungroup()
-  # rm(RAD2)
+    relocate(HOG, HOG_CON, HOG_HOM, HOG_PRI:HOG_SUP, HOG_color, .after = TH)
 
 # ╚ Base de segregación por RADIO (Ls) -------------------------------
 
@@ -204,15 +198,12 @@ if(!exists("CARTO", inherits = F)){
     filter(!is.na(TH)) |>
     select(ID_RADIO, HOG_PRI:HOG_SUP) |>
     pivot_longer(cols = HOG_PRI:HOG_SUP, names_to = "EDU", values_to = "total") |>
+    # loca segregation (ls) calculation
     mutual_local(group = "EDU", unit = "ID_RADIO", weight = "total",
                  wide = TRUE, se = TRUE, n_bootstrap = 1000) |>
+    # Fix negative ls values
+    mutate(ls = ifelse(ls < 0, 0, ls) ) |>
     select(ID_RADIO, ls, p)
-
-  # Ls <- CENSO_CON |>
-  #   select(ID_RADIO, MNI3) |>
-  #   mutual_local(group = "MNI3", unit = "ID_RADIO",
-  #                wide = T, se = T) |>
-  #   select(ID_RADIO, ls, p)
 
 # Bases finales ---------------------------------------------------
 

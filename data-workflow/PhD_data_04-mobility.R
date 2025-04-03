@@ -1,8 +1,8 @@
 # Cargar Movilidad
 # ---------------*
+# Basado en script TP Goinheix
 
 cli_h2(col_blue("Cargando datos de movilidad (ENMODO2018)"))
-cli_alert_warning("Basado en script TP Goinheix")
 
 # Cargar datos ENMODO2018 -------------------------------------------------
 
