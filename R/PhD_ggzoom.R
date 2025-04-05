@@ -18,7 +18,7 @@ PhD_ggzoom <- function(gdb, tit, cbox = NULL, dpt = NULL, variable = "ls"){
     labs(title = tit) +
     theme_void()
 
-  if(variable == "col"){
+  if(variable == "color"){
     p <- p +
       geom_sf(aes(fill = I(v)), alpha = 0.6, color = NA)
   }else{
