@@ -6,8 +6,47 @@
 
 # Primer Anexo
 
-Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, 
+```{r}
+RES$appA_TAB1
+```
+
+```{r}
+RES$appA_TAB2
+```
 
 # Segundo Anexo
 
-Otra cosa para el anexo 2
+Dado:
+
+-   $p_{g|u}$ es la proporción del grupo $g$ en la unidad $u$ (el valor de $g$ dado $u$);
+
+-   $p_{g}$ es la proporción del grupo $g$ en el conjunto de unidades (total de población); y
+
+-   $m_u$ es el peso de la unidad $u$ en el total de la población (el tamaño relativo de u en la población).
+
+Y tres medidas de distancia entre los perfiles de las unidades y el perfil medio:
+
+$Ls$: Indice de Información Mutua Local:
+
+$$
+Ls = \sum_{g=1}^G p_{g|u}.\log({\frac{p_{g|u}}{p_{g}})}
+$$
+
+$\text{dist } \chi^2$: Distancia Chi Cuadrado:
+
+$$
+\text{dist } \chi^2 = \sqrt{\sum_{g=1}^G \frac{(p_{g|u} - p_{g})^2}{p_{g}}}
+$$
+
+Inercia local:
+
+$$
+m_u .(\text{dist }\chi^2)^2 = m_u . \left( \sqrt{\sum_{g=1}^G \frac{(p_{g|u} - p_{g})^2}{p_{g}}} \right)^2 = m_u . \sum_{g=1}^G \frac{(p_{g|u} - p_{g})^2}{p_{g}}
+$$
+
+Distancia euclidiana:
+
+$$
+\text{distancia euclidiana} = \sqrt{\sum_{g=1}^G (p_{g|u} - p_{g})^2}
+$$
+

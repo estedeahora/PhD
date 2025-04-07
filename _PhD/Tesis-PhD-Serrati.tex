@@ -149,6 +149,18 @@
 \fancyhead[LE, RE, LO, RO]{}
 % \fancyhead[LE]{Pablo Serrati - Tesis de Maestría}
 % \fancyhead[RO]{\leftmark}
+\usepackage{fontspec}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{colortbl}
+\usepackage{hhline}
+\newlength\Oldarrayrulewidth
+\newlength\Oldtabcolsep
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{wrapfig}
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
@@ -169,7 +181,7 @@
 
 \title{Segregación urbana multi-dominio en el Aglomerado Metropolitano del Gran Buenos Aires (Argentina)}
 \author{Pablo Santiago Serrati}
-\date{Febrero 2025}
+\date{Abril 2025}
 \supervisor{Dra. María Mercedes Di Virgilio}
 \logo{template/logo\_UBA-Sociales2.jpg}
 \university{Universidad Nacional de Buenos Aires}
@@ -1987,7 +1999,7 @@ espaciales (por ejemplo: \citeproc{ref-Morrill1991}{Morrill, 1991}; \citeproc{re
 conteos dentro de las propias unidades espaciales (mediante `recuento
 compuesto de población' o `funciones de proximidad'), de manera que
 estos nuevos conteos incluyan de algún modo a las poblaciones de las
-unidades cercanas (por ejemplo: \citeproc{ref-Feitosa2007}{Feitosa et~al., 2007}; \citeproc{ref-Reardon2004}{Reardon y O'Sullivan, 2004}; \citeproc{ref-Wong1998}{D. W. S. Wong, 1998}, \citeproc{ref-Wong2005}{2005}). En lugar de modificar las medidas tradicionales `para
+unidades cercanas (por ejemplo: \citeproc{ref-Feitosa2007}{F. F. Feitosa et~al., 2007}; \citeproc{ref-Reardon2004}{Reardon y O'Sullivan, 2004}; \citeproc{ref-Wong1998}{D. W. S. Wong, 1998}, \citeproc{ref-Wong2005}{2005}). En lugar de modificar las medidas tradicionales `para
 incorporar el espacio', una segunda estrategia diferente a las dos
 anteriores fue la creación de medidas que se construyen `en base al
 espacio' (\citeproc{ref-Jakubs1981}{Jakubs, 1981}; \citeproc{ref-Morgan1983a}{Barrie S. Morgan, 1983a}, \citeproc{ref-Morgan1983b}{1983b}; \citeproc{ref-Osullivan2007}{O'Sullivan y Wong, 2007}; \citeproc{ref-White1983a}{White, 1983}; \citeproc{ref-Wong2011a}{D. W. Wong, 2011}).\footnote{Un resumen detallado de estos desarrollos puede
@@ -2033,14 +2045,14 @@ sociales `ordenados' (por ejemplo, nivel educativo o grupos
 ocupacionales). Además, siguiendo los aportes sobre desigualdad del
 ingreso mediante la curva de Lorenz, algunos trabajos abordaron el
 problema de la segregación sobre variables continuas, fundamentalmente
-ingresos (\citeproc{ref-Dawkins2007}{Dawkins, 2007}; \citeproc{ref-Feitosa2007}{Feitosa et~al., 2007}; \citeproc{ref-Jargowsky1997}{Jargowsky, 1997}; \citeproc{ref-Kim2009}{Kim y Jargowsky, 2009}; \citeproc{ref-Reardon2011}{Reardon y Bischoff, 2011}).
+ingresos (\citeproc{ref-Dawkins2007}{Dawkins, 2007}; \citeproc{ref-Feitosa2007}{F. F. Feitosa et~al., 2007}; \citeproc{ref-Jargowsky1997}{Jargowsky, 1997}; \citeproc{ref-Kim2009}{Kim y Jargowsky, 2009}; \citeproc{ref-Reardon2011}{Reardon y Bischoff, 2011}).
 
 Como hemos señalado, los índices de segregación brindan una medida
 global con el que se pretende resumir la segregación del conjunto del
 ámbito de estudio. Como alternativa a este enfoque, un tercer grupo de
 trabajos han propuesto considerar \emph{índices locales}, los cuales
 caracterizan a cada una de las unidades en relación al conjunto (ver,
-por ejemplo, \citeproc{ref-Feitosa2007}{Feitosa et~al., 2007}; \citeproc{ref-Reardon2002}{Reardon y Firebaugh, 2002}; \citeproc{ref-Wong2002a}{D. W. S. Wong, 2002}). El valor de las
+por ejemplo, \citeproc{ref-Feitosa2007}{F. F. Feitosa et~al., 2007}; \citeproc{ref-Reardon2002}{Reardon y Firebaugh, 2002}; \citeproc{ref-Wong2002a}{D. W. S. Wong, 2002}). El valor de las
 medidas locales varía en función de la distribución global de los grupos
 o, lo que es lo mismo, es dependiente de los marginales globales. En
 este sentido, un mismo perfil (o distribución de porcentajes de los
@@ -2138,7 +2150,7 @@ la inferencia estadística de los resultados. Ante la falta de
 procedimientos robustos para determinar si las diferencias observadas en
 los índices de segregación son estadísticamente significativas, se han
 implementado técnicas como los bootstrap tests, las simulaciones de
-Monte Carlo y la inferencia bayesiana (\citeproc{ref-Boisso1994}{Boisso et~al., 1994}; \citeproc{ref-Feitosa2007}{Feitosa et~al., 2007}; \citeproc{ref-Lee2015}{Lee et~al., 2015}; \citeproc{ref-Tivadar2014}{Tivadar et~al., 2014}; \citeproc{ref-Tivadar2019}{Tivadar, 2019}; \citeproc{ref-Yao2019}{Yao et~al., 2019}). Estos métodos permiten
+Monte Carlo y la inferencia bayesiana (\citeproc{ref-Boisso1994}{Boisso et~al., 1994}; \citeproc{ref-Feitosa2007}{F. F. Feitosa et~al., 2007}; \citeproc{ref-Lee2015}{Lee et~al., 2015}; \citeproc{ref-Tivadar2014}{Tivadar et~al., 2014}; \citeproc{ref-Tivadar2019}{Tivadar, 2019}; \citeproc{ref-Yao2019}{Yao et~al., 2019}). Estos métodos permiten
 establecer criterios más rigurosos en el análisis de los patrones de
 segregación y evaluar la validez de las conclusiones extraídas a partir
 de los datos disponibles.
@@ -2244,7 +2256,7 @@ segregación, es posible generar correcciones geográficas a partir de la
 modificación de los conteos en las unidades espaciales (usando `recuento
 compuesto de población' o `funciones de proximidad', como señalamos
 anteriormente), consiguiendo que los conteos modificados incluyan
-información sobre las poblaciones de las unidades vecinas (ver: \citeproc{ref-Feitosa2007}{Feitosa et~al., 2007}; \citeproc{ref-Reardon2004}{Reardon y O'Sullivan, 2004}; \citeproc{ref-Wong1998}{D. W. S. Wong, 1998}, \citeproc{ref-Wong2005}{2005}).
+información sobre las poblaciones de las unidades vecinas (ver: \citeproc{ref-Feitosa2007}{F. F. Feitosa et~al., 2007}; \citeproc{ref-Reardon2004}{Reardon y O'Sullivan, 2004}; \citeproc{ref-Wong1998}{D. W. S. Wong, 1998}, \citeproc{ref-Wong2005}{2005}).
 
 Por último, el análisis de correspondencias es una técnica ampliamente
 utilizada en las ciencias sociales, lo que permite utilizar los
@@ -2362,7 +2374,7 @@ segregación de los países latinoamericanos (\citeproc{ref-Duhau2013a}{Duhau, 2
 `socio-económica', es decir, aquella vinculada a diferencias de clase
 entre los grupos sociales. Esto contrasta con la tradición de los
 estudios de segregación hechos en Estados Unidos y Europa, donde las
-diferencias entre grupso consideradas son fundamentalmente
+diferencias entre grupos consideradas son fundamentalmente
 étnico-religiosas, raciales o migratorias. Sin embargo, en
 Latinoamérica, particularmente en Argentina, el principal \emph{clivaje} de
 los estudios de segregación ha sido la clase social y las diferencias
@@ -2544,19 +2556,19 @@ segregación multi-dominio en la ciudad, por lo cual supone una
 simplificación este proceso.
 
 El primer vector de expansión de la ciudad ocurrió durante el s.~XIX, a
-partir del avance de la ciudad colonial sobre la zona rural circundante.
-En este crecimiento se produjo la incorporación de los centros urbanos
-cercanos (en particular, Caballito, Flores y Belgrano). Si bien
-actualmente esta zona de la ciudad tiene una estructura urbana
-consolidada, producto de la diversidad con la que se desarrollo esta
-expanción no es un área que tenga un perfil homogéneo en lo que respecta
-al uso del suelo o su perfil socioeconómico (\citeproc{ref-Marcos2021}{Marcos, 2021}). En
-particular, como ocurrió en muchas de las ciudades latinoamericanas,
-esta expansión permitió la temprana constitución de un `cono de las
-elites', que comenzaba en el casco histórico de la ciudad y se expandía
-hacia la zona ribereña norte. Como contraparte, la zona sur de la ciudad
-comenzó a consolidarse como una zona de hábitat popular presentando un
-mayor deterioro que el resto.
+partir del avance de la ciudad colonial sobre la zona rural circundante
+(\citeproc{ref-Rodriguez2014c}{G. M. Rodríguez y Kozak, 2014}). En este crecimiento se produjo la incorporación de
+los centros urbanos cercanos (en particular, Caballito, Flores y
+Belgrano). Si bien actualmente esta zona de la ciudad tiene una
+estructura urbana consolidada, producto de la diversidad con la que se
+desarrollo esta expanción no es un área que tenga un perfil homogéneo en
+lo que respecta al uso del suelo o su perfil socioeconómico
+(\citeproc{ref-Marcos2021}{Marcos, 2021}). En particular, como ocurrió en muchas de las ciudades
+latinoamericanas, esta expansión permitió la temprana constitución de un
+`cono de las elites', que comenzaba en el casco histórico de la ciudad y
+se expandía hacia la zona ribereña norte. Como contraparte, la zona sur
+de la ciudad comenzó a consolidarse como una zona de hábitat popular
+presentando un mayor deterioro que el resto.
 
 Un segundo momento de crecimiento ocurrió desde principios del s.~XX, en
 el contexto de una migración (externa e interna) hacia la ciudad, que
@@ -2686,17 +2698,15 @@ una dimensión central para comprender los mecanismos de reproducción de
 dicha estructura. A partir de esta caracterización, en este capítulo del
 análisis nos proponemos identificar y describir la estructura de la
 segregación residencial en el AMBA.
-\textless!--\# Para ello, comenzaremos describiendo los antecedentes sobre\ldots{}
-DESARRO
 
 En América Latina el análisis de la segregación en el dominio
 residencial está vinculado a la emergencia del problema de la
-marginalidad urbana y, en particular, de los barrios populares de origen
-informal (que en Argentina se denominan históricamente como `villas').
-La aparición y creciente visibilización de este tipo de entorno urbano
-impulsó a diversos estudiosos a centrar su atención en la explicación de
-la marginalidad urbana, asociada a la informalidad laboral y
-residencial.
+`marginalidad urbana' y, en particular, de los barrios populares de
+origen informal (que en Argentina se denominan históricamente como
+`villas'). La aparición y creciente visibilización de este tipo de
+entorno urbano impulsó a los investigadores a centrar su atención en la
+explicación de la marginalidad urbana, asociada a la informalidad
+laboral y residencial.
 Como
 parte de los intentos por conceptualizar los patrones de segregación,
 Sabatini (\citeproc{ref-Sabatini2006}{2006}) señala que las ciudades latinoamericanas se caracterizan
@@ -2727,43 +2737,48 @@ El trabajo de Duhau (\citeproc{ref-Duhau2013a}{2013, pp. 81-82}) plantea que mie
 social del espacio residencial' refiere a `las formas espaciales que
 adopta la distribución residencial' de los grupos socioeconómicos, la
 `estructura socioespacial' refiere a las `formas espaciales
-discernibles' que adopta el primero. En este sentido, la división social
-del espacio residencial puede incluir diferentes `estructuras
-socioespaciales', las cuales permiten la reproducción (y también
-transformación) de esta división social del espacio. Esta distinción
-resulta útil para analizar la complejidad de la segregación a escala
-metropolitana, entendiendo que el estudio de la segregación en el
+discernibles' que adopta el primero de estos conceptos. En este sentido,
+la \emph{división social del espacio residencial} puede incluir diferentes
+\emph{estructuras socioespaciales}, las cuales permiten la reproducción (y
+también transformación) de esta división social del espacio. Esta
+distinción resulta útil para analizar la complejidad de la segregación a
+escala metropolitana, entendiendo que el estudio de la segregación en el
 dominio residencial puede implicar diferentes mecanismos y patrones,
 cada uno de los cuales cumple su función como parte de la estructura
-general de la segregación. Duhau (\citeproc{ref-Duhau2013a}{2013, p. 82}) señala que la división
-social del espacio es el resultado de `las formas pasadas o actuales de
-producción del espacio residencial' que determinan a través de la
-mediación del mercado inmobiliario y las políticas públicas, la
-localización de los diferentes grupos socioeconómicos'. Tomando en
-cuenta estas ideas, Duhau plantea que el punto crucial para entender la
-división del espacio en las ciudades latinoamericanas es la coexistencia
-de dos mercados de suelo y vivienda (el formal y el informal), estando
-este último dedicado a las clases más populares y marginalizadas. Como
-consecuencia, la estructura de segregación está marcada por el grado de
-intercambio y porosidad que existe entre estos mercados (\citeproc{ref-Duhau2013a}{Duhau, 2013, pp. 90-91}). Además, en sintonía con el planteo de Sabatini et~al. (\citeproc{ref-Sabatini2001}{2001}),
-Duhau (\citeproc{ref-Duhau2013a}{2013}) sostiene que en las ciudades latinoamericanas existen un
-crecimiento de la concentración socioeconómica a `gran escala', de
-manera que los barrios de alta/baja renta se encuentran en espacios
-contiguos, generando áreas homogéneas de pobreza.
+general de la segregación (configurado la `división social del
+espacio'). Duhau (\citeproc{ref-Duhau2013a}{2013, p. 82}) señala que la división social del espacio
+es el resultado de `las formas pasadas o actuales de producción del
+espacio residencial' que determinan a través de la mediación del mercado
+inmobiliario y las políticas públicas, la localización de los diferentes
+grupos socioeconómicos. Tomando en cuenta estas ideas, Duhau plantea que
+el punto crucial para entender la división del espacio en las ciudades
+latinoamericanas es la coexistencia de dos mercados de suelo y vivienda
+(el formal y el informal), estando este último dedicado a los grupos
+marginalizados, es decir, aquellos con menos recursos dentro de la
+clases populares. Como consecuencia, la estructura de segregación está
+marcada por el grado de intercambio y porosidad que existe entre estos
+mercados (\citeproc{ref-Duhau2013a}{Duhau, 2013, pp. 90-91}). Además, en sintonía con el planteo de
+Sabatini et~al. (\citeproc{ref-Sabatini2001}{2001}), Duhau (\citeproc{ref-Duhau2013a}{2013}) sostiene que en las ciudades latinoamericanas
+existen un crecimiento de la concentración socioeconómica a `gran
+escala', de manera que los barrios de alta/baja renta se encuentran en
+espacios separados entre sí, generando áreas homogéneas de
+pobreza/riqueza que se diferencian y recortan del resto de la trama
+urbana.
 
-El trabajo de Ward (\citeproc{ref-Ward2012}{2012, p. 76}) plantea que el `sello distintivo de los
-modelos urbanos latinoamericano actuales es que son crecientemente
-complejos y fragmentados', en el que existen `islas de uso territorial'
-que conviven en los cinturones urbanos. En sintonía con esta idea (y
-contrariando el planteo de Duhau y Sabatini) sostiene que en las
-ciudades latinoamericanas la segregación a gran escala no ha crecido,
-sino que por el contrario es baja. Esto se debe a la existencia de un
-mercado informal de tierras en zonas centrales al que los sectores
-medios y altos no tienen acceso, dándole una protección al desarrollo de
-viviendas de sectores populares. Como contraparte Ward (\citeproc{ref-Ward2012}{2012, p. 77})
-señala el crecimiento de la segregación a pequeña escala. Esto implica,
-por un lado, una homogenización interna de los barrios de clases medias
-y altas, junto al poblamiento de los barrios cerrados; y por otro lado,
+Debatiendo con esta idea de `segregación a gran escala' y de
+homogeneidad de los grupos sociales, el trabajo de Ward (\citeproc{ref-Ward2012}{2012, p. 76})
+plantea que el `sello distintivo de los modelos urbanos latinoamericano
+actuales es que son crecientemente complejos y fragmentados'. Para Ward
+existen `islas de uso territorial' que conviven en los cinturones
+urbanos y sostiene que en las ciudades latinoamericanas la segregación a
+gran escala no ha crecido sino que, por el contrario, es baja y
+decreciente. Esto se debe a la existencia de un mercado informal de
+tierras en zonas centrales al que los sectores medios y altos no tienen
+acceso, lo cual otorga una protección al desarrollo de viviendas de
+sectores populares. Como contraparte Ward (\citeproc{ref-Ward2012}{2012, p. 77}) señala un
+crecimiento de la segregación a \emph{pequeña escala}. Esto implica, por un
+lado, una homogenización interna de los barrios de clases medias y
+altas, junto al poblamiento de los barrios cerrados; y por otro lado,
 una división y delimitación al interior de los barrios pobres. Como
 resultado de este doble proceso, la segregación residencial de las
 ciudades latinoamericanas no está creciendo, pero en paralelo `la
@@ -2779,31 +2794,32 @@ residenciales de sectores altos y bajos.
 Más allá de estos aportes conceptuales para describir los patrones de
 segregación de las ciudades latinoamericanas, no hay hasta el momento
 demasiados trabajos que analicen los patrones de segregación residencial
-desde una perspectiva cuantitativa en el AMBA. En este sentido, más allá
-de la tradición de `mapas sociales' que mencionamos anteriormente, la
-cual aporta una mirada sobre las estructuras de las desigualdades
-espaciales del aglomerado (\citeproc{ref-Abba2015}{A. P. Abba et~al., 2015}; \citeproc{ref-Abba2011}{P. Abba et~al., 2011}; \citeproc{ref-Buzai2003}{Buzai, 2003}; \citeproc{ref-Buzai2015}{Buzai y Marcos, 2015}; \citeproc{ref-Goicoechea2014}{Goicoechea, 2014}; \citeproc{ref-Marcos2015a}{Marcos, 2015}; \citeproc{ref-Torres1993}{Torres, 1993}, \citeproc{ref-Torres1999}{1999}, \citeproc{ref-Torres2001}{2001}), son pocos los trabajos locales que han profundizado en
-el problema de la segregación. A su vez, la mayoría de estos trabajos se
-concentran en identificar cambios en la segregación entre diferentes
-períodos censales, indagando sobre la relación que existen entre el
-crecimiento de la segregación y los ciclos económicos, en particular,
-con la distribución del ingreso (\citeproc{ref-Groisman2010}{Groisman, 2010}; ver: \citeproc{ref-Groisman2009}{Groisman y Suárez, 2009}; \citeproc{ref-Rodriguez2016b}{Rodriguez, 2016}; \citeproc{ref-Rodriguez2017b}{G. M. Rodríguez, 2017b}; \citeproc{ref-Suarez2011}{Suárez, 2011}; \citeproc{ref-VergaraParra2018}{Vergara Parra, 2018}). En
-esta línea, Groisman y Suárez (\citeproc{ref-Groisman2009}{2009}) señala que pese al deterioro de las
-condiciones de vida, durante la década de 1990 no hubo un aumento
-significativo de la segregación residencial. Estos hallazgos son
-reforzados por Rodriguez (\citeproc{ref-Rodriguez2016b}{2016}), quien confirma la estabilidad de la
-segregación en la década de 1990 y señala una reducción de la misma
-durante la década de los 2000, asociando esta tendencia a mejoras en la
-estructura distributiva. Debatiendo con este último trabajo,
-Vergara Parra (\citeproc{ref-VergaraParra2018}{2018}) observa que durante la primera década de este siglo la
-segregación se mantuvo e, incluso, se intensificó en algunos aspectos,
-poniendo en duda la hipótesis de una correspondencia entre la mejoras en
-la distribución del ingreso y la segregación residencial. Además,
-Groisman (\citeproc{ref-Groisman2010}{2010}) y Suárez (\citeproc{ref-Suarez2011}{2011}) observan que durante estos años también se
-produjo un incremento de la desigualdad en el acceso a servicios y la
-conectividad, lo cual aumenta las consecuencias de la segregación.
+desde una perspectiva cuantitativa en el AMBA. La mayoría de estos
+trabajos se concentran en identificar cambios globales en la segregación
+comparando diferentes períodos censales. Estos trabajos indagan sobre la
+relación que existen entre los cambios en la segregación y los ciclos
+económicos focalizando, en particular, en la distribución del ingreso
+(\citeproc{ref-Groisman2010}{Groisman, 2010}; ver: \citeproc{ref-Groisman2009}{Groisman y Suárez, 2009}; \citeproc{ref-Rodriguez2016b}{Rodriguez, 2016}; \citeproc{ref-Rodriguez2017b}{G. M. Rodríguez, 2017b}; \citeproc{ref-Suarez2011}{Suárez, 2011}; \citeproc{ref-VergaraParra2018}{Vergara Parra, 2018}). En esta línea, Groisman y Suárez (\citeproc{ref-Groisman2009}{2009}) señala que
+pese al deterioro de las condiciones de vida, durante la década de 1990
+no hubo un aumento significativo de la segregación residencial. Estos
+hallazgos son reforzados por Rodriguez (\citeproc{ref-Rodriguez2016b}{2016}), quien confirma la
+estabilidad de la segregación en la década de 1990 y señala una
+reducción de la misma durante la década de los 2000, asociando esta
+tendencia a mejoras en la estructura distributiva. Debatiendo con este
+último trabajo, Vergara Parra (\citeproc{ref-VergaraParra2018}{2018}) observa que durante la primera década
+de este siglo la segregación se mantuvo e, incluso, se intensificó en
+algunos aspectos, poniendo en duda la hipótesis de una correspondencia
+entre la mejoras en la distribución del ingreso y la segregación
+residencial. Además, Groisman (\citeproc{ref-Groisman2010}{2010}) y Suárez (\citeproc{ref-Suarez2011}{2011}) observan que durante
+estos años también se produjo un incremento de la desigualdad en el
+acceso a servicios y la conectividad, lo cual aumenta las consecuencias
+de la segregación.
 
-Buscando comprender los patrones de segregación residencial,
+Un límite de estos trabajos es que abordan la segregación de forma
+global, pero sin detenerse en los `patrones' o formas locales que esta
+adquiere. Un aporte en este sentido es la tradición de `mapas sociales',
+que mencionamos anteriormente, la cual aporta una mirada sobre las
+estructuras de las desigualdades espaciales del aglomerado (\citeproc{ref-Abba2015}{A. P. Abba et~al., 2015}; \citeproc{ref-Abba2011}{P. Abba et~al., 2011}; \citeproc{ref-Buzai2003}{Buzai, 2003}; \citeproc{ref-Buzai2015}{Buzai y Marcos, 2015}; \citeproc{ref-Goicoechea2014}{Goicoechea, 2014}; \citeproc{ref-Marcos2015a}{Marcos, 2015}; \citeproc{ref-Torres1993}{Torres, 1993}, \citeproc{ref-Torres1999}{1999}, \citeproc{ref-Torres2001}{2001}). De forma más específica,
 Vergara Parra (\citeproc{ref-VergaraParra2018}{2018}) identifica una fuerte segmentación del AMBA que da
 como resultado una concentración espacial persistente de los grupos
 vulnerables en las áreas periféricas y zonas específicas de la ciudad
@@ -2841,88 +2857,236 @@ social (\citeproc{ref-DiVirgilio2014f}{Di Virgilio y Guevara, 2014}; \citeproc{r
 
 Tomando en cuenta estos antecedentes, en lo que resta del capítulo
 proponemos analizar la estructura de la segregación residencial en el
-AMBA, buscando identificar los patrones caracteristico y discutiendo su
+AMBA, buscando identificar los patrones característico y discutiendo su
 relación con procesos los históricos que les dieron forma.
 
 \section{La estructura y patrones de la segregación en el dominio residencial en el AMBA}\label{residential-analysis}
 
-Tomando en cuenta estos aportes, encontramos que el AMGBA tiene una
+Tomando en cuenta estos antecedentes en este apartado nos centraremos en
+analizar la segregación residencial en AMBA. Para ello comenzaremos
+analizando indicadores globales de segregación para tener una visión de
+conjunto y luego utilizaremos indicadores locales que nos permitan
+identificar patrones locales. Si tomamos como referencia
+los valores del \emph{Índice de Información Mutua}, el AMBA en su conjunto
+presenta una segregación residencial de 0.144 ,
+la cual es un valor considerablemente superior al que presentan por
+separado cada una de las jurisdicciones que la componen, la CABA y los
+Partidos del Conurbano
+(0.074 y 0.109,
+respectivamente). Para ponderar la
+importancia de estos valores, vale la pena señalar que el AMBA tiene una
 segregación residencial global intermedia, similar a la encontrada en
-algunas ciudades de Europa continental y muy por debajo de los
-encontrados en Estados Unidos.\footnote{Uno de los desafíos de los estudios de
-  segregación es el desarrollo de trabajos comparativos entre
-  diferentes contextos nacionales. Más allá de la diversidad de
-  indicadores existentes para medir la segregación, dado que en cada
-  país las desigualdades sociales asumen distintos clivajes, los
-  estudios que analizan la segregación social han enfatizado
-  diferentes aspectos de esta desigualdad (por ej. raza, clase,
-  educación, migración, etnias, etc.). Incluso en los estudios que
-  utilizan un mismo aspecto de la desigualdad, existen diferencias
-  para construir las `clases' o `grupos', dependiendo de
-  particularidades internas a cada realidad local y de cómo se
-  estructuran las desigualdades entre estos grupos (\citeproc{ref-Musterd2005}{\textbf{Musterd2005?}}). A
-  su vez, la mayoría de los índices de segregación se ven afectados
-  por la escala y la morfología de los agrupamiento espaciales en los
-  cuales se accede a los datos (usualmente predefinidas por los
-  organismos estadísticos nacionales). Dado que no existe un criterio
-  internacional para definir el tamaño ni la forma de estas unidades
-  espaciales mínimas, la comparación entre resultados de diferentes
-  países puede ser poco conveniente (\citeproc{ref-Reardon2008}{\textbf{Reardon2008?}}; \citeproc{ref-Haandrikman2023}{\textbf{Haandrikman2023?}}).
-  Por último, no existen criterios uniformes para definir los límites
-  de las estructuras urbanas a comparar, lo cual depende en muchos
-  casos de cómo se interprete la dinámica e interacción entre la
-  ciudad y sus `bordes'. En este sentido, si bien recientemente
-  algunos trabajos han propuesto abordar comparativamente diferentes
-  ciudades del mundo (\citeproc{ref-VanHam2021}{Van Ham et~al., 2021}; \citeproc{ref-Musterd2005}{\textbf{Musterd2005?}}; \citeproc{ref-Marcinczak2016}{\textbf{Marcinczak2016?}}; \citeproc{ref-Tammaru2016a}{\textbf{Tammaru2016a?}}; \citeproc{ref-Haandrikman2023}{\textbf{Haandrikman2023?}}; \citeproc{ref-Pryce2021}{\textbf{Pryce2021?}}), los resultados no dejan
-  de ser provisorios en términos comparativos por los motivos
-  señalados.}
-En su conjunto, el índice \(M\) tiene un valor de
-, la cual es un poco superior a la segregación que
-tienen por separado la CABA y los Partidos del Conurbano
-(,
-respectivamente).\footnote{Cuando enfocamos sólo en la CABA
-  encontramos una segregación interna sensible más baja (cerca de la
-  mitad) que el conjunto del AMGBA (Ver \hyperref[appendixA]{Anexo A}).
-  Además, como describimos en Serrati (\citeproc{ref-Serrati2023}{2023}), en esta escala son los
-  sectores bajos (fundamentalmente asociado a los barrios de origen
-  informal) los que muestran los mayores niveles de segregación local,
-  mientras el resto de la ciudad presenta una heterogeneidad elevada.
-  En gran medida, esta diferencia se explica por la diferente
-  composición social de la CABA, lo cual refuerza la importancia de la
-  `escala' de análisis para entender el fenómeno de la segregación.} En
-relación a esto, la mayor parte de la segregación del AMBA
-() se explica por diferencias
-`al interior' {[}\emph{within}{]} de cada una de las jurisdicciones, antes que
-por diferencias `entre' {[}\emph{between}{]} estas (ver \ref{tab:segres1}). Por
-su parte, cuando consideramos la diferencia entre departamentos (Comunas
-y Partidos), encontramos que estos explican un poco más de la mitad de
-la segregación, mientras que la diferencia de composición entre los
-entornos urbanos explica cerca del \% de la
-segregación. Una primera conclusión que surge de esto es que la
-composición poblacional de los entornos urbanos es un elemento central a
-la hora de entender la segregación total en el AMGBA (muy por encima de
-las jurisdicciones o, incluso, los
-departamentos).\footnote{En el \hyperref[appendixA]{Anexo A} están
-  disponibles distintos indicadores de segregación para el total del
-  AMGBA y para cada una de las jurisdicciones que lo componen. Además,
-  en este anexo se presenta la composición educativa de cada uno de
-  los entornos urbanos, así como la `segregación interna' de cada uno
-  de estos. Nótese que la mayor segregación de los entornos de
-  vivienda social y de barrios cerrados se debe (en gran medida) a la
-  diversidad que surge por problemas metodológicos a la hora de
-  conciliar estos entornos con la cartografía censal (ver nota
-  anterior).}
+algunas ciudades de Europa continental, con valores un poco más bajos a
+los encontrados en Estados Unidos.\footnote{En el \hyperref[appendixA]{Anexo A} están
+  disponibles indicadores alternativos de segregación residencial para
+  el total del AMBA y para cada una de las jurisdicciones que lo
+  componen.
+  Como
+  hemos señalado en el apartado metodológico, un desafíos
+  metodológicos de los estudios de segregación es la limitación que
+  tienen los índices de segregación para comparar diferentes
+  contextos. Sumado al problema de la dependencia de los marginales de
+  la mayor parte de los indicadores, dado que en cada país las
+  desigualdades sociales asumen distintos \emph{clivajes}, los estudios que
+  analizan la segregación social han enfatizado diferentes aspectos de
+  esta desigualdad (por ej. raza, clase, educación, migración, etnias,
+  etc.). Además, incluso en los estudios que utilizan un mismo aspecto
+  de la desigualdad, existen diferencias para construir las `clases' o
+  `grupos', dependiendo de particularidades internas a cada realidad
+  local y de cómo se estructuran las desigualdades entre estos grupos
+  (\citeproc{ref-Musterd2005}{Musterd, 2005}). A su vez, la mayoría de los índices de segregación
+  se ven afectados por la escala y la morfología de los agrupamiento
+  espaciales en los cuales se accede a los datos (usualmente
+  predefinidas por los organismos estadísticos nacionales). Dado que
+  no existe un criterio internacional para definir el tamaño ni la
+  forma de estas unidades espaciales mínimas, la comparación entre
+  resultados de diferentes países puede ser engañoso (\citeproc{ref-Haandrikman2023}{Haandrikman et~al., 2023}; \citeproc{ref-Reardon2008}{Reardon et~al., 2008}). Por último, no existen criterios uniformes para
+  definir los límites de las estructuras urbanas a comparar, lo cual
+  depende en muchos casos de cómo se interprete la dinámica e
+  interacción entre la ciudad y sus `bordes'. En este sentido, si bien
+  recientemente algunos trabajos han propuesto abordar
+  comparativamente diferentes ciudades del mundo (\citeproc{ref-Haandrikman2023}{Haandrikman et~al., 2023}; \citeproc{ref-Marcinczak2016}{Marcińczak et~al., 2016}; \citeproc{ref-Musterd2005}{Musterd, 2005}; \citeproc{ref-Pryce2021}{Pryce et~al., 2021}; \citeproc{ref-Tammaru2016a}{Tammaru et~al., 2016}; \citeproc{ref-VanHam2021}{Van Ham et~al., 2021}), los resultados no dejan de ser provisorios en términos
+  comparativos por los motivos señalados.}
+
+Como era de esperar, por separado cada una de las jurisdicciones tiene
+una composición más homogénea que cuando consideramos el conjunto del
+aglomerado. La diferencia entre el valor de segregación global y el de
+cada una de las jurisdicciones, nos permiten suponer que estas últimas
+funcionan como un mecanismo de separación y
+diferenciación.\footnote{La diferencia entre el valor del
+  `conjunto' del aglomerado y cada una de sus `partes' (en este caso
+  \emph{jurisdicciones}) se debe a que, como señalamos en el apartado
+  metodológico, la mayor parte de las medidas de segregación global se
+  calculan como la desviación promedio de los valores de las unidades
+  en referencia a la composición global. Una de las ventajas de
+  utilizar el \emph{Índice de Información Mutua} es que permite medir qué
+  parte de la segregación global es producto de la segregación
+  `dentro' {[}\emph{within}{]} de los grupos de unidades (en este caso las
+  jurisdicciones) y cuánto corresponde a diferencias `entre'
+  {[}\emph{between}{]} estos grupos.}
+Para analizar en qué medida las
+jurisdicciones están diferenciando a los grupos sociales, la Tabla
+\ref{tab:segres1} presenta el porcentaje de segregación explicada
+`dentro' y `entre' diferentes las jurisdicciones. Como vemos la mayor
+parte de la segregación del AMBA
+(69.6\%) se explica por diferencias al
+interior de cada una de las jurisdicciones, antes que por diferencias
+entre las mismas. En este sentido, las jurisdicciones tienen un rol a la
+hora de diferenciar a los grupos sociales, pero este no es determinante.
+Retomando este enfoque podemos
+considerar otros agrupamientos, como los \emph{departamentos censales}
+(Comunas y Partidos) y los \emph{entornos urbanos.} Cuando consideramos la
+diferencia entre \emph{departamentos}, encontramos que estos explican un poco
+más de la mitad de la segregación (51.4\%),
+mientras que en el caso de los \emph{entornos urbanos} se explica cerca del
+74.1\% de la segregación. Una primera conclusión
+que surge de esto es que la composición poblacional de los entornos
+urbanos es un elemento central a la hora de entender la segregación
+total en el AMBA (muy por encima de las jurisdicciones o, incluso, los
+departamentos).
+
+\global\setlength{\Oldarrayrulewidth}{\arrayrulewidth}
+
+\global\setlength{\Oldtabcolsep}{\tabcolsep}
+
+\setlength{\tabcolsep}{2pt}
+
+\renewcommand*{\arraystretch}{1.5}
+
+
+
+\providecommand{\ascline}[3]{\noalign{\global\arrayrulewidth #1}\arrayrulecolor[HTML]{#2}\cline{#3}}
+
+\begin{longtable}[c]{|p{1.49in}|p{0.75in}|p{0.75in}}
+
+\caption{Segregación\ residencial\ explicada\ por\ diferencias\ dentre/entre\ diferentes\ niveles\ de\ análisis\ (Jurisdicciones,\ Departamentos\ y\ Entornos\ urbanos)}\label{tab:segres1}\\
+
+\ascline{1.5pt}{666666}{1-3}
+
+\multicolumn{1}{>{\raggedright}m{\dimexpr 1.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{\ }}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{Dentro}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{Entre}}}} \\
+
+\ascline{1.5pt}{666666}{1-3}\endfirsthead \caption[]{Segregación\ residencial\ explicada\ por\ diferencias\ dentre/entre\ diferentes\ niveles\ de\ análisis\ (Jurisdicciones,\ Departamentos\ y\ Entornos\ urbanos)}\label{tab:segres1}\\
+
+\ascline{1.5pt}{666666}{1-3}
+
+\multicolumn{1}{>{\raggedright}m{\dimexpr 1.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{\ }}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{Dentro}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{Entre}}}} \\
+
+\ascline{1.5pt}{666666}{1-3}\endhead
+
+
+
+\multicolumn{3}{>{\raggedright}m{\dimexpr 2.99in+4\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{Los\ valores\ tienen\ corrección\ de\ sesgo.\ \ Bootstrap\ replicaciones.}}}} \\
+
+\endlastfoot
+
+
+
+\multicolumn{1}{>{\raggedright}m{\dimexpr 1.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{Jurisdicciones}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{69.6}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{30.4}}}} \\
+
+
+
+
+
+\multicolumn{1}{>{\raggedright}m{\dimexpr 1.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{Departamentos}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{48.6}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{51.4}}}} \\
+
+
+
+
+
+\multicolumn{1}{>{\raggedright}m{\dimexpr 1.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{Entornos\ urbanos}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{25.9}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{74.1}}}} \\
+
+\ascline{1.5pt}{666666}{1-3}
+
+
+
+\end{longtable}
+
+
+
+\arrayrulecolor[HTML]{000000}
+
+\global\setlength{\arrayrulewidth}{\Oldarrayrulewidth}
+
+\global\setlength{\tabcolsep}{\Oldtabcolsep}
+
+\renewcommand*{\arraystretch}{1}
 
 Cuando descomponemos la segregación en función de los grupos educativos
-(\ref{tab:segres2}), observamos que las personas con nivel educativo
-superior son las más segregadas, seguidos por las personas con hasta
-primario terminado. Estos resultados están en sintonía con lo que sucede
-en otras ciudades latinoamericanas, donde las clases altas tienen
-`evitar' el contacto con los grupos más bajos (\citeproc{ref-Feitosa2021}{\textbf{Feitosa2021?}}; \citeproc{ref-LopezMartinez2021}{\textbf{LopezMartinez2021?}}; \citeproc{ref-Fernandez-de-Cordova2021}{\textbf{Fernandez-de-Cordova2021?}}; \citeproc{ref-Agostini2016}{\textbf{Agostini2016?}}). A su vez,
+(Tabla \ref{tab:segres2}), observamos que las personas con nivel
+educativo superior son las más segregadas, seguidos por las personas con
+hasta primario terminado. Estos resultados están en sintonía con lo que
+sucede en otras ciudades latinoamericanas, donde las clases altas tienen
+`evitar' el contacto con los grupos más bajos (\citeproc{ref-Agostini2016}{Agostini et~al., 2016}; \citeproc{ref-Feitosa2021}{Flávia F. Feitosa et~al., 2021}; \citeproc{ref-Fernandez-de-Cordova2021}{Fernández-de-Córdova et~al., 2021}; \citeproc{ref-LopezMartinez2021}{López Martínez y Ceballos Mina, 2021}). A su vez,
 los grupos más pobres muestran un aislamiento elevado teniendo el peso
 en la población total (en tanto \(M\) es una medida de cuánto se alejan de
 la distribución general, la mayor presencia de este grupo hace que el
 indicador local de grupos sea menor).
+
+\global\setlength{\Oldarrayrulewidth}{\arrayrulewidth}
+
+\global\setlength{\Oldtabcolsep}{\tabcolsep}
+
+\setlength{\tabcolsep}{2pt}
+
+\renewcommand*{\arraystretch}{1.5}
+
+
+
+\providecommand{\ascline}[3]{\noalign{\global\arrayrulewidth #1}\arrayrulecolor[HTML]{#2}\cline{#3}}
+
+\begin{longtable}[c]{|p{1.06in}|p{1.50in}|p{1.02in}}
+
+\caption{Segregación\ residencial\ explicada\ por\ cada\ nivel\ educativo}\label{tab:segres2}\\
+
+\ascline{1.5pt}{666666}{1-3}
+
+\multicolumn{1}{>{\raggedright}m{\dimexpr 1.06in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{Nivel}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 1.5in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{Segregación\ local}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 1.02in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{Porcentaje}}}} \\
+
+\ascline{1.5pt}{666666}{1-3}\endfirsthead \caption[]{Segregación\ residencial\ explicada\ por\ cada\ nivel\ educativo}\label{tab:segres2}\\
+
+\ascline{1.5pt}{666666}{1-3}
+
+\multicolumn{1}{>{\raggedright}m{\dimexpr 1.06in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{Nivel}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 1.5in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{Segregación\ local}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 1.02in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{Porcentaje}}}} \\
+
+\ascline{1.5pt}{666666}{1-3}\endhead
+
+
+
+\multicolumn{3}{>{\raggedright}m{\dimexpr 3.57in+4\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{Los\ valores\ tienen\ corrección\ de\ sesgo.\ \ Bootstrap\ replicaciones.}}}} \\
+
+\endlastfoot
+
+
+
+\multicolumn{1}{>{\raggedright}m{\dimexpr 1.06in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{Primario}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 1.5in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.134}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 1.02in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{45.9\%}}}} \\
+
+
+
+
+
+\multicolumn{1}{>{\raggedright}m{\dimexpr 1.06in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{Secundario}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 1.5in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.031}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 1.02in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{33.5\%}}}} \\
+
+
+
+
+
+\multicolumn{1}{>{\raggedright}m{\dimexpr 1.06in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{Superior}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 1.5in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.367}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 1.02in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{20.6\%}}}} \\
+
+\ascline{1.5pt}{666666}{1-3}
+
+
+
+\end{longtable}
+
+
+
+\arrayrulecolor[HTML]{000000}
+
+\global\setlength{\arrayrulewidth}{\Oldarrayrulewidth}
+
+\global\setlength{\tabcolsep}{\Oldtabcolsep}
+
+\renewcommand*{\arraystretch}{1}
 
 A su vez, la Figura \ref{fig:SEGRE-RES} muestra el comportamiento local
 de la segregación en toda el AMBA, donde es posible detectar algunos
@@ -2940,7 +3104,7 @@ siglo XIX y que permite explicar la continuidad espacial de los niveles
 altos de segregación. También se observa una rama secundaria de este
 cono que crece hacia la zona central (Caballito-Flores) y noroeste
 (Villa Devoto) de la CABA, aunque ambas presentan niveles de segregación
-no tan elevados como la zona norte (\citeproc{ref-Cosacov2017}{\textbf{Cosacov2017?}}). En segundo lugar, en
+no tan elevados como la zona norte (\citeproc{ref-Cosacov2017}{Cosacov, 2017}). En segundo lugar, en
 la expansión reciente de la zona norte (ver \emph{Detalle 2}), se observan
 enclaves de segregación asociados a los barrios cerrados o a la
 suburbanización de los sectores altos. A diferencia de en el caso
@@ -2978,14 +3142,15 @@ de conexión con la CABA, lo que da como resultado un aislamiento de los
 pobres urbanos (\citeproc{ref-Soldano2008}{\textbf{Soldano2008?}}).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{figures/SEG-RES_AMGBA-con-detalle} \caption{Segregación local en el AMGBA (Índice de Información Mutua). Se destacan con recuadros y los detalles las zonas profundizadas en el análisis.}\label{fig:SEGRE-RES}
+\includegraphics[width=1\linewidth]{figures/Segregacion_AMBA} \caption{Segregación local en el AMGBA (Índice de Información Mutua). Se destacan con recuadros y los detalles las zonas profundizadas en el análisis.}\label{fig:SEGRE-RES}
 \end{figure}
 
-\textbf{{[} {]} TODO} Agregar análisis de CA para mostrar alta segregación con
-significados opuestos.
+\begin{figure}
+\includegraphics[width=1\linewidth]{figures/Segregacion_CA_AMBA} \caption{Segregación local en el AMGBA (Índice de Información Mutua). Se destacan con recuadros y los detalles las zonas profundizadas en el análisis.}\label{fig:SEGRE-RES-CA-MAPA}
+\end{figure}
 
 En resumen, nuestro análisis nos muestra que, en sintonía con lo que
-sucede en otras ciudades latinoamericanas (\citeproc{ref-Feitosa2021}{\textbf{Feitosa2021?}}; \citeproc{ref-LopezMartinez2021}{\textbf{LopezMartinez2021?}}; \citeproc{ref-Agostini2016}{\textbf{Agostini2016?}}), el patrón de segregación propuesto
+sucede en otras ciudades latinoamericanas (\citeproc{ref-Agostini2016}{Agostini et~al., 2016}; \citeproc{ref-Feitosa2021}{Flávia F. Feitosa et~al., 2021}; \citeproc{ref-LopezMartinez2021}{López Martínez y Ceballos Mina, 2021}), el patrón de segregación propuesto
 por Sabatini (\citeproc{ref-Sabatini2006}{2006}) parece haberse complejizado. En este sentido, la
 intersección entre las dinámicas de diferenciación del espacio de largo
 plazo (`dinámicas tradicionales') y las que surgieron como resultado del
@@ -4184,11 +4349,217 @@ Especificar qué mecanismos de reproducción social operan en cada dominio (ej: 
 
 \chapter{Primer Anexo}\label{primer-anexo}
 
-Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo, Algo para el anexo,
+\global\setlength{\Oldarrayrulewidth}{\arrayrulewidth}
+
+\global\setlength{\Oldtabcolsep}{\tabcolsep}
+
+\setlength{\tabcolsep}{2pt}
+
+\renewcommand*{\arraystretch}{1.5}
+
+
+
+\providecommand{\ascline}[3]{\noalign{\global\arrayrulewidth #1}\arrayrulecolor[HTML]{#2}\cline{#3}}
+
+\begin{longtable}[c]{|p{3.12in}|p{0.62in}|p{0.62in}|p{0.62in}}
+
+\caption{Índices\ de\ segregación\ residencial}\label{tab:app1tab1}\\
+
+\ascline{1.5pt}{666666}{1-4}
+
+\multicolumn{1}{>{\raggedright}m{\dimexpr 3.12in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{Indice}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.62in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{AMBA}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.62in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{CABA}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.62in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{PBA}}}} \\
+
+\ascline{1.5pt}{666666}{1-4}\endfirsthead \caption[]{Índices\ de\ segregación\ residencial}\label{tab:app1tab1}\\
+
+\ascline{1.5pt}{666666}{1-4}
+
+\multicolumn{1}{>{\raggedright}m{\dimexpr 3.12in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{Indice}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.62in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{AMBA}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.62in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{CABA}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.62in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{PBA}}}} \\
+
+\ascline{1.5pt}{666666}{1-4}\endhead
+
+
+
+\multicolumn{1}{>{\raggedright}m{\dimexpr 3.12in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{Dissimilarity\ Primary\ and\ Higher\ education\ (\$D\_\{pri;hig\}\$)}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.62in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.5733}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.62in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.3750}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.62in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.5250}}}} \\
+
+
+
+
+
+\multicolumn{1}{>{\raggedright}m{\dimexpr 3.12in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{Multi-group\ dissimilarity\ (\$D\\\textasciicircum \{*\}\$)}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.62in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.3270}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.62in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.2039}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.62in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.2891}}}} \\
+
+
+
+
+
+\multicolumn{1}{>{\raggedright}m{\dimexpr 3.12in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{Mutual\ Information\ Index\ (\$M\$)}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.62in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.1443}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.62in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.0745}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.62in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.1087}}}} \\
+
+
+
+
+
+\multicolumn{1}{>{\raggedright}m{\dimexpr 3.12in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{Segregation:\ Primary\ (\$IS\_\{pri\}\$)}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.62in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.3999}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.62in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.2881}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.62in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.3296}}}} \\
+
+
+
+
+
+\multicolumn{1}{>{\raggedright}m{\dimexpr 3.12in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{Segregation:\ Secondary\ (\$IS\_\{sec\}\$)}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.62in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.1515}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.62in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.0892}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.62in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.1529}}}} \\
+
+
+
+
+
+\multicolumn{1}{>{\raggedright}m{\dimexpr 3.12in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{Segregation:\ Higher\ education\ (\$IS\_\{sup\}\$)}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.62in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.4556}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.62in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.2558}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.62in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.4429}}}} \\
+
+
+
+
+
+\multicolumn{1}{>{\raggedright}m{\dimexpr 3.12in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{Normalized\ Isolation:\ Primary\ (\$ETA\_\{pri\}\\\textasciicircum 2\$)}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.62in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.2045}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.62in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.1099}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.62in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.1519}}}} \\
+
+
+
+
+
+\multicolumn{1}{>{\raggedright}m{\dimexpr 3.12in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{Normalized\ Isolation:\ Secondary\ (\$ETA\_\{sec\}\\\textasciicircum 2\$)}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.62in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.0293}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.62in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.0126}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.62in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.0285}}}} \\
+
+
+
+
+
+\multicolumn{1}{>{\raggedright}m{\dimexpr 3.12in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{Normalized\ Isolation:\ Higher\ education\ (\$ETA\_\{sup\}\\\textasciicircum 2\$)}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.62in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.1891}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.62in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.0959}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.62in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.1670}}}} \\
+
+
+
+
+
+\multicolumn{1}{>{\raggedright}m{\dimexpr 3.12in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{Multi-group\ normalized\ exposure\ (\$P\\\textasciicircum \{*\}\$)}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.62in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.1427}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.62in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.0665}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.62in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.1154}}}} \\
+
+\ascline{1.5pt}{666666}{1-4}
+
+
+
+\end{longtable}
+
+
+
+\arrayrulecolor[HTML]{000000}
+
+\global\setlength{\arrayrulewidth}{\Oldarrayrulewidth}
+
+\global\setlength{\tabcolsep}{\Oldtabcolsep}
+
+\renewcommand*{\arraystretch}{1}
+
+\global\setlength{\Oldarrayrulewidth}{\arrayrulewidth}
+
+\global\setlength{\Oldtabcolsep}{\tabcolsep}
+
+\setlength{\tabcolsep}{2pt}
+
+\renewcommand*{\arraystretch}{1.5}
+
+
+
+\providecommand{\ascline}[3]{\noalign{\global\arrayrulewidth #1}\arrayrulecolor[HTML]{#2}\cline{#3}}
+
+\begin{longtable}[c]{|p{1.86in}|p{0.50in}|p{0.49in}|p{0.50in}|p{0.88in}|p{0.56in}}
+
+\caption{Descripción\ de\ Entornos\ urbano}\label{tab:app1tab2}\\
+
+\ascline{1.5pt}{666666}{1-6}
+
+\multicolumn{1}{>{\raggedright}m{\dimexpr 1.86in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{TH}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.5in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{PRI}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{SEC}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.5in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{SUP}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.88in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{p}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.56in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{M}}}} \\
+
+\ascline{1.5pt}{666666}{1-6}\endfirsthead \caption[]{Descripción\ de\ Entornos\ urbano}\label{tab:app1tab2}\\
+
+\ascline{1.5pt}{666666}{1-6}
+
+\multicolumn{1}{>{\raggedright}m{\dimexpr 1.86in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{TH}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.5in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{PRI}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{SEC}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.5in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{SUP}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.88in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{p}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.56in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{M}}}} \\
+
+\ascline{1.5pt}{666666}{1-6}\endhead
+
+
+
+\multicolumn{1}{>{\raggedright}m{\dimexpr 1.86in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{Ciudad\ colonial}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.5in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{20.8}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{42.4}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.5in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{36.8}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.88in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{2.0}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.56in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.039}}}} \\
+
+
+
+
+
+\multicolumn{1}{>{\raggedright}m{\dimexpr 1.86in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{Expansión\ de\ la\ ciudad\ colonial}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.5in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{18.5}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{39.1}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.5in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{42.4}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.88in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{15.4}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.56in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.046}}}} \\
+
+
+
+
+
+\multicolumn{1}{>{\raggedright}m{\dimexpr 1.86in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{Cascos\ conurbanizados}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.5in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{29.8}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{37.9}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.5in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{32.3}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.88in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{3.6}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.56in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.064}}}} \\
+
+
+
+
+
+\multicolumn{1}{>{\raggedright}m{\dimexpr 1.86in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{Vivienda\ social}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.5in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{51.2}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{35.6}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.5in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{13.3}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.88in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{3.9}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.56in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.085}}}} \\
+
+
+
+
+
+\multicolumn{1}{>{\raggedright}m{\dimexpr 1.86in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{Urbanización\ cerrada}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.5in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{17.3}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{24.9}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.5in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{57.8}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.88in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{1.0}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.56in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.103}}}} \\
+
+
+
+
+
+\multicolumn{1}{>{\raggedright}m{\dimexpr 1.86in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{Urbanización\ de\ origen\ informal}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.5in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{73.5}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{24.2}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.5in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{2.2}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.88in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{5.5}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.56in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.022}}}} \\
+
+
+
+
+
+\multicolumn{1}{>{\raggedright}m{\dimexpr 1.86in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{NSE\ Alto}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.5in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{16.6}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{36.0}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.5in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{47.3}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.88in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{5.9}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.56in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.022}}}} \\
+
+
+
+
+
+\multicolumn{1}{>{\raggedright}m{\dimexpr 1.86in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{NSE\ Medio}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.5in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{39.6}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{38.4}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.5in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{21.9}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.88in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{26.4}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.56in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.038}}}} \\
+
+
+
+
+
+\multicolumn{1}{>{\raggedright}m{\dimexpr 1.86in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{NSE\ Bajo}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.5in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{66.0}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{27.5}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.5in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{6.5}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.88in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{36.2}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.56in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.031}}}} \\
+
+\ascline{1pt}{666666}{1-6}
+
+
+
+\multicolumn{1}{>{\raggedright}m{\dimexpr 1.86in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{TOTAL}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.5in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{45.9}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{33.5}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.5in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{20.6}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.88in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{430,310,400}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.56in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{0.144}}}}} \\
+
+\ascline{1.5pt}{666666}{1-6}
+
+
+
+\end{longtable}
+
+
+
+\arrayrulecolor[HTML]{000000}
+
+\global\setlength{\arrayrulewidth}{\Oldarrayrulewidth}
+
+\global\setlength{\tabcolsep}{\Oldtabcolsep}
+
+\renewcommand*{\arraystretch}{1}
 
 \chapter{Segundo Anexo}\label{segundo-anexo}
 
 Otra cosa para el anexo 2
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{figures/Segregacion_CA} \caption{Relación entre MCA}\label{fig:SEGRE-RES-CA}
+\end{figure}
 
 \backmatter
 
@@ -4212,6 +4583,9 @@ Abbasi, S., Ko, J. y Min, J. (2021). Measuring destination-based segregation thr
 
 \bibitem[\citeproctext]{ref-Abramo2003}
 Abramo, P. (2003). La teoría económica de la favela: cuatro notas sobre la localización residencial de los pobres y el mercado inmobiliario informal. \emph{Ciudad y territorio: Estudios territoriales}, \emph{136-137}, 35-69. \url{https://doi.org/10.4067/S0250-71612012000200002}
+
+\bibitem[\citeproctext]{ref-Agostini2016}
+Agostini, C. A., Hojman, D., Román, A. y Valenzuela, L. (2016). Segregación residencial de ingresos en el Gran Santiago, 1992-2002: una estimación robusta. \emph{EURE (Santiago)}, \emph{42}(127), 159-184. \url{https://doi.org/10.4067/S0250-71612016000300007}
 
 \bibitem[\citeproctext]{ref-Allen2007}
 Allen, R. y Vignoles, A. (2007). What should an index of school segregation measure? \emph{Oxford Review of Education}, \emph{33}(5), 643-668. \url{https://doi.org/10.1080/03054980701366306}
@@ -4345,6 +4719,9 @@ Cortese, C. F., Falk, R. F. y Cohen, J. K. (1976). Further Considerations on the
 \bibitem[\citeproctext]{ref-Cosacov2014}
 Cosacov, N. (2014). \emph{Habitar la centralidad. Trayectorias residenciales y usos cotidianos del espacio urbano de residentes en Caballito, Buenos Aires} {[}Tesis doctoral{]}.
 
+\bibitem[\citeproctext]{ref-Cosacov2017}
+Cosacov, N. (2017). El papel de la familia en la inscripción territorial. Exploraciones a partir de un estudio de hogares de clase media en el barrio de Caballito, Buenos Aires. \emph{Población \& Sociedad}, \emph{24}(1), 34-65. \url{https://cerac.unlpam.edu.ar/index.php/pys/article/view/2822}
+
 \bibitem[\citeproctext]{ref-Cosacov2018}
 Cosacov, N. y Di Virgilio, M. M. (2018). Presentación del Dossier {\#}10: Movilidades espaciales de la población y dinámicas metropolitanas en ciudades latinoamericanas. \emph{Quid 16}, \emph{10}, 1-16.
 
@@ -4444,11 +4821,17 @@ Farber, S., O'Kelly, M., Miller, H. J. y Neutens, T. (2015). Measuring segregati
 \bibitem[\citeproctext]{ref-Farber2012}
 Farber, S., Páez, A. y Morency, C. (2012). Activity spaces and the measurement of clustering and exposure: A case study of linguistic groups in Montreal. \emph{Environment and Planning A}, \emph{44}(2), 315-332. \url{https://doi.org/10.1068/a44203}
 
+\bibitem[\citeproctext]{ref-Feitosa2021}
+Feitosa, Flávia F., Barros, J., Marques, E. y Giannotti, M. (2021). \emph{Measuring Changes in Residential Segregation in São Paulo in the 2000s} (M. Van Ham, T. Tammaru, R. Ubarevičienė, \& H. Janssen, Eds.; pp. 507-523). Springer. \url{https://doi.org/10.1007/978-3-030-64569-4_26}
+
 \bibitem[\citeproctext]{ref-Feitosa2007}
 Feitosa, F. F., Câmara, G., Monteiro, A. M. V., Koschitzki, T. y Silva, M. P. S. (2007). Global and local spatial indices of urban segregation. \emph{International Journal of Geographical Information Science}, \emph{21}(3), 299-323. \url{https://doi.org/10.1080/13658810600911903}
 
 \bibitem[\citeproctext]{ref-Ferguson2018a}
 Ferguson, J. P. y Koning, R. (2018). Firm Turnover and the Return of Racial Establishment Segregation. \emph{American Sociological Review}, \emph{83}(3), 445-474. \url{https://doi.org/10.1177/0003122418767438}
+
+\bibitem[\citeproctext]{ref-Fernandez-de-Cordova2021}
+Fernández-de-Córdova, G., Moschella, P. y Fernández-Maldonado, A. M. (2021). \emph{Changes in Spatial Inequality and Residential Segregation in Metropolitan Lima} (M. Van Ham, T. Tammaru, R. Ubarevičienė, \& H. Janssen, Eds.; pp. 471-490). Springer. \url{https://doi.org/10.1007/978-3-030-64569-4_24}
 
 \bibitem[\citeproctext]{ref-Flamm2006}
 Flamm, M. y Kaufmann, V. (2006). Operationalising the concept of motility: A qualitative study. \emph{Mobilities}, \emph{1}(2), 167-189. \url{https://doi.org/10.1080/17450100600726563}
@@ -4494,6 +4877,9 @@ Groisman, F. y Suárez, A. L. (2009). \emph{Residential segregation in Greater B
 
 \bibitem[\citeproctext]{ref-Gutierrez2011}
 Gutierrez, A., Mansilla, H., Jimènez, C. I., Capdevielle, J., Freyre, M. L., Giovine, M., Merino, F., Assusa, G., Cooper, V., Gutierrez, A. y Mansilla, H. (2011). \emph{Espacio social de las clases y los instrumentos de reproducción social: dinámicas del mercado de trabajo, el mercado de las políticas sociales, el mercado escolar y el mercado habitacional en el Gran Córdoba, 2003-2011} (p. 266).
+
+\bibitem[\citeproctext]{ref-Haandrikman2023}
+Haandrikman, K., Costa, R., Malmberg, B., Rogne, A. F. y Sleutjes, B. (2023). Socio-economic segregation in European cities. A comparative study of Brussels, Copenhagen, Amsterdam, Oslo and Stockholm. \emph{Urban Geography}, \emph{44}(1), 1-36. \url{https://doi.org/10.1080/02723638.2021.1959778}
 
 \bibitem[\citeproctext]{ref-Harvey1977}
 Harvey, D. (1977). \emph{Urbanismo y desigualdad social}. Siglo XXI Editores.
@@ -4603,6 +4989,9 @@ Li, Q.-Q., Yue, Y., Gao, Q.-L., Zhong, C. y Barros, J. (2022). Towards a new par
 \bibitem[\citeproctext]{ref-Linares2013}
 Linares, S. (2013). Las consecuencias de la segregación socioespecial: un análisis empírico sobre tres ciudades medias bonaerenses (Olavarría, Pergamino, Tandil). \emph{Cuaderno Urbano}, \emph{14}(14), 5. \url{https://doi.org/10.30972/crn.1414527}
 
+\bibitem[\citeproctext]{ref-LopezMartinez2021}
+López Martínez, A. y Ceballos Mina, O. E. (2021). \emph{Socioeconomic Residential Segregation and Income Inequality in Bogotá: An Analysis Based on Census Data of 2005} (M. Van Ham, T. Tammaru, R. Ubarevičienė, \& H. Janssen, Eds.; pp. 433-450). Springer. \url{https://doi.org/10.1007/978-3-030-64569-4_22}
+
 \bibitem[\citeproctext]{ref-Lovelace2019a}
 Lovelace, R., Nowosad, J. y Muenchow, J. (2019). \emph{Geocomputation with R}. Chapman; Hall/CRC.
 
@@ -4611,6 +5000,9 @@ Lu, Y. y Giuliano, G. (2023). Where do people meet? Time-series clustering for s
 
 \bibitem[\citeproctext]{ref-Marcinczak2013}
 Marcińczak, S., Gentile, M. y Stępniak, M. (2013). Paradoxes of (Post)Socialist Segregation: Metropolitan Sociospatial Divisions Under Socialism and After In Poland. \emph{Urban Geography}, \emph{34}(3), 327-352. \url{https://doi.org/10.1080/02723638.2013.778667}
+
+\bibitem[\citeproctext]{ref-Marcinczak2016}
+Marcińczak, S., Musterd, S., Van Ham, M. y Tammaru, T. (2016). \emph{Inequality and rising levels of socio-economic segregation. Lessons from a pan-European comparative study} (T. Tammaru, S. Marcińczak, M. Van Ham, \& S. Musterd, Eds.; pp. 358-382). Routledge.
 
 \bibitem[\citeproctext]{ref-Marcos2015a}
 Marcos, M. (2015). Estructura Socioespacial de la Aglomeración Gran Buenos Aires. \emph{Geo UERJ}, \emph{26}, 22-54. \url{https://doi.org/10.12957/geouerj.2015.11583}
@@ -4675,6 +5067,9 @@ Morgan, Barrie S. (1983b). An Alternate Approach to the Development of a Distanc
 \bibitem[\citeproctext]{ref-Morrill1991}
 Morrill, R. L. (1991). On the measure of geographic segregation. \emph{Geography Research Forum}, \emph{11}, 25-36. \url{https://grf.bgu.ac.il/index.php/GRF/article/view/91}
 
+\bibitem[\citeproctext]{ref-Musterd2005}
+Musterd, S. (2005). Social and Ethnic Segregation in Europe: Levels, Causes, and Effects. \emph{Journal of Urban Affairs}, \emph{27}(3), 331-348. \url{https://doi.org/10.1111/j.0735-2166.2005.00239.x}
+
 \bibitem[\citeproctext]{ref-Musterd2020a}
 Musterd, S. (2020a). \emph{Towards further understanding of urban segregation} (S. Musterd, Ed.; pp. 411-424). Edward Elgar. \url{https://doi.org/10.4337/9781788115605.00034}
 
@@ -4723,6 +5118,9 @@ Poulsen, M., Johnson, R. y Forrest, J. (2002). Plural Cities and Ethnic Enclaves
 \bibitem[\citeproctext]{ref-PrevotSchapira2001}
 Prévot Schapira, M.-F. (2001). Fragmentación espacial y social: conceptos y realidades. \emph{Revista Perfiles Latinoamericanos}, \emph{19}, 33-56.
 
+\bibitem[\citeproctext]{ref-Pryce2021}
+Pryce, G., Wang, Y. P., Chen, Y., Shan, J., \& Wei, H. (Eds.). (2021). \emph{Urban Inequality and Segregation in Europe and China}. Springer International Publishing. \url{https://link.springer.com/10.1007/978-3-030-74544-8}
+
 \bibitem[\citeproctext]{ref-Puur2022}
 Puur, A., Rahnu, L. y Tammaru, T. (2022). What is the association between the ethnic composition of neighbourhoods, workplaces and schools and the formation of mixed-ethnic unions? \emph{Population, Space and Place}, 1-25. \url{https://doi.org/10.1002/psp.2504}
 
@@ -4740,6 +5138,9 @@ Reardon, S. F. y Bischoff, K. (2011). Income Inequality and Income Segregation. 
 
 \bibitem[\citeproctext]{ref-Reardon2002}
 Reardon, S. F. y Firebaugh, G. (2002). Measures of Multigroup Segregation. \emph{Sociological Methodology}, \emph{32}(1), 33-67.
+
+\bibitem[\citeproctext]{ref-Reardon2008}
+Reardon, S. F., Matthews, S. A., O'Sullivan, D., Lee, B. A., Firebaugh, G., Farrell, C. R. y Bischoff, K. (2008). The geographic scale of Metropolitan racial segregation. \emph{Demography}, \emph{45}(3), 489-514. \url{https://doi.org/10.1353/dem.0.0019}
 
 \bibitem[\citeproctext]{ref-Reardon2004}
 Reardon, S. F. y O'Sullivan, D. (2004). Measures of Spatial Segregation. \emph{Sociological Methodology}, \emph{34}(650), 121-162. \url{https://doi.org/10.1111/j.0081-1750.2004.00150.x}
@@ -4770,6 +5171,9 @@ Rodríguez, G. M. (2017b). Segregación residencial socioeconómica y fragmentac
 
 \bibitem[\citeproctext]{ref-Rodriguez2020b}
 Rodríguez, G. M. (2020). Desigualdad socioeconómica y segregación residencial en Argentina. Niveles y tendencias recientes (1991-2001-2010). \emph{Cuadernos de Vivienda y Urbanismo}, \emph{13}. \url{https://doi.org/10.11144/Javeriana.cvu13.dssr}
+
+\bibitem[\citeproctext]{ref-Rodriguez2014c}
+Rodríguez, G. M. y Kozak, D. M. (2014). Expansión física y demográfica y cambios en la densidad de la Aglomeración Gran Buenos Aires, 1750-2010. \emph{Población de Buenos Aires}, \emph{11}(20), 7-36.
 
 \bibitem[\citeproctext]{ref-Rodriguez2004}
 Rodríguez, J. y Arriagada Luco, C. (2004). Segregación Residencial en la Ciudad Latinoamericana. \emph{Revista eure}, \emph{30}, 5-24.
@@ -4875,6 +5279,9 @@ Taeuber, K. E. y Taeuber, A. F. (1976). A Practitioner's Perspective on the Inde
 
 \bibitem[\citeproctext]{ref-Tammaru2021}
 Tammaru, T., Knapp, D., Silm, S., Ham, M. van y Witlox, F. (2021). Spatial underpinnings of social inequalities: A vicious circles of segregation approach. \emph{Social Inclusion}, \emph{9}(2), 65-76. \url{https://doi.org/10.17645/si.v9i2.4345}
+
+\bibitem[\citeproctext]{ref-Tammaru2016a}
+Tammaru, T., Marcińczak, S., Van Ham, M., \& Musterd, S. (Eds.). (2016). \emph{Socio-Economic Segregation in European Capital Cities East meets West}. Routledge.
 
 \bibitem[\citeproctext]{ref-Burgess1926}
 \emph{The Urban Community}. (1926). {[}Computer software{]}. The University of Chicago Press. \url{https://ia800909.us.archive.org/19/items/urbancommunityse00burgrich/urbancommunityse00burgrich.pdf}
