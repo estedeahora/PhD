@@ -54,8 +54,8 @@ load(file = here::here("data-workflow", "final-data", "CARTO.rda"))
   rm(ZN1, ZN2, ZN3, ZN4)
 
   # Save
-  cli_alert_info(col_silver("Guradando datos auxiliares {.path AUX.rda}."))
-  save(AUX, file = here::here("data-workflow", "final-data", "AUX.rda"))
+  cli_alert_info(col_silver("Guradando datos auxiliares {.path AUX-data.rda}."))
+  save(AUX, file = here::here("data-workflow", "final-data", "AUX-data.rda"))
 
   rm(CARTO)
   rm(AUX)
