@@ -762,12 +762,12 @@ espacio, una forma de *distinción* [@Marom2014]. En este sentido, el
 análisis de la segregación no es homologable al análisis de capital
 social, en tanto este último refiere a las relaciones efectivas de las
 personas y grupos sociales. En este sentido, podemos entender esto como
-parte de un análisis multi-nivel de la segregación . En términos
+parte de un análisis multi-nivel de la segregación. En términos
 prácticos, en este trabajo dedicaremos un capítulo a analizar cómo la
 homogamia puede ser un elemento que refuerza la segregación residencial
-(ver capítulo @ref(homogamy)), pero remarcando que no debe entenderse a
-la homogamia como un dominio específico, sino como un aspecto dentro del
-análisis de la segregación en el dominio residencial y su análisis
+(ver capítulo \@ref(homogamy) ), pero remarcando que no debe entenderse
+a la homogamia como un dominio específico, sino como un aspecto dentro
+del análisis de la segregación en el dominio residencial y su análisis
 separado en esta tesis se debe entender como parte de una estrategia
 expositiva antes que teórica.
 

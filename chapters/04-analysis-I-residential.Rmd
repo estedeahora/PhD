@@ -297,7 +297,7 @@ departamentos).<!--# En el Anexo A se presenta la segregación interna de cada u
     [*between*] estos grupos.
 
 ```{r segres-tab1}
-RES$TAB1 
+RES$TAB1
 ```
 
 Un segundo enfoque para analizar globalmente la segregación es
@@ -323,13 +323,13 @@ RES$TAB2
 Partiendo de esta caracterización global, avancemos a continuación en un
 análisis local de la segregación. Para ello en la Figura
 \@ref(fig:segres-map-M) se muestra el valor de la segregación local
-(*Índice de Información Mutua*) en toda el AMBA. Sin embargo, debemos
-tener en cuenta que el mapeo territorial de la segregación local, sin
-distinguir 'qué grupos' son los segregados, puede generar una
-interpretación imprecisa de los patrones de segregación. En este
-sentido, no seríamos capaces de distinguir entre territorios contiguos
-con altos niveles de segregación, pero donde predominen diferentes
-grupos sociales.
+(*Índice de Información Mutua*) en toda el AMBA. Sin embargo, para
+analizar correctamente este resultado, debemos tener en cuenta que el
+mapeo territorial de la segregación local, sin distinguir 'qué grupos'
+son los segregados, puede generar una interpretación imprecisa de los
+patrones de segregación. En este sentido, no seríamos capaces de
+distinguir entre territorios contiguos con altos niveles de segregación,
+pero donde predominen diferentes grupos sociales.
 
 ```{r segres-map-M, out.width="100%", fig.asp=0.619}
 #| fig.cap: "Segregación local en el AMBA (Índice de Información Mutua). Se destacan con recuadros y los detalles las zonas profundizadas en el análisis."
@@ -373,15 +373,14 @@ include_graphics(here::here("figures", "Segregacion_CA_AMBA.png"))
 ```
 
 En base a las Figuras \@ref(fig:segres-map-M) y
-\@ref(fig:segres-map-CA), podemos identificar
-
-En primer lugar, en sintonía con lo señalado por Sabatini
-[-@Sabatini2001; -@Sabatini2006], encontramos un 'cono' de segregación
-asociado a los grupos altos (ver *Detalle 1*), el cual parte del centro
-histórico y se expande hacia el norte costero (zona norte de CABA y la
-costa de los partidos de Vicente López y San Isidro). Un aspecto
-interesante es que en estas zonas la segregación sigue un desarrollo
-uniforme asociado a la expansión urbana de los sectores altos
+\@ref(fig:segres-map-CA), podemos identificar algunos patrones
+espaciales diferenciados. En primer lugar, en sintonía con lo señalado
+por Sabatini [-@Sabatini2001; -@Sabatini2006], encontramos un 'cono' de
+segregación asociado a los grupos altos (ver *Detalle 1*), el cual parte
+del centro histórico y se expande hacia el norte costero (zona norte de
+CABA y la costa de los partidos de Vicente López y San Isidro). Un
+aspecto interesante es que en estas zonas la segregación sigue un
+desarrollo uniforme asociado a la expansión urbana de los sectores altos
 tradicionales y altos emergentes de la modernización. Esta expansión y
 el crecimiento, así como su consolidación como espacio de la 'elite', se
 asocian a un largo proceso histórico, que encuentra sus orígenes en el
@@ -389,153 +388,226 @@ siglo XIX y que permite explicar la continuidad espacial de los niveles
 altos de segregación. También se observa una rama secundaria de este
 cono que crece hacia la zona central (Caballito-Flores) y noroeste
 (Villa Devoto) de la CABA, aunque ambas presentan niveles de segregación
-no tan elevados como la zona norte [@Cosacov2017].
+no tan elevados como la zona norte [@Cosacov2017]. Esta 'rama derivada',
+puede explicarse por el proceso combinado de una expansión (en curso) de
+este cono de segregación de la zona norte, así como por tratarse de
+zonas consolidadas como zonas residenciales periféricas y de quintas
+hacia mediados del siglo XX. Una particularidad de este primer patrón de
+segregación es su *homogeneidad interna*. En este sentido, se trata de
+una segregación vinculada fundamentalmente a los sectores altos. Un
+segundo aspecto interesante de este primer patrón es su *singularidad*
+dentro del aglomerado. En tanto constituye la expansión primaria de los
+sectores altos, no es un patrón que se encuentre en otras regiones del
+aglomerado. Por último, se caracteriza por una gran *continuidad
+espacial*, de manera que su frontera con el resto de la ciudad está
+marcada por una transición paulatina y suave.
 
-En segundo lugar, en la expansión reciente de la zona norte (ver
-*Detalle 2*), se observan enclaves de segregación asociados a los
-barrios cerrados o a la suburbanización de los sectores altos. A
-diferencia de en el caso anterior, estos espacios urbanos presentan
-niveles de segregación contrastantes, en los que conviven contiguamente
-niveles elevados y bajos de segregación, dando como resultado un
-'mosaico' o '*patchwork'* [@Florida2018] . Este patrón responde, en gran
-medida, a la historia y concepción urbanística de estos enclaves
-periféricos hacia finales del siglo XX, en los cuales la relación
-espacial no es acompañada de un relacionamiento entre las poblaciones
-que llegan y las originales [@Atkinson2004; @Frisch2022].
+Un segundo patrón espacial puede visaulizarse en la expansión reciente
+de la zona norte del AMBA (ver *Detalle 2*), donde encontramos enclaves
+de segregación, asociados a los barrios cerrados o a la suburbanización
+de los sectores altos. A diferencia del patrón anterior, estos espacios
+urbanos presentan niveles de segregación contrastantes, en los que
+conviven contiguamente niveles elevados y bajos de segregación. A su
+vez, los territorios con segregación alta engolban situaciones contiguas
+contrastantes, donde conviven población de sectores altos y bajos,
+expresando una 'segregación de pequeña escala' y dando como resultado un
+patrón de 'mosaico' o '*patchwork'* [@Florida2018]. Este patrón
+responde, en gran medida, a la historia y concepción urbanística de
+estos enclaves periféricos hacia finales del siglo XX, en los cuales la
+relación espacial no es acompañada de un relacionamiento entre las
+poblaciones que llegan y las originales [@Atkinson2004; @Frisch2022].
+Además, si bien este patrón tiene una expresión marcada en la expansión
+norte del aglomerado, es posible identificar patrones similares en la
+zona sur y oeste (aunque de menor tamaño).[^04-analysis-i-residential-3]
 
-Un tercer aspecto a considerar es lo que se observa en los cascos
-urbanos en torno a las estaciones ferroviarias (ver *Detalle 3*, ejemplo
-sobre FFCC Sarmiento). Estos cascos urbanos se constituyeron como
-pueblos diferentes a la ciudad de Buenos Aires a fines del siglo XIX,
-pero fueron incorporados por la expansión metropolitana de esta.
-Constituyen espacios consolidados históricamente con una fuerte conexión
-con la ciudad central a través del ferrocarril, lo cual les permitió
-generar una clase media ascendente que se refleja en indicadores
-elevados de educación y, colateralmente, segregación. A su vez, a partir
-de su conexión con la ciudad central, estos lugares 'medianamente
-segregados' de ingresos medios-altos se configuran como
-policentralidades, fuertemente diferenciados de sus contextos locales
-(municipales), reforzando el patrón de mosaico antes señalado. Una
-situación similar a la ilustrada con las estaciones de FFCC Sarmiento se
-replica en el corredor sur con ambos ramales del FFCC Roca,
-fundamentalmente en las estaciones próximas a la CABA.
+[^04-analysis-i-residential-3]: Posiblemente este patrón se halla
+    consolidado y expandido en otras regiones durante los últimos años.
+    Sin embargo, al momento de realizar este trabajo se contaba con
+    datos censales del 2010, por lo cual no fue posible verificar esta
+    situación.
+
+Un tercer patrón a considerar es el que se observa en los cascos urbanos
+en torno a las estaciones ferroviarias (ver *Detalle 3*, ejemplo sobre
+FFCC Sarmiento). Estos cascos urbanos se constituyeron como pueblos
+diferentes a la ciudad de Buenos Aires a fines del siglo XIX, pero
+fueron incorporados por la expansión metropolitana de esta. Constituyen
+espacios consolidados históricamente con una fuerte conexión con la
+ciudad central a través del ferrocarril, lo cual les permitió generar
+una clase media ascendente que se refleja en indicadores elevados de
+educación y, colateralmente, segregación. A su vez, a partir de su
+conexión con la ciudad central, estos lugares 'medianamente segregados'
+de ingresos medios se configuraron como policentralidades, diferenciados
+de sus contextos locales (municipales). Una primer particularidad de
+este patrón es que, con niveles de segregación moderados, la composición
+de estas zonas está vinculada principalmente a los grupos medios ('con
+estudios secundarios'), antes que a los grupos extremos. A su vez, de
+forma similar al primer patrón que identificamos, este patrón espacial
+presenta una gran homogeneidad y continuidad espacial, aunque en un
+espacio menos extendido que el primer patrón. A su vez, su frontera es
+un poco más abrupta que la del primer patrón, sin llegar a la situación
+'fragmentada' que observamos en el segundo patrón. En resumen, este
+patrón caracteriza una segregación de 'mediana escala' de sectores
+medios. Por último, este patrón se puede verificar de forma bastante
+clara en diferentes lugares del AMBA. En este sentido, una situación
+similar a la ilustrada con las estaciones de FFCC Sarmiento se replica
+en el corredor sur con ambos ramales del FFCC Roca, fundamentalmente en
+las estaciones próximas a la CABA.
 
 Por último, en las áreas periféricas encontramos espacios con niveles de
-segregación local relativamente altos, pero asociados a una homogeneidad
-de niveles educativos bajos (ver *Detalle 4*, ejemplo sobre Gobernador
-Costa, Francisco Solano y Rafael Calzada). Esta forma de segregación se
-observa en gran parte del segundo y, sobretodo, del tercer cordón (salvo
-en la zona norte), fundamentalmente en zonas alejadas de las estaciones
-ferroviarias.<!--# (esta situación puede observarse en Jose C. Paz o la zona periférica de La Matanza) -->
-Este patrón de segregación se relaciona con espacios residenciales
-deteriorados, con grandes focos de informalidad residencial y malas vía
-de conexión con la CABA, lo que da como resultado un aislamiento de los
-pobres urbanos [@Soldano2008].
+segregación local relativamente altos, pero asociados a zonas con una
+homogeneidad de niveles educativos bajos (ver *Detalle 4*, ejemplo sobre
+Gobernador Costa, Francisco Solano y Rafael Calzada). Esta forma de
+segregación se observa en gran parte del segundo y, sobretodo, del
+tercer cordón con excepción de la zona norte, fundamentalmente en zonas
+alejadas de las estaciones ferroviarias (ver, por ejemplo, algunas zonas
+de Jose C. Paz o zonas periféricas de La Matanza). Este patrón de
+segregación se relaciona con espacios residenciales deteriorados, con
+grandes focos de informalidad residencial y malas vía de conexión con la
+CABA, lo que da como resultado un aislamiento de los pobres urbanos
+[@Soldano2008].
 
-En resumen, nuestro análisis nos muestra que, en sintonía con lo que
-sucede en otras ciudades latinoamericanas [@Feitosa2021;
-@LopezMartinez2021; @Agostini2016], el patrón de segregación propuesto
-por @Sabatini2006 parece haberse complejizado. En este sentido, la
-intersección entre las dinámicas de diferenciación del espacio de largo
-plazo ('dinámicas tradicionales') y las que surgieron como resultado del
-urbanismo neoliberal[@Theodore2009; @Peck2013; @VanHam2021a] dan como
-resultado una convivencia de patrones locales de segregación en el
-AMGBA. <!--# agregar algo del rol de los entornos urbanos -->Junto al
-'cono residencial' en el que viven tradicionalmente los grupos altos,
-las dinámicas de suburbanización de las clases emergentes generaron un
-'patrón de mosaico' en espacios anteriormente periféricos. A su vez, los
-procesos de gentrificación liderados por los grupos de ingresos altos y
-la mejora progresiva de los sectores medios permitieron la expansión de
-este cono de ingresos altos hacia áreas centrales. Como resultado de
-estos movimientos, se genera un proceso de expansión progresiva del área
-residencial de altos ingresos tradicional que es acompañado por un
-patrón fragmentario que domina en las periferias lejanas. En conjunto
-estos procesos han llevado a una mayor separación de los grupos altos
-respecto al resto de los grupos sociales, a la vez que se consolida el
-alejamiento y aislamiento de los pobres en áreas deterioradas de la
-periferia.[^04-analysis-i-residential-3]
+Estos patrones emergen de la interacción entre las dinámicas de
+diferenciación del espacio de largo plazo, así como de las
+transformaciones recientes que surgieron como resultado del urbanismo
+neoliberal [@Theodore2009; @Peck2013; @VanHam2021a]. Por un lado, la
+formación del cono de las elites (primer patrón) refiere al proceso de
+consolidación hegemónica a nivel nacional de los sectores dominantes
+tradicionales de la ciudad durante el siglo XIX, lo cual supuso una
+jerarquización socioespacial. A su vez, el crecimiento económico y la
+movilidad social ascendente de los migrantes europeos durante el siglo
+XX permitió la expansión y continuidad de estos territorios, dando lugar
+a una heterogeneidad urbana basado en la exclusión de los pobres
+informales. En paralelo a este proceso, la consolidación de los cascos
+conurbanizados (tercer patrón), sobre todo los más cercanos y mejor
+conectados con la ciudad central, permitió la creación de espacios
+relativamente homogéneos vinculados a sectores medios, consolidados como
+policentralidades diferenciadas de sus contextos municipales locales. En
+el contexto de expansión de las clases medias y un fuerte crecimiento
+del mercado de consumo interno, estos grupos grupos medios ascendentes
+locales consolidaron su crecimiento a partir de una ubicación estrategia
+respecto a la ciudad central.
 
-[^04-analysis-i-residential-3]: Este patrón de segregación que consolida
-    la separación entre los sectores de altos y bajos ingresos, se
-    acompaña de una desigual distribución de los recursos urbanos, lo
-    que lleva a un monopolio por parte de los sectores altos
-    [@Serrati2023; @DiVirgilio2022a].
+Por su parte, los 'bolsones de pobreza' surgieron de forma incipiente
+con las migraciones rurales a partir de mediados del siglo XX. Sin
+embargo, es en el marco de las políticas neoliberales que promovieron la
+informalidad laboral y residencial, que se fue consolidando una
+marginalización urbana estrctural en las zonas periféricas y peor
+conectadas (cuarto patrón), que encarnan la persistencia de brechas
+estructurales no resueltas. En paralelo, las políticas neoliberales
+promovieron una dualización de enclave de la economía, que permitió la
+expansión de sectores medios modernos y globalizados. Estos sectores
+tuvieron un rol dinámico en la construcción del espacio urbano, dando
+lugar a una nueva expansión del cono de las elite y promoviendo procesos
+de gentrificación en áreas centrales antiguamente deterioradas. En
+paralelo, los sectores medios-altos y altos comenzaron un proceso de
+suburbanización sobre zonas periféricas con buena conectividad. Estos
+procesos supusieron la proliferación de urbanizaciones cerradas en
+localizaciones periféricas y poco atendidas, generando una convivencia
+espacial entre espacios urbanos contrastantes.
 
-<!--# SACADO: Segregación residencial y acceso a recursos [ ] TODO Sumar análisis de acceso a recursos en relación con las características de la segregación residencial  -->
+Los patrones de segregación son el resultado de las diferentes etapas de
+consolidación del AMBA, por lo cual también podemos verlos como mixturas
+particulares entre diferentes *entornos* *urbanos* [@Marcos2021;
+@Marcos2022]. Como señalamos en el apartado \@ref(method-AMBA), los
+entornos urbanos se construyen en función de, por un lado, el momento
+histórico de urbanización y, por otro, el modo predominante de
+producción del espacio urbano. En este sentido, el primer patrón se
+vincula a la expansión del núcleo urbano original hacia fines del siglo
+XX y a la expansión de una clase media ascendente durante el siglo XX.
+Por ello, en este patrón se integra un sector de la antigua 'ciudad
+colonial' y la 'primera expansión de la ciudad colonial', así como
+loteos formales de 'NSE alto' aledaños a estos espacios. Por su parte,
+vinculado a la suburbanización de las elites durante el proceso de
+urbanización neoliberal, el segundo patrón integra de forma yuxtapuesta
+entornos urbanos disímiles, como las 'urbanizaciones cerradas',
+'urbanizaciones de origen informal' y loteos formales de 'NSE bajo' y
+'NSE medio'. El tercer patrón, se vincula fundamentalmente a los
+'centros conurbanizados' y a sus entornos inmediatos vinculados a loteos
+de 'NSE Medio' y 'NSE Alto', en torno a los cuales se despliegan las
+periferias locales. Por último, el cuarto patrón se vincula a espacios
+urbanos deteriorados, en los que se superponen 'urbanizaciones de origen
+informal', 'complejos de vivienda social' y loteos de 'NSE bajo' muchas
+veces provenientes de mercados semiformales (Figura \@ref(fig:TH)).
 
-## Conclusiones {#residential-conclussion}
+<!--# SACADO: Segregación residencial y acceso a recursos urbanos [ ] TODO Sumar análisis de acceso a recursos en relación con las características de la segregación residencial  -->
+
+## Patrones de segregación y dinámicas poblacionales {#residential-conclussion}
 
 <!--# En los resultados se identifica la presencia de diferentes patrones locales que conviven. Se analizan los resultados obtenidos en relación con los antecedentes locales e internacionales, destacando la relación entre estos patrones con las dinámicas históricas que le dieron origen.  -->
 
--   Ejemplos de cascos conurbanizados: Lomas/Banfield o FFCC Sarmiento
-    Ramos, Morón.
--   Ejemplos de zonas periféricas deterioradas: J.C. Paz / Matanza sur /
-    Fcio Varela. Visualizar el contraste entre dos segregaciones
-    opuestas de NSE Alto-Bajo. Un buen ejemplo puede ser el Partido de
-    Lomas. La elección se puede justificar en base a la alta
-    contribución a la segregación total (
-    <!-- $M_{\text{within_dpto} } * p$ --> ).
+En este capítulo propusimos identificar y describir la estructura de la
+segregación residencial en el AMBA. Nuestros resultados permitieron
+comprobar que, en sintonía con lo que sucede en otras ciudades
+latinoamericanas [@Feitosa2021; @LopezMartinez2021; @Agostini2016], el
+patrón de segregación propuesto como modelo @Sabatini2006 parece haberse
+complejizado. En este sentido, como parte del análisis de la segregación
+residencial en el AMBA identificamos una estructura espacial marcada por
+la coexistencia local de cuatro patrones diferenciados, cada uno con
+características únicas en términos de la escala de segregación, su
+extensión, continuidad, singularidad y composición social, así como en
+función de los entornos urbanos que incluye. A modo de resumen, en la
+Tabla \@ref(tab:segres-tab3) se presentan las principales
+características descriptas sobre cada uno de estos patrones de
+segregación.
 
-El patrón de segregación actual es resultado de la articulación de tres
-dinámicas históricas:
+```{=latex}
+\begin{landscape} 
+```
 
-a.  dinámica clásica que se remonta al sXIX (cono de las elites)
-b.  dinámica latinoamericana del sXX (exclusión de pobres informales);
-c.  dinámica de la ciudad neoliberal de fines de sXX y el sXXI (barrios
-    cerrados, suburbanización, gentrificación y marginalización urbana)
+```{r segres-tab3}
 
-Descripción de **cómo se articulan estos procesos históricos** en la
-conformación de patrones heterogéneos de segregación en el AMGBA:
+RES$TAB3
+```
 
-(1) La ciudad presenta, en sintonía con el modelo europeo, una
-    separación de las elites en un área de la ciudad que parte del
-    centro y se expande hacia la periferia. Esto surge como resultado de
-    un proceso que se arraiga en la consolidación de la ciudad central
-    como capital nacional (sXIX).
-(2) La creación de 'bolsones de pobreza' producto de las migraciones
-    rurales desde mediados del sXX, junto al crecimiento económico y la
-    movilidad social ascendente de los migrantes europeos dieron lugar a
-    un patrón de segregación en el que conviven una heterogeneidad
-    urbana de gran parte de la ciudad, basado en la exclusión de los
-    pobres informales.
-(3) La salida de grupos los altos a los suburbios a partir de fines del
-    sXX dio lugar a patchwork en estas zonas. Ver algún análisis de
-    autocorrelación;
-(4) La consolidación de los cascos conurbanizados (sobre todo de
-    aquellos más cercanos y mejor conectados con la CABA), permitió la
-    creación de espacios relativamente homogéneos y de
-    policentralidades, diferenciados de sus contextos locales
-    (municipales), lo cual reforzó el patrón de mosaico /patchwork.
-(5) La modernización de la economía (basada en una dualización de
-    enclave) dio lugar al surgimiento de sectores medios modernos y
-    globalizados, que fueron los principales actores de una expansión
-    del cono de elite y de los procesos de gentrificación en áreas
-    centrales antiguamente deterioradas.
+```{=latex}
+\end{landscape} 
+```
 
-Resultado de estos procesos, el **patrón de segregación AMGBA** **se
-complejizó** respecto al propuesto por @Sabatini :
+En primer lugar, el *cono de las elites*, que se consolida como
+expresión de los sectores dominantes tradicionales, vinculados a la
+primera expansión de la ciudad y sus sectores dominantes a partir del
+siglo XIX. Este patrón de segregación a gran escala se caracteriza por
+una homogeneidad social vinculada a los grupos altos tradicionales y una
+transición gradual hacia las áreas circundantes [@Sabatini2006]. En
+segundo lugar, la constitución de un *mosaico suburbano* que encarna la
+fragmentación de la ciudad neoliberal y el efecto de la suburbanización
+de las elites en enclaves residenciales ubicados en contigüidad con
+espacios residenciales de sectores de ingresos bajos. En este patrón, la
+proximidad física no supone una integración social, sino por el
+contrario la constitución de un patrón de segregación a pequeña escala
+en el que se yuxtaponen 'islas territoriales' a la manera de mosaicos o
+*patchwork* [@Florida2018] y marcada por límites físicos abruptos y
+mercados inmobiliarios duales [@Duhau2013a]. En tercer lugar, los
+*antiguos cascos urbanos ferroviarios conurbanizados*,consolidados como
+centralidades locales en función de su accesibilidad a la ciudad
+central. Caracterizado por una segregación moderada y acotada, vinculada
+a sectores medios con movilidad ascendente, este patrón está marcado por
+la separación con su entorno municipal local. Por último, las
+*periferias deterioradas y marginalizadas* exhiben una segregación
+persistente de bajos ingresos, marcada por la desconexión de las redes
+urbanas y asociada a los mercados informales de tierra y trabajo.
+Surgidas de modo progresivo desde mediados del siglo XX, estos
+territorios ilustran la exclusión espacial y brechas estructurales que
+trasciende los ciclos económicos [@VergaraParra2018]. A su vez, todos
+estos procesos se materializan en diferencias entre los *entornos
+urbanos* que, permiten explicar gran parte de la variabilidad global de
+la segregación (superando a jurisdicciones y departamentos).
 
-1.  Mayor nivel de segregación con respecto a momentos anteriores.
-2.  Segregación de grupos altos es mayor (seguida por grupo bajo). Ver
-    aporte de cada grupo descomponiendo M;
-3.  Los entornos urbanos tienen un papel importante a la hora de
-    explicar la segregación, de manera que una parte importante de ésta
-    se explica por la distribución de la polbación en estos. Ver
-    contribución within-between.
-4.  Cono de segregación: El patrón principal de segregación sigue siendo
-    el de separación de los ricos y alejamiento de los pobres en un cono
-    principal, vinculado a las regiones tradicionales de expansión
-    urbana de las elite.
-5.  Mancha expansiva: Este cono vivió una expansión de sus fronteras
-    mediante la incorporación de zonas anteriormente medias y de la
-    gentrificación de zonas centrales antiguamente deterioradas pero
-    bien comunicadas. Esta expansión estuvo vinculada fundamentalmente a
-    la expansión y asenso social de sectores medios calificados
-    vinculados a la economía globalizada;
-6.  Este patrón convive con un patrón de mosaicos / patchwork, resultado
-    de la consolidación de los cascos conurbanuzados cercanos y la
-    suburbanización de las elites (asociada a los barrios cerrados).
-7.  el patrón de segregación se acompaña de un monopolio por parte de
-    los sectores altos de los recursos urbanos, podría relacionarse con
-    ppp y se puede mencionar algo de esto en relación a tesis MGAIE
-    citar a @Brickman.
+En resumen, la segregación residencial en el AMBA aparece como un
+fenómeno complejo que combina diferentes patrones locales, los cuales
+son el emergente histórico de procesos sociales. Estos patrones toman
+formas específicas en lo que respecta a la extensión, continuidad y
+composición social, a la vez que se articulan para generar un acceso
+diferenciado a los recursos. La combinación de mercados de suelo formal
+e informal, la fragmentación urbana y las intervenciones estatales
+configuran un entramado donde los hogares experimentan diferentes grados
+de aislamiento o apertura. Esto refuerza nuestra lectura de la
+*segregación como dimensión espacial de la estratificación social*: al
+estructurar oportunidades de contacto y acceso a recursos urbanos, el
+espacio residencial actúa tanto como reflejo de las desigualdades
+sociales, así como motor de su reproducción a partir de cristalizar
+estas jerarquías. A su vez, este análisis centrado en la segregación del
+dominio residencial constituye la base para abordar en los próximos
+capítulos el rol de la homogamia, las movilidades cotidianas y los
+espacios escolares se refuerzan o compensan estas dinámicas dentro de la
+segregación urbana.

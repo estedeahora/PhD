@@ -4,7 +4,8 @@
 #' @param gdb Base de datos espaciales (objeto de clasesf)
 #' @param
 
-PhD_ggzoom <- function(gdb, tit, cbox = NULL, dpt = NULL, variable = "ls"){
+PhD_ggzoom <- function(gdb, tit, cbox = NULL, dpt = NULL,
+                       variable = "ls", lim = NULL){
 
   if(is.null(dpt)){
     dpt <- gdb |> count(DPTO)
@@ -19,8 +20,16 @@ PhD_ggzoom <- function(gdb, tit, cbox = NULL, dpt = NULL, variable = "ls"){
     theme_void()
 
   if(variable == "color"){
-    p <- p +
-      geom_sf(aes(fill = I(v)), alpha = 0.6, color = NA)
+    if(is.null(lim)){
+      p <- p +
+        geom_sf(aes(fill = I(v)), alpha = 0.6, color = NA)
+    }else{
+      p <- p +
+        geom_sf(data = gdb |> mutate(v = gdb[[variable]]) |>
+                  filter(!is.na(TH) & ls > lim),
+                aes(fill = I(v)), color = NA)
+
+    }
   }else{
     p <- p +
       geom_sf(aes(fill = v), alpha = 0.9, color = NA) +

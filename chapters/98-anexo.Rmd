@@ -4,7 +4,7 @@
 
 \renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{Anexo}\ \thechapter.\ #1}{}}
 
-# Primer Anexo
+# Índices de segregación residencial
 
 ```{r}
 RES$appA_TAB1
@@ -14,39 +14,61 @@ RES$appA_TAB1
 RES$appA_TAB2
 ```
 
-# Segundo Anexo
+# Relación matemática entre inercia y segregación local (Índice de Información mutua)
 
-Dado:
+Dada una matriz $X$ de U x G, con el recuento absoluto de cada uno de los grupos en las unidades, es posible construir una nueva matriz de perfiles $P$ de U x G, con la proporción de cada grupo en cada unidad. La matriz $P$ se construye dividiendo cada fila de la matriz $X$ por la suma de los elementos de esa fila. A partir de esta matriz $P$ podemos definir la siguiente notación:
 
--   $p_{g|u}$ es la proporción del grupo $g$ en la unidad $u$ (el valor de $g$ dado $u$);
+-   $p_{g|u}$ es la proporción del grupo $g$ en la unidad $u$;
 
 -   $p_{g}$ es la proporción del grupo $g$ en el conjunto de unidades (total de población); y
 
 -   $m_u$ es el peso de la unidad $u$ en el total de la población (el tamaño relativo de u en la población).
 
-Y tres medidas de distancia entre los perfiles de las unidades y el perfil medio:
+La matriz $P$ tiene las siguientes propiedades:
 
-$Ls$: Indice de Información Mutua Local:
+-   La suma de cada fila es 1, es decir, $\sum_{g=1}^G = 1$.
+-   La suma ponderada de cada columna es la proporción del grupo $g$ en la población, es decir, $p_{g} = \sum_{u=1}^U m_u . p_{g|u}$.
+-   La suma de los pesos de las unidades es 1, es decir, $\sum_{u=1}^U m_u = 1$.
+
+A partir de estas definiciones nos interesa identificar la relación que existe entre la inercia y la segregación local calculada según el Índice de Información Mutua. El Índice de Información Mutua ($M$) se puede expresar como la suma ponderada (por el peso de las unidades) de los valores de segregación local de cada unidad ($L_u$). Este valor de segregación local, es la divergencia de Kullback-Leibler entre el perfil de la unidad y el perfil medio. En este sentido, el valor de $L_u$ puede pensarse como una medida de la 'información' que aporta el perfil de la unidad al perfil medio. A su vez, en tanto $L_s$ es idéntico a la divergencia de Kullback-Leibler, es una medida de distancia entre el perfil de la unidad y el perfil medio, aunque no cumple con todas las propiedades de una distancia en un espacio métrico. El valor de $L_u$ puede expresarse como:
 
 $$
-Ls = \sum_{g=1}^G p_{g|u}.\log({\frac{p_{g|u}}{p_{g}})}
+L_u = \sum_{g=1}^G p_{g|u}.\log({\frac{p_{g|u}}{p_{g}})}
+$$ Retomando la fórmula anterior, $M$ queda expresado como la media ponderada de la segregación local de la siguiente manera:
+
+$$
+M = \sum_{u=1}^U m_u . L_u = \sum_{u=1}^U m_u . \sum_{g=1}^G p_{g|u}.\log({\frac{p_{g|u}}{p_{g}}}) 
 $$
 
-$\text{dist } \chi^2$: Distancia Chi Cuadrado:
+La inercia ($\phi$) es una medida de la variabilidad de los perfiles de una tabla, en relación al perfil medio. Como tal, la inercia puede expresarse como la suma ponderada (por el peso de las unidades) de las distancias chi cuadrado ($\text{dist }\chi^2$), elevadas al cuadrado, entre los perfiles de las unidades y el perfil medio. A su vez, la distancia chi cuadrado se puede expresa como:
 
 $$
 \text{dist } \chi^2 = \sqrt{\sum_{g=1}^G \frac{(p_{g|u} - p_{g})^2}{p_{g}}}
 $$
 
-Inercia local:
+por lo cual, la inercia puede expresarse como:
 
 $$
-m_u .(\text{dist }\chi^2)^2 = m_u . \left( \sqrt{\sum_{g=1}^G \frac{(p_{g|u} - p_{g})^2}{p_{g}}} \right)^2 = m_u . \sum_{g=1}^G \frac{(p_{g|u} - p_{g})^2}{p_{g}}
+\phi = \sum_{u=1}^U m_u . (\text{dist }\chi^2)^2 = \sum_{u=1}^U m_u . \left( \sqrt{\sum_{g=1}^G \frac{(p_{g|u} - p_{g})^2}{p_{g}}} \right)^2 = \sum_{u=1}^U m_u . \sum_{g=1}^G \frac{(p_{g|u} - p_{g})^2}{p_{g}}
 $$
+
+En definitiva, tanto la inercia $\phi$ como el índice de segregación $M$ pueden medir la variabilidad y dispersión de la composición de cada una de las unidades en relación con el perfil medio. En términos generales, ambas medidas pueden pensarse como una suma ponderada de dos 'distancias' entre los perfiles de las unidades y el perfil medio. La diferencia entre ambos es que la inercia se calcula utilizando como medida de distancia el cuadrado de la *distancia chi cuadrado*, mientras que el índice de información mutua utiliza una medida de distancia definida a partir de la 'cantidad de la información'. Por lo tanto, dada una función de distancia $\text{dist}$, podríamos expresar ambas medidas como:
+
+$$
+\sum_{u=1}^U m_u . \text{dist}
+$$ Queda por definir la relación entre ambas distancias. En términos generales, la distancia chi cuadrado es una medida de distancia que se utiliza para medir la diferencia entre dos distribuciones de probabilidad. En este sentido, la distancia chi cuadrado puede pensarse como una medida de la 'dispersión' de los perfiles de las unidades en relación al perfil medio. Por otro lado, la distancia definida a partir de la 'cantidad de información' puede pensarse como una medida de la 'información' que aporta el perfil de cada unidad al perfil medio. En este sentido, ambas medidas pueden pensarse como medidas de la 'variabilidad' y 'dispersión' de los perfiles de las unidades en relación al perfil medio.
+
+En la Figura @ref(fig:appB-dist-comp) se presenta una comparación entre ambas distancias en .
+
+```{r appB-dist-comp}
+#| fig.cap: "Comparación de distancia $\\chi^2$ y segregación local ($L_u$), tomando como referencia segregación residencial de los radios censales en el AMBA"
+
+include_graphics(here::here("figures", "Comparacion_distancias.png"))
+
+```
 
 Distancia euclidiana:
 
 $$
 \text{distancia euclidiana} = \sqrt{\sum_{g=1}^G (p_{g|u} - p_{g})^2}
 $$
-
