@@ -1,7 +1,7 @@
 #' @title PhD_homog_montecarlo
 #' @description Genera dataframe con probabilidad de homogamia por grupo educativo
 
-PhD_homog_montecarlo <- function(seed = 123, db, replace = F){
+PhD_homog_montecarlo <- function(seed = 123, db, replace = F, p = NULL){
 
   set.seed(seed)
 
@@ -16,21 +16,28 @@ PhD_homog_montecarlo <- function(seed = 123, db, replace = F){
                        names_from = "REL", values_from = "s" ) |>
     dplyr::mutate(HOM = ifelse(CON == PSH, T, F),
                   P1 = pmin(PSH, CON),
-                  P2 = pmax(PSH, CON)) |>
-    PhD::PhD_homog_hog(db_MAT, type = "P") |>
-    dplyr::select(ID_RADIO, HOM, PRI_hogcount, SEC_hogcount, SUP_hogcount)
+                  P2 = pmax(PSH, CON),
+                  # EDU: MNI del hogar (sea conyugal o no)
+                  EDU = pmax(PSH, CON, na.rm = T) ) |>
+    PhD_homog_hog(type = "P") |>
+    dplyr::select(ID_RADIO, HOM, tidyselect::ends_with("_hogcount"))
 
   db_RAD <- db_HOG |>
-    group_by(ID_RADIO) |>
-    summarise(
-      # Porcentaje de hogares con homogamia, n_homog / n_conyg (sobre total de hogares conyugales)
-      # phom = sum(HOM, na.rm = T) / sum(!is.na(HOM)),
-      # Probabilidad de homogamia (por grupo educativo)
-      across(.cols = tidyselect::ends_with("_hogcount"),
-             .fns  = ~sum(.x * HOM, na.rm = T) / sum(.x, na.rm = T)),
-      across(.cols  = tidyselect::ends_with("_hogcount"),
-             .fns   = ~PhD_conv_phom(.x, conversion = "to_P2"))
-    )
+    dplyr::group_by(ID_RADIO) |>
+    dplyr::summarise(
+      # Probabilidad de homogamia (por grupo educativo): usa P1.
+      dplyr::across(.cols = tidyselect::ends_with("_hogcount"),
+                    .fns  = ~sum(.x * HOM, na.rm = T) / sum(.x, na.rm = T))#,
+      # # dplyr::across(.cols  = tidyselect::ends_with("_hogcount"),
+      # #               .fns   = ~PhD_conv_phom(.x, conversion = "to_P2"))
+    ) |>
+    # Renombrar columnas
+    dplyr::rename_with(.cols = tidyselect::ends_with("_hogcount"),
+                       .fn = ~stringr::str_replace(.,"_hogcount", "_p"))
+
+  if(!is.null(p)){
+    p()
+  }
 
   return(db_RAD)
 }

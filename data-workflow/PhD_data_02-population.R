@@ -187,8 +187,109 @@ if(!exists("CARTO", inherits = F)){
              .names = "{col}2"),
       .groups = "drop") |>
     rename_with(.fn = ~paste0(., "1"), .cols = ends_with("_hogcount")) |>
-    rename_with(.fn = ~str_replace(., "_hogcount", "_p"), .cols = matches("_hogcount[0-9]")) |>
+    rename_with(.fn = ~str_replace(., "_hogcount", "_p"),
+                .cols = matches("_hogcount[0-9]")) |>
     relocate(HOG, HOG_CON, HOG_HOM, HOG_PRI:HOG_SUP, HOG_color, .after = TH)
+
+# ╠ Base de homogamia con test Montecarlo (RAD) -------------------------------
+
+  replic <- 1000       # Replicaciones Montecarlo (homogamia)
+  conf <- 0.05         # Confianza esperada en Montecarlo (homogamia)
+  forzar <- FALSE      # Debe correrse el análisis de Montecarlo
+
+  # Corre cuando `forzar` es TRUE o si no existe el archivo de salida
+  if(forzar |
+     !fs::file_exists(here::here("data-workflow", "intermediate-data",
+                                 "PhD_03_montecarlo.RData"))){
+
+    cli_li(
+      col_yellow(
+        paste0("Realizando iteraciones Montecarlo para homogamia",
+               "por grupo educativo (replicaciones: ",
+               format(replic, big.mark = ".", decimal.mark = ","), ")")
+        )
+      )
+
+    db_aux <- CENSO_CON  |>
+      filter(!is.na(TH)) |>
+      select(ID_RADIO, VIVIENDA_REF_ID, HOGAR_REF_ID, REL, MNI3)
+
+    plan(multicore, workers = availableCores() - 1)
+
+    tic()
+    handlers("progress")
+    with_progress({
+      p <- progressor(steps = replic)
+      db_mont <- future_map(1:replic,
+                            PhD_homog_montecarlo,
+                            db = db_aux, p = p,
+                            .options = furrr_options(seed = TRUE)) |>
+        list_rbind(names_to = "id") |>
+        set_attr("replic_montecarlo", replic)
+      })
+    toc()
+
+    cli_alert_success(col_green("Iteraciones Montecarlo finalizadas."))
+    cli_alert_info(col_silver("Guradando datos de Montecarlo: {.path data-workflow/intermediate-data/PhD_03_montecarlo.RData}."))
+
+    save(db_mont,
+         file = here::here("data-workflow", "intermediate-data",
+                           "PhD_03_montecarlo.RData") )
+
+    rm(db_aux, p)
+
+  }else{
+    cli_alert_info(col_silver("Cargando datos de Montecarlo: {.path data-workflow/intermediate-data/PhD_03_montecarlo.RData}."))
+    load(file = here::here("data-workflow", "intermediate-data",
+                           "PhD_03_montecarlo.RData"))
+    replic <- attr(db_mont, "replic_montecarlo")
+    cli_alert_info(col_silver("Replicaciones Montecarlo: {replic}"))
+  }
+
+  cli_li(col_yellow("Armado de base con datos de replicaciones Montecarlo."))
+  RAD <- db_mont |>
+    rename_with(~str_remove(.x, "_p")) |>
+    # mutate(across(PRI:SUP,
+    #               ~ 2 * .x / (.x + 1) )) |>
+    group_by(ID_RADIO) |>
+    summarise(across(PRI:SUP,
+                     list(MEAN = ~mean(.x, na.rm = T),
+                          SD   = ~sd(.x, na.rm = T),
+                          q_ini = ~quantile(.x, probs = conf, na.rm = T),
+                          q_fin = ~quantile(.x, probs = 1 - conf, na.rm = T)))) |>
+    full_join(RAD, by = "ID_RADIO") |>
+    mutate(
+      # Primario
+      PRI_sig_down = PRI_p1 < PRI_q_ini,
+      PRI_sig_up   = PRI_p1 > PRI_q_fin,
+      PRI_sig      = PRI_sig_down | PRI_sig_up,
+      PRI_p3 = ifelse(PRI_sig, PRI_p1, NA) ,
+      # Secundario
+      SEC_sig_down = SEC_p1 < SEC_q_ini,
+      SEC_sig_up   = SEC_p1 > SEC_q_fin,
+      SEC_sig      = SEC_sig_down | SEC_sig_up,
+      SEC_p3 = ifelse(SEC_sig, SEC_p1, NA),
+      # Superior
+      SUP_sig_down = SUP_p1 < SUP_q_ini,
+      SUP_sig_up   = SUP_p1 > SUP_q_fin,
+      SUP_sig      = SUP_sig_down | SUP_sig_up,
+      SUP_p3 = ifelse(SUP_sig, SUP_p1, NA) ) |>
+    # Reordenar datos
+    nest(PRI_IC = c(PRI_q_ini, PRI_q_fin),
+         SEC_IC = c(SEC_q_ini, SEC_q_fin),
+         SUP_IC = c(SUP_q_ini, SUP_q_fin)) |>
+    relocate(PRI_p3, starts_with("PRI_sig"), PRI_MEAN, PRI_SD, PRI_IC,
+             SEC_p3, starts_with("SEC_sig"), SEC_MEAN, SEC_SD, SEC_IC,
+             SUP_p3, starts_with("SUP_sig"), SUP_MEAN, SUP_SD, SUP_IC,
+             .after =  last_col()) |>
+    # Agregar atributos con información sobre columnas Montecarlo
+    mutate(across(ends_with("p3"),
+                  ~set_attributes(.x, list(montecarlo = c(replic = replic,
+                                                          conf = conf))) )
+           )
+
+  rm(conf, replic, forzar)
+  rm(db_mont)
 
 # ╚ Base de segregación por RADIO (Ls) -------------------------------
 
@@ -216,13 +317,12 @@ if(!exists("CARTO", inherits = F)){
   rm(RAD, local_seg)
   rm(CENSO)
 
-  cli_alert_info(col_silver("Guradando {.path data-workflow/intermediate-data/PhD_03_carto-censo.RData}."))
+  cli_alert_info(col_silver("Guradando {.path data-workflow/intermediate-data/PhD_04_carto-censo.RData}."))
   save(CARTO,
        file = here::here("data-workflow", "intermediate-data",
-                         "PhD_03_carto-censo.RData"))
+                         "PhD_04_carto-censo.RData"))
 
   cli_alert_info(col_silver("Guradando datos finales {.path HOG.rda} y {.path CENSO_CON.rda}."))
-  # usethis::use_data(HOG, CENSO_CON, overwrite = TRUE, internal = FALSE)
   save(HOG, file = here::here("data-workflow", "final-data", "HOG.rda"))
   save(CENSO_CON, file = here::here("data-workflow", "final-data", "CENSO_CON.rda"))
   rm(HOG, CENSO_CON)

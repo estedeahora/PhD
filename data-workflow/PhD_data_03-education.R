@@ -7,12 +7,12 @@ if(!exists("CARTO", inherits = F) || is.null(CARTO$RADIO[["ls"]])){
   cli_alert_info(
     col_silver(
       paste0("Cargando cartografía",
-             ": {.path data-workflow/intermediate-data/PhD_03_carto-censo.RData}.")
+             ": {.path data-workflow/intermediate-data/PhD_04_carto-censo.RData}.")
     )
   )
 
   load(here::here("data-workflow", "intermediate-data",
-                  "PhD_03_carto-censo.RData"))
+                  "PhD_04_carto-censo.RData"))
 }
 
 ### ╠ Mapa Educativo Nacional -----------------------------
@@ -187,7 +187,6 @@ if(!exists("CARTO", inherits = F) || is.null(CARTO$RADIO[["ls"]])){
   rm(ESC_RA, ESC_APR)
 
   cli_alert_info(col_silver("Guradando datos finales {.path CARTO.rda}."))
-  # usethis::use_data(CARTO, overwrite = TRUE, internal = FALSE)
   save(CARTO, file = here::here("data-workflow", "final-data", "CARTO.rda"))
 
   rm(CARTO)

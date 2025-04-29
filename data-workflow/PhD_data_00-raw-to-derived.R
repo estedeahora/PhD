@@ -3,21 +3,27 @@
 # Command Line Interfaces
 library(cli)
 library(fs)
+library(tictoc)
 
 # Read data
 library(readxl)
 # install.packages("inborutils", repos = c(inbo = "https://inbo.r-universe.dev",
 #                                          CRAN = "https://cloud.r-project.org"))
-library(inborutils)
+library(inborutils)   # Descarga de Zotero
 
 # data wrangling
 library(tidyverse)
 library(data.table)
 library(magrittr)
+library(progressr)    # barra de progreso
+
+# Parallel processing
+library(future)
+library(furrr)
 
 # Spatial data handling
 library(sf)
-library(nngeo)
+library(nngeo)        # remove holes
 
 # Download data
 library(osmdata)
@@ -97,3 +103,11 @@ source(here::here("data-workflow", "PhD_data_03-education.R"), encoding = "UTF-8
 # -> ENMODO = list(HOG, PER, VIA, ETA)
 
 source(here::here("data-workflow", "PhD_data_04-mobility.R"), encoding = "UTF-8")
+
+# Elementos auxiliares
+# -------------------*
+# -> AUX = list(lim_AMBA,
+#               lim_DETAILS = list(ZN1, ZN2, ZN3, ZN4),
+#               ZN = list(ZN1, ZN2, ZN3, ZN4))
+
+source(here::here("data-workflow", "PhD_data_05-auxiliary.R"), encoding = "UTF-8")
