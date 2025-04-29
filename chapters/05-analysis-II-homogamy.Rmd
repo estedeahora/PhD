@@ -10,54 +10,43 @@ editor_options:
 
 <!--# Se introducen los antecedentes respecto a la relación entre segregación en el dominio residencial y homogamia. En particular se analiza cómo la homogamia / heterogamia puede reforzar / matizar la segregación en el dominio residencial. -->
 
-Niveles de la segregación: segregación dentro del hogar y dentro del
-barrio
+En el capítulo anterior describimos los patrones de segregación en el
+dominio residencial. Estos patrones refuerzan y consolidan desigualdades
+sociales históricas, generando un uso desigual del espacio. En este
+capítulo pretendemos profundizar este análisis, enfocando sobre cómo la
+homogamia puede reforzar la segregación residencial.
 
-<!--# USADO EN CAP 3 -->
-
-En este trabajo analizamos la homogamia como un factor que refuerza las
-condiciones de segregación en el ámbito residencial. En este sentido,
-podemos entender esto como parte de un análisis multi-nivel de la
-segregación [@VanHam2018].
-
-Respecto a la relación entre estos aspectos, podemos destacar que
-existen diversos trabajos que analizan la segregación residencial y la
+Existen diversos trabajos que analizan la segregación residencial y la
 homogamia de forma conjunta [@Duncan1959; @Morgan1981; @Peach1974;
 @Peach1980], dando cuenta de cómo ambos aspectos están fuertemente
 asociados. En sintonía con estos resultados, los trabajos actuales
 identifican que una mayor exposición con personas de grupos distintos
 aumenta las probabilidades de conformación de parejas mixtas
 [@Kalmijn2010; @Puur2022], aunque existen menos trabajos que indaguen
-sobre cómo se da esta relación. A nivel local, los trabajos sobre
-estratificación han profundizado poco la relación con los aspectos
-residenciales [una excepción es el trabajo de @carrascosa2023]. Más allá
-de esta relación, estos estudios señalan un crecimiento durante las
-últimas décadas de la homogamia conyugal, siendo más significativa este
-cambio para los grupos sociales extremos [@GomezRojas2007; @Mazzeo2012;
-@Rodriguez2011b; @Rodriguez2012a; @Rodriguez2016e].
+sobre cómo se da esta relación.
 
-Medir la segrgación dentro del hogar (homogamia).
+A nivel local, los trabajos sobre estratificación han profundizado poco
+la relación con los aspectos residenciales [una excepción es el trabajo
+de @carrascosa2023]. Más allá de esta relación, estos estudios señalan
+un crecimiento durante las últimas décadas de la homogamia conyugal,
+siendo más significativa este cambio para los grupos sociales extremos
+[@GomezRojas2007; @Mazzeo2012; @Rodriguez2011b; @Rodriguez2012a;
+@Rodriguez2016e].
 
-<!-- Aporte del capítulo (original: DALLE) -->
+Respecto a la homogamia en el AMGBA, los trabajos de @Mazzeo2012a sobre
+la CABA y de Santiago Rodríguez [-@Rodriguez2012; -@Rodriguez2012a;
+-@Rodriguez2016e] y @Carrascosa2023 sobre el AMGBA identifican una pauta
+selectiva de las uniones matrimoniales, que otorga preferencia a las
+uniones con homogamia educativa. A su vez, estos trabajos identifican
+que las pautas de homogamia son más fuertes en los extremos de la
+estructura educativa y que las uniones mixtas son menos probables entre
+los grupos más distantes en términos educativos.
 
-El capítulo pretende ser un aporte novedoso en al menos cuatro aspectos.
-En primer lugar, hasta el momento existen pocos trabajos locales que
-hayan vinculado la segregación residencial y la homogamia [el único que
-encontramos es el trabajo reciente de @Carrascosa2023], por lo cual,
-nuestro trabajo puede ser un aporte para avanzar en el análisis de esta
-problemática localmente. En segundo lugar, a nivel teórico el análisis
-conjunto de la segregación residencial y la homogamia, puede aportar
-elementos para el conocimiento de los procesos de estratificación social
-y movilidad social. Asimismo, esto puede contribuir a la formulación de
-políticas públicas orientadas a promover el acceso igualitario a las
-oportunidades de vida, la integración social y reducir la segregación en
-la ciudad. En tercer lugar, el trabajo pretende contribuir teóricamente
-en el estudio de la segregación multi-dominio, aportando nuevos dominios
-y elementos para pensar la relación entre estos dominios. Por último, el
-trabajo propone indicadores novedosos para medir espacialmente la
-homogamia con datos censales, a la vez que una metodología no utilizada
-anteriormente para analizar la relación entre homogamia y segregación
-residencial basada en una prueba Montecarlo.
+En este trabajo analizamos la homogamia como un factor que refuerza las
+condiciones de segregación en el ámbito residencial. En este sentido,
+podemos entender esto como parte de un análisis multi-nivel de la
+segregación [@VanHam2018]. Niveles de la segregación: segregación dentro
+del hogar y dentro del barrio
 
 <!-- Fragmento: Dalle -->
 
@@ -76,20 +65,6 @@ relacionan, puede tener implicancias en la formación de las identidades
 colectivas y la integración social de los grupos.
 
 <!-- Fin Dalle -->
-
-Respecto a la homogamia (o segregación conyugal) en el AMGBA, los
-trabajos de @Mazzeo2012a sobre la CABA y de Santiago Rodríguez
-[-@Rodriguez2012; -@Rodriguez2012a; -@Rodriguez2016e] y @Carrascosa2023
-sobre el AMGBA identifican una pauta selectiva de las uniones
-matrimoniales, que otorga preferencia a las uniones con homogamia
-educativa. A su vez, estos trabajos identifican que las pautas de
-homogamia son más fuertes en los extremos de la estructura educativa y
-que las uniones mixtas son menos probables entre los grupos más
-distantes en términos educativos.
-
-<!--# Connubium y homofilia. La segregación en los vínculos sociales -->
-
-<!--# Dalle -->
 
 <!-- Homogamia y estratificación social -->
 
@@ -146,11 +121,171 @@ conformación de parejas mixtas [@Puur2022; @Kalmijn2010].
 
 <!--#  Retomando estos trabajos, nos interesa analizar en qué medida la segregación residencial y la segregación conyugal puede reforzarse mutuamente en el AMGBA. En particular, y desde una perspectiva multi-dominio de la segregación, nos interesa indagar como ambas formas de la segregación constituyen un círculo vicioso o, por el contrario, refuerzan diferentes aspectos de la segregación urbana.ined -->
 
-<!--# FIN Dalle -->
-
 ## Presentación de la metodología de análisis
 
 <!--# Se describe el método utilizado para analizar el efecto  de la homogamia sobre la segregación en el ámbito residencial. Esta consiste en analizar la composición de cada unidad espacial, y medir cuál sería el porcentaje de homogamia conyugal esperable si hubiera un emparejamiento aleatorio. Comparando este valor (y sus intervalos de confianza) con la homogamia real, se puede establecer en qué unidades espaciales hay un emparejamiento selectivo. -->
+
+<!-- Metodología II: Homogamia -->
+
+Como señalan @Solis2010 y Rodríguez [@Rodriguez2016e; @Rodriguez2016c],
+los estudios cuantitativos que analizan la homogamia habitualmente
+trabajan a partir de tablas de contingencia 'de hecho' en las que se
+relacionan las características de ambos cónyuges. Estas tablas se
+utilizan para construir medidas absolutas (a partir de la frecuencia de
+los diferentes tipos de uniones) y relativas de la homogamia (mediante
+el uso de regresiones log-lineales).[^05-analysis-ii-homogamy-1] Como
+señala @Solis2010 [p. 58], este abordaje "macro" puede ser un límite
+para relacionar la homogamia con otras características de la población o
+para analizar la distribución espacial del fenómeno. Como alternativa,
+el reciente trabajo de @Carrascosa2023 propone un conjunto de
+indicadores para medir la distribución territorial de la homogamia
+educativa en el AMBA. En este trabajo, proponen calcular para cada
+unidad censal tres indicadores: (a) el porcentaje de hogares con
+homogamia educativa ($\%HogH$); (b) el porcentaje de homogamia educativo
+para cada nivel educativo 'i' ($\%HogH_i$); y (c) la
+'homogamia/heterogamia modal' del radio, es decir, la combinación
+conyugal de niveles educativos que tiene el mayor porcentaje en el radio
+(y caracteriza categóricamente al radio). Este enfoque permite un
+análisis espacializado de la homogamia en base a datos censales, sin
+embargo está sesgado debido a que los indicadores utilizados dependen de
+la cantidad de personas de cada nivel educativo que existen en cada
+unidad censal. De hecho, estos indicadores son una *espacialización* de
+las 'medidas absolutas' (usadas en el enfoque clásico de la homogamia).
+
+[^05-analysis-ii-homogamy-1]: Este tipo de análisis es similar al que se
+    realiza dentro de los estudios sobre movilidad social
+    intergeneracional en base a las tablas de movilidad social y que
+    permiten diferenciar entre 'movilidad absoluta' y 'movilidad
+    relativa' o 'fluidez' [ver @Goldthorpe2016; @Solis2016].
+
+Para afrontar estas limitaciones, proponemos un abordaje parcialmente
+diferente que se basa en el cálculo de probabilidad de homogamia,
+considerando la composición de cada unidad censal. En concreto
+calculamos la probabilidad de que dada una persona con el nivel
+educativo 'i', esté emparejada con otra persona del mismo nivel
+educativo (ver Figura \@ref(fig:scheme1)). Esto puede expresarse como
+una probabilidad condicional $P(H_i|i) = \frac{\sum H_i}{\sum i}$, donde
+$\sum i$ es la cantidad de personas con nivel educativo `i`; y
+$\sum H_i$ representa la cantidad de estas personas que están en pareja
+con otra persona del tipo `i`.[^05-analysis-ii-homogamy-2] Este
+indicador tiene la ventaja de considerar la participación del grupo
+dentro de la unidad censal, a la vez que mantiene la posibilidad de ser
+utilizado de forma local para caracterizar las unidades espaciales. Para
+obtener la significación de este estimador, podemos comparar su valor
+con la probabilidad que obtendríamos si, manteniendo las proporciones de
+cada nivel educativo dentro de cada unidad censal, los emparejamientos
+se produjeran sin considerar el nivel educativo de la otra persona (es
+decir de forma aleatoria). Para ello generamos para cada unidad censal
+una simulación Montecarlo (`r # AUX$replic` replicaciones) de la
+probabilidad de homogamia que tendría cada grupo si se mantuvieran las
+proporciones de cada grupo y el porcentaje de hogares conyugales, pero
+las uniones conyugales se produjeran de modo aleatorio (considerando que
+dentro de cada radio un porcentaje variable de los hogares son
+no-conyugales). En esta prueba la hipótesis nula ($H_0$) es que la
+probabilidad de homogamia obtenida de los datos es aleatoria con un
+cierto nivel de confianza $c$ (`r # 1-AUX$conf`), es decir, que su valor
+está contenido dentro de los cuantiles de la distribución obtenida en la
+simulación. Alternativamente, si el valor obtenido de los datos es mayor
+/ menor que estos umbrales podemos considerar que la probabilidad de
+homogamia obtenida es significativamente diferente de la que se
+generaría por un emparejamiento aleatorio y, por lo tanto, podemos
+apoyar la idea de que existe un emparejamiento selectivo (con una
+confianza $c$). Más allá de una pequeña variabilidad relacionada con la
+presencia de hogares no-conyugales, bajo la hipótesis nula ($H_0$) la
+probabilidad de homogamia es aproximadamente igual a la proporción de
+personas de ese grupo educativo en la unidad espacial (si $H_0$ es
+verdadera, entonces:
+$P(H_i|i) \approx 0 + 1.\frac{\sum i}{N} = \frac{\sum i}{N}$, ver [Anexo
+D](#appendixD))
+
+[^05-analysis-ii-homogamy-2]: Un indicador alternativo, basado en el
+    hogar en lugar de en las personas, es calcular la probabilidad de
+    que dado un hogar conyugal con un integrante del nivel educativo
+    'i', el otro miembro también tenga el nivel educativo 'i'. En el
+    [Anexo B](#appendixB) desarrollamos y comparamos estas medidas,
+    demostrando que ambas generan resultados similares y la conversión
+    entre ambas preserva el orden (la función que vincula ambas es
+    estrictamente monotónica). La elección en favor del indicador
+    adoptado en este trabajo se basa en que, como veremos más adelante,
+    cuando simulamos un comportamiento aleatorio de los emparejamientos,
+    este indicador presenta una relación lineal (con constante 0 y
+    pendiente 1) con respecto a la cantidad de personas de ese nivel
+    educativo en el radio. Esto nos facilita la comparación entre ambas
+    variables, lo cual será central en nuestro trabajo. Como
+    contrapartida, el indicador elegido toma como unidad de análisis a
+    la persona, en lugar de al 'hogar conyugal', lo cual podría ser poco
+    conveniente en relación a aquellos enfoques de estratificación
+    social que consideran al hogar como núcleo para analizar la
+    reproducción social [@Gutierrez2011; @Bourdieu2014a]. Sin embargo,
+    más allá de este problema de interpretación teórica del indicador,,
+    repetimos que ambos indicadores están vinculados monotónicamente,
+    con lo cual la elección entre uno u otro no cambia los resultados
+    obtenidos en el trabajo (aunque sí la facilidad de su
+    interpretación).
+
+```{r scheme1}
+#| fig.cap: "Esquema explicativo del cálculo de probabilidad de homogamia"
+#| fig.asp: 0.87
+
+include_graphics(here::here("figures","HOM_scheme-method.png") )
+```
+
+<!--  Metodología III: Segregación multi-nivel -->
+
+Desde un abordaje que analiza conjuntamente el nivel de segregación
+residencial y la homogamia matrimonial, @Peach1980 propuso calcular la
+correlación de Pearson entre el índices de disimilitud para cada par de
+grupos y el "grado" en que se generan matrimonios entre estos
+grupos.[^05-analysis-ii-homogamy-3] Si bien esta propuesta resulta
+interesante y se acerca al objetivo de nuestro trabajo, no permite
+captar el aspecto espacial del problema, en tanto tiene como supuesto
+que el comportamiento de los grupos es homogéneo en los diferentes
+lugares. A su vez, la metodología fue desarrollada para estudiar la
+relación entre 9 grupos étnicos, lo que permitía calcular para cada
+grupo la correlación entre 8 índices de disimilitud y 8 ratios de
+homogamia. En nuestro caso usamos tres categorías para el nivel de
+estudio, lo cual nos deja con sólo 2 puntos para correlacionar (que
+siempre establecerán una relación lineal perfecta). Por último, al igual
+que el porcentaje de hogares homogámicos por tipo, esta medida depende
+de la cantidad de personas de cada grupo social, por lo cual puede
+llevar a resultados
+sesgados.<!--# Por su parte, el trabajo de @Carrascosa2023, relaciona el porcentaje de hogares con homogamia (ver arriba) con el porcentaje de hogares NBI de cada unidad censal, principalmente a partir del uso del coeficiente de correlación de Pearson. Si bien el trabajo propone un acercamiento al estudio de la relación entre segregación y homogamia, este aspecto no es profundizado. -->
+Como respuesta a estas limitaciones, en este trabajo proponemos comparar
+la probabilidad de homogamia ($P(H_i|i)$) y la participación de cada
+grupo educativo en la unidad espacial. Como señalamos anteriormente, el
+Índice de Información Mutua ($M$) mide cuánto se diferencia la
+distribución local de los grupos respecto a la distribución global, por
+lo cual analizar la participación de cada grupo educativo en cada unidad
+espacial es una manera de analizar la segregación local. A su vez, dado
+que bajo la hipótesis nula ($H_0$) la probabilidad de homogamia es
+aproximadamente igual a la proporción de personas de ese grupo
+educativo, es posible estimar qué proporción de la homogamia observada
+corresponde al tamaño de ese grupo en la unidad espacial y qué
+porcentaje corresponde a un efecto propio de la homogamia educativa.
+Teniendo en cuenta esta relación definimos el porcentaje de "homogamia
+no-explicada" (por la proporción del grupo en la unidad censal) a 1
+menos la razón entre ambas variables:$$
+\text{\% Homogamia no-explicada}=1-\frac{\text{Proporción del grupo i}}{\text{Probabilidad de homogamia del grupo i}} = 1-\frac{\sum i}{N.P(H_i|i)}
+$$
+
+[^05-analysis-ii-homogamy-3]: @Peach1980 utiliza una medida de la
+    heterogamia que se basa en calcular el ratio entre las frecuencias
+    observadas ($f_o$) y las frecuencias esperadas
+    ($f_e = \frac{f_{i*}f_{*j}}{N}$) de la tabla de matrimonios. Los
+    ratios fueron escaladas entre 0 y 2, manteniendo 1 para los casos en
+    los que $f_e=f_o$. En este sentido, se realiza una "corrección" de
+    los valores mayores a 1 (mayor valor observado que esperado) tomando
+    $max(f_{i*};f_{*j})$ como referencia para el valor máximo posible.
+    Los valores menores a 1 (mayor valor esperado que observado) se
+    mantuvieron con el valor original ($\frac{f_o}{f_e}$).
+
+Este indicador representa el porcentaje de homogamia que no es explicado
+por la composición del grupo en la unidad espacial y que, por lo tanto,
+puede atribuirse a una preferencia hacia la homogamia educativa en los
+vínculos conyugales. Mientras mayor sea este valor, mayor es la
+importancia de la homogamia como mecanismo de segregación, independiente
+de la composición de los grupos en la unidad espacial y, por lo tanto,
+de la segregación residencial.
 
 ## La relación entre selección de pareja y segregación en el dominio residencial
 
@@ -158,25 +293,24 @@ conformación de parejas mixtas [@Puur2022; @Kalmijn2010].
 
 <!-- Homogamia global AMGBA -->
 
-Retomando estos hallazgos, nuestros resultados indican que en el AMBA el
-`r # round(RES$HOM1$MAT_p[RES$HOM1$E == "TOTAL"], 1)`% de las hogares
+Nuestros resultados indican que en el AMBA el
+`r round(HOM$HOM1$CON_p[HOM$HOM1$E == "TOTAL"], 1)`% de las hogares
 tienen un núcleo conyugal presente, de los cuales el
-`r #round(RES$HOM1$POR_h[RES$HOM1$E == "TOTAL"], 1)`% tienen ambos
+`r round(HOM$HOM1$POR_h[HOM$HOM1$E == "TOTAL"], 1)`% tienen ambos
 miembros con el mismo nivel educativo, es decir, presentan *homogamia
 educativa*. Cuando descomponemos el porcentaje de homogamia según el
 nivel educativo de los cónyuges, vemos que el
-`r # round(RES$HOM1$POR_h_PRI[RES$HOM1$E == "TOTAL"], 1)`% de los
-hogares conyugales está conformado por parejas donde ambos tienen nivel
+`r round(HOM$HOM1$POR_h_PRI[HOM$HOM1$E == "TOTAL"], 1)`% de los hogares
+conyugales está conformado por parejas donde ambos tienen nivel
 primario, mientras que el
-`r # round(RES$HOM1$POR_h_SEC[RES$HOM1$E == "TOTAL"], 1)`% y el
-`r # round(RES$HOM1$POR_h_SUP[RES$HOM1$E == "TOTAL"], 1)`% corresponde a
+`r round(HOM$HOM1$POR_h_SEC[HOM$HOM1$E == "TOTAL"], 1)`% y el
+`r round(HOM$HOM1$POR_h_SUP[HOM$HOM1$E == "TOTAL"], 1)`% corresponde a
 parejas donde ambos tienen nivel educativo secundario y superior,
 respectivamente. A su vez, una persona con nivel educativo primario
 tiene una probabilidad de
-`r # round(RES$HOM1$PRI_p[RES$HOM1$E == "TOTAL"], 3)` de estar en un
-hogar conyugal homogámico, mientras que esa probabilidad está en torno
-al
-`r # paste0(round(RES$HOM1[RES$HOM1$E == "TOTAL", c("SEC_p", "SUP_p")], 3), collapse = "/")`%
+`r round(HOM$HOM1$PRI_p[HOM$HOM1$E == "TOTAL"], 3)` de estar en un hogar
+conyugal homogámico, mientras que esa probabilidad está en torno al
+`r paste0(round(HOM$HOM1[HOM$HOM1$E == "TOTAL", c("SEC_p", "SUP_p")], 3), collapse = "/")`%
 para los otros dos niveles educativos. En este sentido, para las
 personas con nivel educativo primario la probabilidad de homogamia es
 significativamente más alta que para el resto de los niveles educativos.
@@ -187,22 +321,22 @@ significativamente mayor que el esperado (Ver [Anexo C](#appendixC)).
 Por el contrario, las parejas mixtas se comportan en sentido contrario,
 con la excepción de las parejas entre personas con nivel secundario y
 nivel superior que tienen un valor observado un poco mayor que el
-esperado (sin alcanzar los niveles de las parejas homogámicas).
+esperado (sin alcanzar los niveles de las parejas homog
 
 <!-- Homogamia global por distrito -->
 
 Cuando analizamos la situación en función de las dos jurisdicciones
 principales que componen el AMGBA (\@ref(tab:HOM-TAB1)), la primera
 observación es que la CABA presenta un
-`r # round(RES$HOM1$MAT_p[RES$HOM1$E == "CABA"], 1)`% de hogares
+`r round(HOM$HOM1$CON_p[HOM$HOM1$E == "CABA"], 1)`% de hogares
 conyugales, mientras que en los Partidos del GBA este porcentaje es
 sensiblemente mayor
-(`r # round(RES$HOM1$MAT_p[RES$HOM1$E == "PBA"], 1)`%). A su vez, en los
+(`r round(HOM$HOM1$CON_p[HOM$HOM1$E == "PBA"], 1)`%). A su vez, en los
 Partidos del GBA también es mayor el porcentaje total de homogamia
 educativa, donde esta representa el
-`r # round(RES$HOM1$POR_h[RES$HOM1$E == "PBA"], 1)`% de los hogares
+`r round(HOM$HOM1$POR_h[HOM$HOM1$E == "PBA"], 1)`% de los hogares
 conyugales, mientras que este indicador es del
-`r # round(RES$HOM1$POR_h[RES$HOM1$E == "CABA"], 1)`% en la CABA. A su
+`r round(HOM$HOM1$POR_h[HOM$HOM1$E == "CABA"], 1)`% en la CABA. A su
 vez, la composición de esta homogamia es muy diferente en cada una de
 las jurisdicciones: mientras en los Partidos del GBA se explica
 fundamentalmente por las parejas con nivel primario (las parejas con
@@ -216,19 +350,18 @@ puede ser muy diferente en cada distrito. Como respuesta a esto hemos
 propuesto utilizar un nuevo indicado: la probabilidad de que una persona
 tenga una pareja con su mismo nivel educativo. Utilizando este indicador
 encontramos que en los Partidos del GBA una persona con nivel primario
-tiene una probabilidad
-`r # round(RES$HOM1$PRI_p[RES$HOM1$E == "PBA"], 3)` de estar en pareja
-con alguien de ese mismo nivel educativo, mientras que para los otros
-dos niveles, esta probabilidad ronda el
-`r # round(RES$HOM1$SEC_p[RES$HOM1$E == "PBA"], 2)`. Por su parte, en la
+tiene una probabilidad `r round(HOM$HOM1$PRI_p[HOM$HOM1$E == "PBA"], 3)`
+de estar en pareja con alguien de ese mismo nivel educativo, mientras
+que para los otros dos niveles, esta probabilidad ronda el
+`r round(HOM$HOM1$SEC_p[HOM$HOM1$E == "PBA"], 2)`. Por su parte, en la
 CABA, la probabilidad de homogamia para las personas con nivel primaria
 también es la más alta que para los otros niveles educativos
-(`r # round(RES$HOM1$PRI_p[RES$HOM1$E == "CABA"], 3)`), pero
-sensiblemente menor que en los Partidos del GBA. A su vez, la
-probabilidad de homogamia para personas con nivel superior es
-relativamente cercana a la probabilidad de la de las personas con nivel
-primario (`r # round(RES$HOM1$SUP_p[RES$HOM1$E == "CABA"], 3)`), siendo
-las personas con nivel secundario las que tienen una probabilidad menor.
+(`r round(HOM$HOM1$PRI_p[HOM$HOM1$E == "CABA"], 3)`), pero sensiblemente
+menor que en los Partidos del GBA. A su vez, la probabilidad de
+homogamia para personas con nivel superior es relativamente cercana a la
+probabilidad de la de las personas con nivel primario
+(`r round(HOM$HOM1$SUP_p[HOM$HOM1$E == "CABA"], 3)`), siendo las
+personas con nivel secundario las que tienen una probabilidad menor.
 
 En resumen, encontramos que en ambas jurisdicciones las personas con
 nivel educativo primario son las que tienen mayor probabilidad de tener
@@ -241,35 +374,7 @@ primario o superior tienen mayor probabilidad de ser homogámicos.
 
 ```{r HOM-TAB1}
 
-# RES$HOM1[10:12, ] |> 
-#     mutate(across(c(MAT_p:POR_h_SUP), ~round(.x, 1)),
-#            across(c(PRI_p:SUP_p), ~round(.x, 3)),
-#            emp = NA) |> 
-#     select(1:7, emp, 8:10) |> 
-#     flextable() |> 
-#     set_caption(caption = "Indicadores de homogamia educativa según jurisdiccion",
-#                 autonum = run_autonum(seq_id = "tab", bkm = "HOM-TAB1", 
-#                                       bkm_all = T))  |> 
-#     add_header_row(values = c("Jurisdiccion", "Cantidad de hogares",
-#                               "Porcentaje de hogares conyugales", 
-#                               "Porcentaje de homogamia", 
-#                               " ",
-#                               "Probabilidad de homogamia"), 
-#                    colwidths = c(1, 1, 1, 4, 1, 3)) |> 
-#     set_header_labels(E = "Jurisdiccion", HOG = "Cantidad de hogares",
-#                       MAT_p = "Porcentaje de hogares conyugales",
-#                       POR_h = "Total", POR_h_PRI = "Primario", 
-#                       POR_h_SEC = "Secundario", POR_h_SUP = "Superior",
-#                       emp = " ",  PRI_p = "Primario", 
-#                       SEC_p = "Secundario", SUP_p = "Superior") |> 
-#     merge_v(j = c(1:3, 8), part = "header") |> 
-#     align(align ='center', part = 'all') |> 
-#     align(j = 1, align ='left', part = 'all')  |>  
-#     colformat_double(j = 2, digits = 0) |> 
-#     colformat_double(j = 3:7, digits = 1, suffix = "%") |> 
-#     colformat_double(j = 9:11, digits = 3) |> 
-#     bold(i = 3, part = "body") |> 
-#     autofit()
+HOM$TAB1
 ```
 
 Cuando consideramos la probabilidad de homogamia según el entorno urbano
@@ -302,7 +407,7 @@ los entornos.
 #| fig.cap: "Densidad de la probabilidad de homogamia de los radios según nivel educativo y Entorno urbano"
 #| fig.asp: 0.81
 
-# include_graphics("figures/Homogamia_probabilidad-densidad-x-TH.png")
+include_graphics(here::here("figures", "Homogamia_probabilidad-densidad-x-TH.png"))
 ```
 
 En continuidad con este análisis podemos, para cada uno de las
@@ -361,12 +466,12 @@ selectivo).
 En primer lugar, el porcentaje de radios que tienen una probabilidad de
 homogamia aleatoria (es decir, no-significativa) es mucho mayor respecto
 al nivel superior que para el nivel secundario y el nivel primario. En
-este sentido, un `r # round(RES$HOM4[[3, "no_signific"]])`% de los
+este sentido, un `r # round(HOM$HOM4[[3, "no_signific"]])`% de los
 radios tienen una probabilidad de homogamia de nivel superior que se
 corresponde con la que obtendríamos si los emparejamientos de este grupo
 fueran aleatorios, mientras que para el nivel secundario y el nivel
-primario el porcentaje es de `r # round(RES$HOM4[[2, "no_signific"]])`%
-y `r # round(RES$HOM4[[1, "no_signific"]])`%, respectivamente. Esto
+primario el porcentaje es de `r # round(HOM$HOM4[[2, "no_signific"]])`%
+y `r # round(HOM$HOM4[[1, "no_signific"]])`%, respectivamente. Esto
 supone que en casi un cuarto de los radios las personas de nivel
 superior no tienen un emparejamiento que podamos definir como selectivo.
 Un segundo elemento a considerar es que, si nos concentramos en los
@@ -378,37 +483,7 @@ comportamiento aleatorio.
 
 ```{r HOM-TAB2}
 
-# RES$HOM4 |> 
-#   mutate(nivel = factor(nivel, levels = c("PRI", "SEC", "SUP"),
-#                         labels = c("Primario", "Secundario", "Superior"))) |> 
-#   flextable() |> 
-#   set_caption(caption = "Porcentaje de unidades espaciales con probabilidad de homogamia significativamente diferente de H0",
-#               autonum = run_autonum(seq_id = "tab", bkm = "HOM-TAB2", 
-#                                     bkm_all = T))  |> 
-#   add_header_row(values = c("Nivel", 
-#                             "Significativamente diferentes de H0",
-#                             "No Significativos"),
-#                  colwidths = c(1, 3, 1)) |>
-#   set_header_labels(nivel = "Nivel", down = "Debajo", up = "Sobre",
-#                     signific = "Total", 
-#                     no_signific = "No Significativos") |> 
-#   merge_v(j = c(1, 5), part = "header") |>
-#   align(align ='center', part = 'all') |> 
-#   align(j = 1, align ='left', part = 'all')  |>  
-#   colformat_double(j = 2:5, digits = 2, suffix = "%") |> 
-#   bg(j = 2:3, part = "body", bg = "grey90") |> 
-#   color(j = 2:3, part = "body", color = "grey50") |> 
-#   add_footer_lines(as_paragraph(as_b("Notas:"))) |> 
-#   add_footer_lines(paste0("Valores obtenidos mediante ", 
-#                           format(AUX$replic, big.mark = "."),
-#                           " replicaciones Montecarlo. ", 
-#                           "Nivel de confianza: ", 1 - AUX$conf)) |> 
-#   footnote(j = 2, i = 1, part = "header", 
-#            ref_symbols = "*", inline = F,
-#            value = as_paragraph(paste0("Porcentaje de simulaciones con valores ",
-#                           "por debajo / sobre el ", 1 - AUX$conf, 
-#                           " de las simulaciones"))) |> 
-#   autofit()
+HOM$TAB2
 ```
 
 En resumen, como destacan estudios anteriores, la homogamia conyugal en
@@ -458,13 +533,13 @@ todos los grupos educativos?
 Para abordar estas preguntas, la Figura \@ref(fig:MD-NOEXP) presenta,
 para cada nivel educativo, la relación entre la proporción de personas
 de ese nivel educativo y su probabilidad de
-homogamia.[^05-analysis-ii-homogamy-1] En la parte izquierda de la
+homogamia.[^05-analysis-ii-homogamy-4] En la parte izquierda de la
 figura se agrega la regresión cuadrática entre ambas variables
 ($y = a + b.x + c.x^2$) y en los márgenes la densidad de cada una de las
 variables. Además, para facilitar la lectura de la relación entre estas
 variables, en el lado derecho de la figura incluimos el porcentaje de
 homogamia no explicada por la proporción de personas de ese grupo en
-cada unidad censal.[^05-analysis-ii-homogamy-2] Como señalamos en el
+cada unidad censal.[^05-analysis-ii-homogamy-5] Como señalamos en el
 apartado metodológico, este indicador nos muestra en qué medida la
 homogamia actúa como un mecanismo de segregación independiente de la
 composición de los grupos. En este sentido, expresa qué porcentaje de la
@@ -473,7 +548,7 @@ de las unidades espaciales y, por lo tanto, puede ser atribuido a
 mecanismos de emparejamiento conyugal homogámicos independientes a la
 dinámica residencial.
 
-[^05-analysis-ii-homogamy-1]: Las líneas verticales punteadas indican la
+[^05-analysis-ii-homogamy-4]: Las líneas verticales punteadas indican la
     participación de cada grupo educativo en la población total. Como
     señalamos en el apartado metodológico, el *Índice de Información
     Mutua* es una media ponderada de cuánto 'se aleja' cada unidad
@@ -482,7 +557,7 @@ dinámica residencial.
     participación más disímil de la del promedio aportan, en principio,
     mayor segregación al conjunto.
 
-[^05-analysis-ii-homogamy-2]: En color gris señalamos las unidades
+[^05-analysis-ii-homogamy-5]: En color gris señalamos las unidades
     espaciales que no tienen una probabilidad de homogamia significativa
     (es decir, en los cuales $H_0$ es comprobada). Dado que la
     probabilidad de homogamia y la proporción de personas de un grupo es
