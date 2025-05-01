@@ -14,7 +14,7 @@ PhD_homog_montecarlo <- function(seed = 123, db, replace = F, p = NULL){
   db_HOG <-  db |>
     tidyr::pivot_wider(id_cols = c("ID_RADIO", "VIVIENDA_REF_ID", "HOGAR_REF_ID"),
                        names_from = "REL", values_from = "s" ) |>
-    dplyr::mutate(HOM = ifelse(CON == PSH, T, F),
+    dplyr::mutate(HOM = CON == PSH,
                   P1 = pmin(PSH, CON),
                   P2 = pmax(PSH, CON),
                   # EDU: MNI del hogar (sea conyugal o no)
