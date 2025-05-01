@@ -67,7 +67,8 @@ monofontoptions: "Scale=0.7"
 
 knitr::opts_chunk$set(echo = FALSE,
                       message = FALSE, 
-                      warning = FALSE)
+                      warning = FALSE,
+                      out.width = "100%")
 
 options(knitr.kable.NA = '')
 
@@ -83,14 +84,6 @@ library(tidyverse)
 library(knitr)
 library(flextable)
 library(here)
-```
-
-```{r data}
-
-```
-
-```{r fx}
-# source(here::here("script/00_fx.R"), encoding = "UTF-8")
 ```
 
 # Algunas palabras iniciales {.unnumbered}

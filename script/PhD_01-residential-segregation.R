@@ -1,14 +1,31 @@
 # Residential segregation
-#
-# ggplot(CARTO$RADIO) +
-#   geom_sf(data = CARTO$AMGBA) +
-#   geom_sf(aes(fill = TH), color = NA) +
-#   theme_void()
-
 
 cli::cli_h2(col_blue("Análisis de Segregación Residencial"))
 
 RES <- list()
+
+# Cargar datos --------------------------------------
+
+if(!exists("CARTO", inherits = F)){
+  f <- here::here("data-workflow", "final-data", "CARTO.rda")
+  cli_alert_info(
+    col_silver("Cargando cartografía (`CARTO`): {.path {fs::path_rel(f)}}")
+    )
+
+  load(file = f)
+  rm(f)
+}
+
+if(!exists("AUX", inherits = F)){
+  f <- here::here("data-workflow", "final-data", "AUX-data.rda")
+
+  cli_alert_info(
+    col_silver("Cargando datos auxiliares (`AUX`): {.path {fs::path_rel(f)}}")
+  )
+
+  load(file = f)
+  rm(f)
+}
 
 # Preparar datos ------------------------------------
 
@@ -24,7 +41,7 @@ RES <- list()
 # Análisis de segregación residencial -------------------------------
 ### ╠ Segregación residencial global (listado de indicadores) ------------------
 
-  cli::cli_li(col_yellow("Calcular segregación residencial global."))
+  cli::cli_li(col_yellow("Calcular segregación residencial global (SEG1)."))
 
   RES$SEG1 <- PhD_seg_summarise(db_aux1, filtro = ".") |>
     left_join(PhD_seg_summarise(db_aux1, filtro = "02"), by = "Index") |>
@@ -33,7 +50,7 @@ RES <- list()
 
 ### ╠ Segregación Between-Within (Provincias / Departamento / entorno) ---------
 
-  cli::cli_li(col_yellow("Calcular segregación Between-Within."))
+  cli::cli_li(col_yellow("Calcular segregación Between-Within (SEG2)."))
 
   db_aux2 <- db_aux1 |>
     select(ID_RADIO, IDPROV, IDDPTO, TH, PRI:SUP) |>
@@ -49,7 +66,8 @@ RES <- list()
 
 ### ╠ Aporte de cada grupo social ----------------------------------
 
-  cli::cli_li(col_yellow("Calcular aporte de cada grupo educativo a la segregación."))
+  cli::cli_li(col_yellow(paste0("Calcular aporte de cada grupo educativo",
+                                "a la segregación (SEG3).")))
 
   RES$SEG3 <- segregation::mutual_local(db_aux2,
                                         unit = "name",
@@ -60,7 +78,7 @@ RES <- list()
 
 ### ╚ Within de cada Entorno urbano -------------------
 
-  cli::cli_li(col_yellow("Calcular segregación dentro de cada Entorno urbano"))
+  cli::cli_li(col_yellow("Calcular segregación dentro de cada Entorno urbano (SEG4)."))
 
   RES$SEG4 <- left_join(
     db_aux2 |>
@@ -89,7 +107,7 @@ RES <- list()
 
 ### ╠ Distribución espacial de la segregación local (M) ----------------
 
-  cli::cli_li(col_yellow("Distribución espacial de la segregación local (M)"))
+  cli::cli_li(col_yellow("Figure: Distribución espacial de la segregación local"))
 
   FFCC1 <- CARTO$FFCC1 |> filter(linea_2 == "Sarmiento")
   FFCC2 <- CARTO$FFCC2 |> filter(linea == "Sarmiento")
@@ -155,7 +173,7 @@ RES <- list()
 
 ### ╠ Distribución de grupos en CA ----------------
 
-  cli::cli_li(col_yellow("Distribución de grupos en CA"))
+  cli::cli_li(col_yellow("Figure: Distribución de grupos en CA"))
 
   res_CA <- db_aux1 |>
     select(PRI, SEC, SUP) |>
@@ -220,7 +238,7 @@ RES <- list()
 
 ### ╚ Distribución espacial de grupos con CA ----------------------------------------------------
 
-  cli::cli_li(col_yellow("Distribución espacial de grupos con CA"))
+  cli::cli_li(col_yellow("Figure: Distribución espacial de grupos con CA"))
 
   p3_AMBA <- CARTO$RADIO |>
     left_join(db_aux1[c("ID_RADIO", "color")], by = "ID_RADIO") |>

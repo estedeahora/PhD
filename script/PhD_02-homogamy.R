@@ -1,11 +1,124 @@
-# Homogamia
+# Homogamy
+
+cli::cli_h2(col_blue("Análisis de Homogamia (HOM)"))
 
 HOM <- list()
 
-# Homogamia -----------------------------------
+# Cargar datos --------------------------------------
+
+if(!exists("CARTO", inherits = F)){
+  f <- here::here("data-workflow", "final-data", "CARTO.rda")
+  cli_alert_info(
+    col_silver("Cargando cartografía (`CARTO`): {.path {fs::path_rel(f)}}")
+  )
+
+  load(file = f)
+  rm(f)
+}
+
+if(!exists("AUX", inherits = F)){
+  f <- here::here("data-workflow", "final-data", "AUX-data.rda")
+
+  cli_alert_info(
+    col_silver("Cargando datos auxiliares (`AUX`): {.path {fs::path_rel(f)}}")
+  )
+
+  load(file = f)
+  rm(f)
+}
+
+if(!exists("HOG", inherits = F)){
+  f <- here::here("data-workflow", "final-data", "HOG.Rda")
+
+  cli_alert_info(
+    col_silver("Cargando datos de hogares (`HOG`): {.path {fs::path_rel(f)}}")
+  )
+
+  load(file = f)
+  rm(f)
+}
+
+# Preparar datos --------------------------------------------------------
+
+  cli::cli_li(col_yellow("Crear bases de datos auxiliares"))
+
+  limit <- 30
+  replic <- CARTO$RADIO$PRI_p3 |> attributes() |> pluck("montecarlo") |> pluck("replic")
+  conf <-  CARTO$RADIO$PRI_p3 |> attributes() |> pluck("montecarlo") |> pluck("conf")
+
+  db_aux <- CARTO$RADIO |>
+    st_drop_geometry() |>
+    filter(!is.na(TH) & !is.na(HOG_HOM)) |>
+    select(ID_RADIO, TH, ls,
+           starts_with("HOG"),
+           ends_with("_p1"),
+           ends_with("_p3"),
+           ends_with("_IC"),
+           ends_with("_sig"),
+           ends_with("_MEAN"),
+           ends_with("_SD")) |>
+    unnest(ends_with("_IC")) |>
+    mutate(across(HOG_PRI:HOG_SUP,
+                  ~ .x/HOG)) |>
+    select(ID_RADIO, TH, ls,
+           starts_with("HOG"),
+           -HOG_color,
+           starts_with("PRI"),
+           starts_with("SEC"),
+           starts_with("SUP")) |>
+    rename_with(.cols = starts_with("HOG_"),
+                .fn = ~ str_c(str_remove(.x, "HOG_"), "_HOG"))
+
+  db_aux1 <- db_aux |>
+    pivot_longer(cols = c(PRI_p1, SEC_p1, SUP_p1,
+                          PRI_HOG, SEC_HOG, SUP_HOG,
+                          PRI_MEAN, SEC_MEAN, SUP_MEAN,
+                          PRI_sig, SEC_sig, SUP_sig) ) |>
+    mutate(tipo = case_when(str_ends(name, "_p1") ~ "Probabilidad",
+                            str_ends(name, "_HOG") ~ "Proporcion",
+                            str_ends(name, "_MEAN") ~ "Montecarlo",
+                            str_ends(name, "_sig") ~ "Significatividad"),
+           g = str_sub(name, 1, 3) ) |>
+    pivot_wider(id_cols = c(ID_RADIO, TH, g),
+                names_from = tipo,
+                values_from = value) |>
+    mutate(g = factor(g,
+                      levels = c("PRI", "SEC", "SUP"),
+                      labels = c("Primario", "Secundario", "Superior") ),
+           Significatividad = as.logical(Significatividad),
+           Probabilidad_2 = ifelse(Significatividad, Probabilidad, Proporcion),
+           dif = Probabilidad - Proporcion,
+           dif2 = Probabilidad - Montecarlo,
+           Ratio =  Proporcion / Probabilidad,
+           Ratio2 =  Proporcion / Probabilidad_2,
+           Ratio3 = ifelse(is.infinite(Ratio),
+                           1 - abs(rnorm(n = length(is.infinite(Ratio)),
+                                         mean = 0, sd = 0.30)),
+                           Ratio),
+           Ratio4 = Montecarlo / Probabilidad)
+
+  modelo <- lm(Probabilidad_2 ~ g + Proporcion + g * Proporcion + g * I(Proporcion^2),
+               data = db_aux1 |> filter(!is.na(Significatividad) & (Proporcion > 0.05 | Significatividad)))
+
+  db_aux1 <- db_aux1 |>
+    mutate(predict = predict(object = modelo, db_aux1),
+           resid = Probabilidad_2 - predict)
+
+  db_aux2 <- CARTO$RADIO |>
+    left_join(db_aux1 |>
+                filter(!is.na(Significatividad)) |>
+                select(ID_RADIO, g, Ratio),
+              by = join_by(ID_RADIO)) |>
+    mutate(Ratio = ifelse(is.infinite(Ratio), 1,  Ratio ))
+
+  rm(modelo)
+
+# Análisis de Homogamia -------------------------------
 ### ╠ Porcentaje de viviendas con parejas homogámicas ------------------
   # Porcentaje de homogamia y distancia educativa promedio sobre
   #   el total de parejas (no incluye hogares no-matrimoniales)
+
+  cli::cli_li(col_yellow("Calcular indicadores globales de homogamia (HOM1)."))
 
   HOM$HOM1 <- rbind(HOG |> PhD_homog_summarise(TH),
                     HOG |> PhD_homog_summarise(PROV),
@@ -22,6 +135,8 @@ HOM <- list()
   # No diferencia Varón y Mujer
   #   (P1 y P2 son ordenados en función del que tenga mayor Nivel educativo)
 
+  cli::cli_li(col_yellow("Generar tabla matrimonial global (HOM2)."))
+
   HOM$HOM2 <-  HOG |>
     mutate(P1 = ifelse(is.na(P1), EDU, P1 )) |>
     count(P1, P2)
@@ -34,6 +149,8 @@ HOM <- list()
   #               values_from = n)
 
 ### ╠ Análisis Chi.square -------------------------------------------------
+
+  cli::cli_li(col_yellow("Calcular Chi-square de tabla de homogamia (HOM3)."))
 
   tabla_mat <- HOM$HOM2 |>
     filter(!is.na(P2)) |>
@@ -52,7 +169,10 @@ HOM <- list()
                          B = 10000)
   rm(tabla_mat)
 
-### ╠ Porcentaje de Radios con Probabilidad de homogamia no-significativa -----------
+### ╚ Porcentaje de Radios con Probabilidad de homogamia no-significativa -----------
+
+  cli::cli_li(col_yellow(paste0("Calcular porcentaje de radios con probabilidad",
+                                "de homogamia no-significativa (HOM4).")))
 
   HOM$HOM4 <- CARTO$RADIO |>
     st_drop_geometry() |>
@@ -67,7 +187,11 @@ HOM <- list()
     mutate(signific = down + up,
            no_signific = 100 - signific)
 
+# Figuras ---------------------------------
+
 ### ╠ Density plot de probabilidad de homogamia por entorno urbano ----------
+
+  cli::cli_li(col_yellow("Figure: Densidad de la probabilidad de homogamia."))
 
   p1_TOT <- CARTO$RADIO |>
     filter(!is.na(TH)) |>
@@ -129,7 +253,7 @@ HOM <- list()
                             p1_TOT + scale_x_continuous("") + guides(color = "none"),
                             p_blank,
                             p1_TAB, p_blank,
-                            nrow = 1, widths = c(2, 6, 1, 5, 2)),
+                            nrow = 1, widths = c(1.5, 6, 1, 5, 2)),
                   p1_TH,
                   nrow = 2, heights = c(4, 8) )
 
@@ -140,8 +264,11 @@ HOM <- list()
 
   rm(HOM_aux, p1, p1_TOT, p1_TAB, p1_TH, p_blank)
 
-### ╚ Distribución espacial de la probabilidad de homogamia (por tipo) ----------------
+### ╠ Distribución espacial de la probabilidad de homogamia (por tipo) ----------------
   ### Local analysis (spatialized analysis)
+
+  cli::cli_li(col_yellow(paste0("Figure: Distribución espacial de ",
+                                "la probabilidad de homogamia.")))
 
   p2_vln <- CARTO$RADIO |>
     st_drop_geometry() |>
@@ -165,121 +292,335 @@ HOM <- list()
           panel.grid.major = element_blank(),
           panel.grid.minor = element_blank())
 
-  # p2_AMBA <- CARTO$RADIO |>
-  #   filter(!is.na(n_hom) & !is.na(TH)) |>
-  #   pivot_longer(cols = c("PRI_p3", "SEC_p3", "SUP_p3"),
-  #                names_to = "variable", values_to = "value") |>
-  #   mutate(value = ifelse(n_con >= AUX$limit, value, NA) ) |>
-  #   ggplot() +
-  #   geom_point(data = data.frame(x = 1, y = 1),
-  #              aes(x = x, y = y, size = ""), shape = NA, colour = "grey70")+
-  #   geom_sf(data = CARTO$AMGBA, #aes(color = ""),
-  #           fill = NA, alpha = 0.4) +
-  #   geom_sf(aes(fill  = value), linewidth = 0.01, color = NA) +
-  #   geom_sf(data = CARTO$DPTO, color = "grey80", fill = NA) +
-  #   scale_fill_distiller("Probabilidad de\nhomogamia",
-  #                        palette = "RdPu", direction = 1,
-  #                        na.value = "grey70") +
-  #   facet_wrap(~variable, strip.position = "bottom") +
-  #   coord_sf(xlim = AUX$AMGBA_lim[c(1,3)],
-  #            ylim = AUX$AMGBA_lim[c(2,4)]) +
-  #   guides(size = guide_legend("No significativo", order = 2,
-  #                              override.aes = list(shape = 15, size = 15)),
-  #          fill = guide_colorbar(order = 1)) +
-  #   theme_void() +
-  #   theme(legend.position="bottom",
-  #         strip.text = element_blank(),
-  #         legend.key.height = unit(1.2, 'cm'),
-  #         legend.key.width = unit(1.8, 'cm'),
-  #         legend.title = element_text(size = 16)
-  #   )
-  #
-  # p2 <- ggarrange(p2_vln, p2_AMBA,
-  #                 nrow = 2,  heights = c(2, 7),
-  #                 common.legend = T, legend = "bottom")
-  #
-  # ggsave(filename = here::here("figures", "Homogamia_probabilidad-x-tipo.png",
-  #        plot = p2,
-  #        height = 18 * 1.5, width = 38 * 1.5, units = "cm", dpi = 300)
-  #
-  # rm(p2_vln, p2_AMBA, p2)
+  p2_AMBA <- CARTO$RADIO |>
+    filter(!is.na(HOG_HOM) & !is.na(TH)) |>
+    pivot_longer(cols = c("PRI_p3", "SEC_p3", "SUP_p3"),
+                 names_to = "variable", values_to = "value") |>
+    mutate(value = ifelse(HOG_CON >= limit, value, NA) ) |>
+    ggplot() +
+    geom_point(data = data.frame(x = 1, y = 1),
+               aes(x = x, y = y), shape = NA, colour = "grey70")+
+    geom_sf(data = CARTO$AMGBA, #aes(color = ""),
+            fill = NA, alpha = 0.4) +
+    geom_sf(aes(fill  = value), linewidth = 0.01, color = NA) +
+    geom_sf(data = CARTO$DPTO, color = "grey80", fill = NA) +
+    scale_fill_distiller("Probabilidad de\nhomogamia",
+                         palette = "RdPu", direction = 1,
+                         na.value = "grey70") +
+    facet_wrap(~variable, strip.position = "bottom") +
+    coord_sf(xlim = AUX$lim_AMBA[c(1,3)],
+             ylim = AUX$lim_AMBA[c(2,4)]) +
+    guides(size = guide_legend("No significativo", order = 2,
+                               override.aes = list(shape = 15, size = 15)),
+           fill = guide_colorbar(order = 1)) +
+    theme_void() +
+    theme(legend.position="bottom",
+          strip.text = element_blank(),
+          legend.key.height = unit(1.2, 'cm'),
+          legend.key.width = unit(1.8, 'cm'),
+          legend.title = element_text(size = 16)
+    )
 
+  p2 <- ggarrange(p2_vln, p2_AMBA,
+                  nrow = 2,  heights = c(2, 7),
+                  common.legend = T, legend = "bottom")
+
+  ggsave(filename = here::here("figures", "Homogamia_probabilidad-x-tipo.png"),
+         plot = p2,
+         height = 18 * 1.5, width = 38 * 1.5, units = "cm", dpi = 300)
+
+  rm(p2_vln, p2_AMBA, p2)
+
+### ╠ Ratio entre proporción y probabilidad de homogamia -----------
+
+  cli::cli_li(col_yellow("Figure: Ratio probabilidad y proporción de homogamia"))
+
+  p3_center <- db_aux1 |>
+    filter(!is.na(Significatividad) & (Proporcion > 0.05 | Significatividad)) |>
+    ggplot(aes(x = Proporcion, y = Probabilidad, color = g, group = g )) +
+    geom_abline(slope = 1, linetype = 2, alpha = 0.4, color = "grey30") +
+    geom_point(alpha = 0.02) +
+    geom_vline(data = pivot_longer((RES$SEG4[10, 2:4]/100), cols = everything(),
+                                   names_to = "g", values_to = "intercept") |>
+                 mutate(g = factor(g,
+                                   levels = c("PRI", "SEC", "SUP"),
+                                   labels = c("Primario", "Secundario", "Superior") ) ),
+               aes(xintercept = intercept, color = g),
+               alpha = 0.7, linetype = 2) +
+    geom_smooth(aes(y = Probabilidad_2),
+                color = "grey40", linewidth = 0.3, fill = "grey20",
+                method = "lm", formula = y ~ poly(x, 2)) +
+    geom_point(aes(y = predict), alpha = 0.01) +
+    annotate("text", x = 0.22, y = 0.2 , color = "grey45",
+             angle = 45, label = latex2exp::TeX("Hipotesis nula ($H_0$)") ) +
+    scale_x_continuous(name = "Proporción del grupo en la unidad censal",
+                       limits = c(0, 1), expand = c(0,0)) +
+    scale_y_continuous(name = "Probabilidad de homogamia",
+                       limits = c(0, 1), expand = c(0,0)) +
+    scale_color_manual(values = c("tomato3", "goldenrod1", "darkolivegreen4")) +
+    coord_fixed() +
+    theme_minimal() +
+    theme(legend.position = "none")
+
+  p3_marg <- ggExtra::ggMarginal(p3_center, type = "density",
+                            groupColour = TRUE, groupFill = TRUE)
+
+  p3_marg <- ggarrange(p3_marg |> as_ggplot(),
+                  ggplot(data.frame()) +
+                    geom_point(x = NA, y = NA,
+                               aes(color = c("Primario", "Secundario", "Superior")) ) +
+                    scale_color_manual(values = c("tomato3", "goldenrod1", "darkolivegreen4")) +
+                    labs(color = "Nivel") +
+                    theme_minimal(),
+                  widths = c(10,0),
+                  common.legend = T,
+                  legend = "bottom")
+
+  p3_add1 <- db_aux1 |>
+    filter(!is.na(Significatividad) & (Proporcion > 0.05 | Significatividad)) |>
+    ggplot(aes(x= Proporcion, y = 1-Ratio4, color = g)) +
+    geom_smooth(se = F, linewidth = 0.4,
+                method = 'glm', formula = y ~ sqrt(x) ) +
+    geom_smooth(se = F, linewidth = 0.4, color = "grey60", linetype = 2,
+                method = 'glm', formula = y ~ sqrt(x) ) +
+    facet_wrap(~"Total", ncol = 1, strip.position="right") +
+    scale_color_manual(values = c("tomato3", "goldenrod1", "darkolivegreen4")) +
+    guides(color = "none") +
+    scale_x_continuous(name = NULL, limits = c(0, 1), expand = c(0, 0)) +
+    scale_y_continuous(name = "", limits = c(0, 1), expand = c(0, 0),
+                       labels = scales::percent) +
+    theme_light() +
+    theme(panel.background = element_rect(fill = 'transparent'),
+          plot.background = element_rect(fill='transparent', color = NA),
+          panel.grid.major = element_blank(),
+          panel.grid.minor = element_blank(),
+          strip.background = element_rect(fill="lightblue4"),
+          axis.text.x  = element_blank(),
+          axis.ticks.x = element_blank() )
+
+  p3_add2 <- db_aux1 |>
+    filter(!is.na(Significatividad) & (Proporcion > 0.05 | Significatividad)) |>
+    ggplot(aes(x= Proporcion, y = 1-Ratio4, color = g)) +
+    geom_point(alpha = 0.01) +
+    geom_point(data = db_aux1 |> filter(!Significatividad & (Proporcion > 0.05 | Significatividad)),
+               color = "grey50", alpha = 0.05, shape = 4) +
+    geom_smooth(aes(y = 1-Ratio4, group = g),
+                color = "grey25", se = T, linewidth = 0.4,
+                method = 'glm', formula = y ~ sqrt(x)   ) +
+    facet_wrap(~g, ncol = 1, strip.position="right") +
+    scale_color_manual(values = c("tomato3", "goldenrod1", "darkolivegreen4")) +
+    guides(color = "none") +
+    scale_x_continuous(name = "Proporción del grupo \nen la unidad espacial",
+                       limits = c(0, 1), expand = c(0,0)) +
+    scale_y_continuous(name = "Porcentaje de homogamia no-explicada",
+                       limits = c(0, 1), expand = c(0,0),
+                       labels = scales::percent) +
+    theme_light() +
+    theme(strip.text.x = element_text(size = 8),
+          panel.background = element_rect(fill = 'transparent'),
+          plot.background = element_rect(fill='transparent', color = NA),
+          strip.background = element_rect(fill="lemonchiffon4"),
+          panel.grid.major = element_blank(),
+          panel.grid.minor = element_blank())
+
+  # ggarrange(p3_add1, p3_add2, ncol = 1, heights = c(1, 4))
+  p_blank <- ggplot() + theme_minimal()
+
+  p3 <- ggarrange(p3_marg,
+                  ggarrange(p3_add1, p3_add2, p_blank,
+                            ncol = 1, heights = c(1, 4, 0.35)),
+                  widths = c(3,1.2))
+
+  ggsave(here::here("figures",
+                    "Multidomain_por-vs-prob_prop+0.05.png"),
+         p3, width = 27.5, height = 22, units = "cm", dpi = 300)
+
+  rm(p3, p3_center, p3_marg, p_blank, p3_add1, p3_add2)
+
+### ╠ Distribución espacial de Ratio e/proporción y probabilidad de homogamia ------------------------------------------
+
+  p4 <- db_aux2 |>
+    filter(!is.na(g)) |>
+    ggplot() +
+    geom_sf(data = CARTO$AMGBA, fill = "white", alpha = 0.5) +
+    geom_sf(aes(fill  = (1-Ratio)* 100), color = NA) +
+    scale_fill_gradient("% de Homogamia no-explicada",
+                        low = "wheat1", high = "indianred3",
+                        limits = c(0, 110)) +
+    facet_wrap(~g, strip.position = "bottom") +
+    coord_sf(xlim = AUX$lim_AMBA[c(1,3)],
+             ylim = AUX$lim_AMBA[c(2,4)]) +
+    theme_void() +
+    theme(legend.position="bottom")
+
+  ggsave(filename = here::here("figures",
+                               "Multidomain_homog-explicada.png"),
+         plot = p4, height = 13, width = 30, units = "cm", dpi = 300)
+
+  rm(p4)
+
+### ╠ Anexo C ---------------------------------------
+
+  l = 10000
+  p_aux <- data.frame(A = sample(x = 5:50, replace = T, size = l)) |>
+    mutate(HA = A * runif(n = l, min = 0, max = 0.5 ),
+           HA = round(HA) * 2) |>
+    distinct() |>
+    mutate(P_prima = HA/A,
+           P = P_prima / (2 - P_prima),
+           ratio = P_prima/ P,
+           ratio = ifelse(is.nan(ratio), NA, ratio) )
+
+  p5a <- p_aux |>
+    ggplot(aes(x = P_prima, y = P, color = ratio)) +
+    geom_point(alpha = 0.4) +
+    scale_color_viridis_c(option = "B", direction = 1, limits = c(1,2)) +
+    theme_minimal() +
+    labs(x = latex2exp::TeX("$P\\prime (H_a|a)$"),
+         y = "P(H|A)",
+         color = latex2exp::TeX("$Ratio_{(P\\prime/P)} = 2-P\\prime$")) +
+    geom_text(x = 0.25, y = 0.75, parse = TRUE, size = 7, color = "black",
+              label = latex2exp::TeX("$P(H|A) = \\frac{P\\prime(H_a|a)}{2-P\\prime(H_a|a)}$",
+                                     output = "character"))+
+    theme(legend.position = "bottom")
+
+  p5b <- p_aux |>
+    filter(P != 0) |>
+    ggplot(aes(x = P_prima, y = ratio, color = P)) +
+    geom_point() +
+    labs(x = latex2exp::TeX("$P\\prime (H_a|a)$"),
+         y = latex2exp::TeX("$Ratio_{(P\\prime/P)}$"),
+         color = "P(H|A)") +
+    scale_color_viridis_c(option = "D", direction = 1) +
+    theme_minimal() +
+    theme(legend.position = "bottom")
+
+  ggsave(plot = ggpubr::ggarrange(p5a, p5b),
+         filename = here::here("figures", "Multidomain_ratio-P-prima.png"),
+         height = 20, width = 30, dpi = 300, units = "cm")
+
+  rm(p5a, p5b)
+  rm(p_aux, l)
+
+### ╚ Anexo D ---------------------------------------
+
+  p6 <- db_aux |>
+    pivot_longer(cols = c(PRI_MEAN, SEC_MEAN, SUP_MEAN,
+                          PRI_HOG, SEC_HOG, SUP_HOG) ) |>
+    mutate(tipo = ifelse(str_ends(name, "_MEAN"), "Probabilidad", "Proporción"),
+           g = case_when(str_detect(name, "PRI") ~ "PRI",
+                         str_detect(name, "SEC") ~ "SEC",
+                         str_detect(name, "SUP") ~ "SUP")) |>
+    pivot_wider(id_cols = c(ID_RADIO, TH, g),
+                names_from = tipo, values_from = value) |>
+    ggplot(aes(x = Proporción, y = Probabilidad, color = g)) +
+    geom_point(alpha = 0.05) +
+    geom_smooth(se = F, linewidth = 0.5,
+                method = "lm", formula = y ~ poly(x, 2)) +
+    geom_abline(slope = 1, linetype = 2, alpha = 0.4, color = "grey30") +
+    scale_x_continuous("Proporción del grupo en la unidad censal") +
+    scale_y_continuous(unname(latex2exp::TeX( "Probabilidad e homogamia bajo $H_0$"))) +
+    scale_color_manual(values = c("tomato3", "goldenrod1", "darkolivegreen4")) +
+    theme_minimal() +
+    coord_fixed() +
+    guides(color = "none")
+
+  ggsave(here::here("figures", "Multidomain_por-vs-prob-H0.png"),
+         plot = p6, width = 19, height = 19, units = "cm", dpi = 300)
+
+  rm(p6)
 
 ### Tablas ------------------------------
 
   # ╠ Tabla 5.1 ---------------------------------
 
   HOM$TAB1 <- HOM$HOM1[10:12, ] |>
-      mutate(across(c(CON_p:POR_h_SUP), ~round(.x, 1)),
-             across(c(PRI_p:SUP_p), ~round(.x, 3)),
-             emp = NA) |>
-      select(1:7, emp, 8:10) |>
-      flextable() |>
-      set_caption(caption = "Indicadores de homogamia educativa según jurisdiccion",
-                  autonum = run_autonum(seq_id = "tab", bkm = "HOM-TAB1",
-                                        bkm_all = T))  |>
-      add_header_row(values = c("Jurisdiccion", "Cantidad de hogares",
-                                "Porcentaje de hogares conyugales",
-                                "Porcentaje de homogamia",
-                                " ",
-                                "Probabilidad de homogamia"),
-                     colwidths = c(1, 1, 1, 4, 1, 3)) |>
-      set_header_labels(E = "Jurisdiccion", HOG = "Cantidad de hogares",
-                        CON_p = "Porcentaje de hogares conyugales",
-                        POR_h = "Total", POR_h_PRI = "Primario",
-                        POR_h_SEC = "Secundario", POR_h_SUP = "Superior",
-                        emp = " ",  PRI_p = "Primario",
-                        SEC_p = "Secundario", SUP_p = "Superior") |>
-      merge_v(j = c(1:3, 8), part = "header") |>
-      align(align ='center', part = 'all') |>
-      align(j = 1, align ='left', part = 'all')  |>
-      colformat_double(j = 2, digits = 0) |>
-      colformat_double(j = 3:7, digits = 1, suffix = "%") |>
-      colformat_double(j = 9:11, digits = 3) |>
-      bold(i = 3, part = "body") |>
-      autofit()
-
+    mutate(across(c(CON_p:POR_h_SUP), ~round(.x, 1)),
+           across(c(PRI_p:SUP_p), ~round(.x, 3)),
+           emp = NA) |>
+    select(1:7, emp, 8:10) |>
+    flextable::flextable() |>
+    flextable::set_caption(caption = "Indicadores de homogamia educativa según jurisdiccion",
+                           autonum = officer::run_autonum(seq_id = "tab",
+                                                          bkm = "HOM-TAB1",
+                                                          bkm_all = T))  |>
+    flextable::add_header_row(values = c("Jurisdiccion", "Cantidad de hogares",
+                                         "Porcentaje de hogares conyugales",
+                                         "Porcentaje de homogamia",
+                                         " ",
+                                         "Probabilidad de homogamia"),
+                              colwidths = c(1, 1, 1, 4, 1, 3)) |>
+    flextable::set_header_labels(E = "Jurisdiccion", HOG = "Cantidad de hogares",
+                                 CON_p = "Porcentaje de hogares conyugales",
+                                 POR_h = "Total", POR_h_PRI = "Primario",
+                                 POR_h_SEC = "Secundario", POR_h_SUP = "Superior",
+                                 emp = " ",  PRI_p = "Primario",
+                                 SEC_p = "Secundario", SUP_p = "Superior") |>
+    flextable::merge_v(j = c(1:3, 8), part = "header") |>
+    flextable::align(align ='center', part = 'all') |>
+    flextable::align(j = 1, align ='left', part = 'all')  |>
+    flextable::colformat_double(j = 2, digits = 0) |>
+    flextable::colformat_double(j = 3:7, digits = 1, suffix = "%") |>
+    flextable::colformat_double(j = 9:11, digits = 3) |>
+    flextable::bold(i = 3, part = "body") |>
+    flextable::font(fontname='Alegreya Sans', part = "all") |>
+    flextable::fontsize(size = 9, part = "all") |>
+    # flextable::autofit()
+    flextable::width(j = 1, 1.5, unit = "cm") |>
+    flextable::width(j = 2, 1.9, unit = "cm") |>
+    flextable::width(j = 3, 2.1, unit = "cm") |>
+    flextable::width(j = 4:7, 1.5, unit = "cm") |>
+    flextable::width(j = 8, 0.1, unit = "cm") |>
+    flextable::width(j = 9:11, 1.5, unit = "cm")
 
   # ╚ Tabla 5.2 ---------------------------------
 
   HOM$TAB2 <- HOM$HOM4 |>
     mutate(nivel = factor(nivel, levels = c("PRI", "SEC", "SUP"),
                           labels = c("Primario", "Secundario", "Superior"))) |>
-    flextable() |>
-    set_caption(caption = "Porcentaje de unidades espaciales con probabilidad de homogamia significativamente diferente de H0",
-                autonum = run_autonum(seq_id = "tab", bkm = "HOM-TAB2",
-                                      bkm_all = T))  |>
-    add_header_row(values = c("Nivel",
-                              "Significativamente diferentes de H0",
-                              "No Significativos"),
-                   colwidths = c(1, 3, 1)) |>
-    set_header_labels(nivel = "Nivel", down = "Debajo", up = "Sobre",
-                      signific = "Total",
-                      no_signific = "No Significativos") |>
-    merge_v(j = c(1, 5), part = "header") |>
-    align(align ='center', part = 'all') |>
-    align(j = 1, align ='left', part = 'all')  |>
-    colformat_double(j = 2:5, digits = 2, suffix = "%") |>
-    bg(j = 2:3, part = "body", bg = "grey90") |>
-    color(j = 2:3, part = "body", color = "grey50") |>
-    add_footer_lines(as_paragraph(as_b("Notas:"))) |>
-    add_footer_lines(paste0("Valores obtenidos mediante ",
-                            format(AUX$replic, big.mark = "."),
-                            " replicaciones Montecarlo. ",
-                            "Nivel de confianza: ", 1 - AUX$conf)) |>
-    footnote(j = 2, i = 1, part = "header",
-             ref_symbols = "*", inline = F,
-             value = as_paragraph(paste0("Porcentaje de simulaciones con valores ",
-                            "por debajo / sobre el ", 1 - AUX$conf,
-                            " de las simulaciones"))) |>
-    autofit()
+    flextable::flextable() |>
+    flextable::set_caption(caption = "Porcentaje de unidades espaciales con probabilidad de homogamia significativamente diferente de H0",
+                           autonum = officer::run_autonum(seq_id = "tab",
+                                                          bkm = "HOM-TAB2",
+                                                          bkm_all = TRUE))  |>
+    flextable::add_header_row(values = c("Nivel",
+                                         "Significativamente diferentes de H0",
+                                         "No Significativos"),
+                              colwidths = c(1, 3, 1)) |>
+    flextable::set_header_labels(nivel = "Nivel", down = "Debajo", up = "Sobre",
+                                 signific = "Total",
+                                 no_signific = "No Significativos") |>
+    flextable::merge_v(j = c(1, 5), part = "header") |>
+    flextable::align(align ='center', part = 'all') |>
+    flextable::align(j = 1, align ='left', part = 'all')  |>
+    flextable::colformat_double(j = 2:5, digits = 2, suffix = "%") |>
+    flextable::bg(j = 2:3, part = "body", bg = "grey90") |>
+    flextable::color(j = 2:3, part = "body", color = "grey50") |>
+    flextable::add_footer_lines(as_paragraph(as_b("Notas:"))) |>
+    flextable::add_footer_lines(paste0("Valores obtenidos mediante ",
+                                       format(replic, big.mark = "."),
+                                       " replicaciones Montecarlo. ",
+                                       "Nivel de confianza: ", 1 - conf)) |>
+    flextable::footnote(j = 2, i = 1, part = "header",
+                        ref_symbols = "*", inline = F,
+                        value = flextable::as_paragraph(paste0("Porcentaje de simulaciones con valores ",
+                                                               "por debajo / sobre el ", 1 - conf,
+                                                               " de las simulaciones"))) |>
+    flextable::font(fontname='Alegreya Sans', part = "all") |>
+    flextable::fontsize(size = 9, part = "all") |>
+    flextable::autofit()
 
-### Guardar resultados ----------------------------------------------------
+# Guardar resultados ----------------------------------------------------
 
-usethis::use_data(HOM, overwrite = TRUE)
+  HOM$replic <- replic
+  HOM$conf <- conf
 
+  usethis::use_data(HOM, overwrite = TRUE)
 
-# Multi domain: Segregación residencial y segregación conyugal ---------------------
+rm(db_aux, db_aux1, db_aux2)
+rm(limit, replic, conf)
+
+# Multi domain: Segregación residencial y segregación conyugal
 
 # Cuadrático (con no-significativos imputados a ratio 1)
 # gPRI:  0,44901 + 0,45858 * x + 0,04969 * x^2
@@ -301,186 +642,5 @@ usethis::use_data(HOM, overwrite = TRUE)
 # gSEC:  0,260907  + 0,723853  * x
 # gSUP:  0,286555  + 0,817905  * x
 
-### ╠ Preparar datos --------------------------------------------------------
 
-  MULTIDOM <- CARTO$RADIO |>
-    st_drop_geometry() |>
-    filter(!is.na(TH) & !is.na(n_hom)) |>
-    select(ID_RADIO, TH, ls,
-           ends_with("_head"),
-           ends_with("_p"),
-           ends_with("_p3"),
-           ends_with("_IC"),
-           ends_with("_sig"),
-           ends_with("_MEAN"),
-           ends_with("_SD")) |>
-    unnest(ends_with("_IC")) |>
-    mutate(across(PRI_head:SUP_head,
-                  ~ .x/(n_head))) |>
-    select(ID_RADIO, TH, ls, n_head,
-           starts_with("PRI"), starts_with("SEC"),
-           starts_with("SUP"))
 
-  MULTIDOM1 <- MULTIDOM |>
-    pivot_longer(cols = c(PRI_p, SEC_p, SUP_p,
-                          PRI_head, SEC_head, SUP_head,
-                          PRI_sig, SEC_sig, SUP_sig) ) |>
-    mutate(tipo = case_when(str_ends(name, "_p") ~ "Probabilidad",
-                            str_ends(name, "_head") ~ "Proporcion",
-                            str_ends(name, "_sig") ~ "Significatividad"),
-           g = str_sub(name, 1, 3) ) |>
-    pivot_wider(id_cols = c(ID_RADIO, TH, g),
-                names_from = tipo,
-                values_from = value) |>
-    mutate(g = factor(g,
-                      levels = c("PRI", "SEC", "SUP"),
-                      labels = c("Primario", "Secundario", "Superior") ),
-           Significatividad = as.logical(Significatividad),
-           Probabilidad_2 = ifelse(Significatividad, Probabilidad, Proporcion),
-           dif = Probabilidad - Proporcion,
-           Ratio =  Proporcion / Probabilidad,
-           Ratio2 =  Proporcion / Probabilidad_2,
-           Ratio3 = ifelse(is.infinite(Ratio),
-                           1 - abs(rnorm(n = length(is.infinite(Ratio)),
-                                         mean = 0, sd = 0.30)),
-                           Ratio) )
-
-  modelo <- lm(Probabilidad_2 ~ g + Proporcion + g * Proporcion + g * I(Proporcion^2),
-               data = MULTIDOM1 |> filter(!is.na(Significatividad) & (Proporcion > 0.05 | Significatividad)))
-
-  MULTIDOM1 <- MULTIDOM1 |>
-    mutate(predict = predict(object = modelo, MULTIDOM1),
-           resid = Probabilidad_2 - predict)
-
-  MULTIDOM2 <- CARTO$RADIO |>
-    left_join(MULTIDOM1 |>
-                filter(!is.na(Significatividad)) |>
-                select(ID_RADIO, g, Ratio),
-              by = join_by(ID_RADIO)) |>
-    mutate(Ratio = ifelse(is.infinite(Ratio), 1,  Ratio ))
-
-  rm(modelo)
-
-### ╠ Ratio entre proporción y probabilidad de homogamia -----------
-
-  p3 <- MULTIDOM1 |>
-    filter(!is.na(Significatividad) & (Proporcion > 0.05 | Significatividad)) |>
-    ggplot(aes(x = Proporcion, y = Probabilidad, color = g, group = g )) +
-    geom_abline(slope = 1, linetype = 2, alpha = 0.4, color = "grey30") +
-    geom_point(alpha = 0.02) +
-    geom_vline(data = pivot_longer((RES$SEG4[10, 2:4]/100), cols = everything(),
-                                   names_to = "g", values_to = "intercept") |>
-                 mutate(g = factor(g,
-                                   levels = c("PRI", "SEC", "SUP"),
-                                   labels = c("Primario", "Secundario", "Superior") ) ),
-               aes(xintercept = intercept, color = g),
-               alpha = 0.7, linetype = 2) +
-    geom_smooth(aes(y = Probabilidad_2),
-                color = "grey40", linewidth = 0.3, fill = "grey20",
-                method = "lm", formula = y ~ poly(x, 2)) +
-    geom_point(aes(y = predict), alpha = 0.01) +
-    annotate("text", x = 0.22, y = 0.2 , color = "grey45",
-             angle = 45, label = TeX("Hipotesis nula ($H_0$)") ) +
-    scale_x_continuous(name = "Proporción del grupo en la unidad censal",
-                       limits = c(0, 1), expand = c(0,0)) +
-    scale_y_continuous(name = "Probabilidad de homogamia",
-                       limits = c(0, 1), expand = c(0,0)) +
-    scale_color_manual(values = c("tomato3", "goldenrod1", "darkolivegreen4")) +
-    coord_fixed() +
-    theme_minimal() +
-    theme(legend.position = "none")
-
-  p3 <- ggMarginal(p3, type = "density",
-                   groupColour = TRUE, groupFill = TRUE)
-
-  p3 <- ggarrange(p3 |> as_ggplot(),
-                  ggplot(data.frame()) +
-                    geom_point(x = NA, y = NA,
-                               aes(color = c("Primario", "Secundario", "Superior")) ) +
-                    scale_color_manual(values = c("tomato3", "goldenrod1", "darkolivegreen4")) +
-                    labs(color = "Nivel") +
-                    theme_minimal(),
-                  widths = c(10,0),
-                  common.legend = T,
-                  legend = "bottom")
-
-  p3_add1 <- MULTIDOM1 |>
-    filter(!is.na(Significatividad) & (Proporcion > 0.05 | Significatividad)) |>
-    ggplot(aes(x= Proporcion, y = 1-Ratio2, color = g)) +
-    geom_smooth(se = F, linewidth = 0.4,
-                method = 'glm', formula = y ~ sqrt(x)   ) +
-    geom_smooth(se = F, linewidth = 0.4, color = "grey60", linetype = 2,
-                method = 'glm', formula = y ~ sqrt(x)  ) +
-    facet_wrap(~"Total", ncol = 1, strip.position="right") +
-    scale_color_manual(values = c("tomato3", "goldenrod1", "darkolivegreen4")) +
-    guides(color = "none") +
-    scale_x_continuous(name = NULL, limits = c(0, 1), expand = c(0, 0)) +
-    scale_y_continuous(name = "", limits = c(0, 1), expand = c(0, 0),
-                       labels = scales::percent) +
-    theme_light() +
-    theme(panel.background = element_rect(fill = 'transparent'),
-          plot.background = element_rect(fill='transparent', color = NA),
-          panel.grid.major = element_blank(),
-          panel.grid.minor = element_blank(),
-          strip.background = element_rect(fill="lightblue4"),
-          axis.text.x  = element_blank(),
-          axis.ticks.x = element_blank() )
-
-  p3_add2 <- MULTIDOM1 |>
-    filter(!is.na(Significatividad) & (Proporcion > 0.05 | Significatividad)) |>
-    ggplot(aes(x= Proporcion, y = 1-Ratio3, color = g)) +
-    geom_point(alpha = 0.01) +
-    geom_point(data = MULTIDOM1 |> filter(!Significatividad & (Proporcion > 0.05 | Significatividad)),
-               color = "grey50", alpha = 0.05, shape = 4) +
-    geom_smooth(aes(y = 1-Ratio2, group = g),
-                color = "grey25", se = T, linewidth = 0.4,
-                method = 'glm', formula = y ~ sqrt(x)   ) +
-    facet_wrap(~g, ncol = 1, strip.position="right") +
-    scale_color_manual(values = c("tomato3", "goldenrod1", "darkolivegreen4")) +
-    guides(color = "none") +
-    scale_x_continuous(name = "Proporción del grupo \nen la unidad espacial",
-                       limits = c(0, 1), expand = c(0,0)) +
-    scale_y_continuous(name = "Porcentaje de homogamia no-explicada",
-                       limits = c(0, 1), expand = c(0,0),
-                       labels = scales::percent) +
-    theme_light() +
-    theme(strip.text.x = element_text(size = 8),
-          panel.background = element_rect(fill = 'transparent'),
-          plot.background = element_rect(fill='transparent', color = NA),
-          strip.background = element_rect(fill="lemonchiffon4"),
-          panel.grid.major = element_blank(),
-          panel.grid.minor = element_blank())
-
-  # ggarrange(p1_add1, p1_add2, ncol = 1, heights = c(1, 4))
-  p_blank <- ggplot() + theme_minimal()
-
-  p3 <- ggarrange(p3,
-                  ggarrange(p3_add1, p3_add2, p_blank,
-                            ncol = 1, heights = c(1, 4, 0.35)),
-                  widths = c(3,1.2))
-
-  ggsave("figures/Multidomain_por-vs-prob_prop+0.05.png",
-         p3, width = 27.5, height = 22, units = "cm", dpi = 300)
-
-  rm(p3, p_blank, p3_add1, p3_final)
-
-### ╚ Distribución espacial de Ratio e/proporción y probabilidad de homogamia ------------------------------------------
-
-  # p4 <- MULTIDOM2 |>
-  #   filter(!is.na(g)) |>
-  #   ggplot() +
-  #   geom_sf(data = CARTO$AMGBA, fill = "white", alpha = 0.5) +
-  #   geom_sf(aes(fill  = (1-Ratio)* 100), color = NA) +
-  #   scale_fill_gradient("% de Homogamia no-explicada",
-  #                       low = "wheat1", high = "indianred3",
-  #                       limits = c(0, 110)) +
-  #   facet_wrap(~g, strip.position = "bottom") +
-  #   coord_sf(xlim = AUX$AMGBA_lim[c(1,3)],
-  #            ylim = AUX$AMGBA_lim[c(2,4)]) +
-  #   theme_void() +
-  #   theme(legend.position="bottom")
-  #
-  # ggsave(filename = "figures/Multidomain_homog-explicada.png", plot = p4,
-  #        height = 18, width = 30, units = "cm", dpi = 300)
-  #
-  # rm(MULTIDOM, MULTIDOM1, MULTIDOM2)
