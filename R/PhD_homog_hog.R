@@ -1,3 +1,4 @@
+#' @title PhD_homog_hog
 #' @description Modifica dataframe con educación de miembros del hogar
 #'    para agregar columnas de recuento necesarias para el cálculo de
 #'    la homogamia educativa del hogar.
@@ -60,10 +61,9 @@ PhD_homog_hog <-  function(db, type = "P"){
   }else if(type == "P") {
     # Conteo de personas en el hogar por cada nivel educativo
     db_p <- purrr::map(edu_levels, \(level) {
-      r1 <- (db$P1 == level) + (db$P2 == level)
-      r2 <- ifelse(is.na(r1) & db$EDU == level, 1, r1)
-      r3 <- ifelse(is.na(r2), 0, r2)
-      return(r3)
+      ifelse(!is.na(db$P1),
+             (db$P1 == level) + (db$P2 == level),
+             as.numeric(db$EDU == level))
     } ) |>
       as.data.frame()
   }else{

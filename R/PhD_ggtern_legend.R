@@ -1,3 +1,4 @@
+#' @title PhD_ggtern_legend
 #' @description Function to create a ternary legend for PhD thesis
 #' @param step Numeric value for the step size of the sequence. Must be a
 #'              divisor of 100 (Default = 1).
