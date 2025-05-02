@@ -7,7 +7,13 @@
 PhD_ggzoom(gdb, tit, cbox = NULL, dpt = NULL, variable = "ls", lim = NULL)
 }
 \arguments{
-\item{gdb}{Base de datos espaciales (objeto de clasesf)}
+\item{gdb}{Base de datos espaciales (objeto de clase \code{sf})}
+
+\item{tit}{Título del gráfico.}
+
+\item{cbox}{Bounding box (como es devuelto por \code{st_bbox}).}
+
+\item{dpt}{Objeto de la clase \code{sf} con departamentos seleccionados}
 }
 \description{
 Funciones para mapear datos de la base de datos de la AMBA.

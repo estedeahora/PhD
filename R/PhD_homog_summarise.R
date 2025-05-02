@@ -26,6 +26,6 @@ PhD_homog_summarise <- function(.data, group_var){
               #        .fns   = ~conv_phom(.x)),
               # DIS_ED = mean(DIS, na.rm = T)
     ) |>
-    rename_with(~str_replace(.x, "_hogcount", "_p"), ends_with("_hogcount")) |>
+    rename_with(~str_replace(.x, "_hogcount", "_p1"), ends_with("_hogcount")) |>
     select(-HOG_CON)
 }

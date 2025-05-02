@@ -28,8 +28,6 @@ PhD_homog_montecarlo <- function(seed = 123, db, replace = F, p = NULL){
       # Probabilidad de homogamia (por grupo educativo): usa P1.
       dplyr::across(.cols = tidyselect::ends_with("_hogcount"),
                     .fns  = ~sum(.x * HOM, na.rm = T) / sum(.x, na.rm = T))#,
-      # # dplyr::across(.cols  = tidyselect::ends_with("_hogcount"),
-      # #               .fns   = ~PhD_conv_phom(.x, conversion = "to_P2"))
     ) |>
     # Renombrar columnas
     dplyr::rename_with(.cols = tidyselect::ends_with("_hogcount"),

@@ -1,8 +1,10 @@
 #' @title PhD_ggzoom
 #' @description Funciones para mapear datos de la base de datos de la AMBA.
 #'
-#' @param gdb Base de datos espaciales (objeto de clasesf)
-#' @param
+#' @param gdb Base de datos espaciales (objeto de clase `sf`)
+#' @param tit Título del gráfico.
+#' @param cbox Bounding box (como es devuelto por `st_bbox`).
+#' @param dpt Objeto de la clase `sf` con departamentos seleccionados
 
 PhD_ggzoom <- function(gdb, tit, cbox = NULL, dpt = NULL,
                        variable = "ls", lim = NULL){

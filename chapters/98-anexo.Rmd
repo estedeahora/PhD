@@ -73,74 +73,72 @@ $$
 \text{distancia euclidiana} = \sqrt{\sum_{g=1}^G (p_{g|u} - p_{g})^2}
 $$
 
-# Fórmulas de cálculo para la probabilidad de homogamia por unidad espacial {#appendixC}
+# Cálculo de la probabilidad de homogamia por unidad espacial {#appendixC}
 
-Definimos $P$ como una primera aproximación para medir la homogamia en cada unidad espacial, que representa la probabilidad de que para una unidad espacial determinada, dado un hogar con una persona del tipo $A$, su cónyuge sea también del tipo $A$, es decir que sea un hogar homogámico ($H_A$). Si definimos $\sum A$ como la cantidad de hogares (conyugales o no) con al menos una persona del tipo $A$; y $H_A$ como la cantidad de hogares con homogamia del grupo $A$; podemos expresar $P$ como la probabilidad condicional ($P(H_A|A)$) de que el hogar sea homogámico dado que uno de sus miembros sea del tipo $A$. De forma más concisa:
-
-$$
-P = P(H_A|A) = \frac{P(H_A \cap A)}{P(A)}\ = \frac{\sum H_A}{\sum A}
-$$
-
-En paralelo, definimos $P^\prime$ como una forma alternativa de medir la homogamia, que indica la probabilidad de que, dada una persona de tipo $A$, la misma esté en pareja con otra del tipo $A$. Definimos $\sum a$ como la cantidad de personas del tipo $A$ en la unidad espacial considerada; y $\sum H_a$ como el número de personas del tipo $A$ que tienen un vínculo con otra persona del tipo $A$. Teniendo en cuenta estas definiciones, un hogar donde existe homogamia del tipo $A$ cada persona se contará dos veces en ambos términos. De esta manera, $P^\prime$ representa la probabilidad condicional ($P^\prime(H_a|a)$ de que una persona esté en relación conyugal con alguien del tipo $A$ siendo esta persona del grupo $A$. En fórmulas:
+Definimos $P^\prime$ como una forma de medir la homogamia en cada unidad espacial, que indica la probabilidad de que, dada una persona de tipo $A$, la misma esté en pareja con otra del mismo tipo. Definimos $\sum a$ como la cantidad de personas del tipo $A$ en la unidad espacial considerada; y $\sum H_a$ como el número de personas del tipo $A$ que tienen un vínculo con otra persona del tipo $A$. Teniendo en cuenta estas definiciones, en un hogar donde existe homogamia del tipo $A$ cada persona se contará dos veces en ambos términos. De esta manera, $P^\prime$ representa la probabilidad condicional ($P^\prime(H_a|a)$ de que una persona esté en relación conyugal con alguien del tipo $A$ siendo esta persona del grupo $A$. En fórmulas:
 
 $$
 P^\prime = P^\prime(H_a|a) = \frac{P(a \cap h)}{P(a)}\ = \frac{\sum H_a}{\sum a}
 $$
 
-Tomando en cuenta las definiciones de $\sum A$, $\sum a$, $\sum H_A$ y $\sum H_a$, se establecen las siguientes relaciones entre estos términos:
+En paralelo, definimos$P^{\prime\prime}$ como una aproximación alternativa para medir la homogamia, que representa la probabilidad de que para una unidad espacial determinada, dado un hogar con una persona del tipo $A$, su cónyuge sea también del tipo $A$, es decir que sea un hogar homogámico ($H_A$). Si definimos $\sum A$ como la cantidad de hogares (conyugales o no) con al menos una persona del tipo $A$; y $H_A$ como la cantidad de hogares con homogamia del grupo $A$; podemos expresar $P$ como la probabilidad condicional ($P^{\prime\prime}(H_A|A)$) de que el hogar sea homogámico dado que uno de sus miembros sea del tipo $A$. De forma más concisa:
 
 $$
-\sum H_A=\frac{\sum H_a}{2}
+P^{\prime\prime} = P^{\prime\prime}(H_A|A) = \frac{P(H_A \cap A)}{P(A)}\ = \frac{\sum H_A}{\sum A}
 $$
 
-$$
-\sum A=\sum a-\frac{\sum H_a}{2}=\sum a-\sum H_A
-$$
+Tomando en cuenta las definiciones de $\sum A$, $\sum a$, $\sum H_A$ y $\sum H_a$, se establecen las siguientes relaciones entre estos términos: $\sum H_A=\frac{\sum H_a}{2}$ y $\sum A=\sum a-\frac{\sum H_a}{2}=\sum a-\sum H_A$.
 
-A partir de estas definiciones, reemplazando en la fórmula de $P(H_A|A)$ obtenemos que:
+A partir de estas definiciones, reemplazando en la fórmula de $P^{\prime\prime}(H_A|A)$ obtenemos que:
 
 $$
-P(H_A|A) = \frac{\sum H_A}{\sum A} = \frac{\sum H_a}{2} \frac{1}{(\sum a-\frac{\sum H_a}{2})}=\frac{\sum H_a}{2 \sum a- \sum H_a}
+P^{\prime\prime}(H_A|A) = \frac{\sum H_A}{\sum A} = \frac{\sum H_a}{2} \frac{1}{\sum a-H_A}=\frac{\sum H_a}{2 (\sum a- \sum H_A)}
 $$
 
 Despejando $\sum H_a$ de la última ecuación obtenemos:
 
 $$
-\sum H_a = P(H_A|A).(2 \sum a- \sum H_a) = \sum H_a = P.(2 \sum a- \sum H_a)
+\sum H_a = 2P^{\prime\prime}(H_A|A).(\sum a- \sum H_A)
 $$
 
 Luego reemplazando $\sum H_a$ en la fórmula de $P^\prime(H_a|a)$ y reordenando el resultado conseguimos:
 
 $$
-P^\prime = P^\prime(H_a|a) =\frac{\sum H_a}{\sum a} =\frac{P.(2 \sum a-\sum H_a)}{\sum a}=P.(2-\frac{\sum H_a}{\sum a})
+\begin{aligned}
+P^\prime = P^\prime(H_a|a) &=\frac{\sum H_a}{\sum a} =2P^{\prime\prime}.\frac{\sum a-\sum H_A}{\sum a}=2P^{\prime\prime}.(1-\frac{\sum H_A}{\sum a})\\
+&=2P^{\prime\prime}.(1-\frac{\sum H_a}{2\sum a})=P^{\prime\prime}.(2-\frac{\sum H_a}{\sum a})
+\end{aligned}
 $$
 
 Despejando $P$ de la ecuación anterior obtenemos la relación entre ambas probabilidades, que es lo que nos interesaba establecer:
 
 $$
-P(H_A|A) = \frac{P^\prime(H_a|a)}{2- \frac{\sum H_a}{\sum a} } =  \frac{P^\prime(H_a|a)}{2-P^\prime(H_a|a) } 
+\begin{aligned}
+P^{\prime\prime} = \frac{P^\prime(H_a|a)}{2 - \frac{\sum H_a}{\sum a} }\\
+P^{\prime\prime}(H_A|A) =\frac{P^\prime(H_a|a)}{2 - P^\prime(H_a|a) } 
+\end{aligned}
 $$
 
 A su vez, obtenemos la inversa:<!--# REVISAR INVERSA en WORD -->
 
 $$
-P^\prime =P(2-P^\prime) =2P-P^\prime.P\\
-2P = P^\prime+P^\prime.P=P^\prime.(1+P)\\
-P^\prime(H_a|a)=\frac{2.P(H_A|A)}{1+P(H_A|A)} 
+\begin{aligned}
+P^\prime =P^{\prime\prime}(2-P^\prime) =2P^{\prime\prime}-P^\prime.P^{\prime\prime}\\2P^{\prime\prime} = P^\prime+P^\prime.P^{\prime\prime}=P^\prime.(1+P^{\prime\prime})\\P^\prime(H_a|a)=\frac{2.P^{\prime\prime}(H_A|A)}{1+P^{\prime\prime}(H_A|A)} 
+\end{aligned}
 $$
 
-Como ***corolario*** de esta relación, podemos señalar que $P$ y $P^\prime$ mantienen el orden, es decir, son estríctamente monótonas, por lo que cuando una aumenta la otra también lo hace.
+Como *corolario* de esta relación, podemos señalar que $P^\prime$ y $P^{\prime\prime}$ mantienen el orden, es decir, son estrictamente monótonas, por lo que cuando una aumenta la otra también lo hace.
 
-A su vez, el ratio entre $P^\prime(H_a|a)$ y $P(H|A)$ se puede expresar como:
+A su vez, el ratio entre $P^\prime(H_a|a)$ y $P^{\prime\prime}(H|A)$ se puede expresar con una ecuación lineal como:
 
 $$
-ratio_{P^\prime/P} =\frac{P^\prime}{P}=\frac{P^\prime(2-P^\prime)}{P^\prime}= 2-P^\prime
+ratio_{P^\prime/P^{\prime\prime}} =\frac{P^\prime}{P^{\prime\prime}} = P^{\prime}\frac{(2-P^\prime)}{P^\prime}= 2-P^\prime
 $$
 
-Por último, la Figura \@ref(fig:AP2-Pcomp) ilustra gráficamente la relación entre $P(H|A)$ y $P^\prime(H_a|a)$ desarrollada en este anexo.
+Por último, la Figura \@ref(fig:appC-Pcomp) ilustra gráficamente la relación entre $P(H|A)$ y $P^\prime(H_a|a)$ desarrollada en este anexo.
 
 ```{r appC-Pcomp}
-#| fig.cap: "Relación entre P(H|A) y P(Ha|a)"
+#| fig.cap: "Relaciones entre P'(Ha|a) y P''(H|A)"
 #| fig.asp: 0.666
 
 knitr::include_graphics(here::here("figures", "Homogamia_relation_P1-P2.png"))
@@ -151,6 +149,8 @@ knitr::include_graphics(here::here("figures", "Homogamia_relation_P1-P2.png"))
 # Relación entre proporción de personas y probabilidad de homogamia según hipótesis nula
 
 ```{r appD-p-vs-P}
+#| fig.cap: "Relación entre Proporción de personas y probabilidad de homogamia (P'(Ha|a)) bajo H0"
+#| fig.asp: 1
 
 knitr::include_graphics(here::here("figures",
                                    "Multidomain_por-vs-prob-H0.png"))

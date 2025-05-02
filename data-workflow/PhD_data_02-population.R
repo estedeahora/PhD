@@ -204,7 +204,7 @@ if(!exists("CARTO", inherits = F)){
 
     cli_li(
       col_yellow(
-        paste0("Realizando iteraciones Montecarlo para homogamia",
+        paste0("Realizando iteraciones Montecarlo para homogamia ",
                "por grupo educativo (replicaciones: ",
                format(replic, big.mark = ".", decimal.mark = ","), ")")
         )
@@ -247,6 +247,7 @@ if(!exists("CARTO", inherits = F)){
   }
 
   cli_li(col_yellow("Armado de base con datos de replicaciones Montecarlo."))
+
   RAD <- db_mont |>
     rename_with(~str_remove(.x, "_p")) |>
     # mutate(across(PRI:SUP,

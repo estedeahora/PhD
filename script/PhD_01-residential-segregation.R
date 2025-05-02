@@ -39,6 +39,7 @@ if(!exists("AUX", inherits = F)){
     rename_with(~str_remove(.x, "HOG_"))
 
 # Análisis de segregación residencial -------------------------------
+
 ### ╠ Segregación residencial global (listado de indicadores) ------------------
 
   cli::cli_li(col_yellow("Calcular segregación residencial global (SEG1)."))
@@ -107,7 +108,7 @@ if(!exists("AUX", inherits = F)){
 
 ### ╠ Distribución espacial de la segregación local (M) ----------------
 
-  cli::cli_li(col_yellow("Figure: Distribución espacial de la segregación local"))
+  cli::cli_li(col_yellow("Figure 4.1: Distribución espacial de la segregación local"))
 
   FFCC1 <- CARTO$FFCC1 |> filter(linea_2 == "Sarmiento")
   FFCC2 <- CARTO$FFCC2 |> filter(linea == "Sarmiento")
@@ -173,7 +174,7 @@ if(!exists("AUX", inherits = F)){
 
 ### ╠ Distribución de grupos en CA ----------------
 
-  cli::cli_li(col_yellow("Figure: Distribución de grupos en CA"))
+  cli::cli_li(col_yellow("Figure 4.2: Distribución de grupos en CA"))
 
   res_CA <- db_aux1 |>
     select(PRI, SEC, SUP) |>
@@ -238,7 +239,7 @@ if(!exists("AUX", inherits = F)){
 
 ### ╚ Distribución espacial de grupos con CA ----------------------------------------------------
 
-  cli::cli_li(col_yellow("Figure: Distribución espacial de grupos con CA"))
+  cli::cli_li(col_yellow("Figure 4.3: Distribución espacial de grupos con CA"))
 
   p3_AMBA <- CARTO$RADIO |>
     left_join(db_aux1[c("ID_RADIO", "color")], by = "ID_RADIO") |>
@@ -308,7 +309,9 @@ if(!exists("AUX", inherits = F)){
 
 # Tablas  ------------------------------------
 
-### Cap4.T1 --------------------------------------
+### ╠ Tabla 4.1 --------------------------------------
+
+  cli::cli_li(col_yellow("Table 4.1: Segregación residencial explicada x nivel de análisis"))
 
   RES$TAB1 <- RES$SEG2[-1] |>
     as_tibble(rownames = "TH") |>
@@ -334,7 +337,9 @@ if(!exists("AUX", inherits = F)){
     flextable::fontsize(size = 9, part = "all") |>
     flextable::autofit(part = "all")
 
-### Cap4.T2 ----------------------
+### ╠ Tabla 4.2 ----------------------
+
+  cli::cli_li(col_yellow("Table 4.2: Segregación residencial explicada x nivel educativo"))
 
   RES$TAB2 <- RES$SEG3[ , c("name", "ls", "p")] |>
     mutate(name = factor(name, levels = c("PRI", "SEC", "SUP"),
@@ -359,7 +364,9 @@ if(!exists("AUX", inherits = F)){
     flextable::fontsize(size = 9, part = "all") |>
     flextable::autofit(part = "all")
 
-### Cap4.T3 ----------------------
+### ╠ Tabla 4.3 ----------------------
+
+  cli::cli_li(col_yellow("Table 4.3: Descripción de patrones"))
 
   RES$TAB3 <- readxl::read_xlsx(here::here("figures", "patrones.xlsx")) |>
     flextable::flextable() |>
@@ -380,7 +387,9 @@ if(!exists("AUX", inherits = F)){
     flextable::width(j = 7, 4.6, unit = "cm") |>
     flextable::width(j = 8, 3.2, unit = "cm")
 
-### AppA.T1 --------------------------
+### ╠ Tabla AppA.T1 --------------------------
+
+  cli::cli_li(col_yellow("Table App A: Índices de segregación"))
 
   RES$appA_TAB1 <- RES$SEG1 |>
     flextable() |>
@@ -395,7 +404,9 @@ if(!exists("AUX", inherits = F)){
     flextable::align(j = 1, align ='left', part = 'all') %>%
     flextable::autofit()
 
-### AppA.T2 --------------------------
+### ╚ Tabla AppA.T2 --------------------------
+
+  cli::cli_li(col_yellow("Table App A: Descripción de Entornos urbano"))
 
   RES$appA_TAB2 <- RES$SEG4 |>
     relocate(M, .after = TH) |>

@@ -3,12 +3,12 @@
 #'    la homogamia educativa del hogar.
 #'
 #' @param db data frame que incluya las variables `EDU`, `P1` y `P2`, con
-#'            el nivel educativo del hogar y el nivel educativo de la(s) personas
-#'            cabeceras del hogar (PSH + conyuge). El nivel educativo debe ser
-#'            una variable numérico y contener 3 o 4 niveles educativos, de los
-#'            cuales los dos primeros son interpretados como `PRI` (1) y `SEC` (2)
-#'            y el tercero será `SUP` (3) si se trata de 3 niveles y `SNU` (3) y
-#'            `UNI` (4) si se trata de 4 niveles.
+#'            el nivel educativo del hogar (`EDU`) y el nivel educativo de la(s)
+#'            personas cabeceras del hogar (PSH `P1` y conyuge `P2`). El nivel
+#'            educativo debe ser una variable numérico y contener 3 o 4 niveles
+#'            educativos, de los cuales los dos primeros son interpretados como
+#'            `PRI` (1) y `SEC` (2) y el tercero será `SUP` (3) si se trata de 3
+#'            niveles y `SNU` (3) y `UNI` (4) si se trata de 4 niveles.
 #' @param type Tipo de probabilidad a calcular. Puede ser "P" para
 #'              individual o "H" para hogar (ver `details`).
 #'
@@ -55,11 +55,16 @@ PhD_homog_hog <-  function(db, type = "P"){
 
   if(type == "H"){
     # Identificación de existencia de personas con cada nivel educativo
-    db_p <- purrr::map(edu_levels, \(level) db$P1 == level | db$P2 == level) |>
+    db_p <- purrr::map(edu_levels, \(level) db$P1 == level | db$P2 == level | db$EDU) |>
       as.data.frame()
   }else if(type == "P") {
     # Conteo de personas en el hogar por cada nivel educativo
-    db_p <- purrr::map(edu_levels, \(level) (db$P1 == level) + (db$P2 == level) ) |>
+    db_p <- purrr::map(edu_levels, \(level) {
+      r1 <- (db$P1 == level) + (db$P2 == level)
+      r2 <- ifelse(is.na(r1) & db$EDU == level, 1, r1)
+      r3 <- ifelse(is.na(r2), 0, r2)
+      return(r3)
+    } ) |>
       as.data.frame()
   }else{
     cli::cli_abort("`type` inválido. Debe ser 'H' o 'P'.")

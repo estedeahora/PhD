@@ -167,7 +167,8 @@ nivel educativo $A$, esté emparejada con otra persona del mismo nivel
 educativo (ver Figura \@ref(fig:scheme1)). Esto puede expresarse como
 una probabilidad condicional que sigue la siguiente expresión:
 
-$$P(H_a|a) = \frac{\sum H_a}{\sum a}
+$$
+P^\prime(H_a|a) = \frac{\sum H_a}{\sum a}
 $$
 
 donde $\sum a$ es la cantidad de personas con nivel educativo $A$ en la
@@ -180,30 +181,25 @@ caracterizar las unidades espaciales.
 
 [^05-analysis-ii-homogamy-2]: Como indicador alternativo basado en el
     hogar, en lugar de en las personas, es posible calcular la
-    probabilidad de que dado un hogar conyugal con un integrante del
-    nivel educativo 'A', el otro miembro también tenga el nivel
-    educativo 'A'. En el Anexo \@ref(appendixC) desarrollamos y
-    comparamos estas medidas, demostrando que ambas generan resultados
-    similares y la conversión entre ambas preserva el orden (la función
-    que vincula ambas es estrictamente monotónica). La elección en favor
-    del indicador adoptado en este trabajo se basa en que, como veremos
-    más adelante, cuando simulamos un comportamiento aleatorio de los
-    emparejamientos, este indicador presenta una relación lineal (con
-    constante 0 y pendiente 1) con respecto a la cantidad de personas de
-    ese nivel educativo en el radio. Esto nos facilita la comparación
-    entre ambas variables, lo cual será central en nuestro trabajo. Como
-    contrapartida, el indicador elegido toma como unidad de análisis a
-    la persona, en lugar del 'hogar conyugal'. Sin embargo, más allá de
-    este problema de interpretación teórica del indicador, repetimos que
-    ambos indicadores están vinculados monotónicamente, con lo cual la
-    elección entre uno u otro no cambia los resultados obtenidos en el
-    trabajo.
+    probabilidad de que dado un hogar con un integrante del nivel
+    educativo 'A', el otro miembro también tenga el nivel educativo 'A'.
+    En el Anexo \@ref(appendixC) desarrollamos y comparamos estas
+    medidas, demostrando que ambas generan resultados similares y la
+    conversión entre ambas preserva el orden (la función que vincula
+    ambas es estrictamente monotónica).
+    <!--# La elección en favor del indicador adoptado en este trabajo se basa en que, como veremos más adelante, cuando simulamos un comportamiento aleatorio de los emparejamientos, este indicador presenta una relación lineal (con constante 0 y pendiente 1) con respecto a la cantidad de personas de ese nivel educativo en el radio. Esto nos facilita la comparación entre ambas variables, lo cual será central en nuestro trabajo.-->
+    Como contrapartida, el indicador elegido toma como unidad de
+    análisis a la persona, en lugar del 'hogar conyugal'. Sin embargo,
+    más allá de este problema de interpretación teórica del indicador,
+    repetimos que ambos indicadores están vinculados monotónicamente,
+    con lo cual la elección entre uno u otro no cambia los resultados
+    obtenidos en el trabajo.
 
 ```{r scheme1}
 #| fig.cap: "Esquema explicativo del cálculo de probabilidad de homogamia"
 #| fig.asp: 0.87
 
-include_graphics(here::here("figures","HOM_scheme-method.png") )
+knitr::include_graphics(here::here("figures","HOM_scheme-method.png") )
 ```
 
 Un problema adicional surge al definir qué probabilidad de homogamia es
@@ -319,9 +315,10 @@ primario, mientras que el
 parejas donde ambos tienen nivel educativo secundario y superior,
 respectivamente. A su vez, una persona con nivel educativo primario
 tiene una probabilidad de
-`r round(HOM$HOM1$PRI_p[HOM$HOM1$E == "TOTAL"], 3)` de estar en un hogar
-conyugal homogámico, mientras que esa probabilidad está en torno al
-`r paste0(round(HOM$HOM1[HOM$HOM1$E == "TOTAL", c("SEC_p", "SUP_p")], 3), collapse = "/")`%
+`r round(HOM$HOM1$PRI_p1[HOM$HOM1$E == "TOTAL"], 3)` de estar en un
+hogar conyugal homogámico, mientras que esa probabilidad está en torno
+al
+`r paste0(round(HOM$HOM1[HOM$HOM1$E == "TOTAL", c("SEC_p1", "SUP_p1")], 3), collapse = "/")`%
 para los otros dos niveles educativos. En este sentido, para las
 personas con nivel educativo primario la probabilidad de homogamia es
 significativamente más alta que para el resto de los niveles educativos.
@@ -361,18 +358,19 @@ puede ser muy diferente en cada distrito. Como respuesta a esto hemos
 propuesto utilizar un nuevo indicado: la probabilidad de que una persona
 tenga una pareja con su mismo nivel educativo. Utilizando este indicador
 encontramos que en los Partidos del GBA una persona con nivel primario
-tiene una probabilidad `r round(HOM$HOM1$PRI_p[HOM$HOM1$E == "PBA"], 3)`
-de estar en pareja con alguien de ese mismo nivel educativo, mientras
-que para los otros dos niveles, esta probabilidad ronda el
-`r round(HOM$HOM1$SEC_p[HOM$HOM1$E == "PBA"], 2)`. Por su parte, en la
+tiene una probabilidad
+`r round(HOM$HOM1$PRI_p1[HOM$HOM1$E == "PBA"], 3)` de estar en pareja
+con alguien de ese mismo nivel educativo, mientras que para los otros
+dos niveles, esta probabilidad ronda el
+`r round(HOM$HOM1$SEC_p1[HOM$HOM1$E == "PBA"], 2)`. Por su parte, en la
 CABA, la probabilidad de homogamia para las personas con nivel primaria
 también es la más alta que para los otros niveles educativos
-(`r round(HOM$HOM1$PRI_p[HOM$HOM1$E == "CABA"], 3)`), pero sensiblemente
-menor que en los Partidos del GBA. A su vez, la probabilidad de
-homogamia para personas con nivel superior es relativamente cercana a la
-probabilidad de la de las personas con nivel primario
-(`r round(HOM$HOM1$SUP_p[HOM$HOM1$E == "CABA"], 3)`), siendo las
-personas con nivel secundario las que tienen una probabilidad menor.
+(`r round(HOM$HOM1$PRI_p1[HOM$HOM1$E == "CABA"], 3)`), pero
+sensiblemente menor que en los Partidos del GBA. A su vez, la
+probabilidad de homogamia para personas con nivel superior es
+relativamente cercana a la probabilidad de la de las personas con nivel
+primario (`r round(HOM$HOM1$SUP_p1[HOM$HOM1$E == "CABA"], 3)`), siendo
+las personas con nivel secundario las que tienen una probabilidad menor.
 
 En resumen, encontramos que en ambas jurisdicciones las personas con
 nivel educativo primario son las que tienen mayor probabilidad de tener
@@ -426,7 +424,8 @@ los entornos.
 #| fig.cap: "Densidad de la probabilidad de homogamia de los radios según nivel educativo y Entorno urbano"
 #| fig.asp: 0.81
 
-include_graphics(here::here("figures", "Homogamia_probabilidad-densidad-x-TH.png"))
+knitr::include_graphics(here::here("figures", 
+                                   "Homogamia_probabilidad-densidad-x-TH.png"))
 ```
 
 En continuidad con este análisis podemos, para cada uno de las
@@ -461,7 +460,8 @@ es mucho más alta que las otras dos.
 #| fig.cap: "Probabilidad de homogamia según nivel educativo"
 #| fig.asp: 0.474
 
-include_graphics(path = c("figures/Homogamia_probabilidad-x-tipo.png") )
+knitr::include_graphics(path = here::here("figures",
+                                          "Homogamia_probabilidad-x-tipo.png") )
 ```
 
 Sin embargo, en tanto corroboramos que existe una correlación fuerte
@@ -643,7 +643,8 @@ dos grupos educativos.
 #| fig.cap: "Relación entre la proporción de personas residentes y la probabilidad de homogamia según nivel educativo"
 #| fig.asp: 0.846
 
-include_graphics(path ="figures/Multidomain_por-vs-prob_prop+0.05.png")
+knitr::include_graphics(path = here::here("figures",
+                                          "Multidomain_por-vs-prob_prop+0.05.png"))
 ```
 
 En resumen, nuestros resultados indican que los grupos que están menos

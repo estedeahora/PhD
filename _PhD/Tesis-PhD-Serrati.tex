@@ -182,7 +182,7 @@
 
 \title{Segregación urbana multi-dominio en el Aglomerado Metropolitano del Gran Buenos Aires (Argentina)}
 \author{Pablo Santiago Serrati}
-\date{Abril 2025}
+\date{Mayo 2025}
 \supervisor{Dra. María Mercedes Di Virgilio}
 \logo{template/logo\_UBA-Sociales2.jpg}
 \university{Universidad Nacional de Buenos Aires}
@@ -3453,12 +3453,12 @@ siendo más significativa este cambio para los grupos sociales extremos
 (\citeproc{ref-GomezRojas2007}{Gómez Rojas, 2007}; \citeproc{ref-Mazzeo2012}{Mazzeo et~al., 2012}; \citeproc{ref-Rodriguez2011b}{S. A. Rodríguez, 2011}, \citeproc{ref-Rodriguez2012a}{2012}, \citeproc{ref-Rodriguez2016e}{2016a}).
 
 Respecto a la homogamia en el AMGBA, los trabajos de Mazzeo (\citeproc{ref-Mazzeo2012a}{2012}) sobre
-la CABA y de Santiago Rodríguez (\citeproc{ref-Rodriguez2012a}{2012}, \citeproc{ref-Rodriguez2016e}{2016a}; \citeproc{ref-Rodriguez2012}{\textbf{Rodriguez2012?}}) y Carrascosa y Estévez Leston (\citeproc{ref-carrascosa2023}{2023}) sobre el AMGBA identifican una
-pauta selectiva de las uniones matrimoniales, que otorga preferencia a
-las uniones con homogamia educativa. A su vez, estos trabajos
-identifican que las pautas de homogamia son más fuertes en los extremos
-de la estructura educativa y que las uniones mixtas son menos probables
-entre los grupos más distantes en términos educativos.
+la CABA y de Santiago Rodríguez (\citeproc{ref-Rodriguez2012a}{2012}, \citeproc{ref-Rodriguez2016e}{2016a}; \citeproc{ref-Rodriguez2012}{\textbf{Rodriguez2012?}}) y Carrascosa y Estévez Leston (\citeproc{ref-carrascosa2023}{2023}) sobre el AMGBA identifican una pauta
+selectiva de las uniones matrimoniales, que otorga preferencia a las
+uniones con homogamia educativa. A su vez, estos trabajos identifican
+que las pautas de homogamia son más fuertes en los extremos de la
+estructura educativa y que las uniones mixtas son menos probables entre
+los grupos más distantes en términos educativos.
 
 En este trabajo analizamos la homogamia como un factor que refuerza las
 condiciones de segregación en el ámbito residencial. En este sentido,
@@ -3528,7 +3528,7 @@ mayor parte de los trabajos actuales identifican que la mayor exposición
 con personas de grupos distintos al propio aumenta las probabilidades de
 conformación de parejas mixtas (\citeproc{ref-Kalmijn2010}{Kalmijn y Van Tubergen, 2010}; \citeproc{ref-Puur2022}{Puur et~al., 2022}).
 
-\section{Presentación de la metodología de análisis}\label{presentaciuxf3n-de-la-metodologuxeda-de-anuxe1lisis}
+\section{Metodología de análisis para analizar la homogamia y la segregación residencial}\label{metodologuxeda-de-anuxe1lisis-para-analizar-la-homogamia-y-la-segregaciuxf3n-residencial}
 
 Como señalan Solís (\citeproc{ref-Solis2010}{2010}) y Rodríguez (\citeproc{ref-Rodriguez2016e}{S. A. Rodríguez, 2016a}, \citeproc{ref-Rodriguez2016c}{2016b}),
 los estudios cuantitativos que analizan la homogamia habitualmente
@@ -3541,90 +3541,94 @@ el uso de regresiones log-lineales).\footnote{Este tipo de análisis es similar 
   intergeneracional en base a las tablas de movilidad social y que
   permiten diferenciar entre `movilidad absoluta' y `movilidad
   relativa' o `fluidez' (ver \citeproc{ref-Goldthorpe2006}{Goldthorpe, 2006}; \citeproc{ref-Solis2016}{Solis y Boado, 2016}).} Como
-señala Solís (\citeproc{ref-Solis2010}{2010, p. 58}), este abordaje ``macro'' puede ser un límite
+señala Solís (\citeproc{ref-Solis2010}{2010, p. 58}), este abordaje `macro' puede ser un límite
 para relacionar la homogamia con otras características de la población o
 para analizar la distribución espacial del fenómeno. Como alternativa,
 el reciente trabajo de Carrascosa y Estévez Leston (\citeproc{ref-carrascosa2023}{2023}) propone un conjunto de
 indicadores para medir la distribución territorial de la homogamia
-educativa en el AMBA. En este trabajo, proponen calcular para cada
-unidad censal tres indicadores: (a) el porcentaje de hogares con
-homogamia educativa (\(\%HogH\)); (b) el porcentaje de homogamia educativo
-para cada nivel educativo `i' (\(\%HogH_i\)); y (c) la
+educativa en el AMBA. Estos autores proponen calcular para cada unidad
+censal tres indicadores: (a) el porcentaje de homogamia educativo para
+cada nivel educativo \(A\) (\(\%HogH_A\)); (b) el porcentaje de hogares con
+homogamia educativa (\(\%HogH = \sum \%HogH_A\)); y (c) la
 `homogamia/heterogamia modal' del radio, es decir, la combinación
 conyugal de niveles educativos que tiene el mayor porcentaje en el radio
-(y caracteriza categóricamente al radio). Este enfoque permite un
-análisis espacializado de la homogamia en base a datos censales, sin
-embargo está sesgado debido a que los indicadores utilizados dependen de
-la cantidad de personas de cada nivel educativo que existen en cada
-unidad censal. De hecho, estos indicadores son una \emph{espacialización} de
-las `medidas absolutas' (usadas en el enfoque clásico de la homogamia).
+(\(\text{max}\left(\%HogH_A\right)\)), el cual puede caracterizar
+categóricamente a dicha unidad espacial. Si bien este enfoque permite un
+análisis espacializado de la homogamia en base a datos censales, está
+sesgado debido a que los indicadores utilizados dependen de la cantidad
+de personas de cada nivel educativo que existen en cada unidad censal.
+De hecho, estos indicadores son una \emph{espacialización} de las `medidas
+absolutas' (usadas en el enfoque clásico de la homogamia).
 
-Para afrontar estas limitaciones, proponemos un abordaje parcialmente
-diferente que se basa en el cálculo de probabilidad de homogamia,
-considerando la composición de cada unidad censal. En concreto
-calculamos la probabilidad de que dada una persona con el nivel
-educativo `i', esté emparejada con otra persona del mismo nivel
+Para afrontar esta limitación, proponemos un abordaje parcialmente
+diferente que se basa en el cálculo de `probabilidad de homogamia',
+considerando la composición de cada unidad censal. En concreto para cada
+unidad censal calculamos la probabilidad de que, dada una persona con el
+nivel educativo \(A\), esté emparejada con otra persona del mismo nivel
 educativo (ver Figura \ref{fig:scheme1}). Esto puede expresarse como
-una probabilidad condicional \(P(H_i|i) = \frac{\sum H_i}{\sum i}\), donde
-\(\sum i\) es la cantidad de personas con nivel educativo \passthrough{\lstinline!i!}; y
-\(\sum H_i\) representa la cantidad de estas personas que están en pareja
-con otra persona del tipo \passthrough{\lstinline!i!}.\footnote{Un indicador alternativo, basado en el
-  hogar en lugar de en las personas, es calcular la probabilidad de
-  que dado un hogar conyugal con un integrante del nivel educativo
-  `i', el otro miembro también tenga el nivel educativo `i'. En el
-  \hyperref[appendixB]{Anexo B} desarrollamos y comparamos estas medidas,
-  demostrando que ambas generan resultados similares y la conversión
-  entre ambas preserva el orden (la función que vincula ambas es
-  estrictamente monotónica). La elección en favor del indicador
-  adoptado en este trabajo se basa en que, como veremos más adelante,
-  cuando simulamos un comportamiento aleatorio de los emparejamientos,
-  este indicador presenta una relación lineal (con constante 0 y
-  pendiente 1) con respecto a la cantidad de personas de ese nivel
-  educativo en el radio. Esto nos facilita la comparación entre ambas
-  variables, lo cual será central en nuestro trabajo. Como
-  contrapartida, el indicador elegido toma como unidad de análisis a
-  la persona, en lugar de al `hogar conyugal', lo cual podría ser poco
-  conveniente en relación a aquellos enfoques de estratificación
-  social que consideran al hogar como núcleo para analizar la
-  reproducción social (\citeproc{ref-Bourdieu2014a}{Bourdieu, 2014}; \citeproc{ref-Gutierrez2011}{Gutierrez et~al., 2011}). Sin embargo,
-  más allá de este problema de interpretación teórica del indicador,,
+una probabilidad condicional que sigue la siguiente expresión:
+
+\[
+P^\prime(H_a|a) = \frac{\sum H_a}{\sum a}
+\]
+
+donde \(\sum a\) es la cantidad de personas con nivel educativo \(A\) en la
+unidad de análisis; y \(\sum H_a\) es la cantidad de estas personas que
+están en pareja con otra persona de este mismo grupo
+\(A\).\footnote{Como indicador alternativo basado en el
+  hogar, en lugar de en las personas, es posible calcular la
+  probabilidad de que dado un hogar con un integrante del nivel
+  educativo `A', el otro miembro también tenga el nivel educativo `A'.
+  En el Anexo \ref{appendixC} desarrollamos y comparamos estas
+  medidas, demostrando que ambas generan resultados similares y la
+  conversión entre ambas preserva el orden (la función que vincula
+  ambas es estrictamente monotónica).
+  Como contrapartida, el indicador elegido toma como unidad de
+  análisis a la persona, en lugar del `hogar conyugal'. Sin embargo,
+  más allá de este problema de interpretación teórica del indicador,
   repetimos que ambos indicadores están vinculados monotónicamente,
   con lo cual la elección entre uno u otro no cambia los resultados
-  obtenidos en el trabajo (aunque sí la facilidad de su
-  interpretación).} Este
-indicador tiene la ventaja de considerar la participación del grupo
-dentro de la unidad censal, a la vez que mantiene la posibilidad de ser
-utilizado de forma local para caracterizar las unidades espaciales. Para
-obtener la significación de este estimador, podemos comparar su valor
-con la probabilidad que obtendríamos si, manteniendo las proporciones de
-cada nivel educativo dentro de cada unidad censal, los emparejamientos
-se produjeran sin considerar el nivel educativo de la otra persona (es
-decir de forma aleatoria). Para ello generamos para cada unidad censal
-una simulación Montecarlo ( replicaciones) de la
-probabilidad de homogamia que tendría cada grupo si se mantuvieran las
-proporciones de cada grupo y el porcentaje de hogares conyugales, pero
-las uniones conyugales se produjeran de modo aleatorio (considerando que
-dentro de cada radio un porcentaje variable de los hogares son
-no-conyugales). En esta prueba la hipótesis nula (\(H_0\)) es que la
-probabilidad de homogamia obtenida de los datos es aleatoria con un
-cierto nivel de confianza \(c\) (), es decir, que su valor
-está contenido dentro de los cuantiles de la distribución obtenida en la
-simulación. Alternativamente, si el valor obtenido de los datos es mayor
-/ menor que estos umbrales podemos considerar que la probabilidad de
-homogamia obtenida es significativamente diferente de la que se
-generaría por un emparejamiento aleatorio y, por lo tanto, podemos
-apoyar la idea de que existe un emparejamiento selectivo (con una
-confianza \(c\)). Más allá de una pequeña variabilidad relacionada con la
-presencia de hogares no-conyugales, bajo la hipótesis nula (\(H_0\)) la
-probabilidad de homogamia es aproximadamente igual a la proporción de
-personas de ese grupo educativo en la unidad espacial (si \(H_0\) es
-verdadera, entonces:
-\(P(H_i|i) \approx 0 + 1.\frac{\sum i}{N} = \frac{\sum i}{N}\), ver \hyperref[appendixD]{Anexo
-D})
+  obtenidos en el trabajo.} Este indicador tiene la ventaja de
+considerar la participación del grupo dentro de la unidad censal, a la
+vez que mantiene la posibilidad de ser utilizado de forma local para
+caracterizar las unidades espaciales.
 
 \begin{figure}
 \includegraphics[width=1\linewidth]{figures/HOM_scheme-method} \caption{Esquema explicativo del cálculo de probabilidad de homogamia}\label{fig:scheme1}
 \end{figure}
+
+Un problema adicional surge al definir qué probabilidad de homogamia es
+`esperable' si los emparejamientos fueran aleatorios dentro de la unidad
+espacial. Para poder estimar esta `probabilidad esperable', debemos
+tener en cuenta que en cada unidad espacial existe una proporción
+específica de personas del grupo \(A\) y un número variable de hogares
+no-conyugales (que podrían incluir de forma diferenciada a personas de
+los diferentes grupos). Teniendo esto presente, podemos obtener la
+significación de nuestro estimador comparando el valor real de la
+probabilidad obtenido con el que obtendríamos si los emparejamientos se
+dieran de forma aleatoria, pero se mantuvieran constantes las
+proporciones de cada nivel educativo y de hogares no-conyugales. Para
+ello generamos, para cada unidad censal, una simulación Montecarlo
+(1000 replicaciones) de la probabilidad de homogamia que
+tendría cada grupo si se mantuvieran las proporciones de estos grupos y
+el porcentaje de hogares conyugales, pero las uniones conyugales se
+establecieran de modo aleatorio. En esta prueba la hipótesis nula
+(\(H_0\)) es que la probabilidad de homogamia obtenida de los datos es
+aleatoria con un cierto nivel de confianza \(c\) (0.95), es
+decir, que su valor está contenido dentro de los cuantiles de la
+distribución obtenida en la simulación. Alternativamente, si el valor
+obtenido de los datos es mayor / menor que estos umbrales podemos
+considerar que la probabilidad de homogamia obtenida es
+significativamente diferente de la que se generaría por un
+emparejamiento aleatorio y, por lo tanto, podemos apoyar la idea de que
+existe un emparejamiento selectivo (con una confianza \(c\)).
+Más allá de una pequeña
+variabilidad relacionada con la presencia de hogares no-conyugales, bajo
+la hipótesis nula (\(H_0\)) la probabilidad de homogamia es
+aproximadamente igual a la proporción de personas de ese grupo educativo
+en la unidad espacial (si \(H_0\) es verdadera, entonces:
+\(P(H_i|i) \approx 0 + 1.\frac{\sum i}{N} = \frac{\sum i}{N}\), ver \hyperref[appendixD]{Anexo
+D})
 
 Desde un abordaje que analiza conjuntamente el nivel de segregación
 residencial y la homogamia matrimonial, Peach (\citeproc{ref-Peach1980}{1980}) propuso calcular la
@@ -3698,9 +3702,10 @@ primario, mientras que el
 parejas donde ambos tienen nivel educativo secundario y superior,
 respectivamente. A su vez, una persona con nivel educativo primario
 tiene una probabilidad de
-0.773 de estar en un hogar
-conyugal homogámico, mientras que esa probabilidad está en torno al
-0.494/0.515\%
+0.576 de estar en un
+hogar conyugal homogámico, mientras que esa probabilidad está en torno
+al
+0.373/0.381\%
 para los otros dos niveles educativos. En este sentido, para las
 personas con nivel educativo primario la probabilidad de homogamia es
 significativamente más alta que para el resto de los niveles educativos.
@@ -3738,18 +3743,19 @@ puede ser muy diferente en cada distrito. Como respuesta a esto hemos
 propuesto utilizar un nuevo indicado: la probabilidad de que una persona
 tenga una pareja con su mismo nivel educativo. Utilizando este indicador
 encontramos que en los Partidos del GBA una persona con nivel primario
-tiene una probabilidad 0.79
-de estar en pareja con alguien de ese mismo nivel educativo, mientras
-que para los otros dos niveles, esta probabilidad ronda el
-0.48. Por su parte, en la
+tiene una probabilidad
+0.602 de estar en pareja
+con alguien de ese mismo nivel educativo, mientras que para los otros
+dos niveles, esta probabilidad ronda el
+0.38. Por su parte, en la
 CABA, la probabilidad de homogamia para las personas con nivel primaria
 también es la más alta que para los otros niveles educativos
-(0.639), pero sensiblemente
-menor que en los Partidos del GBA. A su vez, la probabilidad de
-homogamia para personas con nivel superior es relativamente cercana a la
-probabilidad de la de las personas con nivel primario
-(0.592), siendo las
-personas con nivel secundario las que tienen una probabilidad menor.
+(0.411), pero
+sensiblemente menor que en los Partidos del GBA. A su vez, la
+probabilidad de homogamia para personas con nivel superior es
+relativamente cercana a la probabilidad de la de las personas con nivel
+primario (0.404), siendo
+las personas con nivel secundario las que tienen una probabilidad menor.
 
 En resumen, encontramos que en ambas jurisdicciones las personas con
 nivel educativo primario son las que tienen mayor probabilidad de tener
@@ -3804,19 +3810,19 @@ primario o superior tienen mayor probabilidad de ser homogámicos.
 
 
 
-\multicolumn{1}{>{\raggedright}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{CABA}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{1,150,578}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.83in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{49.4\%}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{58.3\%}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{17.6\%}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{21.7\%}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{18.9\%}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.04in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.639}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.537}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.592}}}} \\
+\multicolumn{1}{>{\raggedright}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{CABA}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{1,150,578}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.83in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{49.4\%}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{58.3\%}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{17.6\%}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{21.7\%}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{18.9\%}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.04in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.411}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.353}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.404}}}} \\
 
 
 
 
 
-\multicolumn{1}{>{\raggedright}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{PBA}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{3,152,526}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.83in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{63.4\%}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{66.2\%}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{47.5\%}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{13.7\%}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{5.0\%}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.04in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.790}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.476}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.452}}}} \\
+\multicolumn{1}{>{\raggedright}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{PBA}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{3,152,526}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.83in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{63.4\%}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{66.2\%}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{47.5\%}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{13.7\%}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{5.0\%}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.04in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.602}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.382}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.358}}}} \\
 
 
 
 
 
-\multicolumn{1}{>{\raggedright}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{TOTAL}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{4,303,104}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.83in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{59.7\%}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{64.5\%}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{40.9\%}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{15.5\%}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{8.1\%}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.04in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{0.773}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{0.494}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{0.515}}}}} \\
+\multicolumn{1}{>{\raggedright}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{TOTAL}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{4,303,104}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.83in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{59.7\%}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{64.5\%}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{40.9\%}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{15.5\%}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{8.1\%}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.04in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{0.576}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{0.373}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{0.381}}}}} \\
 
 \ascline{1.5pt}{666666}{1-11}
 
@@ -3919,12 +3925,12 @@ selectivo).
 En primer lugar, el porcentaje de radios que tienen una probabilidad de
 homogamia aleatoria (es decir, no-significativa) es mucho mayor respecto
 al nivel superior que para el nivel secundario y el nivel primario. En
-este sentido, un 25\% de los radios
+este sentido, un 32\% de los radios
 tienen una probabilidad de homogamia de nivel superior que se
 corresponde con la que obtendríamos si los emparejamientos de este grupo
 fueran aleatorios, mientras que para el nivel secundario y el nivel
-primario el porcentaje es de 14\% y
-5\%, respectivamente. Esto supone
+primario el porcentaje es de 20\% y
+20\%, respectivamente. Esto supone
 que en casi un cuarto de los radios las personas de nivel superior no
 tienen un emparejamiento que podamos definir como selectivo. Un segundo
 elemento a considerar es que, si nos concentramos en los casos en que la
@@ -3992,7 +3998,7 @@ aleatorio.
 
 
 
-\multicolumn{5}{>{\raggedright}m{\dimexpr 4.18in+8\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{Valores\ obtenidos\ mediante\ NULL\ replicaciones\ Montecarlo.\ Nivel\ de\ confianza:\ }}}} \\
+\multicolumn{5}{>{\raggedright}m{\dimexpr 4.18in+8\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{Valores\ obtenidos\ mediante\ 1.000\ replicaciones\ Montecarlo.\ Nivel\ de\ confianza:\ 0.95}}}} \\
 
 \noalign{\global\arrayrulewidth 0pt}\arrayrulecolor[HTML]{FFFFFF}
 
@@ -4000,7 +4006,7 @@ aleatorio.
 
 
 
-\multicolumn{5}{>{\raggedright}m{\dimexpr 4.18in+8\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{\textsuperscript{*}}}}\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{Porcentaje\ de\ simulaciones\ con\ valores\ por\ debajo\ /\ sobre\ el\ \ de\ las\ simulaciones}}}} \\
+\multicolumn{5}{>{\raggedright}m{\dimexpr 4.18in+8\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{\textsuperscript{*}}}}\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{Porcentaje\ de\ simulaciones\ con\ valores\ por\ debajo\ /\ sobre\ el\ 0.95\ de\ las\ simulaciones}}}} \\
 
 \noalign{\global\arrayrulewidth 0pt}\arrayrulecolor[HTML]{FFFFFF}
 
@@ -4008,7 +4014,7 @@ aleatorio.
 
 
 
-\multicolumn{1}{>{\raggedright}m{\dimexpr 0.83in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{Primario}}}} & \multicolumn{1}{>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{7F7F7F}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.01\%}}}} & \multicolumn{1}{>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{7F7F7F}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{95.04\%}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{95.06\%}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 1.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{4.94\%}}}} \\
+\multicolumn{1}{>{\raggedright}m{\dimexpr 0.83in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{Primario}}}} & \multicolumn{1}{>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{7F7F7F}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.05\%}}}} & \multicolumn{1}{>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{7F7F7F}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{80.28\%}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{80.33\%}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 1.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{19.67\%}}}} \\
 
 \noalign{\global\arrayrulewidth 0pt}\arrayrulecolor[HTML]{000000}
 
@@ -4016,7 +4022,7 @@ aleatorio.
 
 
 
-\multicolumn{1}{>{\raggedright}m{\dimexpr 0.83in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{Secundario}}}} & \multicolumn{1}{>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{7F7F7F}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.04\%}}}} & \multicolumn{1}{>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{7F7F7F}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{85.48\%}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{85.52\%}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 1.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{14.48\%}}}} \\
+\multicolumn{1}{>{\raggedright}m{\dimexpr 0.83in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{Secundario}}}} & \multicolumn{1}{>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{7F7F7F}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.10\%}}}} & \multicolumn{1}{>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{7F7F7F}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{79.45\%}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{79.54\%}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 1.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{20.46\%}}}} \\
 
 \noalign{\global\arrayrulewidth 0pt}\arrayrulecolor[HTML]{000000}
 
@@ -4024,7 +4030,7 @@ aleatorio.
 
 
 
-\multicolumn{1}{>{\raggedright}m{\dimexpr 0.83in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{Superior}}}} & \multicolumn{1}{>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{7F7F7F}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.00\%}}}} & \multicolumn{1}{>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{7F7F7F}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{74.58\%}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{74.58\%}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 1.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{25.42\%}}}} \\
+\multicolumn{1}{>{\raggedright}m{\dimexpr 0.83in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{Superior}}}} & \multicolumn{1}{>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{7F7F7F}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{0.00\%}}}} & \multicolumn{1}{>{\cellcolor[HTML]{E5E5E5}\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{7F7F7F}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{68.37\%}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{68.37\%}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 1.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{9}{9}\selectfont{\global\setmainfont{Alegreya Sans}{31.63\%}}}} \\
 
 \noalign{\global\arrayrulewidth 0pt}\arrayrulecolor[HTML]{000000}
 
@@ -4296,7 +4302,7 @@ caracterizar las movilidades urbanas a partir de la construcción de una
 red bipartita dirigida y ponderada para representar los viajes de las
 personas a los diferentes lugares de la ciudad.
 
-\section{Presentación de la metodología de análisis}\label{presentaciuxf3n-de-la-metodologuxeda-de-anuxe1lisis-1}
+\section{Presentación de la metodología de análisis}\label{presentaciuxf3n-de-la-metodologuxeda-de-anuxe1lisis}
 
 Si bien los datos de movilidad están disponibles a nivel de radio censal
 (aproximadamente 300 viviendas), en este trabajo hemos utilizado las
@@ -4756,7 +4762,7 @@ familias elaboran una estrategia unificada de elección de escuela y de
 En concreto, la escuela es un ámbito central en el que analizar el
 problema de la segregación\ldots{}
 
-\section{Presentación de la metodología de análisis}\label{presentaciuxf3n-de-la-metodologuxeda-de-anuxe1lisis-2}
+\section{Presentación de la metodología de análisis}\label{presentaciuxf3n-de-la-metodologuxeda-de-anuxe1lisis-1}
 
 \textbf{Allocation model}
 
@@ -4821,7 +4827,7 @@ Especificar qué mecanismos de reproducción social operan en cada dominio (ej: 
 
 \renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{Anexo}\ \thechapter.\ #1}{}}
 
-\chapter{Índices de segregación residencial}\label{uxedndices-de-segregaciuxf3n-residencial}
+\chapter{Índices de segregación residencial}\label{appendixA}
 
 \global\setlength{\Oldarrayrulewidth}{\arrayrulewidth}
 
@@ -5039,7 +5045,7 @@ Especificar qué mecanismos de reproducción social operan en cada dominio (ej: 
 
 \renewcommand*{\arraystretch}{1}
 
-\chapter{Relación matemática entre inercia y segregación local (Índice de Información mutua)}\label{relaciuxf3n-matemuxe1tica-entre-inercia-y-segregaciuxf3n-local-uxedndice-de-informaciuxf3n-mutua}
+\chapter{Relación matemática entre inercia y segregación local (Índice de Información mutua)}\label{appendixB}
 
 Dada una matriz \(X\) de U x G, con el recuento absoluto de cada uno de los grupos en las unidades, es posible construir una nueva matriz de perfiles \(P\) de U x G, con la proporción de cada grupo en cada unidad. La matriz \(P\) se construye dividiendo cada fila de la matriz \(X\) por la suma de los elementos de esa fila. A partir de esta matriz \(P\) podemos definir la siguiente notación:
 
@@ -5103,6 +5109,80 @@ Distancia euclidiana:
 \[
 \text{distancia euclidiana} = \sqrt{\sum_{g=1}^G (p_{g|u} - p_{g})^2}
 \]
+
+\chapter{Cálculo de la probabilidad de homogamia por unidad espacial}\label{appendixC}
+
+Definimos \(P^\prime\) como una forma de medir la homogamia en cada unidad espacial, que indica la probabilidad de que, dada una persona de tipo \(A\), la misma esté en pareja con otra del mismo tipo. Definimos \(\sum a\) como la cantidad de personas del tipo \(A\) en la unidad espacial considerada; y \(\sum H_a\) como el número de personas del tipo \(A\) que tienen un vínculo con otra persona del tipo \(A\). Teniendo en cuenta estas definiciones, en un hogar donde existe homogamia del tipo \(A\) cada persona se contará dos veces en ambos términos. De esta manera, \(P^\prime\) representa la probabilidad condicional (\(P^\prime(H_a|a)\) de que una persona esté en relación conyugal con alguien del tipo \(A\) siendo esta persona del grupo \(A\). En fórmulas:
+
+\[
+P^\prime = P^\prime(H_a|a) = \frac{P(a \cap h)}{P(a)}\ = \frac{\sum H_a}{\sum a}
+\]
+
+En paralelo, definimos\(P^{\prime\prime}\) como una aproximación alternativa para medir la homogamia, que representa la probabilidad de que para una unidad espacial determinada, dado un hogar con una persona del tipo \(A\), su cónyuge sea también del tipo \(A\), es decir que sea un hogar homogámico (\(H_A\)). Si definimos \(\sum A\) como la cantidad de hogares (conyugales o no) con al menos una persona del tipo \(A\); y \(H_A\) como la cantidad de hogares con homogamia del grupo \(A\); podemos expresar \(P\) como la probabilidad condicional (\(P^{\prime\prime}(H_A|A)\)) de que el hogar sea homogámico dado que uno de sus miembros sea del tipo \(A\). De forma más concisa:
+
+\[
+P^{\prime\prime} = P^{\prime\prime}(H_A|A) = \frac{P(H_A \cap A)}{P(A)}\ = \frac{\sum H_A}{\sum A}
+\]
+
+Tomando en cuenta las definiciones de \(\sum A\), \(\sum a\), \(\sum H_A\) y \(\sum H_a\), se establecen las siguientes relaciones entre estos términos: \(\sum H_A=\frac{\sum H_a}{2}\) y \(\sum A=\sum a-\frac{\sum H_a}{2}=\sum a-\sum H_A\).
+
+A partir de estas definiciones, reemplazando en la fórmula de \(P^{\prime\prime}(H_A|A)\) obtenemos que:
+
+\[
+P^{\prime\prime}(H_A|A) = \frac{\sum H_A}{\sum A} = \frac{\sum H_a}{2} \frac{1}{\sum a-H_A}=\frac{\sum H_a}{2 (\sum a- \sum H_A)}
+\]
+
+Despejando \(\sum H_a\) de la última ecuación obtenemos:
+
+\[
+\sum H_a = 2P^{\prime\prime}(H_A|A).(\sum a- \sum H_A)
+\]
+
+Luego reemplazando \(\sum H_a\) en la fórmula de \(P^\prime(H_a|a)\) y reordenando el resultado conseguimos:
+
+\[
+\begin{aligned}
+P^\prime = P^\prime(H_a|a) &=\frac{\sum H_a}{\sum a} =2P^{\prime\prime}.\frac{\sum a-\sum H_A}{\sum a}=2P^{\prime\prime}.(1-\frac{\sum H_A}{\sum a})\\
+&=2P^{\prime\prime}.(1-\frac{\sum H_a}{2\sum a})=P^{\prime\prime}.(2-\frac{\sum H_a}{\sum a})
+\end{aligned}
+\]
+
+Despejando \(P\) de la ecuación anterior obtenemos la relación entre ambas probabilidades, que es lo que nos interesaba establecer:
+
+\[
+\begin{aligned}
+P^{\prime\prime} = \frac{P^\prime(H_a|a)}{2 - \frac{\sum H_a}{\sum a} }\\
+P^{\prime\prime}(H_A|A) =\frac{P^\prime(H_a|a)}{2 - P^\prime(H_a|a) } 
+\end{aligned}
+\]
+
+A su vez, obtenemos la inversa:
+
+\[
+\begin{aligned}
+P^\prime =P^{\prime\prime}(2-P^\prime) =2P^{\prime\prime}-P^\prime.P^{\prime\prime}\\2P^{\prime\prime} = P^\prime+P^\prime.P^{\prime\prime}=P^\prime.(1+P^{\prime\prime})\\P^\prime(H_a|a)=\frac{2.P^{\prime\prime}(H_A|A)}{1+P^{\prime\prime}(H_A|A)} 
+\end{aligned}
+\]
+
+Como \emph{corolario} de esta relación, podemos señalar que \(P^\prime\) y \(P^{\prime\prime}\) mantienen el orden, es decir, son estrictamente monótonas, por lo que cuando una aumenta la otra también lo hace.
+
+A su vez, el ratio entre \(P^\prime(H_a|a)\) y \(P^{\prime\prime}(H|A)\) se puede expresar con una ecuación lineal como:
+
+\[
+ratio_{P^\prime/P^{\prime\prime}} =\frac{P^\prime}{P^{\prime\prime}} = P^{\prime}\frac{(2-P^\prime)}{P^\prime}= 2-P^\prime
+\]
+
+Por último, la Figura \ref{fig:appC-Pcomp} ilustra gráficamente la relación entre \(P(H|A)\) y \(P^\prime(H_a|a)\) desarrollada en este anexo.
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{figures/Homogamia_relation_P1-P2} \caption{Relaciones entre P'(Ha|a) y P''(H|A)}\label{fig:appC-Pcomp}
+\end{figure}
+
+\chapter{Relación entre proporción de personas y probabilidad de homogamia según hipótesis nula}\label{relaciuxf3n-entre-proporciuxf3n-de-personas-y-probabilidad-de-homogamia-seguxfan-hipuxf3tesis-nula}
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{figures/Multidomain_por-vs-prob-H0} \caption{Relación entre Proporción de personas y probabilidad de homogamia (P'(Ha|a)) bajo H0}\label{fig:appD-p-vs-P}
+\end{figure}
 
 \backmatter
 
