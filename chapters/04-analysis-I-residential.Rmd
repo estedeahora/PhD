@@ -14,8 +14,6 @@ library(knitr)
 devtools::load_all()
 ```
 
-## Los estudios sobre segregación residencial en el AMBA {#residential-lit}
-
 <!-- Introducción y presentación de objetivo del capítulo -->
 
 El AMBA presenta una estructura de desigualdades espaciales
@@ -23,10 +21,15 @@ caracterizada por las diferentes etapas de su desarrollo urbano (ver
 Apartado \@ref(method-AMBA)). Como parte de esta estructura de
 desigualdades espaciales, la segregación en el dominio residencial es
 una dimensión central para comprender los mecanismos de reproducción de
-dicha estructura. A partir de esta caracterización, en este capítulo del
-análisis nos proponemos identificar y describir la estructura de la
-segregación residencial en el AMBA<!--# (objetivo específico 1) -->.
-<!--# Para ello, comenzaremos describiendo los antecedentes sobre... DESARROLLAR -->
+dicha estructura.
+
+A partir de esta caracterización, en este capítulo del análisis nos
+proponemos identificar y describir la estructura de la segregación
+residencial en el AMBA y los patrones que le dan forma a dicha
+estructura <!--# (objetivo específico 1) -->. Para ello, comenzaremos
+describiendo los antecedentes sobre
+
+## Los estudios sobre segregación residencial en el AMBA {#residential-lit}
 
 <!-- Estructura de segregación residencial en Latinoamérica -->
 
