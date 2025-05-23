@@ -84,6 +84,8 @@ library(tidyverse)
 library(knitr)
 library(flextable)
 library(here)
+library(devtools)
+devtools::load_all()
 ```
 
 # Algunas palabras iniciales {.unnumbered}
