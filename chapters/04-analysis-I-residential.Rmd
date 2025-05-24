@@ -8,12 +8,6 @@ editor_options:
 
 # La segregación en el dominio residencial {#residential}
 
-```{r}
-library(flextable)
-library(knitr)
-devtools::load_all()
-```
-
 <!-- Introducción y presentación de objetivo del capítulo -->
 
 El AMBA presenta una estructura de desigualdades espaciales
@@ -128,6 +122,7 @@ patrón de segregación se asemeja a lo que @Florida2018 denominan como
 patrón de 'mosaico' o '*patchwork',* que se caracteriza por la
 existencia contigua (pero claramente diferenciada) de espacios
 residenciales de sectores altos y bajos.
+<!--# REVISAR: https://doi.org/10.1016/j.habitatint.2015.11.033 -->
 
 <!--# VER: @Portes2005; @Kaztman1999a; @Rodriguez2004; @ArriagadaLuco2003 -->
 
