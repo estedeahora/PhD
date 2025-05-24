@@ -4,7 +4,7 @@ editor_options:
     wrap: 72
 ---
 
-# El efecto de la homogamia conyugl sobre la segregación en el dominio residencial {#homogamy}
+# El efecto de la homogamia conyugal sobre la segregación en el dominio residencial {#homogamy}
 
 En el capítulo anterior describimos los patrones de segregación en el
 dominio residencial en el AMBA. Estos patrones dan materialidad espacial
@@ -42,19 +42,12 @@ segregación residencial en el AMBA (@ref(homogamy-analysis)). Por
 <!-- Homogamia y estratificación social -->
 
 Tanto la segregación residencial como la homogamia conyugal son
-centrales para el acceso a los recursos sociales. Es por ello que ambos
-aspectos actúan como mecanismos de estratificación y movilidad social.
-Por un lado, como vimos en el capítulo anteiror, la distribución de los
-grupos sociales en la ciudad (segregación residencial) impacta en la
-distribución y acceso a recursos urbanos, a la vez que incide en la
-conformación de espacios de intercambio plurales [@DiVirgilio2014c]. Por
-su parte, la conformación de vínculos conyugales homogéneos (homogamia)
-limita la integración social y las posibilidades de movilidad social
-[@Blossfeld2003]. Es por ello que la manera en que ambas se relacionan y
-articulan, puede tener implicancias en la formación de las identidades
-colectivas y la integración social de los grupos sociales.
-
-Diversos trabajos han puesto de manifiesto el rol fundamental que
+centrales para el acceso a los recursos sociales. Como vimos en el
+capítulo anteiror, por un lado, la distribución de los grupos sociales
+en la ciudad (segregación residencial) impacta en la distribución y
+acceso a recursos urbanos, a la vez que incide en la conformación de
+espacios de intercambio plurales [@DiVirgilio2014c]. Por su parte,
+diversos trabajos han puesto de manifiesto el rol fundamental que
 cumplen las reglas de conformación de parejas (*connubium*) como
 prácticas de movilidad y estratificación social [@Dalle2016;
 @Bourdieu2014a]. Los estudios identifican que la 'fluidez' o 'apertura'
@@ -62,35 +55,47 @@ de la estructura social se relaciona con el modo en que se generan los
 'emparejamientos selectivos'. Al reforzar la heterogeneidad social al
 interior de las familias, la homogamia favorece la transmisión desigual
 de recursos entre las generaciones [@Rodriguez2016c; @Solis2007;
-@Blossfeld2003]. Por ello, el efecto que puede tener la segregación en
-el dominio residencial se ve reforzada cuando existen además altos
-niveles de homogamia en los hogares. En este contexto, la homogamia
-puede matizar o reforzar los efectos de la segregación en el dominio
-residencial, en tanto la homogeneidad al 'nivel de los hogares', puede
-contrarrestar la heterogeneidad a 'nivel del vecindario' [@Tammaru2021].
-Si ambos miembros de la pareja compartan el mismo 'estatus' esto
-refuerza las ventajas / desventajas asociadas a estos grupos sociales y,
-en paralelo, bloquea el contacto con otros hogares diferentes
-socialmente, que podrían estar cercanos residencialmente.
+@Blossfeld2003]. Por ello, la conformación de vínculos conyugales
+homogéneos limita la integración social y las posibilidades de movilidad
+social [@Blossfeld2003].
 
 <!-- Relación entre segregación residencial y homogamia -->
+
+En resumen, la manera en que ambos fenómenos (segregación residencial y
+homogamia) se relacionan y articulan, puede tener implicancias en la
+formación de las identidades colectivas y la integración social de los
+grupos sociales y, de esta manera, actuar como mecanismos de
+estratificación y movilidad social. El efecto que puede tener la
+segregación en el dominio residencial para separar a los grupos
+sociales, se ve reforzada cuando existen además altos niveles de
+homogamia en los hogares. Si ambos miembros de la pareja compartan el
+mismo 'estatus' esto refuerza las ventajas / desventajas asociadas a
+estos grupos sociales y, en paralelo, bloquea el contacto con otros
+hogares diferentes socialmente, que podrían estar cercanos
+residencialmente. En otras palabras, la homogamia puede matizar o
+reforzar los efectos de la segregación en el dominio residencial, en
+tanto la homogeneidad al 'nivel de los hogares', puede contrarrestar la
+heterogeneidad a 'nivel del vecindario' [@Tammaru2021].
+
+<!-- Diferencia entre segregación (interacción potencial) y homogamia (interacción efectiva) -->
 
 Teniendo en cuenta esta perspectiva, es posible pensar la relación entre
 segregación residencial y la homogamia, como 'niveles'
 (vecindario-hogar) de fenómeno vinculados [@VanHam2018; @Tammaru2021].
-Este enfoque debe ser matizado, en tanto la homogamia y la segregación
-se diferencian en un aspecto crucial. Como señalamos en el Capítulo
-\@ref(lit-estratif), la segregación analizar la co-presencia diferencial
-de los grupos sociales en el espacio (y de esta manera un uso simbólico
-y de 'distinción'). Pero este uso compun y diferencial del espacio, no
-supone un intercambio e interacción entre estos actores, sino solo de
-forma 'potencial' (no necesaria). Por el contrario, cuando analizamos el
-fenómeno de la homogamia es evidente que se trata de un fenómeno de
-intercambio efectivo. En este sentido, desde nuestra perspectiva y
-nuestra definición del concepto de segregación, la propuesta de
-considerar la homogamia como un 'nivel' de la segregación incorrecta, ya
-que confunde fenómenos muy diferentes. Más allá de esto ambos fenómenos
-pueden estar vinculados y generar efectos de retroalimentación entre sí.
+Sin embargo, este enfoque debe ser matizado, en tanto la homogamia y la
+segregación se diferencian en un aspecto crucial. Como señalamos en el
+Capítulo \@ref(lit-estratif), la segregación analizar la co-presencia
+diferencial de los grupos sociales en el espacio (y de esta manera un
+uso simbólico y de 'distinción' del espacio). Pero este uso común y
+diferencial del espacio, no supone un intercambio e interacción entre
+estos actores, sino solo una interacción 'potencial' (no necesaria). Por
+el contrario, cuando analizamos el fenómeno de la homogamia es evidente
+que se trata de un fenómeno de intercambio efectivo. En este sentido,
+desde nuestra perspectiva y definición que propusimos del concepto de
+segregación, la propuesta de considerar la homogamia como un 'nivel' de
+la segregación es incorrecta, ya que confunde fenómenos diferentes. Más
+allá de esta aclaración, encontramos que ambos fenómenos pueden estar
+vinculados y generar efectos de retroalimentación entre sí.
 
 <!-- Revisión de literatura que vincula segregación y homogamia -->
 
@@ -104,33 +109,35 @@ hipótesis, Peach [-@Peach1980; -@Peach1974] señala que los matrimonios
 mixtos se correlacionan inversamente con el grado de segregación
 residencial que los separa, mientras que @Morgan1981 sugiere que la
 segregación residencial tiene un efecto en la sobreselección de cónyuges
-de grupos similares. En este sentido, estos trabajos parecen reforzar la
-hipótesis según la cual el nivel de homogamia está correlacionado con el
-nivel de segregación residencial entre dichos grupos. Esto se debe a que
-los 'mercados matrimoniales' se constituyen a partir de la interacción
-que los 'candidatos' tienen en otros espacios sociales (como la escuela,
-el trabajo o el barrio), por lo cual la presencia de segregación en
-estos espacios puede ser un limitante en la conformación de parejas
-heterogámica [@Rodriguez2016c]. En sintonía con estos resultados, la
-mayor parte de los trabajos actuales identifican que la mayor exposición
-con personas de grupos distintos al propio aumenta las probabilidades de
-conformación de parejas mixtas [@Puur2022; @Kalmijn2010], aunque existen
-menos trabajos que indaguen sobre cómo se da esta relación.
+de grupos similares, por lo cual deberíamos esperar más matrimonios
+homogámicos en los grupos segregados por sobrerepresentación
+residencial.
 
-A nivel local, los trabajos de @Mazzeo2012a sobre la CABA y de Santiago
-Rodríguez [-@Rodriguez2011b; -@Rodriguez2012; -@Rodriguez2012a;
--@Rodriguez2016e] y @carrascosa2023 sobre el AMBA identifican una pauta
-selectiva de las uniones matrimoniales, que otorga preferencia a las
-uniones con homogamia educativa. Estos trabajos identifican que las
-pautas de homogamia son más fuertes en los 'extremos' de la estructura
-educativa y que las uniones mixtas son menos probables entre los grupos
-más distantes (en términos educativos y sociales). Estos trabajos han
-estado centrados desde un enfoque fundamentalmente vinculado al problema
-de la estratificación, por lo cual han profundizado poco la relación con
-los aspectos residenciales o territoriales [una excepción es el trabajo
-de @carrascosa2023].
+Todos estos trabajos parecen reforzar la hipótesis según la cual el
+nivel de homogamia está correlacionado con el nivel de segregación
+residencial de los grupos. Esto se explica por el rol de los 'mercados
+matrimoniales' locales, que se constituyen a partir de la interacción de
+los 'candidatos' en otros espacios sociales (como la escuela, el trabajo
+o el barrio), por lo cual la presencia de segregación en estos espacios
+puede ser un limitante en la conformación de parejas heterogámica
+[@Rodriguez2016c]. En sintonía con estos resultados, la mayor parte de
+los trabajos actuales identifican que la mayor exposición con personas
+de grupos distintos al propio aumenta las probabilidades de conformación
+de parejas mixtas [@Puur2022; @Kalmijn2010], aunque existen menos
+trabajos que indaguen sobre cómo se da esta relación.
 
-[@GomezRojas2007].
+A nivel local, los trabajos de @Mazzeo2012a sobre la CABA y de
+@GomezRojas2007, Santiago Rodríguez [-@Rodriguez2011b; -@Rodriguez2012;
+-@Rodriguez2012a; -@Rodriguez2016e] y @carrascosa2023 sobre el AMBA
+identifican una pauta selectiva de las uniones matrimoniales, que otorga
+preferencia a las uniones con homogamia educativa. Estos trabajos
+identifican que las pautas de homogamia son más fuertes en los
+'extremos' de la estructura educativa y que las uniones mixtas son menos
+probables entre los grupos más distantes (en términos educativos y
+sociales). Estos trabajos han estado vinculados al problema de la
+estratificación, por lo cual han profundizado poco la relación con los
+aspectos residenciales o territoriales y, menos aún, en el problema de
+la segregación [una excepción es el trabajo de @carrascosa2023].
 
 En este trabajo analizamos la homogamia como un factor que refuerza las
 condiciones de segregación en el ámbito residencial. En este sentido,
@@ -333,18 +340,21 @@ tiene una probabilidad de
 `r round(HOM$HOM1$PRI_p1[HOM$HOM1$E == "TOTAL"], 3)` de estar en un
 hogar conyugal homogámico, mientras que esa probabilidad está en torno
 al
-`r paste0(round(HOM$HOM1[HOM$HOM1$E == "TOTAL", c("SEC_p1", "SUP_p1")], 3), collapse = "/")`%
+`r paste0(round(HOM$HOM1[HOM$HOM1$E == "TOTAL", c("SEC_p1", "SUP_p1")], 3), collapse = "/")`
 para los otros dos niveles educativos. En este sentido, para las
 personas con nivel educativo primario la probabilidad de homogamia es
-significativamente más alta que para el resto de los niveles educativos.
-Reforzando esta observación, el análisis de Chi Cuadrado ($\chi^2$)
-realizado con simulación de Montecarlo muestra que en todos los casos
-las parejas con igual nivel educativo tienen un valor observado
-significativamente mayor que el esperado (Ver [Anexo C](#appendixC)).
-Por el contrario, las parejas mixtas se comportan en sentido contrario,
-con la excepción de las parejas entre personas con nivel secundario y
-nivel superior que tienen un valor observado un poco mayor que el
-esperado (sin alcanzar los niveles de las parejas homog
+significativamente más alta que para el resto de los niveles
+educativos.[^05-analysis-ii-homogamy-4]
+
+[^05-analysis-ii-homogamy-4]: Reforzando esta observación, el análisis
+    de Chi Cuadrado ($\chi^2$) realizado con simulación de Montecarlo
+    muestra que, en todos los casos, las parejas con igual nivel
+    educativo tienen un valor observado significativamente mayor que el
+    esperado. Por el contrario, las parejas mixtas se comportan en
+    sentido contrario, con la excepción de las parejas entre personas
+    con nivel secundario y nivel superior que tienen un valor observado
+    un poco mayor que el esperado (sin alcanzar los niveles de las
+    parejas homogámicas).
 
 <!-- Homogamia global por distrito -->
 
@@ -408,6 +418,8 @@ HOM$TAB1
 ```{=latex}
 \end{landscape} 
 ```
+
+<!-- Homogamia global por TH-->
 
 Cuando consideramos la probabilidad de homogamia según el entorno urbano
 (ver Figura \@ref(fig:HOM-TH)), encontramos una variación considerable
@@ -567,13 +579,13 @@ todos los grupos educativos?
 Para abordar estas preguntas, la Figura \@ref(fig:MD-NOEXP) presenta,
 para cada nivel educativo, la relación entre la proporción de personas
 de ese nivel educativo y su probabilidad de
-homogamia.[^05-analysis-ii-homogamy-4] En la parte izquierda de la
+homogamia.[^05-analysis-ii-homogamy-5] En la parte izquierda de la
 figura se agrega la regresión cuadrática entre ambas variables
 ($y = a + b.x + c.x^2$) y en los márgenes la densidad de cada una de las
 variables. Además, para facilitar la lectura de la relación entre estas
 variables, en el lado derecho de la figura incluimos el porcentaje de
 homogamia no explicada por la proporción de personas de ese grupo en
-cada unidad censal.[^05-analysis-ii-homogamy-5] Como señalamos en el
+cada unidad censal.[^05-analysis-ii-homogamy-6] Como señalamos en el
 apartado metodológico, este indicador nos muestra en qué medida la
 homogamia actúa como un mecanismo de segregación independiente de la
 composición de los grupos. En este sentido, expresa qué porcentaje de la
@@ -582,7 +594,7 @@ de las unidades espaciales y, por lo tanto, puede ser atribuido a
 mecanismos de emparejamiento conyugal homogámicos independientes a la
 dinámica residencial.
 
-[^05-analysis-ii-homogamy-4]: Las líneas verticales punteadas indican la
+[^05-analysis-ii-homogamy-5]: Las líneas verticales punteadas indican la
     participación de cada grupo educativo en la población total. Como
     señalamos en el apartado metodológico, el *Índice de Información
     Mutua* es una media ponderada de cuánto 'se aleja' cada unidad
@@ -591,7 +603,7 @@ dinámica residencial.
     participación más disímil de la del promedio aportan, en principio,
     mayor segregación al conjunto.
 
-[^05-analysis-ii-homogamy-5]: En color gris señalamos las unidades
+[^05-analysis-ii-homogamy-6]: En color gris señalamos las unidades
     espaciales que no tienen una probabilidad de homogamia significativa
     (es decir, en los cuales $H_0$ es comprobada). Dado que la
     probabilidad de homogamia y la proporción de personas de un grupo es
