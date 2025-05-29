@@ -10,8 +10,16 @@
 RES$appA_TAB1
 ```
 
+```{=latex}
+\begin{landscape}
+```
+
 ```{r}
 RES$appA_TAB2
+```
+
+```{=latex}
+\end{landscape}
 ```
 
 # Relación matemática entre inercia y segregación local (Índice de Información mutua) {#appendixB}
