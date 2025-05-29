@@ -398,10 +398,10 @@ if(!exists("AUX", inherits = F)){
                            autonum = officer::run_autonum(seq_id = "tab",
                                                           bkm = "app1-tab1",
                                                           bkm_all = T))  |>
+    flextable::align(align ='center', part = 'all') |>
+    flextable::align(j = 1, align ='left', part = 'all') |>
     flextable::font(fontname='Alegreya Sans', part = "all") |>
     flextable::fontsize(size = 9, part = "all") |>
-    flextable::align(align ='center', part = 'all') %>%
-    flextable::align(j = 1, align ='left', part = 'all') %>%
     flextable::autofit()
 
 ### ╚ Tabla AppA.T2 --------------------------
@@ -412,8 +412,6 @@ if(!exists("AUX", inherits = F)){
     relocate(M, .after = TH) |>
     mutate(p = p * 100) |>
     flextable::flextable() |>
-    flextable::font(fontname='Alegreya Sans', part = "all") |>
-    flextable::fontsize(size = 9, part = "all") |>
     flextable::set_header_labels(TH = "Entorno urbano",
                                  M = "Segregación local (M)",
                                  PRI = "Hasta primario completo",
@@ -441,6 +439,8 @@ if(!exists("AUX", inherits = F)){
     flextable::bold(i = 10) |>
     flextable::align(align ='center', part = 'all') |>
     flextable::align(j = 1, align ='left', part = 'all') |>
+    flextable::font(fontname='Alegreya Sans', part = "all") |>
+    flextable::fontsize(size = 9, part = "all") |>
     flextable::autofit(part = "all")
 
 # Guardar resultados ----------------------------------------------------
