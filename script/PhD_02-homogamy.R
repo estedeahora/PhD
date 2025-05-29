@@ -59,7 +59,7 @@ if(!exists("HOG", inherits = F)){
            ends_with("_SD")) |>
     unnest(ends_with("_IC")) |>
     mutate(across(HOG_PRI:HOG_SUP,
-                  ~ .x/HOG)) |>
+                  ~ifelse(.x != 0, .x/HOG, 0) )) |>
     select(ID_RADIO, TH, ls,
            starts_with("HOG"),
            -HOG_color,
@@ -76,42 +76,43 @@ if(!exists("HOG", inherits = F)){
                           PRI_sig, SEC_sig, SUP_sig) ) |>
     mutate(tipo = case_when(str_ends(name, "_p1") ~ "Probabilidad",
                             str_ends(name, "_HOG") ~ "Proporcion",
-                            str_ends(name, "_MEAN") ~ "Montecarlo",
+                            str_ends(name, "_MEAN") ~ "H0",
                             str_ends(name, "_sig") ~ "Significatividad"),
            g = str_sub(name, 1, 3) ) |>
-    pivot_wider(id_cols = c(ID_RADIO, TH, g),
+    pivot_wider(id_cols = c(ID_RADIO, TH, HOG, g),
                 names_from = tipo,
                 values_from = value) |>
     mutate(g = factor(g,
                       levels = c("PRI", "SEC", "SUP"),
                       labels = c("Primario", "Secundario", "Superior") ),
            Significatividad = as.logical(Significatividad),
-           Probabilidad_2 = ifelse(Significatividad, Probabilidad, Proporcion),
-           dif = Probabilidad - Proporcion,
-           dif2 = Probabilidad - Montecarlo,
-           Ratio =  Proporcion / Probabilidad,
-           Ratio2 =  Proporcion / Probabilidad_2,
-           Ratio3 = ifelse(is.infinite(Ratio),
-                           1 - abs(rnorm(n = length(is.infinite(Ratio)),
-                                         mean = 0, sd = 0.30)),
-                           Ratio),
-           Ratio4 = Montecarlo / Probabilidad)
+           # Corregir variables sin casos (Proporción = 0)
+           Probabilidad = ifelse(Proporcion == 0, 0, Probabilidad),
+           H0 = ifelse(Proporcion == 0, 0, H0),
+           Significatividad = ifelse(Proporcion == 0, F, Significatividad),
+           # Imputar valor esperado cuando no existe significatividad
+           Probabilidad_corr = ifelse(Significatividad, Probabilidad, H0),
+           # Calcular diferencias
+           dif_prop = Probabilidad - Proporcion,
+           dif_H0 = Probabilidad - H0,
+           # Calcular ratios
+           Ratio1 =  Proporcion / Probabilidad,
+           Ratio2 =  Proporcion / Probabilidad_corr,
+           Ratio4 = H0 / Probabilidad_corr
+           )
 
-  modelo <- lm(Probabilidad_2 ~ g + Proporcion + g * Proporcion + g * I(Proporcion^2),
-               data = db_aux1 |> filter(!is.na(Significatividad) & (Proporcion > 0.05 | Significatividad)))
-
-  db_aux1 <- db_aux1 |>
-    mutate(predict = predict(object = modelo, db_aux1),
-           resid = Probabilidad_2 - predict)
+  #
+  # Ratio3 = ifelse(is.infinite(Ratio),
+  #                 1 - abs(rnorm(n = length(is.infinite(Ratio)),
+  #                               mean = 0, sd = 0.30)),
+  #                 Ratio),
 
   db_aux2 <- CARTO$RADIO |>
     left_join(db_aux1 |>
                 filter(!is.na(Significatividad)) |>
-                select(ID_RADIO, g, Ratio),
+                select(ID_RADIO, g, Ratio1),
               by = join_by(ID_RADIO)) |>
-    mutate(Ratio = ifelse(is.infinite(Ratio), 1,  Ratio ))
-
-  rm(modelo)
+    mutate(Ratio = ifelse(is.infinite(Ratio1), 1,  Ratio1 ))
 
 # Análisis de Homogamia -------------------------------
 ### ╠ Porcentaje de viviendas con parejas homogámicas ------------------
@@ -256,8 +257,7 @@ if(!exists("HOG", inherits = F)){
 
   ggsave(filename = here::here("figures",
                                "Homogamia_probabilidad-densidad-x-TH.png"),
-         plot = p2,
-         height = 18, width = 22, units = "cm", dpi = 300)
+         plot = p2, height = 18, width = 22, units = "cm", dpi = 300)
 
   rm(HOM_aux, p2, p2_TOT, p2_TAB, p2_TH, p_blank)
 
@@ -268,13 +268,15 @@ if(!exists("HOG", inherits = F)){
                                 "la probabilidad de homogamia.")))
 
   p3_vln <- CARTO$RADIO |>
+    filter(!is.na(TH)) |>
     st_drop_geometry() |>
     select(ID_RADIO, ends_with("_p3")) |>
     pivot_longer(cols =  ends_with("_p3")) |>
     mutate(name = factor(name,
-                         levels = c("PRI_p3", "SEC_p3", "SUP_p3"),
+                         levels = paste0(c("PRI", "SEC", "SUP"), "_p3"),
                          labels = paste("Homogamia de Nivel",
                                         c("Primario", "Secundario", "Superior") ) ) ) |>
+    filter(!is.na(value)) |>
     ggplot(aes(y = 1, x = value)) +
     geom_boxplot(width = 0.3) +
     geom_violin(aes(fill = name), color = NA, alpha = 0.3) +
@@ -295,9 +297,7 @@ if(!exists("HOG", inherits = F)){
                  names_to = "variable", values_to = "value") |>
     mutate(value = ifelse(HOG_CON >= limit, value, NA) ) |>
     ggplot() +
-    geom_point(data = data.frame(x = 1, y = 1),
-               aes(x = x, y = y), shape = NA, colour = "grey70")+
-    geom_sf(data = CARTO$AMGBA, #aes(color = ""),
+    geom_sf(data = CARTO$AMGBA, aes(size = ""),
             fill = NA, alpha = 0.4) +
     geom_sf(aes(fill  = value), linewidth = 0.01, color = NA) +
     geom_sf(data = CARTO$DPTO, color = "grey80", fill = NA) +
@@ -308,10 +308,10 @@ if(!exists("HOG", inherits = F)){
     coord_sf(xlim = AUX$lim_AMBA[c(1,3)],
              ylim = AUX$lim_AMBA[c(2,4)]) +
     guides(size = guide_legend("No significativo", order = 2,
-                               override.aes = list(shape = 15, size = 15)),
+                               override.aes = list(shape = 15, size = 15, fill = "grey70")),
            fill = guide_colorbar(order = 1)) +
     theme_void() +
-    theme(legend.position="bottom",
+    theme(legend.position = "bottom",
           strip.text = element_blank(),
           legend.key.height = unit(1.2, 'cm'),
           legend.key.width = unit(1.8, 'cm'),
@@ -323,8 +323,7 @@ if(!exists("HOG", inherits = F)){
                   common.legend = T, legend = "bottom")
 
   ggsave(filename = here::here("figures", "Homogamia_probabilidad-x-tipo.png"),
-         plot = p3,
-         height = 18 * 1.5, width = 38 * 1.5, units = "cm", dpi = 300)
+         plot = p3, height = 18 * 1.5, width = 38 * 1.5, units = "cm", dpi = 300)
 
   rm(p3_vln, p3_AMBA, p3)
 
@@ -332,10 +331,19 @@ if(!exists("HOG", inherits = F)){
 
   cli::cli_li(col_yellow("Figure 5.4: Ratio probabilidad y proporción de homogamia"))
 
+  # modelo <- lm(Probabilidad_corr ~ g + Proporcion + g * Proporcion + g * I(Proporcion^2),
+  #              data = db_aux1 |> filter(!is.na(Significatividad) & (Proporcion > 0.05 | Significatividad)))
+  #
+  # db_aux1 <- db_aux1 |>
+  #   mutate(predict = predict(object = modelo, db_aux1),
+  #          resid = Probabilidad_2 - predict)
+
   p4_center <- db_aux1 |>
-    filter(!is.na(Significatividad) & (Proporcion > 0.05 | Significatividad)) |>
-    ggplot(aes(x = Proporcion, y = Probabilidad, color = g, group = g )) +
-    geom_abline(slope = 1, linetype = 2, alpha = 0.4, color = "grey30") +
+    filter(!is.na(Significatividad) & (Proporcion > 0.05 | Significatividad
+                                       )) |>
+    ggplot(aes(x = Proporcion, y = dif_H0, color = g, group = g )) +
+    # geom_abline(slope = 1, linetype = 2, alpha = 0.4, color = "grey30") +
+    geom_hline(linetype = 2, yintercept = 0, color = "grey10") +
     geom_point(alpha = 0.02) +
     geom_vline(data = pivot_longer((RES$SEG4[10, 2:4]/100), cols = everything(),
                                    names_to = "g", values_to = "intercept") |>
@@ -344,20 +352,24 @@ if(!exists("HOG", inherits = F)){
                                    labels = c("Primario", "Secundario", "Superior") ) ),
                aes(xintercept = intercept, color = g),
                alpha = 0.7, linetype = 2) +
-    geom_smooth(aes(y = Probabilidad_2),
-                color = "grey40", linewidth = 0.3, fill = "grey20",
+    geom_smooth(linewidth = 0.4,
+                #aes(y = Probabilidad_corr),
+                # color = "grey40", fill = "grey20",
                 method = "lm", formula = y ~ poly(x, 2)) +
-    geom_point(aes(y = predict), alpha = 0.01) +
-    annotate("text", x = 0.22, y = 0.2 , color = "grey45",
-             angle = 45, label = latex2exp::TeX("Hipotesis nula ($H_0$)") ) +
+    # geom_point(aes(y = predict), alpha = 0.01) +
+    # annotate("text", x = 0.22, y = 0.2 , color = "grey45",
+    #          angle = 45, label = latex2exp::TeX("Hipotesis nula ($H_0$)") ) +
     scale_x_continuous(name = "Proporción del grupo en la unidad censal",
                        limits = c(0, 1), expand = c(0,0)) +
     scale_y_continuous(name = "Probabilidad de homogamia",
-                       limits = c(0, 1), expand = c(0,0)) +
+                       limits = c(NA, 0.6), expand = c(0,0)
+                       ) +
     scale_color_manual(values = c("tomato3", "goldenrod1", "darkolivegreen4")) +
     coord_fixed() +
     theme_minimal() +
     theme(legend.position = "none")
+
+  p4_center
 
   p4_marg <- ggExtra::ggMarginal(p4_center, type = "density",
                                  groupColour = TRUE, groupFill = TRUE)
@@ -434,6 +446,74 @@ if(!exists("HOG", inherits = F)){
          p4, width = 27.5, height = 22, units = "cm", dpi = 300)
 
   rm(p4, p4_center, p4_marg, p4_add1, p4_add2, p_blank)
+  # rm(modelo)
+
+### ╠ VER: Distribución espacial de Ratio e/proporción y probabilidad de homogamia ------------------------------------------
+
+  p4 <- db_aux2 |>
+    filter(!is.na(g)) |>
+    ggplot() +
+    geom_sf(data = CARTO$AMGBA, fill = "white", alpha = 0.5) +
+    geom_sf(aes(fill  = (1-Ratio)* 100), color = NA) +
+    scale_fill_gradient("% de Homogamia no-explicada",
+                        low = "wheat1", high = "indianred3",
+                        limits = c(0, 110)) +
+    facet_wrap(~g, strip.position = "bottom") +
+    coord_sf(xlim = AUX$lim_AMBA[c(1,3)],
+             ylim = AUX$lim_AMBA[c(2,4)]) +
+    theme_void() +
+    theme(legend.position="bottom")
+
+  ggsave(filename = here::here("figures",
+                               "Multidomain_homog-explicada.png"),
+         plot = p4, height = 13, width = 30, units = "cm", dpi = 300)
+
+  rm(p4)
+
+### ╠ VER: Composición (AC) y Probabilidad de homogamia ------------------------------------------
+
+  res_CA <- db_aux |>
+    rename_with(~str_remove(.x, "_HOG")) |>
+    mutate(across(PRI:SUP, ~.x * HOG)) |>
+    select(PRI, SEC, SUP) |>
+    FactoMineR::CA(graph = F)
+
+  coord_lab <- res_CA$col$coord |>
+    as_tibble(rownames = "lab") |>
+    mutate(`Dim 1` = `Dim 1` * 1/sqrt(res_CA$eig[1, 1]),
+           `Dim 2` = `Dim 2` * 1/sqrt(res_CA$eig[2, 1]))
+
+  coord_rad <- left_join(db_aux1,
+                         bind_cols(ID_RADIO = db_aux$ID_RADIO,
+                                   res_CA$row$coord),
+                         by = "ID_RADIO")
+  res_CA |>
+    factoextra::fviz_ca_biplot(alpha.row = 0, alpha.col = 0,
+                               map = "rowprincipal",
+                               geom = "point", title = NULL) +
+    geom_polygon(data = coord_lab, col = 'grey60', fill = NA,
+                 linetype = 2, linewidth = 0.5,
+                 aes(x = `Dim 1`, y = `Dim 2`)) +
+    geom_point(data = coord_rad, alpha = 0.5,
+               aes(x = `Dim 1`, y = `Dim 2`,
+                   size = (HOG - 10) * Significatividad + 10,
+                   color = dif_H0, shape = Significatividad)) +
+    geom_text(data = coord_lab, color = "grey10",
+              aes(x = `Dim 1` + (0.05 * `Dim 1`),
+                  y = `Dim 2` + (0.05 * `Dim 2`),
+                  label = lab) ) +
+    facet_wrap(~g) +
+    labs(size = "Cantidad de hogares") +
+    guides(shape = "none") +
+    scale_shape_manual(values = c(4, 19)) +
+    scale_color_gradient2("Probabilidad de Homogamia\nno explicada",
+                          mid = "lightcyan2",
+                          low = scales::muted("green"),
+                          high = scales::muted("red"),
+                          transform = "log1p") +
+    theme(legend.direction = "horizontal", legend.position = "bottom")
+
+  rm(res_CA, coord_lab)
 
 ### ╠ FIG App C: Relaciones entre P'(Ha|a) y P''(H|A) ---------------------------
 
@@ -517,28 +597,7 @@ if(!exists("HOG", inherits = F)){
 
   rm(p6)
 
-### ╠ VER: Distribución espacial de Ratio e/proporción y probabilidad de homogamia ------------------------------------------
-
-  p4 <- db_aux2 |>
-    filter(!is.na(g)) |>
-    ggplot() +
-    geom_sf(data = CARTO$AMGBA, fill = "white", alpha = 0.5) +
-    geom_sf(aes(fill  = (1-Ratio)* 100), color = NA) +
-    scale_fill_gradient("% de Homogamia no-explicada",
-                        low = "wheat1", high = "indianred3",
-                        limits = c(0, 110)) +
-    facet_wrap(~g, strip.position = "bottom") +
-    coord_sf(xlim = AUX$lim_AMBA[c(1,3)],
-             ylim = AUX$lim_AMBA[c(2,4)]) +
-    theme_void() +
-    theme(legend.position="bottom")
-
-  ggsave(filename = here::here("figures",
-                               "Multidomain_homog-explicada.png"),
-         plot = p4, height = 13, width = 30, units = "cm", dpi = 300)
-
-  rm(p4)
-
+  # rm(a)
 ### Tablas ------------------------------
 
   # ╠ Tabla 5.1 ---------------------------------
@@ -619,6 +678,41 @@ if(!exists("HOG", inherits = F)){
     flextable::font(fontname='Alegreya Sans', part = "all") |>
     flextable::fontsize(size = 9, part = "all") |>
     flextable::autofit()
+### Anexo? ----------
+
+  # # Tabla matrimonial
+  # HOM$HOM2 |>
+  #   filter(!is.na(P2)) |>
+  #   pivot_wider(id_cols = P1,
+  #               names_from = P2,
+  #               values_from = n, values_fill = 0) |>
+  #   mutate(P1 = factor(P1, levels = 1:3,
+  #                      labels = c("Primario", "Secundario", "Superior")),
+  #          across(where(is.numeric), ~ifelse(.x == 0, NA, .x))) |>
+  #   rename_with(.fn = ~c(" ", "Primario", "Secundario", "Superior") ) |>
+  #   flextable() |>
+  #   set_caption(caption = "Tabla matrimonial (Total AMGBA)",
+  #               autonum = officer::run_autonum(seq_id = "tab", bkm = "AP3-TAB1",
+  #                                              bkm_all = T))
+
+  # # Prueba Chi2
+  # HOM$HOM3$stdres[lower.tri(HOM$HOM3$stdres)] <- NA
+  # HOM$HOM3$stdres |>
+  #   as_tibble(rownames = "P1", ) |>
+  #   mutate(P1 = factor(P1, levels = 1:3,
+  #                      labels = c("Primario", "Secundario", "Superior")),
+  #          across(where(is.numeric), round)) |>
+  #   set_names(c(" ", "Primario", "Secundario", "Superior")) |>
+  #   flextable::flextable(defaults = set_flextable_defaults(digits = 0)) |>
+  #   flextable::set_caption(caption = "Residuos estándar de la prueba Chi Cuadrado",
+  #                          autonum =  officer::run_autonum(seq_id = "tab", bkm = "AP3-TAB1",
+  #                                                          bkm_all = T)) |>
+  #   flextable::add_footer_lines(values = paste0(HOM$HOM3$method, ". ",
+  #                                    "Confianza (1-p): ",
+  #                                    round((1 - HOM$HOM3$p.value) * 100,2), "%")) |>
+  #   flextable::font(fontname='Alegreya Sans', part = "all") |>
+  #   flextable::fontsize(size = 9, part = "all") |>
+  #   flextable::autofit()
 
 # Guardar resultados ----------------------------------------------------
 
