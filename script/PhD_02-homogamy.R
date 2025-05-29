@@ -255,6 +255,7 @@ if(!exists("HOG", inherits = F)){
                   p2_TH,
                   nrow = 2, heights = c(4, 8) )
 
+  cli::cli_alert_info(col_silver("Guardando {.path figures/Homogamia_probabilidad-densidad-x-TH.png}"))
   ggsave(filename = here::here("figures",
                                "Homogamia_probabilidad-densidad-x-TH.png"),
          plot = p2, height = 18, width = 22, units = "cm", dpi = 300)
@@ -322,6 +323,7 @@ if(!exists("HOG", inherits = F)){
                   nrow = 2,  heights = c(2, 7),
                   common.legend = T, legend = "bottom")
 
+  cli::cli_alert_info(col_silver("Guardando {.path figures/Homogamia_probabilidad-x-tipo.png}"))
   ggsave(filename = here::here("figures", "Homogamia_probabilidad-x-tipo.png"),
          plot = p3, height = 18 * 1.5, width = 38 * 1.5, units = "cm", dpi = 300)
 
@@ -369,22 +371,23 @@ if(!exists("HOG", inherits = F)){
     theme_minimal() +
     theme(legend.position = "none")
 
-  p4_center
-
   p4_marg <- ggExtra::ggMarginal(p4_center, type = "density",
-                                 groupColour = TRUE, groupFill = TRUE)
+                                 groupColour = TRUE, groupFill = TRUE) |>
+    as_ggplot()
 
-  ##### SACAR GGARRANGE Y GENERAR p4_leyenda
-  p4_marg <- ggarrange(p4_marg |> as_ggplot(),
-                  ggplot(data.frame()) +
-                    geom_point(x = NA, y = NA,
-                               aes(color = c("Primario", "Secundario", "Superior")) ) +
-                    scale_color_manual(values = c("tomato3", "goldenrod1", "darkolivegreen4")) +
-                    labs(color = "Nivel") +
-                    theme_minimal(),
-                  widths = c(10,0),
-                  common.legend = T,
-                  legend = "bottom")
+  p4_leyenda <- ggplot(data.frame()) +
+    geom_point(x = NA, y = NA,
+               aes(color = c("Primario", "Secundario", "Superior")) ) +
+    scale_color_manual(values = c("tomato3", "goldenrod1", "darkolivegreen4")) +
+    labs(color = "Nivel") +
+    theme_minimal()
+
+  ##### SACAR GGARRANGE Y GENERAR
+  p4_ppal <- ggarrange(p4_marg ,
+                       p4_leyenda,
+                       widths = c(10,0),
+                       common.legend = T,
+                       legend = "bottom")
 
   p4_add1 <- db_aux1 |>
     filter(!is.na(Significatividad) & (Proporcion > 0.05 | Significatividad)) |>
@@ -436,21 +439,22 @@ if(!exists("HOG", inherits = F)){
   # ggarrange(p4_add1, p4_add2, ncol = 1, heights = c(1, 4))
   p_blank <- ggplot() + theme_minimal()
 
-  p4 <- ggarrange(p4_marg,
+  p4 <- ggarrange(p4_ppal,
                   ggarrange(p4_add1, p4_add2, p_blank,
                             ncol = 1, heights = c(1, 4, 0.35)),
                   widths = c(3,1.2))
 
+  cli::cli_alert_info(col_silver("Guardando {.path figures/Homogamia_por-vs-prob.png}"))
   ggsave(here::here("figures",
-                    "Multidomain_por-vs-prob_prop+0.05.png"),
+                    "Homogamia_por-vs-prob.png"),
          p4, width = 27.5, height = 22, units = "cm", dpi = 300)
 
-  rm(p4, p4_center, p4_marg, p4_add1, p4_add2, p_blank)
+  rm(p4, p4_ppal, p4_center, p4_marg, p4_add1, p4_add2, p_blank)
   # rm(modelo)
 
-### ╠ VER: Distribución espacial de Ratio e/proporción y probabilidad de homogamia ------------------------------------------
+### ╠ VER FIG X.X: Distribución espacial de Ratio e/proporción y probabilidad de homogamia ------------------------------------------
 
-  p4 <- db_aux2 |>
+  p <- db_aux2 |>
     filter(!is.na(g)) |>
     ggplot() +
     geom_sf(data = CARTO$AMGBA, fill = "white", alpha = 0.5) +
@@ -465,12 +469,12 @@ if(!exists("HOG", inherits = F)){
     theme(legend.position="bottom")
 
   ggsave(filename = here::here("figures",
-                               "Multidomain_homog-explicada.png"),
-         plot = p4, height = 13, width = 30, units = "cm", dpi = 300)
+                               "Homogamia_homog-explicada.png"),
+         plot = p, height = 13, width = 30, units = "cm", dpi = 300)
 
-  rm(p4)
+  rm(p)
 
-### ╠ VER: Composición (AC) y Probabilidad de homogamia ------------------------------------------
+### ╠ VER FIG X.X: Composición (AC) y Probabilidad de homogamia ------------------------------------------
 
   res_CA <- db_aux |>
     rename_with(~str_remove(.x, "_HOG")) |>
@@ -487,7 +491,7 @@ if(!exists("HOG", inherits = F)){
                          bind_cols(ID_RADIO = db_aux$ID_RADIO,
                                    res_CA$row$coord),
                          by = "ID_RADIO")
-  res_CA |>
+  p <- res_CA |>
     factoextra::fviz_ca_biplot(alpha.row = 0, alpha.col = 0,
                                map = "rowprincipal",
                                geom = "point", title = NULL) +
@@ -506,16 +510,20 @@ if(!exists("HOG", inherits = F)){
     labs(size = "Cantidad de hogares") +
     guides(shape = "none") +
     scale_shape_manual(values = c(4, 19)) +
-    scale_color_gradient2("Probabilidad de Homogamia\nno explicada",
+    scale_color_gradient2("Probabilidad\nde Homogamia\nno explicada",
                           mid = "lightcyan2",
                           low = scales::muted("green"),
                           high = scales::muted("red"),
                           transform = "log1p") +
     theme(legend.direction = "horizontal", legend.position = "bottom")
 
-  rm(res_CA, coord_lab)
+  ggsave(filename = here::here("figures",
+                               "Homogamia_CA-homogamy.png"),
+         plot = p, height = 13, width = 30, units = "cm", dpi = 300)
 
-### ╠ FIG App C: Relaciones entre P'(Ha|a) y P''(H|A) ---------------------------
+  rm(res_CA, coord_lab, p)
+
+### ╠ FIG App C.1: Relaciones entre P'(Ha|a) y P''(H|A) ---------------------------
 
   l = 4000
   p_aux <- tibble(A = sample(x = 5:500, replace = T, size = l)) |>
@@ -551,14 +559,15 @@ if(!exists("HOG", inherits = F)){
     theme_minimal() +
     theme(legend.position = "bottom")
 
+  cli::cli_alert_info(col_silver("Guardando {.path figures/Homogamia_relation_P1-P2.png}"))
   ggsave(plot = ggpubr::ggarrange(p5a, p5b),
-         filename = here::here("figures", "Multidomain_ratio-P-prima.png"),
+         filename = here::here("figures", "Homogamia_relation_P1-P2.png"),
          height = 20, width = 30, dpi = 300, units = "cm")
 
   rm(p5a, p5b)
   rm(p_aux, l)
 
-### ╚ FIG App D: Probabilidad de homogamia bajo H_0 ---------------------------
+### ╚ FIG App D.1: Probabilidad de homogamia bajo H_0 ---------------------------
 
   # a <- HOG |>
   #   group_by(ID_RADIO) |>
@@ -592,7 +601,8 @@ if(!exists("HOG", inherits = F)){
     coord_fixed() +
     guides(color = "none")
 
-  ggsave(here::here("figures", "Multidomain_por-vs-prob-H0.png"),
+  cli::cli_alert_info(col_silver("Guardando {.path figures/Homogamia_porcentaje-vs-prob-H0.png}"))
+  ggsave(here::here("figures", "Homogamia_porcentaje-vs-prob-H0.png"),
          plot = p6, width = 19, height = 19, units = "cm", dpi = 300)
 
   rm(p6)
@@ -600,7 +610,7 @@ if(!exists("HOG", inherits = F)){
   # rm(a)
 ### Tablas ------------------------------
 
-  # ╠ Tabla 5.1 ---------------------------------
+  # ╠ TAB 5.1 ---------------------------------
 
   HOM$TAB1 <- HOM$HOM1[10:12, ] |>
     mutate(across(c(CON_p:POR_h_SUP), ~round(.x, 1)),
@@ -641,36 +651,37 @@ if(!exists("HOG", inherits = F)){
     flextable::width(j = 8, 0.1, unit = "cm") |>
     flextable::width(j = 9:11, 1.5, unit = "cm")
 
-  # ╚ Tabla 5.2 ---------------------------------
+  # ╚ TAB 5.2 ---------------------------------
 
   HOM$TAB2 <- HOM$HOM4 |>
     mutate(nivel = factor(nivel, levels = c("PRI", "SEC", "SUP"),
                           labels = c("Primario", "Secundario", "Superior"))) |>
+    select(nivel, no_signific, everything()) |>
     flextable::flextable() |>
     flextable::set_caption(caption = "Porcentaje de unidades espaciales con probabilidad de homogamia significativamente diferente de H0",
                            autonum = officer::run_autonum(seq_id = "tab",
                                                           bkm = "HOM-TAB2",
                                                           bkm_all = TRUE))  |>
     flextable::add_header_row(values = c("Nivel",
-                                         "Significativamente diferentes de H0",
-                                         "No Significativos"),
-                              colwidths = c(1, 3, 1)) |>
-    flextable::set_header_labels(nivel = "Nivel", down = "Debajo", up = "Sobre",
-                                 signific = "Total",
-                                 no_signific = "No Significativos") |>
-    flextable::merge_v(j = c(1, 5), part = "header") |>
+                                         "No Significativos",
+                                         "Significativamente diferentes de H0"),
+                              colwidths = c(1, 1, 3)) |>
+    flextable::set_header_labels(nivel = "Nivel", no_signific = "No Significativos",
+                                 down = "Debajo", up = "Sobre",
+                                 signific = "Total") |>
+    flextable::merge_v(j = 1:5, part = "header") |>
     flextable::align(align ='center', part = 'all') |>
     flextable::align(j = 1, align ='left', part = 'all')  |>
     flextable::colformat_double(j = 2:5, digits = 2, suffix = "%") |>
-    flextable::bg(j = 2:3, part = "body", bg = "grey90") |>
-    flextable::color(j = 2:3, part = "body", color = "grey50") |>
+    flextable::bg(j = 3:4, part = "body", bg = "grey90") |>
+    flextable::color(j = 3:4, part = "body", color = "grey50") |>
     flextable::add_footer_lines(as_paragraph(as_b("Notas:"))) |>
     flextable::add_footer_lines(paste0("Valores obtenidos mediante ",
                                        format(replic, big.mark = ".",
                                               decimal.mark = ","),
                                        " replicaciones Montecarlo. ",
                                        "Nivel de confianza: ", 1 - conf)) |>
-    flextable::footnote(j = 2, i = 1, part = "header",
+    flextable::footnote(j = 3, i = 1, part = "header",
                         ref_symbols = "*", inline = F,
                         value = flextable::as_paragraph(paste0("Porcentaje de simulaciones con valores ",
                                                                "por debajo / sobre el ", 1 - conf,
@@ -678,7 +689,8 @@ if(!exists("HOG", inherits = F)){
     flextable::font(fontname='Alegreya Sans', part = "all") |>
     flextable::fontsize(size = 9, part = "all") |>
     flextable::autofit()
-### Anexo? ----------
+
+  # Anexo? ----------
 
   # # Tabla matrimonial
   # HOM$HOM2 |>
