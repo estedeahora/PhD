@@ -31,3 +31,9 @@ source(here::here("script", "PhD_01-residential-segregation.R"))
 # Capítulo 5: Homogamia en el dominio residencial
 
 source(here::here("script", "PhD_02-homogamy.R"))
+
+# Capítulo 6: Segregación en los espacios de actividad
+# source(here::here("script", "PhD_03-mobilities.R"))
+
+# Capítulo 7: Segregación en el dominio escolar
+# source(here::here("script", "PhD_03-education.R"))

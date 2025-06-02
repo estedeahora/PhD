@@ -327,7 +327,7 @@ if(!exists("AUX", inherits = F)){
   #   geom_point(data = a, color = "black") +
   #   geom_point(data = db_aux1, alpha = 0.01, color = "grey50")
 
-### ╠ FIG App B.1: -----
+### ╠ FIG App B.1: Comparación distancia X^2 y Ls ------------
 
   cli::cli_li(col_yellow("Figure B.1: Comparación distancia X^2 y Local Segregation (M)"))
 
