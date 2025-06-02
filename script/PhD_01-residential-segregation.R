@@ -106,7 +106,7 @@ if(!exists("AUX", inherits = F)){
 
 # Figuras  ------------------------------------
 
-### ╠ Distribución espacial de la segregación local (M) ----------------
+### ╠ FIG 4.1: Distribución espacial de la segregación local (M) ----------------
 
   cli::cli_li(col_yellow("Figure 4.1: Distribución espacial de la segregación local"))
 
@@ -172,7 +172,7 @@ if(!exists("AUX", inherits = F)){
 
   rm(p1, p1_DET, p1_AMBA, p1_d, p1_d1, p1_d2, p_blank)
 
-### ╠ Distribución de grupos en CA ----------------
+### ╠ FIG 4.2: Distribución de grupos en CA ----------------
 
   cli::cli_li(col_yellow("Figure 4.2: Distribución de grupos en CA"))
 
@@ -237,7 +237,7 @@ if(!exists("AUX", inherits = F)){
   rm(p2, p2a, p2b, p2_text)
   rm(res_CA, coord_lab)
 
-### ╚ Distribución espacial de grupos con CA ----------------------------------------------------
+### ╠ FIG 4.3: Distribución espacial de grupos con CA ----------------------------------------------------
 
   cli::cli_li(col_yellow("Figure 4.3: Distribución espacial de grupos con CA"))
 
@@ -303,13 +303,114 @@ if(!exists("AUX", inherits = F)){
          width = 26, height = 42, unit = "cm", dpi = 300)
 
   rm(p3, p3_AMBA, p3_DET, p3_d, p3_d1, p3_d2, p_blank)
-
   rm(FFCC1, FFCC2)
+
+  # Visualización ternaria
+  # db_aux1 |>
+  #   select(PRI, SEC, SUP) |>
+  #   ggtern(aes(x = PRI, y = SEC, z = SUP)) +
+  #   geom_point(alpha = 0.01) +
+  #   stat_density_tern(geom = 'polygon',
+  #                     n         = 1000,
+  #                     aes(fill  = ..level..,
+  #                         alpha = ..level..)) +
+  #   scale_fill_viridis_c(option = "A")  +
+  #   guides(fill = guide_colorbar(order = 1), alpha = guide_none()) +
+  #   theme_ggtern()
+  #
+  # a <- db_aux1 |>
+  #   summarise(across(PRI:SUP, ~sum(.x, na.rm = T) )) |>
+  #   mutate(TOT = PRI + SEC + SUP,
+  #          across(PRI:SUP, ~.x/TOT * 100 ) )
+  #
+  # PhD_ggtern_legend() +
+  #   geom_point(data = a, color = "black") +
+  #   geom_point(data = db_aux1, alpha = 0.01, color = "grey50")
+
+### ╠ FIG App B.1: -----
+
+  cli::cli_li(col_yellow("Figure B.1: Comparación distancia X^2 y Local Segregation (M)"))
+
+  tot <- db_aux1 |>
+    summarise(across(c(HOG,PRI:SUP), sum)) |>
+    mutate(across(PRI:SUP, ~.x/HOG)) |>
+    select(PRI:SUP)
+
+  perfil <- db_aux1 |>
+    mutate(across(PRI:SUP, ~.x/HOG)) |>
+    select(PRI:SUP)
+
+  dist_chi <- map2_df(perfil, tot, ~(.x -.y)^2 / .y) |>
+    reduce(`+`) |>
+    sqrt()
+  dist_euc <- map2_df(perfil, tot, ~(.x -.y)^2) |>
+    reduce(`+`) |>
+    sqrt()
+
+  db_res <- db_aux1 |>
+    select(ID_RADIO, IDPROV, IDDPTO, TH,
+           HOG, ls, PRI:SUP) |>
+    mutate(dist_chi = dist_chi,
+           dist_euc = dist_euc#,
+           # dist_eig = dist_chi^2 * HOG/sum(HOG)
+    )
+
+  p_comp <- list(
+    # p1 = db_res |>
+    #   ggplot(aes(dist_euc, dist_chi)) +
+    #   geom_point(alpha = 0.1, color = "tomato4") +
+    #   geom_smooth(se = F, color = "darkblue", alpha = 0.2, linewidth = 0.5) +
+    #   geom_abline(slope = 1, intercept = 0, color = "grey20", linetype = "dashed") +
+    #   labs(title = "Distancia euclidiana vs Distancia Chi Cuadrada",
+    #        x = "Distancia euclidiana",
+    #        y = "Distancia Chi Cuadrada") +
+    #   # coord_equal() +
+    #   theme_minimal(),
+    p2 = db_res |>
+      ggplot(aes(ls, dist_chi)) +
+      geom_point(alpha = 0.1, color = "tomato4") +
+      geom_smooth(se = F, color = "darkblue", alpha = 0.2, linewidth = 0.5) +
+      geom_abline(slope = 1, intercept = 0, color = "grey20", linetype = "dashed") +
+      labs(title = "Segregación local (M) vs Distancia Chi Cuadrada",
+           x = "Segregación local (M)",
+           y = "Distancia Chi Cuadrada") +
+      # coord_equal() +
+      theme_minimal(),
+    p3 = db_res |>
+      ggplot(aes(ls, dist_chi^2)) +
+      geom_point(alpha = 0.1, color = "tomato4") +
+      geom_smooth(se = F, color = "darkblue", alpha = 0.2, linewidth = 0.5) +
+      geom_abline(slope = 1, intercept = 0, color = "grey20", linetype = "dashed") +
+      labs(title = "Segregación local (M) vs Distancia Chi Cuadrada",
+           subtitle = "Chi cuadrado con transformación cuadrática",
+           x = "Segregación local (M)",
+           y = "Distancia Chi Cuadrada (transformación cuadrática)") +
+      # coord_equal() +
+      theme_minimal()
+    # p3 = db_res |>
+    #   ggplot(aes(ls, dist_eig)) +
+    #   geom_point(alpha = 0.1, color = "tomato4") +
+    #   geom_smooth(se = F, color = "darkblue", alpha = 0.2, linewidth = 0.5) +
+    #   geom_abline(slope = 1, intercept = 0, color = "grey20", linetype = "dashed") +
+    #   labs(title = "Segregación local (M) vs Inercia",
+    #        x = "Segregación local (M)",
+    #        y = TeX("Inercia = masa . (chi dist)^2")) +
+    #   # coord_equal() +
+    #   theme_minimal()
+  )
+
+  p4 <- ggarrange(plotlist = p_comp, nrow = 1)
+
+  cli::cli_alert_info(col_silver("Guardando {.path figures/Segregacion_comparacion_distancias.png}"))
+  ggsave(plot = p4, filename = here::here("figures", "Segregacion_comparacion_distancias.png"),
+         width = 25, height = 14, units = "cm", dpi = 300)
+
   rm(db_aux1)
+  rm(db_res, dist_chi, dist_euc, perfil, tot, p_comp, p4)
 
 # Tablas  ------------------------------------
 
-### ╠ Tabla 4.1 --------------------------------------
+### ╠ TAB 4.1 --------------------------------------
 
   cli::cli_li(col_yellow("Table 4.1: Segregación residencial explicada x nivel de análisis"))
 
@@ -337,7 +438,7 @@ if(!exists("AUX", inherits = F)){
     flextable::fontsize(size = 9, part = "all") |>
     flextable::autofit(part = "all")
 
-### ╠ Tabla 4.2 ----------------------
+### ╠ TAB 4.2 ----------------------
 
   cli::cli_li(col_yellow("Table 4.2: Segregación residencial explicada x nivel educativo"))
 
@@ -364,7 +465,7 @@ if(!exists("AUX", inherits = F)){
     flextable::fontsize(size = 9, part = "all") |>
     flextable::autofit(part = "all")
 
-### ╠ Tabla 4.3 ----------------------
+### ╠ TAB 4.3 ----------------------
 
   cli::cli_li(col_yellow("Table 4.3: Descripción de patrones"))
 
@@ -387,7 +488,7 @@ if(!exists("AUX", inherits = F)){
     flextable::width(j = 7, 4.6, unit = "cm") |>
     flextable::width(j = 8, 3.2, unit = "cm")
 
-### ╠ Tabla AppA.T1 --------------------------
+### ╠ TAB App A.1 --------------------------
 
   cli::cli_li(col_yellow("Table App A: Índices de segregación"))
 
@@ -404,7 +505,7 @@ if(!exists("AUX", inherits = F)){
     flextable::fontsize(size = 9, part = "all") |>
     flextable::autofit()
 
-### ╚ Tabla AppA.T2 --------------------------
+### ╚ TAB App A.2 --------------------------
 
   cli::cli_li(col_yellow("Table App A: Descripción de Entornos urbano"))
 
@@ -441,7 +542,9 @@ if(!exists("AUX", inherits = F)){
     flextable::align(j = 1, align ='left', part = 'all') |>
     flextable::font(fontname='Alegreya Sans', part = "all") |>
     flextable::fontsize(size = 9, part = "all") |>
-    flextable::autofit(part = "all")
+    # flextable::autofit(part = "all")
+    flextable::width(j = 1, 4, unit = "cm") |>
+    flextable::width(j = 2:6, 2.3, unit = "cm")
 
 # Guardar resultados ----------------------------------------------------
 
