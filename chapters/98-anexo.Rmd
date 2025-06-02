@@ -66,12 +66,13 @@ $$
 \sum_{u=1}^U m_u . \text{dist}
 $$ Queda por definir la relación entre ambas distancias. En términos generales, la distancia chi cuadrado es una medida de distancia que se utiliza para medir la diferencia entre dos distribuciones de probabilidad. En este sentido, la distancia chi cuadrado puede pensarse como una medida de la 'dispersión' de los perfiles de las unidades en relación al perfil medio. Por otro lado, la distancia definida a partir de la 'cantidad de información' puede pensarse como una medida de la 'información' que aporta el perfil de cada unidad al perfil medio. En este sentido, ambas medidas pueden pensarse como medidas de la 'variabilidad' y 'dispersión' de los perfiles de las unidades en relación al perfil medio.
 
-En la Figura @ref(fig:appB-dist-comp) se presenta una comparación entre ambas distancias en .
+En la Figura \@ref(fig:appB-dist-comp) se presenta una comparación entre ambas distancias en .
 
 ```{r appB-dist-comp}
 #| fig.cap: "Comparación de distancia $\\chi^2$ y segregación local ($L_u$), tomando como referencia segregación residencial de los radios censales en el AMBA"
 
-knitr::include_graphics(here::here("figures", "Comparacion_distancias.png"))
+knitr::include_graphics(here::here("figures",
+                                   "Segregacion_comparacion_distancias.png"))
 
 ```
 
@@ -161,5 +162,6 @@ knitr::include_graphics(here::here("figures", "Homogamia_relation_P1-P2.png"))
 #| fig.asp: 1
 
 knitr::include_graphics(here::here("figures",
-                                   "Multidomain_por-vs-prob-H0.png"))
+                                   "Homogamia_porcentaje-vs-prob-H0.png"))
 ```
+
