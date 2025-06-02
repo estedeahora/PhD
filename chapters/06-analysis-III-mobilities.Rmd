@@ -10,6 +10,8 @@ editor_options:
 
 <!--# Se introduce el problema sobre cómo las movilidades urbanas cotidianas tienen un efecto sobre las interacciones con personas de otros grupos sociales. En particular, se repasan los antecedentes que analizan el rol de las movilidades en los intercambios en el AMBA. -->
 
+<https://doi.org/10.1140/epjds/s13688-022-00341-x>
+
 <!-- Aportes: SNA -->
 
 El capítulo pretende ser un aporte novedoso en al menos dos aspectos.
