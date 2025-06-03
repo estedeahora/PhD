@@ -518,7 +518,7 @@ if(!exists("AUX", inherits = F)){
                                  PRI = "Hasta primario completo",
                                  SEC = "Secundario completo",
                                  SUP = "Superior completo",
-                                 p = "Porcentaje del total") |>
+                                 p = "Porcentaje del total AMBA") |>
     add_header_row(values = c("Entorno urbano",
                               "Segregación local (M)",
                               "Composición interna (%)",
@@ -540,11 +540,13 @@ if(!exists("AUX", inherits = F)){
     flextable::bold(i = 10) |>
     flextable::align(align ='center', part = 'all') |>
     flextable::align(j = 1, align ='left', part = 'all') |>
+    flextable::valign(valign = "top", part = "body") |>
     flextable::font(fontname='Alegreya Sans', part = "all") |>
     flextable::fontsize(size = 9, part = "all") |>
     # flextable::autofit(part = "all")
-    flextable::width(j = 1, 4, unit = "cm") |>
-    flextable::width(j = 2:6, 2.3, unit = "cm")
+    flextable::width(j = 1, 4.5, unit = "cm") |>
+    flextable::width(j = 2, 2.2, unit = "cm") |>
+    flextable::width(j = 3:6, 2.2, unit = "cm")
 
 # Guardar resultados ----------------------------------------------------
 
