@@ -592,8 +592,32 @@ if(!exists("HOG", inherits = F)){
   cli::cli_alert_info(col_silver("Guardando {.path figures/Homogamia_porcentaje-vs-prob-H0.png}"))
   ggsave(here::here("figures", "Homogamia_porcentaje-vs-prob-H0.png"),
          plot = p6, width = 19, height = 19, units = "cm", dpi = 300)
+### ╚ FIG App ?.?: Distribución espacial de prob homogamia no-explicada ------------------------------------------
 
-  rm(p6)
+  cli::cli_li(col_yellow("Figure D.1: Distribución espacial de prob homogamia no-explicada"))
+
+  p8 <- db_aux2 |>
+    filter(!is.na(g)) |>
+    ggplot() +
+    geom_sf(data = CARTO$AMGBA, fill = "white", alpha = 0.5) +
+    geom_sf(aes(fill = dif_H0_cor), color = NA) +
+    scale_fill_gradient2("% de Homogamia\nno-explicada",
+                         mid = "lightcyan2",
+                         low = scales::muted("green"),
+                         high = scales::muted("red"),
+                         transform = "log1p", limits = c(NA, 1)) +
+    facet_wrap(~g, strip.position = "bottom") +
+    coord_sf(xlim = AUX$lim_AMBA[c(1,3)],
+             ylim = AUX$lim_AMBA[c(2,4)]) +
+    theme_void() +
+    theme(legend.position="bottom")
+
+  cli::cli_alert_info(col_silver("Guardando {.path figures/Homogamia_homog-explicada.png}"))
+  ggsave(filename = here::here("figures",
+                               "Homogamia_homog-explicada.png"),
+         plot = p8, height = 13, width = 30, units = "cm", dpi = 300)
+
+  rm(p8)
 
   # rm(a)
 ### Tablas ------------------------------
