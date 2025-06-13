@@ -106,9 +106,8 @@ if(!exists("HOG", inherits = F)){
   db_aux2 <- CARTO$RADIO |>
     left_join(db_aux1 |>
                 filter(!is.na(Significatividad)) |>
-                select(ID_RADIO, g, Ratio1),
-              by = join_by(ID_RADIO)) |>
-    mutate(Ratio = ifelse(is.infinite(Ratio1), 1,  Ratio1 ))
+                select(ID_RADIO, g, dif_H0_cor),
+              by = join_by(ID_RADIO))
 
 # Análisis de Homogamia -------------------------------
 ### ╠ Porcentaje de viviendas con parejas homogámicas ------------------
