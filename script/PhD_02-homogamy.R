@@ -453,9 +453,12 @@ if(!exists("HOG", inherits = F)){
                     "Homogamia_por-vs-prob.png"),
          p4, width = 27.5, height = 22, units = "cm", dpi = 300)
 
-  rm(p4, p4_ppal, p4_center, p4_marg, p4_add1, p4_add2, p_blank)
+  rm(p4, p4_ppal, p4_center, p4_marg, p4_add1, p4_add2,
+     p4_leyenda, p_blank, aux_p4)
 
 ### ╠ FIG 5.5: Composición (AC) y Probabilidad de homogamia no-explicada ------------------------------------------
+
+  cli::cli_li(col_yellow("Figure 5.5: Composición (AC) y Probabilidad de homogamia no-explicada"))
 
   res_CA <- db_aux |>
     rename_with(~str_remove(.x, "_HOG")) |>
@@ -505,13 +508,11 @@ if(!exists("HOG", inherits = F)){
                                "Homogamia_CA-homogamy.png"),
          plot = p5, width = 30, height = 13, units = "cm", dpi = 300)
 
-  rm(res_CA, coord_lab, p5)
-
-         plot = p, height = 13, width = 30, units = "cm", dpi = 300)
-
-  rm(res_CA, coord_lab, p)
+  rm(res_CA, coord_lab, coord_rad, p5)
 
 ### ╠ FIG App C.1: Relaciones entre P'(Ha|a) y P''(H|A) ---------------------------
+
+  cli::cli_li(col_yellow("Figure C.1: Relaciones entre P'(Ha|a) y P''(H|A)"))
 
   l = 4000
   p_aux <- tibble(A = sample(x = 5:500, replace = T, size = l)) |>
@@ -523,7 +524,7 @@ if(!exists("HOG", inherits = F)){
            ratio = P_ind / P_hog,
            ratio = ifelse(is.nan(ratio), NA, ratio) )
 
-  p5a <- p_aux |>
+  p6a <- p_aux |>
     ggplot(aes(x = P_ind, y = P_hog, color = ratio)) +
     geom_point(alpha = 0.4) +
     scale_color_viridis_c(option = "B", direction = 1, limits = c(1,2)) +
@@ -536,7 +537,7 @@ if(!exists("HOG", inherits = F)){
                                      output = "character"))+
     theme(legend.position = "bottom")
 
-  p5b <- p_aux |>
+  p6b <- p_aux |>
     filter(P_hog != 0) |>
     ggplot(aes(x = P_ind, y = ratio, color = P_hog)) +
     geom_point() +
@@ -548,25 +549,18 @@ if(!exists("HOG", inherits = F)){
     theme(legend.position = "bottom")
 
   cli::cli_alert_info(col_silver("Guardando {.path figures/Homogamia_relation_P1-P2.png}"))
-  ggsave(plot = ggpubr::ggarrange(p5a, p5b),
+  ggsave(plot = ggpubr::ggarrange(p6a, p6b),
          filename = here::here("figures", "Homogamia_relation_P1-P2.png"),
          height = 20, width = 30, dpi = 300, units = "cm")
 
-  rm(p5a, p5b)
+  rm(p6a, p6b)
   rm(p_aux, l)
 
-### ╚ FIG App D.1: Probabilidad de homogamia bajo H_0 ---------------------------
+### ╠ FIG App D.1: Probabilidad de homogamia bajo H_0 ---------------------------
 
-  # a <- HOG |>
-  #   group_by(ID_RADIO) |>
-  #   summarise(across(ends_with("_hogcount"), \(.x) sum(.x, na.rm = T) ),
-  #             N_head = PRI_hogcount + SEC_hogcount + SUP_hogcount,
-  #             across(ends_with("_hogcount"), \(.x) .x/N_head )) |>
-  #   rename_with(~ str_replace(.x, "_hogcount", "_head"),
-  #               ends_with("_hogcount")) |>
-  #   select(-N_head)
+  cli::cli_li(col_yellow("Figure D.1: Probabilidad de homogamia bajo H_0"))
 
-  p6 <- db_aux |>
+  p7 <- db_aux |>
     # left_join(a, by = "ID_RADIO") |>
     pivot_longer(cols = c(PRI_MEAN, SEC_MEAN, SUP_MEAN,
                           # PRI_head, SEC_head, SUP_head,
@@ -591,7 +585,10 @@ if(!exists("HOG", inherits = F)){
 
   cli::cli_alert_info(col_silver("Guardando {.path figures/Homogamia_porcentaje-vs-prob-H0.png}"))
   ggsave(here::here("figures", "Homogamia_porcentaje-vs-prob-H0.png"),
-         plot = p6, width = 19, height = 19, units = "cm", dpi = 300)
+         plot = p7, width = 19, height = 19, units = "cm", dpi = 300)
+
+  rm(p7)
+
 ### ╚ FIG App ?.?: Distribución espacial de prob homogamia no-explicada ------------------------------------------
 
   cli::cli_li(col_yellow("Figure D.1: Distribución espacial de prob homogamia no-explicada"))
@@ -619,7 +616,6 @@ if(!exists("HOG", inherits = F)){
 
   rm(p8)
 
-  # rm(a)
 ### Tablas ------------------------------
 
   # ╠ TAB 5.1 ---------------------------------
@@ -655,7 +651,6 @@ if(!exists("HOG", inherits = F)){
     flextable::bold(i = 3, part = "body") |>
     flextable::font(fontname='Alegreya Sans', part = "all") |>
     flextable::fontsize(size = 9, part = "all") |>
-    # flextable::autofit()
     flextable::width(j = 1, 1.5, unit = "cm") |>
     flextable::width(j = 2, 1.9, unit = "cm") |>
     flextable::width(j = 3, 2.1, unit = "cm") |>
