@@ -164,4 +164,3 @@ knitr::include_graphics(here::here("figures", "Homogamia_relation_P1-P2.png"))
 knitr::include_graphics(here::here("figures",
                                    "Homogamia_porcentaje-vs-prob-H0.png"))
 ```
-
