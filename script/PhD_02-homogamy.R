@@ -86,6 +86,7 @@ if(!exists("HOG", inherits = F)){
                       levels = c("PRI", "SEC", "SUP"),
                       labels = c("Primario", "Secundario", "Superior") ),
            Significatividad = as.logical(Significatividad),
+           w = HOG * Proporcion,
            # Corregir variables sin casos (Proporción = 0)
            Probabilidad = ifelse(Proporcion == 0, 0, Probabilidad),
            H0 = ifelse(Proporcion == 0, 0, H0),
@@ -93,19 +94,14 @@ if(!exists("HOG", inherits = F)){
            # Imputar valor esperado cuando no existe significatividad
            Probabilidad_corr = ifelse(Significatividad, Probabilidad, H0),
            # Calcular diferencias
-           dif_prop = Probabilidad - Proporcion,
+           # dif_prop = Probabilidad - Proporcion,
            dif_H0 = Probabilidad - H0,
+           dif_H0_cor = Probabilidad_corr - H0,
            # Calcular ratios
-           Ratio1 =  Proporcion / Probabilidad,
-           Ratio2 =  Proporcion / Probabilidad_corr,
-           Ratio4 = H0 / Probabilidad_corr
+           # Ratio1 =  Proporcion / Probabilidad,
+           # Ratio2 =  Proporcion / Probabilidad_corr,
+           # Ratio4 = H0 / Probabilidad_corr
            )
-
-  #
-  # Ratio3 = ifelse(is.infinite(Ratio),
-  #                 1 - abs(rnorm(n = length(is.infinite(Ratio)),
-  #                               mean = 0, sd = 0.30)),
-  #                 Ratio),
 
   db_aux2 <- CARTO$RADIO |>
     left_join(db_aux1 |>
@@ -333,72 +329,78 @@ if(!exists("HOG", inherits = F)){
 
   cli::cli_li(col_yellow("Figure 5.4: Ratio probabilidad y proporción de homogamia"))
 
-  # modelo <- lm(Probabilidad_corr ~ g + Proporcion + g * Proporcion + g * I(Proporcion^2),
-  #              data = db_aux1 |> filter(!is.na(Significatividad) & (Proporcion > 0.05 | Significatividad)))
-  #
-  # db_aux1 <- db_aux1 |>
-  #   mutate(predict = predict(object = modelo, db_aux1),
-  #          resid = Probabilidad_2 - predict)
+  aux_p4 <- pivot_longer((RES$SEG4[10, 2:4]/100), cols = everything(),
+               names_to = "g", values_to = "intercept") |>
+    mutate(g = factor(g,
+                      levels = c("PRI", "SEC", "SUP"),
+                      labels = c("Primario", "Secundario", "Superior") ) )
+
+  p_blank <- ggplot() + theme_minimal()
 
   p4_center <- db_aux1 |>
-    filter(!is.na(Significatividad) & (Proporcion > 0.05 | Significatividad
-                                       )) |>
-    ggplot(aes(x = Proporcion, y = dif_H0, color = g, group = g )) +
-    # geom_abline(slope = 1, linetype = 2, alpha = 0.4, color = "grey30") +
-    geom_hline(linetype = 2, yintercept = 0, color = "grey10") +
-    geom_point(alpha = 0.02) +
-    geom_vline(data = pivot_longer((RES$SEG4[10, 2:4]/100), cols = everything(),
-                                   names_to = "g", values_to = "intercept") |>
-                 mutate(g = factor(g,
-                                   levels = c("PRI", "SEC", "SUP"),
-                                   labels = c("Primario", "Secundario", "Superior") ) ),
-               aes(xintercept = intercept, color = g),
-               alpha = 0.7, linetype = 2) +
-    geom_smooth(linewidth = 0.4,
-                #aes(y = Probabilidad_corr),
-                # color = "grey40", fill = "grey20",
-                method = "lm", formula = y ~ poly(x, 2)) +
-    # geom_point(aes(y = predict), alpha = 0.01) +
-    # annotate("text", x = 0.22, y = 0.2 , color = "grey45",
-    #          angle = 45, label = latex2exp::TeX("Hipotesis nula ($H_0$)") ) +
+    filter(!is.na(Significatividad) & Proporcion > 0.03) |>
+    ggplot(aes(x = Proporcion, y = Probabilidad_corr, color = g, group = g )) +
+    geom_point(aes(y = Probabilidad, shape = Significatividad, size = w),
+               alpha = 0.03) +
+    geom_segment(data = aux_p4,
+                 aes(x = intercept, xend = intercept, color = g),
+                 y = 0.75, yend = 0.6, alpha = 0.6, linetype = 1,
+                 arrow = arrow(length = unit(0.2, "cm"), type = "closed")) +
+    geom_text(x = 0.33, y = 0.78, color = "grey20", size = 3,
+              label = "Proporción promedio de cada grupo") +
+    geom_text(data = aux_p4, angle = 90,  size = 3,
+              aes(x = intercept, y = 0.7, label = g),
+              color = "grey20", vjust = -0.05) +
+    geom_smooth(aes(weight = w), linewidth = 0.4) +
+    geom_smooth(aes(y = H0, weight = w), se = F,
+                linewidth = 0.4, linetype = 2) +
     scale_x_continuous(name = "Proporción del grupo en la unidad censal",
                        limits = c(0, 1), expand = c(0,0)) +
     scale_y_continuous(name = "Probabilidad de homogamia",
-                       limits = c(NA, 0.6), expand = c(0,0)
-                       ) +
+                       limits = c(0, 0.8), expand = c(0,0) ) +
     scale_color_manual(values = c("tomato3", "goldenrod1", "darkolivegreen4")) +
+    scale_shape_manual(values = c(4, 16)) +
     coord_fixed() +
     theme_minimal() +
     theme(legend.position = "none")
 
   p4_marg <- ggExtra::ggMarginal(p4_center, type = "density",
                                  groupColour = TRUE, groupFill = TRUE) |>
-    as_ggplot()
+    ggpubr::as_ggplot()
 
-  p4_leyenda <- ggplot(data.frame()) +
-    geom_point(x = NA, y = NA,
-               aes(color = c("Primario", "Secundario", "Superior")) ) +
-    scale_color_manual(values = c("tomato3", "goldenrod1", "darkolivegreen4")) +
-    labs(color = "Nivel") +
-    theme_minimal()
+  p4_leyenda <- list(
+    p1 = ggplot(data.frame()) +
+      geom_point(x = NA, y = NA,
+                 aes(color = c("Primario", "Secundario", "Superior")) ) +
+      scale_color_manual(values = c("tomato3", "goldenrod1", "darkolivegreen4")) +
+      labs(color = "Nivel") +
+      theme_minimal() ,
+    p2 = ggplot(data.frame()) +
+        geom_smooth(aes(x = 1:6, y = 1:6,
+                        linetype = factor(rep(c(1:2), 3))),
+                    color = "black", se = FALSE) +
+        scale_linetype_discrete(name="",
+                                breaks=c(1, 2),
+                                labels = c("Observado", "Hipótesis nula (H0)")) +
+        theme_minimal()
+    ) |>
+    map(~(.x  +  theme(legend.position = "bottom")) |>  ggpubr::get_legend() |>  ggpubr::as_ggplot())
 
-  ##### SACAR GGARRANGE Y GENERAR
-  p4_ppal <- ggarrange(p4_marg ,
-                       p4_leyenda,
-                       widths = c(10,0),
-                       common.legend = T,
-                       legend = "bottom")
+  p4_leyenda <- ggarrange(plotlist = list(a_ = p_blank, b_ = p4_leyenda[[1]],
+                                          c_ = p4_leyenda[[2]], d_ = p_blank),
+                          ncol = 4, widths = c(3, 6, 6, 3))
+
+  p4_ppal <- ggarrange(p4_marg, p4_leyenda,
+                       ncol = 1, heights = c(10,0.5))
 
   p4_add1 <- db_aux1 |>
-    filter(!is.na(Significatividad) & (Proporcion > 0.05 | Significatividad)) |>
-    ggplot(aes(x= Proporcion, y = 1-Ratio4, color = g)) +
-    geom_smooth(se = F, linewidth = 0.4,
-                method = 'glm', formula = y ~ sqrt(x) ) +
+    filter(!is.na(Significatividad) & Proporcion > 0.03) |>
+    ggplot(aes(x = Proporcion, y = dif_H0_cor, color = g, weight = w)) +
+    geom_smooth(se = F, linewidth = 0.4) +
     geom_smooth(se = F, linewidth = 0.4, color = "grey60", linetype = 2,
-                method = 'glm', formula = y ~ sqrt(x) ) +
-    facet_wrap(~"Total", ncol = 1, strip.position="right") +
+                method = 'glm', formula = y ~ poly(x, 3)) +
+    facet_wrap(~"Total", ncol = 1, strip.position = "right") +
     scale_color_manual(values = c("tomato3", "goldenrod1", "darkolivegreen4")) +
-    guides(color = "none") +
     scale_x_continuous(name = NULL, limits = c(0, 1), expand = c(0, 0)) +
     scale_y_continuous(name = "", limits = c(0, 1), expand = c(0, 0),
                        labels = scales::percent) +
@@ -409,24 +411,26 @@ if(!exists("HOG", inherits = F)){
           panel.grid.minor = element_blank(),
           strip.background = element_rect(fill="lightblue4"),
           axis.text.x  = element_blank(),
-          axis.ticks.x = element_blank() )
+          axis.ticks.x = element_blank(),
+          legend.position = "none")
 
   p4_add2 <- db_aux1 |>
-    filter(!is.na(Significatividad) & (Proporcion > 0.05 | Significatividad)) |>
-    ggplot(aes(x= Proporcion, y = 1-Ratio4, color = g)) +
-    geom_point(alpha = 0.01) +
-    geom_point(data = db_aux1 |> filter(!Significatividad & (Proporcion > 0.05 | Significatividad)),
-               color = "grey50", alpha = 0.05, shape = 4) +
-    geom_smooth(aes(y = 1-Ratio4, group = g),
-                color = "grey25", se = T, linewidth = 0.4,
-                method = 'glm', formula = y ~ sqrt(x)   ) +
+    mutate(g_col = case_when(Significatividad ~ g,
+                             T~ "No Significativo"),
+           g_col = factor(g_col, levels = c(levels(g), "No Significativo"))) |>
+    filter(!is.na(Significatividad) & (Proporcion > 0.03)) |>
+    ggplot(aes(x = Proporcion, y = dif_H0_cor, color = g_col, weight = w)) +
+    geom_point(alpha = 0.02, aes(y = dif_H0, shape = Significatividad)) +
+    geom_smooth(aes(group = g),
+                color = "grey25", se = T, linewidth = 0.4) +
+    geom_hline(yintercept = 0, linetype = 2, color = "grey10", linewidth = 0.4) +
     facet_wrap(~g, ncol = 1, strip.position="right") +
-    scale_color_manual(values = c("tomato3", "goldenrod1", "darkolivegreen4")) +
-    guides(color = "none") +
+    scale_color_manual(values = c("tomato3", "goldenrod1", "darkolivegreen4", "grey50")) +
+    scale_shape_manual(values = c(4, 16)) +
     scale_x_continuous(name = "Proporción del grupo \nen la unidad espacial",
-                       limits = c(0, 1), expand = c(0,0)) +
+                       limits = c(0, 1), expand = c(0, 0)) +
     scale_y_continuous(name = "Porcentaje de homogamia no-explicada",
-                       limits = c(0, 1), expand = c(0,0),
+                       limits = c(NA, 1), expand = c(0, 0),
                        labels = scales::percent) +
     theme_light() +
     theme(strip.text.x = element_text(size = 8),
@@ -434,15 +438,15 @@ if(!exists("HOG", inherits = F)){
           plot.background = element_rect(fill='transparent', color = NA),
           strip.background = element_rect(fill="lemonchiffon4"),
           panel.grid.major = element_blank(),
-          panel.grid.minor = element_blank())
+          panel.grid.minor = element_blank(),
+          legend.position = "none")
 
-  # ggarrange(p4_add1, p4_add2, ncol = 1, heights = c(1, 4))
-  p_blank <- ggplot() + theme_minimal()
+  ggarrange(p4_add1, p4_add2, ncol = 1, heights = c(1, 4))
 
   p4 <- ggarrange(p4_ppal,
                   ggarrange(p4_add1, p4_add2, p_blank,
                             ncol = 1, heights = c(1, 4, 0.35)),
-                  widths = c(3,1.2))
+                  widths = c(3, 1.2))
 
   cli::cli_alert_info(col_silver("Guardando {.path figures/Homogamia_por-vs-prob.png}"))
   ggsave(here::here("figures",
@@ -450,31 +454,8 @@ if(!exists("HOG", inherits = F)){
          p4, width = 27.5, height = 22, units = "cm", dpi = 300)
 
   rm(p4, p4_ppal, p4_center, p4_marg, p4_add1, p4_add2, p_blank)
-  # rm(modelo)
 
-### ╠ VER FIG X.X: Distribución espacial de Ratio e/proporción y probabilidad de homogamia ------------------------------------------
-
-  p <- db_aux2 |>
-    filter(!is.na(g)) |>
-    ggplot() +
-    geom_sf(data = CARTO$AMGBA, fill = "white", alpha = 0.5) +
-    geom_sf(aes(fill  = (1-Ratio)* 100), color = NA) +
-    scale_fill_gradient("% de Homogamia no-explicada",
-                        low = "wheat1", high = "indianred3",
-                        limits = c(0, 110)) +
-    facet_wrap(~g, strip.position = "bottom") +
-    coord_sf(xlim = AUX$lim_AMBA[c(1,3)],
-             ylim = AUX$lim_AMBA[c(2,4)]) +
-    theme_void() +
-    theme(legend.position="bottom")
-
-  ggsave(filename = here::here("figures",
-                               "Homogamia_homog-explicada.png"),
-         plot = p, height = 13, width = 30, units = "cm", dpi = 300)
-
-  rm(p)
-
-### ╠ VER FIG X.X: Composición (AC) y Probabilidad de homogamia ------------------------------------------
+### ╠ FIG 5.5: Composición (AC) y Probabilidad de homogamia ------------------------------------------
 
   res_CA <- db_aux |>
     rename_with(~str_remove(.x, "_HOG")) |>
@@ -491,7 +472,7 @@ if(!exists("HOG", inherits = F)){
                          bind_cols(ID_RADIO = db_aux$ID_RADIO,
                                    res_CA$row$coord),
                          by = "ID_RADIO")
-  p <- res_CA |>
+  p5 <- res_CA |>
     factoextra::fviz_ca_biplot(alpha.row = 0, alpha.col = 0,
                                map = "rowprincipal",
                                geom = "point", title = NULL) +
@@ -517,6 +498,7 @@ if(!exists("HOG", inherits = F)){
                           transform = "log1p") +
     theme(legend.direction = "horizontal", legend.position = "bottom")
 
+  cli::cli_alert_info(col_silver("Guardando {.path figures/Homogamia_CA-homogamy.png}"))
   ggsave(filename = here::here("figures",
                                "Homogamia_CA-homogamy.png"),
          plot = p, height = 13, width = 30, units = "cm", dpi = 300)
