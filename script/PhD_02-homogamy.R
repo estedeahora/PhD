@@ -455,7 +455,7 @@ if(!exists("HOG", inherits = F)){
 
   rm(p4, p4_ppal, p4_center, p4_marg, p4_add1, p4_add2, p_blank)
 
-### ╠ FIG 5.5: Composición (AC) y Probabilidad de homogamia ------------------------------------------
+### ╠ FIG 5.5: Composición (AC) y Probabilidad de homogamia no-explicada ------------------------------------------
 
   res_CA <- db_aux |>
     rename_with(~str_remove(.x, "_HOG")) |>
@@ -471,7 +471,9 @@ if(!exists("HOG", inherits = F)){
   coord_rad <- left_join(db_aux1,
                          bind_cols(ID_RADIO = db_aux$ID_RADIO,
                                    res_CA$row$coord),
-                         by = "ID_RADIO")
+                         by = "ID_RADIO") |>
+    mutate(size_adapt = (HOG - 10) * Significatividad + 10)
+
   p5 <- res_CA |>
     factoextra::fviz_ca_biplot(alpha.row = 0, alpha.col = 0,
                                map = "rowprincipal",
@@ -481,8 +483,8 @@ if(!exists("HOG", inherits = F)){
                  aes(x = `Dim 1`, y = `Dim 2`)) +
     geom_point(data = coord_rad, alpha = 0.5,
                aes(x = `Dim 1`, y = `Dim 2`,
-                   size = (HOG - 10) * Significatividad + 10,
-                   color = dif_H0, shape = Significatividad)) +
+                   size = size_adapt,
+                   color = dif_H0_cor, shape = Significatividad)) +
     geom_text(data = coord_lab, color = "grey10",
               aes(x = `Dim 1` + (0.05 * `Dim 1`),
                   y = `Dim 2` + (0.05 * `Dim 2`),
@@ -501,6 +503,10 @@ if(!exists("HOG", inherits = F)){
   cli::cli_alert_info(col_silver("Guardando {.path figures/Homogamia_CA-homogamy.png}"))
   ggsave(filename = here::here("figures",
                                "Homogamia_CA-homogamy.png"),
+         plot = p5, width = 30, height = 13, units = "cm", dpi = 300)
+
+  rm(res_CA, coord_lab, p5)
+
          plot = p, height = 13, width = 30, units = "cm", dpi = 300)
 
   rm(res_CA, coord_lab, p)
