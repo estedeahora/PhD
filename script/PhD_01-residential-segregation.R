@@ -551,5 +551,3 @@ if(!exists("AUX", inherits = F)){
 # Guardar resultados ----------------------------------------------------
 
   usethis::use_data(RES, overwrite = TRUE)
-
-
