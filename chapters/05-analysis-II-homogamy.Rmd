@@ -77,6 +77,7 @@ tanto la homogeneidad al 'nivel de los hogares', puede contrarrestar la
 heterogeneidad a 'nivel del vecindario' [@Tammaru2021].
 
 <!-- Diferencia entre segregación (interacción potencial) y homogamia (interacción efectiva) -->
+
 <!--# Retomando esta perspectiva, nuestro trabajo entiende que la segregación residencial y la homogamia actúan articulando en diferentes ‘niveles’ (hogar-barrio) el fenómeno de la segregación urbana [@VanHam2018]. -->
 
 Teniendo en cuenta esta perspectiva, @VanHam2018 y @Tammaru2021 proponen
@@ -185,6 +186,8 @@ absolutas' (usadas en el enfoque clásico de la homogamia).
     permiten diferenciar entre 'movilidad absoluta' y 'movilidad
     relativa' o 'fluidez' [ver @Goldthorpe2006; @Solis2016].
 
+<!--# Por su parte, el trabajo de @Carrascosa2023, relaciona el porcentaje de hogares con homogamia (ver arriba) con el porcentaje de hogares NBI de cada unidad censal, principalmente a partir del uso del coeficiente de correlación de Pearson. Si bien el trabajo propone un acercamiento al estudio de la relación entre segregación y homogamia, este aspecto no es profundizado. -->
+
 Para afrontar esta limitación, proponemos un abordaje parcialmente
 diferente que se basa en el cálculo de 'probabilidad de homogamia',
 considerando la composición de cada unidad censal. En concreto para cada
@@ -255,48 +258,38 @@ obtenido de los datos es mayor / menor que estos umbrales podemos
 considerar que la probabilidad de homogamia obtenida es
 significativamente diferente de la que se generaría por un
 emparejamiento aleatorio y, por lo tanto, podemos apoyar la idea de que
-existe un emparejamiento selectivo (con una confianza
-$c$).<!--# REVISAR Y MATIZAR. NOTA AL PIE? Más allá de una pequeña variabilidad relacionada con la presencia de hogares no-conyugales, bajo la hipótesis nula ($H_0$) la probabilidad de homogamia es aproximadamente igual a la proporción de personas de ese grupo educativo en la unidad espacial (si $H_0$ es verdadera, entonces: $P(H_i|i) \approx 0 + 1.\frac{\sum i}{N} = \frac{\sum i}{N}$, ver Anexo D)-->
+existe un emparejamiento selectivo (con una confianza $c$).
 
 <!--  Metodología III: Composición residencial y homogamia -->
 
-Por último, nos interesa analizar la homogamia a la luz del problema de
-la segregación en el dominio residencial. En esta línea @Peach1980
-propuso calcular la correlación de Pearson entre el índices de
-disimilitud para cada par de grupos y el "grado" en que se generan
-matrimonios entre estos grupos.[^05-analysis-ii-homogamy-3] Si bien esta
-propuesta resulta interesante y se acerca al objetivo de nuestro
-trabajo, no permite captar el aspecto espacial del problema, en tanto
-tiene como supuesto que el comportamiento de los grupos es homogéneo en
-los diferentes unidades espaciales. A su vez, la metodología fue
-desarrollada para estudiar la relación entre 9 grupos étnicos, lo que
+Por último, nos interesa analizar la homogamia en relación con la
+composición de cada grupo, que es la que define la segregación en el
+dominio residencial. En esta línea @Peach1980 propuso calcular la
+correlación de Pearson entre el índices de disimilitud para cada par de
+grupos y el "grado" en que se generan matrimonios entre estos
+grupos.[^05-analysis-ii-homogamy-3] Si bien esta propuesta es
+interesante, tiene algunas limitaciones que lo hacen poco adecuada para
+abordar nuestro objetivo. En primer lugar, no permite captar el aspecto
+espacial del problema, en tanto tiene como supuesto que el
+comportamiento de los grupos es homogéneo en los diferentes unidades
+espaciales. En segundo lugar, existe un problema práctico para su
+adoptar este enfoque en este trabajo, en tanto la metodología fue
+desarrollada para estudiar la relación entre 9 grupos étnicos (que
 permitía calcular para cada grupo la correlación entre 8 índices de
-disimilitud y 8 ratios de homogamia. En nuestro caso usamos tres
+disimilitud y 8 ratios de homogamia). En nuestro caso usamos tres
 categorías para el nivel de estudio, lo cual nos deja con sólo 2 puntos
 para correlacionar (que siempre establecerán una relación lineal
-perfecta). Por último, al igual que el porcentaje de hogares homogámicos
-por tipo, esta medida depende de la cantidad de personas de cada grupo
-social, por lo cual puede llevar a resultados
-sesgados.<!--# Por su parte, el trabajo de @Carrascosa2023, relaciona el porcentaje de hogares con homogamia (ver arriba) con el porcentaje de hogares NBI de cada unidad censal, principalmente a partir del uso del coeficiente de correlación de Pearson. Si bien el trabajo propone un acercamiento al estudio de la relación entre segregación y homogamia, este aspecto no es profundizado. -->Como
-respuesta a estas limitaciones, en este trabajo proponemos comparar la
-probabilidad de homogamia ($P^\prime(H_a|a)$) y la participación de cada
-grupo educativo en la unidad espacial. Como señalamos anteriormente, el
-Índice de Información Mutua ($M$) mide cuánto se diferencia la
-distribución local de los grupos respecto a la distribución global, por
-lo cual analizar la participación de cada grupo educativo en cada unidad
-espacial es una manera de analizar la segregación local. A su vez, dado
-que bajo la hipótesis nula ($H_0$) la probabilidad de homogamia es
-aproximadamente igual a la proporción de personas de ese grupo
-educativo, es posible estimar qué proporción de la homogamia observada
-corresponde al tamaño de ese grupo en la unidad espacial y qué
-porcentaje corresponde a un efecto propio de la homogamia educativa.
-Teniendo en cuenta esta relación definimos el porcentaje de 'homogamia
-no-explicada' (por la proporción del grupo en la unidad censal) a 1
-menos la razón entre ambas variables:$$
-\begin{aligned}
-\text{\% Homogamia no-explicada}_{a} &=1-\frac{\text{Proporción del grupo a}}{\text{Probab. de homogamia del grupo a}}\\ &= 1-\frac{\sum i}{N.P^\prime(H_a|a)}
-\end{aligned}
-$$
+perfecta). Por último, quizás el aspecto más importante, al igual que la
+'proporción de hogares homogámicos por tipo', esta medida depende de la
+cantidad de personas de cada grupo social, por lo genera una visión
+sesgada en tanto es esperable una mayor cantidad de matrimonios
+homogámicos cuando existen más personas de ese grupo. De modo
+alternativo, en este trabajo proponemos 'normalizar' la probabilidad de
+homogamia en función del valor de la hipótesis nula ($H_0$). Para ello,
+construimos la 'la probabilidad de homogamia no explicada'
+($\Delta P^{\prime}$) como la diferencia entre la probabilidad de
+homogamia observada ($P_{obs}^{\prime}(H_a|a)$) y la probabilidad de
+homogamia bajo la hipótesis nula ($P_{H_0}^{\prime}(H_a|a)$), es decir:
 
 [^05-analysis-ii-homogamy-3]: @Peach1980 utiliza una medida de la
     heterogamia que se basa en calcular el ratio entre las frecuencias
@@ -309,13 +302,25 @@ $$
     Los valores menores a 1 (mayor valor esperado que observado) se
     mantuvieron con el valor original ($\frac{f_o}{f_e}$).
 
+$$
+\Delta P^{\prime} = P_{obs}^{\prime}(H_a|a) - P_{H_0}^{\prime}(H_a|a)
+$$
+
 Este indicador representa el porcentaje de homogamia que no es explicado
 por la composición del grupo en la unidad espacial y que, por lo tanto,
-puede atribuirse a una preferencia hacia la homogamia educativa en los
-vínculos conyugales. Mientras mayor sea este valor, mayor es la
-importancia de la homogamia como mecanismo de segregación, independiente
-de la composición de los grupos en la unidad espacial y, por lo tanto,
-de la segregación residencial.
+puede atribuirse a una preferencia educativa en los vínculos conyugales.
+Si este valor es positivo, esta preferencia educativa se corresponde con
+la hipótesis de que los vínculos homogámicos son mayores a lo esperado;
+si este valor es negativo las parejas del mismo grupo educativo son
+evitadas. De esta manera, este indicador nos permite estimar qué
+proporción de la homogamia observada corresponde al tamaño de ese grupo
+en la unidad espacial (es decir es un efecto de esta) y qué porcentaje
+corresponde a un efecto propio de la elección selectiva de vínculos
+conyugales. Es en virtud de que este indicador retiene el efecto
+específico de la elección selectiva, con independencia del tamaño del
+grupo, es posible utilizarlo para ver cómo varía la probabilidad no
+explicada de homogamia en función de la cantidad de personas de dicho
+grupo.
 
 ## La relación entre selección de pareja y segregación en el dominio residencial {#homogamy-analysis}
 
@@ -423,7 +428,7 @@ la CABA el porcentaje de hogares homogámicos es similar para los tres
 niveles educativos, en realidad las personas con nivel primario o
 superior tienen mayor probabilidad de ser homogámicos.
 
-<!-- Homogamia global por TH-->
+<!-- Homogamia global por TH -->
 
 Cuando consideramos la probabilidad de homogamia según el entorno urbano
 y nivel educativo (ver Figura \@ref(fig:HOM-TH)), encontramos una
@@ -554,11 +559,11 @@ encontramos algunos indicios de que la probabilidad de homogamia está
 fuertemente correlacionada con el porcentaje de personas de ese nivel
 educativo: en aquellos lugares donde existen más personas de un
 determinado nivel educativo, la probabilidad de homogamia de ese nivel
-educativo suele ser también más alta. Estos resultados nos remiten a la
-relación entre segregación/composición residencial y homogamia que
-desarrollamos en el siguiente apartado.
+educativo tiende por regla general a ser también más alta. Estos
+resultados nos remiten a la relación entre segregación/composición
+residencial y homogamia que desarrollamos en el siguiente apartado.
 
-### La relación entre homogamia y segregación residencial
+### La relación entre homogamia y la composición residencial
 
 En el apartado anterior, encontramos indicios de que la probabilidad de
 homogamia educativa está relacionada con la proporción de personas de
@@ -582,22 +587,27 @@ educativos?
 Para abordar estas preguntas, la Figura \@ref(fig:HOM-SEG) (lado
 izquierdo) presenta, para cada nivel educativo, la relación entre la
 proporción de personas de ese nivel educativo y su probabilidad de
-homogamia.[^05-analysis-ii-homogamy-6] Además, para facilitar la
-visualización la figura agrega la regresión cuadrática entre ambas
-variables ($y = a + b.x + c.x^2$) y en los márgenes la densidad de cada
-una de las variables. Además, para facilitar la lectura de la relación
-entre estas variables, en el lado derecho de la figura incluimos el
-porcentaje de homogamia no explicada por la proporción de personas de
-ese grupo en cada unidad censal.[^05-analysis-ii-homogamy-7] Como
-señalamos en el apartado metodológico, este indicador nos muestra en qué
-medida la homogamia actúa como un mecanismo de segregación independiente
-de la composición de los grupos. En este sentido, expresa qué porcentaje
-de la homogamia no puede ser explicada por la composición de los grupos
-dentro de las unidades espaciales y, por lo tanto, puede ser atribuido a
-mecanismos de emparejamiento conyugal homogámicos independientes a la
-dinámica residencial.
+homogamia.[^05-analysis-ii-homogamy-6] Para visualizar la tendencia de
+la relación entre estas variables se agrega, con línea sólida, la curva
+que aproxima la relación mediante un 'modelo de aditivo generalizado'
+[@Hastie1986]. A su vez, con línea punteada, se agrega el modelo aditivo
+generalizado que aproxima la relación entre la proporción de cada grupo
+censal y la probabilidad de homogamia bajo el supuesto de que no existe
+sobre-selección ($H_0$). En los márgenes se indica la densidad de cada
+una de las variables para tener una referencia de la distribución
+univariada. Además, para facilitar la lectura de los resultados, en el
+lado derecho de la figura incluimos el porcentaje de homogamia no
+explicada ($\Delta P^\prime$) por la proporción de personas de ese grupo
+en cada unidad censal.[^05-analysis-ii-homogamy-7] Como señalamos en el
+apartado metodológico, este indicador nos permite identificar la
+elección selectiva de cónyuges, independientemente de la composición de
+los grupos. En este sentido, expresa qué porcentaje de la homogamia no
+puede ser explicada por la composición de los grupos dentro de las
+unidades espaciales y, por lo tanto, puede ser atribuido a mecanismos de
+emparejamiento conyugal homogámicos independientes a la dinámica
+residencial.
 
-[^05-analysis-ii-homogamy-6]: Las líneas verticales punteadas indican la
+[^05-analysis-ii-homogamy-6]: Las flechas verticales indican la
     participación de cada grupo educativo en la población total. Como
     señalamos en el apartado metodológico, el *Índice de Información
     Mutua* es una media ponderada de cuánto 'se aleja' cada unidad
@@ -607,86 +617,76 @@ dinámica residencial.
     mayor segregación al conjunto (dependiendo también del tamaño de las
     unidades).
 
-[^05-analysis-ii-homogamy-7]: En color gris señalamos las unidades
-    espaciales que no tienen una probabilidad de homogamia significativa
-    (es decir, en los cuales $H_0$ es comprobada). Dado que la
-    probabilidad de homogamia y la proporción de personas de un grupo es
-    aproximadamente igual cuando se cumple $H_0$, podemos imputarles un
-    porcentaje de homogamia explicada igual a 1. En la figura se
-    muestran los valores observados de este ratio, pero se utiliza dicha
-    imputación en el cálculo de la regresión. A su vez, es importante
-    tener en cuenta que para grupos con muy pequeña representación en la
-    unidad censal, la probabilidad de homogamia suele ser poco
-    significativa y su valor es poco interpretable (ya que no es
-    representativo del comportamiento de esa población). Tomando esto en
-    cuenta, en los gráficos de la Figura \@ref(fig:MD-NOEXP) incluimos
-    sólo las unidades espaciales donde se cumple una de estas
-    condiciones: (a) la probabilidad es significativa; o (b) el grupo
-    analizado representa más del 5% de la población de esa unidad. A su
-    vez, para ayudar en la interpretación de este indicador, en la
-    figura de la derecha se dibuja una regresión lineal simple con una
-    transformación sobre la variable $x$ ($y = a + b. \sqrt x$).
+[^05-analysis-ii-homogamy-7]: En el cálculo del modelo aditivo
+    generalizado a los valores no significativos se les imputa un
+    porcentaje de homogamia no explicada igual a 0. Sin embargo, en la
+    figura se muestran los valores observados reales (en color gris). A
+    su vez, es importante tener en cuenta que para grupos con muy
+    pequeña representación en la unidad censal, la probabilidad de
+    homogamia suele ser poco significativa y su valor es poco
+    interpretable (ya que no es representativo del comportamiento de esa
+    población). Tomando esto en cuenta, en los gráficos de la Figura
+    \@ref(fig:HOM-SEG) incluimos sólo las unidades espaciales donde se
+    cumple una de estas condiciones: (a) la probabilidad es
+    significativa; o (b) el grupo analizado representa más del 3% de la
+    población de esa unidad.
 
 ```{r HOM-SEG}
 #| fig.cap: "Relación entre la proporción de personas residentes y la probabilidad de homogamia según nivel educativo"
-#| fig.asp: 0.846
+#| fig.asp: 0.8
 
 knitr::include_graphics(path = here::here("figures",
                                           "Homogamia_por-vs-prob.png"))
 ```
 
-Como habíamos anticipado, la Figura \@ref(fig:HOM-SEG) (lado izquierdo)
-muestra que ambas variables tienden a crecer de forma conjunta. Además,
-para los tres grupos educativo el porcentaje de homogamia no-explicada
-(lado derecho de la Figura \@ref(fig:HOM-SEG)) tiende a disminuir a
-medida que aumenta la proporción de personas del grupo en la unidad
-espacial. Este resultado puede resultar contra intuitivo en relación con
-lo que habíamos visto en el apartado anterior, donde encontrábamos que
-las mayores probabilidades de homogamia se encontraban en los lugares
-donde había una mayor proporción de personas de ese grupo. Sin embargo,
-esta observación no tenía en cuenta que la probabilidad de homogamia
-depende en gran medida de la cantidad de personas del mismo nivel
-educativo que existen en ese espacio. En resumen, como tendencia general
-encontramos que el porcentaje de segregación conyugal (homogamia) que no
-puede ser explicado por la composición residencial tiende a ser mayor
-cuando la concentración del grupo es menor. Por el contrario, a medida
-que seleccionamos una unidad espacial con una proporción de personas
-mayor de un determinado grupo, la homogamia no explicada tiende a
-disminuir.
+Como habíamos anticipado, la Figura \@ref(fig:HOM-SEG) nos señala que
+ambas variables tienden a crecer de forma conjunta, independientemente
+de los grupos. Sin embargo, cuando consideramos la probabildiad
+no-explicada vemos que esta tiende a disminuir a medida que aumenta la
+proporción de personas del grupo en la unidad espacial. Este resultado
+puede resultar contra-intuitivo en relación con lo que habíamos visto en
+el apartado anterior, donde encontrábamos que las mayores probabilidades
+de homogamia se encontraban en los lugares donde había una mayor
+proporción de personas de ese grupo. Sin embargo, esta observación no
+tenía en cuenta que la probabilidad de homogamia depende en gran medida
+de la cantidad de personas del mismo nivel educativo que existen en ese
+espacio. Para reforzar estos hallazgos, la Figura \@ref(fig:HOM-CA)
+presenta la distribución de la probabilidad no-explicada de cada grupo
+en función de la composición de las unidades espaciales. Nuevamente
+encontramos que, como tendencia general la probabilidad no-explicada es
+mayor para porcentajes bajos de cada grupo.
 
-Más allá de este patrón común a todos los niveles educativos,
-encontramos algunas particularidades cuando analizamos la situación de
-cada uno de los grupos. Primero, en relación con los otros niveles
-educativos, las personas con nivel primario son las que presentan, en
-general, una probabilidad de homogamia no explicada más alta (comparando
-entre radios con una proporción similar de cada grupo). En contraste, la
-probabilidad no explicada tiene valores menores para las personas con
-nivel secundario. Más allá de esto, la curva de decrecimiento tiene una
-tendencia similar a la de primaria. Por su parte, las personas con nivel
-superior tienen un comportamiento mixto. Cuando la proporción de
-personas de nivel superior en un radio es baja (menor al 20%), este
-grupo de personas tiene una probabilidad de homogamia no explicada
-similar a la de las personas de nivel secundario que residen en radios
-con proporciones de su grupo similares. Sin embargo, a medida que
-aumenta la proporción de personas de nivel superior que residen en un
-determinado radio (consolidándose cuando es mayor al 50%), la curva de
-la homogamia no explicada tiende a asimilarse a la del grupo de nivel
-primario, es decir, a ser definidamente más alta. Esta tendencia hay que
-tomarla con cierta cautela, ya que los radios con porcentajes altos de
-población de nivel superior son relativamente pocos. De forma general,
-lo que podríamos decir respecto al grupo de nivel superior es que su
-curva de decrecimiento es un poco menos pronunciada que la de los otros
-dos grupos educativos.
+```{r HOM-CA}
+#| fig.cap: "Probabilidad de homogamia no explicada según composición (análisis de correspondencia)"
+#| fig.asp: 0.433
+
+knitr::include_graphics(path = here::here("figures", "Homogamia_CA-homogamy.png"))
+```
+
+Más allá de este patrón común, el lado derecho de la Figura
+\@ref(fig:HOM-SEG) permite identificar algunas particularidades respecto
+a cada uno de los grupos educativos. Los hogares con nivel primario
+presentan una probabilidad de homogamia no-explicada más alta cuando la
+participación del grupo es baja, observándose una reducción casi lineal
+a medida que el grupo aumenta (y que tiende a cero). Por su parte, la
+curva de la probabilidad no-explicada para los hogares de nivel superior
+tiene una forma de U invertida, con valores relativamente bajos cuando
+la proporción del grupo es baja y cuando es alta. Además, el
+decrecimiento de la curva es un poco menos pronunciado que para los
+otros dos grupos educativos. Con un comportamiento intermedio, la curva
+de probabilidad no-explicada de los hogares de nivel secundario tiene
+valores intermedios cuando la proporción del grupo es baja. Estos
+valores se mantienen a medida que aumenta la proporción dentro de las
+unidades hasta valores intermedios, pero decrece de forma similar a como
+lo hacen los hogares con primario para valores altos.
 
 En resumen, nuestros resultados indican que los grupos que están menos
-representados en una unidad espacial presentan una homogamia mayor a que
-cuando (el mismo grupo) tiene una mayor representación residencial. Esta
-tendencia es más fuerte para el grupo con nivel primario, aunque las
-personas con nivel superior tienden a comportarse de modo similar a
-estos a medida que crece su participación residencial. En contraste, el
-grupo con niveles de estudios secundarios es el que presenta
-comparativamente la homogamia no explicada más baja de los tres grupos
-educativos.
+representados en una unidad espacial presentan una homogamia
+no-explicada mayor a cuando (el mismo grupo) tiene una mayor
+representación residencial. Esta tendencia general es más fuerte para el
+grupo con nivel primario, aunque los hogares con nivel superior y
+secundario tienden a comportarse de modo similar a estos a medida que
+crece su participación residencial.
 
 ## Conclusiones del capítulo {#homogamy-conclussion}
 

@@ -373,7 +373,7 @@ if(!exists("HOG", inherits = F)){
                  aes(color = c("Primario", "Secundario", "Superior")) ) +
       scale_color_manual(values = c("tomato3", "goldenrod1", "darkolivegreen4")) +
       labs(color = "Nivel") +
-      theme_minimal() ,
+      theme_minimal(),
     p2 = ggplot(data.frame()) +
         geom_smooth(aes(x = 1:6, y = 1:6,
                         linetype = factor(rep(c(1:2), 3))),
@@ -387,7 +387,7 @@ if(!exists("HOG", inherits = F)){
 
   p4_leyenda <- ggarrange(plotlist = list(a_ = p_blank, b_ = p4_leyenda[[1]],
                                           c_ = p4_leyenda[[2]], d_ = p_blank),
-                          ncol = 4, widths = c(3, 6, 6, 3))
+                          ncol = 4, widths = c(1.2, 6, 6, 1.2))
 
   p4_ppal <- ggarrange(p4_marg, p4_leyenda,
                        ncol = 1, heights = c(10,0.5))
@@ -440,8 +440,6 @@ if(!exists("HOG", inherits = F)){
           panel.grid.minor = element_blank(),
           legend.position = "none")
 
-  ggarrange(p4_add1, p4_add2, ncol = 1, heights = c(1, 4))
-
   p4 <- ggarrange(p4_ppal,
                   ggarrange(p4_add1, p4_add2, p_blank,
                             ncol = 1, heights = c(1, 4, 0.35)),
@@ -455,9 +453,9 @@ if(!exists("HOG", inherits = F)){
   rm(p4, p4_ppal, p4_center, p4_marg, p4_add1, p4_add2,
      p4_leyenda, p_blank, aux_p4)
 
-### ╠ FIG 5.5: Composición (AC) y Probabilidad de homogamia no-explicada ------------------------------------------
+### ╠ FIG 5.5: Composición (CA) y Probabilidad de homogamia no-explicada ------------------------------------------
 
-  cli::cli_li(col_yellow("Figure 5.5: Composición (AC) y Probabilidad de homogamia no-explicada"))
+  cli::cli_li(col_yellow("Figure 5.5: Composición (CA) y Probabilidad de homogamia no-explicada"))
 
   res_CA <- db_aux |>
     rename_with(~str_remove(.x, "_HOG")) |>
