@@ -688,79 +688,68 @@ grupo con nivel primario, aunque los hogares con nivel superior y
 secundario tienden a comportarse de modo similar a estos a medida que
 crece su participación residencial.
 
-## Conclusiones del capítulo {#homogamy-conclussion}
+## La homogamia como 'resguardo' al contacto {#homogamy-conclussion}
 
 <!--# Discusión de los resultados y conclusiones; Como parte de las conclusiones del capítulo se destaca que la homogamia tiene mayor peso cuando es menor la presencia de estos grupos en la unidad espacial. En este sentido, la homogamia no explicada (por la segregación en el dominio residencial) es mayor a medida que el grupo tiene una participación menor. Estos resultados sugieren que la homogamia refuerza la cohesión y el contacto en los grupos minoritarios a nivel territorial. -->
 
-En este trabajo nos hemos propuesto analizar la relación entre
-segregación residencial y segregación conyugal (homogamia). En este
-contexto se propuso una descripción de los patrones espaciales de
-segregación residencial y de la homogamia. Si bien estos habían sido ya
-explorados en trabajos anteriores, hemos propuesto una complejización de
-los hallazgos anteriores. En particular, se identificaron diferentes
-patrones locales y se pudo visualizar cómo estos patrones conviven en
-una realidad marcada por la confluencia de diferentes dinámicas
-históricas. Respecto a la homogamia se pudo ver la predominancia de la
-homogamia en las personas con educación primaria. Además, si bien las
-clases con estudios superiores también tienen probabilidades altas de
-homogamia estas no llegan a los niveles del grupo con estudios
-primario.<!--# También se propusieron algunas y utilizaron nuevas medidas para la homogamia y para el análisis conjunto de la homogamia y la segregación residencial.  -->
+El objetivo principal de este capítulo fue describir en qué medida la
+homogamia puede reforzar/alivianar los efectos de la segregación en el
+dominio residencial. Si bien este problema había sido explorado en
+trabajos anteriores, hemos propuesto una complejización metodológica que
+permitió separar el efecto de la composición residencial en la
+homogamia. A partir de esta propuesta, identificamos una tendencia
+general, por la cual la sobre-selección educativa (homogamia) en los
+hogares conyugales es mayor cuando la participación de ese grupo es
+menor. Estos resultados confirman que la probabilidad de homogamia está
+relacionada con la proporción de cada grupo en las unidades espaciales
+y, por lo tanto, con la segregación residencial. Sin embargo, la
+sobre-selección existiría fundamentalmente cuando los grupos están
+sub-representados y tendería a ser menor (y tendiente a inexistente)
+cuando el grupo está sobre-representado. Esto contradice lo encontrado
+en otros estudios [@Duncan1959; @Peach1974; @Kalmijn2010; @Puur2022],
+que señalan que la formación de parejas mixtas (no-homogámicas) se ve
+reforzada por ambientes en los cuales hay una mayor interacción con
+otros grupos. Por el contrario, nuestros resultados identifican que la
+mayor homogamia observada en los espacios residenciales con
+composiciones altas de un grupo, se debe a un efecto propio de esta
+composición.
 
-A su vez, nuestra objetivo principal era describir la relación entre la
-segregación residencial y conyugal (homogamia). En este sentido,
-enmarcados en un enfoque multi-dominio [@Boterman2016; @Musterd2020]
-buscamos identificar en qué medida estas diferentes formas de
-segregación se refuerzan mutuamente o actúan de forma independiente
-entre sí. Como resultado de nuestro trabajo se identificó una relación
-positiva entre la probabilidad de segregación conyugal y la
-participación de cada grupo en la unidad espacial. Sin embargo, si
-consideramos la importancia relativa, la segregación conyugal tiende a
-tener mayor peso a medida que es menor la participación de cada uno de
-los grupos educativos en la unidad espacial. En este sentido, la
-homogamia no explicada (por la segregación residencial) es mayor a
-medida que el grupo tiene una participación menor.
+<!--# En relación a esto, nuestro trabajo identificó una relación positiva entre la probabilidad homogamia y la participación de cada grupo en la unidad espacial. Sin embargo, la homogamia no-explicada tiene mayor peso a medida que es menor la participación de cada uno de los grupos educativos en la unidad espacial. En este sentido, la homogamia no-explicada (por la segregación residencial) es mayor a medida que el grupo tiene una participación menor. Estos resultados sugieren que la homogamia actúa como un mecanismo de protección, que refuerza la cohesión y el contacto en los grupos minoritarios a nivel territorial.  -->
 
-Estos resultados sugieren que la homogamia actúa como un mecanismo que
-refuerza la cohesión y el contacto en los grupos minoritarios a nivel
-territorial. Este comportamiento es similar al que se ha observado en la
-elección de escuelas privadas en ciertos barrios estadounidenses con
-mayoría afrodescendiente. En dichos contextos, donde las familias
-blancas constituyen una minoría residencial, estas familias muestran una
-tendencia a la elección de escuelas privadas, que les garantiza una
-menor mixtura social en el ámbito escolar y que, en paralelo, aumenta la
-segregación de la población negra en las escuelas públicas, por el éxodo
-de las familias blancas a la educación privada. Estas familias compensan
-la mayor mixtura residencial a través de la elección de escuelas que les
-permite un menor contacto con la población mayoritaria en el dominio
-residencial [@Saporito2007; @Saporito2014; @Lankford2006]. De manera
-similar, en el caso analizado en este trabajo la tendencia a la
-homogamia (la elección de parejas similares en términos educativos)
-puede funcionar como un 'resguardo' a nivel del hogar de aquellas
-situaciones donde la composición residencial genera una posibilidad de
-contacto (real o imaginario) con personas de otros grupos. Para las
-familias que viven en un contexto residencial donde su nivel educativo
-es poco común, el hogar conyugal refuerza y asegura el contacto con los
-pocos que son similares, a la vez que garantiza la separación de los
-otros grupos de población. En este sentido, la elección selectiva de
-parejas 'similares' funciona como un mecanismo con el que establecer una
-barrera con los 'cercanos pero diferentes'. Por el contrario, en
-aquellas unidades espaciales donde la proporción de personas del mismo
-grupo educativo es alta, la segregación conyugal deja de ser una
-herramienta indispensable para garantizar el contacto y la relación con
-personas similares (que está garantizada por su elevada presencia en el
-área espacial).
+Este comportamiento puede asimilarse al que se ha observado en la
+elección de escuelas privadas en los barrios estadounidenses con mayoría
+afrodescendiente [@Saporito2007; @Saporito2014; @Lankford2006]. En
+dichos contextos, donde las familias blancas constituyen una minoría
+residencial, esas familias muestran una tendencia a la elección de
+escuelas privadas, que les garantiza una menor mixtura social en el
+ámbito escolar y que, en paralelo, aumenta la segregación de la
+población negra en las escuelas públicas, por el éxodo de las familias
+blancas a la educación privada. De manera similar, en el caso analizado
+en este trabajo la tendencia a la homogamia puede funcionar como
+'resguardo' a nivel del hogar de aquellas situaciones donde la
+composición residencial genera la posibilidad de contacto (real o
+imaginario) con personas de otros grupos. Para las familias que viven en
+un contexto residencial donde su nivel educativo es poco común, el hogar
+conyugal homogéneo refuerza y asegura el contacto con los pocos que son
+similares, a la vez que garantiza la separación de los otros grupos de
+población. En este sentido, la elección selectiva de parejas 'similares'
+funciona como un mecanismo con el que establecer una barrera con los
+'cercanos pero diferentes'. Por el contrario, en aquellas unidades
+espaciales donde la proporción de personas del mismo grupo educativo es
+alta, la segregación conyugal deja de ser una herramienta indispensable
+para garantizar el contacto y la relación con personas similares (que
+está garantizada por su elevada presencia en el área espacial). De modo
+contrario, esta tendencia podría ser también el efecto de una
+'exclusión' de los grupos minoritarios, sobre todo cuando el grupo
+minoritario es el más desposeído (en nuestro caso, los hogares con
+estudios primario).
 
-De manera general, nuestros hallazgos sugieren que ambos dominios de la
-segregación se complementan. En este sentido, la homogamia viene a tomar
-mayor importancia en aquellas situaciones donde el riesgo de contacto
-con otros grupos sociales es mayor. En relación a esto, si bien no
-parece adecuada la caracterización de un 'círculo vicioso' entre ambos
-dominios de la segregación [@VanHam2018], ambas formas de segregación
-parecen actuar en una 'misma dirección'. En este sentido, la homogamia
-refuerza el contacto y la segregación en aquellos contextos
-territoriales en los cuales el grupo propio se encuentra como minoría en
-el espacio residencial. Respecto a nuestra preocupación inicial sobre el
-rol de la segregación (residencial y conyugal) en la conformación de la
-*estratificación social*, podemos ver que ambas formas de segregación
-refuerzan un contacto selectivo entre los grupos sociales (en nuestro
-caso aproximado por el nivel educativo).
+De manera general, nuestros hallazgos sugieren que la homogamia refuerza
+la segregación en el dominio residencial para los grupos minoritarios,
+pero no tendría un efecto significativo cuando el porcentaje de los
+grupos es mayor. En este sentido, la homogamia toma relevancia en
+aquellas situaciones donde el riesgo de contacto con otros grupos
+sociales es mayor, donde parece reforzar el efecto de la segregación
+residencial. En este sentido, la homogamia refuerza el contacto y la
+segregación en aquellos contextos territoriales en los cuales el grupo
+propio se encuentra como minoría en el espacio residencial.
