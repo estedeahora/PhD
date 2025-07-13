@@ -1370,8 +1370,8 @@ de la vida social, entre los cuales se puede mencionar el laboral
 @Candipan2021; @Silm2021; @Lu2023], el transporte [@Abbasi2021;
 @Wilson2011], las relaciones matrimoniales [@Bouchet-Valat2018], las
 relaciones interpersonales [@Bojanowski2014; @Huang2022; @Otero2022],
-las redes sociales virtuales [@Hofstra2017; @Morales2019; @Dorman2020],
-los lugares de esparcimiento [@Tomasiello2022], entre otros.
+las redes sociales virtuales [@Hofstra2017; @Morales2019; @Dorman2020;
+@Dong2020], los lugares de esparcimiento [@Tomasiello2022], entre otros.
 
 <!-- La segregación urbana como marco para pensar segregación. -->
 
