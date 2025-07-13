@@ -18,14 +18,14 @@ una dimensión central para comprender los mecanismos de reproducción de
 dicha estructura.
 
 A partir de esta caracterización, en este primer capítulo del análisis
-nos proponemos identificar y describir la estructura de la segregación
-residencial en el AMBA y los patrones que le dan forma a dicha
-estructura <!--# (objetivo específico 1) -->. Para ello, comenzaremos
-describiendo los antecedentes que abordan el problema de la segregación
-residencial en el AMBA (\@ref(residential-lit)). Luego analizamos los
-patrones de la segregación en el dominio residencial
-(\@ref(residential-analysis)) y proponemos algunas conclusiones de los
-resultados encontrados (\@ref(residential-conclussion)).
+nos proponemos <!-- Objetivo -->identificar y describir la estructura de
+la segregación residencial en el AMBA y los patrones que le dan forma a
+dicha estructura. Para ello, comenzaremos describiendo los antecedentes
+que abordan el problema de la segregación residencial en el AMBA
+(\@ref(residential-lit)). Luego analizamos los patrones de la
+segregación en el dominio residencial (\@ref(residential-analysis)) y
+proponemos algunas conclusiones de los resultados encontrados
+(\@ref(residential-conclussion)).
 
 ## Los estudios sobre segregación residencial en el AMBA {#residential-lit}
 
