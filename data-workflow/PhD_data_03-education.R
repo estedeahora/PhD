@@ -185,7 +185,8 @@ if(!exists("CARTO", inherits = F) || is.null(CARTO$RADIO[["ls"]])){
 
   rm(ESC_RA, ESC_APR)
 
-  cli_alert_info(col_silver("Guradando datos finales {.path CARTO.rda}."))
-  save(CARTO, file = here::here("data-workflow", "final-data", "CARTO.rda"))
+  cli_alert_info(col_silver("Guradando {.path data-workflow/intermediate-data/PhD_05_carto-educ.RData}."))
+  save(CARTO,
+       file = here::here("data-workflow", "intermediate-data",
+                         "PhD_05_carto-educ.RData"))
 
-  rm(CARTO)

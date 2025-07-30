@@ -4,6 +4,18 @@
 
 cli_h2(col_blue("Cargando datos de movilidad (ENMODO2018)"))
 
+if(!exists("CARTO", inherits = F) || is.null(CARTO$RADIO[["ls"]])){
+  cli_alert_info(
+    col_silver(
+      paste0("Cargando cartografía",
+             ": {.path data-workflow/intermediate-data/PhD_05_carto-educ.RData}.")
+    )
+  )
+
+  load(here::here("data-workflow", "intermediate-data",
+                  "PhD_05_carto-educ.RData"))
+}
+
 # Cargar datos ENMODO2018 -------------------------------------------------
 
   cli_li(col_yellow("Cargando datos ENMODO2018"))
@@ -96,7 +108,9 @@ cli_h2(col_blue("Cargando datos de movilidad (ENMODO2018)"))
   rm(HOGAR, PERSONA, VIAJE, ETAPA)
 
   cli_alert_info(col_silver("Guradando datos finales {.path ENMODO.rda}."))
-  # usethis::use_data(ENMODO, overwrite = TRUE, internal = FALSE)
   save(ENMODO, file = here::here("data-workflow", "final-data", "ENMODO.rda"))
 
-  rm(ENMODO)
+  cli_alert_info(col_silver("Guradando datos finales {.path CARTO.rda}."))
+  save(CARTO, file = here::here("data-workflow", "final-data", "CARTO.rda"))
+
+  rm(ENMODO, CARTO)
