@@ -38,13 +38,6 @@ if(!exists("CARTO", inherits = F) || is.null(CARTO$ESCUELAS)){
 
   cli_ul(col_silver("ENMODO2018 PERSONA") )
 
-    mutate(MNI = case_when(IV_2_edad < 15 ~ 1,
-                           IV_12_nivel_aprobado %in% c(7, 22) ~ 1,
-                           T ~ IV_12_nivel_aprobado),
-           MNI_lab = factor(MNI, levels = 0:6,
-                            labels = c("Sin estudios", "Sin estudios", "Primario", "Secundario",
-                                       "Terciario", "Universitario", "Post Universitario"))
-           ) |>
   PERSONA <- read_excel(fs::path("data-workflow", "raw-data", "ENMODO18_Personas.xlsx") ) |>
     rename(EDAD = IV_2_edad, SEXO = IV_4_sexo, REL = IV_6_relacionConJefeDeHogar)
 
@@ -55,32 +48,190 @@ if(!exists("CARTO", inherits = F) || is.null(CARTO$ESCUELAS)){
            ORI_ACT = VII_2_activida_en_el_origen,
            DES_ACT = VII_3_activida_en_el_destino,
            INI = hora_inicio, FIN = hora_final,
+           DIST = distancia_viaje_km,
            DUR_VIA = duracion_minutos,
-           FREC = VII_9_veces_por_semana_viaja) |>
-    mutate(across(.cols = c(ORI, DES),
-                  .fns = ~str_pad(.x, width = 9, pad = "0")),
-           # Categorizar las actividades de destino
-           MOT = case_when(DES_ACT %in% c(2:3, 14)            ~ 1,
-                           DES_ACT %in% c(4:5)                ~ 2,
-                           DES_ACT %in% c(6:7, 13, 15:17, 22) ~ 3,
-                           DES_ACT %in% c(8:12)               ~ 4),
-           MOT = factor(MOT, levels = 1:4,
-                        labels = c("Trabajo", "Estudio",
-                                   "Reproducción", "Recreación") ),
-           # Correcciones manuales
-           DES = ifelse(DES == 20010300, 20010305, DES),
-           DES = ifelse(DES == 20141002, 20141001, DES))
+           FREC = VII_9_veces_por_semana_viaja)
 
   cli_ul(col_silver("ENMODO2018 ETAPA") )
 
   ETAPA <- read_excel(fs::path("data-workflow", "raw-data", "ENMODO18_Etapas.xlsx") )
 
-# Crear variables -----------------------------------
-  # Base HOGAR:
+  # 2. Correcciones manuales de datos
+
+  cli_ul(col_cyan("Corrección de datos mal cargados"))
+
+  HOGAR <- HOGAR |>
+    mutate(ID_RADIO = ifelse(ID_RADIO == "60281222", "060281202", ID_RADIO ))
+
+  VIAJE <- VIAJE |>
+    mutate(DES = ifelse(DES == 20010300, 20010305, DES),
+           DES = ifelse(DES == 20141002, 20141001, DES),
+           # Horarios de viajes
+           INI = case_when(id_hogar == 510   & id_persona == 1 & id_viaje == 4 ~ 12+1/12,
+                           id_hogar == 619   & id_persona == 1 & id_viaje == 2 ~ 9,
+                           id_hogar == 689   & id_persona == 1 & id_viaje == 2 ~ 8 +1/12,
+                           id_hogar == 737   & id_persona == 3 & id_viaje == 2 ~ 10.75,
+                           id_hogar == 896   & id_persona == 1 & id_viaje == 2 ~ 13.5,
+                           id_hogar == 937   & id_persona == 1 & id_viaje == 4 ~ 16.25,
+                           id_hogar == 1014  & id_persona == 3 & id_viaje == 3 ~ 14,
+                           id_hogar == 1706  & id_persona == 2 & id_viaje == 2 ~ (7 + 5/12),
+                           id_hogar == 1766  & id_persona == 1 & id_viaje == 2 ~ 10.5,
+                           id_hogar == 1865  & id_persona == 1 & id_viaje == 2 ~ (13 + 5/12),
+                           id_hogar == 1874  & id_persona == 1 & id_viaje == 2 ~ 12,
+                           id_hogar == 1920  & id_persona == 4 & id_viaje == 3 ~ 17.25,
+                           id_hogar == 1957  & id_persona == 3 & id_viaje == 4 ~ 16.75,
+                           id_hogar == 2031  & id_persona == 2 & id_viaje == 2 ~ 17,
+                           id_hogar == 2164  & id_persona == 2 & id_viaje == 3 ~ 17 + 1/3,
+                           id_hogar == 2166  & id_persona == 2 & id_viaje == 6 ~ 17 + 59/60,
+                           id_hogar == 2991  & id_persona == 1 & id_viaje == 2 ~ 14 + 2/3,
+                           id_hogar == 3177  & id_persona == 1 & id_viaje == 2 ~ 7 + 2/3,
+                           id_hogar == 3292  & id_persona == 1 & id_viaje == 2 ~ 11,
+                           id_hogar == 3294  & id_persona == 3 & id_viaje == 2 ~ 21,
+                           id_hogar == 3295  & id_persona == 2 & id_viaje == 2 ~ 12 + 5/12,
+                           id_hogar == 3516  & id_persona == 1 & id_viaje == 1 ~ 12,
+                           id_hogar == 3516  & id_persona == 1 & id_viaje == 2 ~ 13 + 5/6,
+                           id_hogar == 3617  & id_persona == 1 & id_viaje == 1 ~ 13 + 1/3,
+                           id_hogar == 3617  & id_persona == 1 & id_viaje == 2 ~ 14,
+                           id_hogar == 3751  & id_persona == 1 & id_viaje == 2 ~ 7 + 1/6,
+                           id_hogar == 3828  & id_persona == 1 & id_viaje == 3 ~ 21,
+                           id_hogar == 3828  & id_persona == 1 & id_viaje == 4 ~ 22,
+                           id_hogar == 3876  & id_persona == 1 & id_viaje == 2 ~ 16,
+                           id_hogar == 3879  & id_persona == 1 & id_viaje == 2 ~ 12+1/3,
+                           id_hogar == 3936  & id_persona == 1 & id_viaje == 6 ~ 12+1/12,
+                           id_hogar == 4115  & id_persona == 1 & id_viaje == 2 ~ 10+7/12,
+                           id_hogar == 4128  & id_persona == 5 & id_viaje == 3 ~ 17+1/6,
+                           id_hogar == 4145  & id_persona == 1 & id_viaje == 4 ~ 12+1/12,
+                           id_hogar == 4247  & id_persona == 2 & id_viaje == 2 ~ 7.5,
+                           id_hogar == 4255  & id_persona == 4 & id_viaje == 2 ~ 8+1/12,
+                           id_hogar == 4815  & id_persona == 1 & id_viaje == 2 ~ 8+1/6,
+                           id_hogar == 4843  & id_persona == 1 & id_viaje == 1 ~ 6.5,
+                           id_hogar == 4873  & id_persona == 1 & id_viaje == 4 ~ 17+1/3,
+                           id_hogar == 4893  & id_persona == 1 & id_viaje == 2 ~ 19+5/6,
+                           id_hogar == 4895  & id_persona == 1 & id_viaje == 2 ~ 8,
+                           id_hogar == 4897  & id_persona == 1 & id_viaje == 2 ~ 12.5,
+                           id_hogar == 5131  & id_persona == 1 & id_viaje == 2 ~ 7.25,
+                           id_hogar == 5245  & id_persona == 1 & id_viaje == 2 ~ 10,
+                           id_hogar == 5373  & id_persona == 2 & id_viaje == 1 ~ 7,
+                           id_hogar == 5373  & id_persona == 2 & id_viaje == 3 ~ 16,
+                           id_hogar == 5463  & id_persona == 3 & id_viaje == 2 ~ 8+1/3,
+                           id_hogar == 5469  & id_persona == 1 & id_viaje == 3 ~ 12,
+                           id_hogar == 5591  & id_persona == 1 & id_viaje == 2 ~ 18+5/12,
+                           id_hogar == 5612  & id_persona == 1 & id_viaje == 2 ~ 11+5/6,
+                           id_hogar == 6073  & id_persona == 1 & id_viaje == 2 ~ 16,
+                           id_hogar == 6172  & id_persona == 3 & id_viaje == 2 ~ 17.5,
+                           id_hogar == 6308  & id_persona == 1 & id_viaje == 4 ~ 17+1/3,
+                           id_hogar == 6320  & id_persona == 1 & id_viaje == 2 ~ 10.5,
+                           id_hogar == 6321  & id_persona == 1 & id_viaje == 2 ~ 18+17/60,
+                           id_hogar == 6349  & id_persona == 2 & id_viaje == 1 ~ 6.5,
+                           id_hogar == 6424  & id_persona == 2 & id_viaje == 2 ~ 11.5,
+                           id_hogar == 6471  & id_persona == 5 & id_viaje == 2 ~ 8+2/3,
+                           id_hogar == 6508  & id_persona == 1 & id_viaje == 1 ~ 12+2/3,
+                           id_hogar == 6596  & id_persona == 1 & id_viaje == 6 ~ 11.75,
+                           id_hogar == 6687  & id_persona == 1 & id_viaje == 2 ~ 10+1/3,
+                           id_hogar == 6820  & id_persona == 1 & id_viaje == 2 ~ 7.25,
+                           id_hogar == 6868  & id_persona == 1 & id_viaje == 2 ~ 10+11/12,
+                           id_hogar == 6907  & id_persona == 3 & id_viaje == 3 ~ 19.25,
+                           id_hogar == 7000  & id_persona == 1 & id_viaje == 3 ~ 11+5/6,
+                           id_hogar == 7170  & id_persona == 1 & id_viaje == 2 ~ 8+7/12,
+                           id_hogar == 7170  & id_persona == 2 & id_viaje == 2 ~ 8+7/12,
+
+                           T ~ INI),
+           FIN = case_when(id_hogar == 510   & id_persona == 1 & id_viaje == 3 ~ 12,
+                           id_hogar == 619   & id_persona == 1 & id_viaje == 1 ~ (6 + 2/3),
+                           id_hogar == 689   & id_persona == 1 & id_viaje == 1 ~ (7 + 5/6),
+                           id_hogar == 737   & id_persona == 3 & id_viaje == 1 ~ (10 + 5/12),
+                           id_hogar == 937   & id_persona == 1 & id_viaje == 3 ~ 16,
+                           id_hogar == 1014  & id_persona == 3 & id_viaje == 3 ~ 15,
+                           id_hogar == 1681  & id_persona == 4 & id_viaje == 1 ~ (12 + 2/3),
+                           id_hogar == 1706  & id_persona == 2 & id_viaje == 1 ~ 7.4,
+                           id_hogar == 1766  & id_persona == 1 & id_viaje == 1 ~ (10 + 5/12),
+                           id_hogar == 1865  & id_persona == 1 & id_viaje == 1 ~ (13 + 1/60),
+                           id_hogar == 1874  & id_persona == 1 & id_viaje == 1 ~ 11.5,
+                           id_hogar == 1920  & id_persona == 4 & id_viaje == 2 ~ (17 + 1/6),
+                           id_hogar == 1957  & id_persona == 3 & id_viaje == 4 ~ 12.25,
+                           id_hogar == 2031  & id_persona == 2 & id_viaje == 1 ~ (16 + 5/6),
+                           id_hogar == 2166  & id_persona == 2 & id_viaje == 5 ~ (17 + 31/60),
+                           id_hogar == 2991  & id_persona == 1 & id_viaje == 1 ~ (13 + 1/3),
+                           id_hogar == 3177  & id_persona == 1 & id_viaje == 1 ~ (7 + 7/12),
+                           id_hogar == 3292  & id_persona == 1 & id_viaje == 1 ~ (10 + 1/6),
+                           id_hogar == 3294  & id_persona == 3 & id_viaje == 1 ~ 18,
+                           id_hogar == 3295  & id_persona == 2 & id_viaje == 1 ~ 12 + 1/6,
+                           id_hogar == 3516  & id_persona == 1 & id_viaje == 1 ~ 13,
+                           id_hogar == 3516  & id_persona == 1 & id_viaje == 2 ~ 14 + 5/6,
+                           id_hogar == 3617  & id_persona == 1 & id_viaje == 1 ~ 14,
+                           id_hogar == 3617  & id_persona == 1 & id_viaje == 2 ~ 14.5,
+                           id_hogar == 3758  & id_persona == 3 & id_viaje == 1 ~ 10.5,
+                           id_hogar == 3828  & id_persona == 1 & id_viaje == 3 ~ 21+1/6,
+                           id_hogar == 3828  & id_persona == 1 & id_viaje == 4 ~ 22+1/6,
+                           id_hogar == 3876  & id_persona == 1 & id_viaje == 2 ~ 14.5,
+                           id_hogar == 3879  & id_persona == 1 & id_viaje == 1 ~ 12+1/6,
+                           id_hogar == 3936  & id_persona == 1 & id_viaje == 5 ~ 12,
+                           id_hogar == 4115  & id_persona == 1 & id_viaje == 1 ~ 10+5/12,
+                           id_hogar == 4128  & id_persona == 5 & id_viaje == 3 ~ 17.5,
+                           id_hogar == 4145  & id_persona == 1 & id_viaje == 3 ~ 12,
+                           id_hogar == 4255  & id_persona == 4 & id_viaje == 1 ~ 8,
+                           id_hogar == 4563  & id_persona == 1 & id_viaje == 2 ~ 13,
+                           id_hogar == 4814  & id_persona == 1 & id_viaje == 1 ~ 12+5/6,
+                           id_hogar == 4815  & id_persona == 1 & id_viaje == 1 ~ 8,
+                           id_hogar == 4843  & id_persona == 1 & id_viaje == 1 ~ 7,
+                           id_hogar == 4893  & id_persona == 1 & id_viaje == 1 ~ 17.25,
+                           id_hogar == 4895  & id_persona == 1 & id_viaje == 1 ~ 7,
+                           id_hogar == 4897  & id_persona == 1 & id_viaje == 1 ~ 11+ 11/12,
+                           id_hogar == 5131  & id_persona == 1 & id_viaje == 1 ~ 7+1/6,
+                           id_hogar == 5245  & id_persona == 1 & id_viaje == 1 ~ 8.25,
+                           id_hogar == 5373  & id_persona == 2 & id_viaje == 3 ~ 16.25,
+                           id_hogar == 5463  & id_persona == 3 & id_viaje == 1 ~ 8+1/6,
+                           id_hogar == 5469  & id_persona == 1 & id_viaje == 3 ~ 12.25,
+                           id_hogar == 5520  & id_persona == 1 & id_viaje == 1 ~ 13,
+                           id_hogar == 5591  & id_persona == 1 & id_viaje == 1 ~ 16+1/12,
+                           id_hogar == 5612  & id_persona == 1 & id_viaje == 1 ~ 11+1/6,
+                           id_hogar == 6073  & id_persona == 1 & id_viaje == 1 ~ 10.25,
+                           id_hogar == 6172  & id_persona == 3 & id_viaje == 2 ~ 19,
+                           id_hogar == 6308  & id_persona == 1 & id_viaje == 3 ~ 17+1/6,
+                           id_hogar == 6320  & id_persona == 1 & id_viaje == 1 ~ 10,
+                           id_hogar == 6321  & id_persona == 1 & id_viaje == 1 ~ 17.25,
+                           id_hogar == 6349  & id_persona == 2 & id_viaje == 1 ~ 6.75,
+                           id_hogar == 6424  & id_persona == 2 & id_viaje == 1 ~ 10+1/12,
+                           id_hogar == 6471  & id_persona == 5 & id_viaje == 1 ~ 8+1/6,
+                           id_hogar == 6508  & id_persona == 1 & id_viaje == 3 ~ 14+11/12,
+                           id_hogar == 6820  & id_persona == 1 & id_viaje == 2 ~ 7+5/12,
+                           id_hogar == 6868  & id_persona == 1 & id_viaje == 1 ~ 10+5/6,
+                           id_hogar == 6907  & id_persona == 3 & id_viaje == 2 ~ 18.5,
+                           id_hogar == 6919  & id_persona == 2 & id_viaje == 1 ~ 12+5/6,
+                           id_hogar == 6975  & id_persona == 1 & id_viaje == 1 ~ 10+1/3,
+                           id_hogar == 7000  & id_persona == 1 & id_viaje == 3 ~ 12+1/6,
+                           id_hogar == 7170  & id_persona == 1 & id_viaje == 1 ~ 8.5,
+                           id_hogar == 7170  & id_persona == 2 & id_viaje == 1 ~ 8.5,
+
+                           T ~ FIN),
+    )
+
+  # 3. Agregar nuevas variables
+  cli_ul(col_cyan("Modificación y creación de variables en bases de movilidad"))
+
+  aux_RAD <- CARTO$RADIO |>
+    st_drop_geometry() |>
+    filter(!is.na(TH)) |>
+    select(ID_RADIO, TH, ls)
+
+  # 3.a Base PERSONA
+  #   * Ponderación del Hogar (PONDERA)
+  #   * Nivel máximo de instrucción (MNI)
+  #   * Nivel máximo de instrucción (MNI_lab)
+
+  PERSONA <- PERSONA |>
+    mutate(MNI = case_when(EDAD < 15 ~ 1,
+                           IV_12_nivel_aprobado %in% c(7, 22) ~ 1,
+                           T ~ IV_12_nivel_aprobado),
+           MNI_lab = factor(MNI, levels = 0:6,
+                            labels = c("Sin estudios", "Sin estudios", "Primario", "Secundario",
+                                       "Terciario", "Universitario", "Post Universitario"))
+    )
+
+  # 3.b Base HOGAR:
   #   * Máximo Nivel Educativo del Hogar (EDU)
   #   * Ponderación del Hogar (PONDERA_HOG)
   #   * Máximo Nivel Educativo del Hogar (EDU2)
-  cli_li(col_yellow("Procesando bases de movilidad"))
 
   HOGAR_aux <- PERSONA |>
     group_by(id_hogar) |>
