@@ -2,7 +2,6 @@
 # ---------------*
 # Basado en script TP Goinheix
 
-cli_h2(col_blue("Cargando datos de movilidad (ENMODO2018)"))
 # TODO    Agregar distancia al centro (pza de mayo). Idealmente debería calcularse
 #           por red de calles ponderando.
 # TODO    Corregir datos para duraciones de actividades negativas.
@@ -12,7 +11,9 @@ cli_h2(col_blue("Cargando datos de movilidad (ENMODO2018)"))
 # DONE    Revisar FRAC (0200113 y otros están sin población).
 # DONE    Calcular segregación local de radio de residencia.
 
-if(!exists("CARTO", inherits = F) || is.null(CARTO$RADIO[["ls"]])){
+cli_h2(col_cyan("Cargando datos de movilidad (ENMODO2018)"))
+
+if(!exists("CARTO", inherits = F) || is.null(CARTO$ESCUELAS)){
   cli_alert_info(
     col_silver(
       paste0("Cargando cartografía",
@@ -20,8 +21,8 @@ if(!exists("CARTO", inherits = F) || is.null(CARTO$RADIO[["ls"]])){
     )
   )
 
-  load(here::here("data-workflow", "intermediate-data",
-                  "PhD_05_carto-educ.RData"))
+  load(fs::path("data-workflow", "intermediate-data",
+                "PhD_05_carto-educ", ext = "RData"))
 }
 
 # ╠ Cargar datos ENMODO2018 -----------------
@@ -32,14 +33,11 @@ if(!exists("CARTO", inherits = F) || is.null(CARTO$RADIO[["ls"]])){
 
   cli_ul(col_silver("ENMODO2018 HOGAR") )
 
-  HOGAR <- read_excel(here::here("data-workflow", "raw-data", "ENMODO18_Hogar.xlsx") ) |>
-    rename(ID_RADIO = RADIO_CENSAL_hogar) |>
-    # Correcciones manuales
-    mutate(ID_RADIO = ifelse(ID_RADIO == "60281222", "060281202", ID_RADIO ))
+  HOGAR <- read_excel(fs::path("data-workflow", "raw-data", "ENMODO18_Hogar.xlsx") ) |>
+    rename(ID_RADIO = RADIO_CENSAL_hogar)
 
   cli_ul(col_silver("ENMODO2018 PERSONA") )
 
-  PERSONA <- read_excel(here::here("data-workflow", "raw-data", "ENMODO18_Personas.xlsx") ) |>
     mutate(MNI = case_when(IV_2_edad < 15 ~ 1,
                            IV_12_nivel_aprobado %in% c(7, 22) ~ 1,
                            T ~ IV_12_nivel_aprobado),
@@ -47,11 +45,12 @@ if(!exists("CARTO", inherits = F) || is.null(CARTO$RADIO[["ls"]])){
                             labels = c("Sin estudios", "Sin estudios", "Primario", "Secundario",
                                        "Terciario", "Universitario", "Post Universitario"))
            ) |>
+  PERSONA <- read_excel(fs::path("data-workflow", "raw-data", "ENMODO18_Personas.xlsx") ) |>
     rename(EDAD = IV_2_edad, SEXO = IV_4_sexo, REL = IV_6_relacionConJefeDeHogar)
 
   cli_ul(col_silver("ENMODO2018 VIAJE") )
 
-  VIAJE <- read_excel(here::here("data-workflow", "raw-data", "ENMODO18_Viajes.xlsx") ) |>
+  VIAJE <- read_excel(fs::path("data-workflow", "raw-data", "ENMODO18_Viajes.xlsx") ) |>
     rename(ORI = radio_origen, DES = radio_destino,
            ORI_ACT = VII_2_activida_en_el_origen,
            DES_ACT = VII_3_activida_en_el_destino,
@@ -74,7 +73,7 @@ if(!exists("CARTO", inherits = F) || is.null(CARTO$RADIO[["ls"]])){
 
   cli_ul(col_silver("ENMODO2018 ETAPA") )
 
-  ETAPA <- read_excel(here::here("data-workflow", "raw-data", "ENMODO18_Etapas.xlsx") )
+  ETAPA <- read_excel(fs::path("data-workflow", "raw-data", "ENMODO18_Etapas.xlsx") )
 
 # Crear variables -----------------------------------
   # Base HOGAR:
@@ -540,9 +539,9 @@ if(!exists("CARTO", inherits = F) || is.null(CARTO$RADIO[["ls"]])){
   rm(HOGAR, PERSONA, VIAJE, ETAPA)
 
   cli_alert_info(col_silver("Guradando datos finales {.path ENMODO.rda}."))
-  save(ENMODO, file = here::here("data-workflow", "final-data", "ENMODO.rda"))
+  save(ENMODO, file = fs::path("data-workflow", "final-data", "ENMODO", ext = "rda"))
 
   cli_alert_info(col_silver("Guradando datos finales {.path CARTO.rda}."))
-  save(CARTO, file = here::here("data-workflow", "final-data", "CARTO.rda"))
+  save(CARTO, file = fs::path("data-workflow", "final-data", "CARTO", ext = "rda"))
 
   rm(ENMODO, CARTO)
