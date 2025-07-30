@@ -22,7 +22,7 @@ if(!exists("CARTO", inherits = F)){
   cli_li(col_yellow("Cargando datos del CENSO."))
   cli_alert_info(col_silver("Código para generar los datos: {.path data-workflow/CENSO_raw-to-derived-data.R}.") )
 
-  if(!fs::file_exists(here::here("data-workflow", "datafolder.txt"))){
+  if(Sys.getenv("DATA_FOLDER") == "" || Sys.getenv("CENSO_FOLDER") == ""){
 
     # Descargar datos de Zenodo
     folder_temp <- tempdir()
@@ -33,9 +33,7 @@ if(!exists("CARTO", inherits = F)){
     rm(folder_temp)
 
   }else{
-    CENSO_file <- fs::path(readLines("data-workflow/datafolder.txt")[1],
-                            readLines("data-workflow/datafolder.txt")[2],
-                            "AMGBA.RData")
+    CENSO_file <- fs::path(Sys.getenv("DATA_FOLDER"), Sys.getenv("CENSO_FOLDER"), "AMGBA.RData")
   }
 
   load(CENSO_file)

@@ -3,6 +3,7 @@
 # Command Line Interfaces
 library(cli)
 library(fs)
+library(dotenv)
 library(tictoc)
 
 # Read data
@@ -43,6 +44,11 @@ load_all()
 
 # Option settings
 options(cli.progress_show_after = 0)
+
+# Agregar variables secretas de ambiente
+# DATA_FOLDER="path/to/data/folder"
+# CENSO_FOLDER="censo/folder"
+dotenv::load_dot_env()
 
 # Intermediate data folder
 fs::dir_create(here::here("data-workflow", "intermediate-data"))

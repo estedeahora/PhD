@@ -67,7 +67,7 @@ if(!exists("CARTO", inherits = F) || is.null(CARTO$RADIO[["ls"]])){
 
   cli_li(col_yellow("Cargando datos APRENDER (ME)"))
 
-  if(!fs::file_exists(here::here("data-workflow", "datafolder.txt"))){
+  if(Sys.getenv("DATA_FOLDER") == "" || Sys.getenv("CENSO_FOLDER") == ""){
 
     # Descargar datos de Zenodo
     folder_temp <- tempdir()
@@ -83,8 +83,8 @@ if(!exists("CARTO", inherits = F) || is.null(CARTO$RADIO[["ls"]])){
     rm(folder_temp, zip_temp)
 
   }else{
-    AP_files <- fs::path(readLines(here::here("data-workflow", "datafolder.txt"))[1],
-                         "ME_Aprender", paste0("AP", c(2017,2019)),
+
+    AP_files <- fs::path(Sys.getenv("DATA_FOLDER"), "ME_Aprender", paste0("AP", c(2017,2019)),
                          paste0("APRENDER", c(2017,2019),
                                 "_BU_Estudiantes-secundaria-5-6-año_censo-L+M"),
                          ext = "csv")
@@ -145,15 +145,14 @@ if(!exists("CARTO", inherits = F) || is.null(CARTO$RADIO[["ls"]])){
 
   cli_li(col_yellow("Cargando datos Relevamiento Anual (ME)"))
 
-  if(!fs::file_exists(here::here("data-workflow", "datafolder.txt"))){
+  if(Sys.getenv("DATA_FOLDER") == "" || Sys.getenv("CENSO_FOLDER") == ""){
 
     RA_files <- fs::dir_ls(ME_files, regexp = "RA.*\\.csv$")
 
     rm(ME_files)
 
   }else{
-    RA_files <- fs::path(readLines(here::here("data-workflow", "datafolder.txt"))[1],
-                         "ME_RA", paste0("RA", 2017:2019),
+    RA_files <- fs::path(Sys.getenv("DATA_FOLDER"), "ME_RA", paste0("RA", 2017:2019),
                          paste0("RA", 2017:2019,
                                 "_BU2_Matricula"),
                          ext = "csv")
