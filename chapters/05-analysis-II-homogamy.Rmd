@@ -711,8 +711,10 @@ que señalan que la formación de parejas mixtas (no-homogámicas) se ve
 reforzada por ambientes en los cuales hay una mayor interacción con
 otros grupos. Por el contrario, nuestros resultados identifican que la
 mayor homogamia observada en los espacios residenciales con
-composiciones altas de un grupo, se debe a un efecto propio de esta
-composición.
+composiciones altas de un grupo, se debe a un efecto aleatorio propio de
+esta composición. En este sentido, en estos casos la homogamia no está
+reforzada por la segregación residenciales sino que debería ser
+explicada por otros factores.
 
 <!--# En relación a esto, nuestro trabajo identificó una relación positiva entre la probabilidad homogamia y la participación de cada grupo en la unidad espacial. Sin embargo, la homogamia no-explicada tiene mayor peso a medida que es menor la participación de cada uno de los grupos educativos en la unidad espacial. En este sentido, la homogamia no-explicada (por la segregación residencial) es mayor a medida que el grupo tiene una participación menor. Estos resultados sugieren que la homogamia actúa como un mecanismo de protección, que refuerza la cohesión y el contacto en los grupos minoritarios a nivel territorial.  -->
 
@@ -745,11 +747,12 @@ minoritario es el más desposeído (en nuestro caso, los hogares con
 estudios primario).
 
 De manera general, nuestros hallazgos sugieren que la homogamia refuerza
-la segregación en el dominio residencial para los grupos minoritarios,
-pero no tendría un efecto significativo cuando el porcentaje de los
-grupos es mayor. En este sentido, la homogamia toma relevancia en
-aquellas situaciones donde el riesgo de contacto con otros grupos
-sociales es mayor, donde parece reforzar el efecto de la segregación
-residencial. En este sentido, la homogamia refuerza el contacto y la
-segregación en aquellos contextos territoriales en los cuales el grupo
-propio se encuentra como minoría en el espacio residencial.
+la segregación en el dominio residencial para los grupos minoritarios
+(independientemente de cuál sea este en ese espacio), pero no tendría un
+efecto significativo cuando el porcentaje de los grupos es mayor. En
+este sentido, la homogamia toma relevancia en aquellas situaciones donde
+el 'riesgo de contacto' con otros grupos sociales es mayor, y es en este
+caso donde parece reforzar el efecto de la segregación residencial. En
+este sentido, la homogamia refuerza el contacto y la segregación en
+aquellos contextos territoriales en los cuales el grupo propio se
+encuentra como minoría en el espacio residencial.

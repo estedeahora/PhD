@@ -1285,13 +1285,16 @@ más allá del propio espacio residencial, como por ejemplo, el lugar de
 trabajo, estudio u ocio. Los espacios de actividad permiten a los
 hogares hacer un uso diferenciado del espacio y los recursos urbanos,
 controlando las posibilidades de encuentros con otros grupos sociales
-[@Wong2011]. Los individuos que comparten un mismo ámbito residencial
-pueden experimentar diferentes niveles de segregación a partir de cómo
-configuran sus espacios de actividad. De esta manera, la capacidad para
-articular diferentes espacios a partir de las movilidades diarias,
-permite a los hogares 'habitar' el espacio urbano, apropiándose del
-mismo material y simbólicamente [@Cosacov2014; @Duhau2008;
-@DiVirgilio2007].
+[@Wong2011; @Krivo2013; @Kwan2013]. Los individuos que comparten un
+mismo ámbito residencial pueden experimentar diferentes niveles de
+segregación a partir de cómo configuran sus espacios de actividad. En su
+forma más simple, esta capacidad para configurar y articular los
+espacios de actividad está mediada por el costo (económico) para acceder
+a estos espacios, que se impone como una barrera [@Krivo2013]. De esta
+manera, la capacidad para articular diferentes espacios a partir de las
+movilidades diarias, permite a los hogares 'habitar' el espacio urbano,
+apropiándose del mismo material y simbólicamente [@Cosacov2014;
+@Duhau2008; @DiVirgilio2007].
 
 <!-- El giro de las 'movilidades' y la movilidad cotidiana -->
 
@@ -1371,7 +1374,8 @@ de la vida social, entre los cuales se puede mencionar el laboral
 @Wilson2011], las relaciones matrimoniales [@Bouchet-Valat2018], las
 relaciones interpersonales [@Bojanowski2014; @Huang2022; @Otero2022],
 las redes sociales virtuales [@Hofstra2017; @Morales2019; @Dorman2020;
-@Dong2020], los lugares de esparcimiento [@Tomasiello2022], entre otros.
+@Dong2020], los lugares de esparcimiento [@Silm2014; @Tomasiello2022],
+entre otros.
 
 <!-- La segregación urbana como marco para pensar segregación. -->
 
@@ -1401,17 +1405,18 @@ trabajos que analizan el vínculo entre segregación residencial y escolar
 [ver @Boterman2019a para un recorrido sobre este aspecto], pero también
 trabajos que analizan conjuntamente el dominio residencial y el laboral
 [@Ellis2004]. En esta línea, diferentes trabajos integran diferentes
-dominos de la segregación a partir de analizar los espacios de actividad
-[@Kwan2013; @Silm2014; @Wang2012; @Wong2011]. Como resultado de esta
-búsqueda de herramientas conceptuales para abordar la complejidad del
-fenómeno de la segregación urbana, la última década algunos autores han
-propuesto un enfoque 'multi-dominio' [*multi-domain*] de la segregación
-[@Boterman2016; @VanHam2018; @VanHam2016], con el objeto de aborcar
-simultáneamente la segregación en los distintos dominios de la vida
-social desde un marco conceptual integrado. Estos trabajos permiten
-entender la segregación residencial como *uno* de los aspectos de la
-segregación urbana, el cual es necesario considerar en conjunto con
-otros dominios de la vida social.[^02-literature-23]
+dominios de la segregación a partir de analizar los espacios de
+actividad [@Kwan2013; @Silm2014; @Wang2012; @Wong2011, entre otros].
+Como resultado de esta búsqueda de herramientas conceptuales para
+abordar la complejidad del fenómeno de la segregación urbana, la última
+década algunos autores han propuesto un enfoque 'multi-dominio'
+[*multi-domain*] de la segregación [@Boterman2016; @VanHam2018;
+@VanHam2016], con el objeto de abarcar simultáneamente la segregación en
+los distintos dominios de la vida social desde un marco conceptual
+integrado. Estos trabajos permiten entender la segregación residencial
+como *uno* de los aspectos de la segregación urbana, el cual es
+necesario considerar en conjunto con otros dominios de la vida
+social.[^02-literature-23]
 
 [^02-literature-23]: Además de considerar la incidencia de los
     diferentes *dominios* de la vida social, otros trabajos han

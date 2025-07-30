@@ -30,6 +30,10 @@ familias elaboran una estrategia unificada de elección de escuela y de
 En concreto, la escuela es un ámbito central en el que analizar el
 problema de la segregación...
 
+"Schools are similar to the workplaces in being a domain for ‘forced’
+social contact" [@Silm2021, p. 202].
+<!--# Importancia de la escuela como mecanismo que permitiría generar redes diversas (capital social), constituyendo así un mecanismo central para la obtensión de capital social que luego puede ser central para desarrollar ingresos a trabajos (también posiblemente menos segregados) y generar ascenso social. Ver este vínculo con círculo de la segregación en @Vanham2018 (Van Ham & Tammaru). Todo el texto de Silm (también @Silm2014) insisten en lo "forzado" de este espacio de actividad (al igual que el trabajo). Es interesante que, mientras en el caso del trabajo, compartir espacio puede estar medidado por relaciones jerárquicas, de manera que aunque se vea una menor segregación esto puede suponer una diferenciación entre los grupos, en el caso de la educación, compartir espacios educativos es un indicador de integración [escena de Okupas]-->
+
 ## Presentación de la metodología de análisis
 
 <!--# Se presenta la propuesta metodológica basada en un modelo de asignación ('allocation model') de estudiantes en escuelas (Serrati, 2023b). De modo breve, este modelo genera una asignación "óptima" minimizando la distancia total recorrida por total de los estudiantes, de manera que funciona como un "tipo ideal" sobre cómo sería la asignación de estudiantes si sólo se tuviera en cuenta la distancia. La estrategia metodológica consiste en comparar la composición escolar que resulta de esta asignación con la composición realmente observada. Para ello se utiliza el método propuesto por Elbers (2023), que fue anteriormente utilizado de este modo (Serrati, 2023b).  -->
