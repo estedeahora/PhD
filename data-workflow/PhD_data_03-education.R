@@ -15,7 +15,7 @@ if(!exists("CARTO", inherits = F) || is.null(CARTO$RADIO[["ls"]])){
                   "PhD_04_carto-censo.RData"))
 }
 
-### ╠ Mapa Educativo Nacional -----------------------------
+# ╠ Mapa Educativo Nacional -----------------------------
   # http://mapa.educacion.gob.ar/geoservicios
   #
   # Listado de modalidades:
@@ -61,7 +61,7 @@ if(!exists("CARTO", inherits = F) || is.null(CARTO$RADIO[["ls"]])){
   unlink(fileName)
   rm(request, client, fileName, wfs)
 
-### ╠ APRENDER --------------------------------------------
+# ╠ APRENDER --------------------------------------------
   # Respaldo de datos disponible en: https://doi.org/10.5281/zenodo.14888047
   # Se usar promedio de años 2017 y 2019 para disminuir sesgos del operativo.
 
@@ -140,7 +140,7 @@ if(!exists("CARTO", inherits = F) || is.null(CARTO$RADIO[["ls"]])){
 
   rm(AP_files, APRENDER)
 
-### ╚ Relevamiento Anual (RA) -------------------------------------------------
+# ╚ Relevamiento Anual (RA) -------------------------------------------------
   # Respaldo de datos disponible en: https://doi.org/10.5281/zenodo.14888047
 
   cli_li(col_yellow("Cargando datos Relevamiento Anual (ME)"))

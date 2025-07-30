@@ -81,7 +81,7 @@ CARTO <- list()
   rm(sel)
   rm(client, request, wfs, fileName)
 
-# Entornos urbanos (Mariana Marcos) ------------------------------------------
+# ╠ Entornos urbanos (Mariana Marcos) ------------------------------------------
 # * Se utilizan los datos descargados de: http://hdl.handle.net/11336/190015
 # * Se corrige radio "067780303", no disponible en la cartografía de INDEC.
 #     Se considera posible error de tipeo y se reemplaza por radio "067780301"
