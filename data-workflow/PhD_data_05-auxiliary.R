@@ -2,7 +2,7 @@
 
 load(file = here::here("data-workflow", "final-data", "CARTO.rda"))
 
-# Zonas de interes ------------------------------------------------
+# Zonas de interés ------------------------------------------------
 
   # Detalle 1: ZN
   # Zona norte (Vicente López y San Isidro) + CABA
@@ -39,6 +39,13 @@ load(file = here::here("data-workflow", "final-data", "CARTO.rda"))
   ZN4_lim[2] = ZN4_lim[2] + (ZN4_lim[4] - ZN4_lim[2]) / 1.5
   ZN4_lim[4] = ZN4_lim[4] + (ZN4_lim[4] - ZN4_lim[2]) / 2.8
 
+# Variables para matriz de indicadores (mobilities) -----------------------------
+
+  VAR_cat <- read_xlsx(fs::path("data-workflow", "raw-data", "mim_Variables", ext = "xlsx"), sheet = "CAT" ) |>
+    mutate(Categ = str_replace_all(Categ, " ", " "))
+
+  VAR_mca <- read_xlsx(fs::path("data-workflow", "raw-data", "mim_Variables", ext = "xlsx"), sheet = "VAR" )
+
 # Bases finales ---------------------------------------------------
 
   AUX <- list()
@@ -50,8 +57,12 @@ load(file = here::here("data-workflow", "final-data", "CARTO.rda"))
 
   AUX$ZN <- list(ZN1 = ZN1, ZN2 = ZN2, ZN3 = ZN3, ZN4 = ZN4)
 
+  AUX$VAR_cat <- VAR_cat
+  AUX$VAR_mca <- VAR_mca
+
   rm(ZN1_lim, ZN2_lim, ZN3_lim, ZN4_lim)
   rm(ZN1, ZN2, ZN3, ZN4)
+  rm(VAR_cat, VAR_mca)
 
   # Save
   cli_alert_info(col_silver("Guradando datos auxiliares {.path AUX-data.rda}."))
