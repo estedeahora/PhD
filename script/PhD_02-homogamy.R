@@ -7,7 +7,7 @@ HOM <- list()
 # Cargar datos --------------------------------------
 
 if(!exists("CARTO", inherits = F)){
-  f <- here::here("data-workflow", "final-data", "CARTO.rda")
+  f <- fs::path("data-workflow", "final-data", "CARTO", ext = "rda")
   cli_alert_info(
     col_silver("Cargando cartografía (`CARTO`): {.path {fs::path_rel(f)}}")
   )
@@ -17,7 +17,7 @@ if(!exists("CARTO", inherits = F)){
 }
 
 if(!exists("AUX", inherits = F)){
-  f <- here::here("data-workflow", "final-data", "AUX-data.rda")
+  f <- fs::path("data-workflow", "final-data", "AUX-data", ext = "rda")
 
   cli_alert_info(
     col_silver("Cargando datos auxiliares (`AUX`): {.path {fs::path_rel(f)}}")
@@ -28,7 +28,7 @@ if(!exists("AUX", inherits = F)){
 }
 
 if(!exists("HOG", inherits = F)){
-  f <- here::here("data-workflow", "final-data", "HOG.Rda")
+  f <- fs::path("data-workflow", "final-data", "HOG", ext = "rda")
 
   cli_alert_info(
     col_silver("Cargando datos de hogares (`HOG`): {.path {fs::path_rel(f)}}")
@@ -251,8 +251,8 @@ if(!exists("HOG", inherits = F)){
                   nrow = 2, heights = c(4, 8) )
 
   cli::cli_alert_info(col_silver("Guardando {.path figures/Homogamia_probabilidad-densidad-x-TH.png}"))
-  ggsave(filename = here::here("figures",
-                               "Homogamia_probabilidad-densidad-x-TH.png"),
+  ggsave(filename = fs::path("figures",
+                             "Homogamia_probabilidad-densidad-x-TH", ext = "png"),
          plot = p2, height = 18, width = 22, units = "cm", dpi = 300)
 
   rm(HOM_aux, p2, p2_TOT, p2_TAB, p2_TH, p_blank)
@@ -319,7 +319,7 @@ if(!exists("HOG", inherits = F)){
                   common.legend = T, legend = "bottom")
 
   cli::cli_alert_info(col_silver("Guardando {.path figures/Homogamia_probabilidad-x-tipo.png}"))
-  ggsave(filename = here::here("figures", "Homogamia_probabilidad-x-tipo.png"),
+  ggsave(filename = fs::path("figures", "Homogamia_probabilidad-x-tipo.png"),
          plot = p3, height = 18 * 1.5, width = 38 * 1.5, units = "cm", dpi = 300)
 
   rm(p3_vln, p3_AMBA, p3)
@@ -446,7 +446,7 @@ if(!exists("HOG", inherits = F)){
                   widths = c(3, 1.2))
 
   cli::cli_alert_info(col_silver("Guardando {.path figures/Homogamia_por-vs-prob.png}"))
-  ggsave(here::here("figures",
+  ggsave(fs::path("figures",
                     "Homogamia_por-vs-prob.png"),
          p4, width = 27.5, height = 22, units = "cm", dpi = 300)
 
@@ -501,7 +501,7 @@ if(!exists("HOG", inherits = F)){
     theme(legend.direction = "horizontal", legend.position = "bottom")
 
   cli::cli_alert_info(col_silver("Guardando {.path figures/Homogamia_CA-homogamy.png}"))
-  ggsave(filename = here::here("figures",
+  ggsave(filename = fs::path("figures",
                                "Homogamia_CA-homogamy.png"),
          plot = p5, width = 30, height = 13, units = "cm", dpi = 300)
 
@@ -547,7 +547,7 @@ if(!exists("HOG", inherits = F)){
 
   cli::cli_alert_info(col_silver("Guardando {.path figures/Homogamia_relation_P1-P2.png}"))
   ggsave(plot = ggpubr::ggarrange(p6a, p6b),
-         filename = here::here("figures", "Homogamia_relation_P1-P2.png"),
+         filename = fs::path("figures", "Homogamia_relation_P1-P2.png"),
          height = 20, width = 30, dpi = 300, units = "cm")
 
   rm(p6a, p6b)
@@ -581,7 +581,7 @@ if(!exists("HOG", inherits = F)){
     guides(color = "none")
 
   cli::cli_alert_info(col_silver("Guardando {.path figures/Homogamia_porcentaje-vs-prob-H0.png}"))
-  ggsave(here::here("figures", "Homogamia_porcentaje-vs-prob-H0.png"),
+  ggsave(fs::path("figures", "Homogamia_porcentaje-vs-prob-H0.png"),
          plot = p7, width = 19, height = 19, units = "cm", dpi = 300)
 
   rm(p7)
@@ -607,7 +607,7 @@ if(!exists("HOG", inherits = F)){
     theme(legend.position="bottom")
 
   cli::cli_alert_info(col_silver("Guardando {.path figures/Homogamia_homog-explicada.png}"))
-  ggsave(filename = here::here("figures",
+  ggsave(filename = fs::path("figures",
                                "Homogamia_homog-explicada.png"),
          plot = p8, height = 13, width = 30, units = "cm", dpi = 300)
 

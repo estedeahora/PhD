@@ -7,7 +7,7 @@ RES <- list()
 # Cargar datos --------------------------------------
 
 if(!exists("CARTO", inherits = F)){
-  f <- here::here("data-workflow", "final-data", "CARTO.rda")
+  f <- fs::path("data-workflow", "final-data", "CARTO", ext = "rda")
   cli_alert_info(
     col_silver("Cargando cartografía (`CARTO`): {.path {fs::path_rel(f)}}")
     )
@@ -17,7 +17,7 @@ if(!exists("CARTO", inherits = F)){
 }
 
 if(!exists("AUX", inherits = F)){
-  f <- here::here("data-workflow", "final-data", "AUX-data.rda")
+  f <- fs::path("data-workflow", "final-data", "AUX-data", ext = "rda")
 
   cli_alert_info(
     col_silver("Cargando datos auxiliares (`AUX`): {.path {fs::path_rel(f)}}")
@@ -166,7 +166,7 @@ if(!exists("AUX", inherits = F)){
                  ncol = 1, heights = c(10, 0.2, 9))
 
   cli::cli_alert_info(col_silver("Guardando {.path figures/Segregacion_AMBA.png}"))
-  ggsave(here::here("figures", "Segregacion_AMBA.png"),
+  ggsave(fs::path("figures", "Segregacion_AMBA.png"),
          plot = p1,
          width = 26, height = 42, unit = "cm", dpi = 300)
 
@@ -230,7 +230,7 @@ if(!exists("AUX", inherits = F)){
   p2 <- ggarrange(p2, p2_text, nrow = 2, heights = c(1, 0.05))
 
   cli::cli_alert_info(col_silver("Guardando {.path figures/Segregacion_CA.png}"))
-  ggsave(here::here("figures", "Segregacion_CA.png"),
+  ggsave(fs::path("figures", "Segregacion_CA.png"),
          plot = p2,
          width = 26, height = 14, unit = "cm", dpi = 300)
 
@@ -298,7 +298,7 @@ if(!exists("AUX", inherits = F)){
                   ncol = 1, heights = c(10, 0.2, 9))
 
   cli::cli_alert_info(col_silver("Guardando {.path figures/Segregacion_CA_AMBA.png}"))
-  ggsave(here::here("figures", "Segregacion_CA_AMBA.png"),
+  ggsave(fs::path("figures", "Segregacion_CA_AMBA.png"),
          plot = p3,
          width = 26, height = 42, unit = "cm", dpi = 300)
 
@@ -402,7 +402,7 @@ if(!exists("AUX", inherits = F)){
   p4 <- ggarrange(plotlist = p_comp, nrow = 1)
 
   cli::cli_alert_info(col_silver("Guardando {.path figures/Segregacion_comparacion_distancias.png}"))
-  ggsave(plot = p4, filename = here::here("figures", "Segregacion_comparacion_distancias.png"),
+  ggsave(plot = p4, filename = fs::path("figures", "Segregacion_comparacion_distancias.png"),
          width = 25, height = 14, units = "cm", dpi = 300)
 
   rm(db_aux1)
@@ -469,7 +469,7 @@ if(!exists("AUX", inherits = F)){
 
   cli::cli_li(col_yellow("Table 4.3: Descripción de patrones"))
 
-  RES$TAB3 <- readxl::read_xlsx(here::here("figures", "patrones.xlsx")) |>
+  RES$TAB3 <- readxl::read_xlsx(fs::path("figures", "patrones.xlsx")) |>
     flextable::flextable() |>
     flextable::set_caption(caption = paste("Descripción de las principales",
                                            "características de los patrones de",
