@@ -17,6 +17,7 @@ library(tidyverse)
 library(data.table)
 library(magrittr)
 library(progressr)    # barra de progreso
+library(units)
 
 # Parallel processing
 library(future)
