@@ -288,7 +288,7 @@ if(!exists("CARTO", inherits = F) || is.null(CARTO$ESCUELAS)){
   CARTO$FRAC <- CARTO$RADIO |>
     group_by(ID_FRAC = str_sub(ID_RADIO, end = 7)) |>
     summarise(across(HOG_PRI:HOG_SUP, ~sum(.x, na.rm = TRUE)),
-              ls_res = sum(ls * p, na.rm = TRUE))
+              lsRES = sum(ls * p, na.rm = TRUE))
 
 # ╠ Crear base de datos de movilidades individuales ---------------
 # Datos de viaje a nivel PERSONA: Si la persona no tiene movilidades se asigna
@@ -479,8 +479,8 @@ if(!exists("CARTO", inherits = F) || is.null(CARTO$ESCUELAS)){
     # Coordenadas para layout geográfico
     st_centroid() |>
     mutate(# Segregación
-           lsRES_lab = cut(ls_res, include.lowest = T, ordered_result = T,
-                           breaks = quantile(ls_res, na.rm = T, probs = seq(0, 1, by = 0.2)),
+           lsRES_lab = cut(lsRES, include.lowest = T, ordered_result = T,
+                           breaks = quantile(lsRES, na.rm = T, probs = seq(0, 1, by = 0.2)),
                            labels = paste0("inSEGRES_Q", 1:5) ),
            # Centalidad/policentralidad
            CENTRALIDAD = st_distance(x = geometry, y = pza_de_mayo)[,1],  # Distancia a Plaza de Mayo
@@ -602,13 +602,13 @@ if(!exists("CARTO", inherits = F) || is.null(CARTO$ESCUELAS)){
   # * Zonificación: Ubicación en el aglomerado (Sur, Centro, Norte, Este, Oeste)
 
   aux_radio <- CARTO$RADIO |>
-    select(ID_RADIO, ls_res = ls, HOG, HOG_PRI:HOG_SUP) |>
+    select(ID_RADIO, lsRES = ls, HOG, HOG_PRI:HOG_SUP) |>
     st_centroid() |>
     mutate(# Segregación (ls M)
-           lsRES_lab = cut(ls_res, include.lowest = T, ordered_result = T,
-                           breaks = quantile(ls_res, na.rm = T, probs = seq(0, 1, by = 0.2)),
+           lsRES_lab = cut(lsRES, include.lowest = T, ordered_result = T,
+                           breaks = quantile(lsRES, na.rm = T, probs = seq(0, 1, by = 0.2)),
                            labels = paste0("rSEGRES_Q", 1:5) ),
-           ls_res = round(ls_res, 3),
+           lsRES = round(lsRES, 3),
            # % EDU
            across(HOG_PRI:HOG_SUP,
                   ~round(.x/HOG * 100)),
