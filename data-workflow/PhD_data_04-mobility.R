@@ -326,11 +326,10 @@ if(!exists("CARTO", inherits = F) || is.null(CARTO$ESCUELAS)){
 
   # Modificar y filtrar base de viajes
   # ---------------------------------*
-  # Base original: 67.929 viajes
-  # Base filtrada: 67.838 viajes
-  #    (a) Se remueven 18 viajes con datos duplicados
-  #    (b) Se pierden 73 viajes (29 personas) por hora de viaje incompleta en
-  #         algún viaje
+  # Base original:    67.929 viajes
+  # Base filtrada:    67.838 viajes
+  #    (a) Se remueven    18 viajes con datos duplicados
+  #    (b) Se remueven    73 viajes (29 personas) por hora de viaje incompleta en algún viaje
   #
   # Se reordenaron los registros por hora (potencialmente se pueden haber
   #     perdido cronología real)
@@ -426,28 +425,33 @@ if(!exists("CARTO", inherits = F) || is.null(CARTO$ESCUELAS)){
 
   # Base de viajes bipartita (PERSONA <-> LUGAR) -------------------------------------------
   # Se seleccionan:
-  #   (a) viajes hacia actividades que no terminan en el hogar (DES_ACT != 1);  -> no tiene sentido ver estos destinos porque no son "lugares de uso"
-  #   (b) personas con viajes el día de referencia (id_viaje != 0);             -> no tiene sentido considerar a personas sin movilidad
-  #   (c) viajes dentro de RMBA (viaja_rmba != 2); y                            -> no tiene sentido considerar viajes fuera de AMBA (fuera de objeto)
+  #   (a) personas con viajes el día de referencia (id_viaje != 0);             -> no tiene sentido considerar a personas sin movilidad
+  #   (b) viajes hacia actividades que no terminan en el hogar (DES_ACT != 1);  -> no tiene sentido ver estos destinos porque no son "lugares de uso"
+  #   (c) personas de 16 años o más (EDAD >= 16)                                -> se supone que movilidad es de personas menores de 16 años no son autónomas (se considera en capítulo educativo)
   #   (d) sin datos faltantes en origen-destino (!is.na(DES) & !is.na(ORI))
-  #   (e) personas de 16 años o más (EDAD >= 16)                                -> se supone que movilidad es de personas menores de 16 años no son autónomas (se considera en capítulo educativo)
-  #   (f) los destinos son lugares clasificados según TH (!is.na(TH_DES))       -> se considera viajes a entornos urbanos dentro del área de estudio
-  #   (g) viajes con ponderación de tiempo positiva (!is.na(PONDERA_time) &
+  #   (e) destinos fuera del AMBA (TH_DES == "Fuera AMBA")                      -> se considera viajes a entornos urbanos dentro del área de estudio
+  #   (f) viajes con ponderación de tiempo positiva (!is.na(PONDERA_time) &
   #         & PONDERA_time > 0)                                                 -> se considera viajes con tiempo de actividad
   #
-  # Base original:  67.838 viajes
-  # Base bipartita: 20.888 viajes
+  # Base original:         67.838 viajes
+  # Base bipartita:        20.888 viajes  (~30.7% de la base original)
+  #
+  #   (a) Se remueven:     15.125 viajes  (id_viaje != 0)
+  #   (b) Se remueven:     25.379 viajes  (DES_ACT != 1)
+  #   (c) Se remueven:      5.777 viajes  (EDAD >= 16)
+  #   (d) Se remueven:        314 viajes  (!is.na(DES) & !is.na(ORI))
+  #   (e) Se remueven:        282 viajes  (TH_DES == "Fuera AMBA")
+  #   (f) Se remueven:         73 viajes  (!is.na(PONDERA_time) & PONDERA_time > 0)
 
-  cli_ul(col_cyan("Filtrar viajes") )
+  cli_ul(col_cyan("Armar base para matriz bipartita") )
 
   db_bipartita <- db_mov |>
-    filter(DES_ACT != 1 &                             # (a)
-             id_viaje != 0 &                          # (b)
-             viaja_rmba != 2 &                        # (c)
-             (!is.na(DES) & !is.na(ORI)) &            # (d)
-             EDAD >= 16 &                             # (e)
-             !is.na(TH_DES) &                         # (f)
-             !is.na(PONDERA_time) & PONDERA_time > 0  # (g)
+    filter(id_viaje != 0 &                              # (a)
+             DES_ACT != 1 &                             # (b)
+             EDAD >= 16 &                               # (c)
+             (!is.na(DES) & !is.na(ORI)) &              # (d)
+             TH_DES != "Fuera AMBA" &                   # (e)
+             !is.na(PONDERA_time) & PONDERA_time > 0    # (f)
            ) |>
     # Seleccionar variables
     select(ID, id_hogar, id_persona, id_viaje,    # ID
