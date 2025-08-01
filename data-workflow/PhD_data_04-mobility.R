@@ -657,8 +657,8 @@ if(!exists("CARTO", inherits = F) || is.null(CARTO$ESCUELAS)){
     left_join(aux_radio, by = "ID_RADIO", relationship = "many-to-one") |>
     select(-ID_RADIO) |>
     mutate(# EDAD
-           EDAD = cut(EDAD, breaks = c(0, 16, 30, 45, 60, 99), include.lowest = T),
-           EDAD = fct_relabel(EDAD, ~paste0("pEDAD_" ,.x)),
+           EDAD = cut(EDAD, breaks = c(0, 15, 30, 45, 60, 99), include.lowest = T),
+           EDAD = fct_relabel(EDAD, ~paste0("pEDAD_" ,.x)) |> fct_drop(),
            # SEXO
            SEXO = factor(SEXO, levels = 1:2, labels = c("pSEX_V", "pSEX_M")),
            # EDU
