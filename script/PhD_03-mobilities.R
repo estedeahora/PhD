@@ -4,7 +4,6 @@ cli::cli_h2(col_blue("Análisis de Movilidad (MOV)"))
 
 MOV <- list()
 
-# load("data/derived/02_data.RData")
 # source(here::here("scripts/SNA_00_fx.R"), encoding = "UTF-8")
 
 # Cargar datos --------------------------------------
@@ -41,134 +40,130 @@ MOV <- list()
     rm(f)
   }
 
+  db_mim <- ENMODO$MIM
+
   replic <- 1000
   conf   <- 0.95
 
 # Análisis de movilidades --------------------------------------
+
 ### ╠ Descripción de viajes ---------------------------------
 
-TH_aux <- CARTO$RADIO |>
-  filter(!is.na(TH)) |>
-  group_by(TH) |>
-  summarise() |>
-  mutate(sup = st_area(geom),
-         sup = set_units(sup, value = "km2"),
-         sup = drop_units(sup),
-         sup_p = round(sup / sum(sup) * 100, 1) ) |>
-  st_drop_geometry()
+  TH_aux <- CARTO$RADIO |>
+    filter(!is.na(TH)) |>
+    group_by(TH) |>
+    summarise() |>
+    mutate(sup = st_area(geometry),
+           sup = set_units(sup, value = "km2"),
+           sup = drop_units(sup),
+           sup_p = round(sup / sum(sup) * 100, 1) ) |>
+    st_drop_geometry()
 
-VIA_TOT <- db_mim |>
-  group_by(TH = in_TH) |>
-  summarise(N = sum(in_time, na.rm = T))
+  VIA_TOT <- db_mim |>
+    group_by(TH = in_TH) |>
+    summarise(N = sum(in_time, na.rm = T))
 
-VIA_MOT <- db_mim |>
-  group_by(TH = in_TH, v_MOT) |>
-  summarise(N = sum(in_time, na.rm = T)) |>
-  pivot_wider(id_cols = TH, names_from = v_MOT, values_from = "N", values_fill = 0) |>
-  ungroup()
+  VIA_MOT <- db_mim |>
+    group_by(TH = in_TH, v_MOT) |>
+    summarise(N = sum(in_time, na.rm = T)) |>
+    pivot_wider(id_cols = TH, names_from = v_MOT, values_from = "N", values_fill = 0) |>
+    ungroup()
 
-VIA <- TH_aux |>
-  left_join(VIA_TOT, by = "TH") |>
-  left_join(VIA_MOT, by = "TH") |>
-  mutate(across(.cols = N:Recreación,
-                .fns = ~round(.x/sum(.x) * 100, 1)),
-         sup = round(sup, 1) )
+  VIA <- TH_aux |>
+    left_join(VIA_TOT, by = "TH") |>
+    left_join(VIA_MOT, by = "TH") |>
+    mutate(across(.cols = N:Recreación,
+                  .fns = ~round(.x/sum(.x) * 100, 1)),
+           sup = round(sup, 1) )
 
-rm(VIA_TOT, VIA_MOT, TH_aux)
+  rm(VIA_TOT, VIA_MOT, TH_aux)
 
-TIE <- rbind(
-  db_mim |> summarise(v_MOT = "N", Dur = round(weighted.mean(v_TVIA, w, na.rm = T), 1)),
-  db_mim |> group_by(v_MOT) |> summarise(Dur = round(weighted.mean(v_TVIA, w, na.rm = T), 1))
-) |>
-  pivot_wider(names_from = v_MOT, values_from = "Dur")
+  TIE <- rbind(
+    db_mim |> summarise(v_MOT = "N", Dur = round(weighted.mean(v_TVIA, w, na.rm = T), 1)),
+    db_mim |> group_by(v_MOT) |> summarise(Dur = round(weighted.mean(v_TVIA, w, na.rm = T), 1))
+  ) |>
+    pivot_wider(names_from = v_MOT, values_from = "Dur")
 
-MOV$VIA <- rbind(VIA, c(TH = NA, sup = NA,
-                        sup_p = NA,
-                        TIE) ) |>
-  mutate(TH = fct_na_value_to_level(TH, "Tiempo promedio de viaje (minutos)"),
-         Ratio = N/sup_p)
+  MOV$VIA <- rbind(VIA, c(TH = NA, sup = NA,
+                          sup_p = NA,
+                          TIE) ) |>
+    mutate(TH = fct_na_value_to_level(TH, "Tiempo promedio de viaje (minutos)"),
+           Ratio = N/sup_p)
 
-rm(VIA, TIE)
+  rm(VIA, TIE)
 
 ### ╠ Análisis de Segregación: Diferencia residencial-destino -----------------
 
-# Residencial
-## UA: Hogar (considera a inmóviles)
-## Escala: Fracción
-## Variable: Máximo nivel educativo del hogar
+  # Residencial
+  ## UA: Hogar (considera a inmóviles)
+  ## Escala: Fracción
+  ## Variable: Máximo nivel educativo del hogar
 
-db_hog <- ENMODO$HOG |>
-  left_join(CARTO$RADIO |> select(ID_RADIO, TH), by = "ID_RADIO") |>
-  filter(!is.na(TH)) |>
-  mutate(ID_FRAC = str_sub(ID_RADIO, start = 1, end = 7 ) ) |>
-  group_by(ID_FRAC) |>
-  summarise(PRI = sum(PONDERA_HOG * (EDU %in% c("Sin estudios", "Primario")), na.rm = T),
-            SEC = sum(PONDERA_HOG * (EDU %in% c("Secundario")), na.rm = T),
-            SUP = sum(PONDERA_HOG * (EDU %in% c("SNU", "Universitario", "Post-Universitario")), na.rm = T)) |>
-  pivot_longer(cols = PRI:SUP)
+  db_hog <- ENMODO$HOG |>
+    left_join(CARTO$RADIO |> select(ID_RADIO, TH), by = "ID_RADIO") |>
+    filter(!is.na(TH)) |>
+    mutate(ID_FRAC = str_sub(ID_RADIO, start = 1, end = 7 ) ) |>
+    group_by(ID_FRAC) |>
+    summarise(PRI = sum(PONDERA_HOG * (EDU %in% c("Sin estudios", "Primario")), na.rm = T),
+              SEC = sum(PONDERA_HOG * (EDU %in% c("Secundario")), na.rm = T),
+              SUP = sum(PONDERA_HOG * (EDU %in% c("SNU", "Universitario", "Post-Universitario")), na.rm = T)) |>
+    pivot_longer(cols = PRI:SUP)
 
-# Destinos
-## UA: Destinos
-## Escala: Fracción
-## Variable: Máximo nivel educativo del hogar
+  # Destinos
+  ## UA: Destinos
+  ## Escala: Fracción
+  ## Variable: Máximo nivel educativo del hogar
 
-db_dest <- db_mim |>
-  group_by(DES, MOT = v_MOT) |>
-  summarise(PRI = sum(w_time * (p_EDU == "pEDU_Primario"), na.rm = T),
-            SEC = sum(w_time * (p_EDU == "pEDU_Secundario"), na.rm = T),
-            SUP = sum(w_time * (p_EDU == "pEDU_Superior"), na.rm = T))  |>
-  ungroup() |>
-  pivot_longer(cols = PRI:SUP) |>
-  mutate(value = round(value / 60, 1)) # Corrección para achicar números
+  db_dest <- db_mim |>
+    group_by(DES, MOT = v_MOT) |>
+    summarise(PRI = sum(w_time * (p_EDU == "pEDU_Primario"), na.rm = T),
+              SEC = sum(w_time * (p_EDU == "pEDU_Secundario"), na.rm = T),
+              SUP = sum(w_time * (p_EDU == "pEDU_Superior"), na.rm = T))  |>
+    ungroup() |>
+    pivot_longer(cols = PRI:SUP) |>
+    mutate(value = round(value / 60, 1)) # Corrección para achicar números
 
-# Comparación de segregación
-MOV$SEG <- mutual_difference(db_dest |> rename(ID_FRAC = DES), db_hog,
-                             unit = "ID_FRAC", group = "name", weight = "value",
-                             se = T, CI = conf, n_bootstrap = replic) |>
-  mutate(est = round(est, 3),
-         CI2 = map(CI, ~paste0(format(round(.x, 3), nsmall = 3), collapse = ";")),
-         CI2 = paste0("(", CI2, ")")) |>
-  select(stat, est, CI2)
+  # Comparación de segregación
+  MOV$SEG <- mutual_difference(db_dest |> rename(ID_FRAC = DES), db_hog,
+                               unit = "ID_FRAC", group = "name", weight = "value",
+                               se = T, CI = conf, n_bootstrap = replic) |>
+    mutate(est = round(est, 3),
+           CI2 = map(CI, ~paste0(format(round(.x, 3), nsmall = 3), collapse = ";")),
+           CI2 = paste0("(", CI2, ")")) |>
+    select(stat, est, CI2)
 
-rm(db_dest, db_hog)
+  rm(db_dest, db_hog)
 
 ### ╚ Análisis de red Bipartita (MCA) -------------------------------------------
 
-var_act <- AUX$VAR_mca$Variable[AUX$VAR_mca$MCA == "x" & !is.na(AUX$VAR_mca$MCA)]
-var_sup <- AUX$VAR_mca$Variable[AUX$VAR_mca$MCA == "Sup." & !is.na(AUX$VAR_mca$MCA)]
-var_quanti <- AUX$VAR_mca$Variable[AUX$VAR_mca$MCA == "Cuanti" & !is.na(AUX$VAR_mca$MCA)]
+  var_act <- AUX$VAR_mca$Variable[AUX$VAR_mca$MCA == "x" & !is.na(AUX$VAR_mca$MCA)]
+  var_sup <- AUX$VAR_mca$Variable[AUX$VAR_mca$MCA == "Sup." & !is.na(AUX$VAR_mca$MCA)]
+  var_quanti <- AUX$VAR_mca$Variable[AUX$VAR_mca$MCA == "Cuanti" & !is.na(AUX$VAR_mca$MCA)]
 
-res_mca <- db_mim |>
-  select(all_of(c(var_act, var_sup, var_quanti))) |>
-  MCA(graph = F, row.w = db_mim$w_time,
-      quali.sup = var_sup,#[3:15],
-      quanti.sup = var_quanti) |>
-  eig_corrected()
+  res_mca <- db_mim |>
+    select(all_of(c(var_act, var_sup, var_quanti))) |>
+    MCA(graph = F, row.w = db_mim$w_time,
+        quali.sup = var_sup,#[3:15],
+        quanti.sup = var_quanti) |>
+    eig_corrected()
 
-MOV$res_mca <- res_mca
+  MOV$res_mca <- res_mca
 
-rm(var_act, var_sup, var_quanti)
-rm(res_mca)
+  rm(var_act, var_sup, var_quanti)
+  rm(res_mca)
 
 ### TODO Análisis de secuencia de movilidades -------------------
 
-# VIA <- ENMODO$VIA |>
-#   filter(!is.na(DUR_VIA) & DUR_VIA > 0)
+  # VIA <- ENMODO$VIA |>
+  #   filter(!is.na(DUR_VIA) & DUR_VIA > 0)
 
-# a <- VIA[rep(1:nrow(VIA), times = VIA$DUR_VIA), ] |>
-#   group_by(id_hogar, id_persona, INI, FIN) |>
-#   mutate(N = 1:n(),
-#          HORA_RETRO = INI + N - 1) |>
-#   ungroup()
-
-### Guardar datos --------------------------------------
-
-# save(MOV, AUX, file = "data/derived/03_data.RData")
+  # a <- VIA[rep(1:nrow(VIA), times = VIA$DUR_VIA), ] |>
+  #   group_by(id_hogar, id_persona, INI, FIN) |>
+  #   mutate(N = 1:n(),
+  #          HORA_RETRO = INI + N - 1) |>
+  #   ungroup()
 
 # Figuras ------------------------------------
-
-# load("data/derived/02_data.RData")
-# load("data/derived/03_data.RData")
 
 # Descripción de viajes ---------------------------------------------------
 
@@ -187,35 +182,35 @@ rm(res_mca)
                          breaks = c(25, 50, 100, 200, 400, 800),
                          labels = c("25 (o menos)", 50, 100, 200, 400, 800),
                          trans = 'log10') +
-    coord_sf(xlim = AUX$AMGBA_lim[c(1,3)],
-             ylim = AUX$AMGBA_lim[c(2,4)]) +
+    coord_sf(xlim = AUX$lim_AMBA[c(1,3)],
+             ylim = AUX$lim_AMBA[c(2,4)]) +
     theme_void()
 
-  ggsave(filename = "figures/Destino-tiempo-total.png", p1,
-         width = 17, height = 15, units = "cm", dpi = 300)
+  ggsave(filename = fs::path("figures", "Destino-tiempo-total", ext = "png"),
+         plot =  p1, width = 17, height = 15, units = "cm", dpi = 300)
 
   rm(p1)
 
 ### ╠ FIG 5.2: Destino de viaje según nivel educativo ---------------------------
 
-prom <- db_mim |>
-  summarise(across(ends_with("_t"),
-                   ~weighted.mean(.x, w = in_time ) ) ) |>
-  pivot_longer(cols = everything(), names_to = "var", values_to = "p")
+  prom <- db_mim |>
+    summarise(across(ends_with("_t"),
+                     ~weighted.mean(.x, w = in_time ) ) ) |>
+    pivot_longer(cols = everything(), names_to = "var", values_to = "p")
 
-db_edu <- CARTO$FRAC["ID_FRAC"] |>
-  right_join(AUX$prop_in, by = c("ID_FRAC" = "DES" ) ) |>
-  filter(n >= 4) |>
-  select(ID_FRAC, in_PRI_t:in_SUP_t, in_ls)
+  db_edu <- CARTO$FRAC["ID_FRAC"] |>
+    right_join(AUX$prop_in, by = c("ID_FRAC" = "DES" ) ) |>
+    filter(n >= 4) |>
+    select(ID_FRAC, in_PRI_t:in_SUP_t, in_ls)
 
-p2 <- map2(.x = prom$var, .y = prom$p, ggmapa) %>%
-  ggarrange(plotlist = ., ncol = 3,
-            labels = c("Primario", "Secundario", "Superior") )
+  p2 <- map2(.x = prom$var, .y = prom$p, ggmapa) %>%
+    ggarrange(plotlist = ., ncol = 3,
+              labels = c("Primario", "Secundario", "Superior") )
 
-ggsave(filename = "figures/Destino-Nivel-educativo.png", p2,
-       width = 35, height = 15, units = "cm", dpi = 300)
+  ggsave(filename = fs::path("figures", "Destino-Nivel-educativo", ext = "png"),
+         plot = p2, width = 35, height = 15, units = "cm", dpi = 300)
 
-rm(p2, prom)
+  rm(p2, prom)
 
 ### ╠ FIG 5.3: Mapeo de segregación local de destino ---------------------------
 
