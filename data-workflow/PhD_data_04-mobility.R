@@ -386,10 +386,7 @@ if(!exists("CARTO", inherits = F) || is.null(CARTO$ESCUELAS)){
                   .fns = ~ifelse(id_viaje == 0, FROM, .x) ),
            # Recategorizar MNI y EDU para coincidir con esquema de la tesis
            across(.cols = c(MNI, EDU),
-                  .fns = ~factor(.x, levels = EDU_lab,
-                                 labels = c(rep("Primario", 3),
-                                            "Secundario",
-                                            rep("Superior", 3) ) ),
+                  .fns = ~fct_recode(.x, !!!EDU_lab),
                   .names = "{.col}_red"))
 
   # Construir etapas de actividades y duraciones
@@ -412,7 +409,7 @@ if(!exists("CARTO", inherits = F) || is.null(CARTO$ESCUELAS)){
            DUR_VIA_calc = round((FIN-INI) * 60),
            PONDERA_time = round(PONDERA * DUR_ACT, 1))
 
-  rm(EDU_lab, escala, aux_RAD)
+  attr(db_mov, "scale") <- escala
 
   rm(EDU_lab, escala, aux_RAD, DIST)
 
@@ -553,7 +550,7 @@ if(!exists("CARTO", inherits = F) || is.null(CARTO$ESCUELAS)){
     select(-time, -N, -n) |>
     pivot_longer(cols = PRI_t:SUP_t) |>
     mutual_local(group = "name", unit = "DES", weight = "value",
-                 se = T, wide = T) |>
+                 se = F, wide = T) |>
     mutate(ls = ifelse(ls < 0, 0, ls),
            ls = round(ls, 3),
            ls_lab = cut(ls, include.lowest = T,
