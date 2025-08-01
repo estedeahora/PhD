@@ -41,7 +41,7 @@ library(dbscan)        # Clúster
 library(segregation)   # segregation
 
 library(devtools)
-load_all()
+devtools::load_all()
 
 # Option settings
 options(cli.progress_show_after = 0)
@@ -99,7 +99,7 @@ source(here::here("data-workflow", "PhD_data_02-population.R"), encoding = "UTF-
 #       de MNI padres
 # [x] Base de alumnos por escuelas con composición de MNI de padres
 # [x] Base de matrícula de alumnos por escuelas (total de 1ero a 6to grado)
-# -> Modifica CARTO["RADIO"]: agregando "ESCUELAS" con datos sobre matrícula y
+# -> Modifica CARTO: agregando "ESCUELAS" con datos sobre matrícula y
 #          composición de MNI de padres por escuela.
 
 source(here::here("data-workflow", "PhD_data_03-education.R"), encoding = "UTF-8")
@@ -108,7 +108,7 @@ source(here::here("data-workflow", "PhD_data_03-education.R"), encoding = "UTF-8
 # --------*
 # [x] ENMODO: Base de datos de movilidad domiciliaria de GCBA.
 # -> ENMODO = list(HOG, PER, VIA, ETA)
-# -> Modifica CARTO["RADIO"]: agregando "FRACCION".
+# -> Modifica CARTO: agregando "FRACCION".
 
 source(here::here("data-workflow", "PhD_data_04-mobility.R"), encoding = "UTF-8")
 

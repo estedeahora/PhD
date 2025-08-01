@@ -276,8 +276,8 @@ if(!exists("CARTO", inherits = F) || is.null(CARTO$ESCUELAS)){
                         labels = c("Trabajo", "Estudio",
                                    "Reproducción", "Recreación") ),
            DIST = DIST |> str_remove_all("-") |> as.numeric() ) |>
-      left_join(aux_RAD, by = c("ORI" = "ID_RADIO")) |> rename(TH_ORI = TH, ls_ORI = ls) |>
-      left_join(aux_RAD, by = c("DES" = "ID_RADIO")) |> rename(TH_DES = TH, ls_DES = ls)
+    left_join(aux_RAD, by = c("ORI" = "ID_RADIO")) |> rename(TH_ORI = TH, ls_ORI = ls) |>
+    left_join(aux_RAD, by = c("DES" = "ID_RADIO")) |> rename(TH_DES = TH, ls_DES = ls) |>
 
 # ╠ Crear cartografía a nivel de fracción -----------------
 
