@@ -368,10 +368,10 @@ if(!exists("CARTO", inherits = F) || is.null(CARTO$ESCUELAS)){
            DIST = ifelse(abs(DIST - DIST_calc) > DIST_calc, DIST_calc, DIST))
 
   # Generar/modificar variables y cambiar escala
-  EDU_lab <- c("Sin estudios", "Sin estudios",
-               "Primario", "Secundario",
-               "SNU", "Universitario",
-               "Post-Universitario")
+  EDU_lab <- c(Primario = "Sin estudios", Primario = "Primario",
+               Secundario = "Secundario",
+               Superior = "Terciario", Superior = "Universitario",
+               Superior = "Post Universitario")
 
   db_mov <- db_mov |>
     mutate(ID = paste0(str_pad(id_hogar, width = 5, pad = "0"),
