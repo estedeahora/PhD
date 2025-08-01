@@ -2,8 +2,8 @@
 # ---------------*
 # Basado en script TP Goinheix
 
-# TODO    Agregar distancia al centro (pza de mayo). Idealmente debería calcularse
-#           por red de calles ponderando.
+# DONE    Agregar distancia al centro (obelisco). No realizado: Idealmente
+#           debería calcularse por red de calles ponderando.
 # TODO    Corregir datos para duraciones de actividades negativas.
 # TODO    Armar base de actividades
 # DONE    Calcular segregación local de fracción de destino
@@ -296,27 +296,25 @@ if(!exists("CARTO", inherits = F) || is.null(CARTO$ESCUELAS)){
 #  * FROM    Lugar de residencia (ID_RADIO reducido a escala)
 #  * ORI     Lugar de inicio del viaje
 #  * DES     Lugar de destino del viaje
+
   cli_li(col_yellow("Creando base de movilidades individuales"))
 
   # Definir escala geográfica (Departamento: 5, Fracción: 7, Radio: 9)
   escala <- c("Fracción" = 7)
 
   # Datos de viajes (VIAJE)
-
   db_mov <-  VIAJE |>
     arrange(id_hogar, id_persona, id_viaje) |>
     select(-PONDERA) # Sacamos el ponderador individual (se usa ponderador del hogar)
 
   # Datos de personas (PERSONA)
   # PONDERA, EDAD, SEXO, MNI
-
   db_mov <- PERSONA |>
     select(id_hogar, id_persona, PONDERA, EDAD, SEXO, MNI = MNI_lab) |>
     full_join(db_mov, by = c("id_hogar", "id_persona"))
 
   # Sumar datos de hogares (HOGAR)
   # RADIO (+FROM), EDU, PONDERA_HOG, TH_FROM
-
   db_mov <- HOGAR |>
     mutate(FROM = ID_RADIO) |>
     select(id_hogar, ID_RADIO, ID_RADIO, EDU, PONDERA_HOG, FROM, TH_FROM, ls_FROM) |>
@@ -338,6 +336,35 @@ if(!exists("CARTO", inherits = F) || is.null(CARTO$ESCUELAS)){
   # Quitar duplicados de inicio y motivo                                        # (a)
   db_mov <- db_mov[is.na(db_mov$INI) |
                      !base::duplicated(db_mov[c("id_hogar", "id_persona", "INI", "MOT")]), ]
+
+  # Calcular distancias lineales
+  DIST <- bind_rows(db_mov |> select(FROM, TO = DES),
+                 db_mov |> select(FROM = ORI, TO = DES)) |>
+    filter(!is.na(FROM) & !is.na(TO) & FROM != TO) |>
+    unique()
+
+  DIST$dist <- st_distance(PhD_assign_sf(DIST, id = "FROM", sf_object = CARTO$RADIO["ID_RADIO"]),
+                           PhD_assign_sf(DIST, id = "TO", sf_object = CARTO$RADIO["ID_RADIO"]),
+                           by_element = TRUE) |>
+    units::set_units("km") |>
+    units::drop_units() |>
+    round(3)
+
+  # Agregar distancias a la base de viajes
+  #   Distancia entre el hogar y el destino (FROM -> DES)
+  #   Distancia entre el origen y el destino (ORI -> DES)
+  db_mov <- db_mov |>
+    left_join(DIST, by = c("FROM" = "FROM", "DES" = "TO")) |>
+    rename(DIST_to_RESID = dist) |>
+    left_join(DIST, by = c("ORI" = "FROM", "DES" = "TO")) |>
+    rename(DIST_calc = dist) |>
+    mutate(# Se establece 200mts para movimientos dentro del entorno
+           DIST_to_RESID = ifelse(FROM == DES, 0.2, DIST_to_RESID),
+           DIST_calc = ifelse(ORI == DES, 0.2, DIST_calc),
+           # Se imputa distancia calculada si is.na(DIST)
+           DIST = ifelse(is.na(DIST), DIST_calc, round(DIST, 3)),
+           # Corregir distancias con diferencias muy grandes con la calculada
+           DIST = ifelse(abs(DIST - DIST_calc) > DIST_calc, DIST_calc, DIST))
 
   # Generar/modificar variables y cambiar escala
   EDU_lab <- c("Sin estudios", "Sin estudios",
@@ -386,6 +413,8 @@ if(!exists("CARTO", inherits = F) || is.null(CARTO$ESCUELAS)){
 
   rm(EDU_lab, escala, aux_RAD)
 
+  rm(EDU_lab, escala, aux_RAD, DIST)
+
 # ╠ Grafo bipartito ---------------------------------
 
   cli_li(col_yellow("Creando grafo bipartito (PERSONA <-> LUGAR)"))
@@ -427,7 +456,7 @@ if(!exists("CARTO", inherits = F) || is.null(CARTO$ESCUELAS)){
            MOT, modo_des,                         # Motivos y modalidad
            INI, FIN, DUR_VIA, DUR_VIA_calc, FREC, # Temporalidad del viaje
            DUR_ACT,                               # Temporalidad de la actividad
-           DIST,                                  # Distancia viajada
+           DIST,  DIST_to_RESID,                  # Distancia viajada
            EDAD, SEXO,                            # Características personales
            MNI, EDU, MNI_red, EDU_red)            # Características educativas
 
@@ -638,26 +667,56 @@ if(!exists("CARTO", inherits = F) || is.null(CARTO$ESCUELAS)){
 
   # Propiedades de viajes (v)  --------------------------------------------------------------
   # w_time:    Fortaleza de la relación (cantidad de minutos que vinculan a la persona con la región)
-  # v_TACT:    Tiempo promedio gastado en el destino por la persona
   # v_TVIA:    Tiempo promedio de viaje al destino
+  # in_TACT:   Tiempo promedio gastado en el destino por la persona
 
   cli_ul(col_cyan("Calcular propiedades de viajes (v)") )
 
   prop_v <- db_bipartita |>
-    mutate(DUR_VIA = ifelse(is.na(DUR_VIA), abs(FIN-INI)*60, DUR_VIA)) |>
-    select(ID, DES, v_MOT = MOT,
-           w = PONDERA, w_time = PONDERA_time,
-           in_TH = TH_DES,
-           v_TACT = DUR_ACT, v_TVIA = DUR_VIA, v_DIST = DIST) |>
-    mutate(v_TACT = round(v_TACT/60, 1),                                        # unidad: horas
-           v_TACT_lab = cut(v_TACT, include.lowest = T, dig.lab = 10,
-                            breaks = quantile(v_TACT, na.rm = T,
-                                              probs = seq(0, 1, by = 0.2) ) ),
-           v_TACT_lab = fct_relabel(v_TACT_lab, ~paste0("eTact_" ,.x) ),
-           v_TVIA_lab = cut(v_TVIA, include.lowest = T,
-                            breaks = quantile(v_TVIA, na.rm = T,
-                                              probs = seq(0, 1, by = 0.2) ) ),
-           v_TVIA_lab = fct_relabel(v_TVIA_lab, ~paste0("eTvia_", .x) ) )
+    mutate(# Entorno urbano
+           TH_DES = fct_drop(TH_DES),
+           # Diferencia de Segregación
+           DIFSEG = ls_FROM - ls_DES,
+           DIFSEG_lab = cut(DIFSEG, include.lowest = T, ordered_result = T,
+                            breaks = c(-Inf, -0.095, -0.017, 0.017, 0.095, Inf),
+                            # breaks = c(-Inf, -0.200, -0.095, -0.017, 0.017, 0.095, 0.200, Inf),
+                            labels = paste0("vDIFSEG_", c("MBajo", "Bajo", "IGUAL", "Alto", "MAlto")) ),
+           # Distancias (a residencia y de viaje)
+           across(.cols = c(DIST, DIST_to_RESID),
+                  .fns = ~cut(.x, include.lowest = T, ordered_result = T,
+                              # breaks = quantile(.x, na.rm = T, probs = seq(0, 1, by = 0.2)),
+                              # labels = paste0("Q", 1:5)
+                              breaks = c(0, 1, 10, 25, Inf),
+                              labels = c("barrial", "1a10km", "10a25km", "mas25km")) ,
+                  .names = "{.col}_lab"),
+           across(.cols = starts_with("DIST") & ends_with("_lab"),
+                  .fns = ~fct_na_value_to_level(.x, level = "NOAMBA") |> fct_drop()),
+           DIST_lab = fct_relabel(DIST_lab, ~paste0("vDistVia_", .) ),
+           DIST_to_RESID_lab = fct_relabel(DIST_to_RESID_lab, ~paste0("inDistRes_", .) ),
+           # Tiempo de actividad
+           # TACT = round(DUR_ACT/60, 1),                                        # unidad: horas
+           TACT = DUR_ACT,
+           TACT_lab = cut(TACT, include.lowest = T, dig.lab = 10,
+                          # breaks = quantile(TACT, na.rm = T,
+                          #                   probs = seq(0, 1, by = 0.2) ) ),
+                          breaks = c(0, 20, 60, 60*4, 60*9, 60*24),
+                          labels = paste0("inTAct_" ,
+                                          c("BREVE", "CORTA", "PART", "FULL", "24hs") ) ),
+           # Tiempo de viaje
+           TVIA = ifelse(is.na(DUR_VIA_calc), abs(FIN-INI) * 60, DUR_VIA_calc),
+           TVIA_lab = cut(TVIA, include.lowest = T,
+                          breaks = quantile(TVIA, na.rm = T,
+                                            probs = seq(0, 1, by = 0.2) ) ),
+           TVIA_lab = fct_relabel(TVIA_lab, ~paste0("vTvia_", .x) ) ) |>
+    select(ID, DES, w = PONDERA, w_time = PONDERA_time,
+           # Variables destino (in)
+           TH = TH_DES, DIST_to_RESID, DIST_to_RESID_lab, TACT, TACT_lab,
+           # Variables de viaje (v)
+           MOT, TVIA, TVIA_lab, DIFSEG, DIFSEG_lab, DIST, DIST_lab) |>
+    rename_with(~paste0("v_", .),
+                .cols = MOT:DIST_lab) |>
+    rename_with(~paste0("in_", .),
+                .cols = TH:TACT_lab)
 
   # Matriz de indicadores múltiples --------------------------------------
   # Multiple indicator matrix (Zhu2016)
@@ -668,8 +727,17 @@ if(!exists("CARTO", inherits = F) || is.null(CARTO$ESCUELAS)){
     left_join(prop_p, by = "ID" ) |>
     left_join(prop_in, by = "DES" ) |>
     select(ID, DES, n, w, w_time,
-           starts_with("p_"), starts_with("in_"), starts_with("v_")) |>
-    filter(!is.na(p_TH))
+           starts_with("p_"), starts_with("v_"), starts_with("in_")) |>
+    select(-n, -p_x, -p_y, -in_x, -in_y,
+           -in_HOG_PRI, -in_HOG_SEC, -in_HOG_SUP)
+    # filter(!is.na(p_TH))
+
+  # tibble(nombre = names(db_mim),
+  #        n_levels = map(db_mim, ~{if(is.character(.x) | is.factor(.x)) length(unique(.x)) else "cuanti"}),
+  #        levs = map(db_mim, ~{if((is.character(.x) | is.factor(.x)) & length(unique(.x)) < 15) paste(levels(.x), collapse = "; ") else ""}),
+  #        na_ = map_int(db_mim, ~sum(is.na(.x) ) ) ) |>
+  #   filter(n_levels != "cuanti") |>
+  #   View()
 
   rm(pza_de_mayo)
 
