@@ -278,6 +278,8 @@ if(!exists("CARTO", inherits = F) || is.null(CARTO$ESCUELAS)){
            DIST = DIST |> str_remove_all("-") |> as.numeric() ) |>
     left_join(aux_RAD, by = c("ORI" = "ID_RADIO")) |> rename(TH_ORI = TH, ls_ORI = ls) |>
     left_join(aux_RAD, by = c("DES" = "ID_RADIO")) |> rename(TH_DES = TH, ls_DES = ls) |>
+    mutate(across(.cols = starts_with("TH_"),
+                  .fns = ~fct_na_value_to_level(.x, level = "Fuera AMBA")))
 
 # ╠ Crear cartografía a nivel de fracción -----------------
 
