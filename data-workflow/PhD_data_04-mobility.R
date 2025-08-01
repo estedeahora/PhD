@@ -671,11 +671,6 @@ if(!exists("CARTO", inherits = F) || is.null(CARTO$ESCUELAS)){
            starts_with("p_"), starts_with("in_"), starts_with("v_")) |>
     filter(!is.na(p_TH))
 
-  # AUX$prop_in <- prop_in
-  # AUX$prop_p  <- prop_p
-  # AUX$prop_v  <- prop_v
-
-  rm(prop_in, prop_p, prop_v, db_bipartita)
   rm(pza_de_mayo)
 
 # ╚ Base de actividades ---------------------------------
@@ -684,10 +679,14 @@ if(!exists("CARTO", inherits = F) || is.null(CARTO$ESCUELAS)){
 
   cli_li(col_yellow("Armado de bases finales (movilidad)"))
 
-  ENMODO = list(HOG = HOGAR, PER = PERSONA,
-                VIA = VIAJE, ETA = ETAPA)
+  ENMODO <- list(HOG = HOGAR, PER = PERSONA,
+                VIA = VIAJE, ETA = ETAPA,
+                MOV_IND = db_mov, MIM = db_mim,
+                prop = list(prop_in, prop_p, prop_v))
 
+  rm(prop_in, prop_p, prop_v, db_bipartita)
   rm(HOGAR, PERSONA, VIAJE, ETAPA)
+  rm(db_mov, db_mim)
 
   cli_alert_info(col_silver("Guradando datos finales {.path ENMODO.rda}."))
   save(ENMODO, file = fs::path("data-workflow", "final-data", "ENMODO", ext = "rda"))
