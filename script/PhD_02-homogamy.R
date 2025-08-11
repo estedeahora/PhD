@@ -110,6 +110,7 @@ if(!exists("HOG", inherits = F)){
               by = join_by(ID_RADIO))
 
 # Análisis de Homogamia -------------------------------
+
 ### ╠ Porcentaje de viviendas con parejas homogámicas ------------------
   # Porcentaje de homogamia y distancia educativa promedio sobre
   #   el total de parejas (no incluye hogares no-matrimoniales)

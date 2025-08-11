@@ -8,6 +8,9 @@ library(usethis)
 library(devtools)
 
 library(tidyverse)
+library(data.table)
+
+library(units)
 library(sf)
 
 library(ggpubr)
@@ -21,6 +24,8 @@ library(officer)
 
 library(FactoMineR)
 library(segregation)
+library(TraMineR)
+
 
 devtools::load_all()
 
