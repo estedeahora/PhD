@@ -52,8 +52,8 @@ options(cli.progress_show_after = 0)
 dotenv::load_dot_env()
 
 # Intermediate data folder
-fs::dir_create(here::here("data-workflow", "intermediate-data"))
-fs::dir_create(here::here("data-workflow", "final-data"))
+fs::dir_create(fs::path("data-workflow", "intermediate-data"))
+fs::dir_create(fs::path("data-workflow", "final-data"))
 
 # BASES NECESARIAS:
 
@@ -74,7 +74,7 @@ fs::dir_create(here::here("data-workflow", "final-data"))
 # -> CARTO = list(AMGBA, RADIO, DPTO, DPTO_AMBA, PCIA, FFCC1, FFCC2)
 # -> CALLE [sfnetwork]
 
-source(here::here("data-workflow", "PhD_data_01-carto.R"), encoding = "UTF-8")
+source(fs::path("data-workflow", "PhD_data_01-carto", ext = "R"), encoding = "UTF-8")
 
 # Población
 # --------*
@@ -91,18 +91,18 @@ source(here::here("data-workflow", "PhD_data_01-carto.R"), encoding = "UTF-8")
 #           de niños en edad educativa primaria, probabilidad de homogamia
 #           por nivel educativo y ls (segregación local).
 
-source(here::here("data-workflow", "PhD_data_02-population.R"), encoding = "UTF-8")
+source(fs::path("data-workflow", "PhD_data_02-population", ext = "R"), encoding = "UTF-8")
 
 # Educación
 # --------*
-# [x] Base de escuelas AMBA (comun primaria y secundaria) con composición
+# [x] Base de escuelas AMBA (común primaria y secundaria) con composición
 #       de MNI padres
 # [x] Base de alumnos por escuelas con composición de MNI de padres
 # [x] Base de matrícula de alumnos por escuelas (total de 1ero a 6to grado)
 # -> Modifica CARTO: agregando "ESCUELAS" con datos sobre matrícula y
 #          composición de MNI de padres por escuela.
 
-source(here::here("data-workflow", "PhD_data_03-education.R"), encoding = "UTF-8")
+source(fs::path("data-workflow", "PhD_data_03-education", ext = "R"), encoding = "UTF-8")
 
 # Movilidad
 # --------*
@@ -110,7 +110,7 @@ source(here::here("data-workflow", "PhD_data_03-education.R"), encoding = "UTF-8
 # -> ENMODO = list(HOG, PER, VIA, ETA)
 # -> Modifica CARTO: agregando "FRACCION".
 
-source(here::here("data-workflow", "PhD_data_04-mobility.R"), encoding = "UTF-8")
+source(fs::path("data-workflow", "PhD_data_04-mobility", ext = "R"), encoding = "UTF-8")
 
 # Elementos auxiliares
 # -------------------*
@@ -119,4 +119,4 @@ source(here::here("data-workflow", "PhD_data_04-mobility.R"), encoding = "UTF-8"
 #               ZN = list(ZN1, ZN2, ZN3, ZN4),
 #               VAR_cat, VAR_mca)
 
-source(here::here("data-workflow", "PhD_data_05-auxiliary.R"), encoding = "UTF-8")
+source(fs::path("data-workflow", "PhD_data_05-auxiliary", ext = "R"), encoding = "UTF-8")
