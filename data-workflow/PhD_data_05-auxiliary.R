@@ -41,10 +41,14 @@ load(file = here::here("data-workflow", "final-data", "CARTO.rda"))
 
 # Variables para matriz de indicadores (mobilities) -----------------------------
 
-  VAR_cat <- read_xlsx(fs::path("data-workflow", "raw-data", "mim_Variables", ext = "xlsx"), sheet = "CAT" ) |>
+  VAR_cat <-  readxl::read_xlsx(fs::path("data-workflow", "raw-data",
+                                         "mim_Variables", ext = "xlsx"),
+                                sheet = "CAT" ) |>
     mutate(Categ = str_replace_all(Categ, " ", " "))
 
-  VAR_mca <- read_xlsx(fs::path("data-workflow", "raw-data", "mim_Variables", ext = "xlsx"), sheet = "VAR" )
+  VAR_mca <- readxl::read_xlsx(fs::path("data-workflow", "raw-data",
+                                        "mim_Variables", ext = "xlsx"),
+                               sheet = "VAR" )
 
 # Bases finales ---------------------------------------------------
 
