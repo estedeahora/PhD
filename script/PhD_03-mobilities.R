@@ -302,7 +302,14 @@ MOV <- list()
 
   MOV$MOV6 <- db_diffseg |>
     group_by(EDU_red) |>
-    summarise(across(starts_with("diff_"), ~weighted.mean(.x, w = PONDERA_time, na.rm = T))) |>
+    summarise(across(starts_with("diff_"),
+                     ~weighted.mean(.x, w = PONDERA_time, na.rm = T)))
+
+  MOV$MOV6 <- bind_rows(MOV$MOV6,
+                        summarise(db_diffseg,
+                                  EDU_red = "Total",
+                                  across(starts_with("diff_"),
+                                         ~weighted.mean(.x, w = PONDERA_time, na.rm = T)))) |>
     rename_with(~str_remove(.x, "diff_"), starts_with("diff_")) |>
     mutate(across(PRI:SUP, ~round(.x, 1)),
            ls = round(ls, 3))
@@ -696,8 +703,8 @@ MOV <- list()
     align(align ='center', part = 'all') |>
     align(j = 1, align ='left', part = 'all')  |>
     color(j = 2, color = "grey50") |>
-    bg(i = nrow(MOV$MOV1), bg = "grey80") |>
-    hline(i = nrow(RES$VIA) - 1) |>
+    bg(i = nrow(MOV$MOV1), bg = "grey90") |>
+    hline(i = nrow(MOV$MOV1) - 1) |>
     bold(j = 7, part = "all") |>
     italic(j = 7, part = "all") |>
     autofit() |>
@@ -726,6 +733,10 @@ MOV <- list()
     merge_v(j = c(1, 5), part = "header") |>
     align(j = 1, align ='left', part = 'all')  |>
     align(j = 2:5, align ='center', part = 'header') |>
+    bold(i = nrow(MOV$MOV6), part = "body") |>
+    italic(i = nrow(MOV$MOV6), part = "body") |>
+    bg(i = nrow(MOV$MOV6), bg = "grey90") |>
+    hline(i = nrow(MOV$MOV6) - 1) |>
     flextable::font(fontname='Alegreya Sans', part = "all") |>
     flextable::fontsize(size = 9, part = "all") |>
     flextable::width(j = 1, 2.5, unit = "cm") |>
@@ -800,7 +811,7 @@ MOV <- list()
                         value = as_paragraph(f) ) |>
     merge_v(j = 1) |>
     valign(j = 1:2, valign = "top", part = "body") |>
-    hline(i = l$com, border = fp_border(color="gray", width = 0.5) ) |>
+    hline(i = l$com, border = fp_border(color="grey", width = 0.5) ) |>
     flextable::font(fontname='Alegreya Sans', part = "all") |>
     flextable::fontsize(size = 8.5, part = "all") |>
     flextable::width(j = 1, 2, unit = "cm") |>
