@@ -24,8 +24,10 @@ Retomando un *enfoque multi-dominio de la segregación*,
 <!-- Objetivo -->el objetivo de este capítulo es analizar cómo se
 articula la segregación socio-económica en los espacios de actividad de
 los residentes del Área Metropolitana de Buenos Aires.
-<!-- Preguntas -->Para ello nos preguntamos: ¿Cómo se relaciona la
-segregación en el dominio residencial con la que surge como resultado de
+<!-- Preguntas -->Para ello nos preguntamos: ¿Cuál son las características 
+de los espacios de actividad y cómo estas características se vinculan con
+la segregación de los espacios de actividad? ¿Cómo se relaciona la segregación 
+en el dominio residencial con la que surge como resultado de
 la movilidad diaria dentro de los espacios de actividad? ¿Las
 movilidades y la combinación de los espacios de actividad funcionan
 reforzando o disminuyendo la 'separación' (segregación) entre los grupos
@@ -290,7 +292,7 @@ proponemos caracterizar las movilidades urbanas a partir de la
 construcción de una red bipartita dirigida y ponderada para representar
 los viajes de las personas a los diferentes lugares de la ciudad.
 
-```{r segmov-scheme2}
+```{r segmov-scheme1}
 #| fig.cap: "Esquema de representación de viajes ENMODO2018 como grafo bipartito dirigido y ponderado."
 #| fig.asp: 0.556
 
@@ -330,85 +332,181 @@ otros barrios.
 
 Antes de analziar el problema de las movilidades y su relación con la
 segregación, realicemos una breve descripción de las movilidades
-cotidianas dentro del AMBA. En primer lugar, encontramos que la
-distribución de los viajes se concentran en algunas áreas específicas de
-la ciudad (ver Figura \@ref(fig:segmov-destime)) y, en particular, en
-algunos entornos urbanos (Tabla \@ref(tab:segmov-tab1)). Respecto a esto
-último, observamos que gran parte de los viajes tienen como destino la
-ciudad colonial y los cascos conurbanizados (asociados a los subcentros
-locales y las estaciones de tren), los cuales representan el
+cotidianas dentro del AMBA. La Figura \@ref(fig:segmov-SEQ) presenta
+una descripción de las actividades realizadas (izquierda) y los entornos
+en los que se desarrollan estas actividades (derecha) a lo largo de las 24 horas 
+del día. 
+En primer lugar, observamos que la mayoría del tiempo las actividades 
+se desarrollan en el hogar. Como es esperable, a partir de las primeras horas
+de la mañana se observa un crecimiento de otro tipo de actividades, 
+fundamentalmente laborales que tienen un ascenso sostenido desde las 6
+hasta las 12 horas, cuando encuentran su máximo y descienden lentamente hasta 
+las 19 horas. Por su parte, las actividades de estudio y de reproducción tienen
+un crecimiento menor, sobre todo durante la mañana, mientras que las actividades 
+recreativas tienen un crecimiento lento con el trascurrir del día, hasta 
+aproximadamente las 19 horas. En gran medida, podemos suponer que este patrón de
+distribución de actividades describe el ciclo diario de los hogares, en donde 
+durante la nocturnidad se desarrollan predominantemente actividades de descanso 
+en el propio hogar, mientras que durante la mañana y parte de la tarde 
+se desarrollan actividades laborales, de estudio, recreativas y reproductivas.
+
+```{r segmov-SEQ}
+#| fig.show: 'hold'
+#| out.width: '50%'
+#| fig.cap: "Descripción de actividades y entorno urbano donde se realizan las actividades durante el transcurso del día. Ponderado por tiempo de duración de las actividades."
+#| fig.scap: c("Actividades realizadas", "Entorno urbano")
+
+include_graphics(here::here("figures", "Movilidad_SA-ACT.png") )
+include_graphics(here::here("figures", "Movilidad_SA-TH.png") )
+```
+
+En paralelo con esta variación, cuando consideramos el lugar de desarrollo de las 
+actividades en función de los entornos urbanos (derecha), vemos que 
+a partir de las 7 de la mañana se produce un crecimiento de las actividades 
+realizadas en los espacios que funcionan como centros o subcentralidades (la 
+ciudad colonial, los cascos conurbanizados y la expansión de la ciudad colonial). 
+Este crecimiento está, posiblemente,  asociado a la afluencia de personas a estos 
+entornos por motivos laborales. Como contrapartida, los entornos de vivienda 
+social, las urbanizaciones de origen informal y, fundamentalmente, los entornos 
+de NSE bajo, tienen un claro descenso de personas a partir de la mañana y hasta 
+las 16 horas. En este sentido, los lugares con peores niveles socioeconómico 
+tienen un peor nivel de retensión de las actividades, generando un efecto de 
+'diáspora diaria' por el cual las personas 'escapan' hacia lugares con mejores
+niveles socioeconómicos y mayor centralidad urbana. Estos resultados nos dan 
+indicios de que durante el transcurso del día, estas centralidades urbanas 
+atraen más viajes y por lo tanto podrían volverse lugares más diversos, dando 
+lugar, consecuentemente, a una disminución de la segregación.
+
+Para profundizar este análisis, la Figura \@ref(fig:segmov-SEQxEDU) muestra
+la distribución de la presencia en los diferentes entornos en función del
+grupo educativo del hogar. Si bien la tendencia señalada anteriormente es 
+relativamente compartida por todos los grupos educativos, es posible 
+señalar algunas particularidades. En primer lugar, las personas de hogares
+con nivel de estudio superior son las que tienen mayor crecimiento durante 
+el día de los viajes a la ciudad colonial. Esto puede estar asociado a la mayor
+proporción de personas que trabajan en el sector de servicios y en actividades
+profesionales que tienen estos hogares. En segundo lugar, en los hogares con 
+nivel primario y secundario, se destaca el crecimiento marcado de sus 
+actividades en los cascos conurbanizados. En tercer lugar, el grupo de nivel
+secundario también se destaca por el crecimiento de sus actividades diarias 
+en la expansión de la ciudad colonial y, en menor medida, en la ciudad colonial.
+
+```{r segmov-SEQxEDU}
+#| fig.cap: "Descripción de entorno urbano donde se realizan las actividades durante el transcurso del día diferenciado por nivel educativo del hogar. Ponderado por tiempo de duración de las actividades."
+
+include_graphics(here::here("figures", "Movilidad_SA-THxEDU.png") )
+```
+Para profundizar sobre este aspecto en la Tabla \@ref(tab:segmov-tab1)
+presentamos la distribución del tiempo de permanencia de los destinos
+diferenciado por entorno urbano. En esta tabla podemos corroborar que
+gran parte de los viajes tienen como destino la 'ciudad colonial' (que
+representa el casco histórico de la ciudad) y los cascos conurbanizados
+(asociados a los subcentros locales y las estaciones de tren), los
+cuales representan el
 `r paste0(MOV$MOV1$N[MOV$MOV1$TH == "Ciudad colonial"], "%")` y el
 `r paste0(MOV$MOV1$N[MOV$MOV1$TH == "Cascos conurbanizados"], "%")`,
 respectivamente. Estos porcentajes son especialmente significativos si
-consideramos que la superficie de ambos es de apenas el
+consideramos que la superficie de ambos entornos es de apenas el
 `r paste0(sum(MOV$MOV1$sup_p[MOV$MOV1$TH %in% c("Ciudad colonial", "Cascos conurbanizados")]), "%")`
-del total del AMBA. En resumen, cuando analizamos la cantidad de minutos
+del total del AMBA y son el lugar de residencia de un poco más del 5.6%
+de los hogares. En resumen, cuando analizamos la cantidad de minutos
 permanecidos en cada entorno urbano (normalizando por la superficie),
 estos dos entornos se destacan sobre el resto por la cantidad de viajes
-recibidos. Por su parte, cuando diferenciamos los viajes a estos
-entornos en función de los motivos de la actividad en el lugar de
-destino, vemos que mientras la ciudad colonial destaca por un mayor
-porcentaje de viajes por motivos laborales (respecto a su promedio
-global), los cascos conurbanizados se caracterizan por una mayor
-recepción de viajes relacionados a motivos reproductivos (compras,
-trámites, motivos médicos o acompañar a familiares). En una situación
-opuesta a estos dos entornos, las urbanizaciones cerradas, las
-urbanizaciones de origen informal, los entornos de vivienda social y los
-entornos de nivel socioeconómico bajo, destacan por los bajos
-porcentajes de viajes recibidos en relación con su superficie. En
-particular es llamativa la situación del entorno de NSE bajo, ya que es
-uno de los entornos que mayor porcentaje de recepción de minutos de
-viajes tiene, pero cuando lo consideramos en realción a su superficie
-vemos que su importancia relativa es baja.
+recibidos. En una situación opuesta a estos dos entornos, las
+urbanizaciones cerradas, las urbanizaciones de origen informal, los
+entornos de vivienda social y los entornos de nivel socioeconómico bajo,
+destacan por los bajos porcentajes de viajes recibidos en relación con
+su superficie. En particular es llamativa la situación del entorno de
+NSE bajo, ya que es uno de los entornos que mayor porcentaje de
+recepción de minutos de viajes tiene, pero cuando lo consideramos en
+relación a su superficie vemos que su importancia relativa es muy baja. En
+una situación intermedia respecto a la recepción de viajes, podemos
+considerar a la expansión de la ciudad colonial.
+
+```{r segmov-tab1}
+MOV$TAB1
+```
+
+Cuando diferenciamos los viajes a estos entornos en función de los
+motivos de la actividad en el lugar de destino, vemos que mientras la
+ciudad colonial destaca por un mayor porcentaje de viajes por motivos
+laborales (respecto a su promedio global), los cascos conurbanizados se
+caracterizan por una mayor recepción de viajes relacionados a motivos
+reproductivos (compras, trámites, motivos médicos o acompañar a
+familiares). Por su parte, la expansión de la ciudad colonial se destaca
+por los viajes vinculados a motivos laborales y de recreación. En las
+urbanizaciones cerradas sobresale la importancia de los motivos
+laborales, mientras que dentro de los otros entornos no se observa una 
+tendencia unívoca y diferenciada.
+
+Reforzando estas primeras intuiciones, la Figura \@ref(fig:segmov-destime) 
+presenta la distribución de los destinos de los viajes (ponderado por el tiempo 
+de permanencia en cada lugar, utilizando una escala logarítmica y normalizado
+por superficie). Esta figura nos permite corroborar que los
+viajes no se distribuyen de forma homogénea, sino que, por el contrario,
+aparecen concentrados fundamentalmente, en el centro urbano de CABA y, en menor 
+medida, en los espacios vinculados a las subcentralidades (cascos conurbanizados
+y estaciones de de ferrocarril). 
 
 ```{r segmov-destime}
 #| fig.cap: "Tiempo total en el lugar destino, normalizado por superficie (escala logarítmica)"
-#| fig.asp: 0,882
+#| fig.asp: 0.882
 
 include_graphics(here::here("figures", "Movilidad-Destino-tiempo-total.png") )
 ```
 
-```{r segmov-tab1}
-
-MOV$TAB2 
-```
-
-Respecto a los motivos de viaje, sobresale la importancia de los motivos
-laborales dentro de las urbanizaciones cerradas, mientras que en los
-otros entornos no se observa una tendencia unívoca. En una situación
-intermedia respecto a la recepción de viales, podemos considerar a la
-expansión de la ciudad colonial, donde destacan los viajes vinculados a
-motivos laborales y de recreación.
-
 En relación con el objetivo de nuestro trabajo, la Figura
 \@ref(fig:segmov-EDU) presenta, del total de minutos que se destina a
 cada unidad espacial, el porcentaje de estos que corresponden a cada
-grupo educativo. De forma general, vemos que las zonas periféricas y
-alejadas del centro de la ciudad son las que reciben una
-sobrerepresentación de los hogares con nivel educativo primario y, en
-menor medida, secundario. Vale aclarar que si bien ambos grupos están
-sobrerepresentados en los lugares más alejados del centro de la CABA,
-esto no necesariamente implica que ambos están sobrerepresentados en los
-mismos lugares. De hecho, encontramos que los hogares con nivel
+grupo educativo. En consonancia con lo que señalamos anteriormente, 
+bemos que las zonas periféricas y alejadas del centro de la ciudad
+son las que reciben una sobrerepresentación de los hogares con nivel 
+educativo primario y, en menor medida, secundario. Vale aclarar que si bien
+ambos grupos están sobrerepresentados en los lugares más alejados del centro 
+de la CABA, esto no necesariamente implica que ambos están sobrerepresentados 
+en los mismos lugares. De hecho, encontramos que los hogares con nivel
 secundario tienen una mayor representación en los 'subcentros' locales
-de estas zonas alejadas, mientras que los hogares con hasta nivel
-primario predominan en las zonas periféricas. En este sentido,
-observamos una relativa de división del territorio periférico en cuanto
-a los destinos de viajes de estos dos grupos. Como contracara, los
-hogares con nivel educativo superior tienen una sobrerepresentación en
-las áreas centrales de la CABA y, en particular, en el corredor norte de
-la ciudad y su continuación en los partidos de Vicente López y San
+de estas zonas alejadas ('cascos conurbanizados'), mientras que los
+hogares con hasta nivel primario predominan en las zonas periféricas. En
+este sentido, observamos una relativa división del territorio periférico
+en cuanto a los destinos de viajes de estos dos grupos. Como contracara,
+los hogares con nivel educativo superior tienen una sobrerepresentación
+en las áreas centrales de la CABA y, en particular, en el corredor norte
+de la ciudad y su continuación en los partidos de Vicente López y San
 Isidro.
 
 ```{r segmov-EDU}
-#| fig.cap: "Porcentaje de minutos en el lugar de destino según nivel educativo del hogar. Para cada uno de los grupos educativos se utiliza como valor intermedio de la escala divergente el promedio de personas en el AMBA. Se muestran sólo unidades espaciales en las cuales hay al menos 4 viajes de personas de la muestra."
-#| fig.asp: 0,4286
+#| fig.cap: "Porcentaje de minutos en el lugar de destino según nivel educativo del hogar. Para cada uno de los grupos educativos se utiliza como valor intermedio de la escala divergente el promedio de minutos utilizados en el total del AMBA. Se muestran sólo unidades espaciales en las cuales hay al menos 4 viajes de personas de la muestra."
+#| fig.asp: 0.4286
 
 include_graphics(here::here("figures", "Movilidad_Destino-x-nivel-educativo.png") )
 ```
 
-La Tabla \@ref(tab:MOB-tabla2) presenta la segregación residencial y la
-segregación de movilidades, así como la diferencia entre ambos y la
+## Espacios de actividad: la segregación en el dominio de las actividades y en el dominio residencial
+
+Tomando en cuenta esta primera descripión general de los viajes realizados
+en el AMBA, en este apartado vamos a abordar en qué medida las movilidades 
+cotidianas posibilitan una segregación en el dominio de los espacios de actividades
+que se diferencia y modifica la segregación en el dominio residencial. Para ello, 
+de modo introductorio a este problema vamos a comenzar analizando si las 
+personas 'conectan' mediante sus viajes lugares con composiciones residenciales 
+similares o diferentes. Como selañamos en el primer apartado, la posibilidad de 
+moverse a lugares con composiciones residenciales más diversas es un elemento 
+central para que la interacción con 'otros sociales' ocurra. En este sentido, la 
+Tabla \@ref(tab:segmov-tab2) presenta la diferencia en la composición de personas
+de cada uno de los grupos educativos entre el lugar de residencia ($%RES$) y el lugar de 
+destino ($%DES$) y la diferecia entre la segregación residencial local en el 
+lugar de residencia ($%ls_{RES}$) y en el lugar de destino ($%ls_{DES}$). Se puede
+observar que para los personas que pertenece a hogares con nivel educativo primario
+los lugares de destinos suelen tener menos y secundario, la
+
+```{r segmov-tab2}
+MOV$TAB2
+```
+
+
+La Tabla \@ref(tab:segmov-tab3) presenta la segregación residencial y
+la segregación de movilidades, así como la diferencia entre ambos y la
 descomposición de elementos descrita. En la tercera columna
 ($\Delta \%$) describimos qué porcentaje de la diferencia ($M_2 - M_1$)
 representa cada uno de estos elementos. Una primera aproximación nos
@@ -431,10 +529,34 @@ afirmar que la estructura de segregación parece ser similar en los
 espacios residenciales y en los espacios de destino de las actividades
 cotidianas.
 
-```{r resmov-tab2}
-
-MOV$TAB2
+```{r segmov-tab3}
+MOV$TAB3
 ```
+
+
+Podemos también analizar las actividades vinculadas a cada momento del
+día. Como plantea @LeRoux2017, la segregación puede variar de forma
+considerable a lo largo del día. Tabla \@ref(tab:segmov-tab2) 
+
+```{r segmov-SegregacionXHora}
+#| fig.cap: "Índice de Información Mutua (M) de actividades en función de la hora del día (izquierda) y diferencia entre segregación residencial y segregación de actividades, destacando el componente correspondiente a la diferencia estructural de segregación (derecha)"
+
+include_graphics(here::here("figures", "Movilidad_Segregacion-x-hora.png") )
+
+```
+
+```{r segmov-AislamientoXhora,  }
+#| out.width: '70%'
+#| fig.cap: "Índice de Aislamiento (I) de actividades de cada uno de los grupos educatvos en función de la hora del día"
+#| fig.align: 'center'
+
+include_graphics(here::here("figures", "Movilidad_Aislamiento-x-hora.png") )
+
+```
+
+
+## La segregación de las movilidades
+
 
 <!-- Análisis con MCA -->
 
@@ -454,13 +576,13 @@ que se consideran y que caracterizan a los nodos-personas, los
 nodos-destinos y los propios viajes (ver \@ref(appendixA) para un
 listado completo de las variables utilizadas).
 
-La Figura \@ref(fig:MOB-MCA) presenta la ubicación de una selección de
-las variables activas en las dos primeras dimensiones del MCA, es decir,
-aquellas en las que se expresa la mayor parte de la variabilidad de los
-viajes.[^06-analysis-iii-mobilities-2] Como podemos ver, el *primer eje*
-diferencia los viajes fundamentalmente en función de aspectos
-socioeconómicos, referidos tanto a los destinos como al lugar de
-residencia de las personas. En este sentido, encontramos que los
+La Figura \@ref(fig:segmov-MCA) presenta la ubicación de una selección
+de las variables activas en las dos primeras dimensiones del MCA, es
+decir, aquellas en las que se expresa la mayor parte de la variabilidad
+de los viajes.[^06-analysis-iii-mobilities-2] Como podemos ver, el
+*primer eje* diferencia los viajes fundamentalmente en función de
+aspectos socioeconómicos, referidos tanto a los destinos como al lugar
+de residencia de las personas. En este sentido, encontramos que los
 entornos de origen informales y los entornos de NSE Bajo se ubican en el
 lado izquierdo del plano, mientras que los entornos de NSE Alto, la
 expansión de la ciudad colonial y la Ciudad Colonial en el lado derecho.
@@ -524,11 +646,11 @@ figura, el *tercer eje* diferencia los viajes en función de la mayor
 diversidad o segregación de los espacios de residencia de las personas
 que realizan estos viajes.
 
-```{r MOB-MCA}
+```{r segmov-MCA}
 #| fig.cap: "Primeras dos dimensiones del Análisis de Correspondencias Múltiples sobre la matriz de indicadores múltiples construida con los viajes de la ENMODO2018. Los porcentajes de varianza explicada fueron corregidos a partir del método propuesto por Greenacre (2008)."
-#| fig.asp: 0,5
+#| fig.asp: 1
 
-# include_graphics(here::here("figures/MCA-Variables-Categ.png") )
+include_graphics(here::here("figures", "Movilidad_MCA-Variables-Categ.png") )
 ```
 
 Es interesante destacar algunas variables no tienen un peso importante
@@ -574,7 +696,7 @@ ver en que medida el nivel educativo puede explicar la distribución de
 los viajes en el subespacio resultante del análisis, hemos decidido
 mantener esta variable como suplementaria, por lo cual la misma no
 incide directamente sobre el resultado. En la Figura
-\@ref(fig:MOB-MCA-EDU) proyectamos sobre los primeros dos ejes la
+\@ref(fig:segmov-MCA-EDU) proyectamos sobre los primeros dos ejes la
 ubicación de cada uno de los viajes diferenciando según el nivel
 educativo del hogar de la persona que realiza este viaje. Para facilitar
 la visualización generamos un mapa de densidades con ocho niveles de
@@ -601,12 +723,13 @@ viajes aquellos lugares que se asocian con el lado izquierdo, antes que
 con el lado derecho (a pesar de que su presencia residencial se asocia
 con el lado derecho).
 
-```{r MOB-MCA-EDU}
-# #| fig.cap: "Densidad de viajes según nivel educativo del hogar proyectado sobre las primeras dos dimensiones del resultado del Análisis de Correspondencias Múltiples."
-# #| fig.asp: 0,5
+```{r segmov-MCA-EDU}
+#| fig.cap: "Densidad de viajes según nivel educativo del hogar proyectado sobre las primeras dos dimensiones del resultado del Análisis de Correspondencias Múltiples."
+#| fig.asp: 0.5
 
-# include_graphics(here::here("figures/MCA-Nivel-educativo.png") )
+include_graphics(here::here("figures", "Movilidad_MCA-Nivel-educativo.png") )
 ```
+
 
 ## Discusión de los resultados {#mobilities-conclussion}
 
