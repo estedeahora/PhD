@@ -56,7 +56,6 @@ fs::dir_create(fs::path("data-workflow", "intermediate-data"))
 fs::dir_create(fs::path("data-workflow", "final-data"))
 
 # BASES NECESARIAS:
-
 # Nombre                    Año       Fuente
 # APRENDER (Estudiantes) 2017/2019    ME      https://www.argentina.gob.ar/educacion/evaluacion-e-informacion-educativa/base-de-datos?tca=biGs15DqyLzvPLuIOhNm6_5G8xLVFWSaNRGR7mHJFtY
 # RA BU2 (Matrícula)     2017/2019    ME      https://www.argentina.gob.ar/educacion/evaluacion-e-informacion-educativa/base-de-datos?tca=biGs15DqyLzvPLuIOhNm6_5G8xLVFWSaNRGR7mHJFtY
