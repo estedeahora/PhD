@@ -2,6 +2,8 @@
 # ---------------*
 # Basado en script TP Goinheix
 
+# DONE Cambiar etiquetas de:
+#    * v_DIFSEG_lab (Poco clara la diferencia, poner algo como "mayor en residencia", etc)
 # TODO    Corregir datos para duraciones de actividades negativas.
 # DONE    Agregar distancia al centro (obelisco). No realizado: Idealmente
 #           debería calcularse por red de calles ponderando.
@@ -703,11 +705,11 @@ if(!exists("CARTO", inherits = F) || is.null(CARTO$ESCUELAS)){
                            breaks = quantile(ls_DES, na.rm = T, probs = seq(0, 1, by = 0.2)),
                            labels = paste0("inSEGRES_Q", 1:5) ),
            # Diferencia de Segregación
-           DIFSEG = ls_FROM - ls_DES,
+           DIFSEG = ls_DES - ls_FROM,
            DIFSEG_lab = cut(DIFSEG, include.lowest = T, ordered_result = T,
                             breaks = c(-Inf, -0.095, -0.017, 0.017, 0.095, Inf),
                             # breaks = c(-Inf, -0.200, -0.095, -0.017, 0.017, 0.095, 0.200, Inf),
-                            labels = paste0("vDIFSEG_", c("MBajo", "Bajo", "IGUAL", "Alto", "MAlto")) ),
+                            labels = paste0("vDIFSEG_", c("RES++", "RES+", "=", "DES+", "DES++")) ),
            # Distancias (a residencia y de viaje)
            across(.cols = c(DIST, DIST_to_RESID),
                   .fns = ~cut(.x, include.lowest = T, ordered_result = T,
@@ -747,7 +749,7 @@ if(!exists("CARTO", inherits = F) || is.null(CARTO$ESCUELAS)){
                 .cols = TH:TACT_lab)
 
   # Matriz de indicadores múltiples --------------------------------------
-  # Multiple indicator matrix (Zhu2016)
+  # Multiple indicator matrix
 
   cli_ul(col_cyan("Creando matriz de indicadores múltiples") )
 
