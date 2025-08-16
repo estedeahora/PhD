@@ -1,6 +1,8 @@
 # Educational
 
 # TODO Usar data.table para optimizar  preparación de bases
+# TODO Revisar si N_MATRIC es correcto en CARTO$ESCUELAS. Diferenciar primario
+#       y secundario de forma explícita
 
 cli::cli_h2(col_blue("Análisis Educativo (EDU)"))
 
