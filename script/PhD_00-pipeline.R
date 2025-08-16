@@ -41,4 +41,4 @@ source(here::here("script", "PhD_02-homogamy.R"))
 source(here::here("script", "PhD_03-mobilities.R"))
 
 # Capítulo 7: Segregación en el dominio escolar
-# source(here::here("script", "PhD_03-education.R"))
+# source(here::here("script", "PhD_04-education.R"))
