@@ -155,7 +155,7 @@ knitr::include_graphics(here::here("figures", "Homogamia_relation_P1-P2.png"))
 
 <!--# Se puede agregar relación entre p y porcentaje de homogamia. Si P(H|A) = H/A; %_h = H/N_hog -->
 
-# Relación entre proporción de personas y probabilidad de homogamia según hipótesis nula
+# Relación entre proporción de personas y probabilidad de homogamia según hipótesis nula {#appendixD}
 
 ```{r appD-p-vs-P}
 #| fig.cap: "Relación entre Proporción de personas y probabilidad de homogamia (P'(Ha|a)) bajo H0"
@@ -163,4 +163,66 @@ knitr::include_graphics(here::here("figures", "Homogamia_relation_P1-P2.png"))
 
 knitr::include_graphics(here::here("figures",
                                    "Homogamia_porcentaje-vs-prob-H0.png"))
+```
+
+# Listado y descripción de variables utilizadas en el análisis de viajes {#appendixE}
+
+```{r appE-listado}
+MOV$appE_TAB1
+```
+
+# Gráfcos complementarios del análisis de correspondencias múltples (MCA) {#appendixF}
+
+```{r appF-EIGENVALUE}
+#| fig.cap: "Varianza explicada por las primeras diez dimensiones del análisis. Los porcentajes fueron corregidos a partir del método propuesto por Greenacre (2008)."
+#| fig.asp: 0.5
+#| out.width: '80%'
+
+include_graphics(here::here("figures", "Movilidad_eig.png") )
+```
+
+```{r appF-VARDIM}
+#| fig.cap: "Correlación entre variables y ejes de análisis (ETA2)"
+#| fig.asp: 0.5
+#| out.width: '80%'
+
+include_graphics(here::here("figures","Movilidad_dist-var.png") )
+```
+
+```{r appF-VARDESC1}
+#| fig.cap: "Proyección independiente de variables sobre composición residencial y composición de destino"
+#| fig.asp: 0.5
+
+include_graphics(here::here("figures", "Movilidad_MCA_Variables_ind1.png") )
+```
+
+```{r appF-VARDESC2}
+#| fig.cap: "Proyección independiente de variables de segregación. Variables de segregación residencial en origen y destino, diferencia entre segregación residencial de origeny destino y segregación de actividades ponderado por tiempo de actividad"
+#| out.width: '67%'
+#| fig.asp: 1
+
+include_graphics(here::here("figures", "Movilidad_MCA_Variables_ind2.png") )
+```
+
+```{r appF-VARDESC3}
+#| fig.cap: "Proyección independiente de variables referidas a la cantidad de viajes y minutos recibidos por los destinos"
+#| fig.asp: 0.5
+
+include_graphics(here::here("figures", "Movilidad_MCA_Variables_ind3.png") )
+```
+
+```{r appF-VARDESC4}
+#| fig.cap: "Proyección independiente de variables referidas a la ubicación de la residencia (arriba) y del lugar de destino (abajo)"
+#| fig.asp: 1
+#| out.width: '67%'
+
+
+include_graphics(here::here("figures", "Movilidad_MCA_Variables_ind4.png") )
+```
+
+```{r appF-VARDESC5}
+#| fig.cap: "Proyección independiente de características adscriptas (arriba)  y los viajes (abajo)"
+#| fig.asp: 0.5
+
+include_graphics(here::here("figures", "Movilidad_MCA_Variables_ind5.png") )
 ```
