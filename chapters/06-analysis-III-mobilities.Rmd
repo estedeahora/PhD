@@ -503,12 +503,12 @@ moverse a lugares con composiciones residenciales más diversas es un
 elemento central para que la interacción con 'otros sociales' ocurra. En
 este sentido, la Tabla \@ref(tab:segmov-tab2) presenta la diferencia en
 la composición de personas de cada uno de los grupos educativos entre el
-lugar de destino ($%RES$) y el lugar de residencia ($%DES$) y la
+lugar de destino ($\%RES$) y el lugar de residencia ($\%DES$) y la
 diferecia entre la segregación residencial local en el lugar de destino
-($%ls_{RES}$) y en el lugar de residencia ($%ls_{DES}$). Se puede
-observar que para todos los grupos educativos los lugares de destino
-tienden a tener una proporción promedio menor de hogares con nivel
-educativo primario y una proporción mayor de hogares con nivel educativo
+($ls_{RES}$) y en el lugar de residencia ($ls_{DES}$). Se puede observar
+que para todos los grupos educativos los lugares de destino tienden a
+tener una proporción promedio menor de hogares con nivel educativo
+primario y una proporción mayor de hogares con nivel educativo
 secundario. Estros resultados nos dan nuevas evidencias respecto a que
 los hogares tienden a realizar sus actividades en lugares con una
 composición residencial de mayor 'status'.

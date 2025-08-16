@@ -435,7 +435,7 @@ if(!exists("AUX", inherits = F)){
       paste0("Los valores tienen corrección de sesgo. ",# AUX$replic,
              " Bootstrap replicaciones."))) |>
     flextable::font(fontname='Alegreya Sans', part = "all") |>
-    flextable::fontsize(size = 9, part = "all") |>
+    flextable::fontsize(size = 7, part = "all") |>
     flextable::autofit(part = "all")
 
 ### ╠ TAB 4.2 ----------------------
@@ -462,7 +462,7 @@ if(!exists("AUX", inherits = F)){
       # paste0("Los valores tienen corrección de sesgo. ", AUX$replic,
       #        " Bootstrap replicaciones."))) |>
     flextable::font(fontname='Alegreya Sans', part = "all") |>
-    flextable::fontsize(size = 9, part = "all") |>
+    flextable::fontsize(size = 7, part = "all") |>
     flextable::autofit(part = "all")
 
 ### ╠ TAB 4.3 ----------------------
@@ -478,7 +478,7 @@ if(!exists("AUX", inherits = F)){
                                                           bkm = "segres-tab3",
                                                           bkm_all = T))  |>
     flextable::font(fontname='Alegreya Sans', part = "all") |>
-    flextable::fontsize(size = 9, part = "all") |>
+    flextable::fontsize(size = 7, part = "all") |>
     flextable::align(align ='left', part = 'all') |>
     flextable::valign(valign = "top", part = "all") |>
     # flextable::autofit(part = "all")
@@ -502,7 +502,7 @@ if(!exists("AUX", inherits = F)){
     flextable::align(align ='center', part = 'all') |>
     flextable::align(j = 1, align ='left', part = 'all') |>
     flextable::font(fontname='Alegreya Sans', part = "all") |>
-    flextable::fontsize(size = 9, part = "all") |>
+    flextable::fontsize(size = 7, part = "all") |>
     flextable::autofit()
 
 ### ╚ TAB App A.2 --------------------------
@@ -542,7 +542,7 @@ if(!exists("AUX", inherits = F)){
     flextable::align(j = 1, align ='left', part = 'all') |>
     flextable::valign(valign = "top", part = "body") |>
     flextable::font(fontname='Alegreya Sans', part = "all") |>
-    flextable::fontsize(size = 9, part = "all") |>
+    flextable::fontsize(size = 7, part = "all") |>
     # flextable::autofit(part = "all")
     flextable::width(j = 1, 4.5, unit = "cm") |>
     flextable::width(j = 2, 2.2, unit = "cm") |>

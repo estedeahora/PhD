@@ -650,7 +650,7 @@ if(!exists("HOG", inherits = F)){
     flextable::colformat_double(j = 9:11, digits = 3) |>
     flextable::bold(i = 3, part = "body") |>
     flextable::font(fontname='Alegreya Sans', part = "all") |>
-    flextable::fontsize(size = 9, part = "all") |>
+    flextable::fontsize(size = 7, part = "all") |>
     flextable::width(j = 1, 1.5, unit = "cm") |>
     flextable::width(j = 2, 1.9, unit = "cm") |>
     flextable::width(j = 3, 2.1, unit = "cm") |>
@@ -696,7 +696,7 @@ if(!exists("HOG", inherits = F)){
                                                                "por debajo / sobre el ", 1 - conf,
                                                                " de las simulaciones"))) |>
     flextable::font(fontname='Alegreya Sans', part = "all") |>
-    flextable::fontsize(size = 9, part = "all") |>
+    flextable::fontsize(size = 7, part = "all") |>
     flextable::autofit()
 
   # Anexo? ----------
@@ -732,7 +732,7 @@ if(!exists("HOG", inherits = F)){
   #                                    "Confianza (1-p): ",
   #                                    round((1 - HOM$HOM3$p.value) * 100,2), "%")) |>
   #   flextable::font(fontname='Alegreya Sans', part = "all") |>
-  #   flextable::fontsize(size = 9, part = "all") |>
+  #   flextable::fontsize(size = 7, part = "all") |>
   #   flextable::autofit()
 
 # Guardar resultados ----------------------------------------------------
@@ -745,24 +745,3 @@ if(!exists("HOG", inherits = F)){
 rm(db_aux, db_aux1, db_aux2)
 rm(limit, replic, conf)
 
-# Multi domain: Segregación residencial y segregación conyugal
-
-# Cuadrático (con no-significativos imputados a ratio 1)
-# gPRI:  0,44901 + 0,45858 * x + 0,04969 * x^2
-# gSEC:  0,1674  + 1,26936 * x - 0,92511 * x^2
-# gSUP:  0,10504 + 1,96351 * x - 1,61034 * x^2
-
-# Lineal (con no-significativos imputados a ratio 1)
-# gPRI:  0,4398  + 0,5075 * x
-# gSEC:  0,2426  + 0,7063 * x
-# gSUP:  0,1537  + 1,1834 * x
-
-# Cuadrático (sólo significativos)
-# gPRI:  0,4769286 + 0,3512016 * x + 0,1503480 * x^2
-# gSEC:  0,2322916 + 0,9372811 * x + -0,351221 * x^2
-# gSUP:  0,2796899 + 0,9021898 * x + -0,1613751
-
-# Lineal  (sólo significativos)
-# gPRI:  0,449489  + 0,497645  * x
-# gSEC:  0,260907  + 0,723853  * x
-# gSUP:  0,286555  + 0,817905  * x

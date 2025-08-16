@@ -699,7 +699,7 @@ MOV <- list()
                    colwidths = c(1, 1, 5, 1)) |>
     merge_v(j = c(1:3, 8), part = "header") |>
     flextable::font(fontname='Alegreya Sans', part = "all") |>
-    flextable::fontsize(size = 9, part = "all") |>
+    flextable::fontsize(size = 7, part = "all") |>
     align(align ='center', part = 'all') |>
     align(j = 1, align ='left', part = 'all')  |>
     color(j = 2, color = "grey50") |>
@@ -711,7 +711,8 @@ MOV <- list()
     fit_to_width(max_width = 6) |>
     flextable::width(j = 1, 2, unit = "cm") |>
     flextable::width(j = c(2,8), 1.8, unit = "cm") |>
-    flextable::width(j = 3:7, 1.3, unit = "cm")
+    flextable::width(j = c(3:4, 7), 1.2, unit = "cm") |>
+    flextable::width(j = 5:6, 1.3, unit = "cm")
 
 ### ╠ TAB 6.2 -----------------------------------
 
@@ -738,7 +739,7 @@ MOV <- list()
     bg(i = nrow(MOV$MOV6), bg = "grey90") |>
     hline(i = nrow(MOV$MOV6) - 1) |>
     flextable::font(fontname='Alegreya Sans', part = "all") |>
-    flextable::fontsize(size = 9, part = "all") |>
+    flextable::fontsize(size = 7, part = "all") |>
     flextable::width(j = 1, 2.5, unit = "cm") |>
     flextable::width(j = c(2:4), 1.8, unit = "cm") |>
     flextable::width(j = 5, 2.7, unit = "cm")
@@ -771,7 +772,7 @@ MOV <- list()
     flextable::footnote(i = 1, j = 2, part = "header", ref_symbols = "a",
                         value = as_paragraph(f) ) |>
     flextable::font(fontname='Alegreya Sans', part = "all") |>
-    flextable::fontsize(size = 9, part = "all") |>
+    flextable::fontsize(size = 7, part = "all") |>
     colformat_double(j = 3 , digits = 1) |>
     align(i = 1:2, j = 2, align = "center") |>
     align(i = 3:8, j = 2, align = "right") |>
@@ -813,9 +814,9 @@ MOV <- list()
     valign(j = 1:2, valign = "top", part = "body") |>
     hline(i = l$com, border = fp_border(color="grey", width = 0.5) ) |>
     flextable::font(fontname='Alegreya Sans', part = "all") |>
-    flextable::fontsize(size = 8.5, part = "all") |>
+    flextable::fontsize(size = 7, part = "all") |>
     flextable::width(j = 1, 2, unit = "cm") |>
-    flextable::width(j = 2, 3, unit = "cm") |>
+    flextable::width(j = 2, 3.3, unit = "cm") |>
     flextable::width(j = 3, 1.5, unit = "cm") |>
     flextable::width(j = 4:5, 1.1, unit = "cm") |>
     flextable::width(j = 6, 1.7, unit = "cm")
@@ -829,7 +830,7 @@ MOV <- list()
 
   usethis::use_data(MOV, overwrite = TRUE)
 
-  rm(db_mim, replic, conf)
+    rm(db_mim, replic, conf)
 
 # DRAFT ----------------------------
 ### ╠ FIG 6.?: Mapeo de segregación local de destino ---------------------------
