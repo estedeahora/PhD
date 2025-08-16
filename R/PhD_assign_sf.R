@@ -20,11 +20,11 @@ PhD_assign_sf <- function(db_ID, id, sf_object,
                                 id_sf = "ID_RADIO",
                                 geom_column = attr(sf_object, "sf_column") ){
 
-  sf_object <- st_centroid(sf_object)
-  by <- id_sf |> set_names(id)
+  sf_object <- sf::st_centroid(sf_object)
+  by <- id_sf |> rlang::set_names(id)
 
-  res <- left_join(db_ID[id], sf_object, by = by) |>
-    st_as_sf(sf_column_name = geom_column)
+  res <- dplyr::left_join(db_ID[id], sf_object, by = by) |>
+    sf::st_as_sf(sf_column_name = geom_column)
 
   return(res)
 }
