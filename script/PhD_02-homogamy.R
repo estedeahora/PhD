@@ -618,6 +618,8 @@ if(!exists("HOG", inherits = F)){
 
   # ╠ TAB 5.1 ---------------------------------
 
+  cli::cli_li(col_yellow("Tabla 5.1: Indicadores de homogamia educativa."))
+
   HOM$TAB1 <- HOM$HOM1[10:12, ] |>
     mutate(across(c(CON_p:POR_h_SUP), ~round(.x, 1)),
            across(c(PRI_p1:SUP_p1), ~round(.x, 3)),
@@ -657,6 +659,8 @@ if(!exists("HOG", inherits = F)){
     flextable::width(j = 9:11, 1.5, unit = "cm")
 
   # ╚ TAB 5.2 ---------------------------------
+
+  cli::cli_li(col_yellow("Tabla 5.2: Porcentaje de unidades espaciales con probabilidad de homogamia significativamente diferente de H0."))
 
   HOM$TAB2 <- HOM$HOM4 |>
     mutate(nivel = factor(nivel, levels = c("PRI", "SEC", "SUP"),
