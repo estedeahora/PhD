@@ -533,6 +533,8 @@ MOV <- list()
 
 ### ╠ FIG App F.1: Porcentaje de varianza explicada MCA -----------------------------
 
+  cli::cli_li(col_yellow("Figure App F.1: Porcentaje de varianza explicada MCA"))
+
   p_f1a <- fviz_eig(res_mca,
                   barcolor = "tomato3", barfill = "tomato3",
                   linecolor = "grey30",
@@ -568,6 +570,8 @@ MOV <- list()
   rm(p_f1a, p_f1b)
 
 ### ╠ FIG App F.2: Correlación entre variables y dimensiones de análisis ------------
+
+  cli::cli_li(col_yellow("Figure App F.2: Correlación entre variables y dimensiones de análisis"))
 
   var_exp <- paste0("Dim ", 1:4, " (",round(res_mca$eig[1:4, 2], 1), "%)")
 
@@ -609,6 +613,8 @@ MOV <- list()
   rm(p_f2a, p_f2b, coor_var, var_exp)
 
 ### ╚ FIG App F.3-F.8: Descripción de variables ordinales MCA -------------------------------------
+
+  cli::cli_li(col_yellow("Figure App F.3-F.8: Descripción de variables ordinales MCA"))
 
   VAR <- AUX$VAR_cat |>
     filter(Ordenada == 1) |>
@@ -678,6 +684,8 @@ MOV <- list()
 
 ### ╠ TAB 6.1 ----------------------
 
+  cli::cli_li(col_yellow("Table 6.1: Porcentaje de destino de los viajes en función del tipo de entorno urbano del destino y el motivo de la actividad de destino (ponderado por minutos totales permanecidos)"))
+
   MOV$TAB1 <- MOV$MOV1 |>
     select(-sup) |>
     relocate(N, .before = Ratio ) |>
@@ -716,6 +724,8 @@ MOV <- list()
 
 ### ╠ TAB 6.2 -----------------------------------
 
+  cli::cli_li(col_yellow("Table 6.2: Diferencia promedio de segregación residencial entre lugar de residencia y el lugar de destino"))
+
   MOV$TAB2 <-  MOV$MOV6 |>
     flextable() |>
     set_caption(caption = paste("Diferencia promedio de los segregación residencial",
@@ -745,6 +755,8 @@ MOV <- list()
     flextable::width(j = 5, 2.7, unit = "cm")
 
 ### ╠ TAB 6.3 ---------------------
+
+  cli::cli_li(col_yellow("Table 6.3: Descomposición de la diferencia entre segregación residencial y de destino"))
 
   d <- MOV$MOV2$est[MOV$MOV2$stat == "diff"]
   f <- paste("Los valores tienen una corrección de sesgo a partir del cálculo de",
@@ -785,6 +797,8 @@ MOV <- list()
   rm(d, f, lab)
 
 ### ╚ TAB App E.1 ---------------------------------------
+
+  cli::cli_li(col_yellow("Table App E: Listado de variables usadas en el MCA"))
 
   f <- paste("Notas:", "ID: Variables identificadoras;", "w: Ponderador;",
              "x: Variable activa en el análisis;",

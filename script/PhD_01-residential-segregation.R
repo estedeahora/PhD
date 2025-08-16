@@ -1,6 +1,6 @@
 # Residential segregation
 
-cli::cli_h2(col_blue("Análisis de Segregación Residencial"))
+cli::cli_h2(col_blue("Análisis de Segregación Residencial (SEG)"))
 
 RES <- list()
 
