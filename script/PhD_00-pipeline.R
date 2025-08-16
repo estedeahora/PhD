@@ -13,10 +13,6 @@ library(data.table)
 library(units)
 library(sf)
 
-library(ggpubr)
-library(ggtern)
-library(latex2exp)
-library(ggExtra)
 
 library(knitr)
 library(flextable)
@@ -25,7 +21,19 @@ library(officer)
 library(FactoMineR)
 library(segregation)
 library(TraMineR)
+library(lpSolve)
 
+library(igraph)
+# library(tidygraph)
+library(sfnetworks)
+
+library(factoextra)
+library(ggrepel)
+library(ggpubr)
+library(ggtern)
+library(latex2exp)
+library(ggExtra)
+library(ggsci)
 
 devtools::load_all()
 
