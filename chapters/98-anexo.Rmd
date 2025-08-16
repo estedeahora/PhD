@@ -176,7 +176,7 @@ MOV$appE_TAB1
 ```{r appF-EIGENVALUE}
 #| fig.cap: "Varianza explicada por las primeras diez dimensiones del análisis. Los porcentajes fueron corregidos a partir del método propuesto por Greenacre (2008)."
 #| fig.asp: 0.5
-#| out.width: '80%'
+#| out.width: '90%'
 
 include_graphics(here::here("figures", "Movilidad_eig.png") )
 ```
@@ -184,7 +184,7 @@ include_graphics(here::here("figures", "Movilidad_eig.png") )
 ```{r appF-VARDIM}
 #| fig.cap: "Correlación entre variables y ejes de análisis (ETA2)"
 #| fig.asp: 0.5
-#| out.width: '80%'
+#| out.width: '90%'
 
 include_graphics(here::here("figures","Movilidad_dist-var.png") )
 ```
@@ -200,6 +200,7 @@ include_graphics(here::here("figures", "Movilidad_MCA_Variables_ind1.png") )
 #| fig.cap: "Proyección independiente de variables de segregación. Variables de segregación residencial en origen y destino, diferencia entre segregación residencial de origeny destino y segregación de actividades ponderado por tiempo de actividad"
 #| out.width: '67%'
 #| fig.asp: 1
+#| fig.align: 'center'
 
 include_graphics(here::here("figures", "Movilidad_MCA_Variables_ind2.png") )
 ```
@@ -214,7 +215,6 @@ include_graphics(here::here("figures", "Movilidad_MCA_Variables_ind3.png") )
 ```{r appF-VARDESC4}
 #| fig.cap: "Proyección independiente de variables referidas a la ubicación de la residencia (arriba) y del lugar de destino (abajo)"
 #| fig.asp: 1
-#| out.width: '67%'
 
 
 include_graphics(here::here("figures", "Movilidad_MCA_Variables_ind4.png") )
