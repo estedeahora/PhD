@@ -531,16 +531,32 @@ composición de nivel superior de los lugares de destinos es en promedio
 y apenas `r abs(MOV$MOV6$SUP[3])`% más alta para los hogares de nivel
 superior. Además, como resultado de lo anterior, esto se traduce en que
 los hogares de nivel superior tienden a visitar lugares con una
-composición de hogares similar a la que tienen en su entorno
+composición de hogares con mayot similitud a la que tienen en su entorno
 residencial. En este sentido, aunque mantienen la tendencia general de
 visitar lugres con una composición un poco más alta, la diferencia
-respecto a us propio entorno de residencia es menor. En resumen,
-encontramos que los hogares con nivel educativo primario son los que
-tienen como destino los lugares donde la composición residencial es más
-diferente a la del propio lugar de residencia, corroborando la tendencia
-a visitar lugares con una composición socioeconómica más alta.
+respecto a su propio entorno de residencia es menor.
 
-Si bien estos hallazgos respecto a la diferencia entre los lugares de
+Por último, si bien la segegación residencial de los lugares de destino
+y los lugares de residencia es similar cuando la consideramos en
+conjunto, cuando diferenciamos según grupo educativo vemos una tendencia
+contrapuesta. Dado que los hogares de nivel primario suelen vivir en
+lugares segregados 'por falta de' hogares con educación superior, la
+segregación residencial de los lugares de destinos es más baja que la de
+su lugar de residencia (ya que tiende a tener mayor proporción de
+personas de nivel superior, pero sobre un nivel original muy bajo). Por
+el contrario, para los hogares de nivel dado que los hogares
+
+En resumen, encontramos que los hogares con nivel educativo primario son
+los que tienen como destino los lugares donde la composición residencial
+es más diferente a la del propio lugar de residencia, corroborando la
+tendencia a visitar lugares con una composición socioeconómica más alta.
+
+Si bien estos hallazgos respecto a la diferencia de composición (y
+segregación) residencial entre los lugares de residencia y de destino
+nos informan sobre la forma en que se desenvuelven las práctica de
+movilidad y los espacios de actividades de los hogares, no tienen en
+cuenta el hecho de que estos lugares de destino se ven modificados por
+la concurrencia de personas de otros lugares.
 
 este análisis pierde de vista el punto central que nos interesa cuando
 análizamos la segregación de los espacios de actividad,
