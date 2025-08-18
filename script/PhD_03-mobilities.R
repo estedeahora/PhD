@@ -222,13 +222,45 @@ MOV <- list()
 
   rm(db_dest)
 
+### ╠ Segregación: diferencia entre segregación residencial de origen y destino ----------------------
+
+  cli::cli_li(col_yellow("Diferencia entre segregación residencial de origen y destino (MOV3)"))
+
+  db_diffseg <- ENMODO$MOV_IND |>
+    filter(id_viaje2 != 0 & MOT != "Hogar" & EDAD >= 16) |>
+    mutate(across(PRI_FROM:SUP_FROM, ~.x/(PRI_FROM + SEC_FROM + SUP_FROM)*100 ),
+           across(PRI_DES:SUP_DES, ~.x/(PRI_DES + SEC_DES + SUP_DES)*100 ),
+           diff_PRI = PRI_DES - PRI_FROM,
+           diff_SEC = SEC_DES - SEC_FROM,
+           diff_SUP = SUP_DES - SUP_FROM,
+           diff_ls = ls_DES - ls_FROM) |>
+    select(ID, PONDERA, PONDERA_time,
+           EDU_red,
+           starts_with("diff_") )
+
+  MOV$MOV3 <- db_diffseg |>
+    group_by(EDU_red) |>
+    summarise(across(starts_with("diff_"),
+                     ~weighted.mean(.x, w = PONDERA_time, na.rm = T)))
+
+  MOV$MOV3 <- bind_rows(MOV$MOV3,
+                        summarise(db_diffseg,
+                                  EDU_red = "Total",
+                                  across(starts_with("diff_"),
+                                         ~weighted.mean(.x, w = PONDERA_time, na.rm = T)))) |>
+    rename_with(~str_remove(.x, "diff_"), starts_with("diff_")) |>
+    mutate(across(PRI:SUP, ~round(.x, 1)),
+           ls = round(ls, 3))
+
+  rm(db_diffseg)
+
 ### ╠ Segregación: por hora del día -----------------------------
 
-  cli::cli_li(col_yellow("Segregación de actividades por hora del día `Mutual information Index` (MOV3)"))
+  cli::cli_li(col_yellow("Segregación de actividades por hora del día (MOV4)"))
 
-  # Calcular segregación por hora
+  cli::cli_alert_success(col_grey("Cálculo de segregación (`Mutual information Index`)"))
 
-  MOV$MOV3 <- db_act_seg |>
+  aux_SEG_M <- db_act_seg |>
     imap(\(db, nombre){
       res <- db |>
         rename(ID_FRAC = PLACE, name = EDU_red, value = N) |>
@@ -239,28 +271,65 @@ MOV <- list()
         set_names("stat", paste0("S", nombre))
     }) |>
     reduce(left_join, by = "stat") |>
-    pivot_longer(cols = S0h:S23h, names_to = "hora", values_to = "value") |>
-    pivot_wider(id_cols = "hora", names_from = "stat", values_from = "value") |>
-    mutate(hora = str_match(hora, "[0-9][0-9]*")[,1] |> as.numeric())
+    pivot_longer(cols = S0h:S23h, names_to = "Hora", values_to = "value") |>
+    pivot_wider(id_cols = "Hora", names_from = "stat", values_from = "value") |>
+    mutate(Hora = str_remove(Hora, "^S"))
+    # mutate(Hora = str_match(Hora, "[0-9][0-9]*")[,1] |> as.numeric())
 
-  cli::cli_li(col_yellow("Segregación de actividades por hora del día `Eta2` (MOV4)"))
+  cli::cli_alert_success(col_grey("Cálculo de aislamiento (`Eta2`)"))
 
-  MOV$MOV4 <- db_act_seg |>
+  aux_SEG_IS <- db_act_seg |>
     map(\(db){
       db |>
         pivot_wider(id_cols = "PLACE", names_from = "EDU_red",
                     values_from = "N", values_fill = 0) |>
         select(Primario, Secundario, Superior) |>
-        # OasisR::ISDuncan() |>
         OasisR::Eta2() |>
         set_names(c("Primario", "Secundario", "Superior"))
 
     }) |>
     bind_rows(.id = "Hora")
 
-  rm(db_act_seg, db_hog)
+  cli::cli_alert_success(col_grey("Cálculo de segregacion entre pares (`Dissimilarity pair-index`)"))
 
-### ╠ Análisis de red Bipartita (MCA) -------------------------------------------
+  aux_SEG_DI <- db_act_seg |>
+    map(\(db){
+      res <- db |>
+        pivot_wider(id_cols = "PLACE", names_from = "EDU_red",
+                    values_from = "N", values_fill = 0) |>
+        select(Primario, Secundario, Superior) |>
+        OasisR::DIDuncan()
+
+      res <- c("PRI_SEC" = res[1, 2], "SEC_SUP" = res[2, 3], "PRI_SUP" = res[1, 3] )
+      return(res)
+
+    }) |>
+    bind_rows(.id = "Hora")
+
+  # aux_SEG_xPy <- db_act_seg |>
+  #   map(\(db){
+  #     P <- db |>
+  #       pivot_wider(id_cols = "PLACE", names_from = "EDU_red",
+  #                   values_from = "N", values_fill = 0) |>
+  #       select(Primario, Secundario, Superior) |>
+  #       OasisR::xPy() |>
+  #       as.numeric()
+  #
+  #     res <- tibble(Grupo = paste0(c("PRI", "SEC", "SUP"), "_",
+  #                                  c(rep("PRI", 3), rep("SEC", 3), rep("SUP", times = 3))),
+  #                   res = P )
+  #     return(res)
+  #
+  #   }) |>
+  #   bind_rows(.id = "Hora")
+
+  MOV$MOV4 <- aux_SEG_M |>
+    left_join(aux_SEG_IS, by = "Hora") |>
+    left_join(aux_SEG_DI, by = "Hora")
+
+  rm(db_act_seg, db_hog, aux_SEG_M, aux_SEG_DI, aux_SEG_IS)
+
+### ╚ Análisis de red Bipartita (MCA) -------------------------------------------
 
   # tibble(nombre = names(db_mim),
   #        n_levels = map(db_mim, ~{if(is.character(.x) | is.factor(.x)) length(unique(.x)) else "cuanti"}),
@@ -284,42 +353,9 @@ MOV <- list()
 
   rm(var_act, var_sup, var_quanti)
 
-### ╚ Segregación: diferencia entre segregación residencial de origen y destino----------------------
-
-  cli::cli_li(col_yellow("Diferencia entre segregación residencial de origen y destino (MOV6)"))
-
-  db_diffseg <- ENMODO$MOV_IND |>
-    filter(id_viaje2 != 0 & MOT != "Hogar" & EDAD >= 16) |>
-    mutate(across(PRI_FROM:SUP_FROM, ~.x/(PRI_FROM + SEC_FROM + SUP_FROM)*100 ),
-           across(PRI_DES:SUP_DES, ~.x/(PRI_DES + SEC_DES + SUP_DES)*100 ),
-           diff_PRI = PRI_DES - PRI_FROM,
-           diff_SEC = SEC_DES - SEC_FROM,
-           diff_SUP = SUP_DES - SUP_FROM,
-           diff_ls = ls_DES - ls_FROM) |>
-    select(ID, PONDERA, PONDERA_time,
-           EDU_red,
-           starts_with("diff_") )
-
-  MOV$MOV6 <- db_diffseg |>
-    group_by(EDU_red) |>
-    summarise(across(starts_with("diff_"),
-                     ~weighted.mean(.x, w = PONDERA_time, na.rm = T)))
-
-  MOV$MOV6 <- bind_rows(MOV$MOV6,
-                        summarise(db_diffseg,
-                                  EDU_red = "Total",
-                                  across(starts_with("diff_"),
-                                         ~weighted.mean(.x, w = PONDERA_time, na.rm = T)))) |>
-    rename_with(~str_remove(.x, "diff_"), starts_with("diff_")) |>
-    mutate(across(PRI:SUP, ~round(.x, 1)),
-           ls = round(ls, 3))
-
-  rm(db_diffseg)
-
 # Figuras ------------------------------------
 
 # ══► Descripción de viajes ---------------------------------------------------
-
 
 ### ╠ FIG 6.3: Descripción de secuencias por Actividad y Entorno  ---------------------------
 
@@ -411,34 +447,39 @@ MOV <- list()
 
   cli::cli_li(col_yellow("Figure 6.7: Segregación de actividades por hora del día (M)"))
 
-  p7a <- bind_rows(MOV$MOV3,
-                   MOV$MOV3[1, ] |> mutate(hora = 24)) |>
-    ggplot(aes(x = hora, y = M1)) +
+  aux_M <- bind_rows(MOV$MOV4 ,
+                     MOV$MOV4[1, ] |> mutate(Hora = "24h")) |>
+    select(Hora:structural) |>
+    mutate(Hora = str_remove(Hora, "h") |> as.numeric())
+
+  p7a <- aux_M |>
+    ggplot(aes(x = Hora, y = M1)) +
     geom_line(color = "grey") +
     geom_point() +
-    geom_hline(yintercept = MOV$MOV3$M2[1], linetype = "dashed", color = "tomato4") +
+    geom_hline(yintercept = aux_M$M2[1], linetype = "dashed", color = "tomato4") +
     geom_text(label = "Segregación residencial", color = "tomato4",
-              x = 10, y = MOV$MOV3$M2[1] + 0.01) +
+              x = 10, y = aux_M$M2[1] + 0.01) +
     labs(x = "Hora del día", y = "Segregación de actividades") +
     scale_x_continuous(breaks = seq(0, 24, by = 3)) +# labels = paste0(0:24, "h")) +
     scale_y_continuous(limits = c(0, 0.21),
                        breaks = seq(0, 0.2, by = 0.02)) +
     theme_minimal()
 
-  p7b <- bind_rows(MOV$MOV3, MOV$MOV3[1, ] |> mutate(hora = 24)) |>
-    ggplot() +
+  p7b <- aux_M |>
+    ggplot(aes(x = Hora)) +
     geom_point(data = data.frame(x = c(-1,-1), y = c(-1,-1), color = factor(1:2)),
                aes(x, y, color = color)) +
-    geom_line(aes(x = hora, y = structural), color = "grey") +
-    geom_point(aes(x = hora, y = structural), color = "tomato4") +
-    geom_line(aes(x = hora, y = diff), color = "grey") +
-    geom_point(aes(x = hora, y = diff), color = "darkblue") +
+    geom_line(aes(y = structural), color = "grey") +
+    geom_point(aes(y = structural), color = "tomato4") +
+    geom_line(aes(y = diff), color = "grey") +
+    geom_point(aes(y = diff), color = "darkblue") +
     scale_color_manual("Diferencia de segregación",
                        values = c("tomato4", "darkblue"),
                        labels = c("Estructural", "Absoluta")) +
     scale_x_continuous("Hora del día", breaks = seq(0, 24, by = 3),
                        limits = c(0, 24)) +
-    scale_y_continuous("Diferencia de segregación\n(residencial-actividad)", limit = c(0, NA),
+    scale_y_continuous("Diferencia de segregación\n(residencial-actividad)",
+                       limit = c(0, NA),
                        breaks = seq(0, 0.14, by = 0.02)) +
     theme_minimal() +
     theme(legend.position = "top")
@@ -448,13 +489,14 @@ MOV <- list()
   ggsave(p7, filename = fs::path("figures", "Movilidad_Segregacion-x-hora", ext = "png"),
          width = 25, height = 15, units = "cm", dpi = 300)
 
-  rm(p7, p7a, p7b)
+  rm(p7, p7a, p7b, aux_M)
 
-### ╠ FIG 6.8: Segregación de actividades por hora del día (ETA2) ---------------------
+### ╠ FIG 6.8: Isolation de actividades por hora del día (ETA2) ---------------------
 
   cli::cli_li(col_yellow("Figure 6.8: Segregación de actividades por hora del día (ETA2)"))
 
   p8 <- bind_rows(MOV$MOV4, MOV$MOV4[1, ] |> mutate(Hora = "24h")) |>
+    select(Hora, Primario, Secundario, Superior) |>
     pivot_longer(cols = Primario:Superior,
                  names_to = "EDU", values_to = "IS") |>
     mutate(Hora = str_remove(Hora, "h") |> as.numeric()) |>
@@ -478,6 +520,39 @@ MOV <- list()
 
   rm(p8)
 
+### ╠ FIG 6.9: Pairwise segregation de actividades por hora del día (D) ---------------------
+
+  cli::cli_li(col_yellow("Figure 6.8: Segregación de actividades por hora del día (ETA2)"))
+
+  p9 <- bind_rows(MOV$MOV4, MOV$MOV4[1, ] |> mutate(Hora = "24h")) |>
+    select(Hora, PRI_SEC, SEC_SUP, PRI_SUP) |>
+    pivot_longer(cols = PRI_SEC:PRI_SUP,
+                 names_to = "PAIR_EDU", values_to = "DI") |>
+    mutate(Hora = str_remove(Hora, "h") |> as.numeric(),
+           PAIR_EDU = factor(PAIR_EDU, levels = c("PRI_SEC", "SEC_SUP", "PRI_SUP"),
+                             labels = c("Primario-Secundario",
+                                        "Secundario-Superior", "Primario-Superior") )
+           ) |>
+    ggplot(aes(x = Hora, y = DI, color = PAIR_EDU)) +
+    geom_line(alpha = 0.5) +
+    geom_point(alpha = 0.5) +
+    scale_x_continuous(breaks = seq(0, 24, by = 3)) +
+    scale_y_continuous(breaks = seq(0, 1, by = 0.05),
+                       limits = c(0, NA)) +
+    scale_color_manual(values = c("Primario-Secundario" = "#CC7A33",
+                                  "Secundario-Superior" = "#b814b8",
+                                  "Primario-Superior" = "#8C2F2F")) +
+    labs(x = "Hora del día",
+         y = "Índice de Disimilitud (D)",
+         color = "Segregación entre\npares de grupos") +
+    theme_minimal() +
+    theme(legend.position = "bottom")
+
+  ggsave(p9, filename = fs::path("figures", "Movilidad_Pairwise-segregation-x-hora", ext = "png"),
+         width = 20, height = 20, units = "cm", dpi = 300)
+
+  rm(p9)
+
 # ══► Matriz bipartita (MCA) -----------------------------------------------------
 
   res_mca <- MOV$MOV5
@@ -489,11 +564,11 @@ MOV <- list()
            Categ = str_replace_all(Categ, "_", " "),
            Categ = str_wrap(Categ, 20))
 
-### ╠ FIG 6.9: Proyección de variables en MCA ---------------------------------
+### ╠ FIG 6.10: Proyección de variables en MCA ---------------------------------
 
-  cli::cli_li(col_yellow("Figure 6.9: Proyección de variables en MCA"))
+  cli::cli_li(col_yellow("Figure 6.10: Proyección de variables en MCA"))
 
-  p9 <- fviz_mca_var(res_mca,  geom.var = "point", col.quali.sup = NA, alpha.var = 0, title = "") +
+  p10 <- fviz_mca_var(res_mca,  geom.var = "point", col.quali.sup = NA, alpha.var = 0, title = "") +
     geom_text_repel(aes(x = Dim.1, y = Dim.2, color = grupo, label = Categ),
                     data = aux_coor |> filter(sel == 1)) +
     ggsci::scale_color_d3() +
@@ -501,18 +576,18 @@ MOV <- list()
     theme(legend.position = "bottom")
 
   ggsave(filename = fs::path("figures", "Movilidad_MCA-Variables-Categ", ext = "png"),
-         plot = p9, width = 30, height = 30, units = "cm", dpi = 300)
+         plot = p10, width = 30, height = 30, units = "cm", dpi = 300)
 
-  rm(p9)
+  rm(p10)
 
-### ╠ FIG 6.10: Proyección de unidades por nivel educativo en MCA ----------------
+### ╠ FIG 6.11: Proyección de unidades por nivel educativo en MCA ----------------
 
   cli::cli_li(col_yellow("Figure 6.10: Proyección de unidades por nivel educativo en MCA"))
 
   aux_lab <- c("Primario", "Secundario", "Superior") |>
     set_names(levels(db_mim$p_EDU))
 
-  p10 <- fviz_mca_ind(res_mca, habillage = "p_EDU", title = "",
+  p11 <- fviz_mca_ind(res_mca, habillage = "p_EDU", title = "",
                      alpha.ind = 0.02, geom.ind = "point",
                      palette = c("#E6550D", "#56B4E9", "#1B9E77")) +
     stat_density_2d(geom = "polygon", contour = TRUE,
@@ -527,9 +602,9 @@ MOV <- list()
           strip.background = element_rect(fill = "grey85", color = "black"))
 
   ggsave(filename = fs::path("figures", "Movilidad_MCA-Nivel-educativo", ext = "png"),
-         plot = p10, width = 30, height = 15, units = "cm", dpi = 300)
+         plot = p11, width = 30, height = 15, units = "cm", dpi = 300)
 
-  rm(p10, aux_lab, aux_coor)
+  rm(p11, aux_lab, aux_coor)
 
 ### ╠ FIG App F.1: Porcentaje de varianza explicada MCA -----------------------------
 
@@ -726,7 +801,7 @@ MOV <- list()
 
   cli::cli_li(col_yellow("Table 6.2: Diferencia promedio de segregación residencial entre lugar de residencia y el lugar de destino"))
 
-  MOV$TAB2 <-  MOV$MOV6 |>
+  MOV$TAB2 <-  MOV$MOV3 |>
     flextable() |>
     set_caption(caption = paste("Diferencia promedio de los segregación residencial",
                                 "entre lugar de residencia y el lugar de destino",
@@ -744,10 +819,10 @@ MOV <- list()
     merge_v(j = c(1, 5), part = "header") |>
     align(j = 1, align ='left', part = 'all')  |>
     align(j = 2:5, align ='center', part = 'header') |>
-    bold(i = nrow(MOV$MOV6), part = "body") |>
-    italic(i = nrow(MOV$MOV6), part = "body") |>
-    bg(i = nrow(MOV$MOV6), bg = "grey90") |>
-    hline(i = nrow(MOV$MOV6) - 1) |>
+    bold(i = nrow(MOV$MOV3), part = "body") |>
+    italic(i = nrow(MOV$MOV3), part = "body") |>
+    bg(i = nrow(MOV$MOV3), bg = "grey90") |>
+    hline(i = nrow(MOV$MOV3) - 1) |>
     flextable::font(fontname='Alegreya Sans', part = "all") |>
     flextable::fontsize(size = 7, part = "all") |>
     flextable::width(j = 1, 2.5, unit = "cm") |>
@@ -844,7 +919,7 @@ MOV <- list()
 
   usethis::use_data(MOV, overwrite = TRUE)
 
-    rm(db_mim, replic, conf)
+  rm(db_mim, replic, conf)
 
 # DRAFT ----------------------------
 ### ╠ FIG 6.?: Mapeo de segregación local de destino ---------------------------
