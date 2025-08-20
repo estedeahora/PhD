@@ -24,6 +24,8 @@ RES$appA_TAB2
 
 # Relación matemática entre inercia y segregación local (Índice de Información mutua) {#appendixB}
 
+\chaptermark{Relación matemática entre inercia y segregación local}
+
 Dada una matriz $X$ de U x G, con el recuento absoluto de cada uno de los grupos en las unidades, es posible construir una nueva matriz de perfiles $P$ de U x G, con la proporción de cada grupo en cada unidad. La matriz $P$ se construye dividiendo cada fila de la matriz $X$ por la suma de los elementos de esa fila. A partir de esta matriz $P$ podemos definir la siguiente notación:
 
 -   $p_{g|u}$ es la proporción del grupo $g$ en la unidad $u$;
@@ -156,6 +158,8 @@ knitr::include_graphics(here::here("figures", "Homogamia_relation_P1-P2.png"))
 <!--# Se puede agregar relación entre p y porcentaje de homogamia. Si P(H|A) = H/A; %_h = H/N_hog -->
 
 # Relación entre proporción de personas y probabilidad de homogamia según hipótesis nula {#appendixD}
+
+\chaptermark{Relación entre proporción de personas y probabilidad de homogamia...}
 
 ```{r appD-p-vs-P}
 #| fig.cap: "Relación entre Proporción de personas y probabilidad de homogamia (P'(Ha|a)) bajo H0"
