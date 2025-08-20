@@ -4,9 +4,22 @@ editor_options:
     wrap: 72
 ---
 
-# La escuela como espacio de diferenciación {#education}
+# La escuela como espacio de diferenciación {#school}
 
-## Introducción al capítulo
+En el capítulo anterior nos concentramos en analizar cómo los espacios
+de actividades inciden en la segregación de los...
+
+Tomando en cuenta estos elementos, <!-- Objetivo -->el objetivo de este
+capítulo es <!-- Preguntas --> ...
+
+El capítulo comienza describiendo los antecedentes sobre el vínculo
+entre segregación residencial y escolar (\@ref(school-lit)), seguido de
+una presentación de la estrategia metodológica utilizada
+(\@ref(school-method)). A continuación presentamos los resultados del
+análisis (\@ref(school-analysis)) y las conclusiones del capítulo
+(\@ref(school-conclussion)).
+
+## La segregación en el dominio residencial y en el ámbito educativo {#school-lit}
 
 <!--# Se hace una breve presentación de los antecedentes sobre la relación entre segregación en los dominios residencial y educativo. En relación a esto, se recupera la importancia de la segregación educativa en la construcción del capital social y el logro educativo, enfatizando su rol como mecanismo de enclasamiento.  -->
 
@@ -22,7 +35,8 @@ embargo, diferentes autores han señalado la existencia de diferentes
 realidades escolares, que generan...
 
 Como hemos señalado en trabajos anteriores sobre el sistema educativo de
-la CABA [@SerratiXXX] esta diferencia entre escuelas ...
+la CABA [@Serrati2023a; @DiVirgilio2019d] esta diferencia entre escuelas
+...
 
 En este sentido, algunos autores señalan la existencia que muchas
 familias elaboran una estrategia unificada de elección de escuela y de
@@ -34,22 +48,21 @@ problema de la segregación...
 social contact" [@Silm2021, p. 202].
 <!--# Importancia de la escuela como mecanismo que permitiría generar redes diversas (capital social), constituyendo así un mecanismo central para la obtensión de capital social que luego puede ser central para desarrollar ingresos a trabajos (también posiblemente menos segregados) y generar ascenso social. Ver este vínculo con círculo de la segregación en @Vanham2018 (Van Ham & Tammaru). Todo el texto de Silm (también @Silm2014) insisten en lo "forzado" de este espacio de actividad (al igual que el trabajo). Es interesante que, mientras en el caso del trabajo, compartir espacio puede estar medidado por relaciones jerárquicas, de manera que aunque se vea una menor segregación esto puede suponer una diferenciación entre los grupos, en el caso de la educación, compartir espacios educativos es un indicador de integración [escena de Okupas]-->
 
-## Presentación de la metodología de análisis
+## Presentación de la metodología de análisis {#school-method}
 
-<!--# Se presenta la propuesta metodológica basada en un modelo de asignación ('allocation model') de estudiantes en escuelas (Serrati, 2023b). De modo breve, este modelo genera una asignación "óptima" minimizando la distancia total recorrida por total de los estudiantes, de manera que funciona como un "tipo ideal" sobre cómo sería la asignación de estudiantes si sólo se tuviera en cuenta la distancia. La estrategia metodológica consiste en comparar la composición escolar que resulta de esta asignación con la composición realmente observada. Para ello se utiliza el método propuesto por Elbers (2023), que fue anteriormente utilizado de este modo (Serrati, 2023b).  -->
+Se presenta la propuesta metodológica basada en un modelo de asignación
+('allocation model') de estudiantes en escuelas (Serrati, 2023b). De
+modo breve, este modelo genera una asignación "óptima" minimizando la
+distancia total recorrida por total de los estudiantes, de manera que
+funciona como un "tipo ideal" sobre cómo sería la asignación de
+estudiantes si sólo se tuviera en cuenta la distancia. La estrategia
+metodológica consiste en comparar la composición escolar que resulta de
+esta asignación con la composición realmente observada. Para ello se
+utiliza el método propuesto por Elbers (2023), que fue anteriormente
+utilizado de este modo (Serrati, 2023b).
 
-**Allocation model**
-
-El allocation model es un caso particular de medida de segregación
-granular que incorpora la restricción de ?
-
-Describir propuesta de Allocation model
-
-Describir posibilidades de uso con simulaciones
-
-Conclusiones del apartado.
-
-Medir conjuntamente la segregación en diferentes \*\*dominios\*\*.
+Allocation model. El allocation model es un caso particular de medida de
+segregación granular que incorpora la restricción de ?
 
 -   segregación residencial
 -   segregación parental
@@ -57,22 +70,15 @@ Medir conjuntamente la segregación en diferentes \*\*dominios\*\*.
 -   segregación de actividades (mediante segregación granular y análisis
     de infraestructura urbana disponible)
 
-Medir conjuntamente segregación en diferentes \*\*dimensiones\*\*.
+## Comparación de la segregación en el ámbito residencial y escolar {#school-analysis}
 
--   Segregación socioeconómica
--   segregación migratoria
--   segregación racial¿?
+Siguiendo la estrategia descripta... comparación entre la segregación
+escolar y la residencial.
 
-Medir conjuntamente segregación en diferentes niveles (?)
+## Conclusiones del capítulo {#school-conclussion}
 
-Es posible incorporar una dimensión histórica(?) intra biográfica y
-
-generacional?
-
-## Comparación de la segregación en el ámbito residencial y escolar
-
-<!--# Siguiendo la estrategia descripta, se hace una comparación entre la segregación escolar y la residencial. -->
-
-## Conclusiones del capítulo
-
-<!--# En la conclusión del capítulo se encuentra que la segregación en el dominio escolar supera ampliamente la que podría esperarse si consideramos sólo el efecto residencial. Por lo tanto, se afirma que el dominio escolar es un mecanismo de diferenciación y estratificación (en términos de segregación) que actúa con cierta independencia de las condiciones impuestas por los condicionantes territoriales. -->
+La segregación en el dominio escolar supera ampliamente la que podría
+esperarse si consideramos sólo el efecto residencial. El dominio escolar
+es un mecanismo de diferenciación y estratificación (en términos de
+segregación) que actúa con cierta independencia de las condiciones
+impuestas por los condicionantes territoriales.
