@@ -134,13 +134,19 @@ urbana?<!-- ENTORNOS URBANOS: A su vez, nos interesa especialmente el rol de los
 
 <!--# REVISAR -->
 
-**[REVISAR]** A partir de este planteo general, se proponen los
-siguientes objetivos específicos:
+A partir de este planteo general, se proponen los
+siguientes objetivos específicos: 
+
+**[REVISAR]** 
 
 -   analizar los patrones de segregación urbana en los ámbitos
-    residencial, educativo y de las movilidades en el Aglomerado
-    Metropolitano del Gran Buenos
-    Aires;<!-- comprender cómo se articulan los patrones de segregación multi-dominio con las características de los entornos urbanos. -->
+    residencial, educativo y de las movilidades en el AMBA;
+    <!-- comprender cómo se articulan los patrones de segregación multi-dominio con las características de los entornos urbanos. -->
+-   estudiar el efecto de la homogamia educativa sobre la 
+    segregación en el dominio residencial en el AMBA;
+-   analizar cómo se articula la segregación socio-económica en 
+    los espacios de actividad de los residentes del AMBA.
+-   
 
 <!-- Hipótesis -->
 
@@ -231,6 +237,5 @@ segregación residencial se ve reforzada por la homogamia. En el
 actividad y las movilidades, prestando atención a cómo las movilidades
 contribuyen a la segregación urbana. En el [Capítulo 7](#school)
 estudiamos la segregación en el ámbito educativo, analizando en qué
-medida esta permite entender la segregación urbana. Por último, en el
-[Capítulo 8](#conclusion) presentamos las conclusiones y reflexiones
-finales.
+medida esta permite entender la segregación urbana. Por último, presentamos un apartado con las 
+[conclusiones y reflexiones finales](#conclussion) de la tesis en la que resumimos los principales hallazgos, planteando los aportes,  limitaciones y  posibles continuidades del trabajo en futuras investigaciones.
