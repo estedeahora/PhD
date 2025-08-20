@@ -175,7 +175,7 @@ knitr::include_graphics(here::here("figures",
 MOV$appE_TAB1
 ```
 
-# Gráfcos complementarios del análisis de correspondencias múltples (MCA) {#appendixF}
+# Gráfcos complementarios al análisis sobre la Matriz de Indicadores Múltiples {#appendixF}
 
 ```{r appF-EIGENVALUE}
 #| fig.cap: "Varianza explicada por las primeras diez dimensiones del análisis. Los porcentajes fueron corregidos a partir del método propuesto por Greenacre (2008)."
