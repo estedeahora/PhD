@@ -386,8 +386,8 @@ rm(i, a, base)
 
 # Guardar resultados ----------------------------------------------------------
 
-save(res, margDEM, tab1, tab2, tab3, tab4, tab5, tab6,
-     file = "_lpRES.RData")
+# save(res, margDEM, tab1, tab2, tab3, tab4, tab5, tab6,
+#      file = "_lpRES.RData")
 
 rm(AUX, CARTO, PRI, SEC)
 rm(DIS, DIS2, DIS3, margOFE)
