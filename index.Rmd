@@ -6,7 +6,7 @@ title: 'Segregación urbana multi-dominio en el Aglomerado Metropolitano del Gra
 logo: 'template/logo_UBA-Sociales2.jpg'
 university: 'Universidad Nacional de Buenos Aires'
 division: 'Facultad de Ciencias Sociales'
-degree: 'Tesis para optar por el Doctorado en Ciencias Sociales'
+degree: 'Tesis para optar por el título de Doctor en Ciencias Sociales'
 
 
 author: 'Pablo Santiago Serrati'                      # Tesista
