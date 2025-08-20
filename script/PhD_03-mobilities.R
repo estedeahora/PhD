@@ -276,9 +276,9 @@ MOV <- list()
     mutate(Hora = str_remove(Hora, "^S"))
     # mutate(Hora = str_match(Hora, "[0-9][0-9]*")[,1] |> as.numeric())
 
-  cli::cli_alert_success(col_grey("Cálculo de aislamiento (`Eta2`)"))
+  cli::cli_alert_success(col_grey("Cálculo del índice de aislamiento normalizado (`Eta^2`)"))
 
-  aux_SEG_IS <- db_act_seg |>
+  aux_SEG_ETA <- db_act_seg |>
     map(\(db){
       db |>
         pivot_wider(id_cols = "PLACE", names_from = "EDU_red",
@@ -300,12 +300,17 @@ MOV <- list()
         select(Primario, Secundario, Superior) |>
         OasisR::DIDuncan()
 
-      res <- c("PRI_SEC" = res[1, 2], "SEC_SUP" = res[2, 3], "PRI_SUP" = res[1, 3] )
+      res <- c("D_PRI_SEC" = res[1, 2],
+               "D_SEC_SUP" = res[2, 3],
+               "D_PRI_SUP" = res[1, 3] )
+
       return(res)
 
     }) |>
     bind_rows(.id = "Hora")
 
+  # cli::cli_alert_success(col_grey("Cálculo de interacción entre pares (`xPy`)"))
+  #
   # aux_SEG_xPy <- db_act_seg |>
   #   map(\(db){
   #     P <- db |>
@@ -323,11 +328,44 @@ MOV <- list()
   #   }) |>
   #   bind_rows(.id = "Hora")
 
+  cli::cli_alert_success(col_grey("Cálculo del índice de interacción entre pares (`Dissimilarity pair-index`)"))
+
+  aux_SEG_xPy_norm <- db_act_seg |>
+    map(\(db){
+
+      marg <- db |> count(EDU_red, wt = N)
+
+      marg_matrix <- matrix( rep(marg$n, 3), nrow = 3, byrow = T)
+
+      marg_sum <-  cross_join(marg, marg) |>
+        mutate(N = n.x + n.y) |>
+        pivot_wider(id_cols = 1, names_from = 3, values_from = N) |>
+        select(-1) |>
+        as.matrix()
+
+      P <- db |>
+        pivot_wider(id_cols = "PLACE", names_from = "EDU_red",
+                    values_from = "N", values_fill = 0) |>
+        select(Primario, Secundario, Superior) |>
+        OasisR::xPy(exact = TRUE) |>
+        as.matrix()
+
+      xPy <- (P  * marg_sum / marg_matrix) |> unname()
+
+      res <- c(P_PRI_SEC = xPy[1, 2], P_PRI_SUP = xPy[1, 3], P_SEC_SUP = xPy[2, 3])
+            # (P_PRI_PRI = xPy[1, 1], P_SEC_SEC = xPy[2, 2], P_SUP_SUP = xPy[3, 3])
+
+      return(res)
+
+    }) |>
+    bind_rows(.id = "Hora")
+
   MOV$MOV4 <- aux_SEG_M |>
-    left_join(aux_SEG_IS, by = "Hora") |>
+    left_join(aux_SEG_ETA, by = "Hora") |>
+    left_join(aux_SEG_xPy_norm, by = "Hora") |>
     left_join(aux_SEG_DI, by = "Hora")
 
-  rm(db_act_seg, db_hog, aux_SEG_M, aux_SEG_DI, aux_SEG_IS)
+  rm(db_act_seg, db_hog, aux_SEG_M, aux_SEG_xPy_norm, aux_SEG_ETA, aux_SEG_DI)
 
 ### ╚ Análisis de red Bipartita (MCA) -------------------------------------------
 
@@ -454,19 +492,24 @@ MOV <- list()
 
   p7a <- aux_M |>
     ggplot(aes(x = Hora, y = M1)) +
+    annotate("rect", xmin = c(0, 18), xmax = c(7, 24), ymin = 0, ymax = Inf,
+             alpha = 0.3, fill = "royalblue4") +
     geom_line(color = "grey") +
-    geom_point() +
+    geom_point(color = "darkgreen") +
     geom_hline(yintercept = aux_M$M2[1], linetype = "dashed", color = "tomato4") +
     geom_text(label = "Segregación residencial", color = "tomato4",
-              x = 10, y = aux_M$M2[1] + 0.01) +
+              x = 11, y = aux_M$M2[1] + 0.005) +
     labs(x = "Hora del día", y = "Segregación de actividades") +
-    scale_x_continuous(breaks = seq(0, 24, by = 3)) +# labels = paste0(0:24, "h")) +
-    scale_y_continuous(limits = c(0, 0.21),
+    scale_x_continuous(breaks = seq(0, 24, by = 3), limits = c(0, 24),
+                       minor_breaks = seq(1, 24, 1)) +# labels = paste0(0:24, "h")) +
+    scale_y_continuous(limits = c(0, 0.21), minor_breaks = seq(1, 24, 1),
                        breaks = seq(0, 0.2, by = 0.02)) +
     theme_minimal()
 
   p7b <- aux_M |>
     ggplot(aes(x = Hora)) +
+    annotate("rect", xmin = c(0, 18), xmax = c(7, 24), ymin = 0, ymax = Inf,
+             alpha = 0.3, fill = "royalblue4") +
     geom_point(data = data.frame(x = c(-1,-1), y = c(-1,-1), color = factor(1:2)),
                aes(x, y, color = color)) +
     geom_line(aes(y = structural), color = "grey") +
@@ -477,17 +520,17 @@ MOV <- list()
                        values = c("tomato4", "darkblue"),
                        labels = c("Estructural", "Absoluta")) +
     scale_x_continuous("Hora del día", breaks = seq(0, 24, by = 3),
-                       limits = c(0, 24)) +
+                       limits = c(0, 24), minor_breaks  = seq(1, 24, 1)) +
     scale_y_continuous("Diferencia de segregación\n(residencial-actividad)",
-                       limit = c(0, NA),
-                       breaks = seq(0, 0.14, by = 0.02)) +
+                       limit = c(0, NA), breaks = seq(0, 0.14, by = 0.02),
+                       minor_breaks = seq(1, 24, 1)) +
     theme_minimal() +
     theme(legend.position = "top")
 
-  p7 <- ggarrange(p7a, p7b, ncol = 2) #, labels = c("A", "B"),
+  p7 <- ggpubr::ggarrange(p7a, p7b, ncol = 2) #, labels = c("A", "B"),
 
   ggsave(p7, filename = fs::path("figures", "Movilidad_Segregacion-x-hora", ext = "png"),
-         width = 25, height = 15, units = "cm", dpi = 300)
+         width = 36, height = 18, units = "cm", dpi = 300)
 
   rm(p7, p7a, p7b, aux_M)
 
@@ -501,55 +544,61 @@ MOV <- list()
                  names_to = "EDU", values_to = "IS") |>
     mutate(Hora = str_remove(Hora, "h") |> as.numeric()) |>
     ggplot(aes(x = Hora, y = IS, color = EDU)) +
+    annotate("rect", xmin = c(0, 18), xmax = c(7, 24), ymin = 0, ymax = Inf,
+             alpha = 0.3, fill = "royalblue4") +
     geom_line(alpha = 0.5) +
     geom_point(alpha = 0.5) +
-    scale_x_continuous(breaks = seq(0, 24, by = 3)) +
+    scale_x_continuous(breaks = seq(0, 24, by = 3), limit = c(0, 24),
+                       minor_breaks = seq(1, 24, 1)) +
     scale_y_continuous(breaks = seq(0, 1, by = 0.05),
-                       limits = c(0, NA)) +
+                       limits = c(0, NA), minor_breaks = seq(1, 24, 1)) +
     scale_color_manual(values = c("Primario" = "#E69F00",
                                   "Secundario" = "#56B4E9",
                                   "Superior" = "#1B9E77") ) +
     labs(x = "Hora del día",
-         y = "Índice de Aislamiento (ETA2)",
+         y = "Índice de Aislamiento normalizado (ETA2)",
          color = "Nivel educativo" ) +
     theme_minimal() +
     theme(legend.position = "bottom")
 
   ggsave(p8, filename = fs::path("figures", "Movilidad_Aislamiento-x-hora", ext = "png"),
-         width = 15, height = 15, units = "cm", dpi = 300)
+         width = 18, height = 18, units = "cm", dpi = 300)
 
   rm(p8)
 
-### ╠ FIG 6.9: Pairwise segregation de actividades por hora del día (D) ---------------------
+### ╠ FIG 6.9: Pairwise copresencia de actividades por hora del día (xPy normalizado) ---------------------
 
-  cli::cli_li(col_yellow("Figure 6.8: Segregación de actividades por hora del día (ETA2)"))
+  cli::cli_li(col_yellow("Figure 6.9: Copresencia/interacción de actividades por hora del día (xPy_normalizado)"))
 
   p9 <- bind_rows(MOV$MOV4, MOV$MOV4[1, ] |> mutate(Hora = "24h")) |>
-    select(Hora, PRI_SEC, SEC_SUP, PRI_SUP) |>
-    pivot_longer(cols = PRI_SEC:PRI_SUP,
+    select(Hora, P_PRI_SEC, P_SEC_SUP, P_PRI_SUP) |>
+    pivot_longer(cols = P_PRI_SEC:P_PRI_SUP,
                  names_to = "PAIR_EDU", values_to = "DI") |>
     mutate(Hora = str_remove(Hora, "h") |> as.numeric(),
-           PAIR_EDU = factor(PAIR_EDU, levels = c("PRI_SEC", "SEC_SUP", "PRI_SUP"),
+           PAIR_EDU = factor(PAIR_EDU, levels = c("P_PRI_SEC", "P_SEC_SUP", "P_PRI_SUP"),
                              labels = c("Primario-Secundario",
                                         "Secundario-Superior", "Primario-Superior") )
            ) |>
     ggplot(aes(x = Hora, y = DI, color = PAIR_EDU)) +
+    annotate("rect", xmin = c(0, 18), xmax = c(7, 24), ymin = 0, ymax = Inf,
+             alpha = 0.3, fill = "royalblue4") +
     geom_line(alpha = 0.5) +
     geom_point(alpha = 0.5) +
-    scale_x_continuous(breaks = seq(0, 24, by = 3)) +
-    scale_y_continuous(breaks = seq(0, 1, by = 0.05),
-                       limits = c(0, NA)) +
+    scale_x_continuous(breaks = seq(0, 24, by = 3), limit = c(0, 24),
+                       minor_breaks = seq(1, 24, 1)) +
+    scale_y_continuous(breaks = seq(0, 1, by = 0.1),
+                       limits = c(0, NA), minor_breaks = seq(1, 24, 1)) +
     scale_color_manual(values = c("Primario-Secundario" = "#CC7A33",
                                   "Secundario-Superior" = "#b814b8",
                                   "Primario-Superior" = "#8C2F2F")) +
     labs(x = "Hora del día",
-         y = "Índice de Disimilitud (D)",
+         y = "Índice de co-presencia/interacción normalizado entre grupos (xPy*)",
          color = "Segregación entre\npares de grupos") +
     theme_minimal() +
     theme(legend.position = "bottom")
 
-  ggsave(p9, filename = fs::path("figures", "Movilidad_Pairwise-segregation-x-hora", ext = "png"),
-         width = 20, height = 20, units = "cm", dpi = 300)
+  ggsave(filename = fs::path("figures", "Movilidad_Pairwise-xPy-norm-x-hora", ext = "png"),
+         plot = p9, width = 18, height = 18, units = "cm", dpi = 300)
 
   rm(p9)
 
