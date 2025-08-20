@@ -692,9 +692,9 @@ del mercado de trabajo) se fundamenta en limitaciones en los datos
 disponibles, siendo la variable nivel de estudio una variable presente
 en todas las fuentes disponibles y que tiene una fuerte correlación con
 el nivel socioeconómico (según puede comprobarse con datos de
-EPH-INDEC). En concreto, se definen tres niveles para los grupos
-educativos en base al criterio de ‘ciclos completos’, es decir que se
-haya finalizado el nivel educativo, a saber: (a) Hasta primario
+EPH-INDEC).[^03-methods-7] En concreto, se definen tres niveles para los
+grupos educativos en base al criterio de ‘ciclos completos’, es decir
+que se haya finalizado el nivel educativo, a saber: (a) Hasta primario
 completo; (b) Secundario completo; (c) Superior completo. La elección de
 ciclos completos se debe a que la finalización de los ciclos educativos
 es la que otorga las credenciales que permiten su uso en el mercado
@@ -708,6 +708,20 @@ como investigadores hemos encontrado muchos errores de captación
 respecto a la diferencia entre ambos niveles, lo cual es
 fundamentalmente cierto para los cuestionarios aplicados a estudiantes
 (en las pruebas educativas utilizadas).
+
+[^03-methods-7]: @Monkkonen2021 señala que los logros educativos son una
+    característica persistente de los grupos sociales por lo cual puede
+    ser un *proxy* adecuado para identificar las clases sociales,
+    incluso en personas que no están en el mercado laboral (por ej.
+    mujeres casadas sin ocupación laboral o niños).
+    <!--# A diferencia del nivel de ingresos) y  -->Como contrapartida,
+    el nivel de estudios tiene como desventaja el hecho de que no
+    necesariamente tiene una relación directa con los mecanismos de
+    mercado como los ingresos (y a través de esto con la elección
+    residencial). Además, el nivel educativo como indicador de la clase
+    social tiene variaciones históricas para las diferentes cohortes, en
+    tanto depende de la extensión de la educación y de la 'devaluación'
+    de las credenciales educativos.
 
 <!-- Hogar como unidad de análisis -->
 
@@ -991,7 +1005,7 @@ continuada en los trabajos de @Buzai2003, @Marcos2015a, @Buzai2015, Abba
 [-@Abba2011; -@Abba2015] y @Goicoechea2014.<!-- Entornos urbanos -->Un
 enfoque complementario propuesto por Marcos y sus colegas [@Marcos2021;
 @Marcos2022], busca generar una tipología de 'entornos
-urbanos',[^03-methods-7] en función de: (a) el momento histórico de su
+urbanos',[^03-methods-8] en función de: (a) el momento histórico de su
 urbanización; y (b) el modo predominante de producción del espacio
 urbano. Esta clasificación de entornos urbanos, permite entender el
 espacio como producto social en donde se establecen fronteras simbólicas
@@ -1003,7 +1017,7 @@ vinculados a la expansión ferroviaria, (4) Complejos de vivienda social,
 los fraccionamientos por loteo formal de nivel socioeconómico (NSE) (7)
 Alto, (8) Medio y (9) Bajo (ver Figura \@ref(fig:TH)).
 
-[^03-methods-7]: La clasificación propuesta por Marcos recupera
+[^03-methods-8]: La clasificación propuesta por Marcos recupera
     modificando la clasificación desarrollada anteriormente para la CABA
     [@Marcos2015] la cual, a su vez, está basada en las propuestas para
     ciudades de México desarrollada en los trabajos de @Connolly2005 y
