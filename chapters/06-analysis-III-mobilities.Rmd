@@ -736,7 +736,7 @@ partidos de Vicente López y San Isidro.
 include_graphics(here::here("figures", "Movilidad_Destino-x-nivel-educativo.png") )
 ```
 
-## La relación entre la segregación en el dominio de las actividades y en el dominio residencial
+### La relación entre la segregación en el dominio de las actividades y en el dominio residencial
 
 Tomando en cuenta esta primera descripción general de los viajes
 realizados en el AMBA, en este apartado vamos a abordar en qué medida
@@ -778,7 +778,7 @@ composición de nivel superior de los lugares de destinos es en promedio
 y apenas `r abs(MOV$MOV3$SUP[3])`% más alta para los hogares de nivel
 superior. Además, como resultado de lo anterior, esto se traduce en que
 los hogares de nivel superior tienden a visitar lugares con una
-composición de hogares con mayot similitud a la que tienen en su entorno
+composición de hogares con mayor similitud a la que tienen en su entorno
 residencial. En este sentido, aunque mantienen la tendencia general de
 visitar lugres con una composición un poco más alta, la diferencia
 respecto a su propio entorno de residencia es menor.
@@ -791,14 +791,14 @@ lugares segregados 'por falta de' hogares con educación superior, la
 segregación residencial de los lugares de destinos es más baja que la de
 su lugar de residencia (ya que tiende a tener mayor proporción de
 personas de nivel superior, pero sobre un nivel original muy bajo). Por
-el contrario, para los hogares de nivel secundario y superor la
+el contrario, para los hogares de nivel secundario y superior la
 segregación residencial de los lugares de destino es más alta que la de
 su lugar de residencia. En resumen, encontramos que los hogares con
 nivel educativo primario tienen como destino los lugares donde la
 composición residencial tiene mayores diferencias a la del propio lugar
-de residencia. Además, se corrobora la 'asimietría' de los destinos de
+de residencia. Además, se corrobora la 'asimetría' de los destinos de
 las movilidades, según la cual existe una tendencia a visitar lugares
-con una composición residencial de mayor 'status' que la del lugar de
+con una composición residencial de mayor 'estatus' que la del lugar de
 residencia, pero no al revés.
 
 Si bien estos hallazgos respecto a la diferencia de composición (y
@@ -815,7 +815,7 @@ en el apartado metodológico esto supone un desafío, en tanto la mayoría
 de los índices de segregación son dependientes de la cantidad de
 unidades consideradas, así como de la distribución marginal (la cantidad
 de personas en cada unidad y en cada grupo). Una solución a este
-problema es utilizar la técnica descripta por @Elbers2023 para
+problema es utilizar la técnica descrita por @Elbers2023 para
 descomponer la diferencia entre dos índices de segregación en diferentes
 'componentes', de manera que sea posible distinguir qué parte de esta
 diferencia entre los índices corresponde a variaciones en la 'estructura
@@ -840,19 +840,24 @@ MOV$TAB3
 
 Para avanzar en este análisis, la Figura
 \@ref(fig:segmov-SegregacionXHora) presenta la segregación de
-actividades en función de la hora del día. Podemos ver que, en sintonía
-con lo señalado por @LeRoux2017, la segregación de actividades varia de
-forma considerable a lo largo del día. En este sentido, encontramos que
-durante las horas nocturnas, la segregación de las actividades está
-próxima a la segregación residencial, lo que se explica por el hecho de
-que la mayor parte de las personas está en su domicilio. A medida que
-avanza el día la segregación va disminuyendo, alcanzando su menor valor
-(máxima diferencia con la segregación residencial) alrededor entre las 9
-y las 12 horas. Como habíamos visto en la Figura \@ref(fig:segmov-SEQ),
-esto se relaciona fuertemente con las tareas laborales que, tal como
-señalan @LeRoux2017 y @Ellis2004, son un factor determinante para la
-baja de segregación y la mayor posibilidad de contacto entre los grupos
-sociales.
+actividades en función de la hora del día. Además, en el lado derecho
+podemos ver que la diferencia entre segregación residencial y de
+actividades no es un artefacto de agregación ni de cambios en los
+marginales. Tomando en cuenta la descomposición de componentes propuesta
+por @Elbers2023 observamos que la brecha 'estructural' (neta sobre los
+efectos de composición y unidades) es incluso mayor que la diferencia
+observada. En sintonía con lo señalado por @LeRoux2017, la segregación
+de actividades varia de forma considerable a lo largo del día. En este
+sentido, encontramos que durante las horas nocturnas, la segregación de
+las actividades está próxima a la segregación residencial, lo que se
+explica por el hecho de que la mayor parte de las personas está en su
+domicilio. A medida que avanza el día la segregación va disminuyendo,
+alcanzando su menor valor (máxima diferencia con la segregación
+residencial) alrededor entre las 9 y las 12 horas. Como habíamos visto
+en la Figura \@ref(fig:segmov-SEQ), esto podría estar relacionado con
+las tareas laborales que, tal como señalan @LeRoux2017 y @Ellis2004, son
+un factor determinante para la baja de segregación y la mayor
+posibilidad de contacto entre los grupos sociales.
 
 ```{r segmov-SegregacionXHora}
 #| fig.cap: "Índice de Información Mutua (M) de actividades en función de la hora del día (izquierda) y diferencia entre segregación residencial y segregación de actividades, destacando el componente correspondiente a la diferencia estructural de segregación (derecha)"
@@ -908,9 +913,9 @@ estables durante todo el día. En este sentido, si bien más alta que la
 de todos los otros pares de grupos, la co-presencia de los grupos
 extremos (`primario-superior`) es la única que crece durante el día.
 
-## Las movilidades como punto de análisis para comprender la segregación de los espacios de actividad
+### Las movilidades como punto de análisis para comprender la segregación de los espacios de actividad
 
-<!-- Análisis con MCA -->
+<!-- Análisis MCA -->
 
 Tomando como base estos resultados, en este apartado proponemos indagar
 el rol que tienen los viajes como modos en que las personas se
@@ -930,12 +935,12 @@ nodos-destinos y los propios viajes.
 
 La Figura \@ref(fig:segmov-MCA) presenta la ubicación de (una selección
 de) las variables activas en las dos primeras dimensiones del
-MCA.[^06-analysis-iii-mobilities-8] En esta representació, el *primer
+MCA.[^06-analysis-iii-mobilities-8] En esta representación, el *primer
 eje* diferencia fundamentalmente los viajes en función de aspectos
 socioeconómicos, referidos tanto a los destinos como al lugar de
 residencia de las personas. En este sentido, del lado derecho
 encontramos representados los entornos de origen informales y los
-entornos de NSE Bajo, mientras que del lado izquiedo aparecen los
+entornos de NSE Bajo, mientras que del lado izquierdo aparecen los
 entornos de NSE Alto, la expansión de la ciudad colonial y la Ciudad
 Colonial (tanto respecto al lugar de residencia como al destino de los
 viajes). De forma similar, del lado derecho encontramos los viajes que
@@ -1090,86 +1095,137 @@ include_graphics(here::here("figures", "Movilidad_MCA-Nivel-educativo.png") )
 
 <!-- Resumen de resultados -->
 
-En este capítulo nos propusimos analizar el rol de las movilidades
-espaciales y los espacios de actividad en la configuración de la
-segregación social urbana en el AMBA. En particular, para ello indagamos
-cómo estas movilidades y los espacios de actividad pueden modificar las
-condiciones de segregación vivida en el dominio residencial. Nuestros
-resultados permiten identificar algunos puntos de contacto y de disenso
-con lo encontrado por trabajos similares en otras ciudades. En primer lugar,
-corroboramos la tendencia de que las movilidades urbanas y los espacios
-de actividad tienen un comportamiento asimétrico, de manera que 
-las personas tienden a visitar lugares con una composición residencial
-de mayor 'status' que la del lugar de residencia, pero no al revés. En
+En este capítulo analizamos el rol de las movilidades cotidianas y los
+espacios de actividad en la configuración de la segregación social
+urbana en el AMBA. En particular, para ello indagamos cómo estas
+movilidades y espacios de actividad pueden modificar las condiciones de
+segregación experimentada en el dominio residencial. Nuestros resultados
+permiten identificar puntos de contacto con lo encontrado por otros
+trabajos similares que abordaron este problema. Por un lado,
+corroboramos que existe una 'asimetría' sistemática en las movilidades y
+los espacios de actividad, por la cual las personas tienden a visitar
+lugares de mayor 'status' residencial que el propio lugar de residencia,
+sin que se verifique el movimiento en sentido inverso [@Krivo2013;
+@Dong2020; @Hilman2022]. Esa tendencia se complementa con el rol de las
+centralidades y subcentralidades urbanas como *polos de atracción* de
+viajes y actividades, lo cual consolida a estos entornos como espacios
+de encuentro y co-presencia de diversos grupos [@Farber2015]. Como
+contrapartida, este mecanismo colabora en aislar los entornos urbanos
+periféricos y/o asociados a los grupos de nivel socioeconómico bajo, de
+manera que, como señala @Krivo2013, esa asimetría conlleva que los
+barrios menos favorecidos refuercen sus desventajas, en tanto suman a
+sus limitaciones originales la menor concurrencia de otros sectores
+sociales y su aislamiento.
 
--   fuerte estratificación y diferenciación del espacio de los viajes en
-    el interior del AMBA, lo cual se manifiesta en tres grandes ejes de
-    diferenciación.
+Como consecuencia de esta 'atracción de viajes' por parte de las
+centralidades urbanas, a nivel global se corrobora una baja en la
+segregación de los espacios de actividad (en comparación con el dominio
+residencial). Además, nuestros resultados confirman lo observado por
+@LeRoux2017, en lo referido a que durante los momentos diurnos hay una
+disminución significativa de la segregación. De esta manera, durante la
+noche, cuando la mayoría de las personas se encuentra en sus espacios
+residenciales, la segregación de actividades converge con la
+residencial; pero a lo largo del día, cuando dominan las actividades
+laborales y reproductivos, la segregación de los espacios de actividad
+vive un descenso connsiderable. En este sentido, los espacios de
+actividades promueven las oportunidades de co-presencia, en parte,
+impulsado por el peso de las actividades laborales y reproductivas
+[@LeRoux2017; @Ellis2004], muchas de las cuales se desarrollan en las
+centralidades urbana . Es importante reforzar que esta co-presencia no
+implica necesariamente una interacción entre los grupos sociales.
+Recuperando lo que señala @LeRoux2017 [p. 143]: "nuestros resultados no
+significan más interacciones sociales entre los grupos sociales durante
+el día y podrían ser desafiados por estudios centrados en interacciones
+reales entre las personas". Además, en la medida que esta co-presencia
+de los grupos sociales parece tener como eje las actividades laborales,
+puede ocultar relaciones de jerarquía entre estos grupos, antes que
+espacios de integración social [@Elguezabal2018; @Frisch2022]. Como
+señalamos en el apartado teórico (ver Capítulo \@ref(lit)), entendemos
+que la segregación es un fenómeno que no necesariamente se vincula a una
+mayor interacción e intercambio real, sino a una relación potencial
+basada en una marcación de los espacios físicos como espacios de
+*distinción* y al uso que se hace de ellos.
 
-    -   El primer y principal eje diferencia los viajes en función del
-        nivel socioeconómico, tanto del lugar residencial de las
-        personas como de los lugares de destino de los viajes.
+Tomando como base estas ideas, nuestros resultados referidos a cómo las
+movilidades se integran en esta diferenciación del espacio nos permiten
+complejizar ese descenso de la segregación de los espacios de actividad.
+En primer lugar, encontramos que la baja de la segregación de los
+espacios de actividad no es un proceso homogéneo: mientras los espacios
+más concurridos se vuelven más diversos, los destinos poco concurridos
+mantienen, e incluso incrementan, las barreras sociales. En este
+sentido, las movilidades y los espacios de actividad no logran
+contrarrestar las estructuras de exclusión urbana que se generan en el
+dominio residencial, sino que, por el contrario, tienden a producir
+nuevas formas de estratificación y diferenciación del espacio urbano. A
+partir del análisis de la *red bipartita de viajes*, pudimos identificar
+tres grandes ejes que diferencian el espacio de actividades. El primer y
+principal eje de diferenciación de los viajes está ligado al nivel
+socioeconómico, tanto en lo que respecta al lugar residencial de las
+personas como a los lugares de destino de los viajes. Por su parte, el
+segundo eje nos permitió diferenciar los viajes en función de la
+mayor/menor concurrencia hacia esos lugares, así como de la segregación
+resultante en estos destinos. En este sentido, los destinos más
+concurridos y, por lo tanto, menos segregados se oponen en este eje con
+respecto a los destinos menos concurridos (y más segregados) y donde las
+barreras sociales se mantienen con mayor fuerza. Sobre este punto, es
+interesante señalar que, si bien el corazón de la ciudad central
+colonial es un destino que concentra una parte importante de los viajes,
+es en los centros locales (*cascos conurbanizados*) donde se observa la
+menor segregación de destinos. Como contraposición, las movilidades y
+los espacios de actividad consulidan algunos entornos urbanos como
+destinos especialmente segregados, en tanto poco concurridos por los
+'otros sociales', de manera que se convierten en lugares exclusivos de
+ciertos grupos sociales, fomentando un aislamiento que implica tanto a
+los grupos más privilegiados en espacios 'exclusivos' [@Frisch2022] como
+a los más desfavorecidos en espacios 'estigmatizados' [@Soldano2008a].
 
-    -   El segundo eje diferencia los viajes en función de si estos
-        tienen un destino más o menos concurrido, así como de la
-        segregación resultante en estos destinos.
-
-    -   El tercer eje diferencia los viajes en función de la segregación
-        residencial de los hogares que los realizan.
-
--   A su vez, encontramos que el nivel educativo del hogar emerge en el
-    análisis como un factor explicativo en la diferenciación de los
-    viajes, de manera que los hogares con estudios superiores y los
-    hogares con estudios primarios desarrollan estrategias de movilidad
-    que les permiten mantener, en gran medida, separados sus espacios de
-    actividad.
-
-<!--# Los resultados señalan que los espacios de actividad y las movilidades de los hogares reproducen y replican las condiciones de segregación que se observen el dominio residencial (similar a lo encontrado en Di Virgilio et al., 2022). En este sentido, el capital de movilidad puesto en juego por los actores mantiene las estructuras de exclusión urbana que se generan en el dominio residencial. Más allá de esta caracterización global encontramos, por un lado, que algunos lugares concentran la mayoría de los viajes y, como consecuencia, la segregación es baja; y por otro, entornos urbanos muy segregados que fomentan un aislamiento de los grupos privilegiados (Atkinson & Flint, 2004; Frisch, 2022) y de los menos favorecidos (Soldano, 2008). -->
+A su vez, encontramos que el nivel educativo del hogar emerge como un
+factor explicativo de diferenciación de los viajes, de manera que los
+hogares con estudios superiores y los hogares con estudios primarios
+desarrollan estrategias de movilidad que les permiten mantener, en gran
+medida, separados sus espacios de actividad. En relación con esto, de
+forma similar a lo que encuentran @Dong2020 y @LeRoux2017, nuestros
+análisis sobre el aislamiento ($ETA^2$) y la co-presencia ($_xP_y^*$) de
+los diferentes grupos sociales, enfatiza que los grupos sociales
+extremos (primario y superior) son los que experimentan un mayor
+aislamiento y presentan la menor co-presencia mutua. Por su parte, el
+grupo intermedio (secundario) actúa como 'puentes' entre estos grupos
+[@Dong2020].
 
 <!-- Interpretación teórica: Segregación multidominio y capital espacial -->
 
-Este análisis nos permitió encontrar que la mayor parte de los viajes
-vinculan lugares de residencia y de destino similares en cuanto a su
-segregación social. En sintonía con lo encontrado por @DiVirgilio2022d,
-las movilidades urbanas en el AMBA parecen reproducir y replicar las
-condiciones de segregación que se viven en el dominio residencial. En
-este sentido, el *capital de movilidad* puesto en juego por los actores
-no permite contrarrestar las estructuras de exclusión urbana que se
-generan en el dominio residencial. Como resultado de esta situación, los
-destinos presentan una estructura de segregación equiparable a la que se
-observa en el dominio residencial, lo cual apoya la hipótesis de una
-retroalimentación de la segregación social entre ambos dominios en el
-AMBA. En particular, estos resultados dan soporte a la idea de que una
-'reproducción multi-dominio de la segregación' [@Boterman2016] y de la
-existencia de un 'círculo vicioso' entre los diferentes dominios de la
-segregación [@VanHam2018].
+En sintonía con lo señalado por @DiVirgilio2022d, nuestro análisis
+refuerza la idea de que las movilidades urbanas en el AMBA son un
+elemento fundamental para entender la estratificación y diferenciación
+del espacio urbano. En este sentido, si bien los espacios de actividades
+y las movilidades cotidianas permiten una reducción de la segregación
+socio-económica (en relación al dominio residencial), promueven nuevas
+articulaciones en las cuales esta diferenciación del espacio se
+manifiesta, generando 'circuitos urbanos' para los diferentes grupos
+sociales. Las centralidades urbanas y el rol de las actividades
+laborales explica una parte de esta mayor co-presencia durante los
+espacios de actividad, pero también deja al descubierto como su
+contracara la emergencia de espacios segregados ('exclusivos' o
+'estigmatizados', según el caso), que sólo son habitados por algunos
+grupos sociales. El resultado es una ciudad donde las oportunidades de
+co-presencia se concentran en nodos masivos y de baja segregación,
+mientras persisten circuitos cotidianos paralelos con escaso
+solapamiento entre extremos. En este contexto, el *capital espacial y de
+movilidades* [@Levy1994; @Flamm2006; @Kaufmann2004] puesto en juego por
+los actores parece ser insuficiente para quebrar las *fronteras sociales
+urbanas*.
 
-Más allá de esta fuerte relación que observamos entre ambos dominios, no
-podemos considerar que ambos se superpongan completamente. En este
-sentido, nuestros resultados muestran que si por un lado la composición
-de los espacios residenciales se diferencia principalmente en el primer
-eje de análisis (y también en el tercero), la composición de los
-destinos se desenvuelve como una combinación del primero y segundo eje
-del análisis, presentando una menor asociación con el primer eje que los
-lugares de residencia. En relación con el segundo eje de variabilidad,
-algunos destinos son receptores de gran parte de los viajes, lo que da
-lugar a una mayor mixtura y diversidad social en ellos. Dentro de estos
-destinos, es interesante señalar que, si bien el corazón de la ciudad
-central colonial es un destino que concentra una parte importante de los
-viajes, es en los centros locales (cascos conurbanizados) donde se
-observa una menor segregación de destinos. Como contraposición, algunos
-entornos urbanos aparecen como destinos especialmente segregados, de
-manera que se convierten en lugares exclusivos de ciertos grupos
-sociales, fomentando un aislamiento que implica tanto a los grupos más
-privilegiados [@Frisch2022] como a los más desfavorecidos
-[@Soldano2008a].
-<!--# En concreto, este doble movimiento debe permitirnos  -->
+En suma, las movilidades cotidianas del AMBA consolidan espacios de
+actividad que, de forma global, son menos segregados que el dominio
+residencial, pero que, sin embargo, conservan una estructura jerárquica
+y asimétrica. Estos resultados contribuyen a mostrar la necesidad de un
+*enfoque* *multi-dominio de la segregación* [@Boterman2016; @VanHam2018]
+para captar el modo complejo en que se (re)produce la desigualdad y
+diferenciación del espacio urbano. En este sentido, para entender la
+complejidad de las desigualdades sociales del espacio urbano es
+necesario un análisis conjunto e integrado de los diferentes dominios y,
+en particular, de los espacios de actividad.
 
-"Los problemas de aislamiento social en las áreas desfavorecidas se
-perpetúan por limitaciones socioeconómicas y raciales en el acceso al
-vecindario, y por el aislamiento de los residentes de comunidades
-blancas aventajadas que limitan sus actividades a 'mejores' partes del
-área urbana, evitando vecindarios más desfavorecidos." [@Krivo2013, p.
-159]
+<!--# Matizar sobre diferencia entre copresencia e interacciones reales con trabajo de Eleonora Elizaguel. Las relaciones que surgen de esta copresencia puede suponer relaciones de jerarquía, sobre todo laborales, por lo cual no necesariamente son signos de integración. LeRoux, p. 143: "Recordemos entonces que nuestros resultados no significan más interacciones sociales entre los grupos sociales durante el día y podrían ser desafiados por estudios centrados en interacciones reales entre las personas. En nuestro estudio, trabajar es la actividad principal que explica esta mezcla de grupos sociales, mientras que las actividades de ocio durante el día parecen estar más compartimentadas socialmente. -->
 
-<!-- Matizar sobre diferencia entre copresencia e interacciones reales con trabajo de Eleonora Elizaguel. Las relaciones que surgen de esta copresencia puede suponer relaciones de jerarquía, sobre todo laborales, por lo cual no necesariamente son signos de integración. LeRoux, p. 143: "Recordemos entonces que nuestros resultados no significan más interacciones sociales entre los grupos sociales durante el día y podrían ser desafiados por estudios centrados en interacciones reales entre las personas. En nuestro estudio, trabajar es la actividad principal que explica esta mezcla de grupos sociales, mientras que las actividades de ocio durante el día parecen estar más compartimentadas socialmente. -->
+<!--# "Los problemas de aislamiento social en las áreas desfavorecidas se perpetúan por limitaciones socioeconómicas y raciales en el acceso al vecindario, y por el aislamiento de los residentes de comunidades blancas aventajadas que limitan sus actividades a 'mejores' partes del área urbana, evitando vecindarios más desfavorecidos." [@Krivo2013, p. 159] -->
