@@ -72,6 +72,19 @@ segregación granular que incorpora la restricción de ?
 
 ## Comparación de la segregación en el ámbito residencial y escolar {#school-analysis}
 
+### La distribución de escuelas
+
+Hacer análisis ppp para ver si existe heterogeneidad y si esta
+heterogeneidad está vinculada a la población educativa target
+
+### Analizando el efecto de la segregación residencial sobre la segregación escolar
+
+Definir si existe autocorrelación espacial en la segregación escolar
+real.
+
+Estrategia de allocation model, para comparar segregación escolar real
+con segregación escolar del modelo.
+
 Siguiendo la estrategia descripta... comparación entre la segregación
 escolar y la residencial.
 
