@@ -599,11 +599,10 @@ actividades de descanso en el propio hogar, mientras que durante la
 mañana y parte de la tarde se desarrollan actividades laborales, de
 estudio, recreativas y reproductivas.
 
-```{r segmov-SEQ}
+```{r segmov-SEQ, fig.subcap=c('Actividades realizadas', 'Entorno urbano')}
 #| fig.show: 'hold'
 #| out.width: '50%'
 #| fig.cap: "Descripción de actividades y entorno urbano donde se realizan las actividades durante el transcurso del día. Ponderado por tiempo de duración de las actividades."
-#| fig.scap: c("Actividades realizadas", "Entorno urbano")
 
 include_graphics(here::here("figures", "Movilidad_SA-ACT.png") )
 include_graphics(here::here("figures", "Movilidad_SA-TH.png") )
@@ -876,10 +875,11 @@ son estos lugares también los que reciben la mayor cantidad de personas
 durante el día por motivos laborales y por la calidad de sus
 infraestructura urbana.
 
-```{r segmov-AislamientoXhora}
+```{r segmov-AislamientoXhora, fig.subcap=c('Aislamiento', 'Co-presencia')}
 #| fig.cap: "Índice de Aislamiento normalizado (ETA2) de actividades de cada uno de los grupos educatvos en función de la hora del día (izquierda); e índice de co-presencia/interacción normalizado entre grupos (xPy*) de actividades en función de la hora del día (derecha)"
 #| fig.show: 'hold'
 #| out.width: '50%'
+
 
 include_graphics(here::here("figures", "Movilidad_Aislamiento-x-hora.png") )
 include_graphics(here::here("figures", "Movilidad_Pairwise-xPy-norm-x-hora.png") )

@@ -24,6 +24,7 @@ bookdown::pdf_book:
   # number_sections: false
   keep_tex: yes
   keep_md: true
+  extra_dependencies: "subfig"
   pandoc_args:
     - --listings
     - --top-level-division=chapter
