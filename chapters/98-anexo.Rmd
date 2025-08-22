@@ -50,7 +50,7 @@ $$
 M = \sum_{u=1}^U m_u . L_u = \sum_{u=1}^U m_u . \sum_{g=1}^G p_{g|u}.\log({\frac{p_{g|u}}{p_{g}}}) 
 $$
 
-La inercia ($\phi$) es una medida de la variabilidad de los perfiles de una tabla, en relación al perfil medio. Como tal, la inercia puede expresarse como la suma ponderada (por el peso de las unidades) de las distancias chi cuadrado ($\text{dist }\chi^2$), elevadas al cuadrado, entre los perfiles de las unidades y el perfil medio. A su vez, la distancia chi cuadrado se puede expresa como:
+La inercia ($\phi^2$) es una medida de la variabilidad de los perfiles de una tabla, en relación al perfil medio. Como tal, la inercia puede expresarse como la suma ponderada (por el peso de las unidades) de las distancias chi cuadrado ($\text{dist }\chi^2$), elevadas al cuadrado, entre los perfiles de las unidades y el perfil medio. A su vez, la distancia chi cuadrado se puede expresa como:
 
 $$
 \text{dist } \chi^2 = \sqrt{\sum_{g=1}^G \frac{(p_{g|u} - p_{g})^2}{p_{g}}}
@@ -59,14 +59,17 @@ $$
 por lo cual, la inercia puede expresarse como:
 
 $$
-\phi = \sum_{u=1}^U m_u . (\text{dist }\chi^2)^2 = \sum_{u=1}^U m_u . \left( \sqrt{\sum_{g=1}^G \frac{(p_{g|u} - p_{g})^2}{p_{g}}} \right)^2 = \sum_{u=1}^U m_u . \sum_{g=1}^G \frac{(p_{g|u} - p_{g})^2}{p_{g}}
+\phi^2 = \sum_{u=1}^U m_u . (\text{dist }\chi^2)^2 = \sum_{u=1}^U m_u . \left( \sqrt{\sum_{g=1}^G \frac{(p_{g|u} - p_{g})^2}{p_{g}}} \right)^2 = \sum_{u=1}^U m_u . \sum_{g=1}^G \frac{(p_{g|u} - p_{g})^2}{p_{g}}
 $$
 
-En definitiva, tanto la inercia $\phi$ como el índice de segregación $M$ pueden medir la variabilidad y dispersión de la composición de cada una de las unidades en relación con el perfil medio. En términos generales, ambas medidas pueden pensarse como una suma ponderada de dos 'distancias' entre los perfiles de las unidades y el perfil medio. La diferencia entre ambos es que la inercia se calcula utilizando como medida de distancia el cuadrado de la *distancia chi cuadrado*, mientras que el índice de información mutua utiliza una medida de distancia definida a partir de la 'cantidad de la información'. Por lo tanto, dada una función de distancia $\text{dist}$, podríamos expresar ambas medidas como:
+En definitiva, tanto la inercia $\phi^2$ como el índice de segregación $M$ pueden medir la variabilidad y dispersión de la composición de cada una de las unidades en relación con el perfil medio. En términos generales, ambas medidas pueden pensarse como una suma ponderada de dos 'distancias' entre los perfiles de las unidades y el perfil medio. La diferencia entre ambos es que la inercia se calcula utilizando como medida de distancia el cuadrado de la *distancia chi cuadrado*, mientras que el índice de información mutua utiliza una medida de distancia definida a partir de la 'cantidad de la información'. Por lo tanto, dada una función de distancia $\text{dist}$, podríamos expresar ambas medidas como:
 
 $$
 \sum_{u=1}^U m_u . \text{dist}
-$$ Queda por definir la relación entre ambas distancias. En términos generales, la distancia chi cuadrado es una medida de distancia que se utiliza para medir la diferencia entre dos distribuciones de probabilidad. En este sentido, la distancia chi cuadrado puede pensarse como una medida de la 'dispersión' de los perfiles de las unidades en relación al perfil medio. Por otro lado, la distancia definida a partir de la 'cantidad de información' puede pensarse como una medida de la 'información' que aporta el perfil de cada unidad al perfil medio. En este sentido, ambas medidas pueden pensarse como medidas de la 'variabilidad' y 'dispersión' de los perfiles de las unidades en relación al perfil medio.
+$$ 
+
+<!-- Queda por definir la relación entre ambas distancias.  -->
+En términos generales, la distancia chi cuadrado es una medida de distancia que se utiliza para medir la diferencia entre dos distribuciones de probabilidad. En este sentido, la distancia chi cuadrado puede pensarse como una medida de la 'dispersión' de los perfiles de las unidades en relación al perfil medio. Por otro lado, la distancia definida a partir de la 'cantidad de información' puede pensarse como una medida de la 'información' que aporta el perfil de cada unidad al perfil medio. En este sentido, ambas medidas pueden pensarse como medidas de la 'variabilidad' y 'dispersión' de los perfiles de las unidades en relación al perfil medio.
 
 En la Figura \@ref(fig:appB-dist-comp) se presenta una comparación entre ambas distancias en .
 
@@ -78,11 +81,11 @@ knitr::include_graphics(here::here("figures",
 
 ```
 
-Distancia euclidiana:
+<!-- Distancia euclidiana: -->
 
-$$
-\text{distancia euclidiana} = \sqrt{\sum_{g=1}^G (p_{g|u} - p_{g})^2}
-$$
+<!-- $$ -->
+<!-- \text{distancia euclidiana} = \sqrt{\sum_{g=1}^G (p_{g|u} - p_{g})^2} -->
+<!-- $$ -->
 
 # Cálculo de la probabilidad de homogamia por unidad espacial {#appendixC}
 
