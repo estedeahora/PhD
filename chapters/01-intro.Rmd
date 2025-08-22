@@ -134,19 +134,18 @@ urbana?<!-- ENTORNOS URBANOS: A su vez, nos interesa especialmente el rol de los
 
 <!--# REVISAR -->
 
-A partir de este planteo general, se proponen los
-siguientes objetivos específicos: 
+A partir de este planteo general, se proponen los siguientes objetivos
+específicos:
 
-**[REVISAR]** 
+**[REVISAR]**<!-- OPCIONALES: (1) analizar el rol de las movilidades espaciales y los espacios de actividad en la configuración de la segregación social urbana (2) comprender cómo se articulan los patrones de segregación multi-dominio con las características de los entornos urbanos. -->
 
 -   analizar los patrones de segregación urbana en los ámbitos
-    residencial, educativo y de las movilidades en el AMBA;
-    <!-- comprender cómo se articulan los patrones de segregación multi-dominio con las características de los entornos urbanos. -->
--   estudiar el efecto de la homogamia educativa sobre la 
-    segregación en el dominio residencial en el AMBA;
--   analizar cómo se articula la segregación socio-económica en 
-    los espacios de actividad de los residentes del AMBA.
--   
+    residencial, educativo y de los espacios de actividades en el AMBA;
+-   identificar el efecto de la homogamia educativa sobre la segregación
+    del dominio residencial en el AMBA;
+-   comprender cómo se articula la segregación socio-económica en los
+    espacios de actividad y los espacios educativos de nivel medio con
+    la segregación residencial de los residentes del AMBA.
 
 <!-- Hipótesis -->
 
@@ -237,5 +236,8 @@ segregación residencial se ve reforzada por la homogamia. En el
 actividad y las movilidades, prestando atención a cómo las movilidades
 contribuyen a la segregación urbana. En el [Capítulo 7](#school)
 estudiamos la segregación en el ámbito educativo, analizando en qué
-medida esta permite entender la segregación urbana. Por último, presentamos un apartado con las 
-[conclusiones y reflexiones finales](#conclussion) de la tesis en la que resumimos los principales hallazgos, planteando los aportes,  limitaciones y  posibles continuidades del trabajo en futuras investigaciones.
+medida esta permite entender la segregación urbana. Por último,
+presentamos un apartado con las [conclusiones y reflexiones
+finales](#conclussion) de la tesis en la que resumimos los principales
+hallazgos, planteando los aportes, limitaciones y posibles continuidades
+del trabajo en futuras investigaciones.
