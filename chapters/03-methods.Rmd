@@ -427,111 +427,121 @@ entornos urbanos y los múltiples dominios de segregación.
 
 ## Propuesta de perspectiva geométrica para la medición de la segregación {#method-geometric}
 
-<!--# Como hemos podido describir en la sección anterior, los métodos para medir la segregación tienen una larga historia y su -->
-
-Tomando en cuenta esta historia de desarrollo de las formas de medir la
+Tomando en cuenta esta historia del desarrollo de las formas de medir la
 segregación, en esta tesis proponemos incorporar un nuevo enfoque,
-basado en la técnica del análisis de correspondencias.
+basado en la distancia $\chi^2$ y la técnica del *análisis de
+correspondencias simple*. Nuestra propuesta no pretende reemplazar las
+propuestas anteriores, sino complementarlas aportando la posibilidad de
+tener una representación geométrica bidimensional de la segregación y
+una interpretación de la dirección de la segregación local, reteniendo
+información similar a la que se consige con otros indicadores que miden
+uniformidad. Además, esta propuesta puede ser extendida para
+complementar otras medidas de segregación.
 
 Como han señalado diferentes autores, las matrices de segregación (sobre
 las que se construye la gran mayoría de los indicadores, no son más que
 una matriz ($m = n \times c$) con $n$ unidades/filas por $c$
 categorías/columnas, en las que cada celda individual ($v_{ij}$)
-corresponde a la cantidad de alumnos de la categoría/columna $j$ que hay
-en la unidad/fila $i$. En su forma más abstracta, esta tabla no es más
-que una tabla bivariada de doble entrada que muestra la distribución de
-una variable categórica (el número de personas de un determinado grupo
-social) en diferentes unidades [@Elbers2023; @Williams1948]. Desde este
-enfoque, el problema de construir medidas de segregación se puede
+corresponde a la cantidad de personas de la categoría/columna $j$ que
+hay en la unidad/fila $i$. En su forma más abstracta, esta tabla no es
+más que una tabla bivariada de doble entrada que muestra la distribución
+de una variable categórica (el número de personas de un determinado
+grupo social) en diferentes unidades [@Elbers2023; @Williams1948]. Desde
+este enfoque, el problema de construir medidas de segregación se puede
 reducir a generar una función que devuelva un valor numérico único a
-partir de dicha matriz ($f(m)$) . Observando la equivalencia de este
-problema con otros similares en el campo de los estudios sociales,
-@Williams1948 destaca la estrecha relación que existe entre el índice de
-disimilitud y el estadístico *chi cuadrado* ($\chi^2$), así como su y la
-$\phi^2$.
+partir de dicha matriz ($f(m)$) que sea un indicador resumen adecuado
+para expresar el fenómeno de la segregación.
 
-En este sentido, la mayoría de los índices de segregación clásicos ($D$,
-$M$, $Eta$) puede reescribirse para ser interpretados como una media
-ponderada de la 'distancia' entre la composición promedio de una unidad
-y la distribución
+Observando la equivalencia de este problema con otros similares en el
+campo de los estudios sociales, @Williams1948 destaca la estrecha
+relación que existe entre el índice de disimilitud y el estadístico *chi
+cuadrado* ($\chi^2$), así como con la inercia ($\phi^2$), la versión
+normalizada de este indicador, en tanto todos estos miden la dispersión
+de las unidades respecto a la situación general (y de allí su utilidad
+como medidas de uniformidad). En este sentido, la mayoría de los índices
+de segregación clásicos que miden la dimensión de uniformidad (como, por
+ejemplo, $D$ o $M$) puede reescribirse para ser interpretados como una
+media ponderada de la 'distancia' entre la composición promedio de todas
+las unidades y la distribución de cada unidad (ver el Anexo
+\@ref(appendixB) para una descripción matemática detallada de este
+aspecto). En este contexto, es posible utilizar como 'distancia' de las
+unidades la $\text{distancia } \chi^2$, la cual, como señala
+@Greenacre2008, no es más que una distancia euclidiana normalizada por
+el peso de la composición global (lo cual le permite actuar como medida
+de segregación local de cada unidad). Por su parte, la inercia
+($\phi^2$) es el el promedio geométrico de las
+$\text{distancias } \chi^2$, de manera que funciona como medida de
+dispersión normalizada de la dispersión de la composición de las
+unidades espaciales respecto a la composición global.
 
-El uso de análisis de correspondencias permite
+La técnica del *análisis de correspondencias simples* [*correspondence
+analysis*] se basa en construir una representación de baja
+dimensionalidad de tablas de frecuencias bivariadas. Esta representación
+busca el subespacio que optimiza la varianza de los datos expresada por
+cada eje ortogonal a partir de una reproyección de los perfiles de la
+tabla original [@Greenacre1984]. Para ello, la técnica minimiza las
+$\text{distancias } \chi^2$ y la inercia ($\phi^2$) expresada por cada
+eje. Además, en tanto esta técnica se enfoca en una reducción de
+dimensionalidad, posibilita visualizar los datos originales a partir de
+una representación de baja dimensionalidad que maximiza la diferencia
+entre los perfiles de las frecuencias de la tabla.
 
-<!-- Se propone una forma alternativa de pensar los índices de segregación, basado en un enfoque geométrico que utilice el concepto matemático de simplex a partir del uso de Análisis de Correspondencias Múltiples (M. Greenacre & Hastie, 1987; M. J. Greenacre, 2008, 2010). -->
-
-La inercia <!--# REVISAR BIEN TODO ESTO -->expresa una distancia
-$\chi^2$ [@Greenacre2008], y la inercia no es más que el promedio
-geométrico de dicha distancia.[^03-methods-3] En este sentido, de la
-misma forma que la inercia puede ser un indicador válido de la
-dipspersión
-
-[^03-methods-3]: En el anexo <!--#  --> se presenta una comparación
-    sistemática entre la inercia y las distancias individuales $\chi^2$
-    de cada unidad, frente a otros índices habitualmente utilizados.
-
-Si bien este enfoque no muestra
+Tomando en cuenta estos elementos, podemos abordar el problema de la
+segregación a partir del uso de la técnica del análisis de
+correspondencia sobre la matriz de composición (unidades x grupos). Como
+resultado, obtenemos entender la inercia como un indicador de la
+dispersión global de las unidades respecto a la composición global y,
+por lo tanto, de la segregación de estas unidades. Además, obtenemos una
+medida de dispersión para cada una de las unidades, que puede ser
+utilizada como medida de segregación local. Por último, tiene la ventaja
+de permitir una visualización de las unidades espaciales en función de
+su composición y su cercanía con la composición global.
 
 <!-- Propiedades, ventajas y posibilidades -->
 
-Se podría argumentar que ya existen demasiadas medidas de segregación y
-que, dado que esta es similar a las anteriores, no tiene sentido sumar
-una nueva medida. Sin embargo, existe algunas ventajas en este nuevo
-enfoque que me gustaría destacar.
+<!--# Se podría argumentar que existen demasiadas medidas de segregación y que, dado que esta es similar a las anteriores, no tiene sentido sumar una nueva medida. Sin embargo, e -->
 
-<!-- 1. Visualización bidimensional -->
-
-En primer lugar, este enfoque permite una visualización de la
-distribución de las unidades en función de las categorías. Esta
-representación es bidimensional sin perdidas de información cuando la
-cantidad de categorías es igual a 3 (como en esta tesis) y, dado que se
-trata de una técnica de reducción de dimensionalidad, suele tener una
-pérdida baja de información cuando el número de categorías es mayor.
-Cuando existen dos categorías, la representación es unidimensional
-(lineal). <!-- 2. Multigrupo-->
-
-<!-- 3. Índice local  -->
-
-Una tercera característica, derivada de la anterior, es que esta
-representación gráfica permite tener una visualización gráfica de la
-segregación local de cada unidad, en tanto esta está expresada como la
-distancia ($\chi^2$) de cada unidad con respecto al eje de coordenadas
-del plano.
-
-<!-- 4. dirección -->
-
-Además, una característica adicional, quizás la más interesante, es la
-posibilidad de definir la 'dirección' de la segregación local. Las
-medidas de segregación locales utilziadas habitualmente se definen como
-la dispersión de cada unidad respecto a la distribución global, pero no
-indican el sentido en que estas unidades se diferencian. A modo
-ilustrativo, para una ciudad con una composición equitativa de dos
-grupos (50% cada uno), si una unidad tiene 25% del Grupo A tendrá el
-mismo valor que otra unidad que tenga 25% del Grupo B, ya que ambas
-aportan la misma dispersión. En la práctica del análisis social esto es
-poco conveniente ya que habitualmente no es lo mismo una unidad
-segregada en la que predominan los grupos privilegiados que una donde
-predominan los desfavorecidos. Además, esto permite
-
-<!-- 5. Composición /descomposición -->
-
-Una quinta característica se vincula con las característica <!--#  -->
-puede componerse (y descomponerce), de manera que el valor local de
-segregación de agrupar dos (o más) unidades es el promedio geométrico
-(centroide) ponderado por el tamaño de estas unidades.
-
-<!-- 6. Posibilidades de espacialización  -->
-
-En sexto lugar, dado que trabaja sobre la distribución de la matriz de
-segregación, es posible generar correcciones geográficas a partir de la
-modificación de los conteos en las unidades espaciales (usando 'recuento
-compuesto de población' o 'funciones de proximidad', como señalamos
-anteriormente), consiguiendo que los conteos modificados incluyan
-información sobre las poblaciones de las unidades vecinas [ver:
-@Feitosa2007; @Wong1998; @Wong2005; @Reardon2004].
-
-<!-- 7. Posibilidades expansiones -->
-
-Por último, el análisis de correspondencias es una técnica ampliamente
+Este enfoque presenta un conjunto de ventajas para abordar el problema
+de la segregación.<!-- 1. Visualización bidimensional --> En primer
+lugar, al estar intimamente relacionado con el análisis de
+correspondencias simples permite una visualización de la distribución de
+las unidades en función de las categorías. Esta representación es
+bidimensional sin perdidas de información cuando la cantidad de
+categorías es igual a 3 (como en esta tesis) y, dado que se trata de una
+técnica de reducción de dimensionalidad, suele tener una pérdida baja de
+información cuando el número de categorías es mayor. Cuando existen dos
+categorías, la representación es unidimensional (lineal).
+<!-- 2. Índice local -->Una segunda característica, es la posibilidad de
+otener una medida de segregación local de cada unidad, expresada como
+ima distancia ($\chi^2$) del perfil de cada unidad con respecto al
+perfil medio. <!-- 3. Dirección -->Una tercer característica, quizás la
+más interesante, es la posibilidad de definir la 'dirección' de la
+segregación local. Las medidas de segregación locales utilziadas
+habitualmente se definen como la dispersión de cada unidad respecto a la
+distribución global, pero no indican el sentido en que estas unidades se
+diferencian. A modo ilustrativo, para una ciudad con una composición
+equitativa de dos grupos (50% cada uno), si una unidad tiene 25% del
+Grupo A tendrá el mismo valor que otra unidad que tenga 25% del Grupo B,
+ya que ambas aportan la misma dispersión. En la práctica del análisis
+social esto es poco conveniente ya que habitualmente no es lo mismo una
+unidad segregada en la que predominan los grupos privilegiados que una
+donde predominan los desfavorecidos.
+<!-- 4. Composición /descomposición -->Una cuarta característica, es la
+posibilidad de descomposición y composición. En este sentido, el valor
+local de segregación de una unidad que surge de agrupar dos (o más)
+unidades, es el promedio geométrico (centroide) ponderado por el tamaño
+de las unidades originales.<!-- 5. Multigrupo-->En quinto lugar, en
+función de su capacidad de composición/descomposición, se trata de una
+medida multigrupo que puede adaptarse a diferente cantidad de grupos.
+<!-- 6. Posibilidades de espacialización  -->En sexto lugar, dado que
+trabaja sobre la distribución de la matriz de segregación, es posible
+generar correcciones geográficas a partir de la modificación de los
+conteos en las unidades espaciales (usando 'recuento compuesto de
+población' o 'funciones de proximidad', como señalamos anteriormente),
+consiguiendo que los conteos modificados incluyan información sobre las
+poblaciones de las unidades vecinas [ver: @Feitosa2007; @Wong1998;
+@Wong2005; @Reardon2004]. <!-- 7. Posibilidades expansiones -->Por
+último, el análisis de correspondencias es una técnica ampliamente
 utilizada en las ciencias sociales, lo que permite utilizar los
 conocimientos acumulados para expandirlo como indicador de segregación.
 En este sentido, el uso de columnas/filas suplementarias (no utilizadas
@@ -548,16 +558,14 @@ técnicas de análisis espacial.
 <!-- Síntesis de propiedades -->
 
 En resumen, este enfoque permite tener una medida de segregación
-multigrupo y que se relaciona con una medida de segregación local que
-puede ser componible y permite entender la dirección en la que cada
-unidad contribuye a la segregación. Además, esta medida se asocia con
-una visualización intuitiva que puede ser utilizada para un número alto
-de categorías. En este sentido, este enfoque recupera el reclamo hecho
-por @Poulsen2002 cuando proponía utilizar los *perfiles de
-concentración,* pero sumando a esto la posibilidad de mantener las
-características que brindan otros índices de segregación.
-
-<!--# ¿El eigenvalue tiene margin-dependence? -->
+multigrupo y permite una medida de segregación local que puede ser
+componible y permite entender la dirección en la que cada unidad
+contribuye a la segregación. Además, esta medida se asocia con una
+visualización intuitiva que puede ser utilizada para un número grande de
+categorías. En este sentido, este enfoque recupera el reclamo hecho por
+@Poulsen2002 cuando proponía utilizar los *perfiles de concentración,*
+pero sumando a esto la posibilidad de mantener las características que
+brindan otros índices de segregación.
 
 ## Esquema de análisis: La medición de la segregación multi-dominio {#method-scheme}
 
@@ -610,14 +618,14 @@ fuentes de datos, antes que una decisión teórico-metodológica.
 <!-- Fuentes de datos utilizadas -->
 
 En concreto, en este trabajo utilizamos tres fuentes de
-datos.[^03-methods-4] En primer lugar, los datos de población del *Censo
+datos.[^03-methods-3] En primer lugar, los datos de población del *Censo
 Nacional de Población, Hogares y Viviendas 2010* (INDEC). Estos datos
 brindan información sobre a nivel de radio censal de la distribución
 espacial de la población y las características sociodemográficas de los
 hogares, por lo cual es la más adecuada para analizar los patrones de
 segregación. Los datos fueron usados a nivel de microdatos usando la
 metodología propuesta por Pablo De Grande [-@DeGrande2016] y el programa
-*Redatam Converter* para la aplicación de la misma.[^03-methods-5] En
+*Redatam Converter* para la aplicación de la misma.[^03-methods-4] En
 segundo lugar, utilizamos datos educativos tomados de las evaluaciones
 *Aprender* (Ministerio de Educación de la Nación) del año 2018. Estas
 evaluaciones aportan información sobre el desempeño académico de los
@@ -625,20 +633,20 @@ estudiantes, así como sobre las características socioeconómicas de las
 comunidades escolares, lo que permite permite analizar la segregación
 escolar. Además, a partir de la metodología propuesta por Pablo De
 Grande [-@DeGrande2025] fue posible georeferenciar los datos a cada una
-de las escuelas.[^03-methods-6] Por último, se utilizan datos de la
+de las escuelas.[^03-methods-5] Por último, se utilizan datos de la
 *Encuesta de Movilidad Domiciliaria* realizada en 2018 (ENMODO2018).
 Esta encuesta permite conocer los movilidades cotidianas urbanas de la
 población del AMBA.
 
-[^03-methods-4]: Tanto los datos utilizados, así como el código fuente R
+[^03-methods-3]: Tanto los datos utilizados, así como el código fuente R
     usado para el procesamiento y la escritura de la tesis está
     disponible a través del repositorio Github del autor
     ([https://github.com/estedeahora/](https://github.com/estedeahora/phd){.uri}[PhD](https://github.com/estedeahora/PhD)).
 
-[^03-methods-5]: Ver el trabajo de @Rodriguez2013b para una evaluación
+[^03-methods-4]: Ver el trabajo de @Rodriguez2013b para una evaluación
     de los radios censales para medir la segregación en Argentina.
 
-[^03-methods-6]: Se pone a disposición en el repositorio una adaptación
+[^03-methods-5]: Se pone a disposición en el repositorio una adaptación
     para usar en R del código propuesta por Pablo De Grande en el
     artículo mencionado.
 
@@ -692,7 +700,7 @@ del mercado de trabajo) se fundamenta en limitaciones en los datos
 disponibles, siendo la variable nivel de estudio una variable presente
 en todas las fuentes disponibles y que tiene una fuerte correlación con
 el nivel socioeconómico (según puede comprobarse con datos de
-EPH-INDEC).[^03-methods-7] En concreto, se definen tres niveles para los
+EPH-INDEC).[^03-methods-6] En concreto, se definen tres niveles para los
 grupos educativos en base al criterio de ‘ciclos completos’, es decir
 que se haya finalizado el nivel educativo, a saber: (a) Hasta primario
 completo; (b) Secundario completo; (c) Superior completo. La elección de
@@ -709,7 +717,7 @@ respecto a la diferencia entre ambos niveles, lo cual es
 fundamentalmente cierto para los cuestionarios aplicados a estudiantes
 (en las pruebas educativas utilizadas).
 
-[^03-methods-7]: @Monkkonen2021 señala que los logros educativos son una
+[^03-methods-6]: @Monkkonen2021 señala que los logros educativos son una
     característica persistente de los grupos sociales por lo cual puede
     ser un *proxy* adecuado para identificar las clases sociales,
     incluso en personas que no están en el mercado laboral (por ej.
@@ -791,19 +799,21 @@ El análisis propuesto tiene un diseño metodológico cuantitativo, en el
 que se combinan diferentes técnicas estadísticas. En este sentido, cada
 capítulo contiene un apartado dedicado a explicar las técnicas y
 decisiones metodológicas utilizadas, pero anticipamos brevemente estas
-estrategias de análisis. En el Capítulo \@ref(residential),
-[DESARROLLAR]<!--#  -->. Por su parte, en el Capítulo \@ref(homogamy)
-[DESARROLLAR]<!--#  -->. En el Capítulo \@ref(mobilities) <!--#  -->.
-Por último el Capítulo \@ref(education) [DESARROLLAR]<!--#  -->
-modelamos una distribución ideal de alumnos en escuelas utilizando
-programación lineal entera [@Berkelaar2004].
-<!--# para comparar los resultados empíricos con situaciones hipotéticas -->De
+estrategias de análisis. En el Capítulo \@ref(residential), comenzamos
+con una caracterización de los patrones de segregación y utilizamos
+indicadores logales y globales de segregación. Por su parte, en el
+Capítulo \@ref(homogamy) proponemos un indicador de homogamia educativa
+que permite identificar diferenciar el efecto de la composición
+residencial. En el Capítulo \@ref(mobilities) modelamos una red
+bipartita dirigida y ponderada para describir los viajes en el AMBA y
+describir los espacios de actividad. Por último, en el Capítulo
+\@ref(school) modelamos una distribución ideal de alumnos en escuelas
+utilizando programación lineal entera [@Berkelaar2004], con el objetivo
+de compara esta simulación con la composición real de las escuelas. De
 forma general, en todos los capítulos estas técnicas se combinan con
-herramientas del análisis espacial, la geoestadística y la
-geocomputación [@Baddeley2015; @Cheng2012; @Lovelace2019a;
-@Pebesma2020].
-
-<!-- análisis de redes sociales [@Borgatti2014], modelos de regresión lineal generalizados [@Roback2021], técnicas para la reducción de dimensiones [@Greenacre2008; @Husson2017] y el agrupamiento de clústeres [@Wierzchon2018]. A su vez, se propone la utilización de modelos basados en programación lineal entera [@Berkelaar2004] para comparar los resultados empíricos con situaciones hipotéticas -->
+herramientas del análisis espacial, la geoestadística, la geocomputación
+y la ciencia de datos espaciales [@Baddeley2015; @Cheng2012;
+@Lovelace2019a; @Pebesma2020].
 
 <!-- Índices de segregación -->
 
@@ -1005,7 +1015,7 @@ continuada en los trabajos de @Buzai2003, @Marcos2015a, @Buzai2015, Abba
 [-@Abba2011; -@Abba2015] y @Goicoechea2014.<!-- Entornos urbanos -->Un
 enfoque complementario propuesto por Marcos y sus colegas [@Marcos2021;
 @Marcos2022], busca generar una tipología de 'entornos
-urbanos',[^03-methods-8] en función de: (a) el momento histórico de su
+urbanos',[^03-methods-7] en función de: (a) el momento histórico de su
 urbanización; y (b) el modo predominante de producción del espacio
 urbano. Esta clasificación de entornos urbanos, permite entender el
 espacio como producto social en donde se establecen fronteras simbólicas
@@ -1017,7 +1027,7 @@ vinculados a la expansión ferroviaria, (4) Complejos de vivienda social,
 los fraccionamientos por loteo formal de nivel socioeconómico (NSE) (7)
 Alto, (8) Medio y (9) Bajo (ver Figura \@ref(fig:TH)).
 
-[^03-methods-8]: La clasificación propuesta por Marcos recupera
+[^03-methods-7]: La clasificación propuesta por Marcos recupera
     modificando la clasificación desarrollada anteriormente para la CABA
     [@Marcos2015] la cual, a su vez, está basada en las propuestas para
     ciudades de México desarrollada en los trabajos de @Connolly2005 y
