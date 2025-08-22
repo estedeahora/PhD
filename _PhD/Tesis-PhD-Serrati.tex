@@ -363,8 +363,8 @@ dominios de la segregación o, por el contrario, cada uno de estos
 dominios aporta elementos propios a la segregación
 urbana?
 
-A partir de este planteo general, se proponen los
-siguientes objetivos específicos:
+A partir de este planteo general, se proponen los siguientes objetivos
+específicos:
 
 \textbf{{[}REVISAR{]}}
 
@@ -372,14 +372,14 @@ siguientes objetivos específicos:
 \tightlist
 \item
   analizar los patrones de segregación urbana en los ámbitos
-  residencial, educativo y de las movilidades en el AMBA;
+  residencial, educativo y de los espacios de actividades en el AMBA;
 \item
-  estudiar el efecto de la homogamia educativa sobre la
-  segregación en el dominio residencial en el AMBA;
+  identificar el efecto de la homogamia educativa sobre la segregación
+  del dominio residencial en el AMBA;
 \item
-  analizar cómo se articula la segregación socio-económica en
-  los espacios de actividad de los residentes del AMBA.
-\item
+  comprender cómo se articula la segregación socio-económica en los
+  espacios de actividad y los espacios educativos de nivel medio con
+  la segregación residencial de los residentes del AMBA.
 \end{itemize}
 
 Enmarcado en este objetivos y preguntas de investigación, nuestra
@@ -461,8 +461,11 @@ segregación residencial se ve reforzada por la homogamia. En el
 actividad y las movilidades, prestando atención a cómo las movilidades
 contribuyen a la segregación urbana. En el \hyperref[school]{Capítulo 7}
 estudiamos la segregación en el ámbito educativo, analizando en qué
-medida esta permite entender la segregación urbana. Por último, presentamos un apartado con las
-\hyperref[conclussion]{conclusiones y reflexiones finales} de la tesis en la que resumimos los principales hallazgos, planteando los aportes, limitaciones y posibles continuidades del trabajo en futuras investigaciones.
+medida esta permite entender la segregación urbana. Por último,
+presentamos un apartado con las \hyperref[conclussion]{conclusiones y reflexiones
+finales} de la tesis en la que resumimos los principales
+hallazgos, planteando los aportes, limitaciones y posibles continuidades
+del trabajo en futuras investigaciones.
 
 \part{Aspectos generales}\label{part-aspectos-generales}
 
@@ -2185,90 +2188,116 @@ entornos urbanos y los múltiples dominios de segregación.
 
 \section{Propuesta de perspectiva geométrica para la medición de la segregación}\label{method-geometric}
 
-Tomando en cuenta esta historia de desarrollo de las formas de medir la
+Tomando en cuenta esta historia del desarrollo de las formas de medir la
 segregación, en esta tesis proponemos incorporar un nuevo enfoque,
-basado en la técnica del análisis de correspondencias.
+basado en la distancia \(\chi^2\) y la técnica del \emph{análisis de
+correspondencias simple}. Nuestra propuesta no pretende reemplazar las
+propuestas anteriores, sino complementarlas aportando la posibilidad de
+tener una representación geométrica bidimensional de la segregación y
+una interpretación de la dirección de la segregación local, reteniendo
+información similar a la que se consige con otros indicadores que miden
+uniformidad. Además, esta propuesta puede ser extendida para
+complementar otras medidas de segregación.
 
 Como han señalado diferentes autores, las matrices de segregación (sobre
 las que se construye la gran mayoría de los indicadores, no son más que
 una matriz (\(m = n \times c\)) con \(n\) unidades/filas por \(c\)
 categorías/columnas, en las que cada celda individual (\(v_{ij}\))
-corresponde a la cantidad de alumnos de la categoría/columna \(j\) que hay
-en la unidad/fila \(i\). En su forma más abstracta, esta tabla no es más
-que una tabla bivariada de doble entrada que muestra la distribución de
-una variable categórica (el número de personas de un determinado grupo
-social) en diferentes unidades (\citeproc{ref-Elbers2023}{Elbers, 2023}; \citeproc{ref-Williams1948}{Williams, 1948}). Desde este
-enfoque, el problema de construir medidas de segregación se puede
+corresponde a la cantidad de personas de la categoría/columna \(j\) que
+hay en la unidad/fila \(i\). En su forma más abstracta, esta tabla no es
+más que una tabla bivariada de doble entrada que muestra la distribución
+de una variable categórica (el número de personas de un determinado
+grupo social) en diferentes unidades (\citeproc{ref-Elbers2023}{Elbers, 2023}; \citeproc{ref-Williams1948}{Williams, 1948}). Desde
+este enfoque, el problema de construir medidas de segregación se puede
 reducir a generar una función que devuelva un valor numérico único a
-partir de dicha matriz (\(f(m)\)) . Observando la equivalencia de este
-problema con otros similares en el campo de los estudios sociales,
-Williams (\citeproc{ref-Williams1948}{1948}) destaca la estrecha relación que existe entre el índice de
-disimilitud y el estadístico \emph{chi cuadrado} (\(\chi^2\)), así como su y la
-\(\phi^2\).
+partir de dicha matriz (\(f(m)\)) que sea un indicador resumen adecuado
+para expresar el fenómeno de la segregación.
 
-En este sentido, la mayoría de los índices de segregación clásicos (\(D\),
-\(M\), \(Eta\)) puede reescribirse para ser interpretados como una media
-ponderada de la `distancia' entre la composición promedio de una unidad
-y la distribución
+Observando la equivalencia de este problema con otros similares en el
+campo de los estudios sociales, Williams (\citeproc{ref-Williams1948}{1948}) destaca la estrecha
+relación que existe entre el índice de disimilitud y el estadístico \emph{chi
+cuadrado} (\(\chi^2\)), así como con la inercia (\(\phi^2\)), la versión
+normalizada de este indicador, en tanto todos estos miden la dispersión
+de las unidades respecto a la situación general (y de allí su utilidad
+como medidas de uniformidad). En este sentido, la mayoría de los índices
+de segregación clásicos que miden la dimensión de uniformidad (como, por
+ejemplo, \(D\) o \(M\)) puede reescribirse para ser interpretados como una
+media ponderada de la `distancia' entre la composición promedio de todas
+las unidades y la distribución de cada unidad (ver el Anexo
+\ref{appendixB} para una descripción matemática detallada de este
+aspecto). En este contexto, es posible utilizar como `distancia' de las
+unidades la \(\text{distancia } \chi^2\), la cual, como señala
+Greenacre (\citeproc{ref-Greenacre2008}{2008}), no es más que una distancia euclidiana normalizada por
+el peso de la composición global (lo cual le permite actuar como medida
+de segregación local de cada unidad). Por su parte, la inercia
+(\(\phi^2\)) es el el promedio geométrico de las
+\(\text{distancias } \chi^2\), de manera que funciona como medida de
+dispersión normalizada de la dispersión de la composición de las
+unidades espaciales respecto a la composición global.
 
-El uso de análisis de correspondencias permite
+La técnica del \emph{análisis de correspondencias simples} {[}\emph{correspondence
+analysis}{]} se basa en construir una representación de baja
+dimensionalidad de tablas de frecuencias bivariadas. Esta representación
+busca el subespacio que optimiza la varianza de los datos expresada por
+cada eje ortogonal a partir de una reproyección de los perfiles de la
+tabla original (\citeproc{ref-Greenacre1984}{Greenacre, 1984}). Para ello, la técnica minimiza las
+\(\text{distancias } \chi^2\) y la inercia (\(\phi^2\)) expresada por cada
+eje. Además, en tanto esta técnica se enfoca en una reducción de
+dimensionalidad, posibilita visualizar los datos originales a partir de
+una representación de baja dimensionalidad que maximiza la diferencia
+entre los perfiles de las frecuencias de la tabla.
 
-La inercia expresa una distancia
-\(\chi^2\) (\citeproc{ref-Greenacre2008}{Greenacre, 2008}), y la inercia no es más que el promedio
-geométrico de dicha distancia.\footnote{En el anexo se presenta una comparación
-  sistemática entre la inercia y las distancias individuales \(\chi^2\)
-  de cada unidad, frente a otros índices habitualmente utilizados.} En este sentido, de la
-misma forma que la inercia puede ser un indicador válido de la
-dipspersión
+Tomando en cuenta estos elementos, podemos abordar el problema de la
+segregación a partir del uso de la técnica del análisis de
+correspondencia sobre la matriz de composición (unidades x grupos). Como
+resultado, obtenemos entender la inercia como un indicador de la
+dispersión global de las unidades respecto a la composición global y,
+por lo tanto, de la segregación de estas unidades. Además, obtenemos una
+medida de dispersión para cada una de las unidades, que puede ser
+utilizada como medida de segregación local. Por último, tiene la ventaja
+de permitir una visualización de las unidades espaciales en función de
+su composición y su cercanía con la composición global.
 
-Si bien este enfoque no muestra
-
-Se podría argumentar que ya existen demasiadas medidas de segregación y
-que, dado que esta es similar a las anteriores, no tiene sentido sumar
-una nueva medida. Sin embargo, existe algunas ventajas en este nuevo
-enfoque que me gustaría destacar.
-
-En primer lugar, este enfoque permite una visualización de la
-distribución de las unidades en función de las categorías. Esta
-representación es bidimensional sin perdidas de información cuando la
-cantidad de categorías es igual a 3 (como en esta tesis) y, dado que se
-trata de una técnica de reducción de dimensionalidad, suele tener una
-pérdida baja de información cuando el número de categorías es mayor.
-Cuando existen dos categorías, la representación es unidimensional
-(lineal).
-
-Una tercera característica, derivada de la anterior, es que esta
-representación gráfica permite tener una visualización gráfica de la
-segregación local de cada unidad, en tanto esta está expresada como la
-distancia (\(\chi^2\)) de cada unidad con respecto al eje de coordenadas
-del plano.
-
-Además, una característica adicional, quizás la más interesante, es la
-posibilidad de definir la `dirección' de la segregación local. Las
-medidas de segregación locales utilziadas habitualmente se definen como
-la dispersión de cada unidad respecto a la distribución global, pero no
-indican el sentido en que estas unidades se diferencian. A modo
-ilustrativo, para una ciudad con una composición equitativa de dos
-grupos (50\% cada uno), si una unidad tiene 25\% del Grupo A tendrá el
-mismo valor que otra unidad que tenga 25\% del Grupo B, ya que ambas
-aportan la misma dispersión. En la práctica del análisis social esto es
-poco conveniente ya que habitualmente no es lo mismo una unidad
-segregada en la que predominan los grupos privilegiados que una donde
-predominan los desfavorecidos. Además, esto permite
-
-Una quinta característica se vincula con las característica
-puede componerse (y descomponerce), de manera que el valor local de
-segregación de agrupar dos (o más) unidades es el promedio geométrico
-(centroide) ponderado por el tamaño de estas unidades.
-
-En sexto lugar, dado que trabaja sobre la distribución de la matriz de
-segregación, es posible generar correcciones geográficas a partir de la
-modificación de los conteos en las unidades espaciales (usando `recuento
-compuesto de población' o `funciones de proximidad', como señalamos
-anteriormente), consiguiendo que los conteos modificados incluyan
-información sobre las poblaciones de las unidades vecinas (ver: \citeproc{ref-Feitosa2007}{F. F. Feitosa et~al., 2007}; \citeproc{ref-Reardon2004}{Reardon y O'Sullivan, 2004}; \citeproc{ref-Wong1998}{Wong, 1998}, \citeproc{ref-Wong2005}{2005}).
-
-Por último, el análisis de correspondencias es una técnica ampliamente
+Este enfoque presenta un conjunto de ventajas para abordar el problema
+de la segregación. En primer
+lugar, al estar intimamente relacionado con el análisis de
+correspondencias simples permite una visualización de la distribución de
+las unidades en función de las categorías. Esta representación es
+bidimensional sin perdidas de información cuando la cantidad de
+categorías es igual a 3 (como en esta tesis) y, dado que se trata de una
+técnica de reducción de dimensionalidad, suele tener una pérdida baja de
+información cuando el número de categorías es mayor. Cuando existen dos
+categorías, la representación es unidimensional (lineal).
+Una segunda característica, es la posibilidad de
+otener una medida de segregación local de cada unidad, expresada como
+ima distancia (\(\chi^2\)) del perfil de cada unidad con respecto al
+perfil medio. Una tercer característica, quizás la
+más interesante, es la posibilidad de definir la `dirección' de la
+segregación local. Las medidas de segregación locales utilziadas
+habitualmente se definen como la dispersión de cada unidad respecto a la
+distribución global, pero no indican el sentido en que estas unidades se
+diferencian. A modo ilustrativo, para una ciudad con una composición
+equitativa de dos grupos (50\% cada uno), si una unidad tiene 25\% del
+Grupo A tendrá el mismo valor que otra unidad que tenga 25\% del Grupo B,
+ya que ambas aportan la misma dispersión. En la práctica del análisis
+social esto es poco conveniente ya que habitualmente no es lo mismo una
+unidad segregada en la que predominan los grupos privilegiados que una
+donde predominan los desfavorecidos.
+Una cuarta característica, es la
+posibilidad de descomposición y composición. En este sentido, el valor
+local de segregación de una unidad que surge de agrupar dos (o más)
+unidades, es el promedio geométrico (centroide) ponderado por el tamaño
+de las unidades originales.En quinto lugar, en
+función de su capacidad de composición/descomposición, se trata de una
+medida multigrupo que puede adaptarse a diferente cantidad de grupos.
+En sexto lugar, dado que
+trabaja sobre la distribución de la matriz de segregación, es posible
+generar correcciones geográficas a partir de la modificación de los
+conteos en las unidades espaciales (usando `recuento compuesto de
+población' o `funciones de proximidad', como señalamos anteriormente),
+consiguiendo que los conteos modificados incluyan información sobre las
+poblaciones de las unidades vecinas (ver: \citeproc{ref-Feitosa2007}{F. F. Feitosa et~al., 2007}; \citeproc{ref-Reardon2004}{Reardon y O'Sullivan, 2004}; \citeproc{ref-Wong1998}{Wong, 1998}, \citeproc{ref-Wong2005}{2005}). Por
+último, el análisis de correspondencias es una técnica ampliamente
 utilizada en las ciencias sociales, lo que permite utilizar los
 conocimientos acumulados para expandirlo como indicador de segregación.
 En este sentido, el uso de columnas/filas suplementarias (no utilizadas
@@ -2283,14 +2312,14 @@ obviamente, `mapeable' en el espacio para ser utilizable junto a
 técnicas de análisis espacial.
 
 En resumen, este enfoque permite tener una medida de segregación
-multigrupo y que se relaciona con una medida de segregación local que
-puede ser componible y permite entender la dirección en la que cada
-unidad contribuye a la segregación. Además, esta medida se asocia con
-una visualización intuitiva que puede ser utilizada para un número alto
-de categorías. En este sentido, este enfoque recupera el reclamo hecho
-por Poulsen et~al. (\citeproc{ref-Poulsen2002}{2002}) cuando proponía utilizar los \emph{perfiles de
-concentración,} pero sumando a esto la posibilidad de mantener las
-características que brindan otros índices de segregación.
+multigrupo y permite una medida de segregación local que puede ser
+componible y permite entender la dirección en la que cada unidad
+contribuye a la segregación. Además, esta medida se asocia con una
+visualización intuitiva que puede ser utilizada para un número grande de
+categorías. En este sentido, este enfoque recupera el reclamo hecho por
+Poulsen et~al. (\citeproc{ref-Poulsen2002}{2002}) cuando proponía utilizar los \emph{perfiles de concentración,}
+pero sumando a esto la posibilidad de mantener las características que
+brindan otros índices de segregación.
 
 \section{Esquema de análisis: La medición de la segregación multi-dominio}\label{method-scheme}
 
@@ -2494,16 +2523,20 @@ El análisis propuesto tiene un diseño metodológico cuantitativo, en el
 que se combinan diferentes técnicas estadísticas. En este sentido, cada
 capítulo contiene un apartado dedicado a explicar las técnicas y
 decisiones metodológicas utilizadas, pero anticipamos brevemente estas
-estrategias de análisis. En el Capítulo \ref{residential},
-{[}DESARROLLAR{]}. Por su parte, en el Capítulo \ref{homogamy}
-{[}DESARROLLAR{]}. En el Capítulo \ref{mobilities} .
-Por último el Capítulo \ref{education} {[}DESARROLLAR{]}
-modelamos una distribución ideal de alumnos en escuelas utilizando
-programación lineal entera (\citeproc{ref-Berkelaar2004}{Berkelaar et~al., 2004}).
-De
+estrategias de análisis. En el Capítulo \ref{residential}, comenzamos
+con una caracterización de los patrones de segregación y utilizamos
+indicadores logales y globales de segregación. Por su parte, en el
+Capítulo \ref{homogamy} proponemos un indicador de homogamia educativa
+que permite identificar diferenciar el efecto de la composición
+residencial. En el Capítulo \ref{mobilities} modelamos una red
+bipartita dirigida y ponderada para describir los viajes en el AMBA y
+describir los espacios de actividad. Por último, en el Capítulo
+\ref{school} modelamos una distribución ideal de alumnos en escuelas
+utilizando programación lineal entera (\citeproc{ref-Berkelaar2004}{Berkelaar et~al., 2004}), con el objetivo
+de compara esta simulación con la composición real de las escuelas. De
 forma general, en todos los capítulos estas técnicas se combinan con
-herramientas del análisis espacial, la geoestadística y la
-geocomputación (\citeproc{ref-Baddeley2015}{Baddeley et~al., 2016}; \citeproc{ref-Cheng2012}{Cheng et~al., 2012}; \citeproc{ref-Lovelace2019a}{Lovelace et~al., 2019}; \citeproc{ref-Pebesma2020}{Pebesma y Bivand, 2020}).
+herramientas del análisis espacial, la geoestadística, la geocomputación
+y la ciencia de datos espaciales (\citeproc{ref-Baddeley2015}{Baddeley et~al., 2016}; \citeproc{ref-Cheng2012}{Cheng et~al., 2012}; \citeproc{ref-Lovelace2019a}{Lovelace et~al., 2019}; \citeproc{ref-Pebesma2020}{Pebesma y Bivand, 2020}).
 
 En todos los capítulos se utiliza para medir la segregación el Índice de
 Información Mutua (\(M\)), en combinación con el método geométrico
@@ -5391,19 +5424,24 @@ la diferencia `pura' o estructural es aún mayor a la diferencia general
 
 Para avanzar en este análisis, la Figura
 \ref{fig:segmov-SegregacionXHora} presenta la segregación de
-actividades en función de la hora del día. Podemos ver que, en sintonía
-con lo señalado por Le Roux et~al. (\citeproc{ref-LeRoux2017}{2017}), la segregación de actividades varia de
-forma considerable a lo largo del día. En este sentido, encontramos que
-durante las horas nocturnas, la segregación de las actividades está
-próxima a la segregación residencial, lo que se explica por el hecho de
-que la mayor parte de las personas está en su domicilio. A medida que
-avanza el día la segregación va disminuyendo, alcanzando su menor valor
-(máxima diferencia con la segregación residencial) alrededor entre las 9
-y las 12 horas. Como habíamos visto en la Figura \ref{fig:segmov-SEQ},
-esto se relaciona fuertemente con las tareas laborales que, tal como
-señalan Le Roux et~al. (\citeproc{ref-LeRoux2017}{2017}) y Ellis et~al. (\citeproc{ref-Ellis2004}{2004}), son un factor determinante para la
-baja de segregación y la mayor posibilidad de contacto entre los grupos
-sociales.
+actividades en función de la hora del día. Además, en el lado derecho
+podemos ver que la diferencia entre segregación residencial y de
+actividades no es un artefacto de agregación ni de cambios en los
+marginales. Tomando en cuenta la descomposición de componentes propuesta
+por Elbers (\citeproc{ref-Elbers2023}{2023}) observamos que la brecha `estructural' (neta sobre los
+efectos de composición y unidades) es incluso mayor que la diferencia
+observada. En sintonía con lo señalado por Le Roux et~al. (\citeproc{ref-LeRoux2017}{2017}), la segregación
+de actividades varia de forma considerable a lo largo del día. En este
+sentido, encontramos que durante las horas nocturnas, la segregación de
+las actividades está próxima a la segregación residencial, lo que se
+explica por el hecho de que la mayor parte de las personas está en su
+domicilio. A medida que avanza el día la segregación va disminuyendo,
+alcanzando su menor valor (máxima diferencia con la segregación
+residencial) alrededor entre las 9 y las 12 horas. Como habíamos visto
+en la Figura \ref{fig:segmov-SEQ}, esto podría estar relacionado con
+las tareas laborales que, tal como señalan Le Roux et~al. (\citeproc{ref-LeRoux2017}{2017}) y Ellis et~al. (\citeproc{ref-Ellis2004}{2004}), son
+un factor determinante para la baja de segregación y la mayor
+posibilidad de contacto entre los grupos sociales.
 
 \begin{figure}
 \includegraphics[width=1\linewidth]{figures/Movilidad_Segregacion-x-hora} \caption{Índice de Información Mutua (M) de actividades en función de la hora del día (izquierda) y diferencia entre segregación residencial y segregación de actividades, destacando el componente correspondiente a la diferencia estructural de segregación (derecha)}\label{fig:segmov-SegregacionXHora}
@@ -5619,108 +5657,133 @@ presencia residencial se asocia con el lado izquierdo).
 
 \section{Espacios de actividad y segregación multi-dominio}\label{mobilities-conclussion}
 
-En este capítulo propusimos analizar el rol de las movilidades
-espaciales y los espacios de actividad en la configuración de la
-segregación social urbana en el AMBA. En particular, para ello indagamos
-cómo estas movilidades y espacios de actividad pueden modificar las
-condiciones de segregación experimentada en el dominio residencial.
-Nuestros resultados permiten identificar puntos de contacto con lo
-señalado por trabajos similares en otras ciudades. En primer lugar,
-corroboramos que existe una asimetría social en las movilidades y los
-espacios de actividad, por la cual las personas tienden a visitar
-lugares de mayor `status' resdidencial que el propio lugar de
-residencia, pero no sucede lo mismo en el sentido inverso (\citeproc{ref-Dong2020}{Dong et~al., 2020}; \citeproc{ref-Hilman2022}{Hilman et~al., 2022}; \citeproc{ref-Krivo2013}{Krivo et~al., 2013}). En segundo lugar, nuestros resultados refuerzan
-la importancia de las centralidades y subcentralidades urbanas como
-espacios de encuentro y co-presencia (\citeproc{ref-Farber2015}{Farber et~al., 2015}) .
+En este capítulo analizamos el rol de las movilidades cotidianas y los
+espacios de actividad en la configuración de la segregación social
+urbana en el AMBA. En particular, para ello indagamos cómo estas
+movilidades y espacios de actividad pueden modificar las condiciones de
+segregación experimentada en el dominio residencial. Nuestros resultados
+permiten identificar puntos de contacto con lo encontrado por otros
+trabajos similares que abordaron este problema. Por un lado,
+corroboramos que existe una `asimetría' sistemática en las movilidades y
+los espacios de actividad, por la cual las personas tienden a visitar
+lugares de mayor `status' residencial que el propio lugar de residencia,
+sin que se verifique el movimiento en sentido inverso (\citeproc{ref-Dong2020}{Dong et~al., 2020}; \citeproc{ref-Hilman2022}{Hilman et~al., 2022}; \citeproc{ref-Krivo2013}{Krivo et~al., 2013}). Esa tendencia se complementa con el rol de las
+centralidades y subcentralidades urbanas como \emph{polos de atracción} de
+viajes y actividades, lo cual consolida a estos entornos como espacios
+de encuentro y co-presencia de diversos grupos (\citeproc{ref-Farber2015}{Farber et~al., 2015}). Como
+contrapartida, este mecanismo colabora en aislar los entornos urbanos
+periféricos y/o asociados a los grupos de nivel socioeconómico bajo, de
+manera que, como señala Krivo et~al. (\citeproc{ref-Krivo2013}{2013}), esa asimetría conlleva que los
+barrios menos favorecidos refuercen sus desventajas, en tanto suman a
+sus limitaciones originales la menor concurrencia de otros sectores
+sociales y su aislamiento.
 
-\begin{itemize}
-\tightlist
-\item
-  Farber et al.~(2015) identifca que los espacios centrales de la
-  ciudad tienen mayores potencialidades para la mezcla y el
-  intercambio
-\end{itemize}
+Como consecuencia de esta `atracción de viajes' por parte de las
+centralidades urbanas, a nivel global se corrobora una baja en la
+segregación de los espacios de actividad (en comparación con el dominio
+residencial). Además, nuestros resultados confirman lo observado por
+Le Roux et~al. (\citeproc{ref-LeRoux2017}{2017}), en lo referido a que durante los momentos diurnos hay una
+disminución significativa de la segregación. De esta manera, durante la
+noche, cuando la mayoría de las personas se encuentra en sus espacios
+residenciales, la segregación de actividades converge con la
+residencial; pero a lo largo del día, cuando dominan las actividades
+laborales y reproductivos, la segregación de los espacios de actividad
+vive un descenso connsiderable. En este sentido, los espacios de
+actividades promueven las oportunidades de co-presencia, en parte,
+impulsado por el peso de las actividades laborales y reproductivas
+(\citeproc{ref-Ellis2004}{Ellis et~al., 2004}; \citeproc{ref-LeRoux2017}{Le Roux et~al., 2017}), muchas de las cuales se desarrollan en las
+centralidades urbana . Es importante reforzar que esta co-presencia no
+implica necesariamente una interacción entre los grupos sociales.
+Recuperando lo que señala Le Roux et~al. (\citeproc{ref-LeRoux2017}{2017, p. 143}): ``nuestros resultados no
+significan más interacciones sociales entre los grupos sociales durante
+el día y podrían ser desafiados por estudios centrados en interacciones
+reales entre las personas''. Además, en la medida que esta co-presencia
+de los grupos sociales parece tener como eje las actividades laborales,
+puede ocultar relaciones de jerarquía entre estos grupos, antes que
+espacios de integración social (\citeproc{ref-Elguezabal2018}{Elguezabal, 2018}; \citeproc{ref-Frisch2022}{Frisch, 2022}). Como
+señalamos en el apartado teórico (ver Capítulo \ref{lit}), entendemos
+que la segregación es un fenómeno que no necesariamente se vincula a una
+mayor interacción e intercambio real, sino a una relación potencial
+basada en una marcación de los espacios físicos como espacios de
+\emph{distinción} y al uso que se hace de ellos.
 
-que las movilidades y los espacios de actividad no son un factor que
-permita contrarrestar las estructuras de exclusión urbana que se generan
-en el dominio residencial, sino que, por el contrario, las movilidades
-tienden a reproducir y replicar las
+Tomando como base estas ideas, nuestros resultados referidos a cómo las
+movilidades se integran en esta diferenciación del espacio nos permiten
+complejizar ese descenso de la segregación de los espacios de actividad.
+En primer lugar, encontramos que la baja de la segregación de los
+espacios de actividad no es un proceso homogéneo: mientras los espacios
+más concurridos se vuelven más diversos, los destinos poco concurridos
+mantienen, e incluso incrementan, las barreras sociales. En este
+sentido, las movilidades y los espacios de actividad no logran
+contrarrestar las estructuras de exclusión urbana que se generan en el
+dominio residencial, sino que, por el contrario, tienden a producir
+nuevas formas de estratificación y diferenciación del espacio urbano. A
+partir del análisis de la \emph{red bipartita de viajes}, pudimos identificar
+tres grandes ejes que diferencian el espacio de actividades. El primer y
+principal eje de diferenciación de los viajes está ligado al nivel
+socioeconómico, tanto en lo que respecta al lugar residencial de las
+personas como a los lugares de destino de los viajes. Por su parte, el
+segundo eje nos permitió diferenciar los viajes en función de la
+mayor/menor concurrencia hacia esos lugares, así como de la segregación
+resultante en estos destinos. En este sentido, los destinos más
+concurridos y, por lo tanto, menos segregados se oponen en este eje con
+respecto a los destinos menos concurridos (y más segregados) y donde las
+barreras sociales se mantienen con mayor fuerza. Sobre este punto, es
+interesante señalar que, si bien el corazón de la ciudad central
+colonial es un destino que concentra una parte importante de los viajes,
+es en los centros locales (\emph{cascos conurbanizados}) donde se observa la
+menor segregación de destinos. Como contraposición, las movilidades y
+los espacios de actividad consulidan algunos entornos urbanos como
+destinos especialmente segregados, en tanto poco concurridos por los
+`otros sociales', de manera que se convierten en lugares exclusivos de
+ciertos grupos sociales, fomentando un aislamiento que implica tanto a
+los grupos más privilegiados en espacios `exclusivos' (\citeproc{ref-Frisch2022}{Frisch, 2022}) como
+a los más desfavorecidos en espacios `estigmatizados' (\citeproc{ref-Soldano2008a}{Soldano, 2008a}).
 
-\begin{itemize}
-\item
-  Similar a Dong et al.~(2020) y Le Roux (2017) la segregación es
-  mayor entre los extremos sociales.
-\item
-\item
-  fuerte estratificación y diferenciación del espacio de los viajes en
-  el interior del AMBA, lo cual se manifiesta en tres grandes ejes de
-  diferenciación.
+A su vez, encontramos que el nivel educativo del hogar emerge como un
+factor explicativo de diferenciación de los viajes, de manera que los
+hogares con estudios superiores y los hogares con estudios primarios
+desarrollan estrategias de movilidad que les permiten mantener, en gran
+medida, separados sus espacios de actividad. En relación con esto, de
+forma similar a lo que encuentran Dong et~al. (\citeproc{ref-Dong2020}{2020}) y Le Roux et~al. (\citeproc{ref-LeRoux2017}{2017}), nuestros
+análisis sobre el aislamiento (\(ETA^2\)) y la co-presencia (\(_xP_y^*\)) de
+los diferentes grupos sociales, enfatiza que los grupos sociales
+extremos (primario y superior) son los que experimentan un mayor
+aislamiento y presentan la menor co-presencia mutua. Por su parte, el
+grupo intermedio (secundario) actúa como `puentes' entre estos grupos
+(\citeproc{ref-Dong2020}{Dong et~al., 2020}).
 
-  \begin{itemize}
-  \item
-    El primer y principal eje diferencia los viajes en función del
-    nivel socioeconómico, tanto del lugar residencial de las
-    personas como de los lugares de destino de los viajes.
-  \item
-    El segundo eje diferencia los viajes en función de si estos
-    tienen un destino más o menos concurrido, así como de la
-    segregación resultante en estos destinos.
-  \item
-    El tercer eje diferencia los viajes en función de la segregación
-    residencial de los hogares que los realizan.
-  \end{itemize}
-\item
-  A su vez, encontramos que el nivel educativo del hogar emerge en el
-  análisis como un factor explicativo en la diferenciación de los
-  viajes, de manera que los hogares con estudios superiores y los
-  hogares con estudios primarios desarrollan estrategias de movilidad
-  que les permiten mantener, en gran medida, separados sus espacios de
-  actividad.
-\item
-  Las clases medias como `puentes'(Dong et al 2020)
-\end{itemize}
+En sintonía con lo señalado por Di Virgilio et~al. (\citeproc{ref-DiVirgilio2022d}{2022}), nuestro análisis
+refuerza la idea de que las movilidades urbanas en el AMBA son un
+elemento fundamental para entender la estratificación y diferenciación
+del espacio urbano. En este sentido, si bien los espacios de actividades
+y las movilidades cotidianas permiten una reducción de la segregación
+socio-económica (en relación al dominio residencial), promueven nuevas
+articulaciones en las cuales esta diferenciación del espacio se
+manifiesta, generando `circuitos urbanos' para los diferentes grupos
+sociales. Las centralidades urbanas y el rol de las actividades
+laborales explica una parte de esta mayor co-presencia durante los
+espacios de actividad, pero también deja al descubierto como su
+contracara la emergencia de espacios segregados (`exclusivos' o
+`estigmatizados', según el caso), que sólo son habitados por algunos
+grupos sociales. El resultado es una ciudad donde las oportunidades de
+co-presencia se concentran en nodos masivos y de baja segregación,
+mientras persisten circuitos cotidianos paralelos con escaso
+solapamiento entre extremos. En este contexto, el \emph{capital espacial y de
+movilidades} (\citeproc{ref-Flamm2006}{Flamm y Kaufmann, 2006}; \citeproc{ref-Kaufmann2004}{Kaufmann et~al., 2004}; \citeproc{ref-Levy1994}{Lévy, 1994}) puesto en juego por
+los actores parece ser insuficiente para quebrar las \emph{fronteras sociales
+urbanas}.
 
-Este análisis nos permitió encontrar que la mayor parte de los viajes
-vinculan lugares de residencia y de destino similares en cuanto a su
-segregación social. En sintonía con lo encontrado por Di Virgilio et~al. (\citeproc{ref-DiVirgilio2022d}{2022}),
-las movilidades urbanas en el AMBA parecen reproducir y replicar las
-condiciones de segregación que se viven en el dominio residencial. En
-este sentido, el \emph{capital de movilidad} puesto en juego por los actores
-no permite contrarrestar las estructuras de exclusión urbana que se
-generan en el dominio residencial. Como resultado de esta situación, los
-destinos presentan una estructura de segregación equiparable a la que se
-observa en el dominio residencial, lo cual apoya la hipótesis de una
-retroalimentación de la segregación social entre ambos dominios en el
-AMBA. En particular, estos resultados dan soporte a la idea de que una
-`reproducción multi-dominio de la segregación' (\citeproc{ref-Boterman2016}{Boterman y Musterd, 2016}) y de la
-existencia de un `círculo vicioso' entre los diferentes dominios de la
-segregación (\citeproc{ref-VanHam2018}{Van Ham et~al., 2018}).
-
-Más allá de esta fuerte relación que observamos entre ambos dominios, no
-podemos considerar que ambos se superpongan completamente. En este
-sentido, nuestros resultados muestran que si por un lado la composición
-de los espacios residenciales se diferencia principalmente en el primer
-eje de análisis (y también en el tercero), la composición de los
-destinos se desenvuelve como una combinación del primero y segundo eje
-del análisis, presentando una menor asociación con el primer eje que los
-lugares de residencia. En relación con el segundo eje de variabilidad,
-algunos destinos son receptores de gran parte de los viajes, lo que da
-lugar a una mayor mixtura y diversidad social en ellos. Dentro de estos
-destinos, es interesante señalar que, si bien el corazón de la ciudad
-central colonial es un destino que concentra una parte importante de los
-viajes, es en los centros locales (cascos conurbanizados) donde se
-observa una menor segregación de destinos. Como contraposición, algunos
-entornos urbanos aparecen como destinos especialmente segregados, de
-manera que se convierten en lugares exclusivos de ciertos grupos
-sociales, fomentando un aislamiento que implica tanto a los grupos más
-privilegiados (\citeproc{ref-Frisch2022}{Frisch, 2022}) como a los más desfavorecidos
-(\citeproc{ref-Soldano2008a}{Soldano, 2008a}).
-
-``Los problemas de aislamiento social en las áreas desfavorecidas se
-perpetúan por limitaciones socioeconómicas y raciales en el acceso al
-vecindario, y por el aislamiento de los residentes de comunidades
-blancas aventajadas que limitan sus actividades a `mejores' partes del
-área urbana, evitando vecindarios más desfavorecidos.'' (\citeproc{ref-Krivo2013}{Krivo et~al., 2013, p. 159})
+En suma, las movilidades cotidianas del AMBA consolidan espacios de
+actividad que, de forma global, son menos segregados que el dominio
+residencial, pero que, sin embargo, conservan una estructura jerárquica
+y asimétrica. Estos resultados contribuyen a mostrar la necesidad de un
+\emph{enfoque} \emph{multi-dominio de la segregación} (\citeproc{ref-Boterman2016}{Boterman y Musterd, 2016}; \citeproc{ref-VanHam2018}{Van Ham et~al., 2018})
+para captar el modo complejo en que se (re)produce la desigualdad y
+diferenciación del espacio urbano. En este sentido, para entender la
+complejidad de las desigualdades sociales del espacio urbano es
+necesario un análisis conjunto e integrado de los diferentes dominios y,
+en particular, de los espacios de actividad.
 
 \chapter{La escuela como espacio de diferenciación}\label{school}
 
