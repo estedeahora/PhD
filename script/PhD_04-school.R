@@ -43,6 +43,8 @@ EDU <- list()
 
 # Preparar datos -------------------------------------
 
+  cli::cli_li(col_yellow("Procesar y preparar datos para el análisis"))
+
 ### ╠ Identificación de nodos para cada RADIO/ESCUELA (from/to) --------
 
   RAD <- CARTO$RADIO |>
@@ -55,30 +57,34 @@ EDU <- list()
       filter(NIV_SEC & !is.na(N_MATRIC))  |>
       select(CUEANEXO)  |>
       arrange(CUEANEXO)
+
 {
   tictoc::tic("")
-  # ~ 8 minutos
+  # ~ 5/6 minutos
 
-  cat("Creando nodos cercanos a radios")
-
+  cli::cli_process_start(cli::col_grey("Creando nodos cercanos a radios"))
   blended <- st_network_blend(CALLE, RAD)
+  cli_process_done()
 
-  cat("Creando nodos ceranos a escuelas")
-
+  cli::cli_process_start(cli::col_grey("Creando nodos cercanos a escuelas"))
   blended <- st_network_blend(blended, ESC)
+  cli_process_done()
 
-  cat("Tiempo de ejecución")
+  cat(col_blue("Tiempo de ejecución"))
   tictoc::toc()
+  invisible(gc())
 }
 
-  blended <- blended %>%
-    activate(edges) %>%
+  blended <- blended |>
+    activate(edges) |>
     mutate(weight = st_length(geometry))
 
-  nodes <- blended %>%
-    activate(nodes) %>%
-    as_tibble() %>%
+  nodes <- blended |>
+    activate(nodes) |>
+    as_tibble() |>
     st_as_sf()
+
+  cli_alert_success(col_silver("Identificar nodos cercanos a radios y escuelas"))
 
   # Seleccionar nodos mas cercanos a...
   # ... from: RADIOS
@@ -107,8 +113,13 @@ EDU <- list()
 ### ╠ Matriz de distancias/costos --------------------------------------
   # Matrices de 3273 x 13995 = 43.841.835 elementos
 
+  cli::cli_li(col_yellow("Calcular distancias entre radios y escuelas"))
+
   # Matriz de distancia lineal (DIS lineal)
   # ~10 segs
+
+  cli::cli_process_start(cli::col_grey("Calculando distancias lineales"))
+
   DIS_l <- st_distance(RAD, ESC) %>%
     round() %>%
     units::set_units("km") %>%
@@ -123,19 +134,26 @@ EDU <- list()
     pivot_longer(cols = -ID, names_to = "CUEANEXO",
                  values_to = "DIS_l")
 
+  cli::cli_process_done()
+
   # Distancias entre nodos por trama (DIS net)
 {
-  tictoc::tic("Calculando distancias por red urbana")
-  # ~ 26mins
+  tictoc::tic("")
+  # ~ 26/31 mins
+  cli::cli_process_start(cli::col_grey("Calculando distancias por red urbana"))
   DIS_n <- igraph::distances(
     graph = blended,
     v = from,
     to = to,
     weights = blended %>% activate(edges) %>% pull(weight)
   )
+  cli::cli_process_done()
+  cat(col_blue("Tiempo de ejecución"))
   tictoc::toc()
+  invisible(gc())
 }
 
+  cli_alert_success(col_silver("Armado de bases de distancias"))
   rownames(DIS_n) <- from
   colnames(DIS_n) <- to
 
