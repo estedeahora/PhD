@@ -88,7 +88,6 @@ EDU <- list()
 
   # Seleccionar nodos mas cercanos a...
   # ... from: RADIOS
-
   RAD <- RAD |>
     mutate(# ID del nodo más próximo al centroide de cada radio
            from = st_nearest_feature(geometry, nodes),
@@ -197,10 +196,18 @@ EDU <- list()
 
   rm(DIS_l, DIS_n, ESC, RAD, from, to)
 
-### ╚ Preparación de bases marginales y distancia ----------------------------------
+  invisible(gc())
+
+# Análisis -----------------------------------------
+
+### ╠ Calculo de lp  ----------------------------------------------------------
+
+  cli::cli_li(col_yellow("Generar allocation model (EDU4)"))
+
+  # load(fs::path("_draft", "LP_01_distancias", ext = "RData"))
+  cli::cli_process_start(cli::col_grey("Preparando bases para modelo lp"))
 
   # Bases con marginales
-
   margDEM <- CARTO$RADIO |>
     st_drop_geometry() |>
     filter(!is.na(TH) ) |>
@@ -208,51 +215,57 @@ EDU <- list()
     arrange(ID) |>
     mutate(SEC = replace_na(SEC, 0))
 
-  margOFE <- CARTO$ESCUELAS |>
-    filter(NIV_SEC & !is.na(N_MATRIC)) |>
+  margOFE <- SEC |>
+    st_drop_geometry() |>
     select(CUEANEXO, n = N_MATRIC, SECTOR)
 
-# Análisis -----------------------------------------
+  cost_mat <- dcast(db_DIS, formula = ID ~ CUEANEXO,
+                    value.var = "DIS_t")[margDEM$ID, margOFE$CUEANEXO, with = FALSE] |>
+    as.matrix() |>
+    round(2)
 
-### ╠ Calculo de lp  ----------------------------------------------------------
+  rownames(cost_mat) <- margDEM$ID
 
-  res <- list()
+  cli::cli_process_done()
 
-  # Valores marginales de constriccion
-  cost.mat <- as.matrix(DIS[colnames(DIS) %in% margOFE$CUEANEXO])/10
-  # cost.mat <- as.matrix(DIS)/10
-  row.rhs <- margDEM$SEC
-  col.rhs <- margOFE$n
+  if(forzar){
+    # ~ 2.72 [h]
 
-  # Signo de la desigualdad de filas y columnas
-  if(sum(margDEM$SEC) <= sum(margOFE$n)){
-    row.signs <- rep ("=", nrow(cost.mat))
-    col.signs <- rep ("<=", ncol(cost.mat))
+    invisible(gc())
+
+    tictoc::tic("")
+    cli::cli_process_start(cli::col_grey("Calcular modelo lp"))
+    lpres <- PhD_lp_allocation(cost = cost_mat,
+                               supply = margDEM$SEC,
+                               capacity = margOFE$n,
+                               solver = "Rglpk", k = 0.2,
+                               verbose = TRUE)
+    cli::cli_process_done()
+    cat(col_blue("Tiempo de ejecución"))
+    tictoc::toc()
+
+    cli::cli_alert_info(col_silver("Guardando resultado lp (`lpres`) en {.path data-workflow/final-data/LPRES.RData}"))
+    save(lpres, file = fs::path("data-workflow", "final-data", "LPRES", ext = "RData"))
+
   }else{
-    row.signs <- rep ("<=", nrow(cost.mat))
-    col.signs <- rep ("=", ncol(cost.mat))
+    cli::cli_li(col_yellow("Cargar resultados de model allocation (reslp)"))
+    load(file = fs::path("data-workflow", "final-data", "LPRES", ext = "RData"))
   }
 
-{
-  # Resolución
-  tictoc::tic("Tiempo de ejecución")
-  cat("Resolviendo modelo lp. ")
-  res <- lp.transport(cost.mat, "min", presolve = 1,
-                           row.signs, row.rhs, col.signs, col.rhs)
-  tictoc::toc()
-}
-  rownames(res$solution) <- rownames(cost.mat)
-  colnames(res$solution) <- colnames(cost.mat)
-  res$objval <- res$objval * 10
+  EDU$EDU4 <- lpres
 
-  rm(row.rhs, col.rhs, cost.mat, row.signs, col.signs)
+  rm(lpres)
 
-  save(res, file = fs::path("_draft", "LP_02_res-LP", ext = "RData"))
-  # load(file = fs::path("_draft", "LP_02_res-LP", ext = "RData"))
+### ╠ Segregación escolar -----------------------------------
+
+### ╚ Diferencia de segregación -----------------------------------
 
 # Figuras ---------------------------------------
 
 ### ╠ FIG 7.3: Distribución de escuelas -------------------------------
+### ╠ FIG 7.1: Allocation model -------------------------------
+
+  file.edit("C:/Users/este.de.ahora/Documents/_investigacion/_publicado/2023.06 - Artículo. residential-and-school-segregation/analysis/script/03_Fig1_allocation-model.R")
 
 
 ### ╚ FIG App ?.?: Comparación entre distancias lineales y por red vial --------------------
@@ -296,7 +309,7 @@ for(i in names(res)){
 }
 rm(a, i, lp_res)
 
-### ╠ TAB1 -----------------------------
+### ╠ TAB01: -----------------------------
   # Distancia promedio recorrida
   tab1 <- margDEM %>%
     group_by(TIPO_HAB) %>%
@@ -380,7 +393,10 @@ tab3 <- data.frame(TH = rownames(tab3$PRI),
                    SEC_CL_S =  tab3$SECcl_s$Estatal)
 rm(i, a, base)
 
-### ╚ TAB6 ---------------------
+### ╠ TAB03: Diferencia de segregación --------------------------------------
+
+  file.edit("C:/Users/este.de.ahora/Documents/_investigacion/_publicado/2023.06 - Artículo. residential-and-school-segregation/analysis/script/03_Tables.R")
+
   # Comparación de distancias lineales y por red urbana
 
   tab6a <- DIS2 %>%
