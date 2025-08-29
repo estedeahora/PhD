@@ -1,8 +1,18 @@
 # Educational
 
-# TODO Usar data.table para optimizar  preparación de bases
-# TODO Revisar si N_MATRIC es correcto en CARTO$ESCUELAS. Diferenciar primario
-#       y secundario de forma explícita
+# TODO? Filtrar si los costos son más altos que un límite en
+#         PhD_lp_make_edges()
+# TODO? Incorporar covariable (cantidad de población) en densidad o
+#         conteo por cuadrantes?  Dejar para otro trabajo (no aporta
+#         a segregación).
+# TODO? Calcular la distancia promedio de los nodos de un radio a la
+#         escuela más cercana por red. Dejar para otro trabajo (no
+#         aporta a segregación).
+# TODO: Agregar escuelas a buffer de AMBA para evitar efecto de bordes.
+#         Revisar l.139 PhD_data_01-carto.R:
+#           AMBA_bf <- CARTO$AMGBA |> st_buffer(dist = 1000) |> st_concave_hull(ratio = 0.2)
+#         Podría hacerse similar en l.52 PhD_data_03-education.R
+#           st_intersection...
 
 cli::cli_h2(col_blue("Análisis Educativo (EDU)"))
 
