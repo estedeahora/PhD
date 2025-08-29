@@ -19,12 +19,12 @@ PhD_ggtern_legend <- function(.step = 1, .alpha = 0.1){
   expand.grid(PRI = sequence,
               SEC = sequence,
               SUP = sequence) |>
-    mutate(TOTAL = PRI + SEC + SUP,
-           col = rgb(red = PRI, green = SEC, blue = SUP, maxColorValue = 100)) |>
-    filter(TOTAL == 100) |>
-    ggtern::ggtern(aes(x = PRI, y = SEC, z = SUP,
+    dplyr::mutate(TOTAL = PRI + SEC + SUP,
+                  col = grDevices::rgb(red = PRI, green = SEC, blue = SUP, maxColorValue = 100)) |>
+    dplyr::filter(TOTAL == 100) |>
+    ggtern::ggtern(ggplot2::aes(x = PRI, y = SEC, z = SUP,
                        color = I(col))) +
-    geom_point(alpha = .alpha) +
+    ggplot2::geom_point(alpha = .alpha) +
     ggtern::theme_ggtern() +
-    theme(plot.background = element_rect(fill='transparent', color = NA))
+    ggplot2::theme(plot.background = ggplot2::element_rect(fill='transparent', color = NA))
 }

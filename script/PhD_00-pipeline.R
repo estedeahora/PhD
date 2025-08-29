@@ -9,10 +9,10 @@ library(devtools)
 
 library(tidyverse)
 library(data.table)
+library(slam)
 
 library(units)
 library(sf)
-
 
 library(knitr)
 library(flextable)
@@ -21,11 +21,16 @@ library(officer)
 library(FactoMineR)
 library(segregation)
 library(TraMineR)
+
 library(lpSolve)
+library(Rglpk)
 
 library(igraph)
-# library(tidygraph)
 library(sfnetworks)
+
+library(spatstat)
+library(gstat)
+library(variosig)
 
 library(factoextra)
 library(ggrepel)

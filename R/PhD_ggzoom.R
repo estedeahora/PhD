@@ -10,43 +10,41 @@ PhD_ggzoom <- function(gdb, tit, cbox = NULL, dpt = NULL,
                        variable = "ls", lim = NULL){
 
   if(is.null(dpt)){
-    dpt <- gdb |> count(DPTO)
+    dpt <- gdb |> dplyr::count(DPTO)
   }
 
   p <- gdb |>
-    mutate(v = gdb[[variable]]) |>
-    filter(!is.na(TH)) |>
-    ggplot() +
-    geom_sf(data = CARTO$AMGBA, alpha = 0.7) +
-    labs(title = tit) +
-    theme_void()
+    dplyr::mutate(v = gdb[[variable]]) |>
+    dplyr::filter(!is.na(TH)) |>
+    ggplot2::ggplot() +
+    ggplot2::geom_sf(data = CARTO$AMGBA, alpha = 0.7) +
+    ggplot2::labs(title = tit) +
+    ggplot2::theme_void()
 
   if(variable == "color"){
     if(is.null(lim)){
       p <- p +
-        geom_sf(aes(fill = I(v)), alpha = 0.6, color = NA)
+        ggplot2::geom_sf(ggplot2::aes(fill = I(v)), alpha = 0.6, color = NA)
     }else{
       p <- p +
-        geom_sf(data = gdb |> mutate(v = gdb[[variable]]) |>
-                  filter(!is.na(TH) & ls > lim),
-                aes(fill = I(v)), color = NA)
+        ggplot2::geom_sf(data = gdb |> dplyr::mutate(v = gdb[[variable]]) |>
+                           dplyr::filter(!is.na(TH) & ls > lim),
+                         ggplot2::aes(fill = I(v)), color = NA)
 
     }
   }else{
     p <- p +
-      geom_sf(aes(fill = v), alpha = 0.9, color = NA) +
-      scale_fill_viridis_c(option = "B", limits = c(0, 1.1))
+      ggplot2::geom_sf(ggplot2::aes(fill = v), alpha = 0.9, color = NA) +
+      ggplot2::scale_fill_viridis_c(option = "B", limits = c(0, 1.1))
   }
 
   # Agregar límite de partidos
-  p <-  p + geom_sf(data = dpt, fill = NA, color = "grey50")
+  p <-  p + ggplot2::geom_sf(data = dpt, fill = NA, color = "grey50")
 
   if(!is.null(cbox)){
     p <- p +
-      coord_sf(xlim = cbox[c(1,3)],
-               ylim = cbox[c(2,4)])
+      ggplot2::coord_sf(xlim = cbox[c(1,3)], ylim = cbox[c(2,4)])
   }
-
 
   return(p)
 }

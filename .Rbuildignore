@@ -7,4 +7,9 @@
 ^_PhD$
 ^template$
 ^chapters$
- .*\\.yml
+^\.env$
+^figures$
+^script$
+^_bookdown\.yml$
+^_output\.yml$
+^index\.Rmd$

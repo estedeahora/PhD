@@ -12,12 +12,22 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
 Imports: 
     cli,
-    here,
     dplyr,
+    factoextra,
+    ggrepel,
+    ggplot2,
+    ggtern,
+    lpSolve,
+    OasisR,
+    Rglpk,
+    rlang,
+    segregation,
+    slam,
+    sf,
     stringr,
     tidyr,
     tidyselect,
     purrr
 Depends: 
-    R (>= 3.5)
+    R (>= 4.1.0)
 LazyData: true
