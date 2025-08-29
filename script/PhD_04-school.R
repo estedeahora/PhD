@@ -8,8 +8,9 @@ cli::cli_h2(col_blue("Análisis Educativo (EDU)"))
 
 EDU <- list()
 
-# cli_h2(col_blue("Modelo LP"))
-# cli_alert_warning("Basado en script Tesis MGAIE: 'script/MGAIE-ANEXO Modelos lp.R'.")
+# Definir si se realizan los procesamientos más costosos
+#   o se cargan datos procesados anteriormente
+forzar <- FALSE
 
 # Cargar datos --------------------------------------
 
@@ -41,9 +42,42 @@ EDU <- list()
     rm(f)
   }
 
+  if(!exists("AUX", inherits = F)){
+    f <- fs::path("data-workflow", "final-data", "AUX-data", ext = "rda")
+
+    cli_alert_info(
+      col_silver("Cargando datos auxiliares (`AUX`): {.path {fs::path_rel(f)}}")
+    )
+
+    load(file = f)
+    rm(f)
+  }
+
 # Preparar datos -------------------------------------
 
   cli::cli_li(col_yellow("Procesar y preparar datos para el análisis"))
+
+### ╠ Base de Escuelas Secundarias ----------------------
+
+  cli::cli_alert_success(cli::col_grey("Preparando base de escuelas secundarias (`SEC`)"))
+
+  SEC <- CARTO$ESCUELAS |>
+    filter(NIV_SEC & !is.na(N_MATRIC))
+
+  cli::cli_alert_success(cli::col_grey("Agregando información sobre segregación escolar"))
+
+  SEC_seg <- SEC |>
+    filter(!is.na(PRI) | !is.na(SEC) | !is.na(SUP)) |>
+    st_drop_geometry() |>
+    mutate(across(PRI:SUP, ~.x*N_MATRIC)) |>
+    select(CUEANEXO, PRI:SUP) |>
+    pivot_longer(cols = PRI:SUP,  names_to = "EDU",  values_to = "N") |>
+    mutual_local(group = "EDU", weight = "N", unit = "CUEANEXO",
+                 se = TRUE, wide = TRUE)
+
+  SEC <- left_join(SEC, SEC_seg, by = "CUEANEXO")
+
+  rm(SEC_seg)
 
 ### ╠ Identificación de nodos para cada RADIO/ESCUELA (from/to) --------
 
@@ -53,8 +87,7 @@ EDU <- list()
     arrange(ID) |>
     st_point_on_surface()
 
-  ESC <- CARTO$ESCUELA  |>
-      filter(NIV_SEC & !is.na(N_MATRIC))  |>
+  ESC <- SEC  |>
       select(CUEANEXO)  |>
       arrange(CUEANEXO)
 
@@ -107,9 +140,9 @@ EDU <- list()
   from <- unique(RAD$from)
   to <- unique(ESC$to)
 
-  rm(nodes)
+  rm(nodes, CALLE)
 
-### ╠ Matriz de distancias/costos --------------------------------------
+### ╚ Construir matriz de distancias/costos --------------------------------------
   # Matrices de 3273 x 13995 = 43.841.835 elementos
 
   cli::cli_li(col_yellow("Calcular distancias entre radios y escuelas"))
@@ -134,67 +167,79 @@ EDU <- list()
                  values_to = "DIS_l")
 
   cli::cli_process_done()
+  setDT(DIS_l, key = c("ID", "CUEANEXO"))
 
   # Distancias entre nodos por trama (DIS net)
-{
-  tictoc::tic("")
-  # ~ 26/31 mins
-  cli::cli_process_start(cli::col_grey("Calculando distancias por red urbana"))
-  DIS_n <- igraph::distances(
-    graph = blended,
-    v = from,
-    to = to,
-    weights = blended %>% activate(edges) %>% pull(weight)
-  )
-  cli::cli_process_done()
-  cat(col_blue("Tiempo de ejecución"))
-  tictoc::toc()
-  invisible(gc())
-}
+  if(forzar){
+    tictoc::tic("")
+    # ~ 26/31 mins
+    cli::cli_process_start(cli::col_grey("Calculando distancias por red urbana"))
+    DIS_n <- igraph::distances(
+      graph = blended,
+      v = from,
+      to = to,
+      weights = blended %>% activate(edges) %>% pull(weight)
+    )
+    cli::cli_process_done()
+    cat(col_blue("Tiempo de ejecución"))
+    tictoc::toc()
+    invisible(gc())
 
-  cli_alert_success(col_silver("Armado de bases de distancias"))
+    save(DIS_n, file = "_draft/LP_00_distancias-nodos.Rdata")
+
+  }else{
+    cli::cli_process_start(cli::col_grey("Cargando datos de distancias por red urbana de {.path _draft/LP_00_distancias-nodos.Rdata}"))
+    load(file = "_draft/LP_00_distancias-nodos.Rdata")
+    cli::cli_process_done()
+  }
+
+  cli::cli_process_start(cli::col_grey("Armado de bases de distancias (`db_DIS`)"))
+
   rownames(DIS_n) <- from
-  colnames(DIS_n) <- to
+  DIS_n <- as.data.table(DIS_n, keep.rownames = "from")
 
-  DIS_n <- DIS_n |>
-    as_tibble(rownames = "from") |>
-    pivot_longer(cols = -from, names_to = "to", values_to = "DIS_n")
+  # colnames(DIS_n) <- to
+  setnames(DIS_n, old = names(DIS_n)[-1], new = to)
 
-  DIS_n <- RAD |>
-    st_drop_geometry() |>
-    left_join(DIS_n, by = "from")
+  DIS_n <- melt(DIS_n, verbose = TRUE, id.vars = "from",
+                variable.factor = FALSE, variable.name = "to",
+                measure.vars = to, value.name = "DIS_n")
 
-  DIS_n <- ESC |>
-    st_drop_geometry() |>
-    left_join(DIS_n, by = "to", relationship = "many-to-many")
+  setkey(DIS_n, "from")
+  setindex(DIS_n, "to")
 
-  DIS_n <- DIS_n |>
-    mutate(across(.cols = c(RAD_min, ESC_min), drop_units),
-           across(.cols = c(DIS_n, RAD_min, ESC_min),
-                  .fns = ~round(.x ) ),
-           # Distancia total (sumando camino lineal hasta nodo)
-           DIS_t = DIS_n + RAD_min + ESC_min,
-           # Transformar distancias: mts -> km
-           across(.cols = c(DIS_n, DIS_t),
-                  .fns = ~.x/1000) ) |>
-    select(ID, CUEANEXO, DIS_n, DIS_t)
+  RAD <- st_drop_geometry(RAD)
+  setDT(RAD, key = "from")
+
+  ESC <- st_drop_geometry(ESC)
+  setDT(ESC, key = "to")
+
+  # Agregar datos de radios (por nodo 'from')
+  DIS_n <- DIS_n[RAD, on = .(from), allow.cartesian = TRUE]
+
+  # Agregar datos de escuelas (por nodo 'to')
+  DIS_n <- DIS_n[ESC, on = .(to), allow.cartesian = TRUE]
+
+  # (a) Usar precisión en metros (redondear); (b) Transformar distancias (mts -> km)
+  DIS_n <- DIS_n[,`:=`(RAD_min = round(drop_units(RAD_min))/1000,
+                       ESC_min = round(drop_units(ESC_min))/1000,
+                       DIS_n   = round(DIS_n)/1000)
+                   ][ , .(ID, CUEANEXO, DIS_n,
+                          # (c) Distancia total (sumando camino lineal hasta nodo)
+                          DIS_t = DIS_n + RAD_min + ESC_min)]
+
+  setkeyv(DIS_n, c("ID", "CUEANEXO"))
 
   # Base de distancias lineales + por red urbana (matriz compacta)
-  # ex DIS2
-  db_DIS <- full_join(DIS_l, DIS_n,
-                    by = c("ID", "CUEANEXO") ) |>
-    arrange(ID, CUEANEXO)
+  db_DIS <- merge(DIS_l, DIS_n, by = c("ID", "CUEANEXO"),
+                  all = TRUE, allow.cartesian = TRUE)
 
-  save(db_DIS, file = fs::path("_draft", "LP_01_distancias", ext = "RData"))
-  # load(fs::path("_draft", "LP_01_distancias", ext = "RData"))
+  cli::cli_process_done()
 
-  # Matriz de distancias
-  # ex DIS3
-  DIS <- db_DIS |>
-    pivot_wider(id_cols = ID, names_from = CUEANEXO, values_from = DIS_t) |>
-    data.frame(check.names = F, row.names = 1)
+  # cli::cli_alert_info(col_silver("Guardando base de distancias (`db_DIS`) en {.path _draft/LP_01_distancias.RData}"))
+  # save(db_DIS, file = fs::path("_draft", "LP_01_distancias", ext = "RData"))
 
-  rm(DIS_l, DIS_n, ESC, RAD, from, to)
+  rm(DIS_l, DIS_n, ESC, RAD, from, to, blended)
 
   invisible(gc())
 
@@ -262,10 +307,88 @@ EDU <- list()
 
 # Figuras ---------------------------------------
 
-### ╠ FIG 7.3: Distribución de escuelas -------------------------------
 ### ╠ FIG 7.1: Allocation model -------------------------------
 
   file.edit("C:/Users/este.de.ahora/Documents/_investigacion/_publicado/2023.06 - Artículo. residential-and-school-segregation/analysis/script/03_Fig1_allocation-model.R")
+
+### ╠ FIG 7.2: Distribución de escuelas -------------------------------
+
+  p2 <- ggplot() +
+    geom_sf(data = CARTO$AMGBA) +
+    geom_sf(data = SEC,
+            aes(size = N_MATRIC^2, color = SECTOR),
+            alpha = 0.2) +
+    geom_sf(data = CARTO$DPTO_AMBA, color = "grey", fill = NA) +
+    geom_sf(data = CARTO$FFCC1 |> filter(sentido == 1),
+            color = "grey25", alpha = 0.5, linewidth = 0.2) +
+    geom_sf(data = CARTO$FFCC2, color = "grey25",
+            alpha = 0.5, size = 0.75) +
+    facet_wrap(~SECTOR) +
+    scale_color_manual(values = c(Estatal = "darkblue", Privado = "darkgreen")) +
+    coord_sf(xlim = AUX$lim_AMBA[c(1,3)],
+             ylim = AUX$lim_AMBA[c(2,4)]) +
+    guides(size = "none", color = "none") +
+    theme_void() +
+    theme(strip.text = element_text(face = "bold", size = 16))
+
+  ggsave(file = fs::path("figures", "school_distribution", ext = "png"),
+         plot = p2, width = 30, height = 15, units = "cm")
+
+  rm(p2)
+
+### ╠ FIG 7.3: Graficación de función de densidad (Kernel) ------------------
+
+### ╠ FIG 7.4: Descripción de la segregación escolar -------------
+  # Ver: Serrati, P. S. (2024). School and Residential Segregation in the Reproduction of Urban Segregation: A Case Study in Buenos Aires. Urban Studies, 61(2), 313-330. https://doi.org/10.1177/00420980231178401
+  # Local school segregation dispersion (left); and sample variogram (right)
+
+  # Boxplot school M (left)
+  # TODO Ver M común
+
+  p4a <- SEC |>
+    filter(!is.na(ls)) |>
+    ggplot(aes(x= SECTOR, y = ls)) +
+    geom_boxplot(color = "grey60", outlier.alpha = 0.5,
+                 notch = T, width = 0.2) +
+    geom_violin(alpha = 0.3, color =NA, aes(fill = SECTOR)) +
+    # geom_hline(yintercept = SEGRE$tab_indic$School[3],
+    #            color = "tomato3", linetype = 3 ) +
+    # geom_text(x = 1.5, y = SEGRE$tab_indic$School[3] + 0.03,
+    #           label = "Global M Index", color = "tomato4") +
+    guides(fill = "none") +
+    labs(x = "",
+         y = "Local Mutual Information Index") +
+    ggsci::scale_fill_d3() +
+    theme_minimal()
+
+  # Semivariogram (right)
+  p4b <- EDU$EDU3 |>
+    ggplot(aes(x = dist)) +
+    geom_ribbon(aes(ymin = low, ymax = up),
+                color = "lightsteelblue3", fill = "grey60",
+                alpha = 0.1 ) +
+    geom_point(aes(y = gamma), color = "darkolivegreen") +
+    geom_col(aes(y = np/800000), alpha = 0.3, fill = "dodgerblue3" ) +
+    scale_y_continuous(expression(paste("Semivarianza ", gamma, "(h)", sep = "")),
+                       limits = c(0, NA),
+                       sec.axis = sec_axis(~. * 800000, name = "Conteo de relaciones (n)") ) +
+    scale_x_continuous("Distancia entre escuela en metros (h)") +
+    theme_minimal()
+
+  ggsave(file = fs::path("figures", "school_variogram", ext = "png"),
+         plot = ggarrange(p4a, p4b), width = 20, height = 10, units = "cm")
+
+  rm(p4a, p4b)
+
+### ╠ FIG 7.5: Distancia promedio de los nodos de radios a escuelas -------------------------------------------------
+
+### ╠ FIG 7.6: Relationship between real and estimated segregation of each school (left); and Location of schools according to difference in local segregation (right) -----------------
+
+  # Ver: Serrati, P. S. (2024). School and Residential Segregation in the Reproduction of Urban Segregation: A Case Study in Buenos Aires. Urban Studies, 61(2), 313-330. https://doi.org/10.1177/00420980231178401
+  # Relationship between real and estimated segregation of each school (left); and Location of schools according to difference in local segregation (right)
+  file.edit("C:/Users/este.de.ahora/Documents/_investigacion/_publicado/2023.06 - Artículo. residential-and-school-segregation/analysis/script/03_Fig4_local-segregation.R")
+
+### ╠ FIG 7.7: Composición de escuelas (colores + gráfico ternario) ------------------------------
 
 
 ### ╚ FIG App ?.?: Comparación entre distancias lineales y por red vial --------------------
@@ -397,33 +520,32 @@ rm(i, a, base)
 
   file.edit("C:/Users/este.de.ahora/Documents/_investigacion/_publicado/2023.06 - Artículo. residential-and-school-segregation/analysis/script/03_Tables.R")
 
+### ╚ TAB06: Comparación de distancias lineales y por red urbana ------------
   # Comparación de distancias lineales y por red urbana
 
-  tab6a <- DIS2 %>%
-    mutate(DIF = DIS_t - DIS_l) %>%
-    left_join(AUX$RADIO[c("ID", "TIPO_HAB2")], by = "ID") %>%
-    group_by(TIPO_HAB2) %>%
+  aux_TAB06a <- db_DIS |>
+    mutate(DIF = DIS_t - DIS_l) |>
+    left_join(AUX$RADIO[c("ID", "TIPO_HAB2")], by = "ID") |>
+    group_by(TIPO_HAB2)  |>
     summarise(DIF = mean(DIF))
 
-  tab6b <- DIS2 %>%
+  aux_TAB06a <- DIS2 |>
     mutate(DIF = DIS_t - DIS_l,
            DIS_c = cut(DIS_l, breaks = c(0, 0.75, 2, 20),
                        labels = c("Menos de 750m", "Entre 750m y 2km",
-                                  "Más de 2km") ) ) %>%
-    left_join(AUX$RADIO[c("ID", "TIPO_HAB2")], by = "ID") %>%
-    group_by(TIPO_HAB2, DIS_c, .drop = T) %>%
-    summarise(DIF = mean(DIF)) %>%
-    filter(!is.na(DIS_c) ) %>%
+                                  "Más de 2km") ) )  |>
+    left_join(AUX$RADIO[c("ID", "TIPO_HAB2")], by = "ID") |>
+    group_by(TIPO_HAB2, DIS_c, .drop = T) |>
+    summarise(DIF = mean(DIF)) |>
+    filter(!is.na(DIS_c) ) |>
     pivot_wider(id_cols = TIPO_HAB2, names_from = DIS_c, values_from = DIF)
 
-  tab6 <- cbind(tab6a, tab6b[-1])
+  EDU$TAB06 <- cbind(aux_TAB06a, aux_TAB06a[-1])
+
+  rm(aux_TAB06a, aux_TAB06a)
 
 # Guardar resultados ----------------------------------------------------------
 
-# save(res, margDEM, tab1, tab2, tab3, tab4, tab5, tab6,
-#      file = "_lpRES.RData")
+  usethis::use_data(EDU, overwrite = TRUE)
 
-rm(AUX, CARTO, PRI, SEC)
-rm(DIS, DIS2, DIS3, margOFE)
-rm(res, margDEM, tab1, tab2, tab3, tab4, tab5, tab6, tab6a, tab6b)
-
+# rm(AUX, CARTO, CALLE)
