@@ -1049,45 +1049,45 @@ MOV <- list()
 
 ### Comparación de segregación destino y de hogares por TH ----------------
 
-  left_join(
-    # Residencial
-    bind_rows(
-      mutual_total(db_hog, group = "name", unit = "ID_FRAC",  weight = "value", se = F) |>
-        filter(stat == "M") |> mutate(stat = "TOTAL") |> select(stat, est),
-      mutual_total(db_hog, group = "name", unit = "TH", weight = "value", se = F) |>
-        filter(stat == "M") |> mutate(stat = "Between") |> select(stat, est),
-      mutual_total(db_hog, group = "name", unit = "ID_FRAC", within = "TH", weight = "value") |>
-        filter(stat == "M") |> mutate(stat = "Within") |> select(stat, est),
-    ) |>
-      mutate(est = round(est, 3),
-             p = est / sum(est[1]) * 100) |>
-      select(stat, est_res = est, p_res = p),
-
-    # Destinos
-    bind_rows(
-      mutual_total(db_dest, group = "name", unit = "DES",  weight = "value", se = F) |>
-        filter(stat == "M") |> mutate(stat = "TOTAL") |> select(stat, est),
-      mutual_total(db_dest, group = "name", unit = "in_TH", weight = "value", se = F) |>
-        filter(stat == "M") |> mutate(stat = "Between") |> select(stat, est),
-      mutual_total(db_dest, group = "name", unit = "DES", within = "in_TH", weight = "value") |>
-        filter(stat == "M") |> mutate(stat = "Within") |> select(stat, est),
-    ) |>
-      mutate(est = round(est, 3),
-             p = est / est[1] * 100) |>
-      select(stat, est_des = est, p_des = p)
-  ) |>
-    as_tibble()
-
-  left_join(
-    mutual_within(db_hog, group = "name", unit = "ID_FRAC",
-                  within = "TH", weight = "value", wide = TRUE ) |>
-      select(TH, M_hog = M),
-    mutual_within(db_dest, group = "name", unit = "DES",
-                  within = "in_TH", weight = "value", wide = TRUE) |>
-      select(TH = in_TH, M_dest = M),
-  ) |>
-    mutate(diff = round(M_dest - M_hog, 3) ) |>
-    as_tibble() |>
-    arrange(-abs(diff))
-
-  segplot(db_dest, group = "name", unit = "DES",  weight = "value")
+  # left_join(
+  #   # Residencial
+  #   bind_rows(
+  #     mutual_total(db_hog, group = "name", unit = "ID_FRAC",  weight = "value", se = F) |>
+  #       filter(stat == "M") |> mutate(stat = "TOTAL") |> select(stat, est),
+  #     mutual_total(db_hog, group = "name", unit = "TH", weight = "value", se = F) |>
+  #       filter(stat == "M") |> mutate(stat = "Between") |> select(stat, est),
+  #     mutual_total(db_hog, group = "name", unit = "ID_FRAC", within = "TH", weight = "value") |>
+  #       filter(stat == "M") |> mutate(stat = "Within") |> select(stat, est),
+  #   ) |>
+  #     mutate(est = round(est, 3),
+  #            p = est / sum(est[1]) * 100) |>
+  #     select(stat, est_res = est, p_res = p),
+  #
+  #   # Destinos
+  #   bind_rows(
+  #     mutual_total(db_dest, group = "name", unit = "DES",  weight = "value", se = F) |>
+  #       filter(stat == "M") |> mutate(stat = "TOTAL") |> select(stat, est),
+  #     mutual_total(db_dest, group = "name", unit = "in_TH", weight = "value", se = F) |>
+  #       filter(stat == "M") |> mutate(stat = "Between") |> select(stat, est),
+  #     mutual_total(db_dest, group = "name", unit = "DES", within = "in_TH", weight = "value") |>
+  #       filter(stat == "M") |> mutate(stat = "Within") |> select(stat, est),
+  #   ) |>
+  #     mutate(est = round(est, 3),
+  #            p = est / est[1] * 100) |>
+  #     select(stat, est_des = est, p_des = p)
+  # ) |>
+  #   as_tibble()
+  #
+  # left_join(
+  #   mutual_within(db_hog, group = "name", unit = "ID_FRAC",
+  #                 within = "TH", weight = "value", wide = TRUE ) |>
+  #     select(TH, M_hog = M),
+  #   mutual_within(db_dest, group = "name", unit = "DES",
+  #                 within = "in_TH", weight = "value", wide = TRUE) |>
+  #     select(TH = in_TH, M_dest = M),
+  # ) |>
+  #   mutate(diff = round(M_dest - M_hog, 3) ) |>
+  #   as_tibble() |>
+  #   arrange(-abs(diff))
+  #
+  # segplot(db_dest, group = "name", unit = "DES",  weight = "value")
