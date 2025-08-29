@@ -79,6 +79,30 @@ forzar <- FALSE
 
   rm(SEC_seg)
 
+### ╠ Armado de ppp --------------------------------------
+
+  cli::cli_alert_success(cli::col_grey("Armando objeto ppp de escuelas secundarias"))
+
+  # Ventana (w)
+  w <- as.owin(CARTO$AMGBA)
+
+  # Objeto ppp (Point Pattern Process)
+  set.seed(123)
+  ESC_aux <- SEC |>
+    st_jitter(amount = 50) |>
+    mutate(x = st_coordinates(geometry)[,1],
+           y = st_coordinates(geometry)[,2]) %>%
+    st_drop_geometry()
+
+  ESC_ppp <- ppp(x = ESC_aux$x, y = ESC_aux$y,
+                 marks = ESC_aux$SECTOR,
+                 window = w)  |>
+    rescale(1000, "km")
+
+  attr(ESC_ppp, "weights") <- ESC_aux$N_MATRIC
+
+  rm(w, ESC_aux)
+
 ### ╠ Identificación de nodos para cada RADIO/ESCUELA (from/to) --------
 
   RAD <- CARTO$RADIO |>
@@ -245,6 +269,56 @@ forzar <- FALSE
 
 # Análisis -----------------------------------------
 
+### ╠ Intensidad global de oferta (vacantes / escuelas)  --------------------------
+  # Indica cantidad de vacantes/escuela por km2 (suponiendo homogeneidad)
+
+  cli::cli_li(col_yellow("Calcular intensidad de escuelas secundarias (EDU1)"))
+
+  EDU$EDU1 <- rbind.data.frame(
+    map_dbl(list("Estatal", "Privado", c("Estatal", "Privado")),
+            ~intensity(ESC_ppp[marks(ESC_ppp) %in% .x])) |>
+      round(3),
+    map_dbl(list("Estatal", "Privado", c("Estatal", "Privado")),
+            ~intensity(ESC_ppp[marks(ESC_ppp) %in% .x],
+                       weights = attr(ESC_ppp, "weights")[marks(ESC_ppp) %in% .x])) |>
+      round(1)
+    ) |>
+    set_names(c("Estatal", "Privado", "Total")) |>
+    mutate(Intensidad = c("Escuelas", "Alumnos")) |>
+    select(Intensidad, everything()) |>
+    as_tibble()
+
+### ╠ Estimación de la densidad de oferta --------------------------
+
+  cli::cli_li(col_yellow("Estimar densidad de escuelas secundarias (EDU2)"))
+
+  EDU$EDU2 <- ESC_ppp |>
+    rescale(1/1000, "m") |>
+    adaptive.density(method = "kernel", dimyx = c(300, 300),
+                     weights = attr(ESC_ppp, "weights"))
+
+### ╠ Variograma de correlación espacial (segregación) ----------------------------------
+
+  cli::cli_li(col_yellow("Calcular variograma de segregación escolar (EDU3)"))
+
+  vg <- SEC |>
+    filter(!is.na(ls)) |>
+    variogram(object = ls ~ 1, width = 500, cutoff = 7500)
+
+  CI_vg <- variosig::envelope(vario = vg, formula = ls ~ 1,
+                              width = 500, cutoff = 7500,
+                              conf.level = 0.99, nsim = 2000,
+                              data = SEC |> filter(!is.na(ls)) |> as_Spatial() )
+
+  EDU$EDU3 <- vg |>
+    mutate(low = CI_vg$lower,
+           up = CI_vg$upper)
+
+  attr(EDU$EDU3, "signific") <- variosig::envsig(CI_vg, method = "eb")
+
+  # fit_vg <- fit.variogram(vg, model = vgm("Sph"))
+  rm(vg, CI_vg)
+
 ### ╠ Calculo de lp  ----------------------------------------------------------
 
   cli::cli_li(col_yellow("Generar allocation model (EDU4)"))
@@ -337,6 +411,32 @@ forzar <- FALSE
   rm(p2)
 
 ### ╠ FIG 7.3: Graficación de función de densidad (Kernel) ------------------
+
+  p3 <- ggplot() +
+    stars::geom_stars(data = EDU$EDU2 |>
+                        stars::st_as_stars(),
+                      aes(fill = v), alpha = 0.8) +
+    geom_sf(data = CARTO$DPTO_AMBA, fill = NA,
+            color = "grey", size = 0.5) +
+    geom_sf(data = CARTO$FFCC1 |> filter(sentido == 1),
+            color = "grey25", alpha = 0.5, linewidth = 0.2) +
+    geom_sf(data = CARTO$FFCC2, color = "grey25",
+            alpha = 0.5, size = 0.75) +
+    geom_sf(data = SEC, color = "black",
+            size = 0.1, alpha = 0.15) +
+    coord_sf(xlim = AUX$lim_AMBA[c(1,3)],
+             ylim = AUX$lim_AMBA[c(2,4)]) +
+    scale_fill_viridis_c(option = "turbo", na.value = "white",
+                         direction = 1) +
+    labs(caption  = paste0("Método: Kernel adaptativo"),
+         #title = "Densidad estimada de vacantes en escuelas secundarias",
+         fill = "Densidad")+
+    theme_void()
+
+  ggsave(file = fs::path("figures", "school_density", ext = "png"),
+         plot = p3, width = 20, height = 20, units = "cm")
+
+  rm(p3)
 
 ### ╠ FIG 7.4: Descripción de la segregación escolar -------------
   # Ver: Serrati, P. S. (2024). School and Residential Segregation in the Reproduction of Urban Segregation: A Case Study in Buenos Aires. Urban Studies, 61(2), 313-330. https://doi.org/10.1177/00420980231178401
@@ -549,3 +649,58 @@ rm(i, a, base)
   usethis::use_data(EDU, overwrite = TRUE)
 
 # rm(AUX, CARTO, CALLE)
+
+
+
+# Otros resultados ---------------------------
+
+### Intens. inhomogénea: Conteo por cuadrantes --------------------------------
+
+  # # Tesselación Hexagonal (filtrado de áreas pequeñas)
+  # # Hexágonos de 750 metros (se filtran hexágonos que son menos de 10% de un hexágono normal)
+  # H <- hextess(ESC_ppp, 0.750)
+  # H <- H[tile.areas(H) > max(tile.areas(H)) * 0.1]
+  #
+  # # Test de hipótesis
+  # # Para validad $H_0$ el p-value debe ser mayor que un nivel de confianza establecido.
+  # ## Hip nula: la intensidad es homogénea. La división por cuadrantes responde a una distribución de Poisson (CSR)
+  # ## Hip alternativa: la intensidad no es homogénea en una forma no especificada
+  #
+  # # 99.9 % de rechazo a H0
+  #
+  # EDU$ppp_p <- map_dbl(list("Estatal", "Privado", c("Estatal", "Privado")),
+  #              ~quadrat.test(ESC_ppp[marks(ESC_ppp) %in% .x], nsim = 5000,
+  #                            tess = H, method = "MonteCarlo")$p.value) |>
+  #   set_names(c("Estatal", "Privado", "Total"))
+  #
+  # rm(H)
+  #
+  # a1 <- map_dbl(c(0.500, 1.000, 2.000, 4.000, 6.000, 8.000),
+  #               \(distancia){
+  #                 quadratcount.ppp(ESC_ppp,
+  #                                  tess = hextess(ESC_ppp, distancia)) |>
+  #                   quadrat.test(method = "MonteCarlo", nsim = 10000) |>
+  #                   pluck("p.value")
+  #               }) |>
+  #   set_names(paste0("HEX_size_", c(500, 1000, 2000, 4000, 6000, 8000)))
+
+### Estimación de la densidad --------------------------
+
+  # # Optimizar el valor sigma ("esfumado").
+  # s <- bw.ppl(ESC_ppp)
+  # # bw.diggle(ESC_ppp)
+  # # bw.scott(ESC_ppp)
+  #
+  # # Cálculo de intensidad (Kernel)
+  # EDU$ppp_density <- ESC_ppp |>
+  #   rescale(1/1000, "m") |>
+  #   density(diggle = TRUE,  edge = TRUE, sigma = s * 1000, dimyx = c(300, 300),
+  #           verbose = TRUE, weights = attr(ESC_ppp, "weights"))
+  #
+  # attr(EDU$ppp_density, "sigma") <- s
+  # rm(s)
+  #
+  # EDU$EDU2 <- ESC_ppp |>
+  #   rescale(1/1000, "m") |>
+  # adaptive.density(method = "nearest", k = 60, dimyx = c(300, 300),
+  #                  weights = attr(ESC_ppp, "weights"))
