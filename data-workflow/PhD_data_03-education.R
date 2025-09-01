@@ -1,7 +1,7 @@
 # Cargar educación
 # ---------------*
 
-cli_h2(col_blue("Cargando datos educativos"))
+cli_h2(col_blue("Cargando datos educativos (RA + APRENDER)"))
 
 if(!exists("CARTO", inherits = F) || is.null(CARTO$RADIO[["ls"]])){
   cli_alert_info(

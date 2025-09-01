@@ -13,7 +13,7 @@
 # DONE    Revisar FRAC (0200113 y otros están sin población).
 # DONE    Calcular segregación local de radio de residencia.
 
-cli_h2(col_cyan("Cargando datos de movilidad (ENMODO2018)"))
+cli_h2(col_blue("Cargando datos de movilidad (ENMODO2018)"))
 
 if(!exists("CARTO", inherits = F) || is.null(CARTO$ESCUELAS)){
   cli_alert_info(

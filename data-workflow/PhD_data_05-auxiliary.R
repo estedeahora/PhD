@@ -1,8 +1,23 @@
 # Límite para mapa
 
-load(file = here::here("data-workflow", "final-data", "CARTO.rda"))
+cli_h2(col_blue("Armando datos auxiliares (AXU)"))
+
+if(!exists("CARTO", inherits = F) || any("FRAC" %in% names(CARTO)) ){
+  cli_alert_info(
+    col_silver(
+      paste0("Cargando cartografía",
+             ": {.path data-workflow/final-data/PhD_04_carto-censo.RData}.")
+    )
+  )
+
+  load(file = here::here("data-workflow", "final-data",
+                         "CARTO.rda"))
+
+}
 
 # Zonas de interés ------------------------------------------------
+
+  cli::cli_li(col_yellow("Definiendo zonas de interés."))
 
   # Detalle 1: ZN
   # Zona norte (Vicente López y San Isidro) + CABA
@@ -24,6 +39,7 @@ load(file = here::here("data-workflow", "final-data", "CARTO.rda"))
   ZN4 <- CARTO$RADIO |>
     filter(DPTO %in% c("274", "028", "658"))
   # ZN4 <- CARTO$RADIO |>
+
 # Límites de zonas ------------------------------
 
   ZN1_lim <- ZN1 |> filter(!is.na(TH) & DPTO %in% c("756", "001")) |> st_bbox()
@@ -41,6 +57,8 @@ load(file = here::here("data-workflow", "final-data", "CARTO.rda"))
 
 # Variables para matriz de indicadores (mobilities) -----------------------------
 
+  cli::cli_li(col_yellow("Cargando variables para matriz de indicadores."))
+
   VAR_cat <-  readxl::read_xlsx(fs::path("data-workflow", "raw-data",
                                          "mim_Variables", ext = "xlsx"),
                                 sheet = "CAT" ) |>
@@ -51,6 +69,8 @@ load(file = here::here("data-workflow", "final-data", "CARTO.rda"))
                                sheet = "VAR" )
 
 # Bases finales ---------------------------------------------------
+
+  cli::cli_li(col_yellow("Armando lista de datos auxiliares."))
 
   AUX <- list()
 
