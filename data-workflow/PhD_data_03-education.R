@@ -42,14 +42,16 @@ if(!exists("CARTO", inherits = F) || is.null(CARTO$RADIO[["ls"]])){
   request <- GMLFile$new(fileName)
   client <- WFSCachingClient$new(request)
 
+  AMBA_bf <- CARTO$AMGBA |> st_buffer(dist = 1000) |> st_concave_hull(ratio = 0.2)
+
   CARTO$ESCUELAS <- client$getLayer("establecimiento_educativo", quiet = TRUE) |>
     mutate(CUE = str_sub(cue, start = 1L, end = -3L),
            ANEXO = str_sub(cue, start = -2L, end = -1L),
            PROV = str_sub(cue, start = 1L, end = 2L)) |>
     select(CUEANEXO = cue, CUE, ANEXO, PROV, name = fna,
            SECTOR = ges, mde, nen, geometry = the_geom) |>
-    st_transform(st_crs(CARTO$AMGBA)) |>
-    st_intersection(CARTO$AMGBA) |>
+    st_transform(st_crs(AMBA_bf)) |>
+    st_intersection(AMBA_bf) |>
     filter(str_detect(mde, "Común")) |>
     mutate(ID1 = PhD_CUE_to_ID(CUEANEXO),
            NIV_PRI = str_detect(nen, "Común-Primaria 6años|Común-Primaria 7años"),
@@ -59,6 +61,7 @@ if(!exists("CARTO", inherits = F) || is.null(CARTO$RADIO[["ls"]])){
     select(ID1, everything())
 
   unlink(fileName)
+  rm(AMBA_bf)
   rm(request, client, fileName, wfs)
 
 # ╠ APRENDER --------------------------------------------
