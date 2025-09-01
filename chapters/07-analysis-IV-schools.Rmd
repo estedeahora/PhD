@@ -1,75 +1,98 @@
 ---
-editor_options: 
-  markdown: 
+editor_options:
+  markdown:
     wrap: 72
 ---
 
 # La escuela como espacio de diferenciación {#school}
 
-En el capítulo anterior (Capítulo @ref(mobilities)) indagamos sobre cómo
-los *espacios de actividad* modifican las condiciones en las cuales se
-manifiesta la segregación urbana. En dicho capítulo, intencionalmente no
-profundizamos sobre las actividades educativas y, de hecho, excluimos
-del análisis la mayor parte de la población en edad de escolarización
-obligatoria (sólo analizamos los espacios de actividad de las personas
-de 16 años o más). Esta exclusión intensionada se basó en dos motivos.
-Por un lado, la población menor de 16 años tiene menor autonomía en sus
-movilidades y replica, en gran medida, la movilidad de sus responsables.
-Por otro lado, la escuela es espacio de socialziación central en la
-conformación del capital social de las personas y, por lo tanto,
-<!--# CONTINUAR -->
+En el capítulo anterior (Capítulo \@ref(mobilities)) indagamos sobre el
+modo en que los *espacios de actividad* modifican las condiciones en las
+cuales se manifiesta la segregación urbana. En dicho capítulo,
+intencionalmente no profundizamos sobre las 'actividades educativas' y,
+de hecho, excluimos del análisis la mayor parte de la población en la
+edad de escolarización obligatoria (analizamos sólo los espacios de
+actividad de las personas de 16 años o más). Esta exclusión intencionada
+se basó en dos motivos. En primer lugar, desde un punto de vista
+metodológico, la población menor de 16 años tiene menor autonomía en sus
+movilidades y replica, en gran medida, la movilidad de los adultos
+responsables. En este sentido, considerarla en el análisis de
+movilidades y actividades llevaría a una sobre representación
+<!-- (duplicación) --> de las movilidades de las personas que generan
+los traslados de cuidado.
 
-<!--#  -->Usar @Tammaru2021 para justificar la centralidad de la
-escuela, en tanto actúa como componente intergeneracional
+Por otro lado, desde un punto de vista teórico vinculado al problema
+principal de la tesis, este trato diferenciado de la educación se basa
+en el rol que esta ocupa en el *enclasamiento* y la reproducción de las
+estructuras sociales. En las sociedades contemporaneas la escuela es uno
+de los espacio principales de socialización. A diferencia de lo que
+sucede en las actividades laborales, la *co-presencia escolar* se basa
+en relaciones no-jerarquizadas entre los estudiantes. Por este motivo,
+mientras que en las actividades laborales la co-presencia entre personas
+de diferentes grupos sociales puede estar mediado por jerarquías
+laborales y por una 'diferenciación funcional' y estratificada de los
+vínculos, en el ámbito educativo la co-presencia de los grupos se basa
+en relaciones 'entre pares', lo cual promueve la integración social y la
+conformación del *capital social* de las
+personas.<!--# [escena de Okupas]--><!-- @Silm2014: la escuela como espacio de actividad 'forzado' (al igual que el trabajo): "Schools are similar to the workplaces in being a domain for ‘forced’ social contact" [@Silm2021, p. 202].-->
 
-<!--# Se hace una breve presentación de los antecedentes sobre la relación entre segregación en los dominios residencial y educativo. En relación a esto, se recupera la importancia de la segregación educativa en la construcción del capital social y el logro educativo, enfatizando su rol como mecanismo de enclasamiento.  -->
+A su vez, la educación actúa como 'mediador' o 'ecualizador' entre el
+origen de clase y el (futuro) estatus profesional [@Solis2019],
+contribuyendo en los procesos de *alocación* de las personas en el
+mercado laboral y, por lo tanto, en su *enclasamiento*. Como resultado
+de esto, en las sociedades complejas, la educación ocupa un lugar
+preponderante en las estrategias de reproducción social de las familias
+[@Bourdieu1970]. <!-- La escuela como espacio de separación -->Estas
+estrategias se desarrollan en el contexto de una diferenciación y
+estratificación de la oferta educativa [@Serrati2023a] que lleva a las
+familias a elegir selectivamente las escuelas de destino como forma de
+mantener las desigualdades entre los grupos [@Lucas2001]. Como resultado
+de estos mecanismos, las escuelas se constituyen en espacios que pueden
+(al menos potencialmente) recibir diferentes grupos sociales y, por lo
+tanto, reproducir la segregación urbana. En relación a esto
+@Lubienski2009 [p. 487] señala que 'la elección de escuela es un
+problema inherentemente espacial', que actúa mediando entre el lugar de
+residencia y la escuela y, por lo tanto, en el modo en el que la
+segregación residencial se *retraduce* en segregación
+escolar.[^07-analysis-iv-schools-1] Por ello, la segregación en el
+dominio educativo tiene un componente espacial relacionado a la
+ubicación de las escuelas, así como a la distancia entre estas escuelas
+y los lugares de residencia.
 
-<!--# La escuela como espacio de separación -->
+[^07-analysis-iv-schools-1]: En este punto cumple, un rol central la
+    ubicación de las escuelas en la trama urbana. Diferentes trabajos
+    identifican una menor provisión de servicios educativos en los
+    territorios donde viven las poblaciones menos favorecidas
+    [@Alegana2021a; @Ye2018a; @Xiang2018a]. Incluso en escenarios donde
+    existe una buena distribución de escuelas, es necesario considerar
+    la 'calidad' de las escuelas, ya que los trabajos indican que las
+    mejores escuelas suelen estar ubicadas en donde viven los grupos
+    sociales con mayores privilegios [@Nieuwenhuis2021; @Duan2021a;
+    @He2021a], dando lugar a un 'desierto escolar' [@Alexander2020] de
+    facto para los grupos menos favorecidos. A su vez, algunos trabajos
+    analizan la ubicación de escuelas con 'programas especiales'
+    (fundamentalmente 'escuelas charter' en Estados Unidos),
+    identificando un acceso desigual que desfavorece a los grupos con
+    menos recursos y encubre formas de privatización de la educación
+    [@Lee2021a; @Adamson2019a; @Gilblom2019a; @Gilblom2020a]. De forma
+    general, estos trabajos enfatizan que tanto las políticas basadas en
+    elección escolar y área de captación fallan si no consideran la
+    distribución espacial de las escuelas y, en particular, dónde se
+    ubican las escuelas de mayor rendimiento educativo.
 
-En la medida que las sociedades tienden a generar sistemas donde la
-profesionalización cumple un rol mayor en la allocation de las personas
-en el mercado laboral, la educación se transforma en un elemento cada
-vez más importante en las estrategias de reproducción social. Sin
-embargo, diferentes autores han señalado la existencia de diferentes
-realidades escolares, que generan...
-
-Como hemos señalado en trabajos anteriores sobre el sistema educativo de
-la CABA [@Serrati2023a; @DiVirgilio2019d] esta diferencia entre escuelas
-...<!--#  -->
-
-En este sentido, algunos autores señalan la existencia que muchas
-familias elaboran una estrategia unificada de elección de escuela y
-de<!--#  -->
-
-En concreto, la escuela es un ámbito central en el que analizar el
-problema de la segregación...
-
-"Schools are similar to the workplaces in being a domain for ‘forced’
-social contact" [@Silm2021, p. 202].<!--#  -->
-
-Importancia de la escuela como mecanismo que permitiría generar redes
-diversas (capital social), constituyendo así un mecanismo central para
-la obtensión de capital social que luego puede ser central para
-desarrollar ingresos a trabajos (también posiblemente menos segregados)
-y generar ascenso social. Ver este vínculo con círculo de la segregación
-en @Vanham2018 (Van Ham & Tammaru). Todo el texto de Silm (también
-@Silm2014) insisten en lo "forzado" de este espacio de actividad (al
-igual que el trabajo). Es interesante que, mientras en el caso del
-trabajo, compartir espacio puede estar medidado por relaciones
-jerárquicas, de manera que aunque se vea una menor segregación esto
-puede suponer una diferenciación entre los grupos, en el caso de la
-educación, compartir espacios educativos es un indicador de integración
-<!--# [escena de Okupas]-->
-
-Tomando en cuenta estos elementos, <!-- Objetivo -->el objetivo de este
-capítulo es identificar en qué medida la segregación en el dominio
+En resumen, el análisis del dominio educativo permite incorporar la
+dimensión intergeneracional en el análisis *multi-dominio de la
+segregación* [@Tammaru2021; @VanHam2018] y, de esta manera, entender el
+rol de la segregación urbana en la reproducción de las estructuras
+sociales.Tomando en cuenta lo anterior, <!-- Objetivo -->el objetivo de
+este capítulo es identificar en qué medida la segregación en el dominio
 residencial permite explicar la segregación en el dominio escolar en el
 AMBA. <!-- Preguntas --> En este contexto nos preguntamos: ¿existe una
 relación entre la segregación en el dominio residencial y la segregación
 en el dominio escolar en el AMBA? ¿En qué medida la segregación en el
 dominio residencial permite explicar la segregación en el dominio
 escolar? ¿Es posible entender la segregación escolar como un mecanismo
-de diferenciación social que actúa con cierta independencia de las
+de diferenciación social que actúa con relativa independencia de las
 condiciones residenciales o por el contrario replica la segregación
 residencial, contribuyendo a la idea de círculo viciosos de la
 segregación?
@@ -85,45 +108,45 @@ conclusiones del capítulo (\@ref(school-conclussion)).
 
 Desde la publicación del *Informe Coleman* (1966) en Estados Unidos,
 diferentes autores han analizado el vínculo entre la segregación
-residencial y escolar, entendido este vínculo como una de las causales
-del menor rendimiento de los niños afroamericanos.
+residencial y escolar, entendiéndola como una de las causales del menor
+rendimiento de los niños afroamericanos.
 <!-- correlación entre dominios -->Inicialmente centrados en la
-situación de Estados Unidos y en el vínculo racial, estos trabajos
+situación de Estados Unidos y en la dimensión racial, estos trabajos
 destacan la estrecha relación de la segregación residencial y escolar.
 En esta línea, @Farley1975 señaló la fuerte correlación entre ambos
 dominios de la segregación por raza, enfatizando a su vez el efecto
-positivo de las intervenciones estatales para aminorar la
-interdependencia entre ambos dominios. Un conjunto de trabajos
-posteriores [@Rivkin1994; @Reardon2000a; @Reardon2003; @Reardon2014;
-@Frankenberg2013; @Saporito2014; @Serbulo2019] actualizaron estos
-resultados, señalando que luego de un leve declive de la asociación
-(durante un período en el cual se promovieron políticas de desegregación
-escolar), a partir de la década de 1990 la relación se fortaleció
-nuevamente, al punto de afirmar que 'la mayoría de la variación en la
-segregación escolar a nivel de las áreas metropolitanas se explica por
-la segregación residencial' [@Frankenberg2013, p. 558]. De forma
-similar, en el Reino Unido, @Taylor2001 [p. 1835] se identifica un
-'proceso bidireccional de determinación mutua' entre el mercado
-inmobiliario y el mercado educativo, que refuerza ambas formas de
-segregación [@Burgess2005a; @Johnston2017; @Taylor2001].
+positivo de las intervenciones estatales para aminorar esta
+interdependencia. Un conjunto de trabajos posteriores [@Rivkin1994;
+@Reardon2000a; @Reardon2003; @Reardon2014; @Frankenberg2013;
+@Saporito2014; @Serbulo2019] actualizaron estos resultados, señalando
+que luego de un leve declive de la asociación (durante un período en el
+cual se promovieron políticas de desegregación escolar), a partir de la
+década de 1990 la relación se fortaleció nuevamente, al punto de afirmar
+que 'la mayoría de la variación en la segregación escolar a nivel de las
+áreas metropolitanas se explica por la segregación residencial'
+[@Frankenberg2013, p. 558]. De forma similar, en el Reino Unido,
+@Taylor2001 [p. 1835] se identifica un 'proceso bidireccional de
+determinación mutua' entre el mercado inmobiliario y el mercado
+educativo, que refuerza ambas formas de segregación [@Burgess2005a;
+@Johnston2017; @Taylor2001].
 
 Por lo general, <!-- catchmant area -->estos estudios consideran que las
 'áreas de captación' [*catchmant area*] tienen un rol central en la
-comprención sobre cómo se genera la 'conversión' de la segregación
+comprensión sobre cómo se genera la 'conversión' de la segregación
 residencial en segregación educativa. En este sentido, la segregación
 residencial dentro de los distritos escolares profundiza la segregación
 escolar *de facto* [@Kauppinen2022], aunque como señalan
 @Prieto-Latorre2021 y @Bischoff2018 la segregación escolar puede ser
 mayor que la que corresponde a las áreas de
-captación.[^07-analysis-iv-schools-1]
+captación.[^07-analysis-iv-schools-2]
 <!-- Joint residential-school choice -->Tomando en cuenta la
-interconexión entre estos dominios de la segregación que promueven las
-áreas de captación, algunos de estos trabajos encuentran que en estos
-contextos las elecciones residenciales se ven influidas por las
-(potenciales) elecciones educativas[@Dougherty2012a; @Frankenberg2013;
-@Lareau2014a; @Denice2016a; @Candipan2019], lo cual lleva a @Tammaru2021
-[p. 69] a proponer la existencia de una 'elección conjunta de residencia
-y escuela'. A este respecto, @Taylor2001 identifican un 'proceso
+interconexión entre estos dominios que promueven las áreas de captación,
+algunos de estos trabajos encuentran que en estos contextos las
+elecciones residenciales se ven influidas por las (potenciales)
+elecciones educativas[@Dougherty2012a; @Frankenberg2013; @Lareau2014a;
+@Denice2016a; @Candipan2019], lo cual lleva a @Tammaru2021 [p. 69] a
+proponer la existencia de una 'elección conjunta de residencia y
+escuela'. A este respecto, @Taylor2001 identifican un 'proceso
 bidireccional de determinación mutua' entre el mercado inmobiliario y el
 mercado educativo, lo cual implica el reforzamiento de la relación entre
 segregación residencial y educativa por nivel socioeconómico
@@ -131,199 +154,282 @@ segregación residencial y educativa por nivel socioeconómico
 <!-- círculo vicioso -->En resumen, estos estudios respaldan la idea de
 que la segregación escolar y residencial sigue la misma tendencia, lo
 que lleva a un 'círculo vicioso de segregación' [@Tammaru2021;
-@VanHam2018] entre estos dominios de la vida
-social.<!--# ver @Kauppinen2022: 10.1080/02673037.2020.1857707 -->
+@VanHam2018] entre estos dominios de la vida social.
 
-[^07-analysis-iv-schools-1]: Además, como señala Saporito
-    [-@Saporito2017; @Saporito2016], la 'forma' de las áreas de
+[^07-analysis-iv-schools-2]: Además, como señala Saporito
+    [-@Saporito2017b; @Saporito2016a], la 'forma' de las áreas de
     captación puede dar lugar al aumento la segregación escolar. En esta
     línea, se identifica que la creación de nuevas áreas de captación
     puede favorecer una mayor segregación escolar a partir de un
-    'gerrimandering escolar' [@Richards2020; @Richards2015;
-    @Richards2014; @Siegel-Hawley2013; @Siegel-Hawley2014;
-    @Siegel-Hawley2017]. Este efecto es particularmente fuerte cuando
+    'gerrimandering escolar' [@Richards2020b; @Richards2015a;
+    @Richards2014a; @Siegel-Hawley2013b; @Siegel-Hawley2014a;
+    @Siegel-Hawley2017a]. Este efecto es particularmente fuerte cuando
     estas nuevas áreas de captación se vinculan con el 'vuelo blanco' y
-    la expansión de los suburbios [*suburbs*] [@Zhang2021a], dando lugar
+    la expansión de los suburbios [*suburbs*] [@Zhang2021b], dando lugar
     a procesos similares a lo ocurrido en Estados Unidos en las décadas
     de 1960 y 1970
-    [@Sly1978].<!-- Gentrificación --><!--# Relacionado con este problemas, algunos autores analizan el efecto de los cambios urbanos y, en particular, de la gentrificación de las áreas céntricas. Estos trabajos indican que, si bien la gentrificación supone una mayor mixtura residencial, no necesariamente esto se traduce en menor segregación escolar. Por un lado, puede promover la diversidad en ciertas escuelas [@Mordechay2020], pero también puede generar procesos de 'desafiliación', por el cual los recién llegados promuevan una 'corriente' para evitar algunas escuelas locales y aumentar la segregación [@Boterman2020; @Green2022; @Diem2019]. Además, en general la gentrificación residencial sucede en contextos donde se permite una relativa elección de escuela y se promueve la diversificación de los programas en las escuelas locales, con lo cual los procesos de diversidad residencial pueden no estar acompañados de procesos de integración educativa [@Candipan2019; @Mann2020; @Pearman2017]. -->
+    [@Sly1978a].<!-- Gentrificación --><!--# Relacionado con este problemas, algunos autores analizan el efecto de los cambios urbanos y, en particular, de la gentrificación de las áreas céntricas. Estos trabajos indican que, si bien la gentrificación supone una mayor mixtura residencial, no necesariamente esto se traduce en menor segregación escolar. Por un lado, puede promover la diversidad en ciertas escuelas [@Mordechay2020], pero también puede generar procesos de 'desafiliación', por el cual los recién llegados promuevan una 'corriente' para evitar algunas escuelas locales y aumentar la segregación [@Boterman2020; @Green2022; @Diem2019]. Además, en general la gentrificación residencial sucede en contextos donde se permite una relativa elección de escuela y se promueve la diversificación de los programas en las escuelas locales, con lo cual los procesos de diversidad residencial pueden no estar acompañados de procesos de integración educativa [@Candipan2019; @Mann2020; @Pearman2017]. -->
 
 Basado en la situación en los países europeos continentales,
-@Boterman2019a [p. 3062] disputa la idea de que existe una relación
-directa entre la segregación residencial y la segregación escolar. Por
-lo tanto, señalan que en aquellos lugares donde los paisajes educativos
-otorgan una mayor libertad en la elección de la escuela y donde el
-sector privado está más desarrollado, es posible corroborar una
-tendencia de que 'las escuelas están más segregadas que los
-vecindarios'. Esta hipótesis cuestiona una posible relación lineal entre
-ambos tipos de segregación, como se observa en países con un sistema
-público basado en 'áreas de captación'. Reforzando esta hipótesis
-alternativa, @Dignum2022 proponen un modelo basado en agentes que
-explora los mecanismos por los cuales la segregación escolar puede
-exceder la segregación residencial, incluso con bajos niveles de
-'tolerancia'.
+@Boterman2019a [p. 3062] cuestiona la idea de que existe una relación
+lineal entre la segregación en los dominios residencial y escolar. El
+análisis comparado de diferentes países del norte global le permite a
+@Boterman2019a señalar que en los *paisajes
+educativos*<!--# el conjunto de reglas de selección de alumnos y características institucionales que caracterizan al sistema educativo en su conjunto.  -->
+donde el acceso a escuelas está definido fundamentalmente por criterios
+geográficos a través de áreas de captación (como, por ejemplo, Estados
+Unidos o Inglaterra), se refuerza el vínculo entre elecciones
+residenciales y elecciones escolares. Por su parte, en paisajes
+educativos donde priman las políticas de *elección de escuela* y el
+*sector privado* está más desarrollado (o es más asequible por los
+subsidios), es posible corroborar una tendencia que lleva a que 'las
+escuelas están más segregadas que los barrios', cuestionando la relación
+lineal entre ambos dominios de la
+segregación.[^07-analysis-iv-schools-3]
 
-Consistente con este enfoque, algunos estudios enfatizan la importancia
-de la elección de la escuela y la educación privada para promover la
-segregación escolar, incluso en entornos residenciales bajos en
-separación. <!-- Elección de escuela -->Por un lado, la promoción de las
-políticas de elección de la escuela tiende a favorecer los niveles más
-altos de la segregación escolar [@Rich2021; @Saporito2014;
-@Serbulo2019], aunque el mecanismo específico que produce esta
-asociación varía según el contexto institucional [@Wilson2019]. A su
-vez, las "movilidades educativas" son un factor clave para comprender
-cómo estas elecciones escolares se vuelven efectivas en función del
-capital espacial de las familias [@Barthon2011; @Bonal2021].
-<!-- Educación privada -->Por otro lado, la educación privada juega un
-papel crucial en los sistemas educativos que restringen la elección de
-la escuela (por ejemplo, a través de áreas de captación), permitiendo
-grupos privilegiados que residen en barrios con mayor diversidad a
-evitar los niños de otros grupos sociales [@Bonal2020a; @Jahnen2023;
-@Lankford2006; @Putnam2007; @Saporito2014; @Saporito2007]. Incluso
-cuando se permite la elección de la escuela en las escuelas públicas,
-los fondos estatales para escuelas privadas, lo que hace que esta opción
-sea asequible y, por lo tanto, accesible, profundiza la segregación
-escolar al permitir implícitamente a las instituciones seleccionar a sus
-estudiantes [@Bonal2019; @Bonal2021; @Boterman2019a; @Courtioux2020;
+[^07-analysis-iv-schools-3]: Diversos estudios señalan que la
+    intervención política a nivel local para promover la diversidad en
+    las escuelas (a través de, por ejemplo, políticas de
+    *desegregación*) permite una mejora en la segregación escolar,
+    incluso en contextos de alta segregación residencial [@Taylor2021a;
+    @Carlson2020a; @Mnguni2022a @Hammond2022a], pero esto no
+    necesariamente correlaciona con una integración de los grupos
+    sociales [@Lemon2011a]. Además, la extensión y asequibilidad de las
+    escuelas privadas (por ejemplo con propuestas como las *free school*
+    en Inglaterra) habilita mecanismos de segregación adicionales,
+    permitiendo a los grupos con mayores recursos evitar las escuelas
+    locales públicas [@Allen2018a].
+
+Consistentemente con este enfoque, los estudios enfatizan la importancia
+de la elección de la escuela [*school choice*] y la educación privada
+para promover la segregación escolar, incluso en entornos residenciales
+bajos en separación. <!-- Elección de escuela -->Por un lado, la
+promoción de las políticas de elección de la escuela tiende a favorecer
+niveles de segregación escolar más altos que los de segregación
+residencial [@Rich2021; @Saporito2014; @Serbulo2019], aunque el
+mecanismo específico que produce esta asociación varía según el contexto
+institucional [@Wilson2019]. Además la elección de escuelas constituye
+una estrategia central de las familias para mantener la separación
+social, cuando los contextos de las escuelas locales cercanas suponen un
+fuerte riesgo de mezcla social [@Putnam2007; @Boterman2021a].
+@Dignum2022 señalan que, incluso con una 'tolerancia' relativamente alta
+hacia otros grupos sociales, se pueden generar niveles de segregación
+escolar sensiblemente mayores a los residenciales.
+
+Por otro lado, <!-- Educación privada -->la educación privada también
+juega un papel crucial en los sistemas educativos, permitiéndole a los
+grupos privilegiados que residen en barrios con mayor diversidad evitar
+que sus hijos compartan espacio escolar con otros grupos sociales
+[@Bonal2020a; @Jahnen2023; @Lankford2006; @Putnam2007; @Saporito2014;
+@Saporito2007]. Incluso cuando se permite la elección escolar entre las
+escuelas públicas o existen fondos estatales para la elección de
+escuelas privadas (que hace esta opción sea asequible y, por lo tanto,
+accesible), un nivel elevado de oferta privada profundiza la segregación
+escolar al permitir, implícitamente, a las instituciones seleccionar a
+sus estudiantes [@Bonal2019; @Bonal2021; @Boterman2019a; @Courtioux2020;
 @Elacqua2012]. En resumen, estos estudios respaldan la idea de que el
 desarrollo y la asequibilidad de la opción privada y la promoción de las
 políticas de elección de la escuela aumentan la segregación escolar,
-especialmente en diversos contextos del vecindario.
-
-<!-- Elección de escuela -->Muchos de los trabajos anteriormente
-mencionados ponen de relieve la importancia de considerar la 'elección
-de escuela' [*school choice*],
-
-@Lubienski2009 [p. 487] señala que'la elección de escuela es un problema
-inherentemente espacial', que actúa mediando entre el lugar de
-residencia y la escuela y, por lo tanto, en el modo en el que la
-segregación residencial se retraduce en segregación escolar. De esta
-manera, desde un esquema bourdieuano, @Yoon2017a observa que las
-"posiciones y disposiciones espaciales" de las familias configuran sus
-patrones y prácticas de participación en la elección de escuela. Para
-dar cuenta de esto, @Taylor2009a propone una 'geografía de la elección
-de escuela' [*geography of school choice*] para entender cómo actúa la
-movilidad intercediendo entre la ubicación de las escuelas y los alumnos
-en el "mercado urbano", generando situaciones de segregación escolar que
-actúan a diferentes escalas. Según Taylor las familias consideran un
-número limitado de escuelas, en donde la distancia o el tiempo de viaje
-constituye un factor central, lo que genera "mercados de competencia
-local" entre las escuelas. Sin embargo, en una escala mayor estos
-mercados se encuentran "interconectados" dentro de un mercado urbano.
-Esta interconexión entre mercados de competencia locales y el mercado de
-competencia global se traduce en que las escuelas que "ganan" alumnos de
-las áreas cercanas de otras escuelas, pueden también "perder" alumnos de
-su propia área de influencia hacia estas u otras escuelas.
-
-Además, como señalamos respecto a procesos de gentrificación, la
-elección de escuelas constituye una estrategia central de las familias
-para mantener la separación social, cuando los contextos de las escuelas
-locales cercanas suponen un fuerte riesgo de mezcla social [@Putnam2007;
-@Boterman2021a]. En particular, una composición racial diversa en un
-vecindario donde existen áreas de captación puede llevar a las familias
-favorecidas a elegir escuelas privadas con el fin de evitar el contacto
-con niños de otros grupos [@Saporito2014; @Saporito2007; @Lankford2006].
-Coincidentemente con estos enfoques, mediante simulaciones basadas en
-una ampliación del modelo de Schelling que considera elecciones
-escolares y residenciales simultáneamente, @Dignum2022 señalan que
-incluso con una tolerancia alta hacia otros grupos sociales se pueden
-generar niveles de segregación alta en las escuelas que superen a la
-segregación de los barrios.
-
-<!-- Distribución de escuelas, accesibilidad -->
-
-En este punto cumple un rol central la ubicación de las escuelas en la
-trama urbana, en tanto esta distribución es un condicionante para las
-elecciones escolares. En este sentido, diferentes trabajos analizan la
-proximidad a las escuelas identificando una menor provisión en los
-territorios donde viven las poblaciones menos favorecidas [@Alegana2021;
-@Ye2018; @Xiang2018]. Incluso en escenarios donde existe una buena
-distribución de escuelas, es necesario considerar la "calidad" de las
-escuelas, ya que los trabajos indican que las mejores escuelas suelen
-estar ubicadas en donde viven los grupos sociales con mayores
-privilegios [@Nieuwenhuis2021; @Duan2021; @He2021], dando lugar a un
-"desierto escolar" [@Alexander2020] de facto para los grupos menos
-favorecidos. Además, para afinar estos análisis algunos trabajos usan la
-distancia por la trama urbana [@Humberto2020] o considerando el sistemas
-públicos de transporte [@Sharma2022]. Para analizar el afecto de la
-*distancia* entre residencia y escuela, @Serrati2024a propuso un modelo
-de asignación que considera la capacidad de las escuelas, señalando que
-la segregación residencial y la distancia pueden resultar insuficientes
-para explicar la segregación escolar observada. En particular, algunos
-trabajos analizan la ubicación de escuelas con "programas especiales"
-(fundamentalmente "escuelas charter" en Estados Unidos), identificando
-un acceso desigual que desfavorece a los grupos con menos recursos y
-encubre formas de privatización de la educación [@Lee2021; @Adamson2019;
-@Gilblom2019; @Gilblom2020]. De forma general, estos trabajos enfatizan
-que tanto las políticas basadas en elección escolar y área de captación
-fallan si no consideran la distribución espacial de las escuelas y, en
-particular, dónde se ubican las escuelas de mayor rendimiento educativo.
+especialmente en contextos residenciales diversos.
 
 <!-- Movilidad educativa -->
 
-Estrechamente relacionado con la distribución de la oferta educativa,
-encontramos un conjunto de trabajos que analizan la *movilidad
-educativa*, en tanto práctica de las familias que permite "unir" el
-lugar de residencia con las escuelas. @Barthon2011 recuperan el concepto
-*capital espacial* [elaborado por @Levy2003 con influencia bourdiana]
-indicando que, más allá de la importancia de la ubicación residencial,
-la *disposición* de las familias para movilizarse permite optimizar las
-ventajas residenciales y posibilita, a algunas familias, superar las
-malas ubicaciones residenciales. Estos planteos analizan cómo la
-"fricción de la distancia" [@Ball1995] en las elecciones educativas
-puede tener un mayor peso en las decisiones de las familias de bajos
-ingresos [@Teske2007] y, por lo tanto, las movilidades educativas de
-estos grupos suelen ser menos comunes [@Mordechay2021]. En línea con
-esto, los estudios consideran que las movilidades educativas (junto a la
-promoción de la elección escolar) están fuertemente marcadas por las
-condiciones de clase y el contexto de los barrios, con lo cual pueden
-favorecer y profundizar la segregación escolar [@Bonal2020a; @Bonal2021;
-@Scandurra2022; @Burford2021; @Xiang2022; @CordobaCalquin2017;
-@Cordini2019].
+A su vez, las 'movilidades educativas' son un factor clave para
+comprender cómo estas elecciones escolares se vuelven efectivas en
+función del capital espacial de las familias [@Barthon2011;
+@Bonal2021].[^07-analysis-iv-schools-4] Los estudios consideran que las
+movilidades educativas (junto a la promoción de la elección escolar)
+están fuertemente marcadas por las condiciones de clase y el contexto de
+los barrios, con lo cual pueden favorecer y profundizar la segregación
+escolar [@Bonal2020a; @Bonal2021; @Scandurra2022a; @Burford2021a;
+@Xiang2022; @CordobaCalquin2017a; @Cordini2019a].
 
-<!-- Paisajes educativos y reglas de selección -->
+[^07-analysis-iv-schools-4]: Desde un esquema bourdieuano, @Yoon2017a
+    observa que las 'posiciones y disposiciones espaciales' de las
+    familias configuran sus patrones y prácticas de participación en la
+    elección de escuela. Para dar cuenta de esto, @Taylor2009a propone
+    una 'geografía de la elección de escuela' [*geography of school
+    choice*] para entender cómo actúa la movilidad intercediendo entre
+    la ubicación de las escuelas y los alumnos en el 'mercado urbano',
+    generando situaciones de segregación escolar que actúan a diferentes
+    escalas. Según Taylor las familias consideran un número limitado de
+    escuelas, en donde la distancia o el tiempo de viaje constituye un
+    factor central, lo que genera 'mercados de competencia local' entre
+    las escuelas. Sin embargo, en una escala mayor estos mercados se
+    encuentran 'interconectados' dentro de un mercado urbano. Esta
+    interconexión entre mercados de competencia locales y el mercado de
+    competencia global se traduce en que las escuelas que 'ganan'
+    alumnos de las áreas cercanas de otras escuelas, pueden también
+    'perder' alumnos de su propia área de influencia hacia estas u otras
+    escuelas.
 
-Sintetizando muchos de estos aspectos, @Boterman2019 analiza el efecto
-de los *paisajes educativos*, entendido como el conjunto de reglas de
-selección de alumnos y características institucionales que caracterizan
-al sistema educativo en su conjunto. El análisis comparado de diferentes
-países del norte global permite a @Boterman2019a señalar que en los
-paisajes educativos donde el acceso a escuelas está definido
-fundamentalmente por criterios geográficos (ej. Estados Unidos o
-Inglaterra), se refuerza el vínculo entre elecciones residenciales y
-elecciones escolares. Por su parte, en paisajes educativos donde prima
-la libertad en la elección de escuela y el sector privado tiene mayor
-desarrollo (o es más asequible por los subsidios), es posible corroborar
-una tendencia que lleva a que las escuelas están más segregadas que los
-barrios, cuestionando la relación lineal entre ambos tipos de
-segregación. Diversos estudios señalan que la intervención política a
-nivel local para promover la diversidad en las escuelas (a través de,
-por ejemplo, políticas de 'desegregación') permite una mejora en la
-segregación escolar [@Taylor2021; @Carlson2020; @Mnguni2022;
-@Hammond2022], pero no necesariamente esto se correlaciona con una
-integración de los grupos sociales [@Lemon2011]. Además, la extensión y
-asequibilidad de las escuelas privadas (por ejemplo con propuestas como
-las 'free school' en Inglaterra) habilitan mecanismos de segregación
-adicionales, permitiendo a los grupos con mayores recursos evitar las
-escuelas locales públicas [@Allen2018].
+<!-- Antecedentes locales -->
 
-<!-- A su vez, en los últimos años, se   fuerte crecimiento de la importancia de las desigualdades de clase ha llevado a que nuevos estudios analicen esta relación por clase e ingreso, lo cual cumple un rol en la configuración de la segregación escolar [@Jargowsky2014; @Owens2016; @Owens2019].  -->
+A nivel local, son pocos los antecedentes que analizan el vínculo entre
+segregación en el dominio residencial y escolar. Entre estos trabajos se
+destaca la propuesta de @Veleda2012, quien señala la interconección
+entre estos dominios, pero no profundiza en la relación. Por su parte,
+en trabajos anteriores [@DiVirgilio2019d; @Serrati2021; @Serrati2023]
+destacamos que las inequidades en la distribución espacial de los
+servicios educativos, sumado a la fuerte fragmentación territorial,
+llevan a que las desigualdades espaciales se expresen en condiciones
+desiguales de acceso a la educación. En estos trabajos pudimos
+corroborar que, en la CABA, la segregación escolar es mayor a la que
+cabría esperar por la distribución residencial, siendo esto un indicio
+de que la escuela funciona como un mecanismo de separación con cierta
+autonomía respecto al dominio residencial.
 
-<!-- También se ha identificado que la escala geográfica considerada y la diferencia entre sectores (estatal y privado) pueden ser elementos relevantes para entender cómo se configura la relación entre segregación residencial y escolar [@Frankel2011; @Courtioux2020]. -->
+<!-- Resumen -->
 
-<!-- La existencia de inequidades en la distribución espacial de los servicios educativos, sumado a la fuerte fragmentación territorial, llevan a que las desigualdades espaciales se expresen en condiciones desiguales de acceso a la educación [@DiVirgilio2019d].-->
+En resumen, estos antecedentes permiten señalar que existe una relación
+entre segregación residencial y escolar, pero está fuertemente mediada y
+condicionada por las características del *paisaje educativo*. Este
+paisaje educativo define, entre otros aspectos, las reglas de
+asignación, las posibilidades la extensión y asequibilidad del sector
+privado, la distribución de las escuelas en el territorio y las
+capacidades de movilidad de las familias. Los estudios muestran, por un
+lado, que las áreas de captación y las condiciones residenciales tienden
+a traducirse en una reproducción de desigualdades escolares; y, por otro
+lado, que la diversificación de la oferta educativa, la expansión del
+sector privado y las movilidades escolares introducen márgenes de
+autonomía en la segregación escolar, que puede incluso superar a la
+segregación residencial. Este doble movimiento refuerza la pertinencia
+de un enfoque multi-dominio que permita analizar tanto las
+interdependencias como las especificidades de cada dominio. En el caso
+del AMBA, donde la segmentación educativa se entrelaza con importantes
+las desigualdades territoriales, abordar esta relación es clave para
+comprender de qué modo la escuela interviene para constituirse en un
+factor en la constitución de la segregación urbana.
 
-## Presentación de la metodología de análisis {#school-method}
+## La construcción de un modelo de asignación: método y datos utilizados {#school-method}
 
-En este trabajo analizamos las escuelas secundarias. Sin embargo, existe
-el problema de que el nivel secundario abarca diferentes edades en cada
-una de las jurisdicciones. Para abordar este problema consideramos la
-parte común de ambas jurisdicciones (es decir, edades de 13 a 17 en las
-unidades espaciales y los el 8vo al 12vo nivel, que se corresponde con
-1ero a 5to en CABA y de 2do a 6to en provincia de buenos aires).
+En este capítulo analizaremos la segregación educativa en el nivel
+secundario. Si bien es posible hacer un análisis similar para el nivel
+primario consideramos que el nivel secundario es el que concentra las
+mayores desigualdades dentro de la etapa obligatoria del sistema
+educativo. <!-- Fuentes -->Para el análisis utilizaremos tres fuentes de
+datos. Por un lado, para obtener la composición educativa de los padres
+de las escuelas utilizamos datos de la evaluación *Aprender* *2017* y
+*Aprender 2019*, implementada por el *Ministerio de Educación de la
+Nación*.[^07-analysis-iv-schools-5] Esta evaluación se realiza en todos
+los establecimientos educativos del país a los estudiantes del último
+año del nivel medio y releva características de los hogares de los
+estudiantes, como el nivel educativo de los adultos responsables que
+utilizamos para el cálculo de la segregación. En segundo lugar, se
+utilizan datos del *Relevamiento Anual* (RA), también implementado por
+el *Ministerio de Educación de la Nación.* Esta evaluación información
+de la matrícula total por año de cada escuela, lo cual utilizamos para
+'expandir' la matrícula. Por último, empleamos datos del Censo 2010 para
+conocer la composición educativa de los hogares, así como la cantidad de
+niños en edad escolar secundaria.[^07-analysis-iv-schools-6]
+
+[^07-analysis-iv-schools-5]: La evaluación *Aprender* se aplica
+    alternativamente en los diferentes niveles educativos, por lo cual
+    en el año 2018 se realizó sólo en el nivel primario. Para poder
+    contar con mayor volumen de respuestas se optó por combinar las
+    evaluaciones 2017 y 2018, en tanto la composición de las escuelas se
+    muestra consistentemente estable en períodos de tiempo acotados.
+
+[^07-analysis-iv-schools-6]: Teniendo en cuenta que el nivel secundario
+    abarca diferentes edades teóricas en cada una de las jurisdicciones
+    analizadas, consideramos el tramo 'común' a ambas jurisdicciones. En
+    concreto, en los radios se consideró la población con edades entre
+    13 y 17 años. Por su parte, en las escuelas con nivel medio se
+    consideró del 8^vo^ al 12^vo^ nivel, que se corresponde con 1^ero^ a
+    5^to^ en CABA y de 2^do^ a 6^to^ en provincia de buenos aires).
+
+Al igual que en los capítulos anteriores, medimos la segregación
+utilizando el logro educativo de los hogares como un *proxy* del nivel
+socioeconómico. Para ello, distinguimos tres grupos sociales: (a) hasta
+educación primaria completa, incluyendo secundaria incompleta (`PRI`);
+(b) secundaria completa, incluyendo superior incompleto (`SEC`); y (c)
+educación superior completa, ya sea universitaria o no universitaria
+(`SUP`).
+
+Además, utilizamos el *Índice de Información Mutua* (M), una medida
+multigrupo basada en la entropía, introducida por Theil (1972) y Theil y
+Finizza (1971), y desarrollada posteriormente por Mora y Ruiz-Castillo
+(2003, 2009, 2011) y Frankel y Volij (2011). Dada su propiedad de
+dependencia de los marginales en ambas direcciones (grupos y unidades),
+este índice es “altamente descomponible”, razón por la cual ha sido
+utilizado en años recientes para analizar la segregación tanto a nivel
+local como entre grupos (e.g., Courtioux y Maury, 2020). El índice puede
+interpretarse como una suma ponderada de la magnitud en que la
+distribución de los grupos en cada unidad se desvía de la distribución
+general. A nivel local, el índice M indica cuánto se reduciría la
+segregación total si desapareciera la segregación en una unidad (o grupo
+de unidades).
+
+<!--#  -->
+
+Con base en el desarrollo acumulado sobre medidas de segregación (véase
+Tivadar, 2019; Wong, 2016; Yao et al., 2019 para una revisión),
+
+Según Elbers (2023), debido a la propiedad de dependencia de los
+marginales y, en consecuencia, a su alta descomponibilidad, este índice
+permite: (a) identificar el efecto local de la segregación; y (b)
+comparar diferentes estructuras de segregación, distinguiendo entre el
+efecto estructural y el efecto de cambios en los marginales.
+
+<!--# literatura metodológica -->
+
+Para refinar estos análisis algunos trabajos usan la distancia por la
+trama urbana [@Humberto2020] o considerando el sistemas públicos de
+transporte [@Sharma2022]. Para analizar el afecto de la distancia entre
+residencia y escuela, @Serrati2023 propuso un modelo de asignación que
+considera la capacidad de las escuelas, señalando que la segregación
+residencial y la distancia pueden resultar insuficientes para explicar
+la segregación escolar observada.
+
+<!--#  -->
 
 Para realizar una descripción se utilizan proceso de patrones puntuales,
 lo que nos permite estimar la densidad
+
+<!--#  -->
+
+La estrategia metodológica consistió, en primer lugar, en construir un
+modelo hipotético de asignación de alumnos a escuelas. Este modelo
+permite evaluar la relación entre segregación residencial y escolar bajo
+ciertos supuestos, funcionando como un escenario de *tipo ideal*
+(*Idealtypus*) frente a las situaciones reales. En términos técnicos, el
+modelo resuelve un problema de programación lineal entera con
+restricciones, que minimiza la distancia recorrida por todos los alumnos
+de la ciudad teniendo en cuenta la oferta y la demanda. El número de
+alumnos asignados se determina a partir de la población en edad escolar
+en cada “radio” censal y de la capacidad de absorción de cada escuela.
+
+El modelo describe cómo funcionaría el mecanismo de asignación si
+dependiera únicamente de la proximidad espacial entre las residencias de
+los estudiantes y las escuelas, condicionado por la capacidad de éstas.
+Representa, en consecuencia, el comportamiento de un sistema educativo
+hipotéticamente planificado de manera centralizada en torno a “áreas de
+captación”. A su vez, si se asume que cada área residencial aporta a
+cada escuela una cantidad proporcional de estudiantes según su
+composición social, es posible inferir una “composición social teórica”
+de las escuelas (véase Figura 1).
+
+Con los resultados del modelo de asignación, se proponen tres
+estrategias comparativas. En primer lugar, se compara el índice de
+segregación escolar real con el derivado del modelo. Según Boterman
+(2019), esta medida constituye un estimador del grado en que la
+segregación residencial puede explicar la segregación escolar (M_model
+vs. M_real).
+
+En segundo lugar, retomando la metodología de Elbers (2023), se
+identifican cambios en la “segregación pura”, es decir, aquellos que
+persisten una vez controlados los efectos de los marginales y de la
+adición/eliminación de unidades. Elbers (2023) aprovecha la propiedad de
+dependencia de los marginales del índice M para aplicar un procedimiento
+de *Iterative Proportional Fitting* (Karmel y Maclachlan, 1988), que
+permite remover el efecto de los marginales y descomponer los distintos
+efectos de la segregación. Esta técnica posibilita una descomposición en
+cinco términos, lo que a su vez permite identificar y separar: (a)
+cambios de unidades: el efecto de la aparición/desaparición de unidades;
+(b) cambios marginales: el efecto de las variaciones en la composición
+de los grupos (marginales) y de las unidades; y (c) cambios de
+segregación pura: el efecto atribuible a un cambio “puro” o estructural
+en la segregación.
 
 Se presenta la propuesta metodológica basada en un modelo de asignación
 ('allocation model') de estudiantes en escuelas [@Serrati2023]. De modo
@@ -364,14 +470,47 @@ segregación granular que incorpora la restricción de ?
 -   segregación de actividades (mediante segregación granular y análisis
     de infraestructura urbana disponible)
 
-## Comparación de la segregación en el ámbito residencial y escolar {#school-analysis}
+## Comparación de la segregación en el dominio residencial y escolar {#school-analysis}
 
 ### La distribución de escuelas
 
-Hacer análisis ppp para ver si existe heterogeneidad y si esta
-heterogeneidad está vinculada a la población educativa target
+Describir distribución de escuelas
+
+Mapa de densidad. Hacer análisis ppp para ver si existe heterogeneidad y
+si esta heterogeneidad está vinculada a la población educativa target
+
+```{r school-distribution}
+#| fig.cap: "Distribución de escuelas (izquierda) y densidad de escuelas (derecha)"
+#| fig.show: 'hold'
+#| out.width: '50%'
+
+# knitr::include_graphics(here::here("figures", "school_density.png"))
+knitr::include_graphics(here::here("figures", "school_density.png"))
+```
+
+Análisis de intensidad / densidad
+
+```{r school-tab1}
+
+#EDU$TAB1
+```
 
 ### Analizando el efecto de la segregación residencial sobre la segregación escolar
+
+Sin autocorrelación
+
+```{r school-autocorrelation}
+#| fig.cap: ""
+#| fig.asp: 0.2
+
+knitr::include_graphics(here::here("figures", "school_variogram.png"))
+```
+
+Comparación de segregación escolar modelo-real
+
+```{r school-tab2}
+# EDU$TAB1
+```
 
 Definir si existe autocorrelación espacial en la segregación escolar
 real.
