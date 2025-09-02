@@ -443,6 +443,43 @@ replic <- 1000
 
 ### ╠ Diferencia de segregación -----------------------------------
 
+  cli::cli_li(col_yellow("Calcular diferencia de segregación (EDU6)"))
+
+  aux_db <- EDU$EDU5[c("db_MODEL", "db_EDU")] |>
+    map(\(db){
+      pivot_longer(db, cols = PRI:SUP,
+                   values_to = "n", names_to = "EDU")
+      })
+
+  set.seed(321)
+  EDU$EDU6 <- mutual_difference(aux_db$db_EDU, aux_db$db_MODEL,
+                                group = "EDU", unit = "CUEANEXO",
+                                CI = 0.99, se = T, n_bootstrap = replic,
+                                weight = "n", method = "shapley_detailed")
+
+  rm(aux_db)
+
+### ╚ Cálculo de variables de asignación -----------------------------
+
+  cli::cli_li(col_yellow("Calcular variables de asignación (EDU7)"))
+
+  lp_res <- EDU$EDU4$solution |> slam::as.simple_triplet_matrix()
+
+  margDEM <- margDEM |>
+    mutate(distMIN = apply(cost_mat, 1, min),                       # distancia a escuela más cercana
+           distPROM = apply(lp_res * cost_mat, 1, sum) / EST_SEC,   # distancia promedio recorrida a escuela
+           SINVAC = EST_SEC - apply(lp_res, 1, sum))                # alumnos sin vacante
+
+  if(sum(margDEM$SINVAC) >= 0){
+    cli::cli_alert_info("Alumnos sin vacante: {format(sum(margDEM$SINVAC), big.mark = '.', decimal.mark = ',')}")
+  }else{
+    cat("Todos los alumnos tienen vacante")
+  }
+
+  EDU$EDU7 <- margDEM
+
+  rm(lp_res, cost_mat, margDEM)
+
 # Figuras ---------------------------------------
 
 ### ╠ FIG 7.1: Allocation model -------------------------------
