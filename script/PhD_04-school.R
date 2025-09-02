@@ -1,5 +1,6 @@
 # Educational
 
+# TODO  Modificar directorios _draft en bases intermedias
 # TODO? Filtrar si los costos son más altos que un límite en
 #         PhD_lp_make_edges()
 # TODO? Incorporar covariable (cantidad de población) en densidad o
@@ -16,6 +17,7 @@ EDU <- list()
 # Definir si se realizan los procesamientos más costosos
 #   o se cargan datos procesados anteriormente
 forzar <- FALSE
+replic <- 1000
 
 # Cargar datos --------------------------------------
 
@@ -269,8 +271,8 @@ forzar <- FALSE
 
   cli::cli_process_done()
 
-  # cli::cli_alert_info(col_silver("Guardando base de distancias (`db_DIS`) en {.path _draft/LP_01_distancias.RData}"))
-  # save(db_DIS, file = fs::path("_draft", "LP_01_distancias", ext = "RData"))
+  cli::cli_alert_info(col_silver("Guardando base de distancias (`db_DIS`) en {.path _draft/LP_01_distancias.RData}"))
+  save(db_DIS, file = fs::path("_draft", "LP_01_distancias", ext = "RData"))
 
   rm(DIS_l, DIS_n, ESC, RAD, from, to, blended)
 
@@ -357,7 +359,7 @@ forzar <- FALSE
   cli::cli_process_done()
 
   if(forzar){
-    # ~ 2.72 [h]
+    # ~ 2.7 [h]
 
     invisible(gc())
 
@@ -406,9 +408,11 @@ forzar <- FALSE
 
 ### ╠ FIG 7.1: Allocation model -------------------------------
 
-  file.edit("C:/Users/este.de.ahora/Documents/_investigacion/_publicado/2023.06 - Artículo. residential-and-school-segregation/analysis/script/03_Fig1_allocation-model.R")
+  # file.edit("C:/Users/este.de.ahora/Documents/_investigacion/_publicado/2023.06 - Artículo. residential-and-school-segregation/analysis/script/03_Fig1_allocation-model.R")
 
 ### ╠ FIG 7.2: Distribución de escuelas -------------------------------
+
+  cli::cli_li(col_yellow("Figure 7.2: Distribución de escuelas secundarias."))
 
   p2 <- ggplot() +
     geom_sf(data = CARTO$AMGBA) +
@@ -435,6 +439,8 @@ forzar <- FALSE
 
 ### ╠ FIG 7.3: Graficación de función de densidad (Kernel) ------------------
 
+  cli::cli_li(col_yellow("Figure 7.3: Densidad estimada de capacidad en escuelas secundarias."))
+
   p3 <- ggplot() +
     stars::geom_stars(data = EDU$EDU2 |>
                         stars::st_as_stars(),
@@ -451,7 +457,7 @@ forzar <- FALSE
              ylim = AUX$lim_AMBA[c(2,4)]) +
     scale_fill_viridis_c(option = "turbo", na.value = "white",
                          direction = 1) +
-    labs(caption  = paste0("Método: Kernel adaptativo"),
+    labs(#caption  = paste0("Método: Kernel adaptativo"),
          #title = "Densidad estimada de vacantes en escuelas secundarias",
          fill = "Densidad")+
     theme_void()
@@ -467,6 +473,7 @@ forzar <- FALSE
 
   # Boxplot school M (left)
   # TODO Ver M común
+  cli::cli_li(col_yellow("Figure 7.4: Descripción de la segregación escolar."))
 
   p4a <- SEC |>
     filter(!is.na(ls)) |>
@@ -509,7 +516,7 @@ forzar <- FALSE
 
   # Ver: Serrati, P. S. (2024). School and Residential Segregation in the Reproduction of Urban Segregation: A Case Study in Buenos Aires. Urban Studies, 61(2), 313-330. https://doi.org/10.1177/00420980231178401
   # Relationship between real and estimated segregation of each school (left); and Location of schools according to difference in local segregation (right)
-  file.edit("C:/Users/este.de.ahora/Documents/_investigacion/_publicado/2023.06 - Artículo. residential-and-school-segregation/analysis/script/03_Fig4_local-segregation.R")
+  # file.edit("C:/Users/este.de.ahora/Documents/_investigacion/_publicado/2023.06 - Artículo. residential-and-school-segregation/analysis/script/03_Fig4_local-segregation.R")
 
 ### ╠ FIG 7.7: Composición de escuelas (colores + gráfico ternario) ------------------------------
 
@@ -671,9 +678,7 @@ rm(i, a, base)
 
   usethis::use_data(EDU, overwrite = TRUE)
 
-# rm(AUX, CARTO, CALLE)
-
-
+# rm(AUX, CARTO)
 
 # Otros resultados ---------------------------
 
