@@ -341,9 +341,10 @@ replic <- 1000
   margDEM <- CARTO$RADIO |>
     st_drop_geometry() |>
     filter(!is.na(TH) ) |>
-    select(ID = ID_RADIO, TIPO_HAB = TH, SEC = n_estSEC) |>
-    arrange(ID) |>
-    mutate(SEC = replace_na(SEC, 0))
+    select(ID = ID_RADIO, TH, EST_SEC = n_estSEC, HOG_PRI:HOG_SUP) |>
+    rename_with(~str_remove(., "HOG_")) |>
+    mutate(EST_SEC = replace_na(EST_SEC, 0)) |>
+    arrange(ID)
 
   margOFE <- SEC |>
     st_drop_geometry() |>
@@ -366,7 +367,7 @@ replic <- 1000
     tictoc::tic("")
     cli::cli_process_start(cli::col_grey("Calcular modelo lp"))
     lpres <- PhD_lp_allocation(cost = cost_mat,
-                               supply = margDEM$SEC,
+                               supply = margDEM$EST_SEC,
                                capacity = margOFE$n,
                                solver = "Rglpk", k = 0.2,
                                verbose = TRUE)
@@ -402,7 +403,45 @@ replic <- 1000
     mutate(across(PRI:SUP, ~.x * N_MATRIC)) |>
     select(CUEANEXO, PRI:SUP)
 
-### ╚ Diferencia de segregación -----------------------------------
+  # ► School db (model situation)
+  base <- EDU$EDU4$solution |> slam::as.simple_triplet_matrix()
+
+  if(any(rownames(base) != SEGRE$db_RESI$ID)){
+    cli::cli_abort("ID de Radios en la matriz de asignación no coinciden con nombres de la base original")
+  }
+
+  ALLOCATION_aux <- SEGRE$db_RESI |>
+    mutate(TOT = PRI  + SEC + SUP,
+           across(PRI:SUP, ~.x / TOT) ) |>
+    select(PRI:SUP) |>
+    map_dfc(\(EDU) apply(base * EDU, 2, sum))
+
+  SEGRE$db_MODEL <- bind_cols(CUEANEXO = colnames(base), ALLOCATION_aux)
+
+  EDU$EDU5 <- SEGRE
+
+  rm(ALLOCATION_aux, base, SEGRE)
+
+  # # Cálculo original:
+  #
+  # # Radio composition
+  # rad_aux <- SEGRE$db_RESI |>
+  #   select(-ID, - TH) |>
+  #   rename_with(~str_remove(., "HOG_")) |>
+  #   as.matrix() |>
+  #   prop.table(margin = 1)
+  #
+  # # Theoretical (modelled) School Composition
+  # base <- EDU$EDU4$solution
+  # SEGRE$db_MODEL <- data.frame(ID_s = colnames(base))
+  #
+  # for(i in colnames(rad_aux)){
+  #   SEGRE$db_MODEL[[i]] <- apply(base * rad_aux[ , i], 2, sum)
+  # }
+  #
+  # rm(rad_aux, i, base)
+
+### ╠ Diferencia de segregación -----------------------------------
 
 # Figuras ---------------------------------------
 
@@ -533,8 +572,6 @@ replic <- 1000
     labs(x = "Distancia lineal (km)",
          y = "Distancia por red urbana (km)")
 
-  # ggsave("_Figuras/5-Fig1-Distancia-Lineal-Red.png",
-  #          width = 10, height = 10, units = "cm")
 
 # Tablas ---------------------------
 
