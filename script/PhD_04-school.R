@@ -67,14 +67,15 @@ forzar <- FALSE
   cli::cli_alert_success(cli::col_grey("Preparando base de escuelas secundarias (`SEC`)"))
 
   SEC <- CARTO$ESCUELAS |>
-    filter(NIV_SEC & !is.na(N_MATRIC))
+    filter(NIV_SEC & !is.na(N_MATRIC)) |>
+    mutate(AP_sel = n_sinNA >= 5 & !is.na(PRI) & !is.na(SEC) & !is.na(SUP))
 
   cli::cli_alert_success(cli::col_grey("Agregando información sobre segregación escolar"))
 
   SEC_seg <- SEC |>
-    filter(!is.na(PRI) | !is.na(SEC) | !is.na(SUP)) |>
     st_drop_geometry() |>
-    mutate(across(PRI:SUP, ~.x*N_MATRIC)) |>
+    filter(AP_sel) |>
+    mutate(across(PRI:SUP, ~.x * N_MATRIC)) |>
     select(CUEANEXO, PRI:SUP) |>
     pivot_longer(cols = PRI:SUP,  names_to = "EDU",  values_to = "N") |>
     mutual_local(group = "EDU", weight = "N", unit = "CUEANEXO",
@@ -89,7 +90,10 @@ forzar <- FALSE
   cli::cli_alert_success(cli::col_grey("Armando objeto ppp de escuelas secundarias"))
 
   # Ventana (w)
-  w <- as.owin(CARTO$AMGBA)
+  w <- CARTO$AMGBA |>
+    st_buffer(dist = 1000) |>
+    st_concave_hull(ratio = 0.2) |>
+    as.owin()
 
   # Objeto ppp (Point Pattern Process)
   set.seed(123)
@@ -300,7 +304,7 @@ forzar <- FALSE
   EDU$EDU2 <- ESC_ppp |>
     rescale(1/1000, "m") |>
     adaptive.density(method = "kernel", dimyx = c(300, 300),
-                     weights = attr(ESC_ppp, "weights"))
+                     weights = attr(ESC_ppp, "weights"), edge = FALSE)
 
 ### ╠ Variograma de correlación espacial (segregación) ----------------------------------
 
@@ -380,7 +384,21 @@ forzar <- FALSE
 
   rm(lpres)
 
-### ╠ Segregación escolar -----------------------------------
+### ╠ Armado de bases de segregación -----------------------------------
+
+  cli::cli_li(col_yellow("Armado de bases de segregación (EDU5)"))
+
+  SEGRE <- list()
+
+  # ► Residential db
+  SEGRE$db_RESI <- margDEM |> select(ID, PRI:SUP)
+
+  # ► School db (real situation)
+  SEGRE$db_EDU <- SEC |>
+    st_drop_geometry() |>
+    filter(AP_sel) |>
+    mutate(across(PRI:SUP, ~.x * N_MATRIC)) |>
+    select(CUEANEXO, PRI:SUP)
 
 ### ╚ Diferencia de segregación -----------------------------------
 
