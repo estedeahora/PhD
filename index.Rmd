@@ -61,16 +61,15 @@ monofontoptions: "Scale=0.7"
 \fancyhead[LE]{Pablo Serrati - Tesis de Doctorado}
 \fancyhead[RO]{\leftmark}
 ```
-```{r setup, echo = F}
 
-# options(OutDec= ",")
+```{r setup, echo = F}
 
 knitr::opts_chunk$set(echo = FALSE,
                       message = FALSE, 
                       warning = FALSE,
                       out.width = "100%")
 
-options(knitr.kable.NA = '')
+options(knitr.kable.NA = '', OutDec = ",")
 
 # knitr::write_bib(c(.packages(),
 #                    "bookdown", 

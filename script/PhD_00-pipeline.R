@@ -42,9 +42,16 @@ library(ggsci)
 
 devtools::load_all()
 
+set_flextable_defaults(big.mark = " ",
+                       decimal.mark = ",",
+                       font.size = 7,
+                       table_align = "center",
+                       font.family = "Alegreya Sans",
+                       na_str = "")
+
 # Capítulo 4: Segregación en el dominio residencial
 
-source(here::here("script", "PhD_01-residential-segregation.R"))
+source(here::here("script", "PhD_01-residential.R"))
 
 # Capítulo 5: Homogamia en el dominio residencial
 
