@@ -6,7 +6,7 @@
 
 # Índices de segregación residencial {#appendixA}
 
-```{r}
+```{r appA_TAB1}
 RES$appA_TAB1
 ```
 
@@ -14,7 +14,7 @@ RES$appA_TAB1
 \begin{landscape}
 ```
 
-```{r}
+```{r appA_TAB2}
 RES$appA_TAB2
 ```
 
@@ -232,4 +232,10 @@ include_graphics(here::here("figures", "Movilidad_MCA_Variables_ind4.png") )
 #| fig.asp: 0.5
 
 include_graphics(here::here("figures", "Movilidad_MCA_Variables_ind5.png") )
+```
+
+# Índices de segregación escolar (modelo y real) {#appendixG}
+
+```{r appG-segreg-index}
+EDU$appG_TAB1
 ```
