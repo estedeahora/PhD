@@ -363,13 +363,13 @@ esquema de color RGB, que se utiliza en el mapeo territorial de la
 segregación de la Figura \@ref(fig:segres-map-CA).
 
 ```{r segres-CA, out.width="100%", fig.asp=1.857}
-#| fig.cap: "Comparación"
+#| fig.cap: "Visualización del Índice de Información Mutua (izquierda) y la composición de las unidades (derecha), sober el plano factorial"
 
 include_graphics(here::here("figures", "Segregacion_CA.png"))
 ```
 
 ```{r segres-map-CA, out.width="100%", fig.asp=0.619}
-#| fig.cap: "Segregación local en el AMGBA (Índice de Información Mutua). Se destacan con recuadros y los detalles las zonas profundizadas en el análisis."
+#| fig.cap: "Dirección de la segregación local en el AMBA. Se destacan con recuadros y los detalles las zonas profundizadas en el análisis."
 
 include_graphics(here::here("figures", "Segregacion_CA_AMBA.png"))
 ```
