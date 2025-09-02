@@ -430,7 +430,8 @@ if(!exists("AUX", inherits = F)){
                                                  bkm_all = T))  |>
     flextable::align(align ='center', part = 'all') %>%
     flextable::align(j = 1, align ='left', part = 'all') %>%
-    flextable::colformat_double(digits = 1) %>%
+    flextable::colformat_double(digits = 1, big.mark = " ",
+                                decimal.mark = ",") %>%
     flextable::add_footer_lines(values = as_paragraph(
       paste0("Los valores tienen corrección de sesgo. ",# AUX$replic,
              " Bootstrap replicaciones."))) |>
@@ -481,7 +482,6 @@ if(!exists("AUX", inherits = F)){
     flextable::fontsize(size = 7, part = "all") |>
     flextable::align(align ='left', part = 'all') |>
     flextable::valign(valign = "top", part = "all") |>
-    # flextable::autofit(part = "all")
     flextable::width(j = 1, 2.3, unit = "cm") |>
     flextable::width(j = 2, 2.3, unit = "cm") |>
     flextable::width(j = 3:6, 1.9, unit = "cm") |>
@@ -494,16 +494,20 @@ if(!exists("AUX", inherits = F)){
 
   RES$appA_TAB1 <- RES$SEG1 |>
     flextable() |>
+    PhD_compose_eq() |>
     flextable::set_header_labels(Index = "Indice") |>
     flextable::set_caption(caption = paste0("Índices de segregación residencial"),
                            autonum = officer::run_autonum(seq_id = "tab",
                                                           bkm = "app1-tab1",
                                                           bkm_all = T))  |>
+    colformat_double(big.mark = " ", decimal.mark = ",",
+                     na_str = "-", digits = 3) |>
     flextable::align(align ='center', part = 'all') |>
     flextable::align(j = 1, align ='left', part = 'all') |>
     flextable::font(fontname='Alegreya Sans', part = "all") |>
     flextable::fontsize(size = 7, part = "all") |>
-    flextable::autofit()
+    flextable::width(j = 1, 5, unit = "cm") |>
+    flextable::width(j = 2:4, 1.5, unit = "cm")
 
 ### ╚ TAB App A.2 --------------------------
 
@@ -531,9 +535,9 @@ if(!exists("AUX", inherits = F)){
                            autonum = officer::run_autonum(seq_id = "tab",
                                                           bkm = "app1-tab2",
                                                           bkm_all = T))  |>
-    flextable::colformat_double(j = 2, digits = 3) |>
-    flextable::colformat_double(j = 3:5, digits = 1, suffix = "%") |>
-    flextable::colformat_double(j = 6, digits = 1, suffix = "%") |>
+    flextable::colformat_double(j = 2, digits = 3, decimal.mark = ",") |>
+    flextable::colformat_double(j = 3:6, digits = 1, suffix = "%",
+                                decimal.mark = ",") |>
     flextable::colformat_double(i = 10, j = 6, digits = 0, big.mark = " ") |>
     flextable::color(j = 3:5, color = "grey", part = "body") |>
     flextable::hline(i = 9) |>
@@ -543,7 +547,6 @@ if(!exists("AUX", inherits = F)){
     flextable::valign(valign = "top", part = "body") |>
     flextable::font(fontname='Alegreya Sans', part = "all") |>
     flextable::fontsize(size = 7, part = "all") |>
-    # flextable::autofit(part = "all")
     flextable::width(j = 1, 4.5, unit = "cm") |>
     flextable::width(j = 2, 2.2, unit = "cm") |>
     flextable::width(j = 3:6, 2.2, unit = "cm")
