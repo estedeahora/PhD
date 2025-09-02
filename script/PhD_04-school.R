@@ -562,17 +562,21 @@ replic <- 1000
 
 ### ╚ FIG App ?.?: Comparación entre distancias lineales y por red vial --------------------
 
-  p8 <- db_DIS %>%
+  set.seed(123)
+
+  p8 <- db_DIS |>
+    sample_frac(size = 0.05) |>
     ggplot() +
     geom_point(aes(x = DIS_l, y = DIS_t),
                alpha = 0.1, color = "cornflowerblue") +
     geom_abline(intercept = 0, slope = 1,
                 linetype = 2, color = "tomato3") +
-    theme_minimal() +
     labs(x = "Distancia lineal (km)",
-         y = "Distancia por red urbana (km)")
+         y = "Distancia por red urbana (km)") +
+    theme_minimal()
 
-
+  ggsave(filename = fs::path("figures", "school_distances-comparation", ext = "png"),
+         plot = p8, width = 15, height = 15, units = "cm", dpi = 300)
 
   rm(p8)
 
