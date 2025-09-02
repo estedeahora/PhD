@@ -573,143 +573,185 @@ replic <- 1000
          y = "Distancia por red urbana (km)")
 
 
+
+  rm(p8)
+
 # Tablas ---------------------------
 
-margDEM$PRI_distMIN <- apply(DIS[["PRI"]], 1, min) * 1000
-margDEM$SEC_distMIN <- apply(DIS[["SEC"]], 1, min) * 1000
+### ╠ TAB 7.1: Distancia promedio recorrida x entorno -----------------------------
 
-for(i in names(res)){
-  lp_res <- res[[i]]$solution
-  if(str_starts(i, "PRI")){
-    a <- "PRI"
-  }else{
-    a <- "SEC"
-  }
-  margDEM[paste0(i, "_distPROM")] <- apply( lp_res * DIS[[a]] * 1000, 1, sum) /
-    margDEM[[a]]
-  margDEM[paste0(i, "_SINVAC")] <- apply(lp_res, 1, sum) - margDEM[[a]]
-  cat(paste0("\n", i,"\n" ) )
+  EDU$TAB1 <- EDU$EDU7 |>
+    group_by(TH) |>
+    summarise (radios = n(),
+               EST = sum(EST_SEC),
+               SV = sum(SINVAC),
+               p_SV = SV/EST * 100,
+               dis_min = weighted.mean(distMIN, na.rm = T) * 1000,
+               dis_alloc = weighted.mean(distPROM, (EST_SEC-SINVAC), na.rm = T) * 1000) |>
+    as_tibble() %>%
+    add_row(TH = "Total AMBA",
+            radios = sum(.$radios),
+            EST = sum(.$EST),
+            SV = sum(.$SV),
+            p_SV = SV/EST * 100,
+            dis_min = NA,
+            dis_alloc = weighted.mean(.$dis_alloc, .$EST - .$SV) ) |>
+    mutate(across(starts_with("dis_"), round),
+           p_SV = round(p_SV, 1),
+           s1 = "", s2 = "") |>
+    select(TH, radios, EST, s1, SV, p_SV, s2, dis_min, dis_alloc) |>
+    flextable() |>
+    set_caption(caption = "Descripción del modelo de asignación",
+                autonum = run_autonum(seq_id = "tab", bkm = "school-tab1",
+                                      bkm_all = TRUE)) |>
+    colformat_double(big.mark = " ", decimal.mark = ",",
+                     digits = 0, na_str = "-") |>
+    colformat_int(big.mark = " ", na_str = "-") |>
+    colformat_double(j = 6, suffix = "%", digits = 1, ,
+                     big.mark = " ", decimal.mark = ",") |>
+    set_header_labels(TH = "Entorno Urbano", radios = "Radios",
+                      EST = "Estudiantes", s1 = " ", SV = "Total",
+                      p_SV = "%", s2 = " ", dis_min = "Mínima",
+                      dis_alloc = "Modelo") |>
+    add_header_row(values = c("Entorno Urbano", "Totales",
+                              " ",  "Sin vacantes",  " ",
+                              "Distancia promedio [m]"),
+                   colwidths = c(1, 2, 1, 2, 1, 2)) |>
+    merge_v(j = c(1, 4, 7), part = "header") |>
+    align(j = -1, i = 1, align ='center', part = 'header') |>
+    bold(i = 10, part = "body") |>
+    hline(i = 9:10, border = fp_border(width = 1)) |>
+    flextable::font(fontname='Alegreya Sans', part = "all") |>
+    flextable::fontsize(size = 7, part = "all") |>
+    flextable::width(j = 1, 2, unit = "cm") |>
+    flextable::width(j = c(4, 7), 0.25, unit = "cm") |>
+    flextable::width(j = c(2:3, 5:6, 8:9), 1.15, unit = "cm")
 
-  if(sum(margDEM$PRI_SINVACANTE) == 0){
-    cat("Todos los alumnos tienen vacante")
-    margDEM[paste0(i, "_SINVAC")] <- NULL
-  }else{
-    cat(paste0("Alumnos sin vacante: ", sum(margDEM$PRI_SINVACANTE)) )
-  }
-}
-rm(a, i, lp_res)
+### ╠ TAB 7.2: Diferencia de segregación --------------------------------------
 
-### ╠ TAB01: -----------------------------
-  # Distancia promedio recorrida
-  tab1 <- margDEM %>%
-    group_by(TIPO_HAB) %>%
-    summarise(n_PRI = sum(PRI),
-              DIST_PRImin = round(mean(PRI_distMIN, na.rm = T)),
-              DIST_PRI = round(mean(PRI_distPROM, na.rm = T)),
-              DIST_PRIcl = round(mean(PRIcl_distPROM, na.rm = T)),
-              DIST_PRIcls = round(mean(PRIcl_s_distPROM, na.rm = T)),
-              n_SEC = sum(SEC),
-              DIST_SECmin = round(mean(SEC_distMIN, na.rm = T)),
-              DIST_SEC = round(mean(SEC_distPROM, na.rm = T)),
-              DIST_SECcl = round(mean(SECcl_distPROM, na.rm = T)),
-              DIST_SECcls = round(mean(SECcl_s_distPROM, na.rm = T)))
+  name_lab <- c("Empírico", "Modelo",
+                "Diferencia (Modelo - Empírico)",
+                "Unidades agregadas", "Unidades removidas",
+                "Marginal de Grupos Educativos",
+                "Marginal de Unidades",
+                "Segregación estructural")
 
-  tab1 <- tab1 %>% rename(PRI_TOTAL = n_PRI, SEC_TOTAL = n_SEC )
+  EDU$TAB2 <- EDU$EDU6 |>
+    filter(is.na(CUEANEXO)) |>
+    mutate(grupo = c(rep("Segregación escolar", 2),
+                     "Diferencia (Modelo - Empírico)",
+                     rep("Descomposición", 5) ),
+           name = name_lab,
+           por = round(est/est[3]*100, 1),
+           por = paste0(format(round(por, 1), digits = 1, nsmall = 1), "%"),
+           por = case_when(stat %in% c("M1", "M2") ~ "",
+                           T ~ por),
+           CI = CI |>
+             map(round, digits = 3) |>
+             map(format, scientific = FALSE, digits = 3, nsmall = 3) |>
+             map(str_c, collapse = "/") |>
+             unlist(),
+           CI = paste0("(", CI, ")") ) |>
+    select(grupo, name, est, CI, por) |>
+    flextable() |>
+    set_caption(caption = "Descomposición de la diferencia de segregación (Índice de Información Mutua)",
+                autonum = run_autonum(seq_id = "tab", bkm = "school-tab2",
+                                      bkm_all = TRUE)) |>
+    set_header_labels(grupo = "", name = "", est = "Value",
+                      CI = "CI", por = "% Explicado") |>
+    add_header_row(values = c("", "",
+                              "Índice de Información Mutua (M)",
+                              "% Explicado"),
+                   colwidths = c(1, 1, 2, 1)) |>
+    colformat_double(big.mark = " ", decimal.mark = ",", na_str = "-") |>
+    colformat_int(big.mark = " ", na_str = "-") |>
+    colformat_double(j = 3, digits = 3,
+                     decimal.mark = ",", big.mark = " ") |>
+    italic(j = 4, part = "body") |>
+    bold(i = 3, part = "body") |>
+    color(j = 4, part = "body", color = "grey35") |>
+    merge_v(j = c(1:2, 5), part = "header") |>
+    merge_v(j = 1, part = "body") |>
+    merge_h(i = 3, part = "body") |>
+    align(align ='center', part = 'all') |>
+    align(j = 1:2, align ='left', part = 'all') |>
+    align(j = 5, align ='center', part = 'header') |>
+    align(j = 5, i = 4:8, align ='right', part = 'body') |>
+    align(j = 5, i = 3, align ='center', part = 'body') |>
+    hline(i = 2:3, border = fp_border(width = 1)) |>
+    add_footer_lines("Estimator method: Shapley.") |>
+    footnote(part = "header", j = 3, i = 1,
+             value = as_paragraph(
+               paste("Los valores están corregidos por sesgo.",
+                     replic, "iteraciones Bootstrap.",
+                     "Intervalo de confianza (CI) = 99 %") ),
+             ref_symbols = "a") |>
+    flextable::font(fontname='Alegreya Sans', part = "all") |>
+    flextable::fontsize(size = 7, part = "all")
 
-  tab1 <- rbind(tab1[!names(tab1) %in% c("PRI_TOTAL", "SEC_TOTAL")],
-                summarise(tab1,
-                          TIPO_HAB = "Total CABA",
-                          across(.cols = contains("_PRI"),
-                                 .fns = ~weighted.mean(.x, PRI_TOTAL)),
-                          across(.cols = contains("_SEC"),
-                                 .fns = ~weighted.mean(.x, SEC_TOTAL)) ) )
+  rm(name_lab)
 
-# Tab2: Distribución de alumnos en circuitos por radio
-# Tab3: Distribución de alumnos en sectores por radio
-# Tab4: Distribución de alumnos en circuitos:sectores por radio
-
-# base <- list(PRI = PRI, SEC = SEC)
-# tab2 <- list()
-# tab3 <- list()
-# tab4 <- list()
-tab5 <- list()
-
-# for(i in names(res)){
-#   if(str_starts(i, "PRI")){
-#     a <- "PRI"
-#   }else{
-#     a <- "SEC"
-#   }
-  # lp_res <- res[[i]]$solution
-  lp_res <- res$solution
-  # rownames(lp_res) <- rownames(DIS[[a]])
-  # colnames(lp_res) <- colnames(DIS[[a]])
-
-  lp_res <- lp_res %>%
-    as_tibble(rownames = "ID") %>%
-    pivot_longer(cols = !ID, names_to = "CUEANEXO",
-                 values_to = "n") %>%
-    filter(n != 0) %>%
-    left_join(margOFE[c("CUEANEXO", "SECTOR")],
-              by = "CUEANEXO" ) %>%
-    left_join(margDEM[c("ID", "TIPO_HAB")], by = "ID" )
-
-#   tab2[[i]] <- xtabs(n ~ TIPO_HAB + cl, data = lp_res)
-#   tab2[[i]] <- rbind(round(prop.table(tab2[[i]], 1) * 100 ),
-#                      OCUPADO = apply(tab2[[i]], 2, sum),
-#                      VACANTES = xtabs(n~cl, data = margOFE[[a]]))
-#   tab3[[i]] <- round(prop.table(xtabs(n ~ TIPO_HAB + SECTOR,
-#                                       data = lp_res), 1) * 100 )
-  lp_res <- lp_res %>% mutate(cl_SEC = paste(cl, SECTOR, sep = ":"),
-                              cl_SEC = factor(cl_SEC,
-                                              levels = paste(rep(1:4, each = 2),
-                                                             c("Estatal", "Privado"), sep = ":")) )
-  # tab4[[i]] <- round(prop.table(xtabs(n ~ TIPO_HAB + cl_SEC,
-  #                                     data = lp_res), 1) * 100 )
-  # tab5[[i]] <- lp_res %>%
-  #   group_by(TIPO_HAB) %>%
-  #   summarise(across(.cols = Clus.1:Clus.4,
-  #                    .fns = ~weighted.mean(.x, n)*100) )
-
-  rm(lp_res)
-# }
-tab3 <- lapply(tab3, as.data.frame.matrix)
-tab3 <- data.frame(TH = rownames(tab3$PRI),
-                   PRI_ASI = tab3$PRI$Estatal,
-                   PRI_CL = tab3$PRIcl$Estatal,
-                   PRI_CL_S =  tab3$PRIcl_s$Estatal,
-                   SEC_ASI = tab3$SEC$Estatal,
-                   SEC_CL = tab3$SECcl$Estatal,
-                   SEC_CL_S =  tab3$SECcl_s$Estatal)
-rm(i, a, base)
-
-### ╠ TAB03: Diferencia de segregación --------------------------------------
-
-  file.edit("C:/Users/este.de.ahora/Documents/_investigacion/_publicado/2023.06 - Artículo. residential-and-school-segregation/analysis/script/03_Tables.R")
-
-### ╚ TAB06: Comparación de distancias lineales y por red urbana ------------
+### ╠ TAB 7.3: Comparación de distancias lineales y por red urbana ------------
   # Comparación de distancias lineales y por red urbana
 
-  aux_TAB06a <- db_DIS |>
-    mutate(DIF = DIS_t - DIS_l) |>
-    left_join(AUX$RADIO[c("ID", "TIPO_HAB2")], by = "ID") |>
-    group_by(TIPO_HAB2)  |>
-    summarise(DIF = mean(DIF))
+  # aux_TAB06a <- db_DIS |>
+  #   mutate(DIF = DIS_t - DIS_l) |>
+  #   left_join(AUX$RADIO[c("ID", "TIPO_HAB2")], by = "ID") |>
+  #   group_by(TIPO_HAB2)  |>
+  #   summarise(DIF = mean(DIF))
+  #
+  # aux_TAB06a <- DIS2 |>
+  #   mutate(DIF = DIS_t - DIS_l,
+  #          DIS_c = cut(DIS_l, breaks = c(0, 0.75, 2, 20),
+  #                      labels = c("Menos de 750m", "Entre 750m y 2km",
+  #                                 "Más de 2km") ) )  |>
+  #   left_join(AUX$RADIO[c("ID", "TIPO_HAB2")], by = "ID") |>
+  #   group_by(TIPO_HAB2, DIS_c, .drop = T) |>
+  #   summarise(DIF = mean(DIF)) |>
+  #   filter(!is.na(DIS_c) ) |>
+  #   pivot_wider(id_cols = TIPO_HAB2, names_from = DIS_c, values_from = DIF)
+  #
+  # EDU$TAB06 <- cbind(aux_TAB06a, aux_TAB06a[-1])
+  #
+  # rm(aux_TAB06a, aux_TAB06a)
 
-  aux_TAB06a <- DIS2 |>
-    mutate(DIF = DIS_t - DIS_l,
-           DIS_c = cut(DIS_l, breaks = c(0, 0.75, 2, 20),
-                       labels = c("Menos de 750m", "Entre 750m y 2km",
-                                  "Más de 2km") ) )  |>
-    left_join(AUX$RADIO[c("ID", "TIPO_HAB2")], by = "ID") |>
-    group_by(TIPO_HAB2, DIS_c, .drop = T) |>
-    summarise(DIF = mean(DIF)) |>
-    filter(!is.na(DIS_c) ) |>
-    pivot_wider(id_cols = TIPO_HAB2, names_from = DIS_c, values_from = DIF)
+### ╚ TAB App G.1: Índices de segregación comparado -----------------
 
-  EDU$TAB06 <- cbind(aux_TAB06a, aux_TAB06a[-1])
-
-  rm(aux_TAB06a, aux_TAB06a)
+  EDU$appG_TAB1 <- EDU$EDU5 |>
+    map2(names(EDU$EDU5) |> str_remove("db_"),
+         \(db, nm){
+           db |>
+             set_names(c("ID_RADIO", "PRI", "SEC", "SUP")) |>
+             PhD_seg_summarise(bootstrap = replic) |>
+             set_names(c("Index", nm))
+         }) |>
+    reduce(left_join, by = "Index") |>
+    mutate(EXP = MODEL / EDU * 100,
+           s = "") |>
+    select(Index, RESI, EDU, s, MODEL, EXP) |>
+    flextable() |>
+    set_caption(caption = "Indicadores de segregación escolar según valores observados y modelado",
+                autonum = run_autonum(seq_id = "tab", bkm = "appG-segreg-index",
+                                      bkm_all = TRUE)) |>
+    align(align ='center', part = 'all') |>
+    align(j = 1, align ='left', part = 'all') |>
+    colformat_double(digits = 3, big.mark = " ",
+                     decimal.mark = ",", na_str = "-") |>
+    colformat_int(big.mark = " ", na_str = "-") |>
+    colformat_double(j = 6, digits = 1, suffix = "%") |>
+    PhD_compose_eq() |>
+    set_header_labels(Index = "Índice de Segregación",
+                      RESI = "Residencial",  EDU = "Escolar",
+                      s = " ", MODEL = "Asignado", EXP = "% Explicado") |>
+    add_header_row(values = c("Índice de Segregación", "Empírico",
+                              s = " ", "Modelo"),
+                   colwidths = c(1, 2, 1, 2)) |>
+    merge_v(j = c(1, 4), part = "header") |>
+    flextable::font(fontname='Alegreya Sans', part = "all") |>
+    flextable::fontsize(size = 7, part = "all") |>
+    flextable::width(j = 1, 5.25, unit = "cm") |>
+    flextable::width(j = 4, 0.25, unit = "cm") |>
+    flextable::width(j = c(2:3, 5:6), 1.25, unit = "cm")
 
 # Guardar resultados ----------------------------------------------------------
 
