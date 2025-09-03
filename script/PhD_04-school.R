@@ -1,6 +1,5 @@
 # Educational
 
-# TODO  Modificar directorios _draft en bases intermedias
 # TODO? Filtrar si los costos son más altos que un límite en
 #         PhD_lp_make_edges()
 # TODO? Incorporar covariable (cantidad de población) en densidad o
@@ -220,11 +219,11 @@ replic <- 1000
     tictoc::toc()
     invisible(gc())
 
-    save(DIS_n, file = "_draft/LP_00_distancias-nodos.Rdata")
+    save(DIS_n, file = fs::path("data-workflow", "intermediate-data", "LP_00_distances-network", ext = "Rdata"))
 
   }else{
-    cli::cli_process_start(cli::col_grey("Cargando datos de distancias por red urbana de {.path _draft/LP_00_distancias-nodos.Rdata}"))
-    load(file = "_draft/LP_00_distancias-nodos.Rdata")
+    cli::cli_process_start(cli::col_grey("Cargando datos de distancias por red urbana de {.path data-workflow/intermediate-data/LP_00_distances-network.Rdata}"))
+    load(file = file = fs::path("data-workflow", "intermediate-data", "LP_00_distances-network", ext = "Rdata"))
     cli::cli_process_done()
   }
 
@@ -271,8 +270,8 @@ replic <- 1000
 
   cli::cli_process_done()
 
-  cli::cli_alert_info(col_silver("Guardando base de distancias (`db_DIS`) en {.path _draft/LP_01_distancias.RData}"))
-  save(db_DIS, file = fs::path("_draft", "LP_01_distancias", ext = "RData"))
+  cli::cli_alert_info(col_silver("Guardando base de distancias (`db_DIS`) en {.path data-workflow/intermediate-data/LP_01_distance-db.Rdata}"))
+  save(db_DIS, file = fs::path("data-workflow", "intermediate-data", "LP_01_distance-db", ext = "Rdata"))
 
   rm(DIS_l, DIS_n, ESC, RAD, from, to, blended)
 
@@ -334,7 +333,7 @@ replic <- 1000
 
   cli::cli_li(col_yellow("Generar allocation model (EDU4)"))
 
-  # load(fs::path("_draft", "LP_01_distancias", ext = "RData"))
+  # load(fs::path("data-workflow", "intermediate-data", "LP_01_distance-db", ext = "Rdata"))
   cli::cli_process_start(cli::col_grey("Preparando bases para modelo lp"))
 
   # Bases con marginales
@@ -366,7 +365,7 @@ replic <- 1000
 
     tictoc::tic("")
     cli::cli_process_start(cli::col_grey("Calcular modelo lp"))
-    lpres <- PhD_lp_allocation(cost = cost_mat,
+    LPRES <- PhD_lp_allocation(cost = cost_mat,
                                supply = margDEM$EST_SEC,
                                capacity = margOFE$n,
                                solver = "Rglpk", k = 0.2,
@@ -375,17 +374,17 @@ replic <- 1000
     cat(col_blue("Tiempo de ejecución"))
     tictoc::toc()
 
-    cli::cli_alert_info(col_silver("Guardando resultado lp (`lpres`) en {.path data-workflow/final-data/LPRES.RData}"))
-    save(lpres, file = fs::path("data-workflow", "final-data", "LPRES", ext = "RData"))
+    cli::cli_alert_info(col_silver("Guardando resultado lp (`LPRES`) en {.path data-workflow/final-data/LPRES.rda}"))
+    save(LPRES, file = fs::path("data-workflow", "final-data", "LPRES", ext = "rda"))
 
   }else{
-    cli::cli_li(col_yellow("Cargar resultados de model allocation (reslp)"))
-    load(file = fs::path("data-workflow", "final-data", "LPRES", ext = "RData"))
+    cli::cli_li(col_yellow("Cargar resultados de model allocation (LPRES)"))
+    load(file = fs::path("data-workflow", "final-data", "LPRES", ext = "rda"))
   }
 
-  EDU$EDU4 <- lpres
+  EDU$EDU4 <- LPRES
 
-  rm(lpres)
+  rm(LPRES)
 
 ### ╠ Armado de bases de segregación -----------------------------------
 
@@ -756,9 +755,9 @@ replic <- 1000
   #
   # rm(aux_TAB06a, aux_TAB06a)
 
-### ╚ TAB App G.1: Índices de segregación comparado -----------------
+### ╚ TAB App H.1: Índices de segregación comparado -----------------
 
-  EDU$appG_TAB1 <- EDU$EDU5 |>
+  EDU$appH_TAB1 <- EDU$EDU5 |>
     map2(names(EDU$EDU5) |> str_remove("db_"),
          \(db, nm){
            db |>
@@ -772,7 +771,7 @@ replic <- 1000
     select(Index, RESI, EDU, s, MODEL, EXP) |>
     flextable() |>
     set_caption(caption = "Indicadores de segregación escolar según valores observados y modelado",
-                autonum = run_autonum(seq_id = "tab", bkm = "appG-segreg-index",
+                autonum = run_autonum(seq_id = "tab", bkm = "appH-segreg-index",
                                       bkm_all = TRUE)) |>
     align(align ='center', part = 'all') |>
     align(j = 1, align ='left', part = 'all') |>
