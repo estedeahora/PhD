@@ -828,7 +828,7 @@ identificando la parte que corresponde a una diferencia estructural
 [@Elbers2023]. El 'método geométrico' propuesto en el apartado anterior
 se utiliza fundamentalmente para visualizar situaciones de segregación
 local, que pudiendo tener similares valores de segregación local refiere
-a situaciones "opuestas" en cuanto al tipo de población. Como señalamos
+a situaciones 'opuestas' en cuanto al tipo de población. Como señalamos
 anteriormente, ambos métodos pueden ser utilizados con la técnica de
 'corrección de conteos', para que su cálculo considere las composiciones
 de las unidades espaciales vecinas.

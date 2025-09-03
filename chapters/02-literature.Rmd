@@ -685,7 +685,7 @@ censales para 'medir la segregación' (ver el siguiente capítulo para una
 descripción detallada de las 'medidas de segregación'). La posibilidad
 de obtener para cualquier ciudad un índice de segregación
 (potencialmente comparable con el de otras ciudades), generó en estas
-técnicas un gran atractivo y promovió su difusión. Como consecuenca de
+técnicas un gran atractivo y promovió su difusión. Como consecuencia de
 la importancia que tuvo el funcionalismo norteamericano en la sociología
 del período de postguerra[^02-literature-16] y la facilidad para
 extender las técnicas estadísticas a otras ciudades, los estudios
