@@ -24,7 +24,7 @@ RES$appA_TAB2
 
 # Relación matemática entre inercia y segregación local (Índice de Información mutua) {#appendixB}
 
-\chaptermark{Relación matemática entre inercia y segregación local}
+\markboth{\MakeUppercase{Anexo}\ \thechapter.\ Relación matemática entre inercia y segregación local}{}
 
 Dada una matriz $X$ de U x G, con el recuento absoluto de cada uno de los grupos en las unidades, es posible construir una nueva matriz de perfiles $P$ de U x G, con la proporción de cada grupo en cada unidad. La matriz $P$ se construye dividiendo cada fila de la matriz $X$ por la suma de los elementos de esa fila. A partir de esta matriz $P$ podemos definir la siguiente notación:
 
@@ -66,9 +66,10 @@ En definitiva, tanto la inercia $\phi^2$ como el índice de segregación $M$ pue
 
 $$
 \sum_{u=1}^U m_u . \text{dist}
-$$ 
+$$
 
 <!-- Queda por definir la relación entre ambas distancias.  -->
+
 En términos generales, la distancia chi cuadrado es una medida de distancia que se utiliza para medir la diferencia entre dos distribuciones de probabilidad. En este sentido, la distancia chi cuadrado puede pensarse como una medida de la 'dispersión' de los perfiles de las unidades en relación al perfil medio. Por otro lado, la distancia definida a partir de la 'cantidad de información' puede pensarse como una medida de la 'información' que aporta el perfil de cada unidad al perfil medio. En este sentido, ambas medidas pueden pensarse como medidas de la 'variabilidad' y 'dispersión' de los perfiles de las unidades en relación al perfil medio.
 
 En la Figura \@ref(fig:appB-dist-comp) se presenta una comparación entre ambas distancias en .
@@ -84,7 +85,9 @@ knitr::include_graphics(here::here("figures",
 <!-- Distancia euclidiana: -->
 
 <!-- $$ -->
+
 <!-- \text{distancia euclidiana} = \sqrt{\sum_{g=1}^G (p_{g|u} - p_{g})^2} -->
+
 <!-- $$ -->
 
 # Cálculo de la probabilidad de homogamia por unidad espacial {#appendixC}
@@ -162,7 +165,7 @@ knitr::include_graphics(here::here("figures", "Homogamia_relation_P1-P2.png"))
 
 # Relación entre proporción de personas y probabilidad de homogamia según hipótesis nula {#appendixD}
 
-\chaptermark{Relación entre proporción de personas y probabilidad de homogamia...}
+\markboth{\MakeUppercase{Anexo}\ \thechapter.\ Relación entre proporción de personas y probabilidad de homogamia...}{}
 
 ```{r appD-p-vs-P}
 #| fig.cap: "Relación entre Proporción de personas y probabilidad de homogamia (P'(Ha|a)) bajo H0"
@@ -234,8 +237,61 @@ include_graphics(here::here("figures", "Movilidad_MCA_Variables_ind4.png") )
 include_graphics(here::here("figures", "Movilidad_MCA_Variables_ind5.png") )
 ```
 
-# Índices de segregación escolar (modelo y real) {#appendixG}
+# Descripción paso-a-paso del modelo de asignación {#appendixG}
 
-```{r appG-segreg-index}
-EDU$appG_TAB1
+El código de programación utilizado para la asignación puede consultarse en el repositorio *GitHub* asociado a la tesis.
+
+## Paso 1. Definir la cantidad de población demandante y el perfil socioeconómico de cada espacio residencial {.unnumbered}
+
+Para cada unidad espacial censal `j` se especifica:
+
+-   Demanda de población: la población residente de entre 12 y 17 años. Utilizamos esta información para construir el vector de demanda, donde cada elemento del vector representa la cantidad de la 'población demandante' en la unidad censal j.
+-   Perfil educativo: el porcentaje de la población para cada uno de los grupos educativos (educación primaria, secundaria y superior). Consideramos el nivel educativo del proveedor principal en cada hogar para crear una matriz de tamaño J x 3 (número de categorías educativas), donde cada fila suma 1. Esta información se asigna al centroide de cada unidad censal, ya que se considera que representa la distancia promedio recorrida por cada estudiante potencial.
+
+## Paso 2. Definir la capacidad educativa de cada escuela {.unnumbered}
+
+Se asigna a cada escuela `k` una capacidad, que representa la cantidad máxima de estudiantes que puede albergar. Este valor se imputa a partir de la cantidad de estudiantes inscriptos en el año anterior, que actúa como *proxy* de esta capacidad. A partir de esta información se construye el vector de oferta, donde cada elemento del vector representa la capacidad máxima de estudiantes que puede alojar la escuela `k`.
+
+## Paso 3. Definir la matriz de distancias entre unidades espaciales y escuelas {.unnumbered}
+
+Se construye una matriz de costos (`C`), donde cada elemento $C_{jk}$ representa la distancia entre la unidad espacial `j` y la escuela `k`. Para cada escuela y unidad espacial se calcula la distancia en línea recta hasta el tramo de la red vial más cercana, donde se crea un nuevo nodo en la red (si es necesario). Luego, se computa la distancia en la red vial entre estos dos puntos de la red. Se suman (a) las dos distancias en línea recta y (b) las distancias en la red; para obtener la distancia total entre la unidad censal y la escuela. La matriz resultante `C` tiene una dimensión de `J x K`, donde cada fila representa una de las `J` unidades censales y cada columna representa una de las `K` escuelas. El elemento $c_{jk}$, perteneciente a la matriz `C`, indica la distancia entre el centroide de la unidad censal `j` y la escuela `k` a través de la trama urbana y es interpretado como el 'costo' promedio de ir desde esa unidad espacial a esa escuela.
+
+## Paso 4. Construcción de la Matriz de Asignación (programación lineal entera) {.unnumbered}
+
+Este es el paso central del método propuesto. En este paso se busca encontrar la Matriz A (de dimensión `J x K`), en la cual cada elemento $a_{jk}$ representa la cantidad de personas de la unidad censal $j$ que deberían asistir a la escuela $k$ para minimizar la distancia total recorrida. Para resolver este problema de optimización se utiliza una variante de los problemas de *programación lineal entero*, conocido como *transportation problem*. Este método permite minimizar una 'función objetivo', manteniendo ciertas 'constricciones' y generando como respuesta una matriz que contenga sólo valores enteros.
+
+***A. Definir la función objetivo***
+
+Se define como función objetivo la ecuación `(1)`. Dado que la Matriz $C$ representa la distancia entre las unidades censales y las escuelas, la ecuación `(1)` minimiza la distancia total recorrida por todos los estudiantes, para el caso en que estos fueran asignados según la Matriz $A$.
+
+$$
+\min_{a \in \mathbb Z_{\geq 0}}( \sum_j^J \sum_k^K a_{jk}.c_{jk} ) \quad \quad \textrm{(1)}
+$$
+
+***B.*** ***Definición de las constricciones.***
+
+Se establecen tres constricciones:
+
+-   Los elementos de la matriz `A` deben ser valores enteros no negativos ($a_{jk} \in \mathbb Z_{\geq 0}$). Esta restricción es necesaria para garantizar que la cantidad de estudiantes asignados por la Matriz `A` sea siempre un número entero.
+-   Dado que en nuestro caso la suma total de la población demandante es mayor que la capacidad total de las escuelas, no todos los individuos en edad escolar de cada unidad espacial podrán ser asignados a una escuela. Como resultado, la suma de cada fila de la matriz `A` deberá ser igual o menor a la población demandante de cada unidad censal ($\sum_k^K a_{jk} \leq demand_{jk}$; para cada una de las `J` unidades espaciales).
+-   Cada escuela debe tener una asignación de alumnos que no exceda su capacidad máxima. Dado que la suma de la población demandante es menor que la capacidad de las escuelas, esta desigualdad tomará siempre una forma de igualdad. En otras palabras la suma de cada `k` columna de la matriz `A` debe ser igual a la capacidad de la escuela `k` ($\sum_j^J a_{jk} = supply_{jk}$; para cada una de las `K` escuelas).
+
+***C. Restringir el problema (enfoque 'greedy'***)
+
+Teniendo en cuenta que el problema de asignación planteado es poco manejable computacionalmente, se realiza un recorte del problema mediante un enfoque *greedy*. Este enoque consiste en computar sólo una parte del problema total seleccionando sólo una fracción de los vínculos posibles entre escuelas y unidades espaciales. En concreto, para cada unidad espacial se eligen las `p` escuelas más cercanas, de manera que el resultado final sólo permite asignar estudiantes a este subconjunto de escuelas.[^98-anexo-1]
+
+[^98-anexo-1]: En el caso de uso de esta tesis donde tenemos 13.395 unidades espaciales y 3.178 escuelas, el problema original planteado supone considerar 42.569.310 vínculos posibles. Mediante el enfoque *greedy* hemos retenido el 20% de las escuelas (635) más cercanas a cada unidad espacial, por lo cual los vínculos totales considerados se redujeron a un total de 8.192.220.
+
+***D. Optimización***
+
+Para resolver el problema de optimización planteado utilizamos el paquete `Rglpk`, el cual permite una interfaz con entre R y la api del *GNU Linear Programming Kit*, una herramienta de código abierto escrita en ANSI C y desarrollada por Andrew O. Makhorin (*Андрей Олегович Махорин*) para resolver 'problemas de gran tamaño de programación lineal, programación lineal entera mixta y otros problemas relacionados'. Como resultado de utilizar esta herramienta se obtiene una matriz de asignación $A$ que minimiza la función objetivo respetando las constricciones impuestas.
+
+## Paso 5. Construcción del perfil de población de cada escuela {.unnumbered}
+
+En base a la matriz de asignación `A` que relaciona las unidades censales y las escuelas, es posible asignar a cada escuela una cantidad de estudiantes proporcional a la composición educativa de cada una de las unidades censales. Para ello, se utiliza la información sobre el perfil educativo de los hogares de cada unidad censal. Por ejemplo, si la matriz `A` asigna 20 estudiantes de la unidad censal 'Census01' a la escuela 'School01', y el perfil educativo de los hogares en esa unidad censal es de 50/30/20 (`PRI`, `SEC`, `SUP`, respectivamente), entonces se asignarán a 'School01': 10 estudiantes de origen `PRI`; 6 estudiantes de origen `SEC`; y 4 estudiantes de origen `SUP`. Al repetir este proceso para todas las unidades censales asignadas a cada escuela, se puede obtener el perfil del origen educativo que se espera obtener según el modelo. Como resultado, se obtiene una matriz `K x 3` (una columna por cada nivel educativo). Esta matriz indica la cantidad de estudiantes asignados por el modelo a cada escuela `k` para cada categoría educativa. La composición 'modelada' puede ser comparada con la composición 'real' utilizando índices de segregación.
+
+# Índices de segregación escolar (modelo y real) {#appendixH}
+
+```{r appH-segreg-index}
+EDU$appH_TAB1
 ```
