@@ -303,25 +303,29 @@ factor en la constitución de la segregación urbana.
 
 ## La construcción de un modelo de asignación: método y datos utilizados {#school-method}
 
+<!-- Fuentes -->
+
 En este capítulo analizaremos la segregación educativa en el nivel
 secundario. Si bien es posible hacer un análisis similar para el nivel
 primario consideramos que el nivel secundario es el que concentra las
 mayores desigualdades dentro de la etapa obligatoria del sistema
-educativo. <!-- Fuentes -->Para el análisis utilizaremos tres fuentes de
-datos. Por un lado, para obtener la composición educativa de los padres
-de las escuelas utilizamos datos de la evaluación *Aprender* *2017* y
-*Aprender 2019*, implementada por el *Ministerio de Educación de la
-Nación*.[^07-analysis-iv-schools-5] Esta evaluación se realiza en todos
-los establecimientos educativos del país a los estudiantes del último
-año del nivel medio y releva características de los hogares de los
-estudiantes, como el nivel educativo de los adultos responsables que
-utilizamos para el cálculo de la segregación. En segundo lugar, se
-utilizan datos del *Relevamiento Anual* (RA), también implementado por
-el *Ministerio de Educación de la Nación.* Esta evaluación información
-de la matrícula total por año de cada escuela, lo cual utilizamos para
-'expandir' la matrícula. Por último, empleamos datos del Censo 2010 para
-conocer la composición educativa de los hogares, así como la cantidad de
-niños en edad escolar secundaria.[^07-analysis-iv-schools-6]
+educativo. Para el análisis utilizaremos tres fuentes de datos. Por un
+lado, para obtener la composición educativa de los padres de las
+escuelas utilizamos datos de la evaluación *Aprender* *2017* y *Aprender
+2019*, implementada por el *Ministerio de Educación de la
+Nación*.[^07-analysis-iv-schools-5] Esta evaluación es de caracter
+censal y se realiza en todos los establecimientos educativos del país a
+los estudiantes del último año del nivel medio. En conjunto con la
+evaluación se relevan características de los hogares de los estudiantes,
+como el nivel educativo de los adultos responsables, información que en
+este trabajo utilizamos para el cálculo de la segregación. En segundo
+lugar, se utilizan datos del *Relevamiento Anual* (RA), también
+implementado por el *Ministerio de Educación de la Nación.* Esta
+evaluación información de la matrícula total por año de cada escuela, lo
+cual utilizamos para 'expandir' la matrícula. Por último, empleamos
+datos del Censo 2010 para conocer la composición educativa de los
+hogares, así como la cantidad de niños en edad escolar
+secundaria.[^07-analysis-iv-schools-6]
 
 [^07-analysis-iv-schools-5]: La evaluación *Aprender* se aplica
     alternativamente en los diferentes niveles educativos, por lo cual
@@ -338,121 +342,92 @@ niños en edad escolar secundaria.[^07-analysis-iv-schools-6]
     consideró del 8^vo^ al 12^vo^ nivel, que se corresponde con 1^ero^ a
     5^to^ en CABA y de 2^do^ a 6^to^ en provincia de buenos aires).
 
-Al igual que en los capítulos anteriores, medimos la segregación
-utilizando el logro educativo de los hogares como un *proxy* del nivel
-socioeconómico. Para ello, distinguimos tres grupos sociales: (a) hasta
-educación primaria completa, incluyendo secundaria incompleta (`PRI`);
-(b) secundaria completa, incluyendo superior incompleto (`SEC`); y (c)
-educación superior completa, ya sea universitaria o no universitaria
-(`SUP`).
+<!-- Revisión de literatura metodológica -->
 
-Además, utilizamos el *Índice de Información Mutua* (M), una medida
-multigrupo basada en la entropía, introducida por Theil (1972) y Theil y
-Finizza (1971), y desarrollada posteriormente por Mora y Ruiz-Castillo
-(2003, 2009, 2011) y Frankel y Volij (2011). Dada su propiedad de
-dependencia de los marginales en ambas direcciones (grupos y unidades),
-este índice es “altamente descomponible”, razón por la cual ha sido
-utilizado en años recientes para analizar la segregación tanto a nivel
-local como entre grupos (e.g., Courtioux y Maury, 2020). El índice puede
-interpretarse como una suma ponderada de la magnitud en que la
-distribución de los grupos en cada unidad se desvía de la distribución
-general. A nivel local, el índice M indica cuánto se reduciría la
-segregación total si desapareciera la segregación en una unidad (o grupo
-de unidades).
+La mayoría de los trabajos precedentes abordan la relación entre
+segregación en el dominio residencial y escolar, mediante el uso de
+medidas globales de segregación. Para ello calculan de forma
+independiente la segregación escolar y residencial en un conjunto de
+ciudades (o regiones) y comparan los resultados de ambos indicadores
+para obtener la diferencia o la tendencia que existe entre ambos
+indicadores [ver por ejemplo: @Boterman2019a; @Farley1975;
+@Frankenberg2013; @Reardon2003]. Sin embargo, este abordaje tiene el
+problema de suponer que la segregación residencial puede compararse de
+manera lineal con la escolar, sin considerar la distribución y
+características de la oferta educativa, así como la demanda educativa.
+Para abordar este problema, @Boterman2019 utiliza datos demográfico de
+las unidades espaciales y propone un método para asignar estudiantes
+(personas en edad escolar) desde cada unidad espacial a las 3 escuelas
+más cercanas. Esta asignación genera una composición escolar hipotética
+de cada una de las escuelas, que utiliza luego para realizar una
+comparación entre la segregación escolar obtenida con esta asignación
+(modelo) y la que realmente se observa (real). En tanto esta propuesta
+considera la demanda territorial y la relación de esta con la
+distribución espacial de las escuelas, este método constituye una mejora
+respecto a la propuesta anterior. Sin embargo, la propuesta supone que
+las escuelas pueden 'absorver' la demanda sin considerar la oferta o
+*capacidad* de las escuelas.
 
-<!--#  -->
+<!-- Allocation Model -->
 
-Con base en el desarrollo acumulado sobre medidas de segregación (véase
-Tivadar, 2019; Wong, 2016; Yao et al., 2019 para una revisión),
+Como respuesta a estas limitaciones, en este trabajo proponemos un
+modelo de asignación [*allocation model*] de estudiantes que considera
+tanto la *demanda educativa* (población en edad escolar en las unidades
+residenciales) como la *capacidad de las escuelas* para absorber dicha
+demanda. Esta propuesta fue desarrollada en trabajos anteriores
+[@DiVirgilio2019d; @Serrati2021; @Serrati2023] y se basa en generar un
+modelo de asignación [*allocation model*] de alumnos a escuelas, pero
+que tiene en cuenta las constricciones de la demanda (población en edad
+escolar) y la oferta (capacidad de las escuelas). En términos sencillos,
+el modelo se basa en obtener una asignación óptima que minimiza la
+distancia recorrida (a través de la trama urbana) por todos los alumnos
+del sistema incorporando como restricciones la demanda de las unidades
+espaciales y la capacidad de las escuelas.[^07-analysis-iv-schools-7] El
+resultado obtenido simula una asignación hipotética de alumnos que,
+partiendo de una distribución poblacional dada, busca maximizar los
+recursos (vacantes educativas) a partir de minimizar el total de la
+distancia recorrida (entre la residencia de los estudiantes y las
+escuelas). Esta situación hipotética podría asemejarse al comportamiento
+de un sistema educativo con asignación planificada de manera
+centralizada, el cual puede funcionar como escenario *tipo ideal*
+(*Idealtypus*) para contrastar con las situaciones reales. Por último,
+si se asume que cada área residencial aporta a cada una de las escuela
+una cantidad proporcional de estudiantes en función de su composición
+social, es posible inferir una 'composición social teórica' de las
+escuelas (véase esquema en Figura \@ref(fig:school-scheme)).
 
-Según Elbers (2023), debido a la propiedad de dependencia de los
-marginales y, en consecuencia, a su alta descomponibilidad, este índice
-permite: (a) identificar el efecto local de la segregación; y (b)
-comparar diferentes estructuras de segregación, distinguiendo entre el
-efecto estructural y el efecto de cambios en los marginales.
+[^07-analysis-iv-schools-7]: Se define una matriz de costos $C$ de
+    dimensiones `J x K` con las distancias por la trama urbana entre
+    cada uno de los centroides de las $J$ unidades residenciales y las
+    $K$ escuelas. Además se generan dos vectores con la ${demanda}$ de
+    cada radio (cantidad de personas entre 13 y 17 años) y la
+    ${capacidad}$ de cada escuela (cantidad de vacantes en cada
+    escuela). El problema consiste en encontrar la matriz $A$ de números
+    enteros positivos ($a_{jk} \in \mathbb{N}_{\geq 0}$) que genere una
+    asignación de alumnos tal que minimice la función objetivo
+    $\sum_{j=1}^J \sum_{k=1}^K a_{jk} . c_{jk}$; y cuyos marginales
+    cumplan las siguientes restricciones: (a)
+    $\sum_{k=1}^K A_{j k} \leq {demanda}_k$; y (b)
+    $\sum_{j=1}^J A_{j k} \leq {capacidad}_j$. En el caso que la
+    ${demanda}$ sea mayor que la ${capacidad}$, la primera de las
+    desigualdades anteriores se torna en una relación de igualdad,
+    mientras que en el caso inverso es la segunda la que se transforma
+    en una relación de igualdad. Planteado de esta manera, se trata de
+    resolver un problema de Programación Lineal Entera [*Integer
+    Programming Problem*], en particular, la variante conocida como
+    Problema de Transporte [*Transportation Problem*].
 
-<!--# literatura metodológica -->
-
-Para refinar estos análisis algunos trabajos usan la distancia por la
-trama urbana [@Humberto2020] o considerando el sistemas públicos de
-transporte [@Sharma2022]. Para analizar el afecto de la distancia entre
-residencia y escuela, @Serrati2023 propuso un modelo de asignación que
-considera la capacidad de las escuelas, señalando que la segregación
-residencial y la distancia pueden resultar insuficientes para explicar
-la segregación escolar observada.
-
-<!--#  -->
-
-Para realizar una descripción se utilizan proceso de patrones puntuales,
-lo que nos permite estimar la densidad
-
-<!--#  -->
-
-La estrategia metodológica consistió, en primer lugar, en construir un
-modelo hipotético de asignación de alumnos a escuelas. Este modelo
-permite evaluar la relación entre segregación residencial y escolar bajo
-ciertos supuestos, funcionando como un escenario de *tipo ideal*
-(*Idealtypus*) frente a las situaciones reales. En términos técnicos, el
-modelo resuelve un problema de programación lineal entera con
-restricciones, que minimiza la distancia recorrida por todos los alumnos
-de la ciudad teniendo en cuenta la oferta y la demanda. El número de
-alumnos asignados se determina a partir de la población en edad escolar
-en cada “radio” censal y de la capacidad de absorción de cada escuela.
-
-El modelo describe cómo funcionaría el mecanismo de asignación si
-dependiera únicamente de la proximidad espacial entre las residencias de
-los estudiantes y las escuelas, condicionado por la capacidad de éstas.
-Representa, en consecuencia, el comportamiento de un sistema educativo
-hipotéticamente planificado de manera centralizada en torno a “áreas de
-captación”. A su vez, si se asume que cada área residencial aporta a
-cada escuela una cantidad proporcional de estudiantes según su
-composición social, es posible inferir una “composición social teórica”
-de las escuelas (véase Figura 1).
-
-Con los resultados del modelo de asignación, se proponen tres
-estrategias comparativas. En primer lugar, se compara el índice de
-segregación escolar real con el derivado del modelo. Según Boterman
-(2019), esta medida constituye un estimador del grado en que la
-segregación residencial puede explicar la segregación escolar (M_model
-vs. M_real).
-
-En segundo lugar, retomando la metodología de Elbers (2023), se
-identifican cambios en la “segregación pura”, es decir, aquellos que
-persisten una vez controlados los efectos de los marginales y de la
-adición/eliminación de unidades. Elbers (2023) aprovecha la propiedad de
-dependencia de los marginales del índice M para aplicar un procedimiento
-de *Iterative Proportional Fitting* (Karmel y Maclachlan, 1988), que
-permite remover el efecto de los marginales y descomponer los distintos
-efectos de la segregación. Esta técnica posibilita una descomposición en
-cinco términos, lo que a su vez permite identificar y separar: (a)
-cambios de unidades: el efecto de la aparición/desaparición de unidades;
-(b) cambios marginales: el efecto de las variaciones en la composición
-de los grupos (marginales) y de las unidades; y (c) cambios de
-segregación pura: el efecto atribuible a un cambio “puro” o estructural
-en la segregación.
-
-Se presenta la propuesta metodológica basada en un modelo de asignación
-('allocation model') de estudiantes en escuelas [@Serrati2023]. De modo
-breve, este modelo genera una asignación "óptima" minimizando la
-distancia total recorrida por total de los estudiantes, de manera que
-funciona como un "tipo ideal" sobre cómo sería la asignación de
-estudiantes si sólo se tuviera en cuenta la distancia. La estrategia
-metodológica consiste en comparar la composición escolar que resulta de
-esta asignación con la composición realmente observada. Para ello se
-utiliza el método propuesto por @Elbers2023, que fue anteriormente
-utilizado de este modo [@Serrati2023].
-
-La propuesta se basa en comparar la composición escolar real de las
-escuelas con la composición hipotética que surgiría de optimizar el
-tiempo de viaje recorrido por el conjunto de los estudiantes. Para ello,
-se construye un modelo de asignación [*allocation model*] óptimo y
-centralizado que minimiza el tiempo de viaje entre el lugar de
-residencia y las escuelas para el total de la población en edad escolar.
-Este modelo se construye mediante el uso de programación lineal entera,
-lo cual permite encontrar la asignación óptima que minimiza la distancia
-total recorrida a la vez que incorpora las constricciones de la demanda
-(personas en edad escolar) y la oferta (vacantes en establecimientos
-educativos).
+    Una primera versión de este abordaje metodológico fue propuesta en
+    el trabajo escrito con Di Virgilio [@DiVirgilio2019d] y desarrollada
+    luego en mi tesis de maestría [@Serrati2021] y un artículo que
+    profundizaba sobre este problema [@Serrati2023]. En la presente
+    tesis, el análisis es ampliado para considerar todo el AMBA, lo cual
+    supuso un problema de escala e hizo necesario un enfoque *greedy*
+    para reducir el problema y hacerlo computacionalmente abordable. En
+    el Anexo \@ref(appendixG) se encuentra disponible una *descripción
+    paso-a-paso* del modo de cálculo utilizado. Además, en el
+    repositorio que acompaña esta tesis puede encontrarse el código R
+    que permite replicar el análisis a nuevos contextos.
 
 ```{r school-scheme}
 #| fig.cap: "Esquema simplificado del modelo de asignación"
@@ -461,39 +436,92 @@ educativos).
 knitr::include_graphics(here::here("figures", "school_model-Allocation.png") )
 ```
 
-Allocation model. El allocation model es un caso particular de medida de
-segregación granular que incorpora la restricción de ?
+Con los resultados del modelo de asignación, la estrategia de análisis
+consiste en calcular la segregación escolar con la composición real y
+con la composición que surge del modelo. Para ello utilizamos el *Índice
+de Información Mutua* (M) que utilizamos y describimos en capítulos
+anteriores.[^07-analysis-iv-schools-8] Como señalamos, este índice es
+'altamente descomponible' y puede ser utilizado como una medida de
+segregación local. Como señalamos anteriormente, dado que los índices de
+segregación tienen dependencia de los marginales la comparación directa
+es problemática y puede generar inexactitudes (ver la discusión sobre
+este tema en el Apartado \@ref(method-history)). Por ello, para comparar
+la estructura de segregación escolar real con la del modelo, en este
+capítulo recuperamos la propuesta de @Elbers2023 que permite distinguir
+los cambios 'estructurales' entre las estructuras de segregación, es
+decir, los cambios que persisten una vez controlados los efectos de los
+marginales y de la adición/eliminación de unidades (ver Apartado
+\@ref(mobilities-method) para un desarrollo sobre el indicador y el
+método propuesto por Elbers). En el capítulo también utilizamos la
+propuesta hecha en el capítulo metodológico, la cual basada en análisis
+de correspondencias permite distinguir la 'dirección' de la segregación
+local (ver Apartado \@ref(method-geometric)). Por último, para realizar
+una descripción se utilizan proceso de patrones puntuales, lo que nos
+permite estimar la densidad
 
--   segregación residencial
--   segregación parental
--   segregación escolar (allocation model)
--   segregación de actividades (mediante segregación granular y análisis
-    de infraestructura urbana disponible)
+[^07-analysis-iv-schools-8]: Al igual que en los capítulos anteriores,
+    medimos la segregación utilizando el logro educativo de los hogares
+    como un *proxy* del nivel socioeconómico. Para ello, distinguimos
+    tres grupos sociales en función del criterio de 'ciclos cumplidos':
+    (a) hasta educación primaria completa, incluyendo secundaria
+    incompleta (`PRI`); (b) secundaria completa, incluyendo superior
+    incompleto (`SEC`); y (c) educación superior completa, ya sea
+    universitaria o no universitaria (`SUP`).
 
 ## Comparación de la segregación en el dominio residencial y escolar {#school-analysis}
 
-### La distribución de escuelas
+### La distribución de escuelas en el AMBA
 
-Describir distribución de escuelas
-
-Mapa de densidad. Hacer análisis ppp para ver si existe heterogeneidad y
-si esta heterogeneidad está vinculada a la población educativa target
+Antes de comenzar a analizar la relación entre la segregación en el
+dominio residencial y escolar, conviene realizar una descripción de cómo
+se distribuye la oferta educativa en el AMBA. La Figura
+\@ref(fig:school-distribution) presenta la distribución espacial de las
+escuelas según sector de gestión (*arriba*) y la densidad estimada de
+esta distribución (abajo), que nos permiten identificar algunos patrones
+generales. En primer lugar, la oferta educativa de nivel medio es
+sensiblemente mayor en la CABA y, particularmente, en la zona central de
+la ciudad (vinculada al casco colonial). En segundo lugar, vemos que,
+sin llegar a la densidad educativa que vemos en esta zona, existen otros
+lugares que concentran una densidad relativamente alta de la oferta
+educativa. Estos se vinculan, fundamentalmente, a lugares que actúan
+como centralidades locales y que, en la mayoría de los casos <!--#  -->.
+En tercer lugar, y como contracara de lo descripto anteriormente,
+encontramos que los espacios más distantes de estas centralidades tienen
+una menor provisión de escuelas educativas... <!--#  -->En cuarto lugar,
+encontramos una similitud bastante marcada en los patrones espaciales de
+la oferta educativa de gestión estatal y la de gestión privada, aunque
+puede destacarse la mayor 'porosidad' de la oferta de gestión estatal,
+que tiene presencia (aunque poco desarrollada y dispersa) en algunos
+territorios donde la oferta privada no existe.
 
 ```{r school-distribution}
-#| fig.cap: "Distribución de escuelas (izquierda) y densidad de escuelas (derecha)"
+#| fig.cap: "Distribución de escuelas (arriba) y densidad de escuelas, método kernel adaptativo (abajo)"
 #| fig.show: 'hold'
-#| out.width: '50%'
+#| out.width: '100%'
 
-# knitr::include_graphics(here::here("figures", "school_density.png"))
+knitr::include_graphics(here::here("figures", "school_distribution.png"))
 knitr::include_graphics(here::here("figures", "school_density.png"))
 ```
 
-Análisis de intensidad / densidad
+Como podríamos preveer de la descripción anterior, el análisis de
+*patrones puntuales* nos permite confirmar que la distribución de
+escuelas secundarias en el AMBA no sigue un proceso aleatorio de Poison.
+Por el contrario, la oferta educativa tiene un patrón agrupado en torno
+a algunos espacios urbanos (las centralidades y subcentralidades
+urbanas).
+
+En sintonía con esto, encontramos que los entornos urbanos tienen una
+provisión de servicios educativos muy desigual. La Tabla
+\@ref(tab:school-tab1) nos muestra para cada entorno urbano la distancia
+promedio y por la trama urbana a la escuela secundaria más cercana.
+Podemos ver que ...
 
 ```{r school-tab1}
 
-#EDU$TAB1
+EDU$TAB1
 ```
+
+Por último, podemos ver que
 
 ### Analizando el efecto de la segregación residencial sobre la segregación escolar
 
@@ -501,15 +529,17 @@ Sin autocorrelación
 
 ```{r school-autocorrelation}
 #| fig.cap: ""
-#| fig.asp: 0.2
+#| fig.asp: 0.5
 
-knitr::include_graphics(here::here("figures", "school_variogram.png"))
+# knitr::include_graphics(here::here("figures", "school_variogram.png"))
 ```
 
-Comparación de segregación escolar modelo-real
+Comparación de segregación escolar modelo-real. Tabla
+\@ref(tab:school-tab2)
 
 ```{r school-tab2}
-# EDU$TAB1
+
+EDU$TAB2
 ```
 
 Definir si existe autocorrelación espacial en la segregación escolar
