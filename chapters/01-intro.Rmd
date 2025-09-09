@@ -165,20 +165,21 @@ en los diferentes dominios y escalas de la vida urbana.
 Este trabajo de tesis se enmarca como una continuidad de la tesis de
 Maestría (MGAIE-UNTREF) titulada 'El territorio en la escuela. Pensando
 la articulación entre desigualdades educativas y territoriales en la
-ciudad de Buenos Aires, Argentina'.[^01-intro-1] En relación con el tema
-del presente proyecto, en la tesis de maestría utilicé el concepto de
-*Reproducción de la Segregación Multi-Dominio* para indagar en qué
-medida la segregación residencial permitía explicar la segregación
-educativa en el ámbito de la Ciudad de Buenos Aires. Como parte de este
-trabajo afirmamos que, en un ámbito de baja segregación residencial como
-el que se observa en la ciudad, la escuela funciona como un mecanismo de
-separación entre los grupos sociales. En este sentido, la escuela
-constituye un ámbito privilegiado para entender cómo los sectores
-sociales evitan el contacto con otros sectores, a pesar de compartir un
-ámbito residencial diverso. En concreto, nuestros resultados avalan la
-idea de que la segregación urbana multi-dominio permite entender el
-proceso mediante el cuales las elecciones escolares se configuran como
-prácticas de segregación que complementan la segregación residencial.
+ciudad de Buenos Aires, Argentina' [@Serrati2021].[^01-intro-1] En
+relación con el tema del presente proyecto, en la tesis de maestría
+utilicé el concepto de *Reproducción de la Segregación Multi-Dominio*
+para indagar en qué medida la segregación residencial permitía explicar
+la segregación educativa en el ámbito de la Ciudad de Buenos Aires. Como
+parte de este trabajo afirmamos que, en un ámbito de baja segregación
+residencial como el que se observa en la ciudad, la escuela funciona
+como un mecanismo de separación entre los grupos sociales. En este
+sentido, la escuela constituye un ámbito privilegiado para entender cómo
+los sectores sociales evitan el contacto con otros sectores, a pesar de
+compartir un ámbito residencial diverso. En concreto, nuestros
+resultados avalan la idea de que la segregación urbana multi-dominio
+permite entender el proceso mediante el cuales las elecciones escolares
+se configuran como prácticas de segregación que complementan la
+segregación residencial.
 
 [^01-intro-1]: La tesis está disponible en
     <https://github.com/estedeahora/MGAIE_Territorio-en-la-escuela>
