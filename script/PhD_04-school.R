@@ -285,16 +285,11 @@ replic <- 1000
   cli::cli_li(col_yellow("Calcular intensidad de escuelas secundarias (EDU1)"))
 
   EDU$EDU1 <- rbind.data.frame(
-    map_dbl(list("Estatal", "Privado", c("Estatal", "Privado")),
-            ~intensity(ESC_ppp[marks(ESC_ppp) %in% .x])) |>
-      round(3),
-    map_dbl(list("Estatal", "Privado", c("Estatal", "Privado")),
-            ~intensity(ESC_ppp[marks(ESC_ppp) %in% .x],
-                       weights = attr(ESC_ppp, "weights")[marks(ESC_ppp) %in% .x])) |>
-      round(1)
+      intensity(ESC_ppp) |> round(3),
+      intensity(ESC_ppp, weights = attr(ESC_ppp, "weights")) |> round(1)
     ) |>
-    set_names(c("Estatal", "Privado", "Total")) |>
-    mutate(Intensidad = c("Escuelas", "Alumnos")) |>
+    set_names(c("Estatal", "Privado")) |>
+    mutate(Intensidad = c("Escuelas", "Alumnos"), ) |>
     select(Intensidad, everything()) |>
     as_tibble()
 
@@ -302,10 +297,17 @@ replic <- 1000
 
   cli::cli_li(col_yellow("Estimar densidad de escuelas secundarias (EDU2)"))
 
-  EDU$EDU2 <- ESC_ppp |>
-    rescale(1/1000, "m") |>
-    adaptive.density(method = "kernel", dimyx = c(300, 300),
-                     weights = attr(ESC_ppp, "weights"), edge = FALSE)
+  EDU$EDU2 <- map(list("Estatal", "Privado", c("Estatal", "Privado")),
+             \(.x){
+               db <- ESC_ppp[marks(ESC_ppp) %in% .x]
+               db |>
+                 unmark() |>
+                 rescale(1/1000, "m") |>
+                 adaptive.density(method = "kernel", dimyx = c(300, 300),
+                                  weights =  attr(db, "weights"), edge = TRUE)
+             }
+    ) |>
+    set_names(c("Estatal", "Privado", "Total"))
 
 ### ╠ Variograma de correlación espacial (segregación) ----------------------------------
 
@@ -485,16 +487,44 @@ replic <- 1000
 
   # file.edit("C:/Users/este.de.ahora/Documents/_investigacion/_publicado/2023.06 - Artículo. residential-and-school-segregation/analysis/script/03_Fig1_allocation-model.R")
 
-### ╠ FIG 7.2: Distribución de escuelas -------------------------------
+### ╠ FIG 7.2: Graficación de función de densidad (Kernel) ------------------
 
-  cli::cli_li(col_yellow("Figure 7.2: Distribución de escuelas secundarias."))
+  cli::cli_li(col_yellow("Figure 7.2: Densidad estimada de capacidad en escuelas secundarias."))
 
-  p2 <- ggplot() +
-    geom_sf(data = CARTO$AMGBA) +
-    geom_sf(data = SEC,
-            aes(size = N_MATRIC^2, color = SECTOR),
-            alpha = 0.2) +
-    geom_sf(data = CARTO$DPTO_AMBA, color = "grey", fill = NA) +
+  p2 <- map(EDU$EDU2,
+            \(esc_dens){
+              ggplot() +
+                stars::geom_stars(data = esc_dens |>
+                                    stars::st_as_stars(),
+                                  aes(fill = v), alpha = 0.8) +
+                geom_sf(data = CARTO$DPTO_AMBA, fill = NA,
+                        color = "grey", size = 0.5) +
+                geom_sf(data = CARTO$FFCC1 |> filter(sentido == 1),
+                        color = "grey25", alpha = 0.5, linewidth = 0.2) +
+                geom_sf(data = CARTO$FFCC2, color = "grey25",
+                        alpha = 0.5, size = 0.75) +
+                geom_sf(data = SEC, color = "black",
+                        size = 0.1, alpha = 0.15) +
+                coord_sf(xlim = AUX$lim_AMBA[c(1,3)],
+                         ylim = AUX$lim_AMBA[c(2,4)]) +
+                scale_fill_viridis_c(option = "turbo", na.value = "white",
+                                     direction = 1) +
+                labs(fill = "Densidad")+
+                theme_void()
+            })
+
+
+  ggarrange(p2[[1]] + theme(legend.position = "bottom", legend.text = element_text(angle = 45, hjust = 1)),
+            p2[[2]] + theme(legend.position = "bottom", legend.text = element_text(angle = 45, hjust = 1)),
+            labels = c("Estatal", "Privado"),
+            ncol = 2) |>
+    ggsave(file = fs::path("figures", "school_density_sector", ext = "png"),
+           width = 40, height = 20, units = "cm")
+
+  ggsave(file = fs::path("figures", "school_density", ext = "png"),
+         plot = p2[[3]], width = 20, height = 20, units = "cm")
+
+  rm(p2)
     geom_sf(data = CARTO$FFCC1 |> filter(sentido == 1),
             color = "grey25", alpha = 0.5, linewidth = 0.2) +
     geom_sf(data = CARTO$FFCC2, color = "grey25",
@@ -512,7 +542,7 @@ replic <- 1000
 
   rm(p2)
 
-### ╠ FIG 7.3: Graficación de función de densidad (Kernel) ------------------
+  rm(aux_RAD, p3)
 
   cli::cli_li(col_yellow("Figure 7.3: Densidad estimada de capacidad en escuelas secundarias."))
 
