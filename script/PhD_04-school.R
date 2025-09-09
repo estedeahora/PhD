@@ -80,7 +80,7 @@ replic <- 1000
     select(CUEANEXO, PRI:SUP) |>
     pivot_longer(cols = PRI:SUP,  names_to = "EDU",  values_to = "N") |>
     mutual_local(group = "EDU", weight = "N", unit = "CUEANEXO",
-                 se = TRUE, wide = TRUE)
+                 se = TRUE, wide = TRUE, n_bootstrap = replic)
 
   SEC <- left_join(SEC, SEC_seg, by = "CUEANEXO")
 
@@ -105,7 +105,7 @@ replic <- 1000
     st_drop_geometry()
 
   ESC_ppp <- ppp(x = ESC_aux$x, y = ESC_aux$y,
-                 marks = ESC_aux$SECTOR,
+                 marks = factor(ESC_aux$SECTOR),
                  window = w)  |>
     rescale(1000, "km")
 
