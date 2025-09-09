@@ -801,7 +801,7 @@ replic <- 1000
 
   EDU$TAB2 <- EDU$EDU6 |>
     filter(is.na(CUEANEXO)) |>
-    mutate(grupo = c(rep("Segregación escolar", 2),
+    mutate(grupo = c(rep("Segregación Escolar", 2),
                      "Diferencia (Modelo - Empírico)",
                      rep("Descomposición", 5) ),
            name = name_lab,
@@ -830,7 +830,7 @@ replic <- 1000
     colformat_int(big.mark = " ", na_str = "-") |>
     colformat_double(j = 3, digits = 3,
                      decimal.mark = ",", big.mark = " ") |>
-    italic(j = 4, part = "body") |>
+    italic(j = 3, part = "body") |>
     bold(i = 3, part = "body") |>
     color(j = 4, part = "body", color = "grey35") |>
     merge_v(j = c(1:2, 5), part = "header") |>
@@ -854,7 +854,7 @@ replic <- 1000
 
   rm(name_lab)
 
-### ╠ TAB 7.3: Comparación de distancias lineales y por red urbana ------------
+### ╠ TAB 7.3: Distancias por red urbana ------------
   # Comparación de distancias lineales y por red urbana
 
   # aux_TAB06a <- db_DIS |>
@@ -920,9 +920,85 @@ replic <- 1000
 
   usethis::use_data(EDU, overwrite = TRUE)
 
-# rm(AUX, CARTO)
+  # rm(AUX, CARTO)
+  rm(forzar, replic)
 
 # Otros resultados ---------------------------
+
+
+### ╠ FIG 7.X: Distribución de escuelas -------------------------------
+
+  cli::cli_li(col_yellow("Figure 7.X: Distribución de escuelas secundarias."))
+
+  p <- ggplot() +
+    geom_sf(data = CARTO$AMGBA) +
+    geom_sf(data = SEC,
+            aes(size = N_MATRIC^2, color = SECTOR),
+            alpha = 0.2) +
+    geom_sf(data = CARTO$DPTO_AMBA, color = "grey", fill = NA) +
+    geom_sf(data = CARTO$FFCC1 |> filter(sentido == 1),
+            color = "grey25", alpha = 0.5, linewidth = 0.2) +
+    geom_sf(data = CARTO$FFCC2, color = "grey25",
+            alpha = 0.5, size = 0.75) +
+    facet_wrap(~SECTOR) +
+    scale_color_manual(values = c(Estatal = "darkblue", Privado = "darkgreen")) +
+    coord_sf(xlim = AUX$lim_AMBA[c(1,3)],
+             ylim = AUX$lim_AMBA[c(2,4)]) +
+    guides(size = "none", color = "none") +
+    theme_void() +
+    theme(strip.text = element_text(face = "bold", size = 16))
+
+  ggsave(file = fs::path("figures", "school_distribution", ext = "png"),
+         plot = p, width = 30, height = 15, units = "cm")
+
+  rm(p)
+
+
+### ╠ FIG 7.X: Descripción de la segregación escolar -------------
+  # Ver: Serrati, P. S. (2024). School and Residential Segregation in the Reproduction of Urban Segregation: A Case Study in Buenos Aires. Urban Studies, 61(2), 313-330. https://doi.org/10.1177/00420980231178401
+  # Local school segregation dispersion (left); and sample variogram (right)
+
+  # Boxplot school M (left)
+  # TODO Ver M común
+  cli::cli_li(col_yellow("Figure 7.X: Descripción de la segregación escolar."))
+
+  p3a <- SEC |>
+    filter(!is.na(ls)) |>
+    ggplot(aes(x= SECTOR, y = ls)) +
+    geom_boxplot(color = "grey60", outlier.alpha = 0.5,
+                 notch = T, width = 0.2) +
+    geom_violin(alpha = 0.3, color =NA, aes(fill = SECTOR)) +
+    # geom_hline(yintercept = SEGRE$tab_indic$School[3],
+    #            color = "tomato3", linetype = 3 ) +
+    # geom_text(x = 1.5, y = SEGRE$tab_indic$School[3] + 0.03,
+    #           label = "Global M Index", color = "tomato4") +
+    guides(fill = "none") +
+    labs(x = "",
+         y = "Local Mutual Information Index") +
+    ggsci::scale_fill_d3() +
+    theme_minimal()
+
+  # Semivariogram (right)
+  p3b <- EDU$EDU3 |>
+    ggplot(aes(x = dist)) +
+    geom_ribbon(aes(ymin = low, ymax = up),
+                color = "lightsteelblue3", fill = "grey60",
+                alpha = 0.1 ) +
+    geom_point(aes(y = gamma), color = "darkolivegreen") +
+    geom_col(aes(y = np/800000), alpha = 0.3, fill = "dodgerblue3" ) +
+    scale_y_continuous(expression(paste("Semivarianza ", gamma, "(h)", sep = "")),
+                       limits = c(0, NA),
+                       sec.axis = sec_axis(~. * 800000, name = "Conteo de relaciones (n)") ) +
+    scale_x_continuous("Distancia entre escuela en metros (h)") +
+    theme_minimal()
+
+  ggsave(file = fs::path("figures", "school_variogram", ext = "png"),
+         plot = ggarrange(p3a, p3b), width = 20, height = 10, units = "cm")
+
+  rm(p3a, p3b)
+
+### ╠ FIG 7.X: Composición de escuelas (colores + gráfico ternario) ------------------------------
+
 
 ### Intens. inhomogénea: Conteo por cuadrantes --------------------------------
 
