@@ -71,11 +71,6 @@ knitr::opts_chunk$set(echo = FALSE,
 
 options(knitr.kable.NA = '', OutDec = ",")
 
-# knitr::write_bib(c(.packages(),
-#                    "bookdown", 
-#                    "markdown",
-#                    "tinytex"), 
-#                  "packages.bib")
 ```
 
 ```{r packages, appendix = TRUE}
