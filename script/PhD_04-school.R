@@ -565,70 +565,57 @@ replic <- 1000
 
   rm(aux_RAD, p3)
 
+### ╠ FIG 7.4: Resultado del allocation modell ----------------------
 
-  p3 <- ggplot() +
-    stars::geom_stars(data = EDU$EDU2 |>
-                        stars::st_as_stars(),
-                      aes(fill = v), alpha = 0.8) +
+  p4a <- CARTO$RADIO |>
+    filter(!is.na(TH)) |>
+    select(ID = ID_RADIO) |>
+    left_join( EDU$EDU7, by = "ID" ) |>
+    ggplot() +
+    geom_sf(aes(fill = SINVAC/EST_SEC), color = NA, alpha = 0.7) +
     geom_sf(data = CARTO$DPTO_AMBA, fill = NA,
             color = "grey", size = 0.5) +
     geom_sf(data = CARTO$FFCC1 |> filter(sentido == 1),
             color = "grey25", alpha = 0.5, linewidth = 0.2) +
     geom_sf(data = CARTO$FFCC2, color = "grey25",
             alpha = 0.5, size = 0.75) +
-    geom_sf(data = SEC, color = "black",
-            size = 0.1, alpha = 0.15) +
+    geom_sf(data = SEC, color = "black", size = 0.1, alpha = 0.15) +
+    scale_fill_gradient2("Porcentaje de estudiantes\nsin vacante",
+                         high = "tomato4", limits = c(0, 1),
+                         labels = scales::percent ) +
     coord_sf(xlim = AUX$lim_AMBA[c(1,3)],
              ylim = AUX$lim_AMBA[c(2,4)]) +
-    scale_fill_viridis_c(option = "turbo", na.value = "white",
-                         direction = 1) +
-    labs(#caption  = paste0("Método: Kernel adaptativo"),
-         #title = "Densidad estimada de vacantes en escuelas secundarias",
-         fill = "Densidad")+
-    theme_void()
+    guides(fill = guide_colorbar(position = "bottom") ) +
+    theme_void() +
+    theme(legend.text = element_text(angle = 45, hjust = 1))
 
-  ggsave(file = fs::path("figures", "school_density", ext = "png"),
-         plot = p3, width = 20, height = 20, units = "cm")
+  p4b <- CARTO$RADIO |>
+    filter(!is.na(TH)) |>
+    select(ID = ID_RADIO) |>
+    left_join( EDU$EDU7, by = "ID" ) |>
+    ggplot() +
+    geom_sf(aes(fill = log(distPROM)), color = NA, alpha = 0.7) +
+    geom_sf(data = CARTO$DPTO_AMBA, fill = NA,
+            color = "grey", size = 0.5) +
+    geom_sf(data = CARTO$FFCC1 |> filter(sentido == 1),
+            color = "grey25", alpha = 0.5, linewidth = 0.2) +
+    geom_sf(data = CARTO$FFCC2, color = "grey25",
+            alpha = 0.5, size = 0.75) +
+    scale_fill_gradient2("Distancia promedio\na escuela asignada (metros)",
+                         low = "darkorchid1", mid = "bisque", high = "tomato4",
+                         midpoint = log(1.5),
+                         labels = ~format(round(exp(.x) * 1000))) +
+    coord_sf(xlim = AUX$lim_AMBA[c(1,3)],
+             ylim = AUX$lim_AMBA[c(2,4)]) +
+    guides(fill = guide_colorbar(position = "bottom") ) +
+    theme_void() +
+    theme(legend.text = element_text(angle = 45, hjust = 1))
 
-  rm(p3)
+  ggsave(file = fs::path("figures", "school_allocation-model", ext = "png"),
+         plot = ggarrange(p4a, p4b), width = 35, height = 17, units = "cm")
 
-### ╠ FIG 7.4: Descripción de la segregación escolar -------------
-  # Ver: Serrati, P. S. (2024). School and Residential Segregation in the Reproduction of Urban Segregation: A Case Study in Buenos Aires. Urban Studies, 61(2), 313-330. https://doi.org/10.1177/00420980231178401
-  # Local school segregation dispersion (left); and sample variogram (right)
+  rm(p4a, p4b)
 
-  # Boxplot school M (left)
-  # TODO Ver M común
-  cli::cli_li(col_yellow("Figure 7.4: Descripción de la segregación escolar."))
-
-  p4a <- SEC |>
-    filter(!is.na(ls)) |>
-    ggplot(aes(x= SECTOR, y = ls)) +
-    geom_boxplot(color = "grey60", outlier.alpha = 0.5,
-                 notch = T, width = 0.2) +
-    geom_violin(alpha = 0.3, color =NA, aes(fill = SECTOR)) +
-    # geom_hline(yintercept = SEGRE$tab_indic$School[3],
-    #            color = "tomato3", linetype = 3 ) +
-    # geom_text(x = 1.5, y = SEGRE$tab_indic$School[3] + 0.03,
-    #           label = "Global M Index", color = "tomato4") +
-    guides(fill = "none") +
-    labs(x = "",
-         y = "Local Mutual Information Index") +
-    ggsci::scale_fill_d3() +
-    theme_minimal()
-
-  # Semivariogram (right)
-  p4b <- EDU$EDU3 |>
-    ggplot(aes(x = dist)) +
-    geom_ribbon(aes(ymin = low, ymax = up),
-                color = "lightsteelblue3", fill = "grey60",
-                alpha = 0.1 ) +
-    geom_point(aes(y = gamma), color = "darkolivegreen") +
-    geom_col(aes(y = np/800000), alpha = 0.3, fill = "dodgerblue3" ) +
-    scale_y_continuous(expression(paste("Semivarianza ", gamma, "(h)", sep = "")),
-                       limits = c(0, NA),
-                       sec.axis = sec_axis(~. * 800000, name = "Conteo de relaciones (n)") ) +
-    scale_x_continuous("Distancia entre escuela en metros (h)") +
-    theme_minimal()
 
   ggsave(file = fs::path("figures", "school_variogram", ext = "png"),
          plot = ggarrange(p4a, p4b), width = 20, height = 10, units = "cm")
