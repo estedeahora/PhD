@@ -6,11 +6,31 @@
 
 <!-- Recapitulación del objetivo del trabajo -->
 
+En este trabajo
+
 <!-- Recapitulación de resultados de los capítulos -->
 
 <!--# Se recuperan los principales resultados y conclusiones alcanzados en los capítulos de análisis.  -->
 
 Especificar qué mecanismos de reproducción social operan en cada dominio (ej: elección escolar como estrategia de distinción, movilidad como práctica de evitación).
+
+<!-- Capítulo 4: Residencial -->
+
+En primer lugar, hemos podido señalar que la segregación residencial en el AMBA ....
+
+<!-- Capítulo 5: Homogamia -->
+
+<!-- Capítulo 6: Espacios de actividad -->
+
+En tercer lugar, en torno al rol de las movilidades urbanas y los espacios de actividad, encontramos que
+
+<!-- Capítulo 7: Educación -->
+
+Finalmente, en relación al análisis de la segregación en el dominio educativo, los resultados muestran que
+
+<!--# Integrar los resultados de los capítulos-->
+
+De modo resumido, encontramos que....
 
 <!-- Interpretación de los resultados en clave teórica relacionada a la segregación multi-dominio -->
 
@@ -18,16 +38,28 @@ Especificar qué mecanismos de reproducción social operan en cada dominio (ej: 
 
 <!--# En este sentido, si los diferentes dominios repitiesen la misma tendencia de segregación, el estudio multi-dominio de la segregación resultaría redundante, ya que cada dominio aportaría la misma información sobre el fenómeno global. Desde esta perspectiva, la segregación es un fenómeno que supera sus manifestaciones particulares en los distintos dominios de la vida social.  -->
 
+La potencialidad de un enfoque multi-dominio de la segregación está en entender cómo estos dominios actúan articuladamente y de forma compleja. La virtud de este enfoque es que permite entender el aporte cada uno de estos dominios a la constitución de espacios de separación entre los grupos. En aquellas sociedades donde los diferentes dominios replican una misma tendencia de segregación, el estudio multi-dominio de la segregación resulta redundante ya que cada uno aporta muy poca información al fenómeno a través del cual se genera la separación espacial entre los grupos sociales. Desde esta perspectiva, la segregación urbana excede sus manifestaciones particulares en los diferentes dominios. En resumen, proponemos abordar la segregación urbana como un mecanismo complejo que se constituye articulando diferentes dominios [@Boterman2016; @VanHam2016], niveles [@VanHam2018] y dimensiones [@Quillian2012; @Boterman2021], cada uno de los cuales aporta sus propias lógicas de diferenciación.
+
+En tanto entendamos la segregación como 'the geographical dimensions of social inequality, polarization, and exclusion' [@Wang2012, p. 257], es esperable que el análisis de sociedades desiguales nos enfrente con situaciones de segregación. En sociedades fuertemente estratificadas, las diferencias sociales buscarán expresarse en las configuraciones espaciales mediante la segregación -es decir, la concentración de grupos sociales en determinados espacios donde es posible evitar el contacto con otros grupos. El caso de AMBA muestra que en sociedades con marcadas desiguales sociales, no es sufieciente el desarrollo de espacios residenciales mixturados, ya que las desigualdades buscarán otros dominios para expresarse espacialmente.[^08-conclussion-1] Si bien la conformación y proliferación de espacios de intercambio y exposición son deseables, en tanto se mantengan las diferencias sociales es esperable que los individuos busquen otras formas para manifestar esa diferencia. Por ello, es central que el fomento de ciudades más integradas y menos segregadas, considere la importancia de generar sociedades más igualitarias en lo económico [@Tammaru2021, p. 70].
+
+[^08-conclussion-1]: De forma similar, @Atkinson2004 [p. 890-891] concluyen que los barrios cerrados en UK, aparecen como un intento de los sectores de altos ingresos para escapar de la 'gravedad' que imponen políticas públicas que fomentan 'ciudades abiertas' (openness of cities) y áreas de uso mixto.
+
 <!-- Aportes y contribuciones  -->
+
+Tomando en cuenta estos resultados, este trabajo de tesis puede considerarse un aporte en al menos ...
 
 <!-- Limitaciones  -->
 
-Más allá los aportes, señalamos a continuación algunos límites y posibles continuidades de este trabajo. En primer lugar, es necesario estar precavido respecto a la interpretación de estos resultados en lo relativo a la similitud entre ambas estructuras de segregación. En este sentido, esta similitud a escala *global* puede ser el resultado de un doble movimiento de compensación mediante el cual los residentes de lugares con más diversidad se muevan a lugares más segregados donde predominen las personas perteneciente a grupos similares al propio, mientras que los residentes de estos lugares segregados se muevan hacia lugares más diversos.[^08-conclussion-1] El análisis desarrollado en este trabajo no permitió acceder a una escala en el cual visualizar las estrategias de los hogares. Teniendo en cuenta estos elementos es necesario a futuro complementar este análisis para entender de qué manera es que se produce esta similitud entre ambas estructuras de segregación. En relación a esto, mediante un 'enfoque en tándem' [@Becue-Bertaut2008; @Lebart1994; @Markos2019] es posible complementar el análisis de correspondencias múltiples con un análisis de agrupamientos (*cluster*), que permita caracterizar a los viajes y, de esta forma, describir a los hogares en función de que 'tipos' de viajes realizan.
+Más allá los aportes, señalamos a continuación algunos límites y posibles continuidades de este trabajo. En primer lugar, es necesario estar precavido respecto a la interpretación de estos resultados en lo relativo a la similitud entre ambas estructuras de segregación. En este sentido, esta similitud a escala *global* puede ser el resultado de un doble movimiento de compensación mediante el cual los residentes de lugares con más diversidad se muevan a lugares más segregados donde predominen las personas perteneciente a grupos similares al propio, mientras que los residentes de estos lugares segregados se muevan hacia lugares más diversos.[^08-conclussion-2] El análisis desarrollado en este trabajo no permitió acceder a una escala en el cual visualizar las estrategias de los hogares. Teniendo en cuenta estos elementos es necesario a futuro complementar este análisis para entender de qué manera es que se produce esta similitud entre ambas estructuras de segregación. En relación a esto, mediante un 'enfoque en tándem' [@Becue-Bertaut2008; @Lebart1994; @Markos2019] es posible complementar el análisis de correspondencias múltiples con un análisis de agrupamientos (*cluster*), que permita caracterizar a los viajes y, de esta forma, describir a los hogares en función de que 'tipos' de viajes realizan.
 
-[^08-conclussion-1]: A su vez, una estructura de segregación equiparable, no implica una composición idéntica en los espacios residenciales y los destinos, ya que es posible que el porcentaje de cada grupo sea diferente en ambos dominios. Este aspecto también requiere un abordaje más detallado en futuros trabajos. <!--# En relación a este problema, un abordaje posible sería vincular la la composición de residencia con la composición en los destinos, buscando generar un campo vectorial... -->
+[^08-conclussion-2]: A su vez, una estructura de segregación equiparable, no implica una composición idéntica en los espacios residenciales y los destinos, ya que es posible que el porcentaje de cada grupo sea diferente en ambos dominios. Este aspecto también requiere un abordaje más detallado en futuros trabajos. <!--# En relación a este problema, un abordaje posible sería vincular la la composición de residencia con la composición en los destinos, buscando generar un campo vectorial... -->
 
 En segundo lugar, la falta de disponibilidad de datos con una mayor precisión o granularidad, así como la disponibilidad de muestras relativamente pequeñas, constituye un límite para avanzar en la descripción precisa de los movimientos urbanos. En particular, la existencia de muy pocas unidades de muestreo en algunos destinos poco visitados lleva a una composición de destino que puede estar artificialmente distorsionada. Una solución parcial a este problema (a la que recurrimos en este trabajo) es el agrupamiento de las unidades espaciales, lo cual tiene como contrapartida la pérdida de precisión del análisis, sin lograr solucionar el problema de aquellas unidades espaciales donde persiste la falta viajes como destino. Alternativamente, es posible pensar para futuros trabajos una solución que aborde este problema 'difuminando' las características de la población que viaja a cada destino entre las unidades espaciales vecinas (que podría implementarse mediante un 'kernel' o una estrategia iterativa de 'random walk'). Siguiendo esta idea la cantidad de minutos que pasa cada persona de la muestra se podría distribuir según una función de densidad entre los espacios cercanos.<!--# Esta propuesta sería una especie de "kernel" que disminuye desde las esquinas pertenecientes al área declarada hacia las vecinas. Como resultado, el total de minutos de cada persona en un área se distribuye según esta función de densidad en todas estas esquinas logrando "difuminar" la respuesta de la encuesta. Esta idea me surgió mirando un trabajo que salió hace poco y que usa random walk para medir segregación residencial (DOI: 10.1038/s41467-022-33344-3). Luego de ello, encontré otro trabajo (DOI: 10.1016/j.compenvurbsys.2023.101990) que utiliza la red de calles para "difuminar" las medidas de segregación residencial, de donde tomé algunas ideas. Por último, con una búsqueda teórica diferente, pero con una implementación parecida a lo que pensé yo, encontré este artículo sobre el paquete de Python cityseer (DOI: 10.1177/23998083221133827). En este sentido, si una persona de la muestra ($i$) declara que irá a la unidad espacial "A", es posible suponer (por falta de información) que es equiprobable encontrarlo en cada porción de ese lugar de destino. Si sólo pienso como "lugares" posibles dentro de A a todas las esquinas de esa unidad espacial ($E_A$), entonces puedo suponer que estará con una probabilidad igual en cada una de estas esquinas. Asumiendo que esta persona $i$ pasa un total de minutos en la unidad A ($t_{iA}$), en promedio en cada esquina estará un total de $\frac{t_{iA}}{\#E}$(donde $\#E$ es el número de esquinas). Desarrollando un poco más esta idea, puedo suponer que en las esquinas "cercanas" (por la red vial), también existe una probabilidad de que esta persona esté (algo como $\frac{1}{d^2}$ para ser clásicos). Obviamente esta probabilidad será menor y se reducirá a casi 0 si me alejo mucho (si $d$ crece). -->
 
 <!-- Líneas de trabajo futuras -->
 
 El trabajo
+
+<!-- Cierre: sugerencias generales de intervención y análisis -->
+
+En términos generales, los resultados de este trabajo sugieren que las políticas públicas orientadas a reducir la segregación urbana deben considerar la complejidad del fenómeno y su manifestación en diferentes dominios de la vida social. En particular, es necesario considerar que la segregación puede manifestarse en diferentes dimensiones (residencial, movilidad, educación, etc.) y que estas dimensiones pueden interactuar de manera compleja. Por lo tanto, las intervenciones deben ser integrales y considerar las interacciones entre estos dominios para lograr una reducción efectiva de la segregación urbana.
