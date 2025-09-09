@@ -452,12 +452,11 @@ los cambios 'estructurales' entre las estructuras de segregación, es
 decir, los cambios que persisten una vez controlados los efectos de los
 marginales y de la adición/eliminación de unidades (ver Apartado
 \@ref(mobilities-method) para un desarrollo sobre el indicador y el
-método propuesto por Elbers). En el capítulo también utilizamos la
-propuesta hecha en el capítulo metodológico, la cual basada en análisis
-de correspondencias permite distinguir la 'dirección' de la segregación
-local (ver Apartado \@ref(method-geometric)). Por último, para realizar
-una descripción se utilizan proceso de patrones puntuales, lo que nos
-permite estimar la densidad
+método propuesto por Elbers).
+<!--# En el capítulo también utilizamos la propuesta hecha en el capítulo metodológico, la cual basada en análisis de correspondencias, permite visualizar la 'dirección' de la segregación local (ver Apartado @ref(method-geometric)).  -->Además,
+para realizar una descripción de la distribución de escuelas y estimar
+la densidad de escuelas, utilizamos métodos provenientes del análisis de
+*proceso de patrones puntuales* [@Baddeley2015].
 
 [^07-analysis-iv-schools-8]: Al igual que en los capítulos anteriores,
     medimos la segregación utilizando el logro educativo de los hogares
@@ -473,88 +472,318 @@ permite estimar la densidad
 ### La distribución de escuelas en el AMBA {.unnumbered}
 
 Antes de comenzar a analizar la relación entre la segregación en el
-dominio residencial y escolar, conviene realizar una descripción de cómo
-se distribuye la oferta educativa en el AMBA. La Figura
-\@ref(fig:school-distribution) presenta la distribución espacial de las
-escuelas según sector de gestión (*arriba*) y la densidad estimada de
-esta distribución (abajo), que nos permiten identificar algunos patrones
-generales. En primer lugar, la oferta educativa de nivel medio es
-sensiblemente mayor en la CABA y, particularmente, en la zona central de
-la ciudad (vinculada al casco colonial). En segundo lugar, vemos que,
-sin llegar a la densidad educativa que vemos en esta zona, existen otros
-lugares que concentran una densidad relativamente alta de la oferta
-educativa. Estos se vinculan, fundamentalmente, a lugares que actúan
-como centralidades locales y que, en la mayoría de los casos <!--#  -->.
-En tercer lugar, y como contracara de lo descripto anteriormente,
-encontramos que los espacios más distantes de estas centralidades tienen
-una menor provisión de escuelas educativas... <!--#  -->En cuarto lugar,
-encontramos una similitud bastante marcada en los patrones espaciales de
-la oferta educativa de gestión estatal y la de gestión privada, aunque
-puede destacarse la mayor 'porosidad' de la oferta de gestión estatal,
-que tiene presencia (aunque poco desarrollada y dispersa) en algunos
-territorios donde la oferta privada no existe.
+dominio residencial y escolar, realizaremos una breve descripción de
+cómo se distribuye la oferta educativa en el AMBA y sus principales
+características. Para empezar, podemos señalar la diferencia entre la
+oferta educativa de gestión estatal y la de gestión privada en lo
+referido a su distribución y alcance en cada una de las jurisdicciones:
+mientras en la CABA la gestión privada representa cerca de la mitad de
+la matrícula (49,3%) en los partidos de la Provincia de Buenos Aires
+representa poco más de un tercio (37%). Profundizando esta observación,
+la Figura \@ref(fig:school-distribution) presenta la densidad estimada
+de la distribución espacial de las escuelas según sector de gestión
+(*arriba*). Respecto a la oferta de gestión privada vemos que esta se
+concentra fundamentalmente en la zona centro-este y norte de la CABA y,
+en menor medida, en algunos de los centros locales del conurbano
+(particularmente en Vicente López, San Martín, San Isidro, San Miguel y
+Lomas de Zamora). Por su parte, la oferta de gestión estatal también
+muestra una concentración en el casco colonial de la CABA y en torno a
+los principales centros locales, pero su expansión es mucho más
+homogénea y menos focalizada que la del otro tipo de gestión. En este
+sentido, este tipo de oferta presenta una mayor 'porosidad' hacia fuera
+de los centros locales, con una presencia (aunque poco desarrollada y
+dispersa) en territorios donde la oferta privada no existe.
 
 ```{r school-distribution}
 #| fig.cap: "Distribución de escuelas (arriba) y densidad de escuelas, método kernel adaptativo (abajo)"
 #| fig.show: 'hold'
 #| out.width: '100%'
 
-knitr::include_graphics(here::here("figures", "school_distribution.png"))
+knitr::include_graphics(here::here("figures", "school_density_sector.png"))
 knitr::include_graphics(here::here("figures", "school_density.png"))
 ```
 
-Como podríamos preveer de la descripción anterior, el análisis de
-*patrones puntuales* nos permite confirmar que la distribución de
-escuelas secundarias en el AMBA no sigue un proceso aleatorio de Poison.
-Por el contrario, la oferta educativa tiene un patrón agrupado en torno
-a algunos espacios urbanos (las centralidades y subcentralidades
-urbanas).
+Más allá de estas diferencias, podemos identificar algunos rasgos
+comunes sobre la distribución de las escuelas de ambos sectores de
+gestión analizando la densidad general de la oferta educativa (Figura
+\@ref(fig:school-distribution), abajo). Por un lado, la oferta educativa
+de nivel medio es sensiblemente mayor en la CABA que en el resto del
+aglomerado. Particularmente, en la zona central de la ciudad (vinculada
+al *casco colonial*) y la zona norte (vinculado a la expansión de la
+ciudad colonial) encontramos dos espacios con una densidad
+destacadamente más alta. Por otro lado, sin llegar a la densidad
+educativa de la zona central, en casi todas las subcentralidades
+vinculadas a los *cascos conurbanizados* se observa una densidad
+medio-alta de oferta educativa. Estas centralidades locales se destacan
+por la cercanía a las líneas de ferrocarril (u otras vías de
+cominicación) y aparecen en el mapa de densidad como espacios de
+concentración local de la oferta educativa. Como contracara de lo
+anterior, encontramos que a medida que nos alejamos de estas
+centralidades y subcentralidades decrece la provisión de la oferta
+educativa, hasta alcanzar lugares alejados en los cuales se observa un
+'desierto escolar' [@Alexander2020].
 
-En sintonía con esto, encontramos que los entornos urbanos tienen una
-provisión de servicios educativos muy desigual. La Tabla
-\@ref(tab:school-tab1) nos muestra para cada entorno urbano la distancia
-promedio y por la trama urbana a la escuela secundaria más cercana.
-Podemos ver que ...
+Como podríamos prever de la descripción anterior, el análisis de
+*patrones puntuales* permite confirmar que la distribución de escuelas
+secundarias en el AMBA no sigue un proceso aleatorio de Poison. Por el
+contrario, la oferta educativa tiene un patrón agrupado en torno a
+algunos espacios urbanos (las centralidades y subcentralidades urbanas).
+En relación a esto, la Figura \@ref(fig:school-distances) muestra la
+distancia promedio desde el centroide de cada radio a las tres escuelas
+más cercanas de este centroide (a través de la trama urbana). En esta
+figura, vemos confirmado que los diferentes espacios urbanos tienen un
+acceso muy desigual a la oferta educativa. Mientras que en las
+centralidades y subcentralidades se observa que la distancia promedio a
+las 3 escuelas más cercanas, en general, está por debajo de los 500
+metros, a medida que nos alejamos de estos centros es más común
+encontrar lugares con una provisión de servicios educativos menor.
+
+```{r school-distances}
+#| fig.cap: "Distancia promedio de cada radio a las 3 escuelas más cercanas"
+#| ratio: 0.91
+
+knitr::include_graphics(here::here("figures", "school_distance-radios-schools3.png"))
+```
+
+En resumen, el análisis de la distribución espacial nos permite señalar
+que las escuelas medias tienden a estar concentradas en torno a las
+centralidades y subcentralidades. Como corolario de esto, encontramos
+que la distancia recorrida por la población escolar para obtener un
+acceso efectivo a la educación media varía de forma considerable entre
+los territorios. La conjunción de estos dos aspectos, permite suponer
+que las escuelas ubicadas en las centralidades y subcentralidades,
+concentrarán la captación de población proveniente de diferentes
+localizaciones. Como consecuencia, de manera similar a lo que ocurre con
+los espacios de actividad donde la existencia de lugares con mayor
+recepción de actividades hace a estos lugares más diversos (ver Capítulo
+\@ref(mobilities)), esto podría llevar (hipotéticamente) a una mayor
+diversidad en la composición social de estas escuelas y, por lo tanto, a
+una menor segregación. A continuación, avanzaremos sobre esta hipótesis
+(mediante el uso de nuestro modelo de asignación) para comprarla con la
+composición real de las escuelas.
+
 ### Analizando el efecto de la segregación residencial sobre la segregación escolar {.unnumbered}
+
+Partiendo de esta primera descripción de la distribución de la oferta
+educativa de nivel medio, a continuación analizamos en qué medida la
+segregación en el dominio residencial puede explicar la segregación en
+el dominio escolar o, por el contrario, esta última se comporta como un
+mecanismo de diferenciación social que actúa con relativa independencia
+de las condiciones residenciales. En tanto, como vimos anteriormente, la
+oferta educativa se encuentra concentrada en las centralidades y el
+acceso educativo tiene una fuerte diferenciación territorial, no es
+posible hacer una transpolación mecánica entre la segregación
+residencial y la segregación escolar de las escuelas. Es por este motivo
+que en este trabajo propusimos utilizar un *modelo de asignación de
+vacantes*. Este modelo genera una asignación 'óptima' minimizando la
+distancia total recorrida por el conjunto de estudiantes y considerando
+como constricciones la ubicación de la demanda (población en edad
+escolar) y la capacidad de las escuelas. Esta herramienta metodológica
+nos permite observar el aporte que podría tener la composición
+residencial sobre la segregación escolar, incorporando en esta
+estimación la distribución de la demanda educativa, la distribución de
+escuelas y la capacidad de absorción de estas últimas. A partir de esta
+asignaciónhipotética podemos comparar el indicador de segregación
+escolar 'real' (empíricamente observado) con el que se obtiene haciendo
+la asignación propuesta por este modelo y de esta manera medir qué
+proporción de la segregación escolar se explica por la segregación
+residencial.
+
+Antes de avanzar en esta comparación, analicemos brevemente los
+resultados de este modelo de asignación. Una primera observación para
+evaluar el modelo de asignación es comparar los resultados del mismo con
+los resultados que obtendríamos si utilizáramos directamente el índice
+de segregación residencial.
+
+Como señalamos la distribución de la oferta educativa no sigue un patrón
+espacial aleatorio o regular, sino que, por el contrario, presenta un
+patrón agrupado, concentrado en torno a las centralidades locales. En
+sistemas escolares con una distribución espacial no-homogénea de las
+escuelas, el uso del modelo de asignación permite tener un acercamiento
+más preciso para explicar el efecto de la segregación residencial sobre
+la segregación escolar y evita sesgos en la interpretación de los
+resultados. Un patrón de distribución espacial agrupado supone que las
+poblaciones educativas se concentran (y, por tanto, se mezclan) en los
+centros de atracción, de manera que la composición residencial tiene
+menos posiblidad de incidir directamente sobre la composición de las
+escuelas. En concreto, en el caso del AMBA donde se observa este patrón
+concentrado de la oferta educativa, nuestros resultados muestran que la
+segregación escolar que surge de utilizar el modelo
+(`r round(EDU$TAB2$body$dataset$est[2],3)`) es sensiblemente menor que
+la segregación residencial (`r round(RES$SEG1$AMBA[3],3)`). Estos
+resultados refuerzan nuestra decisión metodológica de utilizar este
+modelo en lugar de comparar 'directamente' la segregación escolar con la
+residencial (como se hace en otros trabajos).[^07-analysis-iv-schools-9]
+
+[^07-analysis-iv-schools-9]: En la Tabla \@ref(tab:appH-segreg-index)
+    del Anexo \@ref(appendixH) se presentan resultados similares
+    utilizando otros índices de segregación alternativos. En todos los
+    casos se corrobora que dado que en el AMBA la distribución de la
+    oferta sigue un patrón de distribución espacial agrupado, el modelo
+    de asignación arroja indicadores de segregación menores que los que
+    surgen de considerar directamente la segregación residencial.
+
+La Tabla \@ref(tab:school-tab1) presenta el resultado del modelo de
+asignación, diferenciando según los entornos urbanos. En sintonía con lo
+que podíamos esperar, encontramos que los entornos asociados a las
+centralidades urbanas (*ciudad colonial*, *expansión de la ciudad
+colonial* y *cascos conurbanizados*) son los que tienen que recorrer en
+el modelo las menores distancias promedio. Además, en estos entornos se
+observa el menor 'ratio' entre la distancia a la escuela mas cercana
+(mínima) y la distancia recorrida con el modelo. En la situación
+opuesta, vemos que las *urbanizaciones cerradas*, las *urbanizaciones de
+origen informal* y las *viviendas sociales*, tienen en promedio las
+mayores distancias recorridas según los resultados del modelo. Además,
+las últimas dos tienen la particularidad de que en general las
+distancias a las escuelas secundarias más cercanas son relativamente
+pequeñas, sin embargo, la poca capacidad de absorción de esta oferta
+local hacen que el modelo haga que las poblaciones de estos entornos
+recorran en promedio cerca de 4 veces estas distancias. En una situación
+intermedia encontramos el resto de los entornos asociados a la trama
+formal, aunque el entorno de NSE Alto presenta una pequeña ventaja
+respecto al resto de los otros dos (NSE Bajo y Medio).
 
 ```{r school-tab1}
 
 EDU$TAB1
 ```
 
-Por último, podemos ver que
+Es necesario tener presente que como la demanda total (teórica) del
+sistema es un poco mayor que la capacidad de absorción de las escuelas,
+una parte de la población no puede ser asignada (porque no hay
+suficiente vacantes). Este desequilibrio se explica por el hecho de que
+en realidad no toda la población en edad escolar está efectivamente
+escolarizada. Dado que el modelo busca minimizar la distancia total
+recorrida por todos los estudiantes, un indicador interesante es
+analizar dónde residen los estudiantes que el modelo 'decide' no
+asignar, en tanto nos permite tener una información indirecta de cuáles
+son los territorios con mayores problemas en cuanto a la oferta de
+servicios educativos. En sintonía con lo que vimos anteriormente,
+encontramos que para las *urbanizaciones de origen informal* poco más
+del `r round(EDU$TAB1$body$dataset$p_SV[6])` de estudiantes queda sin
+asignar, muy por encima de los valores del resto de entornos urbanos. Es
+interesante que en los entornos de *NSE Bajo*, a pesar de tener
+distancias promedio de asignación intermedias, también tienen un
+porcentaje relativamente alto de estudiantes sin vacantes
+(`r round(EDU$TAB1$body$dataset$p_SV[9], 1)`). Por último, en una
+situación menos crítica, los entornos de *vivienda social* y las
+*urbanizaciones cerradas* tienen una proporción menor de estudiantes sin
+asignar (2,3% y el 2,8%, respectivamente). Para completar lo anterior,
+en la Figura \@ref(fig:school-allocation-model) se visualiza la
+asimetría espacial en los resultados del modelo, mostrando aquellos
+radios censales con mayor porcentaje de alumnos no asignados
+(*izquierda*) y la distancia promedio recorrida para encontrar vacante
+(*derecha*).
 
+```{r school-allocation-model}
+#| fig.cap: "Resultados del modelo de asignación. Porcentaje de alumnos no asignados (izquierda) y distancia promedio recorrida (derecha)"
+#| ratio: 0.5
 
-Sin autocorrelación
-
-```{r school-autocorrelation}
-#| fig.cap: ""
-#| fig.asp: 0.5
-
-# knitr::include_graphics(here::here("figures", "school_variogram.png"))
+knitr::include_graphics(here::here("figures", "school_allocation-model.png"))
 ```
 
-Comparación de segregación escolar modelo-real. Tabla
-\@ref(tab:school-tab2)
+Habiendo hecho esta descripción general de los resultados del modelo de
+asignación, a continuación utilizamos este modelo para simular la
+composición hipotética de las escuelas y comparar la segregación escolar
+real con la modelada*.* En tanto el modelo de asignación genera una
+asignación 'óptima' de la población en edad escolar en las escuelas, la
+comparación entre la segregación que se obtendría el modelo y la que
+realmente existe es una medida de cuánto la segregación escolar *es
+explicada por* la segregación residencial. Sobre la base de esta idea,
+en la Tabla \@ref(tab:school-tab2) encontramos que la segregación
+residencial nos permite explicar poco menos de la mitad de la
+segregación escolar observada ($M_{model}/M_{real}\times 100 =$
+`r paste0(round(EDU$EDU6$est[2] / EDU$EDU6$est[1] * 100, 1), "%")`).
 
 ```{r school-tab2}
 
-EDU$TAB2
+EDU$TAB2 
 ```
 
-Definir si existe autocorrelación espacial en la segregación escolar
-real.
+Si bien el modelo de asignación elimina el efecto de la distribución
+espacial y la capacidad de absorción de las escuelas, la comparación de
+los resultados del modelo con la situación real puede resultar imprecisa
+en tanto, como hemos se señaló anteriormente, los índices de segregación
+son dependientes de los marginales. Para refinar la comparación entre la
+situación real y la modelada utilizamos el método propuesto por
+@Elbers2023 que permite distinguir el efecto 'puro' (o estructural) de
+la diferencia entre ambos indicadores, de aquellos cambios que surgen
+por modificaciones en los marginales y por la adición/remoción de
+unidades. La Tabla \@ref(tab:school-tab2) presenta la descomposición de
+la diferencia entre estos indicadores, dando cuenta de que la mayor
+parte de la diferencia entre la segregación del modelo y la realidad se
+explica por cambios estructurales (87%). Es decir, las diferencias entre
+la segregación escolar real y la explicada por el modelo (y por lo tanto
+por la composición residencial) se deben mayormente a un efecto de
+cambio estructural, en lugar de a diferencias en la composición
+(marginales). Si tomamos sólo el cambio estructural, vemos que la
+segregación residencial explicaría el
+`r paste0(round(100-abs(EDU$EDU6$est[8]) / EDU$EDU6$est[1] * 100, 1), "%")`
+de la segregación escolar, lo cual es un poco más de lo que habíamos
+señalado anteriormente.
 
-Estrategia de allocation model, para comparar segregación escolar real
-con segregación escolar del modelo.
+Estos valores son relativamente bajos, ya que suponen que un poco menos
+de la mitad de la segregación no puede ser explicada por la composición
+residencial. Estos resultados se asemejan a los que obtuvimos con esta
+metodología sobre la CABA, donde encontramos que la segregación
+residencial explicaba el 44,7% de la segregación escolar [@Serrati2023].
+A su vez, si bien no es posible una comparación directa debido al uso de
+metodologías diferentes, estos valores son sensiblemente más bajos que
+los que obtienen @Frankenberg2013 en ciudades estadounidenses,
+@Boterman2019a en un conjunto de ciudades europeas y @Boterman2019 en
+diferentes ciudades de los Países Bajos.
 
-Siguiendo la estrategia descripta... comparación entre la segregación
-escolar y la residencial.
+Teniendo en cuenta que existen diferencias en los niveles de segregación
+local entre las escuelas, siguiendo la propuesta de @Elbers2023 podemos
+profundizar en el análisis y descomponer la diferencia de segregación
+estructural a nivel local ($\Delta L_s = L_s^{model} - L_s^{real}$). La
+Figura \@ref(fig:school-ls) resume la relación entre el valor local real
+($L_s^{real}$) y el valor local estimado ($L_s^{model}$). En el *lado
+izquierda* encontramos la relación entre ambos valores locales, con la
+línea punteada indicando la situación donde la segregación estimada y la
+real son idénticas y, por lo tanto, la segregación residencial (a través
+del modelo) no sumaría nada a la explicación de la segregación escolar.
+Como vemos, la mayoría de las escuelas tienen un valor de segregación
+escolar más alto que el que se podría esperar si su composición
+dependiera únicamente de la ubicación residencial de la demanda (es
+decir, están por abajo de la línea roja y en color rojo). Esta situación
+se replica independientemente de si consideramos las escuelas de gestión
+estatal o las de gestión privada, pero en las escuelas de gestión
+privada la asociación entre ambos indicadores es aún más baja y la
+diferencia entre la segregación escolar real y la modelada es, por regla
+general, mayor a la que se observa en las escuelas estatales. En
+relación a esto, el coeficiente de determinación ($R^2$) para ambos
+sectores indica que la relación entre la segregación real y la modelada
+sólo explica una pequeña proporción de la variación existente ($R^2$
+debería tomar valores cercanos a 1 si la segregación residencial
+explicase -a través del modelo- toda la variabilidad de la segregación
+escolar). Más allá de esta tendencia común, en el sector privado el
+$R^2 \approx 0$, es decir, que la segregación modelada no presenta
+correlación con la segregación escolar. Este resultado es previsible en
+tanto las escuelas privadas tienen mecanismos para absorber/seleccionar
+estudiantes –por ejemplo, el costo de las cuotas, la admisión etc.–. Por
+su parte, aunque en el sector estatal el valor de $R^2$ es mayor que en
+el sector privado, también toma un valor relativamente bajo. En este
+sentido, podemos afirmar que también en las escuelas de gestión estatal
+la segregación residencial explica sólo una parte pequeña de la
+segregación escolar.
 
-## Conclusiones del capítulo {#school-conclussion}
+```{r school-ls}
+#| fig.cap: "Relación entre la segregación real y la estimada de cada escuela"
+#| ratio: 0.5
 
-La segregación en el dominio escolar supera ampliamente la que podría
-esperarse si consideramos sólo el efecto residencial. El dominio escolar
+knitr::include_graphics(here::here("figures","school_local-segregation.png"))
+```
+
+El lado derecho de la Figura \@ref(fig:school-ls) presenta la
+distribución espacial de las escuelas en relación con la diferencia
+estructural de la segregación local ($\Delta L_s$). De modo general, no
+emerge un patrón espacial específico que permita explicar la diferencia
+entre la segregación real y la modelada. La única excepción es el hecho
+de que en la zona norte de la CABA, la mayoría de las escuelas de
+gestión estatal tienen una segregación real menor a la que se esperaría
+por el modelo (azul).
+
 es un mecanismo de diferenciación y estratificación (en términos de
 segregación) que actúa con cierta independencia de las condiciones
 impuestas por los condicionantes territoriales.
