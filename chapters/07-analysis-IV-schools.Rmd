@@ -784,8 +784,70 @@ de que en la zona norte de la CABA, la mayoría de las escuelas de
 gestión estatal tienen una segregación real menor a la que se esperaría
 por el modelo (azul).
 
+## El dominio escolar como mecanismo específico de la segregación urbana {#school-conclussion}
+
+En este capítulo propusimos indagar en qué medida la segregación en el
+dominio residencial permite explicar la segregación escolar en el AMBA.
+En sintonía con lo que encontramos anteriormente en la CABA
+[@Serrati2021; @Serrati2023], los resultados de este capítulo apoyan la
+idea de que en el AMBA la segregación residencial es insuficiente para
+explicar la segregación escolar. En este sentido, la segregación en el
+dominio escolar supera ampliamente a la que podría esperarse por la
+distribución residencial de los grupos socio-económicos y sugiere que
+actúa como un mecanismo independiente de diferenciación socio-espacial.
+Como señalan @Boterman2019a, este desfasaje es característico de
+*paisajes educativos* en los cuales, como en el caso estudiado, existen
+*contextos institucionales* que posibilitan la elección escolar y donde
+la educación privada está ampliamente extendida –apalancada por el
+financiamiento estatal que vuelve asequible esta opción y permite su
+expansión territorial.
+
+A su vez, nuestros resultados refuerzan la importancia de incorporar el
+enfoque de la 'Geografía de la Educación' [*Geography of Education*]
+[@Butler2007a; @Taylor2009a], el cual permite integrar el análisis
+educativo y territorial. Como señalamos anteriormente, este enfoque
+habilita estudiar cómo se entrelazan las estructuras sociales, las
+estructuras territoriales y las estrategias de los actores en la
+configuración de las *desigualdades educativo-territoriales*
+[@Serrati2021]. Considerar la relación entre la distribución espacial de
+las escuelas y de las poblaciones educativas en el espacio urbano es un
+aspecto central que permite entender el marco en el cual se desarrolla
+la relación entre segregación en el dominio residencial y educativo. Al
+considerar estos aspectos, el *modelo hipotético de asignación de
+vacantes* propuesto en este trabajo permite tener una mayor precisión
+sobre el efecto de la segregación residencial sobre la segregación
+educativa, en tanto logra incorporar esta perspectiva espacial en el
+análisis de la relación entre ambos. En particular, esta propuesta
+metodológica resulta ser especialmente provechosa en contextos, como el
+de nuestro análisis, donde la distribución espacial de las oferta
+educativa tiene un patrón agrupado. De manera similar a lo que vimos
+cuando analizamos la segregación de los espacios de actividad (ver
+Capítulo \@ref(homogamy)), este tipo de patrones espaciales, en los
+cuales la población educativa se concentra en algunos 'nodos de
+atracción', podría dar lugar a una mayor mezcla y co-presencia social,
+en la medida que no actúen otros mecanismos de diferenciación y
+segmentación.
+
+Dado que la composición residencial es insuficiente para explicar la
+segregación escolar, podemos afirmar que en el AMBA el dominio escolar
 es un mecanismo de diferenciación y estratificación (en términos de
 segregación) que actúa con cierta independencia de las condiciones
-impuestas por los condicionantes territoriales.
-
-<!-- Sumar algo de geografía de la educación: Para superar estas limitaciones, la "Geografía de la Educación" [*Geography of Education*] [@Butler2007a; @Taylor2009a] analiza las estructuras sociales, territoriales y las estrategias de los actores se entrelazan en la configuración de *desigualdades educativo-territoriales* [@Serrati2021]. Para ello identifica tres dimensiones claves: (a) la diferencia espacial en las estructuras de provisión de la oferta educativa; (b) las diferentes composiciones sociales de los barrios; y (c) las reglas de "elegibilidad" de los alumnos, que regulan la relación entre territorios y escuelas. Como señala @Cordini2019a respecto a la segregación escolar, esta se explica por la articulación entre la característica de los entornos institucionales educativos, la distribución residencial de la población y la agencia de las familias (lo que incluye las movilidades y la elección de escuelas). Profundizando esta línea, @Boterman2019a proponen analizar los "paisajes educativos" [*educational landscape*] para entender la interrelación entre los aspectos identificados por Butler y Hamnett, dentro de los cuales distinguen dos dimensiones para comprender la relación entre territorio y escuelas. En primer lugar, el *contexto institucional* define la importancia del financiamiento estatal para el sector privado (haciéndolo asequible), establece el grado de libertad de los padres para elegir escuela (*school choice*) por fuera de la restricción geográfica, define la diferenciación interna de los programas de cada escuela y limita la posibilidad de las escuelas para "seleccionar" alumnos. En segundo lugar, la *geografía de la educación* refiere a la composición étnico-social de las poblaciones escolares, los niveles de segregación residencial y la distribución espacial de las escuelas en el espacio urbano. -->
+impuestas por los condicionantes de la composición residencial. De esta
+manera, antes que un *círculo vicioso de segregación* [@Tammaru2021;
+@VanHam2018], encontramos que los dominios residencial y escolar tienen
+una independencia relativa entre sí. Este resultado no deben llevarnos a
+pensar que ambos dominios de la segregación actúan des-coordinadamente.
+Por el contrario, analizar la segregación desde un *enfoque
+multi-dominio* nos permite entender cómo los diferentes dominios de la
+segregación se articular reforzando la *segregación urbana* como un
+*todo* [@Musterd2020]. En la medida que la sociedad presenta fuertes
+desigualdades sociales, los diferentes dominios de la segregación se
+componen y complementan para sostener las estructuras sociales. En
+particular, la educación cumple un rol central en la adquisición de
+'capitales' (social, cultural, educativo, etc.) y, por lo tanto, como
+mecanismo 'mediador' en la reproducción de la estratificación social. Es
+este rol en nuestras sociedades de la educación como mecanismo de
+enclasamiento el que permite explicar los resultados de este capítulo y
+la independencia relativa de la segregación escolar como mecanismo que
+permite mantener espacios de diferenciación y distanciamiento entre los
+grupos sociales.
