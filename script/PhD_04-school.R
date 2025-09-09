@@ -525,26 +525,46 @@ replic <- 1000
          plot = p2[[3]], width = 20, height = 20, units = "cm")
 
   rm(p2)
+
+### ╠ FIG 7.3: Distancia promedio de los nodos de radios a escuelas -------------------------------------------------
+
+  cli::cli_li(col_yellow("Figure 7.3: Distancia promedio de los nodos de radios a escuelas."))
+
+  aux_RAD <- db_DIS |>
+    group_by(ID_RADIO = ID) |>
+    slice_min(order_by = DIS_t, n = 3 ) |>
+    summarise(DIS_t3 = mean(DIS_t),
+              across(c(DIS_l,DIS_t), ~min(.x, na.rm = T)))
+
+  aux_RAD <- CARTO$RADIO |>
+    filter(!is.na(TH)) |>
+    left_join(aux_RAD, by = "ID_RADIO") |>
+    filter(!is.na(DIS_t3))
+
+  p3 <- ggplot() +
+    geom_sf(data = aux_RAD, aes(fill = log(DIS_t3) ), color = NA) +
+    geom_sf(data = CARTO$DPTO_AMBA, fill = NA,
+            color = "grey", size = 0.5) +
     geom_sf(data = CARTO$FFCC1 |> filter(sentido == 1),
             color = "grey25", alpha = 0.5, linewidth = 0.2) +
     geom_sf(data = CARTO$FFCC2, color = "grey25",
             alpha = 0.5, size = 0.75) +
-    facet_wrap(~SECTOR) +
-    scale_color_manual(values = c(Estatal = "darkblue", Privado = "darkgreen")) +
+    geom_sf(data = SEC, color = "black", size = 0.1, alpha = 0.15) +
     coord_sf(xlim = AUX$lim_AMBA[c(1,3)],
              ylim = AUX$lim_AMBA[c(2,4)]) +
-    guides(size = "none", color = "none") +
-    theme_void() +
-    theme(strip.text = element_text(face = "bold", size = 16))
+    scale_fill_gradient2("Distancia promedio a las\n3 escuelas más cercanas\n(metros)",
+                         low = "darkorchid1", mid = "bisque", high = "tomato4",
+                         midpoint = log(1.5),
+                         labels = ~format(round(exp(.x) * 1000),
+                                          big.mark = ".",
+                                          decimal.mark = ",")) +
+    theme_void()
 
-  ggsave(file = fs::path("figures", "school_distribution", ext = "png"),
-         plot = p2, width = 30, height = 15, units = "cm")
-
-  rm(p2)
+  ggsave(file = fs::path("figures", "school_distance-radios-schools3", ext = "png"),
+         plot = p3, width = 22, height = 20, units = "cm")
 
   rm(aux_RAD, p3)
 
-  cli::cli_li(col_yellow("Figure 7.3: Densidad estimada de capacidad en escuelas secundarias."))
 
   p3 <- ggplot() +
     stars::geom_stars(data = EDU$EDU2 |>
