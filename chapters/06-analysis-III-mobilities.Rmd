@@ -574,7 +574,7 @@ propuesto en @Bourdieu1979; @Baranger2012].
 
 <!--# Se realiza una descripción general de las pautas de movilidad en el AMBA. Se comparan y analizan estas pautas en función de la composición resultante en los espacios urbanos. -->
 
-### Descripción de los viajes del AMBA
+### Descripción de los viajes del AMBA {.unnumbered}
 
 <!--# sumar grafico SA para distribución del tiempo por zonas y ocupaciones (ver LeRoux)-->
 
@@ -736,7 +736,7 @@ partidos de Vicente López y San Isidro.
 include_graphics(here::here("figures", "Movilidad_Destino-x-nivel-educativo.png") )
 ```
 
-### La relación entre la segregación en el dominio de las actividades y en el dominio residencial
+### La relación entre la segregación en el dominio de las actividades y en el dominio residencial {.unnumbered}
 
 Tomando en cuenta esta primera descripción general de los viajes
 realizados en el AMBA, en este apartado vamos a abordar en qué medida
@@ -913,7 +913,7 @@ estables durante todo el día. En este sentido, si bien más alta que la
 de todos los otros pares de grupos, la co-presencia de los grupos
 extremos (`primario-superior`) es la única que crece durante el día.
 
-### Las movilidades como punto de análisis para comprender la segregación de los espacios de actividad
+### Las movilidades como punto de análisis para comprender la segregación de los espacios de actividad {.unnumbered}
 
 <!-- Análisis MCA -->
 

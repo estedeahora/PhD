@@ -470,7 +470,7 @@ permite estimar la densidad
 
 ## Comparación de la segregación en el dominio residencial y escolar {#school-analysis}
 
-### La distribución de escuelas en el AMBA
+### La distribución de escuelas en el AMBA {.unnumbered}
 
 Antes de comenzar a analizar la relación entre la segregación en el
 dominio residencial y escolar, conviene realizar una descripción de cómo
@@ -515,6 +515,7 @@ provisión de servicios educativos muy desigual. La Tabla
 \@ref(tab:school-tab1) nos muestra para cada entorno urbano la distancia
 promedio y por la trama urbana a la escuela secundaria más cercana.
 Podemos ver que ...
+### Analizando el efecto de la segregación residencial sobre la segregación escolar {.unnumbered}
 
 ```{r school-tab1}
 
@@ -523,7 +524,6 @@ EDU$TAB1
 
 Por último, podemos ver que
 
-### Analizando el efecto de la segregación residencial sobre la segregación escolar
 
 Sin autocorrelación
 

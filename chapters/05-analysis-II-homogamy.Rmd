@@ -326,7 +326,7 @@ grupo.
 
 <!--# Se realiza una descripción de los patrones de homogamia en el AMBA en relación a los patrones de segregación en el ámbito residencial. En particular, para cada grupo educativo, se analiza cómo se comporta la homogamia en relación con la segregación en el dominio residencial. -->
 
-### Análisis de la homogamia en el Área Metropolitana de Buenos Aires
+### Análisis de la homogamia en el Área Metropolitana de Buenos Aires {.unnumbered}
 
 <!-- Homogamia global AMBA -->
 
@@ -563,7 +563,7 @@ educativo tiende por regla general a ser también más alta. Estos
 resultados nos remiten a la relación entre segregación/composición
 residencial y homogamia que desarrollamos en el siguiente apartado.
 
-### La relación entre homogamia y la composición residencial
+### La relación entre homogamia y la composición residencial {.unnumbered}
 
 En el apartado anterior, encontramos indicios de que la probabilidad de
 homogamia educativa está relacionada con la proporción de personas de
