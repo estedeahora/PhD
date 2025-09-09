@@ -616,21 +616,107 @@ replic <- 1000
 
   rm(p4a, p4b)
 
+### ╠ FIG 7.5: Comparación de la segregación local real y modelada -----------------
 
-  ggsave(file = fs::path("figures", "school_variogram", ext = "png"),
-         plot = ggarrange(p4a, p4b), width = 20, height = 10, units = "cm")
-
-  rm(p4a, p4b)
-
-### ╠ FIG 7.5: Distancia promedio de los nodos de radios a escuelas -------------------------------------------------
-
-### ╠ FIG 7.6: Relationship between real and estimated segregation of each school (left); and Location of schools according to difference in local segregation (right) -----------------
-
-  # Ver: Serrati, P. S. (2024). School and Residential Segregation in the Reproduction of Urban Segregation: A Case Study in Buenos Aires. Urban Studies, 61(2), 313-330. https://doi.org/10.1177/00420980231178401
+  cli::cli_li(col_yellow("Figure 7.5: Comparación de la segregación local real y modelada."))
   # Relationship between real and estimated segregation of each school (left); and Location of schools according to difference in local segregation (right)
-  # file.edit("C:/Users/este.de.ahora/Documents/_investigacion/_publicado/2023.06 - Artículo. residential-and-school-segregation/analysis/script/03_Fig4_local-segregation.R")
 
-### ╠ FIG 7.7: Composición de escuelas (colores + gráfico ternario) ------------------------------
+  # Local Structural Difference
+  loc_MODEL <- EDU$EDU6 |>
+    filter(!is.na(CUEANEXO) & stat == "ls_diff_mean") |>
+    mutate(sig = !map_lgl(CI, \(x) x[1] < 0 & x[2] > 0) ) |>
+    select(CUEANEXO, diff = est, sig)
+
+  # Common database
+  aux_ls <- SEC |>
+    rename(ls_real = ls) |>
+    left_join(loc_MODEL, by = "CUEANEXO") |>
+    mutate(ls_est = ls_real + diff,
+           across(c(ls_real, ls_est),
+                  ~ifelse(.x < 0, 0, .x) ) ) |>
+  select(CUEANEXO, n = N_MATRIC, SECTOR, ls_real, ls_est, diff, sig)
+
+  mM <- aux_ls |>
+    st_drop_geometry() |>
+    filter(!is.na(SECTOR)) |>
+    group_by(SECTOR) |>
+    summarise(R2 = cor(ls_real, ls_est, use = "complete.obs" )^2 ) |>
+    mutate(R2_lab = paste0("R[", SECTOR,"]^{2}",
+                           " == ",
+                           sprintf("%.3f", signif(R2, 3))))
+
+  # Differences ls real vs ls model
+
+  p5a <- aux_ls |>
+    filter(sig) |>
+    ggplot(mapping = aes(x = ls_real, y = ls_est, shape = SECTOR) ) +
+    geom_point(mapping = aes(size = n, color = diff),
+               alpha = 0.8) +
+    geom_point(data = aux_ls |> filter(!sig),
+               size = 0.7, alpha = 0.1 , color = "darkgreen") +
+    geom_abline(intercept = 0, slope = 1, linetype = 2, color = "tomato3") +
+    geom_text(x = c(0.5, 0.5), y = c(0.9, 0.8), data= mM,
+              color = "grey40", aes(label = R2_lab), parse = TRUE
+    ) +
+    geom_hline(yintercept = 0, alpha = 0.7) +
+    geom_vline(xintercept = 0, alpha = 0.8) +
+    coord_equal(xlim = c(0, 1), ylim = c(0, 1)) +
+    labs(x = expression(paste("Segregación Escolar Local Real (",
+                              L[s]^{Real}, ")", sep = "")),
+         y = expression(paste("Segregación Escolar Local Modelada (",
+                              L[s]^{Model}, ")", sep = "")),
+         shape = "") +
+    scale_color_gradient2() +
+    theme_minimal() +
+    theme(legend.position = "none")
+
+  # Geo localización de diferencias
+
+  p5b <- aux_ls |>
+    mutate(diff_dir = factor(diff > 0, c(F, T),
+                             labels = paste("Diferencia\n",
+                                            c("Negativa", "Positiva")))) |>
+    filter(sig) |>
+    ggplot(aes(shape = SECTOR)) +
+    geom_sf(aes(color = diff, size = n), alpha = 0.7) +
+    geom_sf(data = aux_ls |> filter(!sig),
+            size = 0.7, color = "darkgreen", alpha = 0.2) +
+    geom_sf(data = CARTO$DPTO_AMBA, fill = NA, shape =  NA) +
+    geom_point(data = data.frame(x = 94000, y = 93200), alpha = 0.5,
+               aes(x = x, y = y, fill = "Diferencia\nno significativa",
+                   shape = "Estatal"), colour = "darkgreen") +
+    scale_color_gradient2(expression(paste("Diferencia de segregación (",
+                                           Delta, L[s], " = ",  L[s]^{Model},
+                                           "-", L[s]^{Real}, ")", sep = "") ),
+                          guide = guide_colorbar(title.position = "top",
+                                                 order = 3,
+                                                 barwidth = 8,
+                                                 direction = "horizontal"
+                          )) +
+    scale_shape("Sector",
+                guide = guide_legend(title.position = "top",
+                                     order = 1,
+                                     direction = "vertical" )) +
+    coord_sf(xlim = AUX$lim_AMBA[c(1,3)],
+             ylim = AUX$lim_AMBA[c(2,4)]) +
+    guides(size = "none",
+           fill = guide_legend(title = " ", order = 2,
+                               title.position = "top") ) +
+    theme_void() +
+    theme(legend.position = "bottom",
+          legend.spacing.x = unit(0.5, "cm"))
+
+  p5 <- ggarrange(p5a, p5b, common.legend = TRUE,
+                 legend = "bottom", legend.grob = get_legend(p5b) )
+
+  ggsave(filename = fs::path("figures","school_local-segregation", ext = "png"),
+         plot = p5, height = 15, width = 30, units = "cm")
+
+  ggsave(filename = fs::path("figures","school_local-segregation-by-sector", ext = "png"),
+         plot = p5b + facet_grid(diff_dir ~ SECTOR, switch = "y"),
+         height = 20, width = 20, units = "cm")
+
+  rm(mM, aux_ls, loc_MODEL, p5a, p5b, p5)
 
 
 ### ╚ FIG App ?.?: Comparación entre distancias lineales y por red vial --------------------
