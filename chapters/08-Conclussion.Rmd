@@ -1,3 +1,9 @@
+---
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
 `r if(!knitr::pandoc_to("docx")) '# (PART) Conclusiones {.unnumbered}'`
 
 # ¿La segregación como un todo? {#conclussion .unnumbered}
@@ -6,25 +12,140 @@
 
 <!-- Recapitulación del objetivo general -->
 
-En este trabajo de tesis propusimos analizar la *segregación urbana* en el Área Metropolitana de Buenos Aires utilizando un *enfoque multi-dominio*. El objetivo principal de la tesis fue *indagar el modo en el que se articula la segregación en diferentes dominios de la vida social en el AMBA*. Para ello, propusimos concentrarnos en analizar el dominio residencial, los espacios de actividad y el espacio escolar. La estrategia de análisis propuesta se centró en describir la segregación en cada uno de estos dominios e identificar cómo es la relación de cada uno de estos con la segregación residencial en la configuración de los patrones de segregación urbana. En este sentido, un punto clave del trabajo fue buscar indicios sobre cómo se articula la segregación en el dominio residencial con el resto de los dominios de la segregación, constituyendo una trama compleja de segregación urbana. En resumen, nuestra propuesta buscó indagar el modo en que cada uno de estos dominios aporta a la *segregación urbana* *como un todo*.
+En este trabajo de tesis propusimos analizar la *segregación urbana* en
+el Área Metropolitana de Buenos Aires utilizando un *enfoque
+multi-dominio*. El objetivo principal de la tesis fue *indagar el modo
+en el que se articula la segregación en diferentes dominios de la vida
+social en el AMBA*. Para ello, propusimos concentrarnos en analizar el
+dominio residencial, los espacios de actividad y el espacio escolar. La
+estrategia de análisis propuesta se centró en describir la segregación
+en cada uno de estos dominios e identificar cómo es la relación de cada
+uno de estos con la segregación residencial en la configuración de los
+patrones de segregación urbana. En este sentido, un punto clave del
+trabajo fue buscar indicios sobre cómo se articula la segregación en el
+dominio residencial con el resto de los dominios de la segregación,
+constituyendo una trama compleja de segregación urbana. En resumen,
+nuestra propuesta buscó indagar el modo en que cada uno de estos
+dominios aporta a la *segregación urbana* *como un todo*.
 
 <!-- Recapitulación de resultados por capítulos -->
 
-Antes de avanzar en el analizar de los resultados en torno al objetivo general, recuperemos brevemente los principales hallazgos del análisis obtenidos en cada uno de los capítulos, para luego incorporar estos en un marco común que los integre. <!-- Capítulo 4: Residencial -->Respecto a la *segregación en el dominio residencial* (Capítulo \@ref(residential)) identificamos la coexistencia local de cuatro patrones diferenciados. Cada uno de estos patrones de segregación residencial es el emergente histórico de procesos sociales en los cuales se configuran. Como resultado de esos procesos, estos patrones toman características específicas en lo que respecta a la extensión, continuidad, singularidad y composición social, a la vez que se articulan para generar un acceso diferenciado a los recursos urbanos. Esta coexistencia complejiza la estructura de la segregación residencial que tradicionalmente se asignó a las ciudades latinoamericanas [@Feitosa2021; @LopezMartinez2021; @Agostini2016; @Sabatini2006]. En este sentido, la posibilidad de acceso a los mercados de suelo formal e informal, la fragmentación urbana y las intervenciones estatales configuran un entramado donde los hogares experimentan diferentes grados de aislamiento o apertura. Además, al estructurar las oportunidades de contacto y acceso a recursos urbanos, esta *estructura compleja de segregación del espacio residencial* actúa a la vez como un reflejo de las desigualdades sociales y como un motor de su reproducción a partir de cristalizar estas jerarquías. <!-- Capítulo 5: Homogamia -->Además, esta estructura de segregación en el dominio residencial se ve reforzada parcialmente por la *homogamia educativa* (Capítulo \@ref(homogamy)). En este sentido, encontramos que la homogamia actúa a nivel de los hogares como un mecanismo que refuerza la segregación residencial, solo en aquellos lugares donde los grupos son minoritarios. En estos contextos, la homogamia puede funcionar como 'resguardo' a nivel del hogar para evitar el 'riesgo de contacto' con otros grupos sociales diferentes cuando esta probabilidad es mayor (dado que el propio grupo es minoritario).
+Antes de avanzar en el analizar de los resultados en torno al objetivo
+general, recuperemos brevemente los principales hallazgos del análisis
+obtenidos en cada uno de los capítulos, para luego incorporar estos en
+un marco común que los integre. <!-- Capítulo 4: Residencial -->Respecto
+a la *segregación en el dominio residencial* (Capítulo
+\@ref(residential)) identificamos la coexistencia local de cuatro
+patrones diferenciados. Cada uno de estos patrones de segregación
+residencial es el emergente histórico de procesos sociales en los cuales
+se configuran. Como resultado de esos procesos, estos patrones toman
+características específicas en lo que respecta a la extensión,
+continuidad, singularidad y composición social, a la vez que se
+articulan para generar un acceso diferenciado a los recursos urbanos.
+Esta coexistencia complejiza la estructura de la segregación residencial
+que tradicionalmente se asignó a las ciudades latinoamericanas
+[@Feitosa2021; @LopezMartinez2021; @Agostini2016; @Sabatini2006]. En
+este sentido, la posibilidad de acceso a los mercados de suelo formal e
+informal, la fragmentación urbana y las intervenciones estatales
+configuran un entramado donde los hogares experimentan diferentes grados
+de aislamiento o apertura. Además, al estructurar las oportunidades de
+contacto y acceso a recursos urbanos, esta *estructura compleja de
+segregación del espacio residencial* actúa a la vez como un reflejo de
+las desigualdades sociales y como un motor de su reproducción a partir
+de cristalizar estas jerarquías. <!-- Capítulo 5: Homogamia -->Además,
+esta estructura de segregación en el dominio residencial se ve reforzada
+parcialmente por la *homogamia educativa* (Capítulo \@ref(homogamy)). En
+este sentido, encontramos que la homogamia actúa a nivel de los hogares
+como un mecanismo que refuerza la segregación residencial, solo en
+aquellos lugares donde los grupos son minoritarios. En estos contextos,
+la homogamia puede funcionar como 'resguardo' a nivel del hogar para
+evitar el 'riesgo de contacto' con otros grupos sociales diferentes
+cuando esta probabilidad es mayor (dado que el propio grupo es
+minoritario).
 
 <!-- Capítulo 6: Espacios de actividad -->
 
-Por su parte, encontramos que las *movilidades cotidianas* del AMBA consolidan *espacios de actividad* que, de forma global, son menos segregados que el dominio residencial, pero que, sin embargo, conservan una estructura jerárquica y asimétrica (Capítulo \@ref(mobility)). En sintonía con lo señalado por @DiVirgilio2022d, entendemos que las movilidades urbanas resultan fundamentales para entender la estratificación y diferenciación del espacio urbano, en tanto que si por un lado permiten una reducción de la segregación global (en relación al dominio residencial), por otra parte promueven un uso diferenciado del espacio que se manifiesta en 'circuitos urbanos' para los diferentes grupos sociales.
+Por su parte, encontramos que las *movilidades cotidianas* del AMBA
+consolidan *espacios de actividad* que, de forma global, son menos
+segregados que el dominio residencial, pero que, sin embargo, conservan
+una estructura jerárquica y asimétrica (Capítulo \@ref(mobility)). En
+sintonía con lo señalado por @DiVirgilio2022d, entendemos que las
+movilidades urbanas resultan fundamentales para entender la
+estratificación y diferenciación del espacio urbano, en tanto que si por
+un lado permiten una reducción de la segregación global (en relación al
+dominio residencial), por otra parte promueven un uso diferenciado del
+espacio que se manifiesta en 'circuitos urbanos' para los diferentes
+grupos sociales.
 
-En sintonía con lo encontrado en otros trabajos, esta menor segregación de los espacios de actividad se vincula al rol de las *centralidades urbanas*, las cuales explican una parte importante de esta mayor co-presencia y dan lugar a una 'asimetría' sistemática en las movilidades [@Krivo2013; @Dong2020; @Hilman2022; @LeRoux2017]. Como contracara, aparecen espacios en los cuales sólo algunos grupos sociales desarrollan sus actividades y, por lo tanto, se construyen como más aislados y segregados (sea por su marca de 'exclusivos' o 'estigmatizados'). Además, como señalan @Ellis2004 y @LeRoux2017, esta mayor co-presencia se ve impulsado por el peso de las actividades laborales, las cuales pueden suponer simultaneamente relaciones de jerarquía y distancia estos estos grupos, antes que espacios de integración social [@Elguezabal2018; @Frisch2022]. En resumen, la baja de la segregación de los espacios de actividad no es un proceso espacialmente homogéneo, sino que supone un doble movimiento por el cual algunos espacios atrén actividades constituyéndose como espacio de co-presencia y otros incrementan sus barreras sociales. Por ello, las movilidades y los espacios de actividad reducen la segregación global, pero también dan lugar a nuevas formas de estratificación y diferenciación del espacio urbano.
+En sintonía con lo encontrado en otros trabajos, esta menor segregación
+de los espacios de actividad se vincula al rol de las *centralidades
+urbanas*, las cuales explican una parte importante de esta mayor
+co-presencia y dan lugar a una 'asimetría' sistemática en las
+movilidades [@Krivo2013; @Dong2020; @Hilman2022; @LeRoux2017]. Como
+contracara, aparecen espacios en los cuales sólo algunos grupos sociales
+desarrollan sus actividades y, por lo tanto, se construyen como más
+aislados y segregados (sea por su marca de 'exclusivos' o
+'estigmatizados'). Además, como señalan @Ellis2004 y @LeRoux2017, esta
+mayor co-presencia se ve impulsado por el peso de las actividades
+laborales, las cuales pueden suponer simultaneamente relaciones de
+jerarquía y distancia estos estos grupos, antes que espacios de
+integración social [@Elguezabal2018; @Frisch2022]. En resumen, la baja
+de la segregación de los espacios de actividad no es un proceso
+espacialmente homogéneo, sino que supone un doble movimiento por el cual
+algunos espacios atrén actividades constituyéndose como espacio de
+co-presencia y otros incrementan sus barreras sociales. Por ello, las
+movilidades y los espacios de actividad reducen la segregación global,
+pero también dan lugar a nuevas formas de estratificación y
+diferenciación del espacio urbano.
 
 <!-- Capítulo 7: Educación -->
 
-Finalmente, en sintonía con lo que habíamos observado en trabajos anteriores sobre la CABA [@Serrati2021; @Serrati2023], encontramos que en el AMBA la segregación residencial resulta insuficiente para explicar la *segregación en el dominio educativo* (Capítulo \@ref(school)). Esta situación se sostiene incluso *a pesar de* que la distribución territorial de la oferta y la demanda permitirían *a priori* una mayor mezcla social, lo cual refuerza la idea de que la segregación escolar emerge como un mecanismo relativamente autónomo de diferenciación socio-espacial. Esta autonomía le permite al dominio educativo actuar como mecanismo de estratificación y reproducción social, consolidando la diferenciación entre grupos más allá de la composición residencial. La independencia relativa del dominio escolar se encuentra potenciada por un *paisaje educativo* en el que el *contexto institucional* estimula la presencia de la educación privada y la posibilidad de elección escolar. Además, nuestro análisis refuerza la importancia de incorporar el enfoque de la *geografía de la educación*, que considera conjuntamente el ámbito socio-territorial y el educativo, en función de entender cómo se articulan las *desigualdades educativo-territoriales* [@Serrati2021].
+Finalmente, en sintonía con lo que habíamos observado en trabajos
+anteriores sobre la CABA [@Serrati2021; @Serrati2023], encontramos que
+en el AMBA la segregación residencial resulta insuficiente para explicar
+la *segregación en el dominio educativo* (Capítulo \@ref(school)). Esta
+situación se sostiene incluso *a pesar de* que la distribución
+territorial de la oferta y la demanda permitirían *a priori* una mayor
+mezcla social, lo cual refuerza la idea de que la segregación escolar
+emerge como un mecanismo relativamente autónomo de diferenciación
+socio-espacial. Esta autonomía le permite al dominio educativo actuar
+como mecanismo de estratificación y reproducción social, consolidando la
+diferenciación entre grupos más allá de la composición residencial. La
+independencia relativa del dominio escolar se encuentra potenciada por
+un *paisaje educativo* en el que el *contexto institucional* estimula la
+presencia de la educación privada y la posibilidad de elección escolar.
+Además, nuestro análisis refuerza la importancia de incorporar el
+enfoque de la *geografía de la educación*, que considera conjuntamente
+el ámbito socio-territorial y el educativo, en función de entender cómo
+se articulan las *desigualdades educativo-territoriales* [@Serrati2021].
 
 <!-- Integrar los resultados de los capítulos-->
 
-De modo general, nuestros resultados nos permiten concluir que la *segregación urbana* en el AMBA se compone como una trama compleja y articulada en el que intervienen múltiples dominios de la vida social. Estos dominio aportan mecanismos específicos e independientes, pero también interdependientes, los cuales se articulan para permitir una segmentación del espacio urbano. En este sentido, estos dominios no actúan necesariamente en la misma 'dirección', pero configuran el fenómeno de la segregación como un todo articulado. El dominio residencial *delimita* *y* *condiciona* una estructura de posibilidades para la co-presencia y la segregación urbana, pero no es suficiente para entender la totalidad del fenómeno. Por un lado, esta estructura de segregación es modificada por las prácticas de los hogares a través de los arreglos matrimoniales, que tienden a *reforzar* el efecto de la segregación en aquellos lugares donde los grupos tienen una menor representación. A su vez, las estrategias de movilidad urbana permiten a las familias un uso del espacio urbano más allá de su lugar residencial, lo cual resulta en una *reconfiguración* de los espacios de co-presencia. Por último, los contextos y reglas institucionales garantizan la *separación* de los grupos sociales en el dominio educativo, incluso cuando las condiciones de segregación residencial y ubicación de las escuelas permitirían una mayor integración. En conjunto, estos dominios configuran mecanismos que, antes que funcionar de manera aislada, tienden a interrelacionarse y retroalimentarse reforzando una *división social del territorio urbano* y, de esta manera, la *estratificación social* (ver \@ref(fig:conclussion-scheme)).
+De modo general, nuestros resultados nos permiten concluir que la
+*segregación urbana* en el AMBA se compone como una trama compleja y
+articulada en el que intervienen múltiples dominios de la vida social.
+Estos dominio aportan mecanismos específicos e independientes, pero
+también interdependientes, los cuales se articulan para permitir una
+segmentación del espacio urbano. En este sentido, estos dominios no
+actúan necesariamente en la misma 'dirección', pero configuran el
+fenómeno de la segregación como un todo articulado. El dominio
+residencial *delimita* *y* *condiciona* una estructura de posibilidades
+para la co-presencia y la segregación urbana, pero no es suficiente para
+entender la totalidad del fenómeno. Por un lado, esta estructura de
+segregación es modificada por las prácticas de los hogares a través de
+los arreglos matrimoniales, que tienden a *reforzar* el efecto de la
+segregación en aquellos lugares donde los grupos tienen una menor
+representación. A su vez, las estrategias de movilidad urbana permiten a
+las familias un uso del espacio urbano más allá de su lugar residencial,
+lo cual resulta en una *reconfiguración* de los espacios de
+co-presencia. Por último, los contextos y reglas institucionales
+garantizan la *separación* de los grupos sociales en el dominio
+educativo, incluso cuando las condiciones de segregación residencial y
+ubicación de las escuelas permitirían una mayor integración. En
+conjunto, estos dominios configuran mecanismos que, antes que funcionar
+de manera aislada, tienden a interrelacionarse y retroalimentarse
+reforzando una *división social del territorio urbano* y, de esta
+manera, la *estratificación social* (ver \@ref(fig:conclussion-scheme)).
 
 ```{r conclussion-scheme}
 #| fig.cap: "Esquema de los determinantes de cada uno de los dominios en la configuración de la segregación urbana en el AMBA"
@@ -35,29 +156,171 @@ knitr::include_graphics(here::here("figures", "conclussion-scheme.png"))
 
 <!-- Segregación urbana como fenómeno sui generis (vs 'círculo vicioso' de la segregación) -->
 
-Estos resultados nos permiten complejizar y debatir con la idea de 'círculo vicioso' de la segregación [propuesta por @VanHam2018], en tanto consideramos que no es posible entender esta retroalimentación entre los dominios de la segregación simplemente como una 'replicación' de las mismas desigualdades bajo diferentes mecanismos y en diferentes ámbitos. Por el contrario, nuestros resultados resaltan las particularidad y singularidades de los mecanismos mediante los que opera la segregación en cada dominio, a la vez que los diferentes resultados y direcciones de estos procesos. Sin embargo, más allá de la lógica específica de cada dominio, la articulación entre estos ámbitos da como resultado la emergencia de un proceso *sui generis* de diferenciación espacial y uso selectivo del espacio, el cual podemos entender bajo la idea general de *segregación urbana.* Como conclusión de nuestra tesis sostenemos que en el AMBA es necesario entender la 'segregación urbana como un todo', es decir, como un fenómeno complejo que es emergente de la articulación entre los diferentes dominios particulares, los cuales, a su vez, mantienen su autonomía relativa como mecanismos de separación.
+Estos resultados nos permiten complejizar y debatir con la idea de
+'círculo vicioso' de la segregación [propuesta por @VanHam2018], en
+tanto consideramos que no es posible entender esta retroalimentación
+entre los dominios de la segregación simplemente como una 'replicación'
+de las mismas desigualdades bajo diferentes mecanismos y en diferentes
+ámbitos. Por el contrario, nuestros resultados resaltan las
+particularidad y singularidades de los mecanismos mediante los que opera
+la segregación en cada dominio, a la vez que los diferentes resultados y
+direcciones de estos procesos. Sin embargo, más allá de la lógica
+específica de cada dominio, la articulación entre estos ámbitos da como
+resultado la emergencia de un proceso *sui generis* de diferenciación
+espacial y uso selectivo del espacio, el cual podemos entender bajo la
+idea general de *segregación urbana.* Como conclusión de nuestra tesis
+sostenemos que en el AMBA es necesario entender la 'segregación urbana
+como un todo', es decir, como un fenómeno complejo que es emergente de
+la articulación entre los diferentes dominios particulares, los cuales,
+a su vez, mantienen su autonomía relativa como mecanismos de separación.
 
 <!-- Interpretación de los resultados en clave de segregación multi-dominio -->
 
-En este marco, un enfoque *multi-dominio de la segregación* tiene un potencial como herramienta analítica, en la medida que ayuda a comprender cómo los dominios funcionan de forma articulada e independiente, contribuyendo cada uno a la separación entre los grupos sociales como un proceso global resultante. La virtud de este enfoque es, por lo tanto, que permite entender el aporte de cada uno de estos dominios al fenómeno global. Desde nuestra perspectiva, si los diferentes dominios de la vida social repitiesen la misma tendencia de segregación, el estudio multi-dominio de la segregación resultaría redundante, en tanto cada dominio aportaría la misma información sobre el fenómeno global. Por el contrario, una perspectiva multi-dominio supone un aporte fundamental al análisis de la segregación, en tanto cada uno de estos dominios aporta elementos específicos y propios, los cuales de forma conjunta configuran una estructura compleja de diferenciación de los grupos. Desde esta perspectiva, la segregación es un fenómeno que supera sus manifestaciones particulares en los distintos dominios de la vida social y que *requiere* un enfoque multi-dominio para ser entendida de forma completa.
+En este marco, un enfoque *multi-dominio de la segregación* tiene un
+potencial como herramienta analítica, en la medida que ayuda a
+comprender cómo los dominios funcionan de forma articulada e
+independiente, contribuyendo cada uno a la separación entre los grupos
+sociales como un proceso global resultante. La virtud de este enfoque
+es, por lo tanto, que permite entender el aporte de cada uno de estos
+dominios al fenómeno global. Desde nuestra perspectiva, si los
+diferentes dominios de la vida social repitiesen la misma tendencia de
+segregación, el estudio multi-dominio de la segregación resultaría
+redundante, en tanto cada dominio aportaría la misma información sobre
+el fenómeno global. Por el contrario, una perspectiva multi-dominio
+supone un aporte fundamental al análisis de la segregación, en tanto
+cada uno de estos dominios aporta elementos específicos y propios, los
+cuales de forma conjunta configuran una estructura compleja de
+diferenciación de los grupos. Desde esta perspectiva, la segregación es
+un fenómeno que supera sus manifestaciones particulares en los distintos
+dominios de la vida social y que *requiere* un enfoque multi-dominio
+para ser entendida de forma completa.
 
 <!-- Segregación urbana como dimensión espacial de la estratificación social -->
 
-Por su parte, en tanto entendemos la segregación urbana como *dimensión espacial de la estratificación* (ver Capítulo \@ref(lit)), es previsible que el análisis de sociedades desiguales nos enfrente con situaciones de segregación urbana. En sociedades fuertemente estratificadas, las diferencias sociales buscarán expresarse y ser expresadas en configuraciones espaciales mediante la segregación urbana –es decir, mediante la diferenciación del espacio urbano y su uso selectivo como forma de 'distinción', para evitar el potencial contacto con otros grupos. El análisis de la segregación 'como un todo' articulado entre dominios, permite entender como, aunque en algunos dominios encontremos una mayor mixtura (posiblemente mediado por relaciones de jerarquía que regulan esta co-presencia), estas desigualdades buscarán otros dominios para expresarse espacialmente. Si bien la conformación y proliferación de espacios de intercambio y exposición son deseables, en tanto se mantengan las diferencias sociales es esperable que los hogares busquen (y encuentren) otras formas para manifestar esas diferencias.[^08-conclussion-1] Por ello, es central que el fomento de ciudades más integradas y menos segregadas, considere la importancia de generar sociedades más igualitarias en lo económico [@Tammaru2021, p. 70].
+Por su parte, en tanto entendemos la segregación urbana como *dimensión
+espacial de la estratificación* (ver Capítulo \@ref(lit)), es previsible
+que el análisis de sociedades desiguales nos enfrente con situaciones de
+segregación urbana. En sociedades fuertemente estratificadas, las
+diferencias sociales buscarán expresarse y ser expresadas en
+configuraciones espaciales mediante la segregación urbana –es decir,
+mediante la diferenciación del espacio urbano y su uso selectivo como
+forma de 'distinción', para evitar el potencial contacto con otros
+grupos. El análisis de la segregación 'como un todo' articulado entre
+dominios, permite entender como, aunque en algunos dominios encontremos
+una mayor mixtura (posiblemente mediado por relaciones de jerarquía que
+regulan esta co-presencia), estas desigualdades buscarán otros dominios
+para expresarse espacialmente. Si bien la conformación y proliferación
+de espacios de intercambio y exposición son deseables, en tanto se
+mantengan las diferencias sociales es esperable que los hogares busquen
+(y encuentren) otras formas para manifestar esas
+diferencias.[^08-conclussion-1] Por ello, es central que el fomento de
+ciudades más integradas y menos segregadas, considere la importancia de
+generar sociedades más igualitarias en lo económico [@Tammaru2021, p.
+70].
 
-[^08-conclussion-1]: De forma similar, @Atkinson2004 [p. 890-891] concluyen que los barrios cerrados en UK, aparecen como un intento de los sectores de altos ingresos para escapar de la 'gravedad' que imponen políticas públicas que fomentan 'ciudades abiertas' (openness of cities) y áreas de uso mixto.
+[^08-conclussion-1]: De forma similar, @Atkinson2004 [p. 890-891]
+    concluyen que los barrios cerrados en UK, aparecen como un intento
+    de los sectores de altos ingresos para escapar de la 'gravedad' que
+    imponen políticas públicas que fomentan 'ciudades abiertas'
+    (openness of cities) y áreas de uso mixto.
 
 <!-- Aportes y contribuciones  -->
 
-Tomando en cuenta estos resultados, este trabajo de tesis puede considerarse un aporte en al menos cuatro aspectos. <!-- 1. Análisis multi-dominio en el AMBA -->En primer lugar, el trabajo es el primer intento sistemático por analizar la segregación multi-dominio desde una perspectiva global que incluye a todo el AMBA. En este sentido, si bien existen algunos trabajos que han propuesto analizar conjuntamente diferentes dominios de la segregación, estos trabajos han estado centrados en proponer una mirada teórica de ese problema o a analizar algunos casos particulares mediante metodologías cualitativas. Por el contrario, nuestro trabajo se propuso abordar la interacción entre tres dominios de la segregación en el conjunto del AMBA, uno de los principales aglomerados urbanos de la región. En relación a esta contribución, si bien no es parte del objetivo principal de este trabajo, el análisis de los diferentes dominios por separado también ha permitido conocer elementos novedosos sobre cada uno de los dominios de la segregación estudiados. <!-- 2. Metodológico -->En segundo lugar, en este trabajo propusimos la construcción de un conjunto de herramientas metodológicas novedosas para articular fuentes de datos diversas y considerar simultaneamente distintos dominios de la vida social. En este camino, utilizamos métodos novedosos en el campo de los análisis de segregación, como las técnicas de *programación lineal entera* o de *análisis de grafos bipartitos* (con la *matriz de indicadores múltiple)*. También propusimos una forma novedosa de visualizar 'geométricamente' la segregación utilizando el *análisis de correspondencias* y nuevas medidas para abordar espacialmente el problema de la homogamia. Si bien estas técnicas y métodos tienen una larga tradición, lo novedoso de este trabajo es su integración como herramientas para el análisis de la segregación urbana. <!-- 3. Aportes al debate de segregación multi-dominio -->En tercer lugar, el trabajo pretende ser un aporte a la discusión y el debate teórico en curso sobre la segregación multi-dominio. En este sentido, el trabajo contribuye a pensar las potencialidades de un abordaje multi-dominio de la segregación urbana, aportando elementos conceptuales para la discusión de este concepto y, en particular, sobre la articulación entre los diferentes dominios más allá de la idea de 'círculo vicioso' de la segregación. <!-- 4. Aportes para entender la segregación como dimensión espacial de la estratificación  -->Por último, si bien este trabajo no es el primer intento en esta dirección, consideramos que es un aporte para conceptualizar la segregación como dimensión espacial de la estratificación social. En este sentido, propusimos algunos elementos para articular teóricamente el campo de los estudios de segregación (y los estudios urbanos) con los estudios de estratificación. En particular, creemos que este trabajo aporta a la conceptualización de la segregación urbana como espacio de *distinción* que posibilita y refuerza la interacción entre las personas de las clases sociales.
+Tomando en cuenta estos resultados, este trabajo de tesis puede
+considerarse un aporte en al menos cuatro aspectos.
+<!-- 1. Análisis multi-dominio en el AMBA -->En primer lugar, el trabajo
+es el primer intento sistemático por analizar la segregación
+multi-dominio desde una perspectiva global que incluye a todo el AMBA.
+En este sentido, si bien existen algunos trabajos que han propuesto
+analizar conjuntamente diferentes dominios de la segregación, estos
+trabajos han estado centrados en proponer una mirada teórica de ese
+problema o a analizar algunos casos particulares mediante metodologías
+cualitativas. Por el contrario, nuestro trabajo se propuso abordar la
+interacción entre tres dominios de la segregación en el conjunto del
+AMBA, uno de los principales aglomerados urbanos de la región. En
+relación a esta contribución, si bien no es parte del objetivo principal
+de este trabajo, el análisis de los diferentes dominios por separado
+también ha permitido conocer elementos novedosos sobre cada uno de los
+dominios de la segregación estudiados. <!-- 2. Metodológico -->En
+segundo lugar, en este trabajo propusimos la construcción de un conjunto
+de herramientas metodológicas novedosas para articular fuentes de datos
+diversas y considerar simultaneamente distintos dominios de la vida
+social. En este camino, utilizamos métodos novedosos en el campo de los
+análisis de segregación, como las técnicas de *programación lineal
+entera* o de *análisis de grafos bipartitos* (con la *matriz de
+indicadores múltiple)*. También propusimos una forma novedosa de
+visualizar 'geométricamente' la segregación utilizando el *análisis de
+correspondencias* y nuevas medidas para abordar espacialmente el
+problema de la homogamia. Si bien estas técnicas y métodos tienen una
+larga tradición, lo novedoso de este trabajo es su integración como
+herramientas para el análisis de la segregación urbana.
+<!-- 3. Aportes al debate de segregación multi-dominio -->En tercer
+lugar, el trabajo pretende ser un aporte a la discusión y el debate
+teórico en curso sobre la segregación multi-dominio. En este sentido, el
+trabajo contribuye a pensar las potencialidades de un abordaje
+multi-dominio de la segregación urbana, aportando elementos conceptuales
+para la discusión de este concepto y, en particular, sobre la
+articulación entre los diferentes dominios más allá de la idea de
+'círculo vicioso' de la segregación.
+<!-- 4. Aportes para entender la segregación como dimensión espacial de la estratificación  -->Por
+último, si bien este trabajo no es el primer intento en esta dirección,
+consideramos que es un aporte para conceptualizar la segregación como
+dimensión espacial de la estratificación social. En este sentido,
+propusimos algunos elementos para articular teóricamente el campo de los
+estudios de segregación (y los estudios urbanos) con los estudios de
+estratificación. En particular, creemos que este trabajo aporta a la
+conceptualización de la segregación urbana como espacio de *distinción*
+que posibilita y refuerza la interacción entre las personas de las
+clases sociales.
 
 <!-- Limitaciones y futuras líneas de trabajo   -->
 
-Más allá de estos aportes, el trabajo está marcado por algunos límites que también marcan posibles líneas de continuidad para futuros trabajos de investigación. Un primer límite del trabajo viene dado por el enfoque cuantitativo adoptado. Si bien este enfoque nos permitió analizar la segregación urbana en el conjunto del AMBA, no permite indagar en profundidad los mecanismos sociales que operan en cada uno de estos dominios. En este sentido, futuros trabajos podrían complementar este análisis con estudios cualitativos que permitan indagar en los procesos sociales que operan en cada uno de estos dominios y su articulación. <!--#  -->Un segundo límite del trabajo estuvo dado por el enfoque estático adoptado. Si bien este enfoque permitió analizar la segregación en un momento determinado, no permite indagar en la dinámica temporal de la segregación y su evolución a lo largo del tiempo. En este sentido, futuros trabajos podrían complementar este análisis con estudios longitudinales que permitan indagar en la evolución de la segregación en el AMBA y su relación con los cambios sociales y urbanos. <!--#  -->Un tercer límite del trabajo estuvo dado por el enfoque espacial adoptado. Si bien este enfoque permitió analizar la segregación en el conjunto del AMBA, no permite indagar en las diferencias espaciales dentro del aglomerado urbano. En este sentido, futuros trabajos podrían complementar este análisis con estudios que permitan indagar en las diferencias espaciales dentro del AMBA y su relación con las características socioeconómicas y urbanas de cada área. <!--#  -->Un cuarto 
+Más allá de estos aportes, el trabajo está marcado por algunos límites
+que también marcan posibles líneas de continuidad para futuros trabajos
+de investigación. Un primer límite del trabajo viene dado por el enfoque
+cuantitativo adoptado. Si bien este enfoque nos permitió analizar la
+segregación urbana en el conjunto del AMBA, no permite indagar en
+profundidad los mecanismos sociales que operan en cada uno de estos
+dominios. En este sentido, futuros trabajos podrían complementar este
+análisis con estudios cualitativos que permitan indagar en los procesos
+sociales que operan en cada uno de estos dominios y su articulación.
+<!--#  -->Un segundo límite del trabajo estuvo dado por el enfoque
+estático adoptado. Si bien este enfoque permitió analizar la segregación
+en un momento determinado, no permite indagar en la dinámica temporal de
+la segregación y su evolución a lo largo del tiempo. En este sentido,
+futuros trabajos podrían complementar este análisis con estudios
+longitudinales que permitan indagar en la evolución de la segregación en
+el AMBA y su relación con los cambios sociales y urbanos. <!--#  -->Un
+tercer límite del trabajo estuvo dado por el enfoque espacial adoptado.
+Si bien este enfoque permitió analizar la segregación en el conjunto del
+AMBA, no permite indagar en las diferencias espaciales dentro del
+aglomerado urbano. En este sentido, futuros trabajos podrían
+complementar este análisis con estudios que permitan indagar en las
+diferencias espaciales dentro del AMBA y su relación con las
+características socioeconómicas y urbanas de cada área. <!--#  -->Un
+cuarto
 
-
-un límite del trabajo estuvo dado por el acceso y la disponibilidad de datos que puedan articular los diferentes dominios. En este sentido, no fue posible obtener datos masivos que vinculen los diferentes... <!--#  -->Además, esto supuso ... <!--#  -->. En particular, hubiera sido interesante tener un análisis de dos dominios en particular: laboral y esparcimiento <!--#  -->. Además, nuestro trabajo se centró en la segregación entendida como co-presencia, pero sería interesante complementar con un análisis de relaciones efectivas y capital social. Además, teniendo en cuenta la importancia que tienen en la actualidad, sería interesante sumar aspectos referidos a las relaciones en los espacios virtuales (como redes sociales).<!--# Tomando en cuenta los aportes y limitaciones señaladas anteriormente, consideramos que este trabajo de tesis permite pensar en futuras líneas de investigación... -->
+un límite del trabajo estuvo dado por el acceso y la disponibilidad de
+datos que puedan articular los diferentes dominios. En este sentido, no
+fue posible obtener datos masivos que vinculen los diferentes...
+<!--#  -->Además, esto supuso ... <!--#  -->. En particular, hubiera
+sido interesante tener un análisis de dos dominios en particular:
+laboral y esparcimiento <!--#  -->. Además, nuestro trabajo se centró en
+la segregación entendida como co-presencia, pero sería interesante
+complementar con un análisis de relaciones efectivas y capital social.
+Además, teniendo en cuenta la importancia que tienen en la actualidad,
+sería interesante sumar aspectos referidos a las relaciones en los
+espacios virtuales (como redes
+sociales).<!--# Tomando en cuenta los aportes y limitaciones señaladas anteriormente, consideramos que este trabajo de tesis permite pensar en futuras líneas de investigación... -->
 
 <!-- Cierre: sugerencias generales de intervención y análisis -->
 
-En términos generales, los resultados de este trabajo sugieren que las políticas públicas orientadas a reducir la segregación urbana deben considerar la complejidad del fenómeno y su manifestación en diferentes dominios de la vida social. En particular, es necesario considerar que la segregación puede manifestarse en diferentes dimensiones (residencial, movilidad, educación, etc.) y que estas dimensiones pueden interactuar de manera compleja. Por lo tanto, las intervenciones deben ser integrales y considerar las interacciones entre estos dominios para lograr una reducción efectiva de la segregación urbana.
+En términos generales, los resultados de este trabajo sugieren que las
+políticas públicas orientadas a reducir la segregación urbana deben
+considerar la complejidad del fenómeno y su manifestación en diferentes
+dominios de la vida social. En particular, es necesario considerar que
+la segregación puede manifestarse en diferentes dimensiones
+(residencial, movilidad, educación, etc.) y que estas dimensiones pueden
+interactuar de manera compleja. Por lo tanto, las intervenciones deben
+ser integrales y considerar las interacciones entre estos dominios para
+lograr una reducción efectiva de la segregación urbana.
