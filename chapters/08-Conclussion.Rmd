@@ -276,42 +276,43 @@ clases sociales.
 <!-- Limitaciones y futuras líneas de trabajo   -->
 
 Más allá de estos aportes, el trabajo está marcado por algunos límites
-que también marcan posibles líneas de continuidad para futuros trabajos
-de investigación. Un primer límite del trabajo viene dado por el enfoque
-cuantitativo adoptado. Si bien este enfoque nos permitió analizar la
-segregación urbana en el conjunto del AMBA, no permite indagar en
-profundidad los mecanismos sociales que operan en cada uno de estos
-dominios. En este sentido, futuros trabajos podrían complementar este
-análisis con estudios cualitativos que permitan indagar en los procesos
-sociales que operan en cada uno de estos dominios y su articulación.
-<!--#  -->Un segundo límite del trabajo estuvo dado por el enfoque
-estático adoptado. Si bien este enfoque permitió analizar la segregación
-en un momento determinado, no permite indagar en la dinámica temporal de
-la segregación y su evolución a lo largo del tiempo. En este sentido,
-futuros trabajos podrían complementar este análisis con estudios
-longitudinales que permitan indagar en la evolución de la segregación en
-el AMBA y su relación con los cambios sociales y urbanos. <!--#  -->Un
-tercer límite del trabajo estuvo dado por el enfoque espacial adoptado.
-Si bien este enfoque permitió analizar la segregación en el conjunto del
-AMBA, no permite indagar en las diferencias espaciales dentro del
-aglomerado urbano. En este sentido, futuros trabajos podrían
-complementar este análisis con estudios que permitan indagar en las
-diferencias espaciales dentro del AMBA y su relación con las
-características socioeconómicas y urbanas de cada área. <!--#  -->Un
-cuarto
-
-un límite del trabajo estuvo dado por el acceso y la disponibilidad de
+que marcan, a su vez, posibles líneas de continuidad para futuros
+trabajos de investigación.
+<!--# 1. enfoque cuantitativo (vs cualitativo) -->Un primer límite del
+trabajo viene dado por el enfoque cuantitativo adoptado. Si bien este
+enfoque permitió analizar la segregación urbana en el conjunto del AMBA,
+el mismo no permite indagar en profundidad sobre los mecanismos
+específicos que operan en cada uno de estos dominios. En este sentido,
+futuros trabajos podrían complementar los resultados de esta tesis,
+mediante estudios cualitativos que indaguen en los procesos que operan
+en cada uno de estos dominios y su articulación. <!--#  -->Además, en
+este trabajo identificamos de manera global diferentes dinámicas de la
+segregación a escalas locales. En este sentido, sería posible analizar
+estas situaciones con mayor profundidad.<!--# 3. Fuentes de datos -->
+Otro límite del trabajo estuvo dado por el acceso y la disponibilidad de
 datos que puedan articular los diferentes dominios. En este sentido, no
-fue posible obtener datos masivos que vinculen los diferentes...
-<!--#  -->Además, esto supuso ... <!--#  -->. En particular, hubiera
-sido interesante tener un análisis de dos dominios en particular:
-laboral y esparcimiento <!--#  -->. Además, nuestro trabajo se centró en
-la segregación entendida como co-presencia, pero sería interesante
-complementar con un análisis de relaciones efectivas y capital social.
-Además, teniendo en cuenta la importancia que tienen en la actualidad,
-sería interesante sumar aspectos referidos a las relaciones en los
-espacios virtuales (como redes
-sociales).<!--# Tomando en cuenta los aportes y limitaciones señaladas anteriormente, consideramos que este trabajo de tesis permite pensar en futuras líneas de investigación... -->
+fue posible obtener datos masivos que vinculen los diferentes dominios a
+nivel individual o de hogares. En este sentido, futuros trabajos podrían
+complementar este análisis con datos que permitan vincular los
+diferentes dominios a nivel micro.<!--# 2. otros dominios -->Además, el
+trabajo se centró en analizar tres dominios específicos de la
+segregación urbana. Sin embargo, existen otros dominios que podrían ser
+relevantes para complementar este análisis. En particular, consideramos
+que sería relevante incorporar el análisis de la segregación en el
+dominio laboral y en los espacios de esparcimiento y consumo. Además,
+teniendo en cuenta la importancia que tienen en la actualidad, sería
+interesante sumar aspectos referidos a las relaciones en los espacios
+virtuales (como redes sociales).
+<!--# 4. co-presencia vs relaciones efectivas --> Por otra parte, sería
+interesante incorporar al análisis de la segregación en los espacios de
+actividad la simultaneidad de diferentes tipos de actividades y su
+impacto en la configuración de los espacios de co-presencia. Además,
+nuestro trabajo se centró en la segregación entendida como co-presencia,
+pero sería interesante complementar con un análisis de relaciones
+efectivas y capital social.<!--# 5. Dimensiones de la segregación -->
+Por último, en este trabajo nos centramos en diferentes dominios de la
+segregación socio-económica, pero resultaría relevante un análisis que
+incorpore diferentes 'dimensiones' (étnicas, migratorias, etc.).
 
 <!-- Cierre: sugerencias generales de intervención y análisis -->
 
