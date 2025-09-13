@@ -8,7 +8,6 @@ university: 'Universidad Nacional de Buenos Aires'
 division: 'Facultad de Ciencias Sociales'
 degree: 'Tesis para optar por el título de Doctor en Ciencias Sociales'
 
-
 author: 'Pablo Santiago Serrati'                      # Tesista
 supervisor: 'Dra. María Mercedes Di Virgilio'         # Directoras
 # cosupervisor: ''
