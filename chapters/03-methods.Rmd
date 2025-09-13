@@ -25,11 +25,11 @@ capítulo comenzaremos proponiendo una perspectiva histórica, para
 explorar los enfoques utilizados para medir la segregación, así como los
 debates que se desarrollaron en torno a estas técnicas
 (\@ref(method-history)). Además, intentaremos poner de manifiesto las
-conexiones (y desconcexiones) de estas formas de medir la segregación
-con los enfoques teóricos que les dieron sustento en su momento.
-Cerraremos este recorrido destacando las propuestas y desafíos actuales,
-en particular en relación con la posibilidad de construir técnicas que
-permitan el abodaje *multi-dominio de la segregación*. A partir de esta
+conexiones (y desconexiones) de estas formas de medir la segregación con
+los enfoques teóricos que les dieron sustento en su momento. Cerraremos
+este recorrido destacando las propuestas y desafíos actuales, en
+particular en relación con la posibilidad de construir técnicas que
+permitan el abordaje *multi-dominio de la segregación*. A partir de esta
 relectura se hace una nueva propuesta para medir la segregación que será
 utilizada en la tesis (\@ref(method-geometric)). Utilizando el análisis
 de correspondencia, esta propuesta se basa en un abordaje geométrico y
@@ -54,7 +54,7 @@ cuantificar la segregación residencial. Esta expansión llevo al uso de
 estos indicadores en contexto diferentes al propuesto y, en muchos
 casos, desde matrices teóricas muy distantes a las que le dieron origen.
 Establecer una definición adecuada sobre cómo medir la segregación no es
-un hecho trivial y, de hecho, supune importantes desafíos, tanto
+un hecho trivial y, de hecho, supone importantes desafíos, tanto
 metodológicos como conceptuales. Como resultado desde mediados del siglo
 XX hasta la fecha se desarrollaron un gran número de medidas de
 segregación, las cuales priorizaron diferentes aspectos o dimensiones
@@ -86,7 +86,7 @@ de dicho concepto. En este sentido, más allá de la intención teórica y
 operativa subyacente, estos índices generaban un valor numérico resumen
 que cuantificaba el desvío de la composición (de los grupos) en las
 unidades en relación a la distribución global de la ciudad. Para ello,
-estos indicadores no consideraban los problema relativos a la
+estos indicadores no consideraban los problemas relativos a la
 distribución espacial de las unidades espaciales, de manera que las
 unidades censales eran tratadas en forma 'aespacial'. En tanto buscaban
 comparar la segregación entre ciudades, se enfocaban en conseguir un
@@ -161,7 +161,7 @@ un conjunto de criterios deseables. Como resultado intentaron una
 sistematización de los indicadores más usados, aunque estos proyectos lo
 hicieron de un modo limitado. Recuperando los esfuerzos anteriores, el
 trabajos de @Massey1988 logró realizar una comparación sistemática de
-los índices, proponiendo a su vez una conceptialización de sus
+los índices, proponiendo a su vez una conceptualización de sus
 diferencias. Como parte de esta sistematización, @Massey1988 identificó
 que los índices de segregación abordan en realidad cinco 'dimensiones de
 la segregación', a saber: (a) la uniformidad [*evenness*], referido a la
@@ -180,7 +180,7 @@ segregación [@Brown2006; @Reardon2004; @Johnston2007; @Wong2016], las
 cinco dimensiones sugeridas por Massey y Denton permitieron ordenar el
 campo, estableciendo un nuevo consenso que perduró en los años
 siguientes. Como consecuencia, durante las décadas de 1990 y los 2000,
-se inició una etapa en la cual cual los trabajos estuvieron orientados a
+se inició una etapa en la cual los trabajos estuvieron orientados a
 profundizar líneas desarrolladas en los años anteriores (algo que,
 siguiendo a Kuhn, podríamos pensar como una etapa de 'ciencia normal').
 De modo general, estos desarrollos pueden agruparse en: ampliaciones
@@ -259,7 +259,7 @@ proponían los indicadores tradicionales. Una primera estrategia fue
 medir la segregación de cada grupo 'contra' el resto. Sin embargo, esto
 suponía que para cada análisis debería considerarse varias medidas (una
 para cada par de grupos). Como alternativa a este enfoque, se
-propusieron medidas que consideraban simultaneamnte más de dos grupos
+propusieron medidas que consideraban simultáneamnte más de dos grupos
 sociales [@Theil1971a; @Sakoda1981]. En esta línea, el trabajo de
 @Reardon2002 propuso una expansión de algunas de las medidas de
 segregación existentes para generar una versión 'multi-grupo' de las
@@ -315,12 +315,12 @@ sentido como indicador de segregación global. Como contraparte, la
 como resultado de analizar la segregación en subgrupos de unidades. En
 relación a esto, durante la década del 2000 algunos autores revivieron
 el debate sobre las 'propiedades deseables' de los indicadores de
-segregación, entre las cuaes se resaltaba la composición/descomposición
+segregación, entre las cuales se resaltaba la composición/descomposición
 [@Frankel2011; @Hutchens2001; @Hutchens2004; @Allen2007; @Mora2011].
 Como resultado de este debate tomaron relevancia el *Índice de Raíz
 Cuadrada* [@Hutchens2001; @Hutchens2004] y los indicadores basados en la
 teoría de la información propuestos por Theil [-@Theil1967;
--@Theil1971a], como el *Índice de Información Mutua* y el *Ínidice de
+-@Theil1971a], como el *Índice de Información Mutua* y el *Índice de
 Entropía* [ver @Frankel2011; @Mora2003; @Mora2009; @Mora2011].
 
 <!-- Años 2010/2020: Los desafíos actuales para medir la segregación -->
@@ -348,7 +348,7 @@ necesidad de desarrollar medidas 'basadas en personas' [*people-based*],
 en vez de 'basada en lugares' [*place-based*] como hacen las medidas
 tradicionales al considerar unidades territoriales como barrios o
 distritos [@Kwan2009]. Esta perspectiva busca capturar las experiencias
-diferenciadas de los individuos, incluyendo no sólo el domunio
+diferenciadas de los individuos, incluyendo no sólo el dominio
 residencial sino también sus espacios de actividad, integrando de esta
 manera la movilidad espacial como un factor esencial en la generación de
 desigualdades espaciales [@Schnell2001a; @Farber2012; @Farber2015;
@@ -394,8 +394,8 @@ utilizan el Índice de Información Mutua [@Theil1971a], mediante
 descomposición de las diferencias y el uso de un 'ajuste proporcional
 iterativo' [*iterative proportional fitting*] entre las tablas.
 
-Por úlitmo, otra línea de trabajos han propuesto métodos para permitir
-la inferencia estadística de los resultados. Ante la falta de
+Por último, otra línea de trabajos ha propuesto métodos para permitir la
+inferencia estadística de los resultados. Ante la falta de
 procedimientos robustos para determinar si las diferencias observadas en
 los índices de segregación son estadísticamente significativas, se han
 implementado técnicas como los bootstrap tests, las simulaciones de
@@ -418,8 +418,8 @@ implementación sigue siendo fragmentaria. Del mismo modo, aunque los
 esfuerzos por integrar redes viales y por facilitar comparaciones entre
 ciudades o momentos históricos han mostrado avances, todavía no alcanzan
 a capturar completamente la complejidad de la segregación. Por último,
-como señala Wong [@Wong2016, p. 92], resulta necesario 'pensar fuera de
-la caja provista por Massey y Denton', cuya influencia sigue marcando el
+como señala @Wong2016 [p. 92], resulta necesario 'pensar fuera de la
+caja provista por Massey y Denton', cuya influencia sigue marcando el
 campo. En este sentido, los desarrollos futuros deberán no solo resolver
 los desafíos técnicos, sino también generar marcos conceptuales más
 flexibles que permitan captar la creciente heterogeneidad de los
@@ -434,7 +434,7 @@ correspondencias simple*. Nuestra propuesta no pretende reemplazar las
 propuestas anteriores, sino complementarlas aportando la posibilidad de
 tener una representación geométrica bidimensional de la segregación y
 una interpretación de la dirección de la segregación local, reteniendo
-información similar a la que se consige con otros indicadores que miden
+información similar a la que se consigue con otros indicadores que miden
 uniformidad. Además, esta propuesta puede ser extendida para
 complementar otras medidas de segregación.
 
@@ -503,7 +503,7 @@ su composición y su cercanía con la composición global.
 
 Este enfoque presenta un conjunto de ventajas para abordar el problema
 de la segregación.<!-- 1. Visualización bidimensional --> En primer
-lugar, al estar intimamente relacionado con el análisis de
+lugar, al estar íntimamente relacionado con el análisis de
 correspondencias simples permite una visualización de la distribución de
 las unidades en función de las categorías. Esta representación es
 bidimensional sin perdidas de información cuando la cantidad de
@@ -512,11 +512,11 @@ técnica de reducción de dimensionalidad, suele tener una pérdida baja de
 información cuando el número de categorías es mayor. Cuando existen dos
 categorías, la representación es unidimensional (lineal).
 <!-- 2. Índice local -->Una segunda característica, es la posibilidad de
-otener una medida de segregación local de cada unidad, expresada como
-ima distancia ($\chi^2$) del perfil de cada unidad con respecto al
-perfil medio. <!-- 3. Dirección -->Una tercer característica, quizás la
-más interesante, es la posibilidad de definir la 'dirección' de la
-segregación local. Las medidas de segregación locales utilziadas
+tener una medida de segregación local de cada unidad, expresada como la
+*distancia* $\chi^2$ del perfil de cada unidad con respecto al perfil
+medio. <!-- 3. Dirección -->Una tercera característica, quizás la más
+interesante, es la posibilidad de definir la 'dirección' de la
+segregación local. Las medidas de segregación locales utilizadas
 habitualmente se definen como la dispersión de cada unidad respecto a la
 distribución global, pero no indican el sentido en que estas unidades se
 diferencian. A modo ilustrativo, para una ciudad con una composición
@@ -530,7 +530,7 @@ donde predominan los desfavorecidos.
 posibilidad de descomposición y composición. En este sentido, el valor
 local de segregación de una unidad que surge de agrupar dos (o más)
 unidades, es el promedio geométrico (centroide) ponderado por el tamaño
-de las unidades originales.<!-- 5. Multigrupo-->En quinto lugar, en
+de las unidades originales. <!-- 5. Multigrupo-->En quinto lugar, en
 función de su capacidad de composición/descomposición, se trata de una
 medida multigrupo que puede adaptarse a diferente cantidad de grupos.
 <!-- 6. Posibilidades de espacialización  -->En sexto lugar, dado que
@@ -575,17 +575,17 @@ Como señalamos en la introducción, el objetivo de este trabajo es
 "indagar el modo en el que se articula la segregación en diferentes
 dominios de la vida social en el *AMBA*". Por ello, como primer aspecto
 del esquema de análisis, señalamos que en este trabajo se considerarán
-tres dominios sociales , a saber: el residencial, el escolar y el
-espacio de las movilidades. En primer lugar, como señalamos
-anteriormente, el *dominio residencial / barrial* es ampliamente
-reconocido por la literatura como un eje articulador de los espacios de
-vida. Por este motivo, en este trabajo de tesis es uno de los dominios
-que mayor importancia tiene dentro del análisis. En la práctica, este
-trabajo se centra en analizar la interacción entre el dominio
-residencial y los otros dominios. En segundo lugar, el dominio de los
-*espacios de actividad* incorpora el problema sobre cómo las movilidades
-urbanas cotidianas tienen un efecto sobre las interacciones con personas
-de otros grupos sociales, en tanto nos ponen en contacto con otros en
+tres dominios sociales, a saber: el residencial, el escolar y el espacio
+de las movilidades. En primer lugar, como señalamos anteriormente, el
+*dominio residencial / barrial* es ampliamente reconocido por la
+literatura como un eje articulador de los espacios de vida. Por este
+motivo, en este trabajo de tesis es uno de los dominios que mayor
+importancia tiene dentro del análisis. En la práctica, este trabajo se
+centra en analizar la interacción entre el dominio residencial y los
+otros dominios. En segundo lugar, el dominio de los *espacios de
+actividad* incorpora el problema sobre cómo las movilidades urbanas
+cotidianas tienen un efecto sobre las interacciones con personas de
+otros grupos sociales, en tanto nos ponen en contacto con otros en
 lugares diferentes de la propia residencia. Por último, si bien el
 *dominio escolar* puede ser considerado como un 'subdominio' dentro del
 espacio de actividad, tiene un rol central en los esquemas de
@@ -610,7 +610,7 @@ escuela son un límite importante para la construcción de indicadores de
 segregación multidominio. Por ello uno de los desafíos que aborda esta
 tesis es el uso articulado de las fuentes disponibles y la propuesta de
 técnicas estadísticas que permitan su uso combinado. Como contrapartida,
-el análisis no podrá integrar todos los dominios simultaneamente, sino
+el análisis no podrá integrar todos los dominios simultáneamente, sino
 que los dominios analizados serán comparados con el dominio residencial.
 Nuevamente se señala que esto es producto de una limitación de las
 fuentes de datos, antes que una decisión teórico-metodológica.
@@ -630,13 +630,13 @@ segundo lugar, utilizamos datos educativos tomados de las evaluaciones
 *Aprender* (Ministerio de Educación de la Nación) del año 2018. Estas
 evaluaciones aportan información sobre el desempeño académico de los
 estudiantes, así como sobre las características socioeconómicas de las
-comunidades escolares, lo que permite permite analizar la segregación
-escolar. Además, a partir de la metodología propuesta por Pablo De
-Grande [-@DeGrande2025] fue posible georeferenciar los datos a cada una
-de las escuelas.[^03-methods-5] Por último, se utilizan datos de la
-*Encuesta de Movilidad Domiciliaria* realizada en 2018 (ENMODO2018).
-Esta encuesta permite conocer los movilidades cotidianas urbanas de la
-población del AMBA.
+comunidades escolares, lo que permite analizar la segregación escolar.
+Además, a partir de la metodología propuesta por Pablo De Grande
+[-@DeGrande2025] fue posible georeferenciar los datos a cada una de las
+escuelas.[^03-methods-5] Por último, se utilizan datos de la *Encuesta
+de Movilidad Domiciliaria* realizada en 2018 (ENMODO2018). Esta encuesta
+permite conocer las movilidades cotidianas urbanas de la población del
+AMBA.
 
 [^03-methods-3]: Tanto los datos utilizados, así como el código fuente R
     usado para el procesamiento y la escritura de la tesis está
@@ -684,7 +684,7 @@ socio-económicas, estando las otras diferencias sociales contenidas o
 subsumidas en esta última [un ejemplo de estudios que analizan la
 segregación racial en Argentina son los trabajos de @Mera2014a]. Esto no
 supone que las otras diferencias no sean relevantes, sino que supone
-enteder que la diferencia socio-económica y de clase es estructuradora
+entender que la diferencia socio-económica y de clase es estructuradora
 de las dinámicas sociales.
 
 <!-- Educación como proxy y niveles utilizados -->
@@ -734,7 +734,7 @@ fundamentalmente cierto para los cuestionarios aplicados a estudiantes
 <!-- Hogar como unidad de análisis -->
 
 Un aspecto relacionado al anterior es que en este trabajo consideramos
-el nivel de estudios como una propiedad para carcaterizar al 'hogar',
+el nivel de estudios como una propiedad para caracterizar al 'hogar',
 antes que a los individuos. Algunos trabajos que sólo se enfocan en el
 problema de la segregación residencial (y no consideran otros dominios)
 utilizan para el análisis y el cálculo de medidas al conjunto de
@@ -752,7 +752,7 @@ asignamos el nivel educativo del hogar (como dijimos, *proxy* de clase
 social) considerando el mayor nivel educativo entre las personas que son
 identificadas como el 'jefe de hogar' o su 'cónyuge' (si hubiera). En el
 caso de las evaluaciones educativas se considera el mayor nivel
-educativo entre los madres/padres/responsables declarados.
+educativo entre los responsables adultos declarados.
 <!--# Como alternativa, algunos trabajos toman la condición educativa del 'principal sostén' o del 'jefe del hogar' [@Rodriguez2013b] , lo cual es correcto, pero puede llevar a sesgos de género.  -->
 
 <!-- Dominio residencial y homogamia -->
@@ -787,9 +787,9 @@ personas y grupos sociales. En este sentido, podemos entender esto como
 parte de un análisis multi-nivel de la segregación. En términos
 prácticos, en este trabajo dedicaremos un capítulo a analizar cómo la
 homogamia puede ser un elemento que refuerza la segregación residencial
-(ver capítulo \@ref(homogamy) ), pero remarcando que no debe entenderse
-a la homogamia como un dominio específico, sino como un aspecto dentro
-del análisis de la segregación en el dominio residencial y su análisis
+(ver capítulo \@ref(homogamy)), pero remarcando que no debe entenderse a
+la homogamia como un dominio específico, sino como un aspecto dentro del
+análisis de la segregación en el dominio residencial y su análisis
 separado en esta tesis se debe entender como parte de una estrategia
 expositiva antes que teórica.
 
@@ -801,7 +801,7 @@ capítulo contiene un apartado dedicado a explicar las técnicas y
 decisiones metodológicas utilizadas, pero anticipamos brevemente estas
 estrategias de análisis. En el Capítulo \@ref(residential), comenzamos
 con una caracterización de los patrones de segregación y utilizamos
-indicadores logales y globales de segregación. Por su parte, en el
+indicadores locales y globales de segregación. Por su parte, en el
 Capítulo \@ref(homogamy) proponemos un indicador de homogamia educativa
 que permite identificar diferenciar el efecto de la composición
 residencial. En el Capítulo \@ref(mobilities) modelamos una red
@@ -809,7 +809,7 @@ bipartita dirigida y ponderada para describir los viajes en el AMBA y
 describir los espacios de actividad. Por último, en el Capítulo
 \@ref(school) modelamos una distribución ideal de alumnos en escuelas
 utilizando programación lineal entera [@Berkelaar2004], con el objetivo
-de compara esta simulación con la composición real de las escuelas. De
+de comparar esta simulación con la composición real de las escuelas. De
 forma general, en todos los capítulos estas técnicas se combinan con
 herramientas del análisis espacial, la geoestadística, la geocomputación
 y la ciencia de datos espaciales [@Baddeley2015; @Cheng2012;
@@ -919,7 +919,7 @@ partir del avance de la ciudad colonial sobre la zona rural circundante
 los centros urbanos cercanos (en particular, Caballito, Flores y
 Belgrano). Si bien actualmente esta zona de la ciudad tiene una
 estructura urbana consolidada, producto de la diversidad con la que se
-desarrollo esta expanción no es un área que tenga un perfil homogéneo en
+desarrollo esta expansión no es un área que tenga un perfil homogéneo en
 lo que respecta al uso del suelo o su perfil socioeconómico
 [@Marcos2021]. En particular, como ocurrió en muchas de las ciudades
 latinoamericanas, esta expansión permitió la temprana constitución de un
@@ -937,7 +937,7 @@ al desarrollo de una economía industrial y manufacturera. Este
 crecimiento estuvo marcado por un doble movimiento. Por un lado, se
 genera la paulatina anexión de los cascos conurbanos cercanos,
 vinculados fundamentalmente a las estaciones de ferrocarril. Estos
-espacios se fueron onstituyendo, a posteriori, como subcentralidades
+espacios se fueron constituyendo, a posteriori, como subcentralidades
 dentro del aglomerado. Por otro lado, este crecimiento por anexión se
 superpuso con el avance e incorporación de las 'antiguas periferias' de
 la ciudad (en muchos casos antiguas zonas anegables recuperadas a partir
@@ -946,7 +946,7 @@ crecimiento se dio de la mano de un conjunto de iniciativas que incluían
 el mercado formal y los loteos populares, estando sostenido y acompañado
 por el proceso de constitución de la clase obrera y la clase media. Es
 importante señalar que ambos procesos fueron sucediendo de forma
-simultanea, de manera que el crecimiento sobre zonas vacantes ocurrió
+simultánea, de manera que el crecimiento sobre zonas vacantes ocurrió
 junto a la anexión de estos cascos conurbanos una vez que estas zonas se
 'acercaban', lo que a su vez permitió el crecimiento sobre nuevas zonas
 vacantes (a veces cercanas a las zonas anexionadas). En paralelo con
@@ -954,7 +954,7 @@ este proceso de expansión, emerge el fenómeno de exclusión de los pobres
 informales urbanos, quienes generan los primeros barrios informales
 ('villas'). Estos barrios informales surgen de la ocupación mediante
 mecanismos informales de espacios de tierra vacante cercanas a los
-centros urbanos e industriales pero poco atractiva comercialmente por
+centros urbanos e industriales, pero poco atractiva comercialmente por
 sus condiciones de acceso o salubridad. Estos primeros barrios
 informales irían creciendo y profundizando su presencia durante todo el
 período, emergiendo como una característica alarmante del paisaje urbano
@@ -968,7 +968,7 @@ los casos anteriores, este momento de crecimiento tiene una forma
 heterogénea y aglutina diferentes iniciativas. Un primer proceso es la
 proliferación de barrios cerrados y la suburbanización de las elites y
 las clases medias acomodadas. Aprovechando la existencia de tierras
-económicas en las perisferias (y el agotamiento de tierras vacantes en
+económicas en las periferias (y el agotamiento de tierras vacantes en
 las zonas centrales del aglomerado), emergieron iniciativas privadas que
 desarrollaron enclaves inmobiliarios y comerciales, a partir de la
 construcción de barrios cerrados, espacios comerciales y de servicios y
@@ -986,7 +986,7 @@ ubicadas, generando la gentrificación de estas áreas. Como parte de este
 proceso se generó una presión centrífuga que fue expulsando a algunos de
 los sectores bajos y medios-bajos que residían en estas zonas (aunque
 muchos permanecieron en ellas). A su vez, este proceso fue acompañados
-en los últimos años por una *turristificación* de zonas centrales,
+en los últimos años por una *turistificación* de zonas centrales,
 vinculada a la expansión de los alquileres temporarios mediante
 plataformas digitales [@LerenaRongvaux2022]. Por último, un tercer
 movimiento fue la expansión y consolidación de la marginalización
@@ -995,7 +995,7 @@ de la economía informal, llevo a una consolidación de los barrios
 informales existentes y a la emergencia de nuevos barrios en las tierras
 vacantes. La poca provisión de servicios urbanos y una intervención
 estatal vinculada al asistencialismo social antes que a la integración
-sociourbana de estos territorios, hizo que los barrios populares de
+socio-urbana de estos territorios, hizo que los barrios populares de
 origen informal tendieron a permanecer como espacios urbanos
 desarticulado de la trama de la ciudad formal, en lugar de constituirse
 como 'momentos' en la consolidación de espacios urbanos. Además, la
@@ -1009,7 +1009,7 @@ de desigualdades que abarca todo el AMBA. Como señala @Marcos2021 [p.
 85] la estructura actual de la AMBA "cristaliza así, como capas
 superpuestas de su historia, las huellas de diferentes procesos". Esta
 estructura fue analizada en Argentina por una larga tradición de
-cosntrucción de 'mapas sociales' con información censal, iniciada con
+construcción de 'mapas sociales' con información censal, iniciada con
 los trabajos de Torres [-@Torres1993; -@Torres1999; -@Torres2001] y
 continuada en los trabajos de @Buzai2003, @Marcos2015a, @Buzai2015, Abba
 [-@Abba2011; -@Abba2015] y @Goicoechea2014.<!-- Entornos urbanos -->Un

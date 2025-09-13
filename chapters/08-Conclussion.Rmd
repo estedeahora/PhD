@@ -68,12 +68,12 @@ minoritario).
 Por su parte, encontramos que las *movilidades cotidianas* del AMBA
 consolidan *espacios de actividad* que, de forma global, son menos
 segregados que el dominio residencial, pero que, sin embargo, conservan
-una estructura jerárquica y asimétrica (Capítulo \@ref(mobility)). En
+una estructura jerárquica y asimétrica (Capítulo \@ref(mobilities)). En
 sintonía con lo señalado por @DiVirgilio2022d, entendemos que las
 movilidades urbanas resultan fundamentales para entender la
 estratificación y diferenciación del espacio urbano, en tanto que si por
 un lado permiten una reducción de la segregación global (en relación al
-dominio residencial), por otra parte promueven un uso diferenciado del
+dominio residencial), por otra parte, promueven un uso diferenciado del
 espacio que se manifiesta en 'circuitos urbanos' para los diferentes
 grupos sociales.
 
@@ -87,16 +87,16 @@ desarrollan sus actividades y, por lo tanto, se construyen como más
 aislados y segregados (sea por su marca de 'exclusivos' o
 'estigmatizados'). Además, como señalan @Ellis2004 y @LeRoux2017, esta
 mayor co-presencia se ve impulsado por el peso de las actividades
-laborales, las cuales pueden suponer simultaneamente relaciones de
+laborales, las cuales pueden suponer simultáneamente relaciones de
 jerarquía y distancia estos estos grupos, antes que espacios de
 integración social [@Elguezabal2018; @Frisch2022]. En resumen, la baja
 de la segregación de los espacios de actividad no es un proceso
 espacialmente homogéneo, sino que supone un doble movimiento por el cual
-algunos espacios atrén actividades constituyéndose como espacio de
-co-presencia y otros incrementan sus barreras sociales. Por ello, las
-movilidades y los espacios de actividad reducen la segregación global,
-pero también dan lugar a nuevas formas de estratificación y
-diferenciación del espacio urbano.
+algunos espacios atraen actividades constituyéndose como espacio de
+mayor co-presencia, mientras que otros incrementan sus barreras
+sociales. Por ello, las movilidades y los espacios de actividad reducen
+la segregación global, pero también dan lugar a nuevas formas de
+estratificación y diferenciación del espacio urbano.
 
 <!-- Capítulo 7: Educación -->
 
@@ -124,7 +124,7 @@ se articulan las *desigualdades educativo-territoriales* [@Serrati2021].
 De modo general, nuestros resultados nos permiten concluir que la
 *segregación urbana* en el AMBA se compone como una trama compleja y
 articulada en el que intervienen múltiples dominios de la vida social.
-Estos dominio aportan mecanismos específicos e independientes, pero
+Estos dominios aportan mecanismos específicos e independientes, pero
 también interdependientes, los cuales se articulan para permitir una
 segmentación del espacio urbano. En este sentido, estos dominios no
 actúan necesariamente en la misma 'dirección', pero configuran el
@@ -206,7 +206,7 @@ configuraciones espaciales mediante la segregación urbana –es decir,
 mediante la diferenciación del espacio urbano y su uso selectivo como
 forma de 'distinción', para evitar el potencial contacto con otros
 grupos. El análisis de la segregación 'como un todo' articulado entre
-dominios, permite entender como, aunque en algunos dominios encontremos
+dominios, permite entender cómo, aunque en algunos dominios encontremos
 una mayor mixtura (posiblemente mediado por relaciones de jerarquía que
 regulan esta co-presencia), estas desigualdades buscarán otros dominios
 para expresarse espacialmente. Si bien la conformación y proliferación
@@ -244,7 +244,7 @@ también ha permitido conocer elementos novedosos sobre cada uno de los
 dominios de la segregación estudiados. <!-- 2. Metodológico -->En
 segundo lugar, en este trabajo propusimos la construcción de un conjunto
 de herramientas metodológicas novedosas para articular fuentes de datos
-diversas y considerar simultaneamente distintos dominios de la vida
+diversas y considerar simultáneamente distintos dominios de la vida
 social. En este camino, utilizamos métodos novedosos en el campo de los
 análisis de segregación, como las técnicas de *programación lineal
 entera* o de *análisis de grafos bipartitos* (con la *matriz de
@@ -278,23 +278,23 @@ clases sociales.
 Más allá de estos aportes, el trabajo está marcado por algunos límites
 que marcan, a su vez, posibles líneas de continuidad para futuros
 trabajos de investigación.
-<!--# 1. enfoque cuantitativo (vs cualitativo) -->Un primer límite del
+<!-- 1. enfoque cuantitativo (vs cualitativo) -->Un primer límite del
 trabajo viene dado por el enfoque cuantitativo adoptado. Si bien este
 enfoque permitió analizar la segregación urbana en el conjunto del AMBA,
 el mismo no permite indagar en profundidad sobre los mecanismos
 específicos que operan en cada uno de estos dominios. En este sentido,
 futuros trabajos podrían complementar los resultados de esta tesis,
 mediante estudios cualitativos que indaguen en los procesos que operan
-en cada uno de estos dominios y su articulación. <!--#  -->Además, en
+en cada uno de estos dominios y su articulación. <!--  -->Además, en
 este trabajo identificamos de manera global diferentes dinámicas de la
 segregación a escalas locales. En este sentido, sería posible analizar
-estas situaciones con mayor profundidad.<!--# 3. Fuentes de datos -->
+estas situaciones con mayor profundidad.<!-- 3. Fuentes de datos -->
 Otro límite del trabajo estuvo dado por el acceso y la disponibilidad de
 datos que puedan articular los diferentes dominios. En este sentido, no
 fue posible obtener datos masivos que vinculen los diferentes dominios a
 nivel individual o de hogares. En este sentido, futuros trabajos podrían
 complementar este análisis con datos que permitan vincular los
-diferentes dominios a nivel micro.<!--# 2. otros dominios -->Además, el
+diferentes dominios a nivel micro. <!-- 2. otros dominios -->Además, el
 trabajo se centró en analizar tres dominios específicos de la
 segregación urbana. Sin embargo, existen otros dominios que podrían ser
 relevantes para complementar este análisis. En particular, consideramos
@@ -303,14 +303,14 @@ dominio laboral y en los espacios de esparcimiento y consumo. Además,
 teniendo en cuenta la importancia que tienen en la actualidad, sería
 interesante sumar aspectos referidos a las relaciones en los espacios
 virtuales (como redes sociales).
-<!--# 4. co-presencia vs relaciones efectivas --> Por otra parte, sería
+<!-- 4. co-presencia vs relaciones efectivas --> Por otra parte, sería
 interesante incorporar al análisis de la segregación en los espacios de
 actividad la simultaneidad de diferentes tipos de actividades y su
 impacto en la configuración de los espacios de co-presencia. Además,
 nuestro trabajo se centró en la segregación entendida como co-presencia,
 pero sería interesante complementar con un análisis de relaciones
-efectivas y capital social.<!--# 5. Dimensiones de la segregación -->
-Por último, en este trabajo nos centramos en diferentes dominios de la
+efectivas y capital social.<!-- 5. Dimensiones de la segregación --> Por
+último, en este trabajo nos centramos en diferentes dominios de la
 segregación socio-económica, pero resultaría relevante un análisis que
 incorpore diferentes 'dimensiones' (étnicas, migratorias, etc.).
 

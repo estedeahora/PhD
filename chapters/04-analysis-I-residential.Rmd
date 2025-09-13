@@ -88,7 +88,7 @@ grupos socioeconómicos. Tomando en cuenta estas ideas, Duhau plantea que
 el punto crucial para entender la división del espacio en las ciudades
 latinoamericanas es la coexistencia de dos mercados de suelo y vivienda
 (el formal y el informal), estando este último dedicado a los grupos
-marginalizados, es decir, aquellos con menos recursos dentro de la
+marginalizados, es decir, aquellos con menos recursos dentro de las
 clases populares. Como consecuencia, la estructura de segregación está
 marcada por el grado de intercambio y porosidad que existe entre estos
 mercados [@Duhau2013a, pp. 90-91]. Además, en sintonía con el planteo de
@@ -103,11 +103,11 @@ urbana.
 
 Debatiendo con esta idea de 'segregación a gran escala' y de
 homogeneidad de los grupos sociales, el trabajo de @Ward2012 [p. 76]
-plantea que el 'sello distintivo de los modelos urbanos latinoamericano
+plantea que el 'sello distintivo de los modelos urbanos latinoamericanos
 actuales es que son crecientemente complejos y fragmentados'. Para Ward
 existen 'islas de uso territorial' que conviven en los cinturones
 urbanos y sostiene que en las ciudades latinoamericanas la segregación a
-gran escala no ha crecido sino que, por el contrario, es baja y
+gran escala no ha crecido, sino que, por el contrario, es baja y
 decreciente. Esto se debe a la existencia de un mercado informal de
 tierras en zonas centrales al que los sectores medios y altos no tienen
 acceso, lo cual otorga una protección al desarrollo de viviendas de
@@ -119,7 +119,7 @@ una división y delimitación al interior de los barrios pobres. Como
 resultado de este doble proceso, la segregación residencial de las
 ciudades latinoamericanas no está creciendo, pero en paralelo 'la
 segmentación, la separación y las líneas divisorias (barreras) entre los
-barrios ricos y los de clase trabajaddora parecen estar incrementándose'
+barrios ricos y los de clase trabajadora parecen estar incrementándose'
 [@Ward2012, p. 83].
 <!-- Patrón 'mosaico'/'patchwork' (Florida & Adler, 2018). -->Este
 patrón de segregación se asemeja a lo que @Florida2018 denominan como
@@ -151,7 +151,7 @@ tendencia a mejoras en la estructura distributiva. Debatiendo con este
 último trabajo, @VergaraParra2018 observa que durante la primera década
 de este siglo la segregación se mantuvo e, incluso, se intensificó en
 algunos aspectos, poniendo en duda la hipótesis de una correspondencia
-entre la mejoras en la distribución del ingreso y la segregación
+entre las mejoras en la distribución del ingreso y la segregación
 residencial. Además, @Groisman2010 y @Suarez2011 observan que durante
 estos años también se produjo un incremento de la desigualdad en el
 acceso a servicios y la conectividad, lo cual aumenta las consecuencias
@@ -193,7 +193,7 @@ de 'fragmentación urbana' según el cual 'las barreras físicas sustituyen
 a la distancia como mecanismo de separación' [@Rodriguez2017b, p. 8].
 <!-- Barrios cerrados -->En este sentido, la emergencia de
 urbanizaciones cerradas en la periferia urbana ha cristalizado
-heterogeneidades espaciales con poca interrelaciones entre estas
+heterogeneidades espaciales con pocas interrelaciones entre estas
 urbanizaciones y las existentes anteriormente [@Frisch2022].
 <!-- Gentrificación -->A su vez, del mismo modo que ocurrió en otros
 países, los procesos de gentrificación de algunas áreas centrales,
@@ -203,7 +203,7 @@ social [@DiVirgilio2014f; @Rodriguez2017a].
 
 Tomando en cuenta estos antecedentes, en lo que resta del capítulo
 proponemos analizar la estructura de la segregación residencial en el
-AMBA, buscando identificar los patrones característico y discutiendo su
+AMBA, buscando identificar los patrones característicos y discutiendo su
 relación con procesos los históricos que les dieron forma.
 
 ## La estructura y patrones de la segregación en el dominio residencial en el AMBA {#residential-analysis}
@@ -216,8 +216,8 @@ analizando indicadores globales de segregación para tener una visión de
 conjunto y luego utilizaremos indicadores locales que nos permitan
 identificar patrones locales. <!-- global -->Si tomamos como referencia
 los valores del *Índice de Información Mutua*, el AMBA en su conjunto
-presenta una segregación residencial de `r round(RES$SEG1[3, 2], 3)` ,
-la cual es un valor considerablemente superior al que presentan por
+presenta una segregación residencial de `r round(RES$SEG1[3, 2], 3)`, la
+cual es un valor considerablemente superior al que presentan por
 separado cada una de las jurisdicciones que la componen, la CABA y los
 Partidos del Conurbano
 (`r  combine_words(round(RES$SEG1[3, 3:4], 3), and = " y ")`,
@@ -404,13 +404,13 @@ aglomerado. Por último, se caracteriza por una gran *continuidad
 espacial*, de manera que su frontera con el resto de la ciudad está
 marcada por una transición paulatina y suave.
 
-Un segundo patrón espacial puede visaulizarse en la expansión reciente
+Un segundo patrón espacial puede visualizarse en la expansión reciente
 de la zona norte del AMBA (ver *Detalle 2*), donde encontramos enclaves
 de segregación, asociados a los barrios cerrados o a la suburbanización
 de los sectores altos. A diferencia del patrón anterior, estos espacios
 urbanos presentan niveles de segregación contrastantes, en los que
 conviven contiguamente niveles elevados y bajos de segregación. A su
-vez, los territorios con segregación alta engolban situaciones contiguas
+vez, los territorios con segregación alta engloban situaciones contiguas
 contrastantes, donde conviven población de sectores altos y bajos,
 expresando una 'segregación de pequeña escala' y dando como resultado un
 patrón de 'mosaico' o '*patchwork'* [@Florida2018]. Este patrón
@@ -439,7 +439,7 @@ una clase media ascendente que se refleja en indicadores elevados de
 educación y, colateralmente, segregación. A su vez, a partir de su
 conexión con la ciudad central, estos lugares 'medianamente segregados'
 de ingresos medios se configuraron como policentralidades, diferenciados
-de sus contextos locales (municipales). Una primer particularidad de
+de sus contextos locales (municipales). Una primera particularidad de
 este patrón es que, con niveles de segregación moderados, la composición
 de estas zonas está vinculada principalmente a los grupos medios ('con
 estudios secundarios'), antes que a los grupos extremos. A su vez, de
@@ -459,7 +459,7 @@ Por último, en las áreas periféricas encontramos espacios con niveles de
 segregación local relativamente altos, pero asociados a zonas con una
 homogeneidad de niveles educativos bajos (ver *Detalle 4*, ejemplo sobre
 Gobernador Costa, Francisco Solano y Rafael Calzada). Esta forma de
-segregación se observa en gran parte del segundo y, sobretodo, del
+segregación se observa en gran parte del segundo y, sobre todo, del
 tercer cordón con excepción de la zona norte, fundamentalmente en zonas
 alejadas de las estaciones ferroviarias (ver, por ejemplo, algunas zonas
 de Jose C. Paz o zonas periféricas de La Matanza). Este patrón de
@@ -485,23 +485,23 @@ conectados con la ciudad central, permitió la creación de espacios
 relativamente homogéneos vinculados a sectores medios, consolidados como
 policentralidades diferenciadas de sus contextos municipales locales. En
 el contexto de expansión de las clases medias y un fuerte crecimiento
-del mercado de consumo interno, estos grupos grupos medios ascendentes
-locales consolidaron su crecimiento a partir de una ubicación estrategia
+del mercado de consumo interno, estos grupos medios ascendentes locales
+consolidaron su crecimiento a partir de una ubicación estrategia
 respecto a la ciudad central.
 
 Por su parte, los 'bolsones de pobreza' surgieron de forma incipiente
 con las migraciones rurales a partir de mediados del siglo XX. Sin
 embargo, es en el marco de las políticas neoliberales que promovieron la
 informalidad laboral y residencial, que se fue consolidando una
-marginalización urbana estrctural en las zonas periféricas y peor
+marginalización urbana estructural en las zonas periféricas y peor
 conectadas (cuarto patrón), que encarnan la persistencia de brechas
 estructurales no resueltas. En paralelo, las políticas neoliberales
 promovieron una dualización de enclave de la economía, que permitió la
 expansión de sectores medios modernos y globalizados. Estos sectores
 tuvieron un rol dinámico en la construcción del espacio urbano, dando
-lugar a una nueva expansión del cono de las elite y promoviendo procesos
-de gentrificación en áreas centrales antiguamente deterioradas. En
-paralelo, los sectores medios-altos y altos comenzaron un proceso de
+lugar a una nueva expansión del cono de las elites y promoviendo
+procesos de gentrificación en áreas centrales antiguamente deterioradas.
+En paralelo, los sectores medios-altos y altos comenzaron un proceso de
 suburbanización sobre zonas periféricas con buena conectividad. Estos
 procesos supusieron la proliferación de urbanizaciones cerradas en
 localizaciones periféricas y poco atendidas, generando una convivencia
@@ -580,7 +580,7 @@ contrario la constitución de un patrón de segregación a pequeña escala
 en el que se yuxtaponen 'islas territoriales' a la manera de mosaicos o
 *patchwork* [@Florida2018] y marcada por límites físicos abruptos y
 mercados inmobiliarios duales [@Duhau2013a]. En tercer lugar, los
-*antiguos cascos urbanos ferroviarios conurbanizados*,consolidados como
+*antiguos cascos urbanos ferroviarios conurbanizados*, consolidados como
 centralidades locales en función de su accesibilidad a la ciudad
 central. Caracterizado por una segregación moderada y acotada, vinculada
 a sectores medios con movilidad ascendente, este patrón está marcado por

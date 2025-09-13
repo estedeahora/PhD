@@ -112,7 +112,7 @@ mixtos se correlacionan inversamente con el grado de segregación
 residencial que los separa, mientras que @Morgan1981 sugiere que la
 segregación residencial tiene un efecto en la sobreselección de cónyuges
 de grupos similares, por lo cual deberíamos esperar más matrimonios
-homogámicos en los grupos segregados por sobrerepresentación
+homogámicos en los grupos segregados por sobrerrepresentación
 residencial.
 
 Todos estos trabajos parecen reforzar la hipótesis según la cual el
@@ -265,13 +265,13 @@ existe un emparejamiento selectivo (con una confianza $c$).
 Por último, nos interesa analizar la homogamia en relación con la
 composición de cada grupo, que es la que define la segregación en el
 dominio residencial. En esta línea @Peach1980 propuso calcular la
-correlación de Pearson entre el índices de disimilitud para cada par de
+correlación de Pearson entre el índice de disimilitud para cada par de
 grupos y el "grado" en que se generan matrimonios entre estos
 grupos.[^05-analysis-ii-homogamy-3] Si bien esta propuesta es
 interesante, tiene algunas limitaciones que lo hacen poco adecuada para
 abordar nuestro objetivo. En primer lugar, no permite captar el aspecto
 espacial del problema, en tanto tiene como supuesto que el
-comportamiento de los grupos es homogéneo en los diferentes unidades
+comportamiento de los grupos es homogéneo en las diferentes unidades
 espaciales. En segundo lugar, existe un problema práctico para su
 adoptar este enfoque en este trabajo, en tanto la metodología fue
 desarrollada para estudiar la relación entre 9 grupos étnicos (que
@@ -331,7 +331,7 @@ grupo.
 <!-- Homogamia global AMBA -->
 
 Nuestros resultados indican que en el AMBA el
-`r round(HOM$HOM1$CON_p[HOM$HOM1$E == "TOTAL"], 1)`% de las hogares
+`r round(HOM$HOM1$CON_p[HOM$HOM1$E == "TOTAL"], 1)`% de los hogares
 tienen un núcleo conyugal presente, de los cuales el
 `r round(HOM$HOM1$POR_h[HOM$HOM1$E == "TOTAL"], 1)`% tienen ambos
 miembros con el mismo nivel educativo, es decir, presentan *homogamia
@@ -406,7 +406,7 @@ tenga una pareja con su mismo nivel educativo. Utilizando este indicador
 encontramos que en los Partidos del GBA una persona con nivel primario
 tiene una probabilidad
 `r round(HOM$HOM1$PRI_p1[HOM$HOM1$E == "PBA"], 3)` de estar en pareja
-con alguien de ese mismo nivel educativo, mientras que para los otros
+con alguien de ese mismo nivel educativo, mientras que, para los otros
 dos niveles, esta probabilidad ronda el
 `r round(HOM$HOM1$SEC_p1[HOM$HOM1$E == "PBA"], 2)`. Por su parte, en la
 CABA la probabilidad de homogamia para las personas con nivel primaria
@@ -529,7 +529,7 @@ que obtendríamos si los emparejamientos de este grupo fueran aleatorios,
 mientras que para el nivel secundario y el nivel primario el porcentaje
 es de `r round(HOM$HOM4[[2, "no_signific"]], 1)`% y
 `r round(HOM$HOM4[[1, "no_signific"]],1 )`%, respectivamente. Esto
-supone que en casi un cuarto de los radios, las personas de nivel
+supone que, en casi un cuarto de los radios, las personas de nivel
 superior no tienen un emparejamiento que podamos definir como selectivo.
 Un segundo elemento a considerar es que, si nos concentramos en los
 casos en que la probabilidad de homogamia es significativa, la casi la
@@ -641,10 +641,10 @@ knitr::include_graphics(path = here::here("figures",
 
 Como habíamos anticipado, la Figura \@ref(fig:HOM-SEG) nos señala que
 ambas variables tienden a crecer de forma conjunta, independientemente
-de los grupos. Sin embargo, cuando consideramos la probabildiad
+de los grupos. Sin embargo, cuando consideramos la probabilidad
 no-explicada vemos que esta tiende a disminuir a medida que aumenta la
 proporción de personas del grupo en la unidad espacial. Este resultado
-puede resultar contra-intuitivo en relación con lo que habíamos visto en
+puede resultar contraintuitivo en relación con lo que habíamos visto en
 el apartado anterior, donde encontrábamos que las mayores probabilidades
 de homogamia se encontraban en los lugares donde había una mayor
 proporción de personas de ese grupo. Sin embargo, esta observación no
@@ -713,7 +713,7 @@ otros grupos. Por el contrario, nuestros resultados identifican que la
 mayor homogamia observada en los espacios residenciales con
 composiciones altas de un grupo, se debe a un efecto aleatorio propio de
 esta composición. En este sentido, en estos casos la homogamia no está
-reforzada por la segregación residenciales sino que debería ser
+reforzada por la segregación residenciales, sino que debería ser
 explicada por otros factores.
 
 <!--# En relación a esto, nuestro trabajo identificó una relación positiva entre la probabilidad homogamia y la participación de cada grupo en la unidad espacial. Sin embargo, la homogamia no-explicada tiene mayor peso a medida que es menor la participación de cada uno de los grupos educativos en la unidad espacial. En este sentido, la homogamia no-explicada (por la segregación residencial) es mayor a medida que el grupo tiene una participación menor. Estos resultados sugieren que la homogamia actúa como un mecanismo de protección, que refuerza la cohesión y el contacto en los grupos minoritarios a nivel territorial.  -->
@@ -752,5 +752,5 @@ la segregación en el dominio residencial para los grupos minoritarios
 efecto significativo cuando el porcentaje de los grupos es mayor. En
 este sentido, la homogamia refuerza el contacto y la segregación en
 aquellos contextos territoriales en los cuales el 'grupo propio' se
-encuentra como minoría en el espacio residencial y el 'riesgo de 
+encuentra como minoría en el espacio residencial y el 'riesgo de
 contacto' con otros grupos sociales es mayor.

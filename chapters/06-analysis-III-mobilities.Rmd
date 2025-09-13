@@ -13,7 +13,7 @@ educativa (Capítulo \@ref(homogamy)). Sin embargo, como señalamos en el
 capítulo de revisión de la literatura (Capítulo \@ref(lit)), el dominio
 residencial es insuficiente para entender la segregación como un
 fenómeno multi-dominio. En relación a esto, los *espacios de actividad*
-[@Horton1971], así como las estrategia de *movilidad* que los vinculan,
+[@Horton1971], así como las estrategias de *movilidad* que los vinculan,
 permiten modificar la segregación que experimentan los hogares en el
 dominio residencial. En la medida que estos espacios de actividad son
 habitados de modo selectiva por los diferentes grupos sociales,
@@ -72,7 +72,7 @@ transporte empleados— son componentes que configuran los patrones de
 exposición entre grupos sociales [@VanKempen2014; @Rerat2018;
 @Farber2012; @Kwan2013]. Bajo esta perspectiva los hogares con niveles
 similares de segregación residencial pueden vivir realidades muy
-distintas si algunos de ellos se mueve con regularidad hacia espacios
+distintas si algunos de ellos se mueven con regularidad hacia espacios
 con mayor mixtura, mientras otros circulan exclusivamente dentro de su
 'burbuja' residencial.
 
@@ -123,7 +123,7 @@ los sectores de bajos ingresos tienen una tendencia a visitar lugares
 con un estatus social superior al del lugar de residencia, pero esto no
 se replica en el sentido inverso. @Silm2014 también destaca que la
 propia estructura del espacio urbano, que concentra los equipamientos
-urbanos en el algunas áreas (típicamente el centro urbano), hace que la
+urbanos en algunas áreas (típicamente el centro urbano), hace que la
 segregación de las movilidades cotidianas se vea reducida.
 
 <!-- Diferencia de segregación según tipo de actividades -->
@@ -250,7 +250,7 @@ un problema relativamente reciente en la literatura, no existe aún un
 consenso sobre el modo de abordar este problema en términos
 metodológicos y en los años recientes se han propuesto diferentes
 estrategias metodológicas. En relación a esto, @Farber2015 identifica
-tres enfoques metodológicas para abordar el problema de medir la
+tres enfoques metodológicos para abordar el problema de medir la
 segregación en los espacios de actividad.[^06-analysis-iii-mobilities-1]
 Por un lado, identifican una primera estrategia basada en la descripción
 y visualización de patrones de segregación de algunos individuos, a
@@ -284,7 +284,7 @@ pueden destacar en este enfoque los trabajos de @LeRoux2017; @Silm2014;
     intentan captar la exposición potencial que podrían tener estos
     individuos con otros individuos de otros grupos sociales.
     <!-- Uno de los problemas de este enfoque es la dificultad de obtener datos con un nivel de granularidad adecuado. Además, como señalan @Candipan2021, en la medida que se basan en la exposición potencial de cada persona con otras, estos trabajos construyen una idea de 'individualista' de segregación, en lugar de entender la segregación como un fenómeno estructural.  --><!-- @Wong2011 propone una adaptación de la medida originalmente propuesta por @Lieberson1982. El trabajo de @Farber2012 estima la exposición entre los grupos a en base a estimar la distancia que recorren cada uno de estos. -->Por
-    otra parte, un segundo enfoque se centran en analizar la 'conexión
+    otra parte, un segundo enfoque se centra en analizar la 'conexión
     entre vecindarios' a partir de las movilidades de los individuos
     [como, por ejemplo, los trabajos de @Candipan2021; @Hilman2022;
     @Morales2019]. Estos trabajos interpretan las movilidades como
@@ -299,7 +299,7 @@ pueden destacar en este enfoque los trabajos de @LeRoux2017; @Silm2014;
 Tomando en cuenta esta diversidad en el uso de fuentes y estrategias
 metodológicas, en este trabajo optamos por utilizar datos de la
 *Encuesta de Movilidad Domiciliaria* realizada en 2018
-(ENMODO2018),[^06-analysis-iii-mobilities-2] que permite conocer los
+(ENMODO2018),[^06-analysis-iii-mobilities-2] que permite conocer las
 movilidades cotidianas urbanas de la población del AMBA durante un día
 de referencia y brindan información sociodemográfica de los hogares
 encuestados. Siguiendo el criterio propuesto en otros trabajos [ver
@@ -387,15 +387,15 @@ nivel educativo del hogar (no individual), según el criterio de 'ciclos
 completos'. Para ello asignamos a cada uno de los hogares el nivel
 educativo del miembro del hogar con mayor nivel educativo alcanzado.
 Como señalamos anteriormente el nivel educativo del hogar funciona como
-*proxy* del nivel socioeconómico y el estatus social de los
-hogares.<!-- Motivos -->Además, hemos clasificado las movilidades en
-función de los motivos declarados para las actividades de destino,
-agrupándolas en cuatro grandes grupos: (a) *laboral* (incluida búsqueda
-de trabajo), (b) *estudio*, (c) *actividades reproductivas* (compra de
-alimentos, asistencia a familiares, consultas médicas, trámites) y (d)
-*actividades recreativas* (encuentro con amigos o familiares, prácticas
-deportivas, etc.). Adicionalmente, para la base de actividades se
-incluyó como tipo de actidad 'en el hogar' y 'viaje/transporte'.
+*proxy* del nivel socioeconómico y el estatus social de los hogares.
+<!-- Motivos -->Además, hemos clasificado las movilidades en función de
+los motivos declarados para las actividades de destino, agrupándolas en
+cuatro grandes grupos: (a) *laboral* (incluida búsqueda de trabajo), (b)
+*estudio*, (c) *actividades reproductivas* (compra de alimentos,
+asistencia a familiares, consultas médicas, trámites) y (d) *actividades
+recreativas* (encuentro con amigos o familiares, prácticas deportivas,
+etc.). Adicionalmente, para la base de actividades se incluyó como tipo
+de actividad 'en el hogar' y 'viaje/transporte'.
 
 <!-- Estrategia de análisis -->
 
@@ -412,11 +412,11 @@ alguna tendencia en el estatus social elegido para las actividades
 cotidianas. Como señalamos, esta estrategia tiene el problema de no
 considerar los destinos de modo dinámico al suponer que la composición
 residencial de estos lugares explica la realidad de los espacios de
-actividad<!-- Descomposición de diff segregación -->Para dar abordaje a
-este problema, a continuación, comparamos la segregación a nivel global
-en el dominio residencial[^06-analysis-iii-mobilities-3] y los espacios
-de actividades, pero tomando como composición de los lugares de destino
-la que resulta de las actividades de la encuesta (en lugar de la
+actividad. <!-- Descomposición de diff segregación -->Para dar abordaje
+a este problema, a continuación, comparamos la segregación a nivel
+global en el dominio residencial[^06-analysis-iii-mobilities-3] y los
+espacios de actividades, pero tomando como composición de los lugares de
+destino la que resulta de las actividades de la encuesta (en lugar de la
 composición residencial). En este sentido, para el cálculo de la
 segregación de los espacios de actividad, hemos ponderado cada uno de
 los lugares de destino en función del tiempo de permanencia de las
@@ -424,7 +424,7 @@ personas en cada uno de estos. Como señalamos anteriormente (ver
 Capítulo \@ref(method)), la comparación de los valores de segregación
 puede ser problemática, en función de la dependencia de la mayoría de
 los índices de los valores marginales (de unidades y/o grupos). Por este
-motivo, utilizamos la propuesta de @Elbers2023, quien diseeñó un método
+motivo, utilizamos la propuesta de @Elbers2023, quien diseñó un método
 para comparar estructuras de segregación (utilizando el *Índice de
 Información Mutua* - $M$), que permite analizar la diferencia entre dos
 indicadores discriminando el efecto 'estructural' (o 'segregación pura')
@@ -555,11 +555,11 @@ análisis obtenemos un espacio de baja dimensionalidad en el que los
 viajes se encuentran agrupados en función de la similitud de sus
 características. Un aspecto interesante de esta técnica es que es
 posible mantener algunas variables como 'suplementarias', de manera que
-no sean utilizadas en el cálculo de los ejes de variabilidad pero luego
+no sean utilizadas en el cálculo de los ejes de variabilidad, pero luego
 puedan ser ubicadas en el espacio resultante. Además, una vez obtenido
-el un subespacio de baja dimensionalidad de las variables, las unidades
-de análisis (en nuestro caso viajes a destinos diferentes del hogar)
-pueden ser proyectadas, para visualizar su relación con las variables de
+el subespacio de baja dimensionalidad de las variables, las unidades de
+análisis (en nuestro caso viajes a destinos diferentes del hogar) pueden
+ser proyectadas, para visualizar su relación con las variables de
 análisis. En conjunto estas dos características posibilitan hacer un uso
 explicativo de esta técnica, de manera que se mantiene como
 suplementaria la variable explicativa (en nuestro caso el nivel de
@@ -578,7 +578,7 @@ propuesto en @Bourdieu1979; @Baranger2012].
 
 <!--# sumar grafico SA para distribución del tiempo por zonas y ocupaciones (ver LeRoux)-->
 
-Antes de analziar el problema de las movilidades y su relación con la
+Antes de analizar el problema de las movilidades y su relación con la
 segregación, realicemos una breve descripción de las movilidades
 cotidianas dentro del AMBA. La Figura \@ref(fig:segmov-SEQ) presenta una
 descripción de las actividades realizadas (izquierda) y los entornos en
@@ -619,13 +619,13 @@ por motivos laborales. Como contrapartida, los entornos de vivienda
 social, las urbanizaciones de origen informal y, fundamentalmente, los
 entornos de NSE bajo, tienen un claro descenso de personas a partir de
 la mañana y hasta las 16 horas. En este sentido, los lugares con peores
-niveles socioeconómico tienen un peor nivel de retensión de las
+niveles socioeconómico tienen un peor nivel de retención de las
 actividades, generando un efecto de 'diáspora diaria' por el cual las
 personas 'escapan' hacia lugares con mejores niveles socioeconómicos y
-mayor centralidad urbana. Estos resultados nos dan indicios de que
-durante el transcurso del día, estas centralidades urbanas atraen más
-viajes y por lo tanto podrían volverse lugares más diversos, dando
-lugar, consecuentemente, a una disminución de la segregación.
+mayor centralidad urbana. Estos resultados nos dan indicios que durante
+el transcurso del día estas centralidades urbanas atraen más viajes y,
+por lo tanto, podrían volverse lugares más diversos, dando lugar,
+consecuentemente, a una disminución de la segregación.
 
 Para profundizar este análisis, la Figura \@ref(fig:segmov-SEQxEDU)
 muestra la distribución de la presencia en los diferentes entornos en
@@ -756,7 +756,7 @@ diferencia entre la segregación residencial local en el lugar de destino
 que para todos los grupos educativos los lugares de destino tienden a
 tener una proporción promedio menor de hogares con nivel educativo
 primario y una proporción mayor de hogares con nivel educativo
-secundario. Estros resultados nos dan nuevas evidencias respecto a que
+secundario. Estos resultados nos dan nuevas evidencias respecto a que
 los hogares tienden a realizar sus actividades en lugares con una
 composición residencial de mayor 'status'.
 
@@ -803,7 +803,7 @@ residencia, pero no al revés.
 
 Si bien estos hallazgos respecto a la diferencia de composición (y
 segregación) residencial entre los lugares de residencia y de destino
-nos informan sobre la forma en que se desenvuelven las práctica de
+nos informan sobre la forma en que se desenvuelven las prácticas de
 movilidad y los espacios de actividades de los hogares, no tienen en
 cuenta el hecho de que estos lugares de destino se ven modificados por
 la concurrencia de personas de otros lugares.
@@ -848,7 +848,7 @@ por @Elbers2023 observamos que la brecha 'estructural' (neta sobre los
 efectos de composición y unidades) es incluso mayor que la diferencia
 observada. En sintonía con lo señalado por @LeRoux2017, la segregación
 de actividades varia de forma considerable a lo largo del día. En este
-sentido, encontramos que durante las horas nocturnas, la segregación de
+sentido, encontramos que durante las horas nocturnas la segregación de
 las actividades está próxima a la segregación residencial, lo que se
 explica por el hecho de que la mayor parte de las personas está en su
 domicilio. A medida que avanza el día la segregación va disminuyendo,
@@ -878,7 +878,7 @@ consideremos, pero también son los que tienen el mayor cambio en su
 hecho de que los grupos altos viven en lugares más exclusivos, pero que
 son estos lugares también los que reciben la mayor cantidad de personas
 durante el día por motivos laborales y por la calidad de sus
-infraestructura urbana.
+infraestructuras urbanas.
 
 ```{r segmov-AislamientoXhora, fig.subcap=c('Aislamiento', 'Co-presencia')}
 #| fig.cap: "Índice de Aislamiento normalizado (ETA2) de actividades de cada uno de los grupos educatvos en función de la hora del día (izquierda); e índice de co-presencia/interacción normalizado entre grupos (xPy*) de actividades en función de la hora del día (derecha)"
@@ -1127,11 +1127,11 @@ noche, cuando la mayoría de las personas se encuentra en sus espacios
 residenciales, la segregación de actividades converge con la
 residencial; pero a lo largo del día, cuando dominan las actividades
 laborales y reproductivos, la segregación de los espacios de actividad
-vive un descenso connsiderable. En este sentido, los espacios de
+vive un descenso considerable. En este sentido, los espacios de
 actividades promueven las oportunidades de co-presencia, en parte,
 impulsado por el peso de las actividades laborales y reproductivas
 [@LeRoux2017; @Ellis2004], muchas de las cuales se desarrollan en las
-centralidades urbana . Es importante reforzar que esta co-presencia no
+centralidades urbana. Es importante reforzar que esta co-presencia no
 implica necesariamente una interacción entre los grupos sociales.
 Recuperando lo que señala @LeRoux2017 [p. 143]: "nuestros resultados no
 significan más interacciones sociales entre los grupos sociales durante
@@ -1203,7 +1203,7 @@ socio-económica (en relación al dominio residencial), promueven nuevas
 articulaciones en las cuales esta diferenciación del espacio se
 manifiesta, generando 'circuitos urbanos' para los diferentes grupos
 sociales. Las centralidades urbanas y el rol de las actividades
-laborales explica una parte de esta mayor co-presencia durante los
+laborales explican una parte de esta mayor co-presencia durante los
 espacios de actividad, pero también deja al descubierto como su
 contracara la emergencia de espacios segregados ('exclusivos' o
 'estigmatizados', según el caso), que sólo son habitados por algunos

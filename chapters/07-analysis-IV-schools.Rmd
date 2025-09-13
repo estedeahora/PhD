@@ -18,14 +18,14 @@ metodológico, la población menor de 16 años tiene menor autonomía en sus
 movilidades y replica, en gran medida, la movilidad de los adultos
 responsables. En este sentido, considerarla en el análisis de
 movilidades y actividades llevaría a una sobre representación
-<!-- (duplicación) --> de las movilidades de las personas que generan
-los traslados de cuidado.
+<!-- (duplicación) -->de las movilidades de las personas que generan los
+traslados de cuidado.
 
 Por otro lado, desde un punto de vista teórico vinculado al problema
 principal de la tesis, este trato diferenciado de la educación se basa
 en el rol que esta ocupa en el *enclasamiento* y la reproducción de las
-estructuras sociales. En las sociedades contemporaneas la escuela es uno
-de los espacio principales de socialización. A diferencia de lo que
+estructuras sociales. En las sociedades contemporáneas la escuela es uno
+de los espacios principales de socialización. A diferencia de lo que
 sucede en las actividades laborales, la *co-presencia escolar* se basa
 en relaciones no-jerarquizadas entre los estudiantes. Por este motivo,
 mientras que en las actividades laborales la co-presencia entre personas
@@ -84,7 +84,7 @@ En resumen, el análisis del dominio educativo permite incorporar la
 dimensión intergeneracional en el análisis *multi-dominio de la
 segregación* [@Tammaru2021; @VanHam2018] y, de esta manera, entender el
 rol de la segregación urbana en la reproducción de las estructuras
-sociales.Tomando en cuenta lo anterior, <!-- Objetivo -->el objetivo de
+sociales. Tomando en cuenta lo anterior, <!-- Objetivo -->el objetivo de
 este capítulo es identificar en qué medida la segregación en el dominio
 residencial permite explicar la segregación en el dominio escolar en el
 AMBA. <!-- Preguntas --> En este contexto nos preguntamos: ¿existe una
@@ -100,7 +100,7 @@ segregación?
 Para abordar estos problemas, el capítulo comienza describiendo los
 antecedentes sobre el vínculo entre segregación residencial y escolar
 (\@ref(school-lit)), seguido de una presentación de la estrategia
-metodológica utilizada (\@ref(school-method)). A continuación
+metodológica utilizada (\@ref(school-method)). A continuación,
 presentamos los resultados del análisis (\@ref(school-analysis)) y las
 conclusiones del capítulo (\@ref(school-conclussion)).
 
@@ -208,7 +208,7 @@ promoción de las políticas de elección de la escuela tiende a favorecer
 niveles de segregación escolar más altos que los de segregación
 residencial [@Rich2021; @Saporito2014; @Serbulo2019], aunque el
 mecanismo específico que produce esta asociación varía según el contexto
-institucional [@Wilson2019]. Además la elección de escuelas constituye
+institucional [@Wilson2019]. Además, la elección de escuelas constituye
 una estrategia central de las familias para mantener la separación
 social, cuando los contextos de las escuelas locales cercanas suponen un
 fuerte riesgo de mezcla social [@Putnam2007; @Boterman2021a].
@@ -267,9 +267,9 @@ escolar [@Bonal2020a; @Bonal2021; @Scandurra2022a; @Burford2021a;
 
 A nivel local, son pocos los antecedentes que analizan el vínculo entre
 segregación en el dominio residencial y escolar. Entre estos trabajos se
-destaca la propuesta de @Veleda2012, quien señala la interconección
-entre estos dominios, pero no profundiza en la relación. Por su parte,
-en trabajos anteriores [@DiVirgilio2019d; @Serrati2021; @Serrati2023]
+destaca la propuesta de @Veleda2012, quien señala la interconexión entre
+estos dominios, pero no profundiza en la relación. Por su parte, en
+trabajos anteriores [@DiVirgilio2019d; @Serrati2021; @Serrati2023]
 destacamos que las inequidades en la distribución espacial de los
 servicios educativos, sumado a la fuerte fragmentación territorial,
 llevan a que las desigualdades espaciales se expresen en condiciones
@@ -313,7 +313,7 @@ educativo. Para el análisis utilizaremos tres fuentes de datos. Por un
 lado, para obtener la composición educativa de los padres de las
 escuelas utilizamos datos de la evaluación *Aprender* *2017* y *Aprender
 2019*, implementada por el *Ministerio de Educación de la
-Nación*.[^07-analysis-iv-schools-5] Esta evaluación es de caracter
+Nación*.[^07-analysis-iv-schools-5] Esta evaluación es de carácter
 censal y se realiza en todos los establecimientos educativos del país a
 los estudiantes del último año del nivel medio. En conjunto con la
 evaluación se relevan características de los hogares de los estudiantes,
@@ -355,7 +355,7 @@ indicadores [ver por ejemplo: @Boterman2019a; @Farley1975;
 problema de suponer que la segregación residencial puede compararse de
 manera lineal con la escolar, sin considerar la distribución y
 características de la oferta educativa, así como la demanda educativa.
-Para abordar este problema, @Boterman2019 utiliza datos demográfico de
+Para abordar este problema, @Boterman2019 utiliza datos demográficos de
 las unidades espaciales y propone un método para asignar estudiantes
 (personas en edad escolar) desde cada unidad espacial a las 3 escuelas
 más cercanas. Esta asignación genera una composición escolar hipotética
@@ -365,7 +365,7 @@ comparación entre la segregación escolar obtenida con esta asignación
 considera la demanda territorial y la relación de esta con la
 distribución espacial de las escuelas, este método constituye una mejora
 respecto a la propuesta anterior. Sin embargo, la propuesta supone que
-las escuelas pueden 'absorver' la demanda sin considerar la oferta o
+las escuelas pueden 'absorber' la demanda sin considerar la oferta o
 *capacidad* de las escuelas.
 
 <!-- Allocation Model -->
@@ -391,7 +391,7 @@ escuelas). Esta situación hipotética podría asemejarse al comportamiento
 de un sistema educativo con asignación planificada de manera
 centralizada, el cual puede funcionar como escenario *tipo ideal*
 (*Idealtypus*) para contrastar con las situaciones reales. Por último,
-si se asume que cada área residencial aporta a cada una de las escuela
+si se asume que cada área residencial aporta a cada una de las escuelas
 una cantidad proporcional de estudiantes en función de su composición
 social, es posible inferir una 'composición social teórica' de las
 escuelas (véase esquema en Figura \@ref(fig:school-scheme)).
@@ -516,7 +516,7 @@ educativa de la zona central, en casi todas las subcentralidades
 vinculadas a los *cascos conurbanizados* se observa una densidad
 medio-alta de oferta educativa. Estas centralidades locales se destacan
 por la cercanía a las líneas de ferrocarril (u otras vías de
-cominicación) y aparecen en el mapa de densidad como espacios de
+comunicación) y aparecen en el mapa de densidad como espacios de
 concentración local de la oferta educativa. Como contracara de lo
 anterior, encontramos que a medida que nos alejamos de estas
 centralidades y subcentralidades decrece la provisión de la oferta
@@ -583,7 +583,7 @@ nos permite observar el aporte que podría tener la composición
 residencial sobre la segregación escolar, incorporando en esta
 estimación la distribución de la demanda educativa, la distribución de
 escuelas y la capacidad de absorción de estas últimas. A partir de esta
-asignaciónhipotética podemos comparar el indicador de segregación
+asignación hipotética podemos comparar el indicador de segregación
 escolar 'real' (empíricamente observado) con el que se obtiene haciendo
 la asignación propuesta por este modelo y de esta manera medir qué
 proporción de la segregación escolar se explica por la segregación
@@ -605,7 +605,7 @@ la segregación escolar y evita sesgos en la interpretación de los
 resultados. Un patrón de distribución espacial agrupado supone que las
 poblaciones educativas se concentran (y, por tanto, se mezclan) en los
 centros de atracción, de manera que la composición residencial tiene
-menos posiblidad de incidir directamente sobre la composición de las
+menos posibilidad de incidir directamente sobre la composición de las
 escuelas. En concreto, en el caso del AMBA donde se observa este patrón
 concentrado de la oferta educativa, nuestros resultados muestran que la
 segregación escolar que surge de utilizar el modelo
@@ -629,7 +629,7 @@ que podíamos esperar, encontramos que los entornos asociados a las
 centralidades urbanas (*ciudad colonial*, *expansión de la ciudad
 colonial* y *cascos conurbanizados*) son los que tienen que recorrer en
 el modelo las menores distancias promedio. Además, en estos entornos se
-observa el menor 'ratio' entre la distancia a la escuela mas cercana
+observa el menor 'ratio' entre la distancia a la escuela más cercana
 (mínima) y la distancia recorrida con el modelo. En la situación
 opuesta, vemos que las *urbanizaciones cerradas*, las *urbanizaciones de
 origen informal* y las *viviendas sociales*, tienen en promedio las
@@ -637,7 +637,7 @@ mayores distancias recorridas según los resultados del modelo. Además,
 las últimas dos tienen la particularidad de que en general las
 distancias a las escuelas secundarias más cercanas son relativamente
 pequeñas, sin embargo, la poca capacidad de absorción de esta oferta
-local hacen que el modelo haga que las poblaciones de estos entornos
+local hace que el modelo haga que las poblaciones de estos entornos
 recorran en promedio cerca de 4 veces estas distancias. En una situación
 intermedia encontramos el resto de los entornos asociados a la trama
 formal, aunque el entorno de NSE Alto presenta una pequeña ventaja
@@ -651,7 +651,7 @@ EDU$TAB1
 Es necesario tener presente que como la demanda total (teórica) del
 sistema es un poco mayor que la capacidad de absorción de las escuelas,
 una parte de la población no puede ser asignada (porque no hay
-suficiente vacantes). Este desequilibrio se explica por el hecho de que
+suficientes vacantes). Este desequilibrio se explica por el hecho de que
 en realidad no toda la población en edad escolar está efectivamente
 escolarizada. Dado que el modelo busca minimizar la distancia total
 recorrida por todos los estudiantes, un indicador interesante es
@@ -819,7 +819,7 @@ sobre el efecto de la segregación residencial sobre la segregación
 educativa, en tanto logra incorporar esta perspectiva espacial en el
 análisis de la relación entre ambos. En particular, esta propuesta
 metodológica resulta ser especialmente provechosa en contextos, como el
-de nuestro análisis, donde la distribución espacial de las oferta
+de nuestro análisis, donde la distribución espacial de la oferta
 educativa tiene un patrón agrupado. De manera similar a lo que vimos
 cuando analizamos la segregación de los espacios de actividad (ver
 Capítulo \@ref(homogamy)), este tipo de patrones espaciales, en los
@@ -835,8 +835,8 @@ segregación) que actúa con cierta independencia de las condiciones
 impuestas por los condicionantes de la composición residencial. De esta
 manera, antes que un *círculo vicioso de segregación* [@Tammaru2021;
 @VanHam2018], encontramos que los dominios residencial y escolar tienen
-una independencia relativa entre sí. Este resultado no deben llevarnos a
-pensar que ambos dominios de la segregación actúan des-coordinadamente.
+una independencia relativa entre sí. Este resultado no debe llevarnos a
+pensar que ambos dominios de la segregación actúan descoordinadamente.
 Por el contrario, analizar la segregación desde un *enfoque
 multi-dominio* nos permite entender cómo los diferentes dominios de la
 segregación se articular reforzando la *segregación urbana* como un

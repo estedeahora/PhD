@@ -85,7 +85,7 @@ un mayor intercambio entre los grupos sociales.
     Urban and Regional Research* (2014, volumen 38, número 4).
 
 Como muestran las limitaciones que tuvieron las políticas de mixtura
-residencial, la *división social del espacio* no deben ser analizadas
+residencial, la *división social del espacio* no debe ser analizada
 desde una mirada mecánica y reduccionista. Para ello es necesario evitar
 un 'pensamiento sustancialista de los lugares' [@Bourdieu2007, p. 119] y
 entender que el espacio urbano, está mediado por las prácticas sociales
@@ -356,20 +356,20 @@ los bienes y servicios de la ciudad, generando y potenciando otras
 desigualdades [@DiVirgilio2023]. En resonancia con este planteo, para
 @Bourdieu2007 las estructuras sociales están materializadas e
 'inscriptas' en el espacio físico, por lo cual la modificación de las
-estructuras sociales supone a su vez un 'trabajo de transplate' de estas
-infraestructuras difícil de lograr, siendo este uno de los factores que
-otorga 'inercia' y una 'naturalización' a las propias estructuras
-sociales. En particular, en el caso de la segregación en el dominio
-residencial, la ubicación desigual de las poblaciones implica una
-influencia directa en la perpetuación y profundización de las jerarquías
-sociales existentes. Esto refuerza la idea de que la segregación no es
-solo una consecuencia de la estratificación social, sino un componente
-que activamente contribuye a su configuración y reproducción. Esta
-interpretación lleva a la ilusión (figurada parcialmente por algunas
-interpretaciones simplistas del índice de disimilitud) de que es posible
-modificar el lugar de vivienda de una parte de la población sin
-considerar las complejas dinámicas sociales que subyacen y perpetúan la
-segregación.
+estructuras sociales supone a su vez un 'trabajo de transplante' de
+estas infraestructuras difícil de lograr, siendo este uno de los
+factores que otorga 'inercia' y una 'naturalización' a las propias
+estructuras sociales. En particular, en el caso de la segregación en el
+dominio residencial, la ubicación desigual de las poblaciones implica
+una influencia directa en la perpetuación y profundización de las
+jerarquías sociales existentes. Esto refuerza la idea de que la
+segregación no es solo una consecuencia de la estratificación social,
+sino un componente que activamente contribuye a su configuración y
+reproducción. Esta interpretación lleva a la ilusión (figurada
+parcialmente por algunas interpretaciones simplistas del índice de
+disimilitud) de que es posible modificar el lugar de vivienda de una
+parte de la población sin considerar las complejas dinámicas sociales
+que subyacen y perpetúan la segregación.
 
 [^02-literature-7]: La relación entre 'espacio' y 'estructura social' ha
     sido ampliamente debatido en la sociología y los estudios urbanos.
@@ -411,7 +411,7 @@ clásicos y el abordaje hecho por la segunda generación de la 'Escuela de
 Chicago' y la sociología norteamericana de postguerra. Luego
 exploraremos los aportes y críticas provenientes de la 'Sociología
 Urbana Británica', la 'Nueva Sociología Urbana', la 'Escuela de Los
-Angeles' y la tradición bourdiana. Por último, analizaremos las
+Ángeles' y la tradición bourdiana. Por último, analizaremos las
 particularidades de las perspectivas teóricas que han abordado este
 problema en el contexto de América Latina, aportando una visión integral
 y contextualizada de la segregación urbana a la realidad regional y
@@ -585,7 +585,7 @@ señalan autores críticos a esta corriente [@Ruiz-Tagle2016;
 el problema de las clases sociales y el conflicto de clases, para
 concentrarse exclusivamente en la 'raza', proponiendo una
 'naturalización' (ecológica) de la estratificación social. Además, en el
-análisis de procesos 'atorregulados' se omite el rol del estado en la
+análisis de procesos 'autorregulados' se omite el rol del estado en la
 conformación de las desigualdades sociales y espaciales, un rol que fue
 central en la conformación de la segregación étnica
 norteamericana.[^02-literature-13]
@@ -645,10 +645,10 @@ El modelo de Burgess, tenía especial consideración sobre lo que llamaba
 la 'zona de transición' (o 'Zona 2'). Por su ubicación esta zona tiene
 las viviendas más deterioradas y menos codiciadas, por lo que es el
 lugar que ocupan 'naturalmente' las minorías étnicas migrantes recién
-llegadas. En esta zona estaban ubicados tambén los *ghettos*, que fueron
-un tema de investigación central para los *Community Studies* comenzados
-por los autores de la Escuela de Chicago. Como parte de su visión
-'asimilacionista', estos trabajos intentaron conocer mediante
+llegadas. En esta zona estaban ubicados también los *ghettos*, que
+fueron un tema de investigación central para los *Community Studies*
+comenzados por los autores de la Escuela de Chicago. Como parte de su
+visión 'asimilacionista', estos trabajos intentaron conocer mediante
 etnografías las prácticas culturales de los grupos étnicos que eran
 percibidas como 'disfuncionales', cuyas prácticas veían vinculadas a la
 marginalidad y el delito. Como consecuencia, se centraron sus estudios
@@ -697,7 +697,7 @@ de hecho, sinónimo de 'segregación residencial', es decir, segregación
 en el dominio residencial [@Tammaru2021; @Musterd2020; @Massey1988].
 
 [^02-literature-15]: Siguiendo a @UllanDeLaRosa2014, podemos nombrar
-    como parte de esta tercera generación a Amos `Hawley (1910-2009)`,
+    como parte de esta tercera generación a Amos Hawley (1910-2009),
     Eshref Shevky (1893-1969), Marilyn Williams, Josephine J. Williams,
     James Alfred Quinn (1881-1945), Daniel Bell (1919-2011) y Otis
     Dudley Duncan (1921-2004).
@@ -811,7 +811,7 @@ espacio afectan la distribución urbana proporciona una perspectiva
 novedosa sobre la segregación, anticipando debates y análisis que se
 desarrollarán en estudios posteriores sobre segregación urbana.
 <!-- Sociología urbana francesa II: Chombart de Lauwe -->Recuperando
-estas línea de trabajo, Paul Henri Chombart de Lauwe (1913-1998) también
+esta línea de trabajo, Paul Henri Chombart de Lauwe (1913-1998) también
 recupera los aportes de la Escuela de Chicago, contrastando el modelo
 urbano de Burgess en una ciudad europea como París [@UllanDeLaRosa2014,
 pp. 180-186]. En este sentido, corrobora una ciudad diferenciada
@@ -821,7 +821,7 @@ vez, menos marcados que en el caso de los distritos racializados de
 Estados Unidos. Chombart de Lauwe analiza 'los nuevos procesos de
 segregación que se están produciendo en las *banlieues*'
 [@UllanDeLaRosa2014, pp. 183], debido a que las clases medias sólo los
-veían como una etapa transitorio de su trayectoria residencial, lo que
+veían como una etapa transitoria de su trayectoria residencial, lo que
 podía llevar en el futuro a la conformación de 'guetos', similares a los
 que se veía en Estados Unidos con los grupos raciales.
 
@@ -854,7 +854,7 @@ La corriente neoweberiana (o *sociología urbana británica*), que incluye
 a autores como John Rex, Robert Moore, Ray Pahl, Chris Pickvance y Peter
 Saunders, ofreció un enfoque renovado del estudio de la segregación, al
 integrar al pensamiento de la ciudad las ideas de Max Weber sobre clase,
-estatus y poder. Estos planteos anaizan 'las formas de asignación y
+estatus y poder. Estos planteos analizan 'las formas de asignación y
 distribución de los recursos espaciales', entendiendo que 'el espacio es
 intrínsecamente desigual pues [...] dos personas o grupos no pueden
 nunca ocupar el mismo espacio al mismo tiempo' [@UllanDeLaRosa2014, p.
@@ -865,7 +865,7 @@ clase, generando un acceso diferenciado a los recursos espaciales y, en
 interesante que plantean estos autores es el modo en que la lucha por el
 espacio se sucede no sólo de una forma polar (al estilo marxista), sino
 incorporando diferentes 'sectores de clase'. De esta manera, dado que el
-espacio no puede ser ocupado simultaneamente por dos personas, existen
+espacio no puede ser ocupado simultáneamente por dos personas, existen
 disputas entre actores que pueden pertenecer a la misma clase (ejemplo:
 la zona valorizada del centro urbano es un espacio codiciado que sólo
 algunos grupos de la clase alta podrán ocupar, dejando fuera a otros de
@@ -877,7 +877,7 @@ Incorporando un marco teórico marxista, la 'Nueva Sociología Urbana'
 también criticó las nociones promovidas por la Escuela de
 Chicago.[^02-literature-18] Para ellos, estos autores enfatizaron la
 relación entre la segregación espacial y las dinámicas del modo de
-proucción capitalista y la lucha de clases. Por ello, una parte central
+producción capitalista y la lucha de clases. Por ello, una parte central
 de la propuesta de estos autores será debatir el rol de la ciudad (o más
 precisamente el 'espacio') en la estructuración del capitalismo. En esta
 perspectiva, la segregación es vista como una manifestación de las
@@ -1042,8 +1042,8 @@ economías de la región.
     han surgido como resultado del análisis de las realidades locales y
     regionales.
 
-Hacia <!-- Años 1990/2000 --> fines del siglo XX, a partir del estudio
-de la 'nueva pobreza urbana', autores como @Kaztman2001 resaltarán la
+Hacia <!-- Años 1990/2000 -->fines del siglo XX, a partir del estudio de
+la 'nueva pobreza urbana', autores como @Kaztman2001 resaltarán la
 fuerte retroalimentación que existe entre la segregación residencial, la
 segmentación laboral y la segmentación educativa, lo cual lleva al
 paulatino aislamiento de los pobres urbanos. Retomando la distinción de
@@ -1066,11 +1066,11 @@ relegación y exclusión que son experimentadas por los habitantes'
 la importancia del mercado inmobiliario y la planificación urbana en
 tanto 'vehículo urbano' por la que se produce la 'división social del
 espacio residencial', señalando que esta división no es producida de
-forma directa y concientemente por las clases sociales. Por su parte,
+forma directa y conscientemente por las clases sociales. Por su parte,
 analizando los cambios asociados al neoliberalismo durante la década de
 1990, @PrevotSchapira2001 señala que la expansión de la pobreza por
 fuera de los enclaves de las 'villas miseria', lleva a la conformación
-de una 'fragmentación' del espacio urbano, basado en en 'identidades
+de una 'fragmentación' del espacio urbano, basado en 'identidades
 restringidas' y diferenciaciones simbólicas (antes que económicas) del
 territorio. En conjunto estos aportes proponen incorporar las
 particularidades del pensamiento latinoamericano para pensar la
@@ -1113,7 +1113,7 @@ ejemplo @Carman2013; @Cravino2002; @Merklen2005; @Segura2006;
 @Soldano2017]. En particular, estos trabajos se han concentrado en
 barrios donde residen los sectores populares, aunque recientemente
 algunos autores han analizado estas relaciones en barrios
-carcaterísticos de sectores medios [@Cosacov2015] y altos [ver, por
+característicos de sectores medios [@Cosacov2015] y altos [ver, por
 ejemplo, @Elguezabal2018; @Frisch2022]. Estos trabajos resultan
 interesantes, en la medida que logran integrar otros dominios en los que
 discurre la segregación y enfatizan cómo se vincula con las
@@ -1232,7 +1232,7 @@ con las desigualdades sociales y la distribución de los diferentes
 grupos sociales en el espacio urbano [@Nicoletti2023]. A su vez, esta
 diferencia en la distribución espacial de los recursos urbanos debe
 sumarse la diferencia entre la 'calidad' de estos servicios, por lo cual
-algunas localizaciones encuentran acceso a algunos servicios pero estos
+algunas localizaciones encuentran acceso a algunos servicios, pero estos
 son de 'peor calidad' [un ejemplo de esto puede verse en relación a los
 establecimientos educativos @Serrati2021]. En la medida que existe una
 desigual distribución (en calidad y cantidad) de los recursos urbanos,
@@ -1250,23 +1250,23 @@ Relacionado a esto, la literatura sobre ‘efecto barrio’ [*neighbourhood
 effect*] estudia como los barrios configuran una ‘geografía de
 oportunidades’ que condiciona las chances de vida de sus residentes
 [@Wilson1987; @DiVirgilio2021a; @VanHam2012; @Sampson2019]. En este
-alínea, el esquema conceptual propuesto por @Galster2017 destaca el rol
+línea, el esquema conceptual propuesto por @Galster2017 destaca el rol
 de la 'estructura de oportunidades espaciales' como mediador entre los
 atributos individuales y el logro de estatus socioeconómico. En este
 esquema, la segregación es uno de los elementos que componen esa
-estructura de oportunidades espaciales, puediendo constituir un
-obstáculo para la adquisición de logros socioeconómicos como el
-mejoramiento de los propios atributos individuales. Si bien por lo
-general este enfoque suele usarse para analizar los las desventajas que
-suponen algunos barrios, como sugiere [@Wacquant2017; en relación al
-trabajo de @Pincon-Charlot2018], el efecto de barrio puede ser incluso
-mayor en las clases altas. El aislamiento espacial en barrios
-residenciales exclusivos refuerza, junto a espacios de sociabilización
-asociados a ellos como bailes o clubes, el *habitus* de la clase
-dominante por los cuales se constituyen los mecanismos de cierre social.
-En definitiva, los trabajos sobre *efecto barrio* ponen de manifiesta la
-importancia que puede tener el lugar de residencia y su espacio próximo
-para configurar las oportunidades de vida de sus
+estructura de oportunidades espaciales, pudiendo constituir un obstáculo
+para la adquisición de logros socioeconómicos como el mejoramiento de
+los propios atributos individuales. Si bien por lo general este enfoque
+suele usarse para analizar los las desventajas que suponen algunos
+barrios, como sugiere [@Wacquant2017; en relación al trabajo de
+@Pincon-Charlot2018], el efecto de barrio puede ser incluso mayor en las
+clases altas. El aislamiento espacial en barrios residenciales
+exclusivos refuerza, junto a espacios de sociabilización asociados a
+ellos como bailes o clubes, el *habitus* de la clase dominante por los
+cuales se constituyen los mecanismos de cierre social. En definitiva,
+los trabajos sobre *efecto barrio* ponen de manifiesta la importancia
+que puede tener el lugar de residencia y su espacio próximo para
+configurar las oportunidades de vida de sus
 residentes.<!--# En efecto, el efecto barrio es la cristalización procesos de segregación que actúan en diferentes dominios (trabajo, estudio, relaciones sociales, vivienda e institucionalmente). El efecto barrio permite pensar qué diferencia y qué aglutina a las personas de un territorio. --><!--# Najman (ver TESIS y artículos). -->
 
 <!-- Los 'espacios de actividad' sobre la segregación social -->
@@ -1281,7 +1281,7 @@ movilidad cotidiana para conectar diferentes espacios urbanos,
 configurando así 'espacios de vida' [@Courgeau1988] o 'espacios de
 actividad' [@Horton1971]. Los espacios de actividad son el conjunto de
 espacios en los cuales los individuos desenvuelven su vida cotidiana,
-más allá del propio espacio residencial, como por ejemplo, el lugar de
+más allá del propio espacio residencial, como, por ejemplo, el lugar de
 trabajo, estudio u ocio. Los espacios de actividad permiten a los
 hogares hacer un uso diferenciado del espacio y los recursos urbanos,
 controlando las posibilidades de encuentros con otros grupos sociales
@@ -1345,7 +1345,7 @@ partir de *tomar* y *configurar* los usos del mismo.
 <!-- Resumen del apartado  -->
 
 En síntesis, si bien tradicionalmente el estudio de la segregación se
-focalizó en el ámbito residencial, el tendencia de los individuos a
+focalizó en el ámbito residencial, la tendencia de los individuos a
 compartir espacio con otras similares excede este dominio. Sin
 desconocer el lugar de la residencia como eje articulador de las
 prácticas cotidianas de los hogares, la misma es insuficiente para
