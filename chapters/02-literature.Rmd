@@ -581,7 +581,7 @@ aproximación teórica sobre cómo opera la segregación espacial en el
 espacio urbano, relacionando esta segregación con las divisiones
 sociales y económicas existentes en la sociedad. Sin embargo, como
 señalan autores críticos a esta corriente [@Ruiz-Tagle2016;
-@UllanDeLaRosa2014; entre otros], la Ecología Humana omite por completo
+@UllanDeLaRosa2014, entre otros], la Ecología Humana omite por completo
 el problema de las clases sociales y el conflicto de clases, para
 concentrarse exclusivamente en la 'raza', proponiendo una
 'naturalización' (ecológica) de la estratificación social. Además, en el
