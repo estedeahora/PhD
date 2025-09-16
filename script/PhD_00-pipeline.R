@@ -16,6 +16,7 @@ library(sf)
 
 library(knitr)
 library(flextable)
+library(kableExtra)
 library(officer)
 
 library(FactoMineR)

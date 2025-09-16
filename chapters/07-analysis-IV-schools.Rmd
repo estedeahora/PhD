@@ -615,13 +615,13 @@ resultados refuerzan nuestra decisión metodológica de utilizar este
 modelo en lugar de comparar 'directamente' la segregación escolar con la
 residencial (como se hace en otros trabajos).[^07-analysis-iv-schools-9]
 
-[^07-analysis-iv-schools-9]: En la Tabla \@ref(tab:appH-segreg-index)
-    del Anexo \@ref(appendixH) se presentan resultados similares
-    utilizando otros índices de segregación alternativos. En todos los
-    casos se corrobora que dado que en el AMBA la distribución de la
-    oferta sigue un patrón de distribución espacial agrupado, el modelo
-    de asignación arroja indicadores de segregación menores que los que
-    surgen de considerar directamente la segregación residencial.
+[^07-analysis-iv-schools-9]: En la Tabla \@ref(tab:appH-TAB1) del Anexo
+    \@ref(appendixH) se presentan resultados similares utilizando otros
+    índices de segregación alternativos. En todos los casos se corrobora
+    que dado que en el AMBA la distribución de la oferta sigue un patrón
+    de distribución espacial agrupado, el modelo de asignación arroja
+    indicadores de segregación menores que los que surgen de considerar
+    directamente la segregación residencial.
 
 La Tabla \@ref(tab:school-tab1) presenta el resultado del modelo de
 asignación, diferenciando según los entornos urbanos. En sintonía con lo

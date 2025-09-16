@@ -7,19 +7,21 @@
 # Índices de segregación residencial {#appendixA}
 
 ```{r appA_TAB1}
-RES$appA_TAB1
-```
 
-```{=latex}
-\begin{landscape}
+if(knitr::is_latex_output()){
+  RES$appA_TAB1_tex
+}else{
+  RES$appA_TAB1
+}
 ```
 
 ```{r appA_TAB2}
-RES$appA_TAB2
-```
 
-```{=latex}
-\end{landscape}
+if(knitr::is_latex_output()){
+  RES$appA_TAB2_tex
+}else{
+  RES$appA_TAB2
+}
 ```
 
 # Relación matemática entre inercia y segregación local (Índice de Información mutua) {#appendixB}
@@ -292,6 +294,11 @@ En base a la matriz de asignación `A` que relaciona las unidades censales y las
 
 # Índices de segregación escolar (modelo y real) {#appendixH}
 
-```{r appH-segreg-index}
-EDU$appH_TAB1
+```{r appH-TAB1}
+
+if(knitr::is_latex_output()){
+  EDU$appH_TAB1_tex
+}else{
+  EDU$appH_TAB1
+}
 ```

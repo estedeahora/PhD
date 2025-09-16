@@ -784,8 +784,8 @@ replic <- 1000
     align(j = -1, i = 1, align ='center', part = 'header') |>
     bold(i = 10, part = "body") |>
     hline(i = 9:10, border = fp_border(width = 1)) |>
-    flextable::font(fontname='Alegreya Sans', part = "all") |>
-    flextable::fontsize(size = 7, part = "all") |>
+    # flextable::font(fontname='Alegreya Sans', part = "all") |>
+    # flextable::fontsize(size = 7, part = "all") |>
     flextable::width(j = 1, 2, unit = "cm") |>
     flextable::width(j = c(4, 7), 0.25, unit = "cm") |>
     flextable::width(j = c(2:3, 5:6, 8:9), 1.15, unit = "cm")
@@ -843,14 +843,14 @@ replic <- 1000
     align(j = 5, i = 3, align ='center', part = 'body') |>
     hline(i = 2:3, border = fp_border(width = 1)) |>
     add_footer_lines("Estimator method: Shapley.") |>
-    footnote(part = "header", j = 3, i = 1,
+    flextable::footnote(part = "header", j = 3, i = 1,
              value = as_paragraph(
                paste("Los valores están corregidos por sesgo.",
                      replic, "iteraciones Bootstrap.",
                      "Intervalo de confianza (CI) = 99 %") ),
-             ref_symbols = "a") |>
-    flextable::font(fontname='Alegreya Sans', part = "all") |>
-    flextable::fontsize(size = 7, part = "all")
+             ref_symbols = "a") #|>
+    # flextable::font(fontname='Alegreya Sans', part = "all") |>
+    # flextable::fontsize(size = 7, part = "all")
 
   rm(name_lab)
 
@@ -880,7 +880,9 @@ replic <- 1000
 
 ### ╚ TAB App H.1: Índices de segregación comparado -----------------
 
-  EDU$appH_TAB1 <- EDU$EDU5 |>
+  cli::cli_li(col_yellow("Table App H.1: Índices de segregación comparado."))
+
+  aux_tab <- EDU$EDU5 |>
     map2(names(EDU$EDU5) |> str_remove("db_"),
          \(db, nm){
            db |>
@@ -891,10 +893,14 @@ replic <- 1000
     reduce(left_join, by = "Index") |>
     mutate(EXP = MODEL / EDU * 100,
            s = "") |>
-    select(Index, RESI, EDU, s, MODEL, EXP) |>
+    select(Index, RESI, EDU, s, MODEL, EXP)
+
+  tit <- "Indicadores de segregación escolar según valores observados y modelado"
+
+  EDU$appH_TAB1 <- aux_tab |>
     flextable() |>
-    set_caption(caption = "Indicadores de segregación escolar según valores observados y modelado",
-                autonum = run_autonum(seq_id = "tab", bkm = "appH-segreg-index",
+    set_caption(caption = tit,
+                autonum = run_autonum(seq_id = "tab", bkm = "appH-TAB1",
                                       bkm_all = TRUE)) |>
     align(align ='center', part = 'all') |>
     align(j = 1, align ='left', part = 'all') |>
@@ -910,17 +916,32 @@ replic <- 1000
                               s = " ", "Modelo"),
                    colwidths = c(1, 2, 1, 2)) |>
     merge_v(j = c(1, 4), part = "header") |>
-    flextable::font(fontname='Alegreya Sans', part = "all") |>
-    flextable::fontsize(size = 7, part = "all") |>
     flextable::width(j = 1, 5.25, unit = "cm") |>
     flextable::width(j = 4, 0.25, unit = "cm") |>
     flextable::width(j = c(2:3, 5:6), 1.25, unit = "cm")
+
+  EDU$appH_TAB1_tex <- aux_tab |>
+    mutate(EXP = round(EXP, 1) |> format(digits = 1, nsmall = 1) |> paste0("\\%") ) |>
+    kbl(caption = tit, label = "appH-TAB1", digits = 3,
+        escape = FALSE, format = "latex", booktabs = TRUE,
+        col.names = c("Índice de Segregación", "Residencial", "Escolar",
+                      " ", "Asignado", "\\% Explicado"),
+        align = c("l", rep("c", 5) ) ) |>
+    kable_classic(full_width = FALSE, font_size = 8, html_font = "Alegreya Sans") |>
+    row_spec(row = 0, bold = TRUE) |>
+    add_header_above(c(" " = 1, "Empírico" = 2, " " = 1, "Modelo" = 2),
+                     bold = TRUE) |>
+    column_spec(1, width = "5.2cm") |>
+    column_spec(4, width = "0.1cm") |>
+    column_spec(c(2:3, 5:6), width = "1.4cm")
+
+  rm(tit, aux_tab)
 
 # Guardar resultados ----------------------------------------------------------
 
   usethis::use_data(EDU, overwrite = TRUE)
 
-  # rm(AUX, CARTO)
+  rm(AUX, CARTO)
   rm(forzar, replic)
 
 # Otros resultados ---------------------------

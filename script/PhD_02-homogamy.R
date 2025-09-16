@@ -620,13 +620,15 @@ if(!exists("HOG", inherits = F)){
 
   cli::cli_li(col_yellow("Tabla 5.1: Indicadores de homogamia educativa."))
 
+  tit <- "Indicadores de homogamia educativa según jurisdicción"
+
   HOM$TAB1 <- HOM$HOM1[10:12, ] |>
     mutate(across(c(CON_p:POR_h_SUP), ~round(.x, 1)),
            across(c(PRI_p1:SUP_p1), ~round(.x, 3)),
            emp = NA) |>
     select(1:7, emp, 8:10) |>
     flextable::flextable() |>
-    flextable::set_caption(caption = "Indicadores de homogamia educativa según jurisdiccion",
+    flextable::set_caption(caption = tit,
                            autonum = officer::run_autonum(seq_id = "tab",
                                                           bkm = "HOM-TAB1",
                                                           bkm_all = T))  |>
@@ -649,14 +651,38 @@ if(!exists("HOG", inherits = F)){
     flextable::colformat_double(j = 3:7, digits = 1, suffix = "%") |>
     flextable::colformat_double(j = 9:11, digits = 3) |>
     flextable::bold(i = 3, part = "body") |>
-    flextable::font(fontname='Alegreya Sans', part = "all") |>
-    flextable::fontsize(size = 7, part = "all") |>
     flextable::width(j = 1, 1.5, unit = "cm") |>
     flextable::width(j = 2, 1.9, unit = "cm") |>
     flextable::width(j = 3, 2.1, unit = "cm") |>
     flextable::width(j = 4:7, 1.5, unit = "cm") |>
     flextable::width(j = 8, 0.1, unit = "cm") |>
     flextable::width(j = 9:11, 1.5, unit = "cm")
+
+  HOM$TAB1_tex <- HOM$HOM1[10:12, ] |>
+    mutate(across(c(CON_p:POR_h_SUP), ~round(.x, 1) |> paste0("%")),
+           across(c(PRI_p1:SUP_p1), ~round(.x, 3)),
+           emp = "") |>
+    select(1:7, emp, 8:10) |>
+    kbl(caption = tit, label = "app1-tab2", booktabs = TRUE,
+        format = "latex", align = c("l", rep("c", 10)),
+        col.names = c("Jurisdiccion", "Cantidad de hogares",
+                      "% de hogares conyugales", "Total", "Primario",
+                      "Secundario", "Superior", " ", "Primario",
+                      "Secundario", "Superior"),
+        format.args = list(big.mark = " ") ) |>
+    kable_classic(full_width = F, font_size = 8, html_font = "Alegreya Sans") |>
+    row_spec(row = 0, bold = TRUE) |>
+    add_header_above(c(" " = 3, "Porcentaje de homogamia" = 4,
+                       " " = 1, "Probabilidad de homogamia" = 3),
+                     bold = TRUE) |>
+    row_spec(row = 3, bold = TRUE) |>
+    kableExtra::column_spec(1, width = "1.6cm") |>
+    kableExtra::column_spec(2:3, width = "2.3cm") |>
+    kableExtra::column_spec(4:7, width = "1.4cm") |>
+    kableExtra::column_spec(8, width = "0.1cm") |>
+    kableExtra::column_spec(9:11, width = "1.4cm")
+
+  rm(tit)
 
   # ╚ TAB 5.2 ---------------------------------
 

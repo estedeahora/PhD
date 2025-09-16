@@ -370,7 +370,11 @@ significativamente más alta que para el resto de los niveles educativos
 
 ```{r HOM-TAB1}
 
-HOM$TAB1
+if(knitr::is_latex_output()){
+  HOM$TAB1_tex
+}else{
+  HOM$TAB1
+}
 ```
 
 ```{=latex}

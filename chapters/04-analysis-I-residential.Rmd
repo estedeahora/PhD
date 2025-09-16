@@ -299,7 +299,12 @@ departamentos).<!--# En el Anexo A se presenta la segregación interna de cada u
     [*between*] estos grupos.
 
 ```{r segres-tab1}
-RES$TAB1
+
+if(knitr::is_latex_output()){
+  RES$TAB1_tex
+}else{
+  RES$TAB1
+}
 ```
 
 Un segundo enfoque para analizar globalmente la segregación es
@@ -317,7 +322,11 @@ presencia de este grupo hace que el indicador local de grupos sea
 menor).
 
 ```{r segres-tab2}
-RES$TAB2
+if(knitr::is_latex_output()){
+  RES$TAB2_tex
+}else{
+  RES$TAB2
+}
 ```
 
 <!-- Segregación local: convivencia de patrones localizados en diferentes zonas -->
@@ -558,7 +567,11 @@ segregación.
 
 ```{r segres-tab3}
 
-RES$TAB3
+if(knitr::is_latex_output()){
+  RES$TAB3_tex
+}else{
+  RES$TAB3
+}
 ```
 
 ```{=latex}

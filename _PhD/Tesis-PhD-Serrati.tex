@@ -147,6 +147,19 @@
 \usepackage{fancyhdr}
 \pagestyle{plain}
 
+% Definir título de tablas/figuras
+\addto\captionsspanish{\renewcommand{\tablename}{Tabla}}
+
+% Agregado de \source y \notes para titulos secundarios de las tablas y figuras
+\usepackage{caption}
+\captionsetup{format=plain,labelsep=period,singlelinecheck=false,justification=raggedright,
+              font={small,singlespacing,sf},labelfont={sc,bf},width=\textwidth}
+\newcommand{\source}[1]{\caption*{\footnotesize{\textit{Fuente:} {#1}}}}
+\newcommand{\notes}[1]{\caption*{\footnotesize{\textit{Nota:} {#1}}}}
+
+%%%% ENCABEZADO DE PÁGINA
+% Si utiliza clases de Koma-script debe utilizar el paquete 'scrlayer-scrpage'
+% Si utiliza las clases estándar debe usar el paquete 'fancyhdr'
 \fancyhead[LE, RE, LO, RO]{}
 % \fancyhead[LE]{Pablo Serrati - Tesis de Maestría}
 % \fancyhead[RO]{\leftmark}
@@ -179,7 +192,7 @@
   filecolor={Sepia},
   citecolor={Sepia},
   urlcolor={Sepia},
-  pdfcreator={LaTeX via pandoc 3.4}}
+  pdfcreator={LaTeX via pandoc 3.6.3}}
 
 \title{Segregación urbana multi-dominio en el Aglomerado Metropolitano del Gran Buenos Aires (Argentina)}
 \author{Pablo Santiago Serrati}
@@ -1007,8 +1020,7 @@ zonas.\footnote{`En la expansión de la ciudad se produce un proceso
 aproximación teórica sobre cómo opera la segregación espacial en el
 espacio urbano, relacionando esta segregación con las divisiones
 sociales y económicas existentes en la sociedad. Sin embargo, como
-señalan autores críticos a esta corriente {[}Ruiz-Tagle (\citeproc{ref-Ruiz-Tagle2016}{2016});
-Ullán de la Rosa (\citeproc{ref-UllanDeLaRosa2014}{2014}); entre otros{]}, la Ecología Humana omite por completo
+señalan autores críticos a esta corriente (\citeproc{ref-Ruiz-Tagle2016}{Ruiz-Tagle, 2016}; \citeproc{ref-UllanDeLaRosa2014}{Ullán de la Rosa, 2014}, entre otros), la Ecología Humana omite por completo
 el problema de las clases sociales y el conflicto de clases, para
 concentrarse exclusivamente en la `raza', proponiendo una
 `naturalización' (ecológica) de la estratificación social. Además, en el
@@ -3007,71 +3019,22 @@ central a la hora de entender la segregación total en el AMBA (muy por
 encima de las jurisdicciones o, incluso, los
 departamentos).
 
-\global\setlength{\Oldarrayrulewidth}{\arrayrulewidth}
-
-\global\setlength{\Oldtabcolsep}{\tabcolsep}
-
-\setlength{\tabcolsep}{2pt}
-
-\renewcommand*{\arraystretch}{1.5}
-
-
-
-\providecommand{\ascline}[3]{\noalign{\global\arrayrulewidth #1}\arrayrulecolor[HTML]{#2}\cline{#3}}
-
-\begin{longtable}[c]{|p{0.95in}|p{0.55in}|p{0.49in}}
-
-\caption{Segregación\ residencial\ explicada\ por\ diferencias\ dentro/entre\ diferentes\ niveles\ de\ análisis\ (Jurisdicciones,\ Departamentos\ y\ Entornos\ urbanos)}\label{tab:segres-tab1}\\
-
-\ascline{1,5pt}{666666}{1-3}
-
-\multicolumn{1}{>{\raggedright}m{\dimexpr 0.95in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\ }}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.55in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Dentro}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Entre}}}} \\
-
-\ascline{1,5pt}{666666}{1-3}\endfirsthead \caption[]{Segregación\ residencial\ explicada\ por\ diferencias\ dentro/entre\ diferentes\ niveles\ de\ análisis\ (Jurisdicciones,\ Departamentos\ y\ Entornos\ urbanos)}\label{tab:segres-tab1}\\
-
-\ascline{1,5pt}{666666}{1-3}
-
-\multicolumn{1}{>{\raggedright}m{\dimexpr 0.95in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\ }}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.55in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Dentro}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Entre}}}} \\
-
-\ascline{1,5pt}{666666}{1-3}\endhead
-
-
-
-\multicolumn{3}{>{\raggedright}m{\dimexpr 1.99in+4\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Los\ valores\ tienen\ corrección\ de\ sesgo.\ \ Bootstrap\ replicaciones.}}}} \\
-
-\endlastfoot
-
-
-
-\multicolumn{1}{>{\raggedright}m{\dimexpr 0.95in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Jurisdicciones}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.55in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{69.6}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{30.4}}}} \\
-
-
-
-
-
-\multicolumn{1}{>{\raggedright}m{\dimexpr 0.95in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Departamentos}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.55in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{48.6}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{51.4}}}} \\
-
-
-
-
-
-\multicolumn{1}{>{\raggedright}m{\dimexpr 0.95in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Entornos\ urbanos}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.55in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{25.9}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{74.1}}}} \\
-
-\ascline{1,5pt}{666666}{1-3}
-
-
-
-\end{longtable}
-
-
-
-\arrayrulecolor[HTML]{000000}
-
-\global\setlength{\arrayrulewidth}{\Oldarrayrulewidth}
-
-\global\setlength{\tabcolsep}{\Oldtabcolsep}
-
-\renewcommand*{\arraystretch}{1}
+\begin{table}
+\centering
+\caption{\label{tab:segres-tab1}Segregación residencial explicada por diferencias dentro/entre diferentes niveles de análisis (Jurisdicciones, Departamentos y Entornos urbanos)}
+\centering
+\fontsize{8}{10}\selectfont
+\begin{tabular}[t]{>{\raggedright\arraybackslash}p{3cm}>{\centering\arraybackslash}p{1.2cm}>{\centering\arraybackslash}p{1.2cm}}
+\toprule
+\textbf{ } & \textbf{Dentro} & \textbf{Entre}\\
+\midrule
+Jurisdicciones & 69.6 & 30.4\\
+Departamentos & 48.6 & 51.4\\
+Entornos urbanos & 25.9 & 74.1\\
+\bottomrule
+\end{tabular}
+\notes{Los valores tienen corrección de sesgo. 100 replicaciones Bootstrap.}
+\end{table}
 
 Un segundo enfoque para analizar globalmente la segregación es
 descomponer la segregación en función de los grupos educativos. La Tabla
@@ -3086,71 +3049,22 @@ medida de cuánto se alejan de la distribución general, la mayor
 presencia de este grupo hace que el indicador local de grupos sea
 menor).
 
-\global\setlength{\Oldarrayrulewidth}{\arrayrulewidth}
-
-\global\setlength{\Oldtabcolsep}{\tabcolsep}
-
-\setlength{\tabcolsep}{2pt}
-
-\renewcommand*{\arraystretch}{1.5}
-
-
-
-\providecommand{\ascline}[3]{\noalign{\global\arrayrulewidth #1}\arrayrulecolor[HTML]{#2}\cline{#3}}
-
-\begin{longtable}[c]{|p{0.71in}|p{0.94in}|p{0.69in}}
-
-\caption{Segregación\ residencial\ explicada\ por\ cada\ nivel\ educativo}\label{tab:segres-tab2}\\
-
-\ascline{1,5pt}{666666}{1-3}
-
-\multicolumn{1}{>{\raggedright}m{\dimexpr 0.71in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Nivel}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.94in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Segregación\ local}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.69in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Porcentaje}}}} \\
-
-\ascline{1,5pt}{666666}{1-3}\endfirsthead \caption[]{Segregación\ residencial\ explicada\ por\ cada\ nivel\ educativo}\label{tab:segres-tab2}\\
-
-\ascline{1,5pt}{666666}{1-3}
-
-\multicolumn{1}{>{\raggedright}m{\dimexpr 0.71in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Nivel}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.94in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Segregación\ local}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.69in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Porcentaje}}}} \\
-
-\ascline{1,5pt}{666666}{1-3}\endhead
-
-
-
-\multicolumn{3}{>{\raggedright}m{\dimexpr 2.35in+4\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Los\ porcentajes\ se\ calcularon\ sin\ aplicar\ corrección\ de\ sesgo.\ }}}} \\
-
-\endlastfoot
-
-
-
-\multicolumn{1}{>{\raggedright}m{\dimexpr 0.71in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Primario}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.94in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0.134}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.69in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{45.9\%}}}} \\
-
-
-
-
-
-\multicolumn{1}{>{\raggedright}m{\dimexpr 0.71in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Secundario}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.94in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0.031}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.69in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{33.5\%}}}} \\
-
-
-
-
-
-\multicolumn{1}{>{\raggedright}m{\dimexpr 0.71in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Superior}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.94in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0.367}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.69in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{20.6\%}}}} \\
-
-\ascline{1,5pt}{666666}{1-3}
-
-
-
-\end{longtable}
-
-
-
-\arrayrulecolor[HTML]{000000}
-
-\global\setlength{\arrayrulewidth}{\Oldarrayrulewidth}
-
-\global\setlength{\tabcolsep}{\Oldtabcolsep}
-
-\renewcommand*{\arraystretch}{1}
+\begin{table}
+\centering
+\caption{\label{tab:segres-tab2}Segregación residencial explicada por cada nivel educativo}
+\centering
+\fontsize{8}{10}\selectfont
+\begin{tabular}[t]{>{\raggedright\arraybackslash}p{3cm}>{\centering\arraybackslash}p{3cm}>{\centering\arraybackslash}p{2.5cm}}
+\toprule
+\textbf{Nivel} & \textbf{Segregación local} & \textbf{Porcentaje}\\
+\midrule
+Primario & 0.134 & 45.9\%\\
+Secundario & 0.031 & 33.5\%\\
+Superior & 0.367 & 20.6\%\\
+\bottomrule
+\end{tabular}
+\notes{Los porcentajes se calcularon sin aplicar corrección de sesgo.}
+\end{table}
 
 Partiendo de esta caracterización global, avancemos a continuación en un
 análisis local de la segregación. Para ello en la Figura
@@ -3371,71 +3285,29 @@ segregación.
 
 \begin{landscape} 
 
-\global\setlength{\Oldarrayrulewidth}{\arrayrulewidth}
-
-\global\setlength{\Oldtabcolsep}{\tabcolsep}
-
-\setlength{\tabcolsep}{2pt}
-
-\renewcommand*{\arraystretch}{1.5}
-
-
-
-\providecommand{\ascline}[3]{\noalign{\global\arrayrulewidth #1}\arrayrulecolor[HTML]{#2}\cline{#3}}
-
-\begin{longtable}[c]{|p{0.91in}|p{0.91in}|p{0.75in}|p{0.75in}|p{0.75in}|p{0.75in}|p{1.81in}|p{1.26in}}
-
-\caption{Descripción\ de\ las\ principales\ características\ de\ los\ patrones\ de\ segregación}\label{tab:segres-tab3}\\
-
-\ascline{1,5pt}{666666}{1-8}
-
-\multicolumn{1}{>{\raggedright}p{\dimexpr 0.91in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Patrón\ de\ segregación}}}} & \multicolumn{1}{>{\raggedright}p{\dimexpr 0.91in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Composición\ social\ predominante}}}} & \multicolumn{1}{>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Escala\ de\ la\ segregación}}}} & \multicolumn{1}{>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Extensión}}}} & \multicolumn{1}{>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Continuidad}}}} & \multicolumn{1}{>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Singularidad\ y\ centralidad}}}} & \multicolumn{1}{>{\raggedright}p{\dimexpr 1.81in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Etapa\ histórica\ de\ consolidación}}}} & \multicolumn{1}{>{\raggedright}p{\dimexpr 1.26in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Entornos\ urbanos}}}} \\
-
-\ascline{1,5pt}{666666}{1-8}\endfirsthead \caption[]{Descripción\ de\ las\ principales\ características\ de\ los\ patrones\ de\ segregación}\label{tab:segres-tab3}\\
-
-\ascline{1,5pt}{666666}{1-8}
-
-\multicolumn{1}{>{\raggedright}p{\dimexpr 0.91in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Patrón\ de\ segregación}}}} & \multicolumn{1}{>{\raggedright}p{\dimexpr 0.91in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Composición\ social\ predominante}}}} & \multicolumn{1}{>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Escala\ de\ la\ segregación}}}} & \multicolumn{1}{>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Extensión}}}} & \multicolumn{1}{>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Continuidad}}}} & \multicolumn{1}{>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Singularidad\ y\ centralidad}}}} & \multicolumn{1}{>{\raggedright}p{\dimexpr 1.81in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Etapa\ histórica\ de\ consolidación}}}} & \multicolumn{1}{>{\raggedright}p{\dimexpr 1.26in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Entornos\ urbanos}}}} \\
-
-\ascline{1,5pt}{666666}{1-8}\endhead
-
-
-
-\multicolumn{1}{>{\raggedright}p{\dimexpr 0.91in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Cono\ de\ las\ elites}}}} & \multicolumn{1}{>{\raggedright}p{\dimexpr 0.91in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Sectores\ altos\ y\ medios\ altos}}}} & \multicolumn{1}{>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Grande}}}} & \multicolumn{1}{>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Amplia}}}} & \multicolumn{1}{>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Transición\ paulatina}}}} & \multicolumn{1}{>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Único.\ Centralidad\ principal}}}} & \multicolumn{1}{>{\raggedright}p{\dimexpr 1.81in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Primera\ expansión\ a\ fines\ del\ siglo\ XIX\ y\ consolidado\ con\ el\ ascenso\ de\ las\ clases\ medias\ durante\ la\ primera\ mitad\ del\ siglo\ XX.\ Posteriormente\ como\ nueva\ expansión\ de\ las\ clases\ medias\ emergentes\ e\ integración\ de\ zonas\ gentrificadas.}}}} & \multicolumn{1}{>{\raggedright}p{\dimexpr 1.26in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{(a)\ Ciudad\ colonial\ (parcialmente);}}}\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\linebreak }}}\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{(b)\ Primera\ expansión\ de\ la\ ciudad\ colonial;}}}\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\linebreak }}}\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{(c)\ Loteos\ formales\ de\ NSE\ alto.}}}} \\
-
-
-
-
-
-\multicolumn{1}{>{\raggedright}p{\dimexpr 0.91in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Suburbanización\ neoliberal}}}} & \multicolumn{1}{>{\raggedright}p{\dimexpr 0.91in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Sectores\ altos\ y\ bajos\ (yuxtapuestos)}}}} & \multicolumn{1}{>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Baja}}}} & \multicolumn{1}{>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{-}}}} & \multicolumn{1}{>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Fragmentado}}}} & \multicolumn{1}{>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{-}}}} & \multicolumn{1}{>{\raggedright}p{\dimexpr 1.81in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Vinculado\ a\ la\ la\ conurbanización\ de\ las\ elites\ durante\ la\ etapa\ de\ urbanización\ neoliberal,\ desde\ finales\ del\ siglo\ XX).}}}} & \multicolumn{1}{>{\raggedright}p{\dimexpr 1.26in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{(a)\ Urbanizaciones\ cerradas;}}}\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\linebreak }}}\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{(b)\ Urbanizaciones\ de\ origen\ informal;}}}\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\linebreak }}}\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{(c)\ Loteos\ formales\ de\ NSE\ bajo\ (y\ medio).}}}} \\
-
-
-
-
-
-\multicolumn{1}{>{\raggedright}p{\dimexpr 0.91in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Cascos\ conurbanizados}}}} & \multicolumn{1}{>{\raggedright}p{\dimexpr 0.91in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Sectores\ medios}}}} & \multicolumn{1}{>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Media}}}} & \multicolumn{1}{>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Intermedia}}}} & \multicolumn{1}{>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{-}}}} & \multicolumn{1}{>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Policentralidad}}}} & \multicolumn{1}{>{\raggedright}p{\dimexpr 1.81in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Durante\ el\ transcurso\ del\ siglo\ XX,\ como\ producto\ del\ crecimiento\ y\ expansión\ de\ la\ ciudad\ central.}}}} & \multicolumn{1}{>{\raggedright}p{\dimexpr 1.26in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{(a)\ Centros\ conurbanizados;}}}\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\linebreak }}}\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{(b)\ Loteos\ formales\ de\ NSE\ medio.}}}} \\
-
-
-
-
-
-\multicolumn{1}{>{\raggedright}p{\dimexpr 0.91in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Periferias\ deterioradas}}}} & \multicolumn{1}{>{\raggedright}p{\dimexpr 0.91in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Sectores\ bajos}}}} & \multicolumn{1}{>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Grande}}}} & \multicolumn{1}{>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Amplia}}}} & \multicolumn{1}{>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Transición\ paulatina}}}} & \multicolumn{1}{>{\raggedright}p{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Periferia\ exterior}}}} & \multicolumn{1}{>{\raggedright}p{\dimexpr 1.81in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Originado\ desde\ mediados\ del\ siglo\ XX,\ pero\ en\ expansión\ a\ partir\ de\ la\ etapa\ de\ urbanización\ neoliberal\ con\ el\ crecimiento\ de\ la\ informalización\ de\ los\ mercados\ de\ trabajo\ y\ vivienda.}}}} & \multicolumn{1}{>{\raggedright}p{\dimexpr 1.26in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{(a)\ Urbanizaciones\ de\ origen\ informal;}}}\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\linebreak }}}\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{(b)\ Complejos\ de\ vivienda\ social;\ }}}\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\linebreak }}}\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{(c)\ Loteos\ de\ NSE\ bajo}}}} \\
-
-\ascline{1,5pt}{666666}{1-8}
-
-
-
-\end{longtable}
-
-
-
-\arrayrulecolor[HTML]{000000}
-
-\global\setlength{\arrayrulewidth}{\Oldarrayrulewidth}
-
-\global\setlength{\tabcolsep}{\Oldtabcolsep}
-
-\renewcommand*{\arraystretch}{1}
+\begin{table}
+\centering
+\caption{\label{tab:segres-tab3}Descripción de las principales características de los patrones de segregación}
+\centering
+\fontsize{8}{10}\selectfont
+\begin{tabular}[bottom]{>{\raggedright\arraybackslash}p{2cm}>{\raggedright\arraybackslash}p{2.1cm}>{\raggedright\arraybackslash}p{1.5cm}>{\raggedright\arraybackslash}p{1.5cm}>{\raggedright\arraybackslash}p{1.5cm}>{\raggedright\arraybackslash}p{1.5cm}>{\raggedright\arraybackslash}p{4.1cm}>{\raggedright\arraybackslash}p{3.2cm}}
+\toprule
+\textbf{Patrón de segregación} & \textbf{Composición social predominante} & \textbf{Escala de la segregación} & \textbf{Extensión} & \textbf{Continuidad} & \textbf{Singularidad y centralidad} & \textbf{Etapa histórica de consolidación} & \textbf{Entornos urbanos}\\
+\midrule
+Cono de las elites & Sectores altos y medios altos & Grande & Amplia & Transición paulatina & Único. Centralidad principal & Primera expansión a fines del siglo XIX y consolidado con el ascenso de las clases medias durante la primera mitad del siglo XX. Posteriormente como nueva expansión de las clases medias emergentes e integración de zonas gentrificadas. & (a) Ciudad colonial (parcialmente);
+(b) Primera expansión de la ciudad colonial;
+(c) Loteos formales de NSE alto.\\
+Suburbanización neoliberal & Sectores altos y bajos (yuxtapuestos) & Baja & - & Fragmentado & - & Vinculado a la la conurbanización de las elites durante la etapa de urbanización neoliberal, desde finales del siglo XX). & (a) Urbanizaciones cerradas;
+(b) Urbanizaciones de origen informal;
+(c) Loteos formales de NSE bajo (y medio).\\
+Cascos conurbanizados & Sectores medios & Media & Intermedia & - & Policentralidad & Durante el transcurso del siglo XX, como producto del crecimiento y expansión de la ciudad central. & (a) Centros conurbanizados;
+(b) Loteos formales de NSE medio.\\
+Periferias deterioradas & Sectores bajos & Grande & Amplia & Transición paulatina & Periferia exterior & Originado desde mediados del siglo XX, pero en expansión a partir de la etapa de urbanización neoliberal con el crecimiento de la informalización de los mercados de trabajo y vivienda. & (a) Urbanizaciones de origen informal;
+(b) Complejos de vivienda social; 
+(c) Loteos de NSE bajo\\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \end{landscape} 
 
@@ -3812,77 +3684,23 @@ significativamente más alta que para el resto de los niveles educativos
 
 \begin{landscape} 
 
-\global\setlength{\Oldarrayrulewidth}{\arrayrulewidth}
-
-\global\setlength{\Oldtabcolsep}{\tabcolsep}
-
-\setlength{\tabcolsep}{2pt}
-
-\renewcommand*{\arraystretch}{1.5}
-
-
-
-\providecommand{\ascline}[3]{\noalign{\global\arrayrulewidth #1}\arrayrulecolor[HTML]{#2}\cline{#3}}
-
-\begin{longtable}[c]{|p{0.59in}|p{0.75in}|p{0.83in}|p{0.59in}|p{0.59in}|p{0.59in}|p{0.59in}|p{0.04in}|p{0.59in}|p{0.59in}|p{0.59in}}
-
-\caption{Indicadores\ de\ homogamia\ educativa\ según\ jurisdiccion}\label{tab:HOM-TAB1}\\
-
-\ascline{1,5pt}{666666}{1-11}
-
-\multicolumn{1}{>{\raggedright}m{\dimexpr 0.59in+0\tabcolsep}}{} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{} & \multicolumn{1}{>{\centering}m{\dimexpr 0.83in+0\tabcolsep}}{} & \multicolumn{4}{>{\centering}m{\dimexpr 2.36in+6\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Porcentaje\ de\ homogamia}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.04in+0\tabcolsep}}{} & \multicolumn{3}{>{\centering}m{\dimexpr 1.77in+4\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Probabilidad\ de\ homogamia}}}} \\
-
-\ascline{1,5pt}{666666}{4-7}\ascline{1,5pt}{666666}{9-11}
-
-
-
-\multicolumn{1}{>{\raggedright}m{\dimexpr 0.59in+0\tabcolsep}}{\multirow[c]{-2}{*}{\parbox{0.59in}{\raggedright \textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Jurisdiccion}}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\multirow[c]{-2}{*}{\parbox{0.75in}{\centering \textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Cantidad\ de\ hogares}}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.83in+0\tabcolsep}}{\multirow[c]{-2}{*}{\parbox{0.83in}{\centering \textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Porcentaje\ de\ hogares\ conyugales}}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Total}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Primario}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Secundario}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Superior}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.04in+0\tabcolsep}}{\multirow[c]{-2}{*}{\parbox{0.04in}{\centering \textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\ }}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Primario}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Secundario}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Superior}}}} \\
-
-\ascline{1,5pt}{666666}{1-11}\endfirsthead \caption[]{Indicadores\ de\ homogamia\ educativa\ según\ jurisdiccion}\label{tab:HOM-TAB1}\\
-
-\ascline{1,5pt}{666666}{1-11}
-
-\multicolumn{1}{>{\raggedright}m{\dimexpr 0.59in+0\tabcolsep}}{} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{} & \multicolumn{1}{>{\centering}m{\dimexpr 0.83in+0\tabcolsep}}{} & \multicolumn{4}{>{\centering}m{\dimexpr 2.36in+6\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Porcentaje\ de\ homogamia}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.04in+0\tabcolsep}}{} & \multicolumn{3}{>{\centering}m{\dimexpr 1.77in+4\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Probabilidad\ de\ homogamia}}}} \\
-
-\ascline{1,5pt}{666666}{4-7}\ascline{1,5pt}{666666}{9-11}
-
-
-
-\multicolumn{1}{>{\raggedright}m{\dimexpr 0.59in+0\tabcolsep}}{\multirow[c]{-2}{*}{\parbox{0.59in}{\raggedright \textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Jurisdiccion}}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\multirow[c]{-2}{*}{\parbox{0.75in}{\centering \textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Cantidad\ de\ hogares}}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.83in+0\tabcolsep}}{\multirow[c]{-2}{*}{\parbox{0.83in}{\centering \textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Porcentaje\ de\ hogares\ conyugales}}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Total}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Primario}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Secundario}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Superior}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.04in+0\tabcolsep}}{\multirow[c]{-2}{*}{\parbox{0.04in}{\centering \textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\ }}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Primario}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Secundario}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Superior}}}} \\
-
-\ascline{1,5pt}{666666}{1-11}\endhead
-
-
-
-\multicolumn{1}{>{\raggedright}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{CABA}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{1,150,578}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.83in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{49.4\%}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{58.3\%}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{17.6\%}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{21.7\%}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{18.9\%}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.04in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0.411}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0.353}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0.404}}}} \\
-
-
-
-
-
-\multicolumn{1}{>{\raggedright}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{PBA}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{3,152,526}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.83in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{63.4\%}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{66.2\%}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{47.5\%}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{13.7\%}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{5.0\%}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.04in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0.602}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0.382}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0.358}}}} \\
-
-
-
-
-
-\multicolumn{1}{>{\raggedright}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{TOTAL}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{4,303,104}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.83in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{59.7\%}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{64.5\%}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{40.9\%}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{15.5\%}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{8.1\%}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.04in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{0.576}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{0.373}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{0.381}}}}} \\
-
-\ascline{1,5pt}{666666}{1-11}
-
-
-
-\end{longtable}
-
-
-
-\arrayrulecolor[HTML]{000000}
-
-\global\setlength{\arrayrulewidth}{\Oldarrayrulewidth}
-
-\global\setlength{\tabcolsep}{\Oldtabcolsep}
-
-\renewcommand*{\arraystretch}{1}
+\begin{table}
+\centering
+\caption{\label{tab:app1-tab2}Indicadores de homogamia educativa según jurisdicción}
+\centering
+\fontsize{8}{10}\selectfont
+\begin{tabular}[t]{>{\raggedright\arraybackslash}p{1.6cm}>{\centering\arraybackslash}p{2.3cm}>{\centering\arraybackslash}p{2.3cm}>{\centering\arraybackslash}p{1.5cm}>{\centering\arraybackslash}p{1.5cm}>{\centering\arraybackslash}p{1.5cm}>{\centering\arraybackslash}p{1.5cm}>{\centering\arraybackslash}p{0.1cm}>{\centering\arraybackslash}p{1.5cm}>{\centering\arraybackslash}p{1.5cm}>{\centering\arraybackslash}p{1.5cm}}
+\toprule
+\multicolumn{3}{c}{\textbf{ }} & \multicolumn{4}{c}{\textbf{Porcentaje de homogamia}} & \multicolumn{1}{c}{\textbf{ }} & \multicolumn{3}{c}{\textbf{Probabilidad de homogamia}} \\
+\cmidrule(l{3pt}r{3pt}){4-7} \cmidrule(l{3pt}r{3pt}){9-11}
+\textbf{Jurisdiccion} & \textbf{Cantidad de hogares} & \textbf{\% de hogares conyugales} & \textbf{Total} & \textbf{Primario} & \textbf{Secundario} & \textbf{Superior} & \textbf{ } & \textbf{Primario} & \textbf{Secundario} & \textbf{Superior}\\
+\midrule
+CABA & 1 150 578 & 49.4\% & 58.3\% & 17.6\% & 21.7\% & 18.9\% &  & 0.411 & 0.353 & 0.404\\
+PBA & 3 152 526 & 63.4\% & 66.2\% & 47.5\% & 13.7\% & 5\% &  & 0.602 & 0.382 & 0.358\\
+\textbf{TOTAL} & \textbf{4 303 104} & \textbf{59.7\%} & \textbf{64.5\%} & \textbf{40.9\%} & \textbf{15.5\%} & \textbf{8.1\%} & \textbf{} & \textbf{0.576} & \textbf{0.373} & \textbf{0.381}\\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \end{landscape} 
 
@@ -6345,13 +6163,13 @@ segregación escolar que surge de utilizar el modelo
 la segregación residencial (\text{0,144}). Estos
 resultados refuerzan nuestra decisión metodológica de utilizar este
 modelo en lugar de comparar `directamente' la segregación escolar con la
-residencial (como se hace en otros trabajos).\footnote{En la Tabla \ref{tab:appH-segreg-index}
-  del Anexo \ref{appendixH} se presentan resultados similares
-  utilizando otros índices de segregación alternativos. En todos los
-  casos se corrobora que dado que en el AMBA la distribución de la
-  oferta sigue un patrón de distribución espacial agrupado, el modelo
-  de asignación arroja indicadores de segregación menores que los que
-  surgen de considerar directamente la segregación residencial.}
+residencial (como se hace en otros trabajos).\footnote{En la Tabla \ref{tab:appH-TAB1} del Anexo
+  \ref{appendixH} se presentan resultados similares utilizando otros
+  índices de segregación alternativos. En todos los casos se corrobora
+  que dado que en el AMBA la distribución de la oferta sigue un patrón
+  de distribución espacial agrupado, el modelo de asignación arroja
+  indicadores de segregación menores que los que surgen de considerar
+  directamente la segregación residencial.}
 
 La Tabla \ref{tab:school-tab1} presenta el resultado del modelo de
 asignación, diferenciando según los entornos urbanos. En sintonía con lo
@@ -6415,61 +6233,61 @@ respecto al resto de los otros dos (NSE Bajo y Medio).
 
 
 
-\multicolumn{1}{>{\raggedright}m{\dimexpr 0.79in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Ciudad\ colonial}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{319}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{8,103}}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0,0\%}}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{365}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{762}}}} \\
+\multicolumn{1}{>{\raggedright}m{\dimexpr 0.79in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Ciudad\ colonial}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{319}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{8\ 103}}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0,0\%}}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{365}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{762}}}} \\
 
 
 
 
 
-\multicolumn{1}{>{\raggedright}m{\dimexpr 0.79in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Expansión\ de\ la\ ciudad\ colonial}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{1,971}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{71,875}}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0,0\%}}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{379}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{955}}}} \\
+\multicolumn{1}{>{\raggedright}m{\dimexpr 0.79in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Expansión\ de\ la\ ciudad\ colonial}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{1\ 971}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{71\ 875}}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0,0\%}}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{379}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{955}}}} \\
 
 
 
 
 
-\multicolumn{1}{>{\raggedright}m{\dimexpr 0.79in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Cascos\ conurbanizados}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{586}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{24,406}}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0,0\%}}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{370}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{812}}}} \\
+\multicolumn{1}{>{\raggedright}m{\dimexpr 0.79in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Cascos\ conurbanizados}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{586}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{24\ 406}}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0,0\%}}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{370}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{812}}}} \\
 
 
 
 
 
-\multicolumn{1}{>{\raggedright}m{\dimexpr 0.79in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Vivienda\ social}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{477}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{49,162}}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{1\ 134}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{2,3\%}}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{587}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{2\ 273}}}} \\
+\multicolumn{1}{>{\raggedright}m{\dimexpr 0.79in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Vivienda\ social}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{477}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{49\ 162}}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{1\ 134}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{2,3\%}}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{587}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{2\ 273}}}} \\
 
 
 
 
 
-\multicolumn{1}{>{\raggedright}m{\dimexpr 0.79in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Urbanización\ cerrada}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{164}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{12,786}}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{359}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{2,8\%}}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{2\ 268}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{2\ 956}}}} \\
+\multicolumn{1}{>{\raggedright}m{\dimexpr 0.79in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Urbanización\ cerrada}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{164}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{12\ 786}}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{359}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{2,8\%}}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{2\ 268}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{2\ 956}}}} \\
 
 
 
 
 
-\multicolumn{1}{>{\raggedright}m{\dimexpr 0.79in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Urbanización\ de\ origen\ informal}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{646}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{95,722}}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{7\ 864}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{8,2\%}}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{739}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{2\ 954}}}} \\
+\multicolumn{1}{>{\raggedright}m{\dimexpr 0.79in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Urbanización\ de\ origen\ informal}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{646}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{95\ 722}}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{7\ 864}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{8,2\%}}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{739}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{2\ 954}}}} \\
 
 
 
 
 
-\multicolumn{1}{>{\raggedright}m{\dimexpr 0.79in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{NSE\ Alto}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{874}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{35,794}}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0,0\%}}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{517}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{1\ 139}}}} \\
+\multicolumn{1}{>{\raggedright}m{\dimexpr 0.79in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{NSE\ Alto}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{874}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{35\ 794}}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0,0\%}}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{517}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{1\ 139}}}} \\
 
 
 
 
 
-\multicolumn{1}{>{\raggedright}m{\dimexpr 0.79in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{NSE\ Medio}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{3,714}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{215,735}}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{16}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0,0\%}}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{524}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{1\ 587}}}} \\
+\multicolumn{1}{>{\raggedright}m{\dimexpr 0.79in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{NSE\ Medio}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{3\ 714}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{215\ 735}}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{16}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0,0\%}}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{524}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{1\ 587}}}} \\
 
 
 
 
 
-\multicolumn{1}{>{\raggedright}m{\dimexpr 0.79in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{NSE\ Bajo}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{4,644}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{550,172}}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{25\ 428}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{4,6\%}}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{659}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{1\ 579}}}} \\
+\multicolumn{1}{>{\raggedright}m{\dimexpr 0.79in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{NSE\ Bajo}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{4\ 644}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{550\ 172}}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{25\ 428}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{4,6\%}}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{659}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{1\ 579}}}} \\
 
 \ascline{1pt}{000000}{1-9}
 
 
 
-\multicolumn{1}{>{\raggedright}m{\dimexpr 0.79in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{Total\ AMBA}}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{13,395}}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{1,063,755}}}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{}}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{34\ 801}}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{3,3\%}}}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{}}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{-}}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{1\ 664}}}}} \\
+\multicolumn{1}{>{\raggedright}m{\dimexpr 0.79in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{Total\ AMBA}}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{13\ 395}}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{1\ 063\ 755}}}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{}}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{34\ 801}}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{3,3\%}}}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{}}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{-}}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.45in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{1\ 664}}}}} \\
 
 \ascline{1pt}{000000}{1-9}
 
@@ -6585,49 +6403,49 @@ segregación escolar observada (\(M_{model}/M_{real}\times 100 =\)
 
 
 
-\multicolumn{1}{>{\raggedright}m{\dimexpr 0.75in+0\tabcolsep}}{} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Empírico}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\textit{0,179}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{595959}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{(0.177/0.180)}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{}}}} \\
+\multicolumn{1}{>{\raggedright}m{\dimexpr 0.75in+0\tabcolsep}}{} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Empírico}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\textit{0,179}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{595959}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{(0,177/0,180)}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{}}}} \\
 
 
 
 
 
-\multicolumn{1}{>{\raggedright}m{\dimexpr 0.75in+0\tabcolsep}}{\multirow[c]{-2}{*}{\parbox{0.75in}{\raggedright \textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Segregación\ Escolar}}}}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Modelo}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\textit{0,087}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{595959}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{(0.087/0.088)}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{}}}} \\
-
-\ascline{1pt}{000000}{1-5}
-
-
-
-\multicolumn{2}{>{\raggedright}m{\dimexpr 1.5in+2\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{Diferencia\ (Modelo\ -\ Empírico)}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{\textit{-0,092}}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{595959}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{(-0.093/-0.090)}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{\ 100.0\%}}}}} \\
+\multicolumn{1}{>{\raggedright}m{\dimexpr 0.75in+0\tabcolsep}}{\multirow[c]{-2}{*}{\parbox{0.75in}{\raggedright \textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Segregación\ Escolar}}}}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Modelo}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\textit{0,087}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{595959}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{(0,087/0,088)}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{}}}} \\
 
 \ascline{1pt}{000000}{1-5}
 
 
 
-\multicolumn{1}{>{\raggedright}m{\dimexpr 0.75in+0\tabcolsep}}{} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Unidades\ agregadas}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\textit{0,000}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{595959}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{(0.000/0.000)}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\ \ -0.1\%}}}} \\
+\multicolumn{2}{>{\raggedright}m{\dimexpr 1.5in+2\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{Diferencia\ (Modelo\ -\ Empírico)}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{\textit{-0,092}}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{595959}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{(-0,093/-0,090)}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\textbf{\ 100,0\%}}}}} \\
+
+\ascline{1pt}{000000}{1-5}
+
+
+
+\multicolumn{1}{>{\raggedright}m{\dimexpr 0.75in+0\tabcolsep}}{} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Unidades\ agregadas}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\textit{0,000}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{595959}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{(0,000/0,000)}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\ \ -0,1\%}}}} \\
 
 
 
 
 
-\multicolumn{1}{>{\raggedright}m{\dimexpr 0.75in+0\tabcolsep}}{} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Unidades\ removidas}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\textit{0,000}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{595959}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{(0.000/0.000)}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\ \ \ 0.0\%}}}} \\
+\multicolumn{1}{>{\raggedright}m{\dimexpr 0.75in+0\tabcolsep}}{} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Unidades\ removidas}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\textit{0,000}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{595959}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{(0,000/0,000)}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\ \ \ 0,0\%}}}} \\
 
 
 
 
 
-\multicolumn{1}{>{\raggedright}m{\dimexpr 0.75in+0\tabcolsep}}{} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Marginal\ de\ Grupos\ Educativos}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\textit{-0,012}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{595959}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{(-0.013/-0.011)}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\ \ 13.1\%}}}} \\
+\multicolumn{1}{>{\raggedright}m{\dimexpr 0.75in+0\tabcolsep}}{} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Marginal\ de\ Grupos\ Educativos}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\textit{-0,012}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{595959}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{(-0,013/-0,011)}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\ \ 13,1\%}}}} \\
 
 
 
 
 
-\multicolumn{1}{>{\raggedright}m{\dimexpr 0.75in+0\tabcolsep}}{} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Marginal\ de\ Unidades}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\textit{0,000}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{595959}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{(0.000/0.000)}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\ \ \ 0.0\%}}}} \\
+\multicolumn{1}{>{\raggedright}m{\dimexpr 0.75in+0\tabcolsep}}{} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Marginal\ de\ Unidades}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\textit{0,000}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{595959}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{(0,000/0,000)}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\ \ \ 0,0\%}}}} \\
 
 
 
 
 
-\multicolumn{1}{>{\raggedright}m{\dimexpr 0.75in+0\tabcolsep}}{\multirow[c]{-5}{*}{\parbox{0.75in}{\raggedright \textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Descomposición}}}}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Segregación\ estructural}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\textit{-0,080}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{595959}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{(-0.081/-0.078)}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\ \ 87.0\%}}}} \\
+\multicolumn{1}{>{\raggedright}m{\dimexpr 0.75in+0\tabcolsep}}{\multirow[c]{-5}{*}{\parbox{0.75in}{\raggedright \textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Descomposición}}}}}} & \multicolumn{1}{>{\raggedright}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Segregación\ estructural}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\textit{-0,080}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{595959}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{(-0,081/-0,078)}}}} & \multicolumn{1}{>{\raggedleft}m{\dimexpr 0.75in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\ \ 87,0\%}}}} \\
 
 \ascline{1,5pt}{666666}{1-5}
 
@@ -7097,225 +6915,56 @@ la segregación como dimensión de la estratificación social.
 
 \chapter{Índices de segregación residencial}\label{appendixA}
 
-\global\setlength{\Oldarrayrulewidth}{\arrayrulewidth}
-
-\global\setlength{\Oldtabcolsep}{\tabcolsep}
-
-\setlength{\tabcolsep}{2pt}
-
-\renewcommand*{\arraystretch}{1.5}
-
-
-
-\providecommand{\ascline}[3]{\noalign{\global\arrayrulewidth #1}\arrayrulecolor[HTML]{#2}\cline{#3}}
-
-\begin{longtable}[c]{|p{1.97in}|p{0.59in}|p{0.59in}|p{0.59in}}
-
-\caption{Índices\ de\ segregación\ residencial}\label{tab:app1-tab1}\\
-
-\ascline{1,5pt}{666666}{1-4}
-
-\multicolumn{1}{>{\raggedright}m{\dimexpr 1.97in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Indice}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{AMBA}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{CABA}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{PBA}}}} \\
-
-\ascline{1,5pt}{666666}{1-4}\endfirsthead \caption[]{Índices\ de\ segregación\ residencial}\label{tab:app1-tab1}\\
-
-\ascline{1,5pt}{666666}{1-4}
-
-\multicolumn{1}{>{\raggedright}m{\dimexpr 1.97in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Indice}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{AMBA}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{CABA}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{PBA}}}} \\
-
-\ascline{1,5pt}{666666}{1-4}\endhead
-
-
-
-\multicolumn{1}{>{\raggedright}m{\dimexpr 1.97in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Dissimilarity\ Primary\ and\ Higher\ education\ (}}}\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{$D_{pri;hig}$}}}\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{)}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0.5733}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0.3750}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0.5250}}}} \\
-
-
-
-
-
-\multicolumn{1}{>{\raggedright}m{\dimexpr 1.97in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Multi-group\ dissimilarity\ (}}}\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{$D^{*}$}}}\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{)}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0.3270}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0.2039}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0.2891}}}} \\
-
-
-
-
-
-\multicolumn{1}{>{\raggedright}m{\dimexpr 1.97in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Mutual\ Information\ Index\ (}}}\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{$M$}}}\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{)}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0.1443}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0.0745}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0.1087}}}} \\
-
-
-
-
-
-\multicolumn{1}{>{\raggedright}m{\dimexpr 1.97in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Segregation:\ Primary\ (}}}\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{$IS_{pri}$}}}\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{)}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0.3999}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0.2881}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0.3296}}}} \\
-
-
-
-
-
-\multicolumn{1}{>{\raggedright}m{\dimexpr 1.97in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Segregation:\ Secondary\ (}}}\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{$IS_{sec}$}}}\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{)}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0.1515}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0.0892}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0.1529}}}} \\
-
-
-
-
-
-\multicolumn{1}{>{\raggedright}m{\dimexpr 1.97in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Segregation:\ Higher\ education\ (}}}\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{$IS_{sup}$}}}\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{)}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0.4556}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0.2558}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0.4429}}}} \\
-
-
-
-
-
-\multicolumn{1}{>{\raggedright}m{\dimexpr 1.97in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Normalized\ Isolation:\ Primary\ (}}}\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{$ETA_{pri}^2$}}}\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{)}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0.2045}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0.1099}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0.1519}}}} \\
-
-
-
-
-
-\multicolumn{1}{>{\raggedright}m{\dimexpr 1.97in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Normalized\ Isolation:\ Secondary\ (}}}\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{$ETA_{sec}^2$}}}\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{)}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0.0293}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0.0126}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0.0285}}}} \\
-
-
-
-
-
-\multicolumn{1}{>{\raggedright}m{\dimexpr 1.97in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Normalized\ Isolation:\ Higher\ education\ (}}}\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{$ETA_{sup}^2$}}}\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{)}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0.1891}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0.0959}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0.1670}}}} \\
-
-
-
-
-
-\multicolumn{1}{>{\raggedright}m{\dimexpr 1.97in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Multi-group\ normalized\ exposure\ (}}}\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{$P^{*}$}}}\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{)}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0.1427}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0.0665}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.59in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0.1154}}}} \\
-
-\ascline{1,5pt}{666666}{1-4}
-
-
-
-\end{longtable}
-
-
-
-\arrayrulecolor[HTML]{000000}
-
-\global\setlength{\arrayrulewidth}{\Oldarrayrulewidth}
-
-\global\setlength{\tabcolsep}{\Oldtabcolsep}
-
-\renewcommand*{\arraystretch}{1}
-
-\begin{landscape}
-
-\global\setlength{\Oldarrayrulewidth}{\arrayrulewidth}
-
-\global\setlength{\Oldtabcolsep}{\tabcolsep}
-
-\setlength{\tabcolsep}{2pt}
-
-\renewcommand*{\arraystretch}{1.5}
-
-
-
-\providecommand{\ascline}[3]{\noalign{\global\arrayrulewidth #1}\arrayrulecolor[HTML]{#2}\cline{#3}}
-
-\begin{longtable}[c]{|p{1.77in}|p{0.87in}|p{0.87in}|p{0.87in}|p{0.87in}|p{0.87in}}
-
-\caption{Descripción\ de\ Entornos\ urbano}\label{tab:app1-tab2}\\
-
-\ascline{1,5pt}{666666}{1-6}
-
-\multicolumn{1}{>{\raggedright}m{\dimexpr 1.77in+0\tabcolsep}}{} & \multicolumn{1}{>{\centering}m{\dimexpr 0.87in+0\tabcolsep}}{} & \multicolumn{3}{>{\centering}m{\dimexpr 2.6in+4\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Composición\ interna\ (\%)}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.87in+0\tabcolsep}}{} \\
-
-\ascline{1,5pt}{666666}{3-5}
-
-
-
-\multicolumn{1}{>{\raggedright}m{\dimexpr 1.77in+0\tabcolsep}}{\multirow[c]{-2}{*}{\parbox{1.77in}{\raggedright \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Entorno\ urbano}}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.87in+0\tabcolsep}}{\multirow[c]{-2}{*}{\parbox{0.87in}{\centering \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Segregación\ local\ (M)}}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.87in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Hasta\ primario\ completo}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.87in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Secundario\ completo}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.87in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Superior\ completo}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.87in+0\tabcolsep}}{\multirow[c]{-2}{*}{\parbox{0.87in}{\centering \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Porcentaje\ del\ total\ AMBA}}}}}} \\
-
-\ascline{1,5pt}{666666}{1-6}\endfirsthead \caption[]{Descripción\ de\ Entornos\ urbano}\label{tab:app1-tab2}\\
-
-\ascline{1,5pt}{666666}{1-6}
-
-\multicolumn{1}{>{\raggedright}m{\dimexpr 1.77in+0\tabcolsep}}{} & \multicolumn{1}{>{\centering}m{\dimexpr 0.87in+0\tabcolsep}}{} & \multicolumn{3}{>{\centering}m{\dimexpr 2.6in+4\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Composición\ interna\ (\%)}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.87in+0\tabcolsep}}{} \\
-
-\ascline{1,5pt}{666666}{3-5}
-
-
-
-\multicolumn{1}{>{\raggedright}m{\dimexpr 1.77in+0\tabcolsep}}{\multirow[c]{-2}{*}{\parbox{1.77in}{\raggedright \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Entorno\ urbano}}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.87in+0\tabcolsep}}{\multirow[c]{-2}{*}{\parbox{0.87in}{\centering \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Segregación\ local\ (M)}}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.87in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Hasta\ primario\ completo}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.87in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Secundario\ completo}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.87in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Superior\ completo}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.87in+0\tabcolsep}}{\multirow[c]{-2}{*}{\parbox{0.87in}{\centering \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Porcentaje\ del\ total\ AMBA}}}}}} \\
-
-\ascline{1,5pt}{666666}{1-6}\endhead
-
-
-
-\multicolumn{1}{>{\raggedright}p{\dimexpr 1.77in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Ciudad\ colonial}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.87in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{0.039}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.87in+0\tabcolsep}}{\textcolor[HTML]{BEBEBE}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{20.8\%}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.87in+0\tabcolsep}}{\textcolor[HTML]{BEBEBE}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{42.4\%}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.87in+0\tabcolsep}}{\textcolor[HTML]{BEBEBE}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{36.8\%}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.87in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{2.0\%}}}} \\
-
-
-
-
-
-\multicolumn{1}{>{\raggedright}p{\dimexpr 1.77in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Expansión\ de\ la\ ciudad\ colonial}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.87in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{0.046}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.87in+0\tabcolsep}}{\textcolor[HTML]{BEBEBE}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{18.5\%}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.87in+0\tabcolsep}}{\textcolor[HTML]{BEBEBE}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{39.1\%}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.87in+0\tabcolsep}}{\textcolor[HTML]{BEBEBE}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{42.4\%}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.87in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{15.4\%}}}} \\
-
-
-
-
-
-\multicolumn{1}{>{\raggedright}p{\dimexpr 1.77in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Cascos\ conurbanizados}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.87in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{0.064}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.87in+0\tabcolsep}}{\textcolor[HTML]{BEBEBE}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{29.8\%}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.87in+0\tabcolsep}}{\textcolor[HTML]{BEBEBE}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{37.9\%}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.87in+0\tabcolsep}}{\textcolor[HTML]{BEBEBE}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{32.3\%}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.87in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{3.6\%}}}} \\
-
-
-
-
-
-\multicolumn{1}{>{\raggedright}p{\dimexpr 1.77in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Vivienda\ social}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.87in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{0.085}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.87in+0\tabcolsep}}{\textcolor[HTML]{BEBEBE}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{51.2\%}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.87in+0\tabcolsep}}{\textcolor[HTML]{BEBEBE}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{35.6\%}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.87in+0\tabcolsep}}{\textcolor[HTML]{BEBEBE}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{13.3\%}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.87in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{3.9\%}}}} \\
-
-
-
-
-
-\multicolumn{1}{>{\raggedright}p{\dimexpr 1.77in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Urbanización\ cerrada}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.87in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{0.103}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.87in+0\tabcolsep}}{\textcolor[HTML]{BEBEBE}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{17.3\%}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.87in+0\tabcolsep}}{\textcolor[HTML]{BEBEBE}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{24.9\%}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.87in+0\tabcolsep}}{\textcolor[HTML]{BEBEBE}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{57.8\%}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.87in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{1.0\%}}}} \\
-
-
-
-
-
-\multicolumn{1}{>{\raggedright}p{\dimexpr 1.77in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{Urbanización\ de\ origen\ informal}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.87in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{0.022}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.87in+0\tabcolsep}}{\textcolor[HTML]{BEBEBE}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{73.5\%}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.87in+0\tabcolsep}}{\textcolor[HTML]{BEBEBE}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{24.2\%}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.87in+0\tabcolsep}}{\textcolor[HTML]{BEBEBE}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{2.2\%}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.87in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{5.5\%}}}} \\
-
-
-
-
-
-\multicolumn{1}{>{\raggedright}p{\dimexpr 1.77in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{NSE\ Alto}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.87in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{0.022}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.87in+0\tabcolsep}}{\textcolor[HTML]{BEBEBE}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{16.6\%}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.87in+0\tabcolsep}}{\textcolor[HTML]{BEBEBE}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{36.0\%}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.87in+0\tabcolsep}}{\textcolor[HTML]{BEBEBE}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{47.3\%}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.87in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{5.9\%}}}} \\
-
-
-
-
-
-\multicolumn{1}{>{\raggedright}p{\dimexpr 1.77in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{NSE\ Medio}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.87in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{0.038}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.87in+0\tabcolsep}}{\textcolor[HTML]{BEBEBE}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{39.6\%}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.87in+0\tabcolsep}}{\textcolor[HTML]{BEBEBE}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{38.4\%}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.87in+0\tabcolsep}}{\textcolor[HTML]{BEBEBE}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{21.9\%}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.87in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{26.4\%}}}} \\
-
-
-
-
-
-\multicolumn{1}{>{\raggedright}p{\dimexpr 1.77in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{NSE\ Bajo}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.87in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{0.031}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.87in+0\tabcolsep}}{\textcolor[HTML]{BEBEBE}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{66.0\%}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.87in+0\tabcolsep}}{\textcolor[HTML]{BEBEBE}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{27.5\%}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.87in+0\tabcolsep}}{\textcolor[HTML]{BEBEBE}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{6.5\%}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.87in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{36.2\%}}}} \\
-
-\ascline{1pt}{666666}{1-6}
-
-
-
-\multicolumn{1}{>{\raggedright}p{\dimexpr 1.77in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{\textbf{TOTAL}}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.87in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{\textbf{0.144}}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.87in+0\tabcolsep}}{\textcolor[HTML]{BEBEBE}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{\textbf{45.9\%}}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.87in+0\tabcolsep}}{\textcolor[HTML]{BEBEBE}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{\textbf{33.5\%}}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.87in+0\tabcolsep}}{\textcolor[HTML]{BEBEBE}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{\textbf{20.6\%}}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.87in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{\global\setmainfont{Arial}{\textbf{430\ 310\ 400}}}}} \\
-
-\ascline{1,5pt}{666666}{1-6}
-
-
-
-\end{longtable}
-
-
-
-\arrayrulecolor[HTML]{000000}
-
-\global\setlength{\arrayrulewidth}{\Oldarrayrulewidth}
-
-\global\setlength{\tabcolsep}{\Oldtabcolsep}
-
-\renewcommand*{\arraystretch}{1}
-
-\end{landscape}
+\begin{table}
+\centering
+\caption{\label{tab:app1-tab1}Índices de segregación residencial}
+\centering
+\fontsize{8}{10}\selectfont
+\begin{tabular}[t]{lrrr}
+\toprule
+\textbf{Índice} & \textbf{AMBA} & \textbf{CABA} & \textbf{PBA}\\
+\midrule
+Dissimilarity Primary and Higher education ($D_{pri;hig}$) & 0.573 & 0.375 & 0.525\\
+Multi-group dissimilarity ($D^{*}$) & 0.327 & 0.204 & 0.289\\
+Mutual Information Index ($M$) & 0.144 & 0.074 & 0.109\\
+Segregation: Primary ($IS_{pri}$) & 0.400 & 0.288 & 0.330\\
+Segregation: Secondary ($IS_{sec}$) & 0.152 & 0.089 & 0.153\\
+\addlinespace
+Segregation: Higher education ($IS_{sup}$) & 0.456 & 0.256 & 0.443\\
+Normalized Isolation: Primary ($ETA_{pri}^2$) & 0.204 & 0.110 & 0.152\\
+Normalized Isolation: Secondary ($ETA_{sec}^2$) & 0.029 & 0.013 & 0.028\\
+Normalized Isolation: Higher education ($ETA_{sup}^2$) & 0.189 & 0.096 & 0.167\\
+Multi-group normalized exposure ($P^{*}$) & 0.143 & 0.066 & 0.115\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}
+\centering
+\caption{\label{tab:app1-tab2}Descripción de Entornos urbano}
+\centering
+\fontsize{8}{10}\selectfont
+\begin{tabular}[t]{>{\raggedright\arraybackslash}p{2.7cm}>{\centering\arraybackslash}p{1.5cm}>{\centering\arraybackslash}p{1.5cm}>{\centering\arraybackslash}p{1.5cm}>{\centering\arraybackslash}p{1.5cm}>{\raggedleft\arraybackslash}p{1.5cm}}
+\toprule
+\multicolumn{2}{c}{\textbf{ }} & \multicolumn{3}{c}{\textbf{Composición interna}} & \multicolumn{1}{c}{\textbf{ }} \\
+\cmidrule(l{3pt}r{3pt}){3-5}
+\textbf{Entorno urbano} & \textbf{Segregación local (M)} & \textbf{Hasta primario} & \textbf{Secundario completo} & \textbf{Superior completo} & \textbf{Total AMBA}\\
+\midrule
+Ciudad colonial & 0.039 & 20,8\% & 42,4\% & 36,8\% & 2,0\%\\
+Expansión de la ciudad colonial & 0.046 & 18,5\% & 39,1\% & 42,4\% & 15,4\%\\
+Cascos conurbanizados & 0.064 & 29,8\% & 37,9\% & 32,3\% & 3,6\%\\
+Vivienda social & 0.085 & 51,2\% & 35,6\% & 13,3\% & 3,9\%\\
+Urbanización cerrada & 0.103 & 17,3\% & 24,9\% & 57,8\% & 1,0\%\\
+\addlinespace
+Urbanización de origen informal & 0.022 & 73,5\% & 24,2\% & 2,2\% & 5,5\%\\
+NSE Alto & 0.022 & 16,6\% & 36,0\% & 47,3\% & 5,9\%\\
+NSE Medio & 0.038 & 39,6\% & 38,4\% & 21,9\% & 26,4\%\\
+NSE Bajo & 0.031 & 66,0\% & 27,5\% & 6,5\% & 36,2\%\\
+\midrule
+\textbf{TOTAL} & \textbf{0.144} & \textbf{45,9\%} & \textbf{33,5\%} & \textbf{20,6\%} & \textbf{430 310 400}\\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \chapter{Relación matemática entre inercia y segregación local (Índice de Información mutua)}\label{appendixB}
 
@@ -7832,119 +7481,31 @@ En base a la matriz de asignación \passthrough{\lstinline!A!} que relaciona las
 
 \chapter{Índices de segregación escolar (modelo y real)}\label{appendixH}
 
-\global\setlength{\Oldarrayrulewidth}{\arrayrulewidth}
-
-\global\setlength{\Oldtabcolsep}{\tabcolsep}
-
-\setlength{\tabcolsep}{2pt}
-
-\renewcommand*{\arraystretch}{1.5}
-
-
-
-\providecommand{\ascline}[3]{\noalign{\global\arrayrulewidth #1}\arrayrulecolor[HTML]{#2}\cline{#3}}
-
-\begin{longtable}[c]{|p{2.07in}|p{0.49in}|p{0.49in}|p{0.10in}|p{0.49in}|p{0.49in}}
-
-\caption{Indicadores\ de\ segregación\ escolar\ según\ valores\ observados\ y\ modelado}\label{tab:appH-segreg-index}\\
-
-\ascline{1,5pt}{666666}{1-6}
-
-\multicolumn{1}{>{\raggedright}m{\dimexpr 2.07in+0\tabcolsep}}{} & \multicolumn{2}{>{\centering}m{\dimexpr 0.98in+2\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Empírico}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.1in+0\tabcolsep}}{} & \multicolumn{2}{>{\centering}m{\dimexpr 0.98in+2\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Modelo}}}} \\
-
-\ascline{1,5pt}{666666}{2-3}\ascline{1,5pt}{666666}{5-6}
-
-
-
-\multicolumn{1}{>{\raggedright}m{\dimexpr 2.07in+0\tabcolsep}}{\multirow[c]{-2}{*}{\parbox{2.07in}{\raggedright \textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Índice\ de\ Segregación}}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Residencial}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Escolar}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.1in+0\tabcolsep}}{\multirow[c]{-2}{*}{\parbox{0.1in}{\centering \textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\ }}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Asignado}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\%\ Explicado}}}} \\
-
-\ascline{1,5pt}{666666}{1-6}\endfirsthead \caption[]{Indicadores\ de\ segregación\ escolar\ según\ valores\ observados\ y\ modelado}\label{tab:appH-segreg-index}\\
-
-\ascline{1,5pt}{666666}{1-6}
-
-\multicolumn{1}{>{\raggedright}m{\dimexpr 2.07in+0\tabcolsep}}{} & \multicolumn{2}{>{\centering}m{\dimexpr 0.98in+2\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Empírico}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.1in+0\tabcolsep}}{} & \multicolumn{2}{>{\centering}m{\dimexpr 0.98in+2\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Modelo}}}} \\
-
-\ascline{1,5pt}{666666}{2-3}\ascline{1,5pt}{666666}{5-6}
-
-
-
-\multicolumn{1}{>{\raggedright}m{\dimexpr 2.07in+0\tabcolsep}}{\multirow[c]{-2}{*}{\parbox{2.07in}{\raggedright \textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Índice\ de\ Segregación}}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Residencial}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Escolar}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.1in+0\tabcolsep}}{\multirow[c]{-2}{*}{\parbox{0.1in}{\centering \textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\ }}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Asignado}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{\%\ Explicado}}}} \\
-
-\ascline{1,5pt}{666666}{1-6}\endhead
-
-
-
-\multicolumn{1}{>{\raggedright}m{\dimexpr 2.07in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Dissimilarity\ Primary\ and\ Higher\ education\ (}}}\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{$D_{pri;hig}$}}}\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{)}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0,573}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0,543}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0,476}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{87.6\%}}}} \\
-
-
-
-
-
-\multicolumn{1}{>{\raggedright}m{\dimexpr 2.07in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Multi-group\ dissimilarity\ (}}}\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{$D^{*}$}}}\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{)}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0,327}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0,336}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0,254}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{75.7\%}}}} \\
-
-
-
-
-
-\multicolumn{1}{>{\raggedright}m{\dimexpr 2.07in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Mutual\ Information\ Index\ (}}}\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{$M$}}}\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{)}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0,144}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0,179}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0,087}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{48.8\%}}}} \\
-
-
-
-
-
-\multicolumn{1}{>{\raggedright}m{\dimexpr 2.07in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Segregation:\ Primary\ (}}}\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{$IS_{pri}$}}}\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{)}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0,400}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0,384}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0,289}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{75.3\%}}}} \\
-
-
-
-
-
-\multicolumn{1}{>{\raggedright}m{\dimexpr 2.07in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Segregation:\ Secondary\ (}}}\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{$IS_{sec}$}}}\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{)}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0,151}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0,191}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0,127}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{66.3\%}}}} \\
-
-
-
-
-
-\multicolumn{1}{>{\raggedright}m{\dimexpr 2.07in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Segregation:\ Higher\ education\ (}}}\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{$IS_{sup}$}}}\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{)}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0,456}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0,439}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0,407}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{92.7\%}}}} \\
-
-
-
-
-
-\multicolumn{1}{>{\raggedright}m{\dimexpr 2.07in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Normalized\ Isolation:\ Primary\ (}}}\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{$ETA_{pri}^2$}}}\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{)}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0,204}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0,182}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0,125}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{68.7\%}}}} \\
-
-
-
-
-
-\multicolumn{1}{>{\raggedright}m{\dimexpr 2.07in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Normalized\ Isolation:\ Secondary\ (}}}\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{$ETA_{sec}^2$}}}\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{)}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0,029}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0,058}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0,019}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{33.9\%}}}} \\
-
-
-
-
-
-\multicolumn{1}{>{\raggedright}m{\dimexpr 2.07in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Normalized\ Isolation:\ Higher\ education\ (}}}\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{$ETA_{sup}^2$}}}\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{)}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0,189}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0,263}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0,139}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{52.7\%}}}} \\
-
-
-
-
-
-\multicolumn{1}{>{\raggedright}m{\dimexpr 2.07in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{Multi-group\ normalized\ exposure\ (}}}\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{$P^{*}$}}}\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{)}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0,143}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0,165}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.1in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{0,094}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.49in+0\tabcolsep}}{\textcolor[HTML]{000000}{\fontsize{7}{7}\selectfont{\global\setmainfont{Alegreya Sans}{57.4\%}}}} \\
-
-\ascline{1,5pt}{666666}{1-6}
-
-
-
-\end{longtable}
-
-
-
-\arrayrulecolor[HTML]{000000}
-
-\global\setlength{\arrayrulewidth}{\Oldarrayrulewidth}
-
-\global\setlength{\tabcolsep}{\Oldtabcolsep}
-
-\renewcommand*{\arraystretch}{1}
+\begin{table}
+\centering
+\caption{\label{tab:appH-TAB1}Indicadores de segregación escolar según valores observados y modelado}
+\centering
+\fontsize{8}{10}\selectfont
+\begin{tabular}[t]{>{\raggedright\arraybackslash}p{5.2cm}>{\centering\arraybackslash}p{1.4cm}>{\centering\arraybackslash}p{1.4cm}>{\centering\arraybackslash}p{0.1cm}>{\centering\arraybackslash}p{1.4cm}>{\centering\arraybackslash}p{1.4cm}}
+\toprule
+\multicolumn{1}{c}{\textbf{ }} & \multicolumn{2}{c}{\textbf{Empírico}} & \multicolumn{1}{c}{\textbf{ }} & \multicolumn{2}{c}{\textbf{Modelo}} \\
+\cmidrule(l{3pt}r{3pt}){2-3} \cmidrule(l{3pt}r{3pt}){5-6}
+\textbf{Índice de Segregación} & \textbf{Residencial} & \textbf{Escolar} & \textbf{ } & \textbf{Asignado} & \textbf{\% Explicado}\\
+\midrule
+Dissimilarity Primary and Higher education ($D_{pri;hig}$) & 0.573 & 0.543 &  & 0.476 & 87.6\%\\
+Multi-group dissimilarity ($D^{*}$) & 0.327 & 0.336 &  & 0.254 & 75.7\%\\
+Mutual Information Index ($M$) & 0.144 & 0.179 &  & 0.087 & 48.8\%\\
+Segregation: Primary ($IS_{pri}$) & 0.400 & 0.384 &  & 0.290 & 75.3\%\\
+Segregation: Secondary ($IS_{sec}$) & 0.152 & 0.191 &  & 0.127 & 66.3\%\\
+\addlinespace
+Segregation: Higher education ($IS_{sup}$) & 0.456 & 0.439 &  & 0.407 & 92.7\%\\
+Normalized Isolation: Primary ($ETA_{pri}^2$) & 0.204 & 0.182 &  & 0.125 & 68.7\%\\
+Normalized Isolation: Secondary ($ETA_{sec}^2$) & 0.029 & 0.058 &  & 0.020 & 33.9\%\\
+Normalized Isolation: Higher education ($ETA_{sup}^2$) & 0.189 & 0.263 &  & 0.139 & 52.7\%\\
+Multi-group normalized exposure ($P^{*}$) & 0.143 & 0.165 &  & 0.094 & 57.4\%\\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \backmatter
 
@@ -8957,7 +8518,7 @@ Taylor, C. y Gorard, S. (2001). The role of residence in school segregation: Pla
 Taylor, K. y Frankenberg, E. (2021). Student Assignment Policies and Racial and Income Segregation of Schools, School Attendance Zones, and Neighborhoods. \emph{Educational Administration Quarterly}, \emph{57}(5), 747-775. \url{https://doi.org/10.1177/0013161X211024720}
 
 \bibitem[\citeproctext]{ref-Burgess1926}
-\emph{The Urban Community}. (1926). {[}Computer software{]}. The University of Chicago Press. \url{https://ia800909.us.archive.org/19/items/urbancommunityse00burgrich/urbancommunityse00burgrich.pdf}
+\emph{The Urban Community}. (1926). The University of Chicago Press. \url{https://ia800909.us.archive.org/19/items/urbancommunityse00burgrich/urbancommunityse00burgrich.pdf}
 
 \bibitem[\citeproctext]{ref-Theil1967}
 Theil, H. (1967). \emph{Economics and Information Theory}. North Holland.

@@ -44,6 +44,19 @@
 \usepackage{fancyhdr}
 \pagestyle{plain}
 
+% Definir título de tablas/figuras
+\addto\captionsspanish{\renewcommand{\tablename}{Tabla}}
+
+% Agregado de \source y \notes para titulos secundarios de las tablas y figuras
+\usepackage{caption}
+\captionsetup{format=plain,labelsep=period,singlelinecheck=false,justification=raggedright,
+              font={small,singlespacing,sf},labelfont={sc,bf},width=\textwidth}
+\newcommand{\source}[1]{\caption*{\footnotesize{\textit{Fuente:} {#1}}}}
+\newcommand{\notes}[1]{\caption*{\footnotesize{\textit{Nota:} {#1}}}}
+
+%%%% ENCABEZADO DE PÁGINA
+% Si utiliza clases de Koma-script debe utilizar el paquete 'scrlayer-scrpage'
+% Si utiliza las clases estándar debe usar el paquete 'fancyhdr'
 \fancyhead[LE, RE, LO, RO]{}
 % \fancyhead[LE]{Pablo Serrati - Tesis de Maestría}
 % \fancyhead[RO]{\leftmark}

@@ -4,6 +4,8 @@ cli::cli_h2(col_blue("Análisis de Segregación Residencial (SEG)"))
 
 RES <- list()
 
+replic <- 100
+
 # Cargar datos --------------------------------------
 
 if(!exists("CARTO", inherits = F)){
@@ -414,6 +416,14 @@ if(!exists("AUX", inherits = F)){
 
   cli::cli_li(col_yellow("Table 4.1: Segregación residencial explicada x nivel de análisis"))
 
+  tit <- paste0("Segregación residencial explicada por ",
+                "diferencias dentro/entre diferentes niveles ",
+                "de análisis (Jurisdicciones, Departamentos y ",
+                "Entornos urbanos)")
+
+  foot <- paste("Los valores tienen corrección de sesgo.",
+                replic, "replicaciones Bootstrap.")
+
   RES$TAB1 <- RES$SEG2[-1] |>
     as_tibble(rownames = "TH") |>
     mutate(TH = str_replace(TH, "_", " ")) |>
@@ -421,10 +431,7 @@ if(!exists("AUX", inherits = F)){
     flextable::set_header_labels(TH = " ",
                                  WITHIN = "Dentro",
                                  BETWEEN = "Entre") |>
-    flextable::set_caption(caption = paste0("Segregación residencial explicada por ",
-                                            "diferencias dentro/entre diferentes niveles ",
-                                            "de análisis (Jurisdicciones, Departamentos y ",
-                                            "Entornos urbanos)"),
+    flextable::set_caption(caption = tit,
                            autonum = officer::run_autonum(seq_id = "tab",
                                                           bkm = "segres-tab1",
                                                  bkm_all = T))  |>
@@ -432,16 +439,30 @@ if(!exists("AUX", inherits = F)){
     flextable::align(j = 1, align ='left', part = 'all') %>%
     flextable::colformat_double(digits = 1, big.mark = " ",
                                 decimal.mark = ",") %>%
-    flextable::add_footer_lines(values = as_paragraph(
-      paste0("Los valores tienen corrección de sesgo. ",# AUX$replic,
-             " Bootstrap replicaciones."))) |>
-    flextable::font(fontname='Alegreya Sans', part = "all") |>
-    flextable::fontsize(size = 7, part = "all") |>
+    flextable::add_footer_lines(values = as_paragraph(foot)) |>
     flextable::autofit(part = "all")
+
+  RES$TAB1_tex <- RES$SEG2[-1] |>
+    as_tibble(rownames = "TH") |>
+    mutate(TH = str_replace(TH, "_", " ")) |>
+    kbl(caption = tit,
+        format = "latex", label = "segres-tab1", booktabs = TRUE,
+        col.names = c(" ", "Dentro", "Entre"), align = c("l", "c", "c"),
+        digits = 1, format.args = list(big.mark = " ")) |>
+    kable_classic(full_width = F, font_size = 8, html_font = "Alegreya Sans") |>
+    row_spec(row = 0, bold = TRUE) |>
+    kableExtra::column_spec(1, width = "3cm") |>
+    kableExtra::column_spec(2:3, width = "1.2cm") |>
+    PhD_add_auxcaption(value = foot, type = "notes")
+
+  rm(tit, foot)
 
 ### ╠ TAB 4.2 ----------------------
 
   cli::cli_li(col_yellow("Table 4.2: Segregación residencial explicada x nivel educativo"))
+
+  tit <- "Segregación residencial explicada por cada nivel educativo"
+  foot <- "Los porcentajes se calcularon sin aplicar corrección de sesgo."
 
   RES$TAB2 <- RES$SEG3[ , c("name", "ls", "p")] |>
     mutate(name = factor(name, levels = c("PRI", "SEC", "SUP"),
@@ -451,35 +472,48 @@ if(!exists("AUX", inherits = F)){
     flextable::set_header_labels(name = "Nivel",
                                  ls = "Segregación local",
                                  p = "Porcentaje") |>
-    flextable::set_caption(caption = "Segregación residencial explicada por cada nivel educativo",
+    flextable::set_caption(caption = tit,
                            autonum = officer::run_autonum(seq_id = "tab",
                                                           bkm = "segres-tab2",
                                                           bkm_all = T))  |>
     flextable::align(align ='center', part = 'all') |>
     flextable::align(j = 1, align ='left', part = 'all') |>
     flextable::colformat_double(digits = 3) |>
-    flextable::add_footer_lines(values = flextable::as_paragraph(
-      "Los porcentajes se calcularon sin aplicar corrección de sesgo. ")) |>
-      # paste0("Los valores tienen corrección de sesgo. ", AUX$replic,
-      #        " Bootstrap replicaciones."))) |>
-    flextable::font(fontname='Alegreya Sans', part = "all") |>
-    flextable::fontsize(size = 7, part = "all") |>
+    flextable::add_footer_lines(values = flextable::as_paragraph(foot)) |>
     flextable::autofit(part = "all")
+
+  RES$TAB2_tex <- RES$SEG3[ , c("name", "ls", "p")] |>
+    mutate(name = factor(name, levels = c("PRI", "SEC", "SUP"),
+                         labels = c("Primario", "Secundario", "Superior")),
+           p = paste0(round(p*100,1), "%")) |>
+    kbl(caption = "Segregación residencial explicada por cada nivel educativo",
+        format = "latex", label = "segres-tab2", booktabs = TRUE,
+        col.names = c("Nivel", "Segregación local", "Porcentaje"),
+        align = c("l", "c", "c"), digits = 3,
+        format.args = list(big.mark = " ")) |>
+    kable_classic(full_width = F, font_size = 8, html_font = "Alegreya Sans") |>
+    row_spec(row = 0, bold = TRUE) |>
+    kableExtra::column_spec(1, width = "3cm") |>
+    kableExtra::column_spec(2, width = "3cm") |>
+    kableExtra::column_spec(3, width = "2.5cm") |>
+    PhD_add_auxcaption(value = foot, type = "notes")
+
+  rm(tit, foot)
 
 ### ╠ TAB 4.3 ----------------------
 
   cli::cli_li(col_yellow("Table 4.3: Descripción de patrones"))
 
+  tit <- paste("Descripción de las principales",
+               "características de los patrones de",
+               "segregación")
+
   RES$TAB3 <- readxl::read_xlsx(fs::path("figures", "patrones.xlsx")) |>
     flextable::flextable() |>
-    flextable::set_caption(caption = paste("Descripción de las principales",
-                                           "características de los patrones de",
-                                           "segregación"),
+    flextable::set_caption(caption = tit,
                            autonum = officer::run_autonum(seq_id = "tab",
                                                           bkm = "segres-tab3",
                                                           bkm_all = T))  |>
-    flextable::font(fontname='Alegreya Sans', part = "all") |>
-    flextable::fontsize(size = 7, part = "all") |>
     flextable::align(align ='left', part = 'all') |>
     flextable::valign(valign = "top", part = "all") |>
     flextable::width(j = 1, 2.3, unit = "cm") |>
@@ -488,15 +522,30 @@ if(!exists("AUX", inherits = F)){
     flextable::width(j = 7, 4.6, unit = "cm") |>
     flextable::width(j = 8, 3.2, unit = "cm")
 
+  RES$TAB3_tex <- readxl::read_xlsx(fs::path("figures", "patrones.xlsx")) |>
+    kbl(caption = tit, label = "segres-tab3",  valign = "bottom",
+        booktabs = TRUE, format = "latex") |>
+    kable_classic(full_width = F, font_size = 8, html_font = "Alegreya Sans") |>
+    row_spec(row = 0, bold = TRUE) |>
+    kableExtra::column_spec(1, width = "2cm", latex_valign = "p") |>
+    kableExtra::column_spec(2, width = "2.1cm", latex_valign = "p") |>
+    kableExtra::column_spec(3:6, width = "1.5cm", latex_valign = "p") |>
+    kableExtra::column_spec(7, width = "4.1cm", latex_valign = "p") |>
+    kableExtra::column_spec(8, width = "3.2cm", latex_valign = "p")
+
+  rm(tit)
+
 ### ╠ TAB App A.1 --------------------------
 
-  cli::cli_li(col_yellow("Table App A: Índices de segregación"))
+  cli::cli_li(col_yellow("Table App A.1: Índices de segregación"))
+
+  tit <- "Índices de segregación residencial"
 
   RES$appA_TAB1 <- RES$SEG1 |>
     flextable() |>
     PhD_compose_eq() |>
     flextable::set_header_labels(Index = "Indice") |>
-    flextable::set_caption(caption = paste0("Índices de segregación residencial"),
+    flextable::set_caption(caption = tit,
                            autonum = officer::run_autonum(seq_id = "tab",
                                                           bkm = "app1-tab1",
                                                           bkm_all = T))  |>
@@ -504,14 +553,23 @@ if(!exists("AUX", inherits = F)){
                      na_str = "-", digits = 3) |>
     flextable::align(align ='center', part = 'all') |>
     flextable::align(j = 1, align ='left', part = 'all') |>
-    flextable::font(fontname='Alegreya Sans', part = "all") |>
-    flextable::fontsize(size = 7, part = "all") |>
     flextable::width(j = 1, 5, unit = "cm") |>
     flextable::width(j = 2:4, 1.5, unit = "cm")
 
+  RES$appA_TAB1_tex <- RES$SEG1 |>
+    kbl(caption = tit, label = "app1-tab1", digits = 3,
+        escape = FALSE, format = "latex", booktabs = TRUE,
+        col.names = c("Índice", "AMBA", "CABA", "PBA")) |>
+    kable_classic(full_width = FALSE, font_size = 8, html_font = "Alegreya Sans") |>
+    row_spec(row = 0, bold = TRUE)
+
+  rm(tit)
+
 ### ╚ TAB App A.2 --------------------------
 
-  cli::cli_li(col_yellow("Table App A: Descripción de Entornos urbano"))
+  cli::cli_li(col_yellow("Table App A.2: Descripción de Entornos urbano"))
+
+  tit <- "Descripción de Entornos urbano"
 
   RES$appA_TAB2 <- RES$SEG4 |>
     relocate(M, .after = TH) |>
@@ -531,7 +589,7 @@ if(!exists("AUX", inherits = F)){
                               "Porcentaje del total AMBA")) |>
     merge_h(part = "header") |>
     merge_v(part = "header") |>
-    flextable::set_caption(caption = paste0("Descripción de Entornos urbano"),
+    flextable::set_caption(caption = tit,
                            autonum = officer::run_autonum(seq_id = "tab",
                                                           bkm = "app1-tab2",
                                                           bkm_all = T))  |>
@@ -545,12 +603,44 @@ if(!exists("AUX", inherits = F)){
     flextable::align(align ='center', part = 'all') |>
     flextable::align(j = 1, align ='left', part = 'all') |>
     flextable::valign(valign = "top", part = "body") |>
-    flextable::font(fontname='Alegreya Sans', part = "all") |>
-    flextable::fontsize(size = 7, part = "all") |>
     flextable::width(j = 1, 4.5, unit = "cm") |>
     flextable::width(j = 2, 2.2, unit = "cm") |>
     flextable::width(j = 3:6, 2.2, unit = "cm")
 
+  RES$appA_TAB2_tex <- RES$SEG4 |>
+    relocate(M, .after = TH) |>
+    mutate(p = p * 100,
+           M = round(M, 3),
+           across(PRI:SUP,
+                  ~.x |>
+                    format(digits = 1, nsmall = 1, scientific = FALSE,
+                           big.mark = " ", decimal.mark = ",") |>
+                    paste0("%")),
+           p = ifelse(TH == "TOTAL",
+                      format(p, big.mark = " ", decimal.mark = ",",
+                             nsmall = 0),
+                      format(p, big.mark = " ", decimal.mark = ",",
+                             digits = 1, nsmall = 1) |> paste0("%"))
+           ) |>
+    kbl(caption = tit, label = "app1-tab2", booktabs = TRUE,
+        format = "latex", align = c("l", rep("c", 4), "r"),
+        col.names = c("Entorno urbano", "Segregación local (M)", "Hasta primario",
+                      paste(c("Secundario", "Superior"), "completo"),
+                      "Total AMBA"),
+        format.args = list(big.mark = " ") ) |>
+    kable_classic(full_width = F, font_size = 8, html_font = "Alegreya Sans") |>
+    row_spec(row = 0, bold = TRUE) |>
+    add_header_above(c(" " = 2, "Composición interna" = 3, " " = 1), bold = TRUE) |>
+    row_spec(9, hline_after = TRUE) |>
+    row_spec(10, bold = TRUE) |>
+    column_spec(1, width = "2.7cm") |>
+    column_spec(2:5, width = "1.4cm") |>
+    column_spec(2:6, width = "1.5cm")
+
+  rm(tit)
+
 # Guardar resultados ----------------------------------------------------
 
   usethis::use_data(RES, overwrite = TRUE)
+
+  rm(replic, RES, CARTO, AUX)
