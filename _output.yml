@@ -17,7 +17,7 @@ bookdown::gitbook:
 bookdown::pdf_book:
   includes:
     in_header: template/latex/preamble.tex
-    before_body: template/latex/abstract.tex
+    before_body: template/latex/before-body.tex
   template: template/latex/template.tex
   latex_engine: lualatex
   citation_package: default
