@@ -1,19 +1,43 @@
 % Paquetes
-\usepackage{setspace}
-\usepackage{booktabs}
-\usepackage{amsthm}
-\usepackage{fancyhdr}
-\usepackage{longtable}
-\usepackage{subfig}
-% nuevos
-\usepackage{float} % mejora la interfaz para objetos flotantes
+\IfPackageLoadedTF{booktabs}{}{\usepackage{booktabs}}
+\IfPackageLoadedTF{amsthm}{}{\usepackage{amsthm}}
+\IfPackageLoadedTF{longtable}{}{\usepackage{longtable}}
+\IfPackageLoadedTF{subfig}{}{\usepackage{subfig}}
+% Carga `setspace' para separación entre lineas (si no fue cargado)
+\IfPackageLoadedTF{setspace}{}{\usepackage{setspace}}
+% Carga `graphicx' si no fue cargado (dado que no se usa entorno pandoc para figures)
+\IfPackageLoadedTF{graphicx}{}{\usepackage{graphicx}}
+% Carga `etoolbox' 
+\IfPackageLoadedTF{etoolbox}{}{\usepackage{etoolbox}}
+% mejora la interfaz para objetos flotantes
+\IfPackageLoadedTF{float}{}{\usepackage{float}}
 % \usepackage{lastpage] % referencia la páginas en su documento LaTex a través de la introducción de una nueva etiqueta
+
+% Definir estilo de citas largas (achica el tamaño)
+\IfPackageLoadedTF{relsize}{}{\usepackage{relsize}}
+\AtBeginEnvironment{quote}{\smaller}% Step font down one size relative to current font.
+
+% Definir título de tablas/figuras
+% \@ifundefined{KOMAClassName}{% if non-KOMA class
+% \renewcommand\spanishtablename{Tabla}
+%  \addto\captionsspanish{\renewcommand{\tablename}{Tabla}}
+%}{% if KOMA class
+\renewcaptionname{spanish}{\tablename}{Tabla}
+\renewcaptionname{spanish}{\listtablename}{Índice de Tablas}
+%}
+
+% Agregado de \source y \notes para titulos secundarios de las tablas y figuras
+\usepackage{caption}
+\captionsetup{format=plain,labelsep=none,singlelinecheck=false,justification=raggedright,
+              font={small,singlespacing,sf},labelfont={sc,bf},width=\textwidth}
+\newcommand{\source}[1]{\caption*{\footnotesize{\textit{Fuente:} {#1}}}}
+\newcommand{\notes}[1]{\caption*{\footnotesize{\textit{Nota:} {#1}}}}
 
 % Notas sucesivas entre capítulos
 \counterwithout{footnote}{chapter}
 
 % Margenes de pagina e imagenes
-\setlength{\headheight}{12.7pt}
+%\setlength{\headheight}{12.7pt}
 \renewcommand{\topfraction}{.85}
 \renewcommand{\bottomfraction}{.7}
 \renewcommand{\textfraction}{.15}
@@ -37,6 +61,14 @@
   \thm@postskip = \thm@preskip
 }
 
+% Modificar títulos de capítulos y partes
+\renewcommand*{\partformat}{%
+  \partname~\thepart\par
+}
+\renewcommand*{\chapterformat}{%
+  \chapapp~\thechapter\par
+}
+
 % Define forma de portada
 \usepackage{template/latex/TitleTESIS}
 
@@ -44,15 +76,7 @@
 \usepackage{fancyhdr}
 \pagestyle{plain}
 
-% Definir título de tablas/figuras
-\addto\captionsspanish{\renewcommand{\tablename}{Tabla}}
 
-% Agregado de \source y \notes para titulos secundarios de las tablas y figuras
-\usepackage{caption}
-\captionsetup{format=plain,labelsep=period,singlelinecheck=false,justification=raggedright,
-              font={small,singlespacing,sf},labelfont={sc,bf},width=\textwidth}
-\newcommand{\source}[1]{\caption*{\footnotesize{\textit{Fuente:} {#1}}}}
-\newcommand{\notes}[1]{\caption*{\footnotesize{\textit{Nota:} {#1}}}}
 
 %%%% ENCABEZADO DE PÁGINA
 % Si utiliza clases de Koma-script debe utilizar el paquete 'scrlayer-scrpage'
