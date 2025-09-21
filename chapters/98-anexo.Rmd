@@ -2,7 +2,9 @@
 
 # (APPENDIX) Anexos {.unnumbered}
 
+```{=latex}
 \renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{Anexo}\ \thechapter.\ #1}{}}
+```
 
 # Índices de segregación residencial {#appendixA}
 
@@ -167,7 +169,9 @@ knitr::include_graphics(here::here("figures", "Homogamia_relation_P1-P2.png"))
 
 # Relación entre proporción de personas y probabilidad de homogamia según hipótesis nula {#appendixD}
 
-\markboth{\MakeUppercase{Anexo}\ \thechapter.\ Relación entre proporción de personas y probabilidad de homogamia...}{}
+```{=latex}
+\chaptermark{Relación entre proporción de personas y probabilidad de...}
+```
 
 ```{r appD-p-vs-P}
 #| fig.cap: "Relación entre Proporción de personas y probabilidad de homogamia (P'(Ha|a)) bajo H0"
@@ -286,7 +290,7 @@ Teniendo en cuenta que el problema de asignación planteado es poco manejable co
 
 ***D. Optimización***
 
-Para resolver el problema de optimización planteado utilizamos el paquete `Rglpk`, el cual permite una interfaz con entre R y la api del *GNU Linear Programming Kit*, una herramienta de código abierto escrita en ANSI C y desarrollada por Andrew O. Makhorin (*Андрей Олегович Махорин*) para resolver 'problemas de gran tamaño de programación lineal, programación lineal entera mixta y otros problemas relacionados'. Como resultado de utilizar esta herramienta se obtiene una matriz de asignación $A$ que minimiza la función objetivo respetando las constricciones impuestas.
+Para resolver el problema de optimización planteado utilizamos el paquete `Rglpk`, el cual permite una interfaz con entre R y la api del *GNU Linear Programming Kit*, una herramienta de código abierto escrita en ANSI C y desarrollada por Andrew O. Makhorin (*Андрей Олегович Махорин*) para resolver 'problemas de gran tamaño de programación lineal, programación lineal entera mixta y otros problemas   relacionados'. Como resultado de utilizar esta herramienta se obtiene una matriz de asignación $A$ que minimiza la función objetivo respetando las constricciones impuestas.
 
 ## Paso 5. Construcción del perfil de población de cada escuela {.unnumbered}
 

@@ -4,10 +4,23 @@ editor_options:
     wrap: 72
 ---
 
-\cleardoublepage
-\pagenumbering{arabic}
+```{=latex}
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ #1}{}}
+```
 
 # Introducción {#intro}
+
+```{=latex}
+\pagenumbering{arabic}
+
+
+\pagestyle{scrheadings}
+\clearpairofpagestyles
+\lehead{Pablo Serrati - Tesis de Doctorado}
+\rohead{\leftmark}
+%\rohead{\raggedleft{\truncate{0.75\textwidth}{\leftmark}}}
+\ofoot{\pagemark}
+```
 
 <!-- Presentación del problema general: El problema de la segregación en los estudios urbanos -->
 

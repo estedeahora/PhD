@@ -150,13 +150,6 @@ monofontoptions: "Scale=0.7"
 # url: your book url like https://bookdown.org/yihui/bookdown
 ---
 
-```{=tex}
-%\pagestyle{fancy}
-%\renewcommand\chaptermark[1]{\markboth{\thechapter.\ #1}{}}
-%\fancyhead[LE]{Pablo Serrati - Tesis de Doctorado}
-%\fancyhead[RO]{\leftmark}
-```
-
 ```{r setup, echo = F}
 
 knitr::opts_chunk$set(echo = FALSE,
@@ -195,4 +188,3 @@ Donec consectetur nisi at varius mollis. Phasellus vel nulla justo. Donec auctor
 [] TODO Escribir texto (final)
 
 Praesent erat sapien, tincidunt sed lacus eu, pharetra condimentum nisl. Maecenas ornare enim a vulputate bibendum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc vitae efficitur tortor. Nunc nibh mauris, sodales vitae risus dapibus, consectetur gravida elit. Nulla facilisi. Maecenas at nibh id ligula tristique sagittis. Vestibulum consequat mauris et ultricies vehicula. Morbi auctor mauris tellus, et interdum dui aliquam id.
-

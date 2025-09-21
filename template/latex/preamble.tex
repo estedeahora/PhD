@@ -7,7 +7,7 @@
 \IfPackageLoadedTF{setspace}{}{\usepackage{setspace}}
 % Carga `graphicx' si no fue cargado (dado que no se usa entorno pandoc para figures)
 \IfPackageLoadedTF{graphicx}{}{\usepackage{graphicx}}
-% Carga `etoolbox' 
+% Carga `etoolbox'
 \IfPackageLoadedTF{etoolbox}{}{\usepackage{etoolbox}}
 % mejora la interfaz para objetos flotantes
 \IfPackageLoadedTF{float}{}{\usepackage{float}}
@@ -36,7 +36,18 @@
 % Notas sucesivas entre capítulos
 \counterwithout{footnote}{chapter}
 
-% Margenes de pagina e imagenes
+%%%% ENCABEZADO DE PÁGINA
+\usepackage[headsepline]{scrlayer-scrpage}
+\setheadsepline{0.4pt}                                  % grosor de la línea
+\setkomafont{pageheadfoot}{\sffamily}
+
+\pagenumbering{gobble} 
+\pagestyle{plain.scrheadings}
+
+% Permite quiebre de palabras largas
+\usepackage[breakwords]{truncate}
+
+% Margenes de imagenes
 %\setlength{\headheight}{12.7pt}
 \renewcommand{\topfraction}{.85}
 \renewcommand{\bottomfraction}{.7}
@@ -45,10 +56,6 @@
 \setcounter{topnumber}{3}
 \setcounter{bottomnumber}{3}
 \setcounter{totalnumber}{4}
-
-% Numeración romana para pag preliminares
-% \pagenumbering{roman}
-\pagenumbering{gobble}
 
 % Quiebre de lineas en chunk
 \lstset{
@@ -72,15 +79,5 @@
 % Define forma de portada
 \usepackage{template/latex/TitleTESIS}
 
-% Definir encabezado de páginas
-\usepackage{fancyhdr}
-\pagestyle{plain}
 
 
-
-%%%% ENCABEZADO DE PÁGINA
-% Si utiliza clases de Koma-script debe utilizar el paquete 'scrlayer-scrpage'
-% Si utiliza las clases estándar debe usar el paquete 'fancyhdr'
-\fancyhead[LE, RE, LO, RO]{}
-% \fancyhead[LE]{Pablo Serrati - Tesis de Maestría}
-% \fancyhead[RO]{\leftmark}

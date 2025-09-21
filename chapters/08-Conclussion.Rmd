@@ -6,9 +6,15 @@ editor_options:
 
 `r if(!knitr::pandoc_to("docx")) '# (PART) Conclusiones {.unnumbered}'`
 
+```{=latex}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+```
+
 # ¿La segregación como un todo? {#conclussion .unnumbered}
 
-\chaptermark{Resultados y Conclusiones}
+```{=latex}
+\chaptermark{Conclusiones: ¿La segregación como un todo?}
+```
 
 <!-- Recapitulación del objetivo general -->
 

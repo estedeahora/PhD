@@ -1,65 +1,65 @@
 % Options for packages loaded elsewhere
 \PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
-  \PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
-    %
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
 \documentclass[
-          a4paper,
-              chapterprefix=true]{book}
-    \usepackage{amsmath,amssymb}
-    \usepackage{iftex}
+  spanish,
+  a4paper,%
+  chapterprefix=true,%
+  DIV=calc,%
+  twoside]{scrbook}%
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+
+\setcounter{secnumdepth}{5}
+\usepackage{iftex}
 \ifPDFTeX
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage{textcomp} % provide euro and other symbols
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
 \else % if luatex or xetex
   \usepackage{unicode-math} % this also loads fontspec
-\defaultfontfeatures{Scale=MatchLowercase}
-\defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
 \fi
 \usepackage[]{Alegreya}
 \ifPDFTeX\else
   % xetex/luatex font selection
-          \setsansfont[]{Alegreya Sans}
-            \fi
-  % Use upquote if available, for straight quotes in verbatim environments
-  \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
-  \IfFileExists{microtype.sty}{% use microtype if available
-    \usepackage[]{microtype}
-    \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
-  }{}
-    \makeatletter
-  \@ifundefined{KOMAClassName}{% if non-KOMA class
-    \IfFileExists{parskip.sty}{%
-      \usepackage{parskip}
-    }{% else
-      \setlength{\parindent}{0pt}
-      \setlength{\parskip}{6pt plus 2pt minus 1pt}}
-  }{% if KOMA class
-    \KOMAoptions{parskip=half}}
-  \makeatother
-      \usepackage{fancyvrb}
-    \usepackage{xcolor}
-        \usepackage{listings}
-  \newcommand{\passthrough}[1]{#1}
-  \lstset{defaultdialect=[5.3]Lua}
-  \lstset{defaultdialect=[x86masm]Assembler}
-          \usepackage{longtable,booktabs,array}
-  \usepackage{pdflscape}
-    \usepackage{calc} % for calculating minipage widths
-    % Correct order of tables after \paragraph or \subparagraph
-  \usepackage{etoolbox}
-  \makeatletter
-  \patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
-  \makeatother
-  % Allow footnotes in longtable head/foot
-  \IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
-  \makesavenoteenv{longtable}
-            \setlength{\emergencystretch}{3em} % prevent overfull lines
-  \providecommand{\tightlist}{%
-    \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-    \setcounter{secnumdepth}{5}
-        % definitions for citeproc citations
+  \setsansfont[]{Alegreya Sans}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{fancyvrb}
+\usepackage{listings}
+\newcommand{\passthrough}[1]{#1}
+\lstset{defaultdialect=[5.3]Lua}
+\lstset{defaultdialect=[x86masm]Assembler}
+\usepackage{longtable,booktabs,array,tabularray}
+\usepackage{pdflscape}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+% definitions for citeproc citations
 \NewDocumentCommand\citeproctext{}{}
 \NewDocumentCommand\citeproc{mm}{%
   \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
@@ -93,30 +93,68 @@
 \newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 \ifLuaTeX
-\usepackage[bidi=basic]{babel}
+\usepackage[bidi=basic,shorthands=off,]{babel}
 \else
-\usepackage[bidi=default]{babel}
+\usepackage[bidi=default,shorthands=off,]{babel}
 \fi
 \babelprovide[main,import]{spanish}
-% get rid of language-specific shorthands (see #6817):
-\let\LanguageShortHands\languageshorthands
-\def\languageshorthands#1{}
+\ifLuaTeX
+  \usepackage{selnolig} % disable illegal ligatures
+\fi
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 % Paquetes
-\usepackage{setspace}
-\usepackage{booktabs}
-\usepackage{amsthm}
-\usepackage{fancyhdr}
-\usepackage{longtable}
-\usepackage{subfig}
-% nuevos
-\usepackage{float} % mejora la interfaz para objetos flotantes
+\IfPackageLoadedTF{booktabs}{}{\usepackage{booktabs}}
+\IfPackageLoadedTF{amsthm}{}{\usepackage{amsthm}}
+\IfPackageLoadedTF{longtable}{}{\usepackage{longtable}}
+\IfPackageLoadedTF{subfig}{}{\usepackage{subfig}}
+% Carga `setspace' para separación entre lineas (si no fue cargado)
+\IfPackageLoadedTF{setspace}{}{\usepackage{setspace}}
+% Carga `graphicx' si no fue cargado (dado que no se usa entorno pandoc para figures)
+\IfPackageLoadedTF{graphicx}{}{\usepackage{graphicx}}
+% Carga `etoolbox'
+\IfPackageLoadedTF{etoolbox}{}{\usepackage{etoolbox}}
+% mejora la interfaz para objetos flotantes
+\IfPackageLoadedTF{float}{}{\usepackage{float}}
 % \usepackage{lastpage] % referencia la páginas en su documento LaTex a través de la introducción de una nueva etiqueta
+
+% Definir estilo de citas largas (achica el tamaño)
+\IfPackageLoadedTF{relsize}{}{\usepackage{relsize}}
+\AtBeginEnvironment{quote}{\smaller}% Step font down one size relative to current font.
+
+% Definir título de tablas/figuras
+% \@ifundefined{KOMAClassName}{% if non-KOMA class
+% \renewcommand\spanishtablename{Tabla}
+%  \addto\captionsspanish{\renewcommand{\tablename}{Tabla}}
+%}{% if KOMA class
+\renewcaptionname{spanish}{\tablename}{Tabla}
+\renewcaptionname{spanish}{\listtablename}{Índice de Tablas}
+%}
+
+% Agregado de \source y \notes para titulos secundarios de las tablas y figuras
+\usepackage{caption}
+\captionsetup{format=plain,labelsep=none,singlelinecheck=false,justification=raggedright,
+              font={small,singlespacing,sf},labelfont={sc,bf},width=\textwidth}
+\newcommand{\source}[1]{\caption*{\footnotesize{\textit{Fuente:} {#1}}}}
+\newcommand{\notes}[1]{\caption*{\footnotesize{\textit{Nota:} {#1}}}}
 
 % Notas sucesivas entre capítulos
 \counterwithout{footnote}{chapter}
 
-% Margenes de pagina e imagenes
-\setlength{\headheight}{12.7pt}
+%%%% ENCABEZADO DE PÁGINA
+\usepackage[headsepline]{scrlayer-scrpage}
+\setheadsepline{0.4pt}                                  % grosor de la línea
+\setkomafont{pageheadfoot}{\sffamily}
+
+\pagenumbering{gobble} 
+\pagestyle{plain.scrheadings}
+
+% Permite quiebre de palabras largas
+\usepackage[breakwords]{truncate}
+
+% Margenes de imagenes
+%\setlength{\headheight}{12.7pt}
 \renewcommand{\topfraction}{.85}
 \renewcommand{\bottomfraction}{.7}
 \renewcommand{\textfraction}{.15}
@@ -124,10 +162,6 @@
 \setcounter{topnumber}{3}
 \setcounter{bottomnumber}{3}
 \setcounter{totalnumber}{4}
-
-% Numeración romana para pag preliminares
-% \pagenumbering{roman}
-\pagenumbering{gobble}
 
 % Quiebre de lineas en chunk
 \lstset{
@@ -140,29 +174,19 @@
   \thm@postskip = \thm@preskip
 }
 
+% Modificar títulos de capítulos y partes
+\renewcommand*{\partformat}{%
+  \partname~\thepart\par
+}
+\renewcommand*{\chapterformat}{%
+  \chapapp~\thechapter\par
+}
+
 % Define forma de portada
 \usepackage{template/latex/TitleTESIS}
 
-% Definir encabezado de páginas
-\usepackage{fancyhdr}
-\pagestyle{plain}
 
-% Definir título de tablas/figuras
-\addto\captionsspanish{\renewcommand{\tablename}{Tabla}}
 
-% Agregado de \source y \notes para titulos secundarios de las tablas y figuras
-\usepackage{caption}
-\captionsetup{format=plain,labelsep=period,singlelinecheck=false,justification=raggedright,
-              font={small,singlespacing,sf},labelfont={sc,bf},width=\textwidth}
-\newcommand{\source}[1]{\caption*{\footnotesize{\textit{Fuente:} {#1}}}}
-\newcommand{\notes}[1]{\caption*{\footnotesize{\textit{Nota:} {#1}}}}
-
-%%%% ENCABEZADO DE PÁGINA
-% Si utiliza clases de Koma-script debe utilizar el paquete 'scrlayer-scrpage'
-% Si utiliza las clases estándar debe usar el paquete 'fancyhdr'
-\fancyhead[LE, RE, LO, RO]{}
-% \fancyhead[LE]{Pablo Serrati - Tesis de Maestría}
-% \fancyhead[RO]{\leftmark}
 \usepackage{subfig}
 \usepackage{fontspec}
 \usepackage{multirow}
@@ -176,9 +200,6 @@
 \usepackage{hyperref}
 \usepackage{float}
 \usepackage{wrapfig}
-\ifLuaTeX
-  \usepackage{selnolig}  % disable illegal ligatures
-\fi
 \usepackage{bookmark}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
@@ -187,6 +208,102 @@
   pdftitle={Segregación urbana multi-dominio en el Aglomerado Metropolitano del Gran Buenos Aires (Argentina)},
   pdfauthor={Pablo Santiago Serrati},
   pdflang={es},
+  pdfsubject={Tesis para optar por el título de Doctor en Ciencias Sociales},
+pdfinfo={
+  abstract={The focus of this doctoral dissertation is the analysis of urban segregation
+in the Greater Buenos Aires Metropolitan Area (AMBA) from a multi-domain
+perspective, understanding that the dynamics of social differentiation are
+not limited exclusively to the residential sphere, but extend and interact
+with other areas of daily life, such as education and urban mobility. The
+research problem stems from the need to overcome the limitations of a
+one-dimensional approach to segregation, proposing to investigate how the
+different domains (residential, school and daily activities) relate to each
+other, whether they act to reinforce a `vicious circle' of separation
+between social groups or whether, on the contrary, each contributes specific
+mechanisms to the configuration of urban inequality. Based on these questions,
+the objectives are: to analyse patterns of urban segregation in the three
+domains mentioned; to identify the effect of educational homogamy on
+residential segregation; and to understand how school choices and mobility
+practices contribute to the reproduction of territorial and educational
+inequalities. The theoretical framework combines the traditions of urban
+sociology, educational geography and social stratification, incorporating
+Weberian, neo-Weberian and Bourdieusian contributions to conceptualise
+segregation as a spatial dimension of stratification. Methodologically, the
+study takes a quantitative, multi-scale and multidimensional approach,
+combining primary and secondary sources with descriptive, multivariate and
+spatial analysis techniques. Segregation indices, school allocation models
+and multiple correspondence analysis are applied, integrating census data,
+administrative records and mobility surveys. The results show that
+residential segregation in the AMBA presents complex patterns linked to both
+the socioeconomic structure and educational homogamy in the formation of
+households. Likewise, daily mobility, far from compensating for residential
+inequalities, tends to reinforce social isolation, demonstrating that spaces
+of activity reproduce segmentations according to cultural and educational
+capital. In the school environment, it is confirmed that the distribution of
+supply and the logic of family choice produce a hierarchical and
+differentiated educational landscape, in which territorial and school
+inequalities reinforce each other. Among the main theoretical contributions,
+the concept of `unequal and hierarchical educational-territorial space' is
+proposed to account for how differences between schools are part of a
+continuum in which territorial, social and educational factors
+simultaneously participate.The conclusions argue that urban segregation
+should be understood as the result of the overlapping and articulation of
+multiple domains of social life, in which household choices, mobility
+dynamics and structural inequalities come together in a single process.
+Thus, it is proposed that the multi-domain reproduction of segregation
+constitutes a central mechanism in the configuration of urban inequality
+in the AMBA and that its integrated analysis offers relevant insights for
+both theory and the design of public policies aimed at reducing territorial,
+educational and social gaps.},
+  abstract-es={Esta tesis doctoral se centra en el análisis de la segregación urbana en el
+Aglomerado Metropolitano del Gran Buenos Aires (AMBA) desde una perspectiva
+multi-dominio, entendiendo que las dinámicas de diferenciación social no se
+reducen exclusivamente al ámbito residencial, sino que se extienden y
+articulan con otros espacios de la vida cotidiana, como la educación y las
+movilidades urbanas. El problema de investigación parte de la necesidad de
+superar las limitaciones de un enfoque unidimensional de la segregación,
+proponiendo indagar cómo los distintos dominios (residencial, escolar y de
+actividades cotidianas) se relacionan entre sí, si actúan reforzando un
+`círculo vicioso' de separación entre grupos sociales o si, en cambio, cada
+uno aporta mecanismos específicos a la configuración de la desigualdad
+urbana. A partir de estas preguntas, los objetivos planteados son: analizar
+los patrones de segregación urbana en los tres dominios mencionados;
+identificar el efecto de la homogamia educativa sobre la segregación
+residencial; y comprender cómo las elecciones escolares y las prácticas de
+movilidad contribuyen a la reproducción de desigualdades territoriales y
+educativas. El marco teórico combina la tradición de la sociología urbana,
+la geografía de la educación y la estratificación social, incorporando
+aportes weberianos, neoweberianos y bourdianos para conceptualizar la
+segregación como dimensión espacial de la estratificación. Metodológicamente,
+el trabajo se inscribe en un enfoque cuantitativo, multi-escalar y
+multidimensional, articulando fuentes primarias y secundarias, con técnicas
+descriptivas, multivariadas y de análisis espacial. Se aplican índices de
+segregación, modelos de asignación escolar y análisis de correspondencias
+múltiples, integrando datos censales, registros administrativos y encuestas
+de movilidad. Los resultados muestran que la segregación residencial en el
+AMBA presenta patrones complejos vinculados tanto a la estructura
+socioeconómica como a la homogamia educativa en la formación de los hogares.
+Asimismo, las movilidades cotidianas, lejos de compensar las desigualdades
+residenciales, tienden a reforzar los aislamientos sociales, evidenciando que
+los espacios de actividad reproducen segmentaciones según capital cultural y
+educativo. En el ámbito escolar, se confirma que la distribución de la oferta
+y la lógica de elección familiar producen un paisaje educativo jerárquico y
+diferenciado, en el cual las desigualdades territoriales y escolares se
+potencian mutuamente. Entre los principales aportes teóricos se propone el
+concepto de ``espacio educativo-territorial desigual y jerarquizado'' para dar
+cuenta de cómo las diferencias entre escuelas forman parte de un continuo en
+el que participan simultáneamente factores territoriales, sociales y
+educativos. Las conclusiones sostienen que la segregación urbana debe
+entenderse como el resultado de la superposición y articulación de múltiples
+dominios de la vida social, en los cuales las elecciones de los hogares, las
+dinámicas de movilidad y las desigualdades estructurales se conjugan en un
+mismo proceso. Así, se plantea que la reproducción multi-dominio de la
+segregación constituye un mecanismo central en la configuración de la
+desigualdad urbana en el AMBA y que su análisis integrado ofrece claves
+relevantes tanto para la teoría como para el diseño de políticas públicas
+orientadas a reducir las brechas territoriales, educativas y sociales.},
+  supervisor={Dra. María Mercedes Di Virgilio}
+},
   colorlinks=true,
   linkcolor={Sepia},
   filecolor={Sepia},
@@ -204,12 +321,13 @@
 \degree{Tesis para optar por el título de Doctor en Ciencias Sociales}
 
 \begin{document}
+
 \maketitle
-\pagenumbering{roman}
 
-% \thispagestyle{empty}
+\pagenumbering{roman}       % números romanos
+\cfoot{\pagemark}           % pie centrado
 
-\section*{La segregación urbana multi-dominio. Estudio en el Aglomerado Metropolitano del Gran Buenos Aires (Argentina)}
+\section*{Segregación urbana multi-dominio en el Aglomerado Metropolitano del Gran Buenos Aires (Argentina)}
 
 \textbf{Palabras claves:}
 
@@ -217,7 +335,53 @@ Geografía de la educación; Diferencia entre escuelas; Desigualdades territoria
 
 \textbf{Resumen:}
 
-Enmarcado en el campo de los Estudios Urbanos, este proyecto aborda el problema de la segregación urbana a partir del estudio del Aglomerado Metropolitano del Gran Buenos Aires (AMGBA). Para ello, propone una mirada con foco en los diferentes dominios de la segregación (multi-domain segregation) y en el modo en el que estos se articulan en y con los entornos urbanos. En particular, el proyecto indaga la vinculación entre la segregación residencial, la segregación educativa y la segregación en las movilidades cotidianas en diferentes entornos urbanos del AMGBA. Teniendo en cuenta las dificultades que suponen el trabajo conjunto de estas dimensiones de la segregación, el proyecto desarrolla herramientas metodológicas para abordar este problema desde un enfoque cuantitativo y multivariado, combinando fuentes primarias y secundarias.
+Esta tesis doctoral se centra en el análisis de la segregación urbana en el
+Aglomerado Metropolitano del Gran Buenos Aires (AMBA) desde una perspectiva
+multi-dominio, entendiendo que las dinámicas de diferenciación social no se
+reducen exclusivamente al ámbito residencial, sino que se extienden y
+articulan con otros espacios de la vida cotidiana, como la educación y las
+movilidades urbanas. El problema de investigación parte de la necesidad de
+superar las limitaciones de un enfoque unidimensional de la segregación,
+proponiendo indagar cómo los distintos dominios (residencial, escolar y de
+actividades cotidianas) se relacionan entre sí, si actúan reforzando un
+`círculo vicioso' de separación entre grupos sociales o si, en cambio, cada
+uno aporta mecanismos específicos a la configuración de la desigualdad
+urbana. A partir de estas preguntas, los objetivos planteados son: analizar
+los patrones de segregación urbana en los tres dominios mencionados;
+identificar el efecto de la homogamia educativa sobre la segregación
+residencial; y comprender cómo las elecciones escolares y las prácticas de
+movilidad contribuyen a la reproducción de desigualdades territoriales y
+educativas. El marco teórico combina la tradición de la sociología urbana,
+la geografía de la educación y la estratificación social, incorporando
+aportes weberianos, neoweberianos y bourdianos para conceptualizar la
+segregación como dimensión espacial de la estratificación. Metodológicamente,
+el trabajo se inscribe en un enfoque cuantitativo, multi-escalar y
+multidimensional, articulando fuentes primarias y secundarias, con técnicas
+descriptivas, multivariadas y de análisis espacial. Se aplican índices de
+segregación, modelos de asignación escolar y análisis de correspondencias
+múltiples, integrando datos censales, registros administrativos y encuestas
+de movilidad. Los resultados muestran que la segregación residencial en el
+AMBA presenta patrones complejos vinculados tanto a la estructura
+socioeconómica como a la homogamia educativa en la formación de los hogares.
+Asimismo, las movilidades cotidianas, lejos de compensar las desigualdades
+residenciales, tienden a reforzar los aislamientos sociales, evidenciando que
+los espacios de actividad reproducen segmentaciones según capital cultural y
+educativo. En el ámbito escolar, se confirma que la distribución de la oferta
+y la lógica de elección familiar producen un paisaje educativo jerárquico y
+diferenciado, en el cual las desigualdades territoriales y escolares se
+potencian mutuamente. Entre los principales aportes teóricos se propone el
+concepto de ``espacio educativo-territorial desigual y jerarquizado'' para dar
+cuenta de cómo las diferencias entre escuelas forman parte de un continuo en
+el que participan simultáneamente factores territoriales, sociales y
+educativos. Las conclusiones sostienen que la segregación urbana debe
+entenderse como el resultado de la superposición y articulación de múltiples
+dominios de la vida social, en los cuales las elecciones de los hogares, las
+dinámicas de movilidad y las desigualdades estructurales se conjugan en un
+mismo proceso. Así, se plantea que la reproducción multi-dominio de la
+segregación constituye un mecanismo central en la configuración de la
+desigualdad urbana en el AMBA y que su análisis integrado ofrece claves
+relevantes tanto para la teoría como para el diseño de políticas públicas
+orientadas a reducir las brechas territoriales, educativas y sociales.
 % Propuesta y objetivos
 % Preguntas de investigación
 % Enfoque metodológico
@@ -236,39 +400,93 @@ School inequalities; Geography of education; Territorial inequalities; multi-dom
 
 \textbf{Abstract:}
 
-The aim of this dissertation is to describe the role of territorial inequalities in the differentiation among schools of Buenos Aires city (Argentina). Grounded on the contributions of geography of education that proposes to articulate the field of urban studies with sociology of education. The specific goals of this work are: (a) to describe how territorial inequalities produce spatially the characteristics of educational demand; (b) analyze the territorial distribution of educational offer and identify the factors that explain the differences among schools; and (c) identify how school choices and mobility practices of household articulate territorial inequalities and differentiation between schools. Some questions about this subject might be:  How educational and territorial domains articulate in the configuration of differences between schools? Which part of the differences between them can be attributed to patterns of territorial inequalities? In what way the school choice practices and urban mobility ones articulate with the educational landscape to configurate the school inequalities? Departing from these questions, the analysis is based on a quantitative, multi-scale and multidimensional framework. Several descriptive and multivariate techniques are being used to fulfill this perspective and some specific tools from spatial analysis have been included. As a multi-scale approach, the work combines firstly, a structural vision of the development conditions of educational demand and offer; and secondly, a micro territorial point of view grounded in the role of family strategies as mediators between educational and territorial spaces and as generators of the social composition of schools. As part of the results, a first finding of this work is a critic revision of the appropriateness of commonly used concepts to characterize the difference between schools.  In order to expose the results, the concept of continuous educational space, inequal and hierarchized is being suggested, since the differences between schools are produced as part of a continuous reality hierarchically differentiated in which various dimensions participate at the same time. Considering the importance of social composition to understand the differences between schools, a second result of this dissertation is the concept of educational-territorial inequalities between schools, which aims to point out the relevance of the relationship between schools and territories in order to explain how differences between institutions grow. Based on our empirical analysis we proposed that between territories and schools there is a social distance which explains the fact that school choices made by families are due only partially to drawbacks of physical distance. From this frame, we argue that school dynamics of differentiation should also be approached attending to the micro territorial mechanisms where these households produce the choices in relation to its local conditionings (both territorial and educational). We affirmed that school choices that household make give place to a multi-domain reproduction of urban segregation. In this way, schools participate as part of complex differentiation and separation mechanisms of population that works together and simultaneously in several domains. From this concept, we could enrich the initial hypothesis which pointed that “the way in which school choice and urban mobility practices articulate in the educational landscapes define the hierarchical net of differentiation between schools, in other words, the educational-territorial inequalities between schools”.  Our results, sustain the idea that multi-domain urban segregation enables the comprehension of the process in which school choices and urban mobility practices produce a differentiated space of educational offer.
+The focus of this doctoral dissertation is the analysis of urban segregation
+in the Greater Buenos Aires Metropolitan Area (AMBA) from a multi-domain
+perspective, understanding that the dynamics of social differentiation are
+not limited exclusively to the residential sphere, but extend and interact
+with other areas of daily life, such as education and urban mobility. The
+research problem stems from the need to overcome the limitations of a
+one-dimensional approach to segregation, proposing to investigate how the
+different domains (residential, school and daily activities) relate to each
+other, whether they act to reinforce a `vicious circle' of separation
+between social groups or whether, on the contrary, each contributes specific
+mechanisms to the configuration of urban inequality. Based on these questions,
+the objectives are: to analyse patterns of urban segregation in the three
+domains mentioned; to identify the effect of educational homogamy on
+residential segregation; and to understand how school choices and mobility
+practices contribute to the reproduction of territorial and educational
+inequalities. The theoretical framework combines the traditions of urban
+sociology, educational geography and social stratification, incorporating
+Weberian, neo-Weberian and Bourdieusian contributions to conceptualise
+segregation as a spatial dimension of stratification. Methodologically, the
+study takes a quantitative, multi-scale and multidimensional approach,
+combining primary and secondary sources with descriptive, multivariate and
+spatial analysis techniques. Segregation indices, school allocation models
+and multiple correspondence analysis are applied, integrating census data,
+administrative records and mobility surveys. The results show that
+residential segregation in the AMBA presents complex patterns linked to both
+the socioeconomic structure and educational homogamy in the formation of
+households. Likewise, daily mobility, far from compensating for residential
+inequalities, tends to reinforce social isolation, demonstrating that spaces
+of activity reproduce segmentations according to cultural and educational
+capital. In the school environment, it is confirmed that the distribution of
+supply and the logic of family choice produce a hierarchical and
+differentiated educational landscape, in which territorial and school
+inequalities reinforce each other. Among the main theoretical contributions,
+the concept of `unequal and hierarchical educational-territorial space' is
+proposed to account for how differences between schools are part of a
+continuum in which territorial, social and educational factors
+simultaneously participate.The conclusions argue that urban segregation
+should be understood as the result of the overlapping and articulation of
+multiple domains of social life, in which household choices, mobility
+dynamics and structural inequalities come together in a single process.
+Thus, it is proposed that the multi-domain reproduction of segregation
+constitutes a central mechanism in the configuration of urban inequality
+in the AMBA and that its integrated analysis offers relevant insights for
+both theory and the design of public policies aimed at reducing territorial,
+educational and social gaps.
 
 \newpage
-
 {
-\hypersetup{linkcolor=}
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
 \listoffigures
 \listoftables
-\pagestyle{fancy}
-\renewcommand\chaptermark[1]{\markboth{\thechapter.\ #1}{}}
-\fancyhead[LE]{Pablo Serrati - Tesis de Doctorado}
-\fancyhead[RO]{\leftmark}
-
 \chapter*{Algunas palabras iniciales}\label{algunas-palabras-iniciales}
 \addcontentsline{toc}{chapter}{Algunas palabras iniciales}
 
 \section*{Título para el prefacio}\label{tuxedtulo-para-el-prefacio}
 \addcontentsline{toc}{section}{Título para el prefacio}
 
-{[}{]} TODO Escribir texto (final).
+{[}{]} TODO Escribir texto (final). Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec hendrerit felis. Suspendisse vel consectetur ex. Vivamus varius, ligula vitae volutpat cursus, nisi elit commodo massa, eget vestibulum erat nulla et odio. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla fringilla hendrerit magna ac vehicula. Vivamus tortor lacus, malesuada in fermentum vitae, fermentum eget magna. Proin sit amet elit quis metus pharetra gravida ac varius eros. Curabitur dui metus, iaculis quis quam nec, pharetra placerat massa. In commodo vel ex eget varius. Praesent a urna at arcu sodales eleifend. Ut pharetra convallis hendrerit.
+
+Praesent aliquet condimentum ligula, sit amet pharetra dui tincidunt sed. In pretium aliquet ultrices. Praesent fermentum tortor ac tortor fermentum tristique. Suspendisse accumsan nibh nunc, id fermentum turpis commodo a. Sed sit amet efficitur elit, id vestibulum dolor. Suspendisse potenti. Curabitur ut felis ac lectus eleifend tincidunt. Nullam ac consequat mi, at egestas est. Mauris vulputate neque id ipsum pharetra, a faucibus neque interdum. Suspendisse ullamcorper posuere turpis, ullamcorper suscipit nisl elementum eget. Fusce rhoncus facilisis quam, in condimentum tellus egestas ut.
+
+Mauris elementum quam ac nulla euismod, sed tincidunt arcu efficitur. In id nisi egestas, egestas dui non, auctor mauris. Phasellus ac ex arcu. Mauris semper, risus pretium commodo bibendum, odio elit viverra mi, ac molestie mi augue non lacus. Donec commodo consectetur lorem et efficitur. Pellentesque urna erat, accumsan eget erat sit amet, pulvinar convallis velit. Praesent venenatis ipsum vel elit pharetra varius. Ut rhoncus ut neque eget iaculis. Quisque hendrerit purus eros, vitae blandit purus pulvinar nec. Aliquam turpis justo, faucibus vel nunc in, aliquet ornare turpis. Maecenas sed est leo. Nullam ultrices lectus sit amet eros suscipit viverra. Pellentesque sagittis, orci eget porta tempus, tellus leo porttitor lorem, et convallis urna diam vel ex. Quisque dictum lacinia hendrerit. Suspendisse pharetra mi ut turpis tempor dignissim vitae vitae mauris. Nunc non dui nec tortor commodo maximus nec pretium sem.
+
+Donec consectetur nisi at varius mollis. Phasellus vel nulla justo. Donec auctor at risus id consequat. Fusce mattis ut felis nec pulvinar. Quisque lacus magna, ultricies a orci nec, iaculis iaculis turpis. Donec diam justo, euismod sed sodales eu, sodales sit amet dolor. Nulla eu lorem nec neque euismod viverra tristique quis augue. Nam tempus hendrerit nibh. Vestibulum ut interdum massa. Nam tempor sodales metus, at mattis ex tristique vel. Nunc aliquet congue dapibus.
 
 \section*{Agradecimientos}\label{agradecimientos}
 \addcontentsline{toc}{section}{Agradecimientos}
 
 {[}{]} TODO Escribir texto (final)
 
-\cleardoublepage
-\pagenumbering{arabic}
+Praesent erat sapien, tincidunt sed lacus eu, pharetra condimentum nisl. Maecenas ornare enim a vulputate bibendum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc vitae efficitur tortor. Nunc nibh mauris, sodales vitae risus dapibus, consectetur gravida elit. Nulla facilisi. Maecenas at nibh id ligula tristique sagittis. Vestibulum consequat mauris et ultricies vehicula. Morbi auctor mauris tellus, et interdum dui aliquam id.
+
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter.\ #1}{}}
 
 \chapter{Introducción}\label{intro}
+
+\pagenumbering{arabic}
+
+
+\pagestyle{scrheadings}
+\clearpairofpagestyles
+\lehead{Pablo Serrati - Tesis de Doctorado}
+\rohead{\leftmark}
+%\rohead{\raggedleft{\truncate{0.75\textwidth}{\leftmark}}}
+\ofoot{\pagemark}
 
 \section{El problema de la segregación urbana en los estudios urbanos}\label{el-problema-de-la-segregaciuxf3n-urbana-en-los-estudios-urbanos}
 
@@ -3689,7 +3907,7 @@ significativamente más alta que para el resto de los niveles educativos
 \caption{\label{tab:app1-tab2}Indicadores de homogamia educativa según jurisdicción}
 \centering
 \fontsize{8}{10}\selectfont
-\begin{tabular}[t]{>{\raggedright\arraybackslash}p{1.6cm}>{\centering\arraybackslash}p{2.3cm}>{\centering\arraybackslash}p{2.3cm}>{\centering\arraybackslash}p{1.5cm}>{\centering\arraybackslash}p{1.5cm}>{\centering\arraybackslash}p{1.5cm}>{\centering\arraybackslash}p{1.5cm}>{\centering\arraybackslash}p{0.1cm}>{\centering\arraybackslash}p{1.5cm}>{\centering\arraybackslash}p{1.5cm}>{\centering\arraybackslash}p{1.5cm}}
+\begin{tabular}[t]{>{\raggedright\arraybackslash}p{1.6cm}>{\centering\arraybackslash}p{2.3cm}>{\centering\arraybackslash}p{2.3cm}>{\centering\arraybackslash}p{1.4cm}>{\centering\arraybackslash}p{1.4cm}>{\centering\arraybackslash}p{1.4cm}>{\centering\arraybackslash}p{1.4cm}>{\centering\arraybackslash}p{0.1cm}>{\centering\arraybackslash}p{1.4cm}>{\centering\arraybackslash}p{1.4cm}>{\centering\arraybackslash}p{1.4cm}}
 \toprule
 \multicolumn{3}{c}{\textbf{ }} & \multicolumn{4}{c}{\textbf{Porcentaje de homogamia}} & \multicolumn{1}{c}{\textbf{ }} & \multicolumn{3}{c}{\textbf{Probabilidad de homogamia}} \\
 \cmidrule(l{3pt}r{3pt}){4-7} \cmidrule(l{3pt}r{3pt}){9-11}
@@ -6613,10 +6831,12 @@ grupos sociales.
 
 \part{Conclusiones}\label{part-conclusiones}
 
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+
 \chapter*{¿La segregación como un todo?}\label{conclussion}
 \addcontentsline{toc}{chapter}{¿La segregación como un todo?}
 
-\chaptermark{Resultados y Conclusiones}
+\chaptermark{Conclusiones: ¿La segregación como un todo?}
 
 En este trabajo de tesis propusimos analizar la \emph{segregación urbana} en
 el Área Metropolitana de Buenos Aires utilizando un \emph{enfoque
@@ -7099,7 +7319,7 @@ Por último, la Figura \ref{fig:appC-Pcomp} ilustra gráficamente la relación e
 
 \chapter{Relación entre proporción de personas y probabilidad de homogamia según hipótesis nula}\label{appendixD}
 
-\markboth{\MakeUppercase{Anexo}\ \thechapter.\ Relación entre proporción de personas y probabilidad de homogamia...}{}
+\chaptermark{Relación entre proporción de personas y probabilidad de...}
 
 \begin{figure}
 \includegraphics[width=1\linewidth]{figures/Homogamia_porcentaje-vs-prob-H0} \caption{Relación entre Proporción de personas y probabilidad de homogamia (P'(Ha|a)) bajo H0}\label{fig:appD-p-vs-P}
