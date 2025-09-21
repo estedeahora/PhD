@@ -111,9 +111,11 @@ abstract-es: |
   orientadas a reducir las brechas territoriales, educativas y sociales.
 
 # Definiciones de exportación
-documentclass: book # scrbook Requiere chapterprefix=true como opción
+documentclass: scrbook # book Requiere chapterprefix=true como opción
 classoption: 
   - chapterprefix=true
+  - DIV=calc
+  - twoside
 
 site: bookdown::bookdown_site
 knit: bookdown::render_book
@@ -149,10 +151,10 @@ monofontoptions: "Scale=0.7"
 ---
 
 ```{=tex}
-\pagestyle{fancy}
-\renewcommand\chaptermark[1]{\markboth{\thechapter.\ #1}{}}
-\fancyhead[LE]{Pablo Serrati - Tesis de Doctorado}
-\fancyhead[RO]{\leftmark}
+%\pagestyle{fancy}
+%\renewcommand\chaptermark[1]{\markboth{\thechapter.\ #1}{}}
+%\fancyhead[LE]{Pablo Serrati - Tesis de Doctorado}
+%\fancyhead[RO]{\leftmark}
 ```
 
 ```{r setup, echo = F}
@@ -179,8 +181,18 @@ devtools::load_all()
 
 ## Título para el prefacio {.unnumbered}
 
-[] TODO Escribir texto (final).
+[] TODO Escribir texto (final). Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec hendrerit felis. Suspendisse vel consectetur ex. Vivamus varius, ligula vitae volutpat cursus, nisi elit commodo massa, eget vestibulum erat nulla et odio. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla fringilla hendrerit magna ac vehicula. Vivamus tortor lacus, malesuada in fermentum vitae, fermentum eget magna. Proin sit amet elit quis metus pharetra gravida ac varius eros. Curabitur dui metus, iaculis quis quam nec, pharetra placerat massa. In commodo vel ex eget varius. Praesent a urna at arcu sodales eleifend. Ut pharetra convallis hendrerit.
+
+Praesent aliquet condimentum ligula, sit amet pharetra dui tincidunt sed. In pretium aliquet ultrices. Praesent fermentum tortor ac tortor fermentum tristique. Suspendisse accumsan nibh nunc, id fermentum turpis commodo a. Sed sit amet efficitur elit, id vestibulum dolor. Suspendisse potenti. Curabitur ut felis ac lectus eleifend tincidunt. Nullam ac consequat mi, at egestas est. Mauris vulputate neque id ipsum pharetra, a faucibus neque interdum. Suspendisse ullamcorper posuere turpis, ullamcorper suscipit nisl elementum eget. Fusce rhoncus facilisis quam, in condimentum tellus egestas ut.
+
+Mauris elementum quam ac nulla euismod, sed tincidunt arcu efficitur. In id nisi egestas, egestas dui non, auctor mauris. Phasellus ac ex arcu. Mauris semper, risus pretium commodo bibendum, odio elit viverra mi, ac molestie mi augue non lacus. Donec commodo consectetur lorem et efficitur. Pellentesque urna erat, accumsan eget erat sit amet, pulvinar convallis velit. Praesent venenatis ipsum vel elit pharetra varius. Ut rhoncus ut neque eget iaculis. Quisque hendrerit purus eros, vitae blandit purus pulvinar nec. Aliquam turpis justo, faucibus vel nunc in, aliquet ornare turpis. Maecenas sed est leo. Nullam ultrices lectus sit amet eros suscipit viverra. Pellentesque sagittis, orci eget porta tempus, tellus leo porttitor lorem, et convallis urna diam vel ex. Quisque dictum lacinia hendrerit. Suspendisse pharetra mi ut turpis tempor dignissim vitae vitae mauris. Nunc non dui nec tortor commodo maximus nec pretium sem.
+
+Donec consectetur nisi at varius mollis. Phasellus vel nulla justo. Donec auctor at risus id consequat. Fusce mattis ut felis nec pulvinar. Quisque lacus magna, ultricies a orci nec, iaculis iaculis turpis. Donec diam justo, euismod sed sodales eu, sodales sit amet dolor. Nulla eu lorem nec neque euismod viverra tristique quis augue. Nam tempus hendrerit nibh. Vestibulum ut interdum massa. Nam tempor sodales metus, at mattis ex tristique vel. Nunc aliquet congue dapibus.
+
 
 ## Agradecimientos {.unnumbered}
 
 [] TODO Escribir texto (final)
+
+Praesent erat sapien, tincidunt sed lacus eu, pharetra condimentum nisl. Maecenas ornare enim a vulputate bibendum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc vitae efficitur tortor. Nunc nibh mauris, sodales vitae risus dapibus, consectetur gravida elit. Nulla facilisi. Maecenas at nibh id ligula tristique sagittis. Vestibulum consequat mauris et ultricies vehicula. Morbi auctor mauris tellus, et interdum dui aliquam id.
+
