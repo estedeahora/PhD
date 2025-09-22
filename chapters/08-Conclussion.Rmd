@@ -36,7 +36,7 @@ dominios aporta a la *segregación urbana* *como un todo*.
 
 <!-- Recapitulación de resultados por capítulos -->
 
-Antes de avanzar en el analizar de los resultados en torno al objetivo
+Antes de avanzar en el analisis de los resultados en torno al objetivo
 general, recuperemos brevemente los principales hallazgos del análisis
 obtenidos en cada uno de los capítulos, para luego incorporar estos en
 un marco común que los integre. <!-- Capítulo 4: Residencial -->Respecto
@@ -54,7 +54,7 @@ que tradicionalmente se asignó a las ciudades latinoamericanas
 este sentido, la posibilidad de acceso a los mercados de suelo formal e
 informal, la fragmentación urbana y las intervenciones estatales
 configuran un entramado donde los hogares experimentan diferentes grados
-de aislamiento o apertura. Además, al estructurar las oportunidades de
+de aislamiento o apertura. Al estructurar las oportunidades de
 contacto y acceso a recursos urbanos, esta *estructura compleja de
 segregación del espacio residencial* actúa a la vez como un reflejo de
 las desigualdades sociales y como un motor de su reproducción a partir
@@ -92,7 +92,7 @@ contracara, aparecen espacios en los cuales sólo algunos grupos sociales
 desarrollan sus actividades y, por lo tanto, se construyen como más
 aislados y segregados (sea por su marca de 'exclusivos' o
 'estigmatizados'). Además, como señalan @Ellis2004 y @LeRoux2017, esta
-mayor co-presencia se ve impulsado por el peso de las actividades
+mayor co-presencia se ve impulsada por el peso de las actividades
 laborales, las cuales pueden suponer simultáneamente relaciones de
 jerarquía y distancia estos estos grupos, antes que espacios de
 integración social [@Elguezabal2018; @Frisch2022]. En resumen, la baja
@@ -281,12 +281,12 @@ clases sociales.
 
 <!-- Limitaciones y futuras líneas de trabajo   -->
 
-Más allá de estos aportes, el trabajo está marcado por algunos límites
+Más allá de estos aportes, el trabajo presenta algunos límites
 que marcan, a su vez, posibles líneas de continuidad para futuros
 trabajos de investigación.
 <!-- 1. enfoque cuantitativo (vs cualitativo) -->Un primer límite del
 trabajo viene dado por el enfoque cuantitativo adoptado. Si bien este
-enfoque permitió analizar la segregación urbana en el conjunto del AMBA,
+enfoque posibilitó analizar la segregación urbana en el conjunto del AMBA,
 el mismo no permite indagar en profundidad sobre los mecanismos
 específicos que operan en cada uno de estos dominios. En este sentido,
 futuros trabajos podrían complementar los resultados de esta tesis,
@@ -294,13 +294,13 @@ mediante estudios cualitativos que indaguen en los procesos que operan
 en cada uno de estos dominios y su articulación. <!--  -->Además, en
 este trabajo identificamos de manera global diferentes dinámicas de la
 segregación a escalas locales. En este sentido, sería posible analizar
-estas situaciones con mayor profundidad.<!-- 3. Fuentes de datos -->
+estas situaciones con mayor profundidad.<!-- 2. Fuentes de datos -->
 Otro límite del trabajo estuvo dado por el acceso y la disponibilidad de
-datos que puedan articular los diferentes dominios. En este sentido, no
+datos que puedan articular los diferentes dominios, en tanto no
 fue posible obtener datos masivos que vinculen los diferentes dominios a
-nivel individual o de hogares. En este sentido, futuros trabajos podrían
+nivel individual o de hogares. Futuros trabajos podrían
 complementar este análisis con datos que permitan vincular los
-diferentes dominios a nivel micro. <!-- 2. otros dominios -->Además, el
+diferentes dominios a nivel micro. <!-- 3. otros dominios -->Además, el
 trabajo se centró en analizar tres dominios específicos de la
 segregación urbana. Sin embargo, existen otros dominios que podrían ser
 relevantes para complementar este análisis. En particular, consideramos

@@ -663,7 +663,7 @@ if(!exists("HOG", inherits = F)){
            across(c(PRI_p1:SUP_p1), ~round(.x, 3)),
            emp = "") |>
     select(1:7, emp, 8:10) |>
-    kbl(caption = tit, label = "app1-tab2", booktabs = TRUE,
+    kbl(caption = tit, label = "HOM-TAB1", booktabs = TRUE,
         format = "latex", align = c("l", rep("c", 10)),
         col.names = c("Jurisdiccion", "Cantidad de hogares",
                       "% de hogares conyugales", "Total", "Primario",

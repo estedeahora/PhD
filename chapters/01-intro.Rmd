@@ -53,7 +53,7 @@ desigual a estos recursos para los grupos segregados, configurando una
 [@Kaztman1999a; @Wilson1987] y define una 'geografía del bienestar'
 [@DiVirgilio2023].
 
-Con el tiempo el análisis de la segregación fue incorporado otros
+Con el tiempo el análisis de la segregación fue incorponrado otros
 dominios de la vida social, como el laboral, el escolar, los espacios de
 actividad, las redes sociales virtuales, entre otros. En relación a
 esto, diferentes trabajos señalaron las limitaciones de un enfoque de
@@ -70,7 +70,7 @@ tanto, refuerza la segregación entre estos grupos [@Wong2011].
 <!-- Contexto y antecedentes latinoamericanos -->
 
 En paralelo, la adopción del concepto de segregación en el contexto
-latinoamericano, supuso un giro en la mirada en las diferencias
+latinoamericano, supuso un giro desde la mirada en las diferencias
 raciales/étnicas (predominante en los países europeos y en Estados
 Unidos) hacia las desigualdades socioeconómicas [@Duhau2013a;
 @Groisman2010; @Ward2012]. La presencia y extensión de los 'bolsones de
@@ -148,9 +148,7 @@ urbana?<!-- ENTORNOS URBANOS: A su vez, nos interesa especialmente el rol de los
 <!--# REVISAR -->
 
 A partir de este planteo general, se proponen los siguientes objetivos
-específicos:
-
-**[REVISAR]**<!-- OPCIONALES: (1) analizar el rol de las movilidades espaciales y los espacios de actividad en la configuración de la segregación social urbana (2) comprender cómo se articulan los patrones de segregación multi-dominio con las características de los entornos urbanos. -->
+específicos:<!-- OPCIONALES: (1) analizar el rol de las movilidades espaciales y los espacios de actividad en la configuración de la segregación social urbana (2) comprender cómo se articulan los patrones de segregación multi-dominio con las características de los entornos urbanos. -->
 
 -   analizar los patrones de segregación urbana en los ámbitos
     residencial, educativo y de los espacios de actividades en el AMBA;
@@ -190,7 +188,7 @@ sentido, la escuela constituye un ámbito privilegiado para entender cómo
 los sectores sociales evitan el contacto con otros sectores, a pesar de
 compartir un ámbito residencial diverso. En concreto, nuestros
 resultados avalan la idea de que la segregación urbana multi-dominio
-permite entender el proceso mediante el cuales las elecciones escolares
+permite entender el proceso mediante el cual las elecciones escolares
 se configuran como prácticas de segregación que complementan la
 segregación residencial.
 
@@ -212,7 +210,7 @@ otros dominios.
 
 <!-- Vacancia y aportes:Describir los aportes generales y fundamentos que justifican la tesis -->
 
-El presente trabajo tesis propone ser un *aporte* en al menos tres
+El presente trabajo de tesis propone ser un *aporte* en al menos tres
 aspectos. En primer lugar, busca cubrir una vacancia respecto a la falta
 de trabajos que aborden desde un enfoque cuantitativo el problema de la
 segregación en múltiples dominios de la vida social en el conjunto del
