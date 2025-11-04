@@ -16,6 +16,7 @@ $for(classoption)$
   $classoption$$sep$,%
 $endfor$
 ]{$documentclass$}%
+\usepackage[disablepatch=caption]{tocbasic}
 \usepackage{xcolor}
 $--     % Definir geometry de la página
 $if(geometry)$
@@ -42,7 +43,6 @@ $endfor$
 $after-header-includes.latex()$
 $hypersetup.latex()$
 $if(pdf-trailer-id)$
-
 \ifXeTeX
 \special{pdf:trailerid [ $pdf-trailer-id$ ]}
 \fi

@@ -810,6 +810,12 @@ MOV <- list()
 
   cli::cli_li(col_yellow("Table 6.1: Porcentaje de destino de los viajes en función del tipo de entorno urbano del destino y el motivo de la actividad de destino (ponderado por minutos totales permanecidos)"))
 
+  tit <- paste("Porcentaje de destino de los viajes",
+               "en función del tipo de entorno urbano",
+               "del destino y el motivo de la actividad",
+               "de destino (ponderado por minutos totales",
+               "permanecidos)")
+
   MOV$TAB1 <- MOV$MOV1 |>
     select(-sup) |>
     relocate(N, .before = Ratio ) |>
@@ -817,11 +823,7 @@ MOV <- list()
     rename("Entorno urbano de destino" = TH,
            "Superfice (%)" = sup_p, "Total" = N, "Minutos/Km2" = Ratio ) |>
     flextable() |>
-    set_caption(caption = paste("Porcentaje de destino de los viajes",
-                                "en función del tipo de entorno urbano",
-                                "del destino y el motivo de la actividad",
-                                "de destino (ponderado por minutos totales",
-                                "permanecidos)"),
+    set_caption(caption = tit,
                 autonum = run_autonum(seq_id = "tab", bkm = "segmov-tab1",
                                       bkm_all = T))  |>
     add_header_row(values = c("Entorno urbano de destino",
@@ -846,16 +848,42 @@ MOV <- list()
     flextable::width(j = c(3:4, 7), 1.2, unit = "cm") |>
     flextable::width(j = 5:6, 1.3, unit = "cm")
 
+  MOV$TAB1_tex <- MOV$MOV1 |>
+    select(-sup) |>
+    relocate(N, .before = Ratio ) |>
+    mutate(Ratio = round(Ratio, 2)) |>
+    rename("Entorno urbano de destino" = TH,
+           "Superfice (%)" = sup_p, "Total" = N, "Minutos/Km2" = Ratio ) |>
+    kbl(caption = tit, label = "segmov-tab1",
+        format = "latex", booktabs = TRUE) |>
+    kable_classic(full_width = FALSE, font_size = 8, html_font = "Alegreya Sans") |>
+    row_spec(row = 0, bold = TRUE) |>
+    column_spec(1, width = "1.9cm") |>
+    column_spec(column = 2, color = "gray", width = "1.7cm") |>
+    column_spec(3:6, width = "1.2cm") |>
+    column_spec(column = 7, bold = TRUE, italic = TRUE, width = "1.6cm") |>
+    column_spec(8, width = "1.7cm") |>
+    row_spec(row = nrow(MOV$MOV1), bold = TRUE) |>
+    row_spec(row = nrow(MOV$MOV1)-1, hline_after = TRUE ) |>
+    add_header_above(c(" " = 2,
+                       "Entorno urbano de destino según motivo de viaje (%)" = 5,
+                       " " = 1),
+                     bold = TRUE)
+
+  rm(tit)
+
 ### ╠ TAB 6.2 -----------------------------------
 
   cli::cli_li(col_yellow("Table 6.2: Diferencia promedio de segregación residencial entre lugar de residencia y el lugar de destino"))
 
+  tit <- paste("Diferencia promedio de los segregación residencial",
+               "entre lugar de residencia y el lugar de destino",
+               "diferenciando por nivel educativo del hogar de",
+               "la persona.")
+
   MOV$TAB2 <-  MOV$MOV3 |>
     flextable() |>
-    set_caption(caption = paste("Diferencia promedio de los segregación residencial",
-                                "entre lugar de residencia y el lugar de destino",
-                                "diferenciando por nivel educativo del hogar de",
-                                "la persona."),
+    set_caption(caption = tit,
                 autonum = run_autonum(seq_id = "tab", bkm = "segmov-tab2",
                                       bkm_all = T)) |>
     set_header_labels(EDU_red = "Nivel educativo del hogar", PRI = "Primario",
@@ -878,9 +906,33 @@ MOV <- list()
     flextable::width(j = c(2:4), 1.8, unit = "cm") |>
     flextable::width(j = 5, 2.7, unit = "cm")
 
+  MOV$TAB2_tex <- MOV$MOV3 |>
+    kbl(caption = tit, label = "segmov-tab2",
+        col.names = c("Nivel educativo del hogar", "Primario",
+                      "Secundario", "Superior",
+                      "Diferencia de segregación local\n(ls_DES-ls_RES)"),
+        format = "latex", booktabs = TRUE) |>
+    kable_classic(full_width = FALSE, font_size = 8, html_font = "Alegreya Sans") |>
+    row_spec(row = 0, bold = TRUE) |>
+    add_header_above(c(" " = 1,
+                       "Diferencia de composición (%DES-%RES)" = 3,
+                       " " = 1),
+                     bold = TRUE) |>
+    row_spec(row = nrow(MOV$MOV3), bold = TRUE, italic = TRUE) |>
+    row_spec(row = nrow(MOV$MOV3) - 1, hline_after = TRUE) |>
+    column_spec(1, width = "2cm") |>
+    column_spec(2:4, width = "1.8cm") |>
+    column_spec(5, width = "2.5cm")
+
+  rm(tit)
+
 ### ╠ TAB 6.3 ---------------------
 
   cli::cli_li(col_yellow("Table 6.3: Descomposición de la diferencia entre segregación residencial y de destino"))
+
+  tit <- paste("Descomposición de la diferencia entre la",
+               "segregación residencial y la segregación de",
+               "destinos")
 
   d <- MOV$MOV2$est[MOV$MOV2$stat == "diff"]
   f <- paste("Los valores tienen una corrección de sesgo a partir del cálculo de",
@@ -898,9 +950,7 @@ MOV <- list()
     mutate(p = ifelse(stat %in% c("M1", "M2"), NA, est / d * 100) ) |>
     select(st, est, p) |>
     flextable() |>
-    set_caption(caption = paste("Descomposición de la diferencia entre la",
-                                "segregación residencial y la segregación de",
-                                "destinos"),
+    set_caption(caption = tit,
                 autonum = run_autonum(seq_id = "tab", bkm = "segmov-tab3",
                                       bkm_all = T)) |>
     set_header_labels(st = " ", est = "Segregación (M)", p = "Δ%") |>
@@ -918,11 +968,38 @@ MOV <- list()
     color(4:8, color = "grey60") |>
     autofit()
 
-  rm(d, f, lab)
+  MOV$TAB3_tex <- MOV$MOV2 |>
+    left_join(lab, by = "stat") |>
+    mutate(p = ifelse(stat %in% c("M1", "M2"), NA, est / d * 100),
+           p = round(p, 1) |> format(nsmall = 1, digits = 1),
+           p = ifelse(str_detect(p, "NA"), "", p) ) |>
+    select(st, est, p) |>
+    kbl(caption = tit, label = "segmov-tab3",
+        col.names = c(" ", "Segregación (M)", "Δ%"),
+        format =  "latex", align = "l", booktabs = TRUE) |>
+    kable_classic(full_width = FALSE, font_size = 8,
+                  html_font = "Alegreya Sans") |>
+    row_spec(row = 0, bold = TRUE) |>
+    row_spec(2, hline_after = TRUE) |>
+    row_spec(3, hline_after = TRUE, bold = TRUE) |>
+    row_spec(4:8, color = "gray", italic = TRUE,
+             align = "r")
+
+    # colformat_double(j = 3 , digits = 1) |>
+    # align(i = 1:2, j = 2, align = "center") |>
+    # align(i = 3:8, j = 2, align = "right") |>
+    # align(i = 4:8, j = 1, align = "right") |>
+    # hline(i = 2:3) |>
+    # italic(4:8) |>
+    # color(4:8, color = "grey60") |>
+  rm(d, f, lab, tit)
 
 ### ╚ TAB App E.1 ---------------------------------------
 
   cli::cli_li(col_yellow("Table App E: Listado de variables usadas en el MCA"))
+
+  tit <- paste("Variables usadas en el Análisis de",
+               "Correspondencias Múltiples (MCA)")
 
   f <- paste("Notas:", "ID: Variables identificadoras;", "w: Ponderador;",
              "x: Variable activa en el análisis;",
@@ -941,8 +1018,7 @@ MOV <- list()
 
   MOV$appE_TAB1 <- var |>
     flextable() |>
-    set_caption(caption = paste("Variables usadas en el Análisis de",
-                                "Correspondencias Múltiples (MCA)"),
+    set_caption(caption = tit,
                 autonum = run_autonum(seq_id = "tab", bkm = "appE-listado",
                                       bkm_all = T)) |>
     align(j = 3:5, align = "center", part = "all") |>
@@ -959,7 +1035,17 @@ MOV <- list()
     flextable::width(j = 4:5, 1.1, unit = "cm") |>
     flextable::width(j = 6, 1.7, unit = "cm")
 
-  rm(var, f, l)
+  MOV$appE_TAB1_tex <-  var |>
+    kbl(caption = tit, label = "appE-listado", longtable = TRUE,
+        format =  "latex",
+        align = c(rep("l", 2), rep("c", 3)), booktabs = TRUE) |>
+    kable_classic(full_width = FALSE, font_size = 8,
+                  html_font = "Alegreya Sans") |>
+    row_spec(row = 0, bold = TRUE) |>
+    collapse_rows(columns = 1, longtable_clean_cut = FALSE,
+                  valign = "top", latex_hline = "full")
+
+  rm(var, f, l, tit)
 
 # Guardar resultados ----------------------------------------------------
 

@@ -33,6 +33,13 @@
 \newcommand{\source}[1]{\caption*{\footnotesize{\textit{Fuente:} {#1}}}}
 \newcommand{\notes}[1]{\caption*{\footnotesize{\textit{Nota:} {#1}}}}
 
+% Cambiar fuente y tamaño de letra para entorno de tablas (table)
+\AtBeginEnvironment{tabular}{\sffamily\footnotesize}
+\IfPackageLoadedTF{tabularray}{%
+\AtBeginEnvironment{tblr}{\sffamily\footnotesize}}{}
+\IfPackageLoadedTF{longtable}{%
+\AtBeginEnvironment{longtable}{\sffamily\footnotesize}}{}
+
 % Notas sucesivas entre capítulos
 \counterwithout{footnote}{chapter}
 
@@ -41,7 +48,7 @@
 \setheadsepline{0.4pt}                                  % grosor de la línea
 \setkomafont{pageheadfoot}{\sffamily}
 
-\pagenumbering{gobble} 
+\pagenumbering{gobble}
 \pagestyle{plain.scrheadings}
 
 % Permite quiebre de palabras largas
@@ -78,6 +85,3 @@
 
 % Define forma de portada
 \usepackage{template/latex/TitleTESIS}
-
-
-

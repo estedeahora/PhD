@@ -2,7 +2,16 @@
 
 \textbf{Palabras claves:}
 
-Geografía de la educación; Diferencia entre escuelas; Desigualdades territoriales; Reproducción de la segregación multi-dominio; Elección de escuelas; Movilidades urbanas
+$if(keywords-es/allbutlast)$
+$for(keywords-es/allbutlast)$
+$it$$sep$;
+$endfor$
+$keywords-es/last$.
+$else$
+$keywords-es/last$
+$endif$
+
+% $for(keywords-es)$$keywords-es$; $endfor$
 
 \textbf{Resumen:}
 
@@ -21,10 +30,17 @@ $abstract-es$
 
 \textbf{Keywords:}
 
-School inequalities; Geography of education; Territorial inequalities; multi-domain reproduction of segregation; School choice; Urban mobilities.
+$if(keywords-en/allbutlast)$
+$for(keywords-en/allbutlast)$
+$it$$sep$;
+$endfor$
+$keywords-en/last$.
+$else$
+$keywords-en/last$
+$endif$
 
 \textbf{Abstract:}
 
-$abstract$
+$abstract-en$
 
 \newpage

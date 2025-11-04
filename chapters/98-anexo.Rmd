@@ -184,7 +184,13 @@ knitr::include_graphics(here::here("figures",
 # Listado y descripción de variables utilizadas en el análisis de viajes {#appendixE}
 
 ```{r appE-listado}
-MOV$appE_TAB1
+if(knitr::is_latex_output()){
+  # MOV$appE_TAB1_tex
+  MOV$appE_TAB1
+}else{
+  MOV$appE_TAB1
+}
+
 ```
 
 # Gráfcos complementarios al análisis sobre la Matriz de Indicadores Múltiples {#appendixF}
@@ -231,7 +237,6 @@ include_graphics(here::here("figures", "Movilidad_MCA_Variables_ind3.png") )
 ```{r appF-VARDESC4}
 #| fig.cap: "Proyección independiente de variables referidas a la ubicación de la residencia (arriba) y del lugar de destino (abajo)"
 #| fig.asp: 1
-
 
 include_graphics(here::here("figures", "Movilidad_MCA_Variables_ind4.png") )
 ```

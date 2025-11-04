@@ -743,7 +743,9 @@ replic <- 1000
 
 ### ╠ TAB 7.1: Distancia promedio recorrida x entorno -----------------------------
 
-  EDU$TAB1 <- EDU$EDU7 |>
+  tit <- "Descripción del modelo de asignación"
+
+  aux_TAB1 <- EDU$EDU7 |>
     group_by(TH) |>
     summarise (radios = n(),
                EST = sum(EST_SEC),
@@ -762,9 +764,11 @@ replic <- 1000
     mutate(across(starts_with("dis_"), round),
            p_SV = round(p_SV, 1),
            s1 = "", s2 = "") |>
-    select(TH, radios, EST, s1, SV, p_SV, s2, dis_min, dis_alloc) |>
+    select(TH, radios, EST, s1, SV, p_SV, s2, dis_min, dis_alloc)
+
+  EDU$TAB1 <- aux_TAB1 |>
     flextable() |>
-    set_caption(caption = "Descripción del modelo de asignación",
+    set_caption(caption = tit,
                 autonum = run_autonum(seq_id = "tab", bkm = "school-tab1",
                                       bkm_all = TRUE)) |>
     colformat_double(big.mark = " ", decimal.mark = ",",
@@ -784,11 +788,26 @@ replic <- 1000
     align(j = -1, i = 1, align ='center', part = 'header') |>
     bold(i = 10, part = "body") |>
     hline(i = 9:10, border = fp_border(width = 1)) |>
-    # flextable::font(fontname='Alegreya Sans', part = "all") |>
-    # flextable::fontsize(size = 7, part = "all") |>
     flextable::width(j = 1, 2, unit = "cm") |>
     flextable::width(j = c(4, 7), 0.25, unit = "cm") |>
     flextable::width(j = c(2:3, 5:6, 8:9), 1.15, unit = "cm")
+
+  EDU$TAB1_tex <- aux_TAB1 |>
+    kbl(caption = tit, label = "school-tab1",
+        col.names = c("Entorno Urbano", "Radios", "Estudiantes", " ",
+                      "Total", "%", " ", "Mínima", "Modelo"),
+        format.args = list(big.mark = " "),
+        format = "latex", booktabs = TRUE) |>
+    kable_classic(full_width = FALSE) |>
+    row_spec(row = 0, bold = TRUE) |>
+    row_spec(row = nrow(aux_TAB1), hline_after = TRUE,  bold = TRUE) |>
+    row_spec(row = nrow(aux_TAB1)-1, hline_after = TRUE ) |>
+    add_header_above(c(" " = 1, "Totales" = 2, " " = 1,
+                       "Sin vacantes" = 2, " " = 1,
+                       "Distancia promedio [m]" = 2),
+                     bold = TRUE)
+
+  rm(tit, aux_TAB1)
 
 ### ╠ TAB 7.2: Diferencia de segregación --------------------------------------
 
@@ -799,7 +818,12 @@ replic <- 1000
                 "Marginal de Unidades",
                 "Segregación estructural")
 
-  EDU$TAB2 <- EDU$EDU6 |>
+  tit <- "Descomposición de la diferencia de segregación (Índice de Información Mutua)"
+  foot <- paste("Los valores están corregidos por sesgo.",
+                replic, "iteraciones Bootstrap.",
+                "Intervalo de confianza = 99%")
+
+  aux_TAB2 <- EDU$EDU6 |>
     filter(is.na(CUEANEXO)) |>
     mutate(grupo = c(rep("Segregación Escolar", 2),
                      "Diferencia (Modelo - Empírico)",
@@ -815,9 +839,11 @@ replic <- 1000
              map(str_c, collapse = "/") |>
              unlist(),
            CI = paste0("(", CI, ")") ) |>
-    select(grupo, name, est, CI, por) |>
+    select(grupo, name, est, CI, por)
+
+  EDU$TAB2 <-  aux_TAB2 |>
     flextable() |>
-    set_caption(caption = "Descomposición de la diferencia de segregación (Índice de Información Mutua)",
+    set_caption(caption = tit,
                 autonum = run_autonum(seq_id = "tab", bkm = "school-tab2",
                                       bkm_all = TRUE)) |>
     set_header_labels(grupo = "", name = "", est = "Value",
@@ -844,15 +870,25 @@ replic <- 1000
     hline(i = 2:3, border = fp_border(width = 1)) |>
     add_footer_lines("Estimator method: Shapley.") |>
     flextable::footnote(part = "header", j = 3, i = 1,
-             value = as_paragraph(
-               paste("Los valores están corregidos por sesgo.",
-                     replic, "iteraciones Bootstrap.",
-                     "Intervalo de confianza (CI) = 99 %") ),
-             ref_symbols = "a") #|>
-    # flextable::font(fontname='Alegreya Sans', part = "all") |>
-    # flextable::fontsize(size = 7, part = "all")
+             value = as_paragraph(foot),
+             ref_symbols = "a")
 
-  rm(name_lab)
+  EDU$TAB2_tex <- aux_TAB2 |>
+    kbl(caption = tit, label = "school-tab2", align = "l",
+        col.names = c(" ", " ", "Valor", "CI", "Δ%"),
+        format = "latex", booktabs = TRUE) |>
+    kable_classic(full_width = FALSE) |>
+    row_spec(2, hline_after = TRUE) |>
+    row_spec(3, hline_after = TRUE, bold = TRUE) |>
+    row_spec(4:8, color = "gray", italic = TRUE,
+             align = "r") |>
+    add_header_above(c(" " = 2, "Índice de Información Mutua" = 2, " " = 1),
+                     bold = TRUE) |>
+    collapse_rows(columns = 1:2, valign = "top") |>
+    PhD_add_auxcaption(value = foot, type = "notes")
+
+
+  rm(name_lab, tit, foot, aux_TAB2)
 
 ### ╠ TAB 7.3: Distancias por red urbana ------------
   # Comparación de distancias lineales y por red urbana

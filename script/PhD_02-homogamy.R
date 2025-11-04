@@ -676,11 +676,11 @@ if(!exists("HOG", inherits = F)){
                        " " = 1, "Probabilidad de homogamia" = 3),
                      bold = TRUE) |>
     row_spec(row = 3, bold = TRUE) |>
-    kableExtra::column_spec(1, width = "1.6cm") |>
-    kableExtra::column_spec(2:3, width = "2.3cm") |>
-    kableExtra::column_spec(4:7, width = "1.4cm") |>
+    kableExtra::column_spec(1, width = "1.5cm") |>
+    kableExtra::column_spec(2:3, width = "2cm") |>
+    kableExtra::column_spec(4:7, width = "1.3cm") |>
     kableExtra::column_spec(8, width = "0.1cm") |>
-    kableExtra::column_spec(9:11, width = "1.4cm")
+    kableExtra::column_spec(9:11, width = "1.3cm")
 
   rm(tit)
 
@@ -688,12 +688,19 @@ if(!exists("HOG", inherits = F)){
 
   cli::cli_li(col_yellow("Tabla 5.2: Porcentaje de unidades espaciales con probabilidad de homogamia significativamente diferente de H0."))
 
+  tit <- "Porcentaje de unidades espaciales con probabilidad de homogamia significativamente diferente de H0"
+  foot <- paste0("Valores obtenidos mediante ",
+                 format(replic, big.mark = ".",
+                        decimal.mark = ","),
+                 " replicaciones Montecarlo. ",
+                 "Nivel de confianza: ", 1 - conf)
+
   HOM$TAB2 <- HOM$HOM4 |>
     mutate(nivel = factor(nivel, levels = c("PRI", "SEC", "SUP"),
                           labels = c("Primario", "Secundario", "Superior"))) |>
     select(nivel, no_signific, everything()) |>
     flextable::flextable() |>
-    flextable::set_caption(caption = "Porcentaje de unidades espaciales con probabilidad de homogamia significativamente diferente de H0",
+    flextable::set_caption(caption = tit,
                            autonum = officer::run_autonum(seq_id = "tab",
                                                           bkm = "HOM-TAB2",
                                                           bkm_all = TRUE))  |>
@@ -711,11 +718,7 @@ if(!exists("HOG", inherits = F)){
     flextable::bg(j = 3:4, part = "body", bg = "grey90") |>
     flextable::color(j = 3:4, part = "body", color = "grey50") |>
     flextable::add_footer_lines(as_paragraph(as_b("Notas:"))) |>
-    flextable::add_footer_lines(paste0("Valores obtenidos mediante ",
-                                       format(replic, big.mark = ".",
-                                              decimal.mark = ","),
-                                       " replicaciones Montecarlo. ",
-                                       "Nivel de confianza: ", 1 - conf)) |>
+    flextable::add_footer_lines(foot) |>
     flextable::footnote(j = 3, i = 1, part = "header",
                         ref_symbols = "*", inline = F,
                         value = flextable::as_paragraph(paste0("Porcentaje de simulaciones con valores ",
@@ -725,41 +728,25 @@ if(!exists("HOG", inherits = F)){
     flextable::fontsize(size = 7, part = "all") |>
     flextable::autofit()
 
-  # Anexo? ----------
+  HOM$TAB2_tex <- HOM$HOM4 |>
+    mutate(nivel = factor(nivel, levels = c("PRI", "SEC", "SUP"),
+                          labels = c("Primario", "Secundario", "Superior")),
+           across(where(is.numeric), ~round(.x, 2) |>
+                    format(digits = 2, nsmall = 2) |>
+                    paste0("%"))) |>
+    select(nivel, no_signific, everything()) |>
+    kbl(caption = tit, label = "HOM-TAB2", booktabs = TRUE,
+        format = "latex", align = c("l", rep("c", 10)),
+        col.names = c("Nivel", "No Significativo",
+                      "Debajo", "Sobre", "Total"),
+        format.args = list(big.mark = " ") ) |>
+    kable_classic(full_width = F, font_size = 8, html_font = "Alegreya Sans") |>
+    row_spec(row = 0, bold = TRUE) |>
+    add_header_above(c(" " = 2, "Signifcativamente diferentes de H0" = 3),
+                     bold = TRUE) |>
+    PhD_add_auxcaption(value = foot, type = "notes")
 
-  # # Tabla matrimonial
-  # HOM$HOM2 |>
-  #   filter(!is.na(P2)) |>
-  #   pivot_wider(id_cols = P1,
-  #               names_from = P2,
-  #               values_from = n, values_fill = 0) |>
-  #   mutate(P1 = factor(P1, levels = 1:3,
-  #                      labels = c("Primario", "Secundario", "Superior")),
-  #          across(where(is.numeric), ~ifelse(.x == 0, NA, .x))) |>
-  #   rename_with(.fn = ~c(" ", "Primario", "Secundario", "Superior") ) |>
-  #   flextable() |>
-  #   set_caption(caption = "Tabla matrimonial (Total AMGBA)",
-  #               autonum = officer::run_autonum(seq_id = "tab", bkm = "AP3-TAB1",
-  #                                              bkm_all = T))
-
-  # # Prueba Chi2
-  # HOM$HOM3$stdres[lower.tri(HOM$HOM3$stdres)] <- NA
-  # HOM$HOM3$stdres |>
-  #   as_tibble(rownames = "P1", ) |>
-  #   mutate(P1 = factor(P1, levels = 1:3,
-  #                      labels = c("Primario", "Secundario", "Superior")),
-  #          across(where(is.numeric), round)) |>
-  #   set_names(c(" ", "Primario", "Secundario", "Superior")) |>
-  #   flextable::flextable(defaults = set_flextable_defaults(digits = 0)) |>
-  #   flextable::set_caption(caption = "Residuos estándar de la prueba Chi Cuadrado",
-  #                          autonum =  officer::run_autonum(seq_id = "tab", bkm = "AP3-TAB1",
-  #                                                          bkm_all = T)) |>
-  #   flextable::add_footer_lines(values = paste0(HOM$HOM3$method, ". ",
-  #                                    "Confianza (1-p): ",
-  #                                    round((1 - HOM$HOM3$p.value) * 100,2), "%")) |>
-  #   flextable::font(fontname='Alegreya Sans', part = "all") |>
-  #   flextable::fontsize(size = 7, part = "all") |>
-  #   flextable::autofit()
+  rm(tit, foot)
 
 # Guardar resultados ----------------------------------------------------
 
@@ -769,5 +756,41 @@ if(!exists("HOG", inherits = F)){
   usethis::use_data(HOM, overwrite = TRUE)
 
 rm(db_aux, db_aux1, db_aux2)
-rm(limit, replic, conf)
+rm(limit, replic, conf, HOM)
+
+# Anexo? ----------
+
+# # Tabla matrimonial
+# HOM$HOM2 |>
+#   filter(!is.na(P2)) |>
+#   pivot_wider(id_cols = P1,
+#               names_from = P2,
+#               values_from = n, values_fill = 0) |>
+#   mutate(P1 = factor(P1, levels = 1:3,
+#                      labels = c("Primario", "Secundario", "Superior")),
+#          across(where(is.numeric), ~ifelse(.x == 0, NA, .x))) |>
+#   rename_with(.fn = ~c(" ", "Primario", "Secundario", "Superior") ) |>
+#   flextable() |>
+#   set_caption(caption = "Tabla matrimonial (Total AMGBA)",
+#               autonum = officer::run_autonum(seq_id = "tab", bkm = "AP3-TAB1",
+#                                              bkm_all = T))
+
+# # Prueba Chi2
+# HOM$HOM3$stdres[lower.tri(HOM$HOM3$stdres)] <- NA
+# HOM$HOM3$stdres |>
+#   as_tibble(rownames = "P1", ) |>
+#   mutate(P1 = factor(P1, levels = 1:3,
+#                      labels = c("Primario", "Secundario", "Superior")),
+#          across(where(is.numeric), round)) |>
+#   set_names(c(" ", "Primario", "Secundario", "Superior")) |>
+#   flextable::flextable(defaults = set_flextable_defaults(digits = 0)) |>
+#   flextable::set_caption(caption = "Residuos estándar de la prueba Chi Cuadrado",
+#                          autonum =  officer::run_autonum(seq_id = "tab", bkm = "AP3-TAB1",
+#                                                          bkm_all = T)) |>
+#   flextable::add_footer_lines(values = paste0(HOM$HOM3$method, ". ",
+#                                    "Confianza (1-p): ",
+#                                    round((1 - HOM$HOM3$p.value) * 100,2), "%")) |>
+#   flextable::font(fontname='Alegreya Sans', part = "all") |>
+#   flextable::fontsize(size = 7, part = "all") |>
+#   flextable::autofit()
 

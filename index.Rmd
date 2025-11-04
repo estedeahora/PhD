@@ -1,7 +1,6 @@
 ---
-title: 'Segregación urbana multi-dominio en el Aglomerado Metropolitano del Gran Buenos Aires (Argentina)'
+title: 'Segregación urbana multi-dominio en el aglomerado metropolitano del Gran Buenos Aires (Argentina)'
 # subtitle: 'Estudio en el Aglomerado Metropolitano del Gran Buenos Aires (Argentina)'
-title-en: 'Multi-domain urban segregation. Study in the Metropolitan Agglomeration of Greater Buenos Aires (Argentina)'
 
 # Institucional
 logo: 'template/logo_UBA-Sociales2.jpg'
@@ -15,100 +14,120 @@ supervisor: 'Dra. María Mercedes Di Virgilio'         # Directoras
 
 date: "`r stringr::str_to_sentence(format(Sys.time(), '%B %Y') )`"
 
-abstract: |
-  The focus of this doctoral dissertation is the analysis of urban segregation
-  in the Greater Buenos Aires Metropolitan Area (AMBA) from a multi-domain 
-  perspective, understanding that the dynamics of social differentiation are 
-  not limited exclusively to the residential sphere, but extend and interact 
-  with other areas of daily life, such as education and urban mobility. The 
-  research problem stems from the need to overcome the limitations of a 
-  one-dimensional approach to segregation, proposing to investigate how the 
-  different domains (residential, school and daily activities) relate to each 
-  other, whether they act to reinforce a ‘vicious circle’ of separation 
-  between social groups or whether, on the contrary, each contributes specific 
-  mechanisms to the configuration of urban inequality. Based on these questions, 
-  the objectives are: to analyse patterns of urban segregation in the three 
-  domains mentioned; to identify the effect of educational homogamy on 
-  residential segregation; and to understand how school choices and mobility 
-  practices contribute to the reproduction of territorial and educational 
-  inequalities. The theoretical framework combines the traditions of urban 
-  sociology, educational geography and social stratification, incorporating 
-  Weberian, neo-Weberian and Bourdieusian contributions to conceptualise 
-  segregation as a spatial dimension of stratification. Methodologically, the 
-  study takes a quantitative, multi-scale and multidimensional approach, 
-  combining primary and secondary sources with descriptive, multivariate and 
-  spatial analysis techniques. Segregation indices, school allocation models 
-  and multiple correspondence analysis are applied, integrating census data, 
-  administrative records and mobility surveys. The results show that 
-  residential segregation in the AMBA presents complex patterns linked to both 
-  the socioeconomic structure and educational homogamy in the formation of 
-  households. Likewise, daily mobility, far from compensating for residential 
-  inequalities, tends to reinforce social isolation, demonstrating that spaces 
-  of activity reproduce segmentations according to cultural and educational 
-  capital. In the school environment, it is confirmed that the distribution of 
-  supply and the logic of family choice produce a hierarchical and 
-  differentiated educational landscape, in which territorial and school 
-  inequalities reinforce each other. Among the main theoretical contributions, 
-  the concept of ‘unequal and hierarchical educational-territorial space’ is 
-  proposed to account for how differences between schools are part of a 
-  continuum in which territorial, social and educational factors 
-  simultaneously participate.The conclusions argue that urban segregation 
-  should be understood as the result of the overlapping and articulation of 
-  multiple domains of social life, in which household choices, mobility 
-  dynamics and structural inequalities come together in a single process. 
-  Thus, it is proposed that the multi-domain reproduction of segregation 
-  constitutes a central mechanism in the configuration of urban inequality 
-  in the AMBA and that its integrated analysis offers relevant insights for 
-  both theory and the design of public policies aimed at reducing territorial, 
-  educational and social gaps.
+title-en: 'Multi-domain urban segregation in the metropolitan agglomeration of Gran Buenos Aires (Argentina)'
+
+abstract-en: |
+  Framed within the field of urban studies, this doctoral thesis analyzes urban
+  segregation in the Greater Buenos Aires Metropolitan Area (AMBA) from a 
+  multi-domain perspective, understanding that social differentiation dynamics 
+  are not exclusively reduced to the residential sphere but extend and articulate
+  with other spaces of daily life, such as education and activity spaces. The
+  research problem stems from the need to overcome the limitations of a segregation
+  approach focused exclusively on the residential domain, proposing to understand
+  how the different domains of social life articulate to configure segregation as 
+  a complex phenomenon. Specifically, the thesis analyzes the residential, school,
+  and daily activity spaces domains. Based on this approach, the general objective
+  of the thesis is to investigate the way in which segregation is articulated 
+  across different domains of social life in the Greater Buenos Aires Metropolitan
+  Area (AMBA). To this end, the thesis asks: What is the role played by the
+  residential domain in shaping the patterns of urban segregation? In what way does
+  urban segregation manifest itself in the different domains? Do these domains
+  function by reinforcing or decreasing the 'separation' (segregation) between
+  social groups? In other words: Is there a 'vicious cycle' between these domains 
+  of segregation, or, on the contrary, does each of these domains contribute its
+  own elements to urban segregation? Based on this general approach, the specific
+  objectives are: (a) to analyze the patterns of urban segregation in the
+  residential, educational, and activity spaces domains in the AMBA; (b) to
+  identify the effect of educational homogamy on the segregation of the residential
+  domain in the AMBA; (c) to understand how socio-economic segregation in activity
+  spaces and secondary level educational spaces articulates with the residential
+  segregation of AMBA residents. The theoretical proposal is positioned in an
+  interdisciplinary space that combines the fields of urban studies and social
+  stratification. The study emphasises that urban inequality plays a central and
+  independent role in social stratification mechanisms and, conversely, cannot be
+  analysed in isolation from social differences and structures. To achieve this,
+  Weberian, Neo-Weberian, and Bourdieusian contributions are incorporated with the
+  aim of conceptualizing segregation as a spatial dimension of social
+  stratification. Methodologically, the work proposes a quantitative  approach,
+  framed within the paradigm of social and spatial data science. As part
+  of this proposal, the work articulates census data, administrative records, and
+  mobility surveys. The results show that urban segregation in the AMBA cannot be
+  understood from a perspective focused on each of the domains in isolation. In 
+  this sense, the idea of a 'vicious cycle' of segregation is discussed, arguing
+  that in the case analyzed, each of the domains contributes specific mechanisms 
+  to the configuration of urban inequality. Along these lines, the thesis maintains
+  that urban segregation is the result of the superposition and articulation of the
+  different domains of social life, in which household choices, mobility 
+  strategies, and structural inequalities are combined. Thus, it is proposed that
+  the  multi-domain reproduction of segregation constitutes a complex mechanism
+  through which urban inequality is configured and reproduced in the AMBA.
+
 abstract-es: |
-  Esta tesis doctoral se centra en el análisis de la segregación urbana en el
-  Aglomerado Metropolitano del Gran Buenos Aires (AMBA) desde una perspectiva
-  multi-dominio, entendiendo que las dinámicas de diferenciación social no se
-  reducen exclusivamente al ámbito residencial, sino que se extienden y 
-  articulan con otros espacios de la vida cotidiana, como la educación y las
-  movilidades urbanas. El problema de investigación parte de la necesidad de
-  superar las limitaciones de un enfoque unidimensional de la segregación,
-  proponiendo indagar cómo los distintos dominios (residencial, escolar y de
-  actividades cotidianas) se relacionan entre sí, si actúan reforzando un
-  'círculo vicioso' de separación entre grupos sociales o si, en cambio, cada
-  uno aporta mecanismos específicos a la configuración de la desigualdad 
-  urbana. A partir de estas preguntas, los objetivos planteados son: analizar
-  los patrones de segregación urbana en los tres dominios mencionados;
-  identificar el efecto de la homogamia educativa sobre la segregación
-  residencial; y comprender cómo las elecciones escolares y las prácticas de
-  movilidad contribuyen a la reproducción de desigualdades territoriales y
-  educativas. El marco teórico combina la tradición de la sociología urbana, 
-  la geografía de la educación y la estratificación social, incorporando 
-  aportes weberianos, neoweberianos y bourdianos para conceptualizar la
-  segregación como dimensión espacial de la estratificación. Metodológicamente,
-  el trabajo se inscribe en un enfoque cuantitativo, multi-escalar y
-  multidimensional, articulando fuentes primarias y secundarias, con técnicas
-  descriptivas, multivariadas y de análisis espacial. Se aplican índices de
-  segregación, modelos de asignación escolar y análisis de correspondencias
-  múltiples, integrando datos censales, registros administrativos y encuestas 
-  de movilidad. Los resultados muestran que la segregación residencial en el
-  AMBA presenta patrones complejos vinculados tanto a la estructura
-  socioeconómica como a la homogamia educativa en la formación de los hogares.
-  Asimismo, las movilidades cotidianas, lejos de compensar las desigualdades
-  residenciales, tienden a reforzar los aislamientos sociales, evidenciando que
-  los espacios de actividad reproducen segmentaciones según capital cultural y
-  educativo. En el ámbito escolar, se confirma que la distribución de la oferta
-  y la lógica de elección familiar producen un paisaje educativo jerárquico y
-  diferenciado, en el cual las desigualdades territoriales y escolares se
-  potencian mutuamente. Entre los principales aportes teóricos se propone el
-  concepto de “espacio educativo-territorial desigual y jerarquizado” para dar
-  cuenta de cómo las diferencias entre escuelas forman parte de un continuo en
-  el que participan simultáneamente factores territoriales, sociales y
-  educativos. Las conclusiones sostienen que la segregación urbana debe
-  entenderse como el resultado de la superposición y articulación de múltiples
-  dominios de la vida social, en los cuales las elecciones de los hogares, las
-  dinámicas de movilidad y las desigualdades estructurales se conjugan en un
-  mismo proceso. Así, se plantea que la reproducción multi-dominio de la
-  segregación constituye un mecanismo central en la configuración de la
-  desigualdad urbana en el AMBA y que su análisis integrado ofrece claves
-  relevantes tanto para la teoría como para el diseño de políticas públicas
-  orientadas a reducir las brechas territoriales, educativas y sociales.
+  Enmarcada en el campo de los estudios urbanos, esta tesis doctoral analiza 
+  la segregación urbana en el Aglomerado Metropolitano del Gran Buenos Aires
+  (AMBA) desde una perspectiva multi-dominio, entendiendo que las dinámicas de
+  diferenciación social no se reducen exclusivamente al ámbito residencial, 
+  sino que se extienden y articulan con otros espacios de la vida cotidiana, 
+  como la educación y los espacios de actividad. El problema de investigación 
+  parte de la necesidad de superar las limitaciones de un enfoque de la 
+  segregación centrado exclusivamente en el dominio residencial, proponiendo
+  entender cómo los diferentes dominios de la vida social se articulan configurando
+  la segregación como un fenómeno complejo. En particular, la tesis analiza los
+  dominios residencial, escolar y los espacios de actividades cotidianas.
+  Partiendo de este planteo, el objetivo general de la tesis es 
+  indagar el modo en el que se articula la segregación en diferentes dominios 
+  de la vida social en el Aglomerado Metropolitano del Gran Buenos Aires (AMBA).
+  Para ello la tesis se pregunta : ¿Cuál es el rol que juega el dominio 
+  residencial en la configuración de los patrones de segregación urbana? 
+  ¿De qué modo la segregación urbana se manifiesta en los diferentes dominios?
+  ¿Estos dominios funcionan reforzando  o disminuyendo la ‘separación’ 
+  (segregación) entre los grupos sociales? En otras palabras: ¿Existe un ‘círculo
+  vicioso’ entre estos dominios  de la segregación o, por el contrario, cada uno de
+  estos dominios aporta elementos propios a la segregación urbana? A partir de este
+  planteo general, los objetivos específicos son: (a) analizar los patrones de
+  segregación urbana en los ámbitos residencial, educativo y de los espacios de
+  actividades en el AMBA; (b) identificar el efecto de la homogamia educativa sobre
+  la segregación del dominio residencial en el AMBA; (c) comprender cómo se
+  articula la segregación socio-económica en los espacios de actividad y los
+  espacios educativos de nivel medio con la segregación residencial de los
+  residentes del AMBA. La propuesta teórica se posiciona en un espacio
+  interdisciplinario que combina el campos de 
+  los estudios urbanos y la estratificación social. El trabajo destaca el hecho de
+  que la desigualdad urbana cumple un rol central y autónomo como parte de los
+  mecanismos de estratificación social y, como contracara, no puede analizarse por
+  fuera de las diferencias y estructuras sociales de la sociedad. Para ello se
+  incorporan aportes weberianos, neoweberianos y bourdianos con el objeto de
+  conceptualizar la segregación como dimensión espacial de la estratificación 
+  social. Metodológicamente, el trabajo propone un enfoque cuantitativo, enmarcado
+  en el paradigma de la ciencia de datos sociales y espaciales. Como parte de esta
+  propuesta, el trabajo articula datos censales, registros administrativos y
+  encuestas de movilidad. Los resultados muestran que la segregación urbana en 
+  el AMBA no puede entenderse desde una mirada centrada en cada uno de los 
+  dominios de forma aislada. En este sentido, se discute la idea de 'círculo
+  vicioso' de segregación, sosteniendo que en el caso analziado, cada uno de
+  los dominio aporta mecanismos específicos a la configuración de la desigualdad 
+  urbana. En esta línea, la tesis sostine que la segregación urbana es el resultado
+  de la superposición y articulación de los diferentes dominios de la vida social,
+  en los cuales las elecciones de los hogares, las estrategias de movilidad y las
+  desigualdades estructurales se conjugan. Así, se plantea que la reproducción 
+  multi-dominio de la segregación constituye un mecanismo complejo mediante el 
+  cual se configura y reproduce la desigualdad urbana en el AMBA.
+
+keywords-es:
+  - Segregación multi-dominio
+  - Desigualdades urbanas y estratificación social
+  - Segregación socio-económica
+  - Segregación residencial
+  - Segregación en los espacios de actividad
+  - Segregación educativa
+  
+keywords-en:
+  - Multi-domain segregation
+  - Urban inequalities and social stratification
+  - Socio-economic segregation
+  - Residential segregation
+  - Activity spaces segregation
+  - Educational segregation
 
 # Definiciones de exportación
 documentclass: scrbook # book Requiere chapterprefix=true como opción
@@ -172,19 +191,18 @@ devtools::load_all()
 
 # Algunas palabras iniciales {.unnumbered}
 
-## Título para el prefacio {.unnumbered}
+## Sobre los alcances de esta tesis {.unnumbered}
 
-[] TODO Escribir texto (final). Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec hendrerit felis. Suspendisse vel consectetur ex. Vivamus varius, ligula vitae volutpat cursus, nisi elit commodo massa, eget vestibulum erat nulla et odio. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla fringilla hendrerit magna ac vehicula. Vivamus tortor lacus, malesuada in fermentum vitae, fermentum eget magna. Proin sit amet elit quis metus pharetra gravida ac varius eros. Curabitur dui metus, iaculis quis quam nec, pharetra placerat massa. In commodo vel ex eget varius. Praesent a urna at arcu sodales eleifend. Ut pharetra convallis hendrerit.
+Esta tesis doctoral se centra en el análisis de la segregación urbana en el Aglomerado Metropolitano del Gran Buenos Aires (AMBA) desde una *perspectiva multi-dominio*, entendiendo que las dinámicas de diferenciación social no se reducen exclusivamente al ámbito residencial, sino que se extienden y articulan con otros espacios de la vida cotidiana, como la educación, las movilidades urbanas y los espacios de actividad. El problema de investigación parte de la necesidad de superar las limitaciones de un enfoque de la segregación centrado únicamente en el espacio residencial, para lo cual propone analizar cómo se configura la segregación urbana como resultado de la articulación entre el dominio residencial, educativo y los espacios de actividad.
 
-Praesent aliquet condimentum ligula, sit amet pharetra dui tincidunt sed. In pretium aliquet ultrices. Praesent fermentum tortor ac tortor fermentum tristique. Suspendisse accumsan nibh nunc, id fermentum turpis commodo a. Sed sit amet efficitur elit, id vestibulum dolor. Suspendisse potenti. Curabitur ut felis ac lectus eleifend tincidunt. Nullam ac consequat mi, at egestas est. Mauris vulputate neque id ipsum pharetra, a faucibus neque interdum. Suspendisse ullamcorper posuere turpis, ullamcorper suscipit nisl elementum eget. Fusce rhoncus facilisis quam, in condimentum tellus egestas ut.
+El interés por abordar la problemática de la segregación desde un enfoque multi-dominio no es meramente teórico. Por el contrario, se enraíza en la necesidad de generar conocimiento para la intervención pública. Se ha destacado repetidas veces la desigualdad territorial de las ciudades latinoamericanas, la cual toma especial relevancia a partir de los procesos acelerados de desarrollo y urbanización ocurridos durante el siglo XX. Estos procesos han dado como resultado 'bolsones de pobreza' y una separación marcada del espacio urbano latinoamericano. Las políticas neoliberales y globalizantes han profundizado estas desigualdades, promoviendo la consolidación crónica de estos espacios de marginalidad y el crecimiento de enclaves de élite en las periferias. Si bien estos procesos han sido estudiados y resaltados como problemas sociales de interés público, ha habido menos atención sobre cómo estas separaciones del espacio residencial se materializan y articulan con usos diferenciales del espacio, mediante las prácticas de movilidad y la configuración de espacios de actividad diferenciados espacialmente.
 
-Mauris elementum quam ac nulla euismod, sed tincidunt arcu efficitur. In id nisi egestas, egestas dui non, auctor mauris. Phasellus ac ex arcu. Mauris semper, risus pretium commodo bibendum, odio elit viverra mi, ac molestie mi augue non lacus. Donec commodo consectetur lorem et efficitur. Pellentesque urna erat, accumsan eget erat sit amet, pulvinar convallis velit. Praesent venenatis ipsum vel elit pharetra varius. Ut rhoncus ut neque eget iaculis. Quisque hendrerit purus eros, vitae blandit purus pulvinar nec. Aliquam turpis justo, faucibus vel nunc in, aliquet ornare turpis. Maecenas sed est leo. Nullam ultrices lectus sit amet eros suscipit viverra. Pellentesque sagittis, orci eget porta tempus, tellus leo porttitor lorem, et convallis urna diam vel ex. Quisque dictum lacinia hendrerit. Suspendisse pharetra mi ut turpis tempor dignissim vitae vitae mauris. Nunc non dui nec tortor commodo maximus nec pretium sem.
+Nuestro estudio muestra que la segregación *se estructura* en el barrio, *se reconfigura* en los espacios de actividad y *se refuerza* en el espacio educativo. Por ello, la necesidad de estudiar la segregación multi-dominio en el AMBA surge de la convicción de que entender detalladamente la compleja *geometría de la exclusión espacial* es una herramienta central para abordar las desigualdades urbanas. En relación a esto, nuestro estudio intenta abordar de forma explícita cómo esta *división del espacio urbano* se relaciona con los mecanismos de estratificación social y reproducción de las estructuras sociales. En este sentido, el trabajo destaca el hecho de que la desigualdad urbana cumple un rol central y autónomo como parte de los mecanismos de estratificación social y, como contracara, no puede analizarse por fuera de las diferencias y estructuras sociales. Nuestros resultados destacan el hecho de que para abordar el problema de la *segregación urbana* (y de la separación de los espacios urbanos), es necesario la articulación de las políticas urbanas con las políticas sociales y educativas, con el objeto de romper los mecanismos por los cuales se refuerzan y articulan estas divisiones del espacio.
 
-Donec consectetur nisi at varius mollis. Phasellus vel nulla justo. Donec auctor at risus id consequat. Fusce mattis ut felis nec pulvinar. Quisque lacus magna, ultricies a orci nec, iaculis iaculis turpis. Donec diam justo, euismod sed sodales eu, sodales sit amet dolor. Nulla eu lorem nec neque euismod viverra tristique quis augue. Nam tempus hendrerit nibh. Vestibulum ut interdum massa. Nam tempor sodales metus, at mattis ex tristique vel. Nunc aliquet congue dapibus.
-
+Esta tesis busca también ser un aporte en el campo de las *ciencia de datos sociales y espaciales*. Este campo emergente busca aprovechar nuevas fuentes de datos y técnicas de análisis para abordar problemas sociales complejos. Un aspecto central de esta propuesta es la posibilidad de garantizar la *reproductibilidad* y *replicabilidad* de los análisis, lo cual promueve la perspectiva de la *ciencia abierta*. En este sentido, es parte indisoluble de esta tesis el repositorio Github (<https://github.com/estedeahora/PhD/>), donde pueden encontrarse los datos (o la forma de descargarlos), el código utilizado en la preparación y el análisis de los datos, así como el propio contenido del manuscrito.
 
 ## Agradecimientos {.unnumbered}
 
-[] TODO Escribir texto (final)
+Quiero agradecerle especialmente a mi directora Mercedes Di Virgilio, quien me apoyó y compartió su experiencia durante este proceso, siendo fundamental para la realización de la tesis. Además, agradezco a mis colegas del *Área de Estudios Urbanos* del IIGG (FSOC-UBA), con quienes transitamos diferentes proyectos. En particular a mis compañeras de la revista *QUID16* con las que trabajamos muchas horas juntos y recibí valiosos consejos para pensar este proceso. También a los docentes de los seminarios realizados en el marco de esta formación, quienes aportaron enormemete a este trabajo con las devoluciones hechas a los trabajos finales de esos seminarios, los cuales sirvieron como insumo para los análisis finales de la tesis.
 
-Praesent erat sapien, tincidunt sed lacus eu, pharetra condimentum nisl. Maecenas ornare enim a vulputate bibendum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc vitae efficitur tortor. Nunc nibh mauris, sodales vitae risus dapibus, consectetur gravida elit. Nulla facilisi. Maecenas at nibh id ligula tristique sagittis. Vestibulum consequat mauris et ultricies vehicula. Morbi auctor mauris tellus, et interdum dui aliquam id.
+Quiero agradecer también a mis amigos, con quienes encontré el (necesario) espacio para olvidarme de la tesis y compartir buenos momentos. A mi mamá Julia y mi papá Santiago y toda mi familia, quienes siempre me apoyaron, brindando su cariño y acompañamiento. Por último, agradecerle a Almendra, quien es posiblemente la persona más importante en mi vida, ese brotecito que nació casi en paralelo con esta tesis y que con sus cosquillas y sonrisas me ayudó a pensar siempre en lo que es lo esencial de la vida.

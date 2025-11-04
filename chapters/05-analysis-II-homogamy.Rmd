@@ -364,21 +364,12 @@ significativamente más alta que para el resto de los niveles educativos
     un poco mayor que el esperado (sin alcanzar los niveles de las
     parejas homogámicas).
 
-```{=latex}
-\begin{landscape} 
-```
-
 ```{r HOM-TAB1}
-
 if(knitr::is_latex_output()){
   HOM$TAB1_tex
 }else{
   HOM$TAB1
 }
-```
-
-```{=latex}
-\end{landscape} 
 ```
 
 <!-- Homogamia global por distrito -->
@@ -545,8 +536,11 @@ aleatorio y, por lo tanto, existe sobre-selección de personas con el
 mismo nivel educativo (en lugar de 'sub-selección').
 
 ```{r HOM-TAB2}
-
-HOM$TAB2
+if(knitr::is_latex_output()){
+  HOM$TAB2_tex
+}else{
+  HOM$TAB2
+}
 ```
 
 En resumen, como destacan estudios anteriores, la homogamia conyugal en

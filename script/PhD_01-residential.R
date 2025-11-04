@@ -527,11 +527,11 @@ if(!exists("AUX", inherits = F)){
         booktabs = TRUE, format = "latex") |>
     kable_classic(full_width = F, font_size = 8, html_font = "Alegreya Sans") |>
     row_spec(row = 0, bold = TRUE) |>
-    kableExtra::column_spec(1, width = "2cm", latex_valign = "p") |>
+    kableExtra::column_spec(1, width = "1.8cm", latex_valign = "p") |>
     kableExtra::column_spec(2, width = "2.1cm", latex_valign = "p") |>
     kableExtra::column_spec(3:6, width = "1.5cm", latex_valign = "p") |>
-    kableExtra::column_spec(7, width = "4.1cm", latex_valign = "p") |>
-    kableExtra::column_spec(8, width = "3.2cm", latex_valign = "p")
+    kableExtra::column_spec(7, width = "3.7cm", latex_valign = "p") |>
+    kableExtra::column_spec(8, width = "3.0cm", latex_valign = "p")
 
   rm(tit)
 

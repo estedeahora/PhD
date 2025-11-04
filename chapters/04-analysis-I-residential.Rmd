@@ -299,7 +299,6 @@ departamentos).<!--# En el Anexo A se presenta la segregación interna de cada u
     [*between*] estos grupos.
 
 ```{r segres-tab1}
-
 if(knitr::is_latex_output()){
   RES$TAB1_tex
 }else{
@@ -561,10 +560,6 @@ Tabla \@ref(tab:segres-tab3) se presentan las principales
 características descriptas sobre cada uno de estos patrones de
 segregación.
 
-```{=latex}
-\begin{landscape} 
-```
-
 ```{r segres-tab3}
 
 if(knitr::is_latex_output()){
@@ -572,10 +567,6 @@ if(knitr::is_latex_output()){
 }else{
   RES$TAB3
 }
-```
-
-```{=latex}
-\end{landscape} 
 ```
 
 En primer lugar, el *cono de las elites*, que se consolida como

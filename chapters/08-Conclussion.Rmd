@@ -54,12 +54,12 @@ que tradicionalmente se asignó a las ciudades latinoamericanas
 este sentido, la posibilidad de acceso a los mercados de suelo formal e
 informal, la fragmentación urbana y las intervenciones estatales
 configuran un entramado donde los hogares experimentan diferentes grados
-de aislamiento o apertura. Al estructurar las oportunidades de
-contacto y acceso a recursos urbanos, esta *estructura compleja de
-segregación del espacio residencial* actúa a la vez como un reflejo de
-las desigualdades sociales y como un motor de su reproducción a partir
-de cristalizar estas jerarquías. <!-- Capítulo 5: Homogamia -->Además,
-esta estructura de segregación en el dominio residencial se ve reforzada
+de aislamiento o apertura. Al estructurar las oportunidades de contacto
+y acceso a recursos urbanos, esta *estructura compleja de segregación
+del espacio residencial* actúa a la vez como un reflejo de las
+desigualdades sociales y como un motor de su reproducción a partir de
+cristalizar estas jerarquías. <!-- Capítulo 5: Homogamia -->Además, esta
+estructura de segregación en el dominio residencial se ve reforzada
 parcialmente por la *homogamia educativa* (Capítulo \@ref(homogamy)). En
 este sentido, encontramos que la homogamia actúa a nivel de los hogares
 como un mecanismo que refuerza la segregación residencial, solo en
@@ -132,11 +132,12 @@ De modo general, nuestros resultados nos permiten concluir que la
 articulada en el que intervienen múltiples dominios de la vida social.
 Estos dominios aportan mecanismos específicos e independientes, pero
 también interdependientes, los cuales se articulan para permitir una
-segmentación del espacio urbano. En este sentido, estos dominios no
-actúan necesariamente en la misma 'dirección', pero configuran el
-fenómeno de la segregación como un todo articulado. El dominio
-residencial *delimita* *y* *condiciona* una estructura de posibilidades
-para la co-presencia y la segregación urbana, pero no es suficiente para
+segmentación del espacio urbano y configurar una *geometría de la
+exclusión espacial*. En este sentido, estos dominios no actúan
+necesariamente en la misma 'dirección', pero configuran el fenómeno de
+la segregación como un todo articulado. El dominio residencial
+*delimita* *y* *condiciona* una estructura de posibilidades para la
+co-presencia y la segregación urbana, pero no es suficiente para
 entender la totalidad del fenómeno. Por un lado, esta estructura de
 segregación es modificada por las prácticas de los hogares a través de
 los arreglos matrimoniales, que tienden a *reforzar* el efecto de la
@@ -281,34 +282,33 @@ clases sociales.
 
 <!-- Limitaciones y futuras líneas de trabajo   -->
 
-Más allá de estos aportes, el trabajo presenta algunos límites
-que marcan, a su vez, posibles líneas de continuidad para futuros
-trabajos de investigación.
-<!-- 1. enfoque cuantitativo (vs cualitativo) -->Un primer límite del
-trabajo viene dado por el enfoque cuantitativo adoptado. Si bien este
-enfoque posibilitó analizar la segregación urbana en el conjunto del AMBA,
-el mismo no permite indagar en profundidad sobre los mecanismos
-específicos que operan en cada uno de estos dominios. En este sentido,
-futuros trabajos podrían complementar los resultados de esta tesis,
-mediante estudios cualitativos que indaguen en los procesos que operan
-en cada uno de estos dominios y su articulación. <!--  -->Además, en
-este trabajo identificamos de manera global diferentes dinámicas de la
-segregación a escalas locales. En este sentido, sería posible analizar
-estas situaciones con mayor profundidad.<!-- 2. Fuentes de datos -->
-Otro límite del trabajo estuvo dado por el acceso y la disponibilidad de
-datos que puedan articular los diferentes dominios, en tanto no
-fue posible obtener datos masivos que vinculen los diferentes dominios a
-nivel individual o de hogares. Futuros trabajos podrían
-complementar este análisis con datos que permitan vincular los
-diferentes dominios a nivel micro. <!-- 3. otros dominios -->Además, el
-trabajo se centró en analizar tres dominios específicos de la
-segregación urbana. Sin embargo, existen otros dominios que podrían ser
-relevantes para complementar este análisis. En particular, consideramos
-que sería relevante incorporar el análisis de la segregación en el
-dominio laboral y en los espacios de esparcimiento y consumo. Además,
-teniendo en cuenta la importancia que tienen en la actualidad, sería
-interesante sumar aspectos referidos a las relaciones en los espacios
-virtuales (como redes sociales).
+Más allá de estos aportes, el trabajo presenta algunos límites que
+marcan, a su vez, posibles líneas de continuidad para futuros trabajos
+de investigación. <!-- 1. enfoque cuantitativo (vs cualitativo) -->Un
+primer límite del trabajo viene dado por el enfoque cuantitativo
+adoptado. Si bien este enfoque posibilitó analizar la segregación urbana
+en el conjunto del AMBA, el mismo no permite indagar en profundidad
+sobre los mecanismos específicos que operan en cada uno de estos
+dominios. En este sentido, futuros trabajos podrían complementar los
+resultados de esta tesis, mediante estudios cualitativos que indaguen en
+los procesos que operan en cada uno de estos dominios y su articulación.
+<!--  -->Además, en este trabajo identificamos de manera global
+diferentes dinámicas de la segregación a escalas locales. En este
+sentido, sería posible analizar estas situaciones con mayor
+profundidad.<!-- 2. Fuentes de datos --> Otro límite del trabajo estuvo
+dado por el acceso y la disponibilidad de datos que puedan articular los
+diferentes dominios, en tanto no fue posible obtener datos masivos que
+vinculen los diferentes dominios a nivel individual o de hogares.
+Futuros trabajos podrían complementar este análisis con datos que
+permitan vincular los diferentes dominios a nivel micro.
+<!-- 3. otros dominios -->Además, el trabajo se centró en analizar tres
+dominios específicos de la segregación urbana. Sin embargo, existen
+otros dominios que podrían ser relevantes para complementar este
+análisis. En particular, consideramos que sería relevante incorporar el
+análisis de la segregación en el dominio laboral y en los espacios de
+esparcimiento y consumo. Además, teniendo en cuenta la importancia que
+tienen en la actualidad, sería interesante sumar aspectos referidos a
+las relaciones en los espacios virtuales (como redes sociales).
 <!-- 4. co-presencia vs relaciones efectivas --> Por otra parte, sería
 interesante incorporar al análisis de la segregación en los espacios de
 actividad la simultaneidad de diferentes tipos de actividades y su
@@ -331,3 +331,4 @@ movilidad, educación, etc.) y que estos dominios pueden interactuar de
 manera compleja. Por lo tanto, las intervenciones públicas deben
 procurar abordajes integrales y, fundamentalmente, comprender el rol de
 la segregación como dimensión de la estratificación social.
+

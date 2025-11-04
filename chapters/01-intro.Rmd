@@ -92,9 +92,9 @@ entre los grupos sociales, es necesario considerar el problema de la
 segregación desde una perspectiva que supere el análisis acotado al
 dominio residencial. Siguiendo la propuesta de Schnell y Yoav
 [-@Schnell2001a], trabajos recientes han señalado que la *segregación
-urbana* debe incorporar al análisis las “actividades cotidianas, las
+urbana* debe incorporar al análisis las 'actividades cotidianas, las
 redes interpersonales y la movilidad en el contexto de procesos sociales
-y político-económicos más amplios” [@Wissink2016, p. 126]. En
+y político-económicos más amplios' [@Wissink2016, p. 126]. En
 continuidad con estas propuestas, recientemente se propuso pensar la
 segregación urbana como un fenómeno que se desarrolla simultáneamente en
 múltiples dominios [*multi-domain*] de la vida social [@Boterman2016;
@@ -113,7 +113,7 @@ de la segregación, puede ser insuficiente para entender cómo se genera
 la segregación urbana.
 
 Por otra parte, el modo en que estos dominios se articulan es poco
-explorada hasta el momento -especialmente, desde un enfoque
+explorada hasta el momento -especialmente desde un enfoque
 cuantitativo. La identificación de cierta interdependencia y
 retroalimentación entre dominios [@Atkinson2004; @Schnell2001a;
 @Wang2012] ha llevado a que algunos autores planteen la existencia de
@@ -145,8 +145,6 @@ dominios de la segregación o, por el contrario, cada uno de estos
 dominios aporta elementos propios a la segregación
 urbana?<!-- ENTORNOS URBANOS: A su vez, nos interesa especialmente el rol de los entornos o contextos urbanos locales en la configuración de estas segregaciones, en tanto permite entender cómo opera la segregación a escala microterritorial, generando espacios de diferenciación incluso en situaciones de contigüidad espacial. ¿Qué rol juegan los contextos locales en la conformación de la segregación urbana? HOMOGAMIA: ¿Cuál es la relación entre la segregación residencial y la homogamia? ¿Existen patrones comunes en la distribución espacial de la segregación residencial y la homogamia? -->
 
-<!--# REVISAR -->
-
 A partir de este planteo general, se proponen los siguientes objetivos
 específicos:<!-- OPCIONALES: (1) analizar el rol de las movilidades espaciales y los espacios de actividad en la configuración de la segregación social urbana (2) comprender cómo se articulan los patrones de segregación multi-dominio con las características de los entornos urbanos. -->
 
@@ -161,7 +159,7 @@ específicos:<!-- OPCIONALES: (1) analizar el rol de las movilidades espaciales 
 <!-- Hipótesis -->
 
 Enmarcado en este objetivos y preguntas de investigación, nuestra
-hipótesis es que no necesariamente todos los dominios actúan en la misma
+*hipótesis* es que no necesariamente todos los dominios actúan en la misma
 ‘dirección’, por lo cual no es posible reducir este problema al concepto
 de ‘círculo vicioso’ de la segregación. Por el contrario, el *estudio
 multi-dominio de la segregación* debe enfocarse en entender y estudiar
@@ -199,7 +197,7 @@ Retomando estos hallazgos, el presente trabajo recupera el concepto de
 reproducción de la segregación multi-dominio, incorporando nuevos
 dominios de análisis. A su vez, al igual que en este trabajo utilizamos
 una combinación de fuentes secundarias (muchas provenientes de registros
-administrativos) y primaras, con el objeto de recuperar una mirada
+administrativos) y secundarias, con el objeto de recuperar una mirada
 macro- y micro- espacial. Por su parte, el ámbito de indagación se
 extiende al conjunto del Aglomerado Metropolitano Gran Buenos Aires,
 entendiendo que este actúa como una unidad en términos urbanos y
@@ -249,7 +247,7 @@ actividad, prestando atención a cómo las movilidades urbanas contribuyen
 a la segregación urbana. En el [Capítulo 7](#school) estudiamos la
 segregación en el ámbito educativo, analizando en qué medida esta
 permite entender la segregación urbana. Por último, presentamos un
-apartado con las [conclusiones y reflexiones finales](#conclussion) de
+apartado con las [Conclusiones](#conclussion) y reflexiones finales de
 la tesis en la que resumimos los principales hallazgos, planteando los
 aportes, limitaciones y posibles continuidades del trabajo en futuras
 investigaciones.

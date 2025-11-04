@@ -677,7 +677,11 @@ En una situación intermedia respecto a la recepción de viajes, podemos
 considerar a la expansión de la ciudad colonial.
 
 ```{r segmov-tab1}
-MOV$TAB1
+if(knitr::is_latex_output()){
+  MOV$TAB1_tex
+}else{
+  MOV$TAB1
+}
 ```
 
 Cuando diferenciamos los viajes a estos entornos en función de los
@@ -761,7 +765,11 @@ los hogares tienden a realizar sus actividades en lugares con una
 composición residencial de mayor 'status'.
 
 ```{r segmov-tab2}
-MOV$TAB2
+if(knitr::is_latex_output()){
+  MOV$TAB2_tex
+}else{
+  MOV$TAB2
+}
 ```
 
 Sin embargo, esta tendencia no es homogénea, sino que por el contrario
@@ -835,7 +843,11 @@ la diferencia 'pura' o estructural es aún mayor a la diferencia general
 (`r MOV$MOV2$est[MOV$MOV2$stat == "structural"]`).
 
 ```{r segmov-tab3}
-MOV$TAB3
+if(knitr::is_latex_output()){
+  MOV$TAB3_tex
+}else{
+  MOV$TAB3
+}
 ```
 
 Para avanzar en este análisis, la Figura

@@ -18,7 +18,7 @@ $if(keywords)$
 $endif$
 pdfinfo={
 $if(abstract)$
-  abstract={$abstract$},
+  abstract={$abstract-en$},
 $endif$
 $if(abstract-es)$
   abstract-es={$abstract-es$},

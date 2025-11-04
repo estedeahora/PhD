@@ -645,7 +645,11 @@ respecto al resto de los otros dos (NSE Bajo y Medio).
 
 ```{r school-tab1}
 
-EDU$TAB1
+if(knitr::is_latex_output()){
+  EDU$TAB1_tex
+}else{
+  EDU$TAB1
+}
 ```
 
 Es necesario tener presente que como la demanda total (teórica) del
@@ -697,7 +701,11 @@ segregación escolar observada ($M_{model}/M_{real}\times 100 =$
 
 ```{r school-tab2}
 
-EDU$TAB2 
+if(knitr::is_latex_output()){
+  EDU$TAB2_tex
+}else{
+  EDU$TAB2
+}
 ```
 
 Si bien el modelo de asignación elimina el efecto de la distribución
